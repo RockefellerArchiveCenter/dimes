@@ -1,5 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import $ from "jquery";
+import "jqueryui";
 import PropTypes from "prop-types";
 import Modal from "react-modal";
 import Captcha from "../Captcha";
@@ -16,18 +18,24 @@ const ModalMyList = (props) => (
     onRequestClose={props.toggleModal}
     className="modal-content"
     overlayClassName="modal-overlay">
-    <div className="modal-header">
-      <h2 className="modal-header__title">{props.title}</h2>
-      <button className="modal-header__button" aria-label="Close" onClick={props.toggleModal}>
-        <MaterialIcon icon="close"/>
-      </button>
-    </div>
-    <div className="modal-body">
-      <div className="modal-list">
-        <ModalSavedItemList items={props.list} handleChange={props.handleChange} />
+    <div ref={(div) => {
+          const target = $(div).parent();
+          console.log(target);
+          target.draggable({handle: ".modal-header"});
+        }}>
+      <div className="modal-header modal-header--list">
+        <h2 className="modal-header__title">{props.title}</h2>
+        <button className="modal-header__button" aria-label="Close" onClick={props.toggleModal}>
+          <MaterialIcon icon="close"/>
+        </button>
       </div>
-      <div className="modal-form">
-        {props.form}
+      <div className="modal-body">
+        <div className="modal-list">
+          <ModalSavedItemList items={props.list} handleChange={props.handleChange} />
+        </div>
+        <div className="modal-form">
+          {props.form}
+        </div>
       </div>
     </div>
   </Modal>
