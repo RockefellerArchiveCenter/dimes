@@ -16,6 +16,7 @@
     "react-dom": "^16.13.1",
     "react-google-recaptcha": "^2.1.0",
     "react-helmet": "^6.1.0",
+    "react-highlight-words": "^0.16.0",
     "react-loading-skeleton": "^2.1.1",
     "react-modal": "^3.11.2",
     "react-paginate": "^6.5.0",
