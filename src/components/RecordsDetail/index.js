@@ -12,6 +12,7 @@ import {
 import Button from "../Button";
 import ListToggleButton from "../ListToggleButton";
 import MaterialIcon from "../MaterialIcon";
+import QueryHighlighter from "../QueryHighlighter";
 import { DetailSkeleton, FoundInItemSkeleton } from "../LoadingSkeleton";
 import { dateString, hasAccessAndUse, noteText } from "../Helpers";
 import { isItemSaved } from "../MyListHelpers";
@@ -81,11 +82,13 @@ const PanelListSection = ({ listData, title }) =>  (
     (null)
 )
 
-const PanelTextSection = ({ text, title }) => (
+const PanelTextSection = ({ params, text, title }) => (
   text ?
     (<div className="panel__section">
       <h3 className="panel__heading">{title}</h3>
-      <p className="panel__text">{text}</p>
+      <p className="panel__text">
+        <QueryHighlighter query={params.query} text={text} />
+      </p>
     </div>) :
     (null)
 )
@@ -102,100 +105,105 @@ const RecordsDetail = ({ ancestors, isAncestorsLoading, isContentShown, isItemLo
   }, [isItemLoading, item, savedList])
 
   return (
-  <div className={`records__detail ${isContentShown ? "hidden" : ""}`}>
-    <nav>
-      <a href={`/search?${queryString.stringify(params)}`} className="btn btn--back">
-        <span className="material-icons">keyboard_arrow_left</span>Back to Search
-      </a>
-    </nav>
-    <h1 className="records__title">{isItemLoading ? <Skeleton /> : item.title }</h1>
-    {item.type === "object" ?
-      (item.online ? (
-        <>
-        <ListToggleButton
+    <div className={`records__detail ${isContentShown ? "hidden" : ""}`}>
+      <nav>
+        <a href={`/search?${queryString.stringify(params)}`} className="btn btn--back">
+          <span className="material-icons">keyboard_arrow_left</span>Back to Search
+        </a>
+      </nav>
+      <h1 className="records__title">{isItemLoading ? <Skeleton /> : item.title }</h1>
+      {item.type === "object" ?
+        (item.online ? (
+          <>
+          <ListToggleButton
+            className="btn-add--detail"
+            isSaved={isSaved}
+            item={item}
+            toggleSaved={toggleInList} />
+          <a className="btn btn-launch--detail"
+            href={`${item.uri}/view`}>View Online <MaterialIcon icon="visibility" /></a>
+          <Button
+            className="btn-download--detail"
+            handleClick={() => alert(`Downloading file for ${item.uri}`)}
+            iconAfter="get_app"
+            label="Download"
+            uri={item.uri} />
+          </>
+        ) :
+        (<ListToggleButton
           className="btn-add--detail"
           isSaved={isSaved}
           item={item}
-          toggleSaved={toggleInList} />
-        <a className="btn btn-launch--detail"
-          href={`${item.uri}/view`}>View Online <MaterialIcon icon="visibility" /></a>
-        <Button
-          className="btn-download--detail"
-          handleClick={() => alert(`Downloading file for ${item.uri}`)}
-          iconAfter="get_app"
-          label="Download"
-          uri={item.uri} />
-        </>
-      ) :
-      (<ListToggleButton
-        className="btn-add--detail"
-        isSaved={isSaved}
-        item={item}
-        toggleSaved={toggleInList} />)
-      ): (null)
-    }
-    <Accordion className="accordion" preExpanded={["summary"]} allowZeroExpanded={true}>
-      <AccordionItem className="accordion__item" uuid="summary">
-        <AccordionItemHeading className="accordion__heading" aria-level={2}>
-          <AccordionItemButton className="accordion__button">Summary</AccordionItemButton>
-        </AccordionItemHeading>
-        <AccordionItemPanel className="accordion__panel">
-          {isItemLoading ?
-            (<DetailSkeleton />) :
-            (<>
-              <PanelListSection
-                title="Creators"
-                listData={item.creators} />
-              <PanelTextSection
-                title="Dates"
-                text={dateString(item.dates)} />
-              <div className="panel__section--flex">
-                <PanelExtentSection
-                  extents={item.extents} />
-                <PanelFormatSection
-                  formats={item.formats} />
-              </div>
-              <PanelFoundInSection
-                ancestors={ancestors}
-                isItemLoading={isAncestorsLoading} />
-              <PanelTextSection
-                title="Description"
-                text={noteText(item.notes, "abstract") || noteText(item.notes, "scopecontent")} />
-              </>
-              )
-            }
-        </AccordionItemPanel>
-      </AccordionItem>
-      { hasAccessAndUse(item.notes) ?
-        (<AccordionItem className="accordion__item" uuid="accessAndUse">
+          toggleSaved={toggleInList} />)
+        ): (null)
+      }
+      <Accordion className="accordion" preExpanded={["summary"]} allowZeroExpanded={true}>
+        <AccordionItem className="accordion__item" uuid="summary">
           <AccordionItemHeading className="accordion__heading" aria-level={2}>
-            <AccordionItemButton className="accordion__button">Access and Use</AccordionItemButton>
+            <AccordionItemButton className="accordion__button">Summary</AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel className="accordion__panel">
-            <PanelTextSection
-              title="Access"
-              text={noteText(item.notes, "accessrestrict")} />
-            <PanelTextSection
-              title="Reproduction and Duplication"
-              text={noteText(item.notes, "userestrict")} />
+            {isItemLoading ?
+              (<DetailSkeleton />) :
+              (<>
+                <PanelListSection
+                  title="Creators"
+                  listData={item.creators} />
+                <PanelTextSection
+                  params={params}
+                  title="Dates"
+                  text={dateString(item.dates)} />
+                <div className="panel__section--flex">
+                  <PanelExtentSection
+                    extents={item.extents} />
+                  <PanelFormatSection
+                    formats={item.formats} />
+                </div>
+                <PanelFoundInSection
+                  ancestors={ancestors}
+                  isItemLoading={isAncestorsLoading} />
+                <PanelTextSection
+                  params={params}
+                  title="Description"
+                  text={noteText(item.notes, "abstract") || noteText(item.notes, "scopecontent")} />
+                </>
+                )
+              }
           </AccordionItemPanel>
-        </AccordionItem>) :
-        (null)}
-      { item.terms && item.terms.length ?
-        (<AccordionItem className="accordion__item" uuid="relatedTerms">
+        </AccordionItem>
+        { hasAccessAndUse(item.notes) ?
+          (<AccordionItem className="accordion__item" uuid="accessAndUse">
             <AccordionItemHeading className="accordion__heading" aria-level={2}>
-              <AccordionItemButton className="accordion__button">Related Terms</AccordionItemButton>
+              <AccordionItemButton className="accordion__button">Access and Use</AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel className="accordion__panel">
-              <PanelListSection
-                title="Subjects"
-                listData={item.terms} />
+              <PanelTextSection
+                params={params}
+                title="Access"
+                text={noteText(item.notes, "accessrestrict")} />
+              <PanelTextSection
+                params={params}
+                title="Reproduction and Duplication"
+                text={noteText(item.notes, "userestrict")} />
             </AccordionItemPanel>
           </AccordionItem>) :
-        (null)}
-    </Accordion>
-  </div>
-)}
+          (null)}
+        { item.terms && item.terms.length ?
+          (<AccordionItem className="accordion__item" uuid="relatedTerms">
+              <AccordionItemHeading className="accordion__heading" aria-level={2}>
+                <AccordionItemButton className="accordion__button">Related Terms</AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel className="accordion__panel">
+                <PanelListSection
+                  title="Subjects"
+                  listData={item.terms} />
+              </AccordionItemPanel>
+            </AccordionItem>) :
+          (null)}
+      </Accordion>
+    </div>
+  )
+}
 
 RecordsDetail.propTypes = {
   item: PropTypes.object.isRequired,

@@ -54,3 +54,20 @@ $transition-default: all 0.2s ease;
     display: none;
   }
 }
+
+.query-highlight {
+  background-color: $faded-orange;
+}
+
+.query-highlight::before,
+.query-highlight::after {
+  @include visually-hidden;
+}
+
+.query-highlight::before {
+  content: " [highlight start] ";
+}
+
+.query-highlight::after {
+  content: " [highlight end] ";
+}
