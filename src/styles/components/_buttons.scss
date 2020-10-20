@@ -190,10 +190,8 @@
 }
 
 @mixin records-btn {
-  @extend .btn--md;
-  font-size: 9px;
-  font-weight: 700;
-  padding: 8px 10px;
+  @extend .btn--sm;
+  padding: 8px;
   z-index: 998;
   &:hover {
     color: $pure-white;
@@ -241,7 +239,6 @@
   @extend .btn--orange;
   box-sizing: border-box;
   @media screen and (min-width: $break-md) {
-    margin-left: 10px;
     margin-right: 10px;
   }
 }

@@ -10,12 +10,14 @@ const ShowHideMore = ({id, isOpen, toggleOpen}) => {
 }
 
 const FacetItem = ({ checked, count, handleChange, label, paramKey }) => (
-  <CheckBoxInput
-    className="facet__input"
-    id={label}
-    label={`${label} (${count})`}
-    checked={checked}
-    handleChange={e => handleChange(e, paramKey)} />
+  <div className="facet__input">
+    <CheckBoxInput
+      className="checkbox--blue"
+      id={label}
+      label={`${label} (${count})`}
+      checked={checked}
+      handleChange={e => handleChange(e, paramKey)} />
+  </div>
 )
 
 const Facet = ({ children, handleChange, items, paramKey, params, title }) => {

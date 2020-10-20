@@ -2,17 +2,17 @@ import React from "react"
 import PropTypes from "prop-types";
 import Button from "../Button";
 
-const ListToggleButton = ({ className, isSaved, item, toggleSaved }) => (
+const ListToggleButton = ({ className, isMobile, isSaved, item, toggleSaved }) => (
   isSaved ? (
     <Button
       className={`${className} saved`}
-      label="Remove from List"
+      label={isMobile ? "Remove" : "Remove from List"}
       iconAfter="remove_circle_outline"
       handleClick={() => toggleSaved(item)} />
   ) : (
     <Button
       className={className}
-      label="Add to List"
+      label={isMobile? "Add" : "Add to List"}
       iconAfter="add_circle_outline"
       handleClick={() => toggleSaved(item)} />
   )
@@ -20,6 +20,7 @@ const ListToggleButton = ({ className, isSaved, item, toggleSaved }) => (
 
 ListToggleButton.propTypes = {
   className: PropTypes.string,
+  isMobile: PropTypes.bool,
   isSaved: PropTypes.bool.isRequired,
   item: PropTypes.object.isRequired,
   toggleSaved: PropTypes.func.isRequired

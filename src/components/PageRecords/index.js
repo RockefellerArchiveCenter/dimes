@@ -70,26 +70,28 @@ class PageRecords extends Component {
 
   /** Updates state with item found at URL. */
   setActiveRecords = uri => {
-    this.setState({isItemLoading: true})
-    this.setState({isAncestorsLoading: true})
-    const itemUrl = `${process.env.REACT_APP_ARGO_BASEURL}/${uri}`
-    axios
-      .get(`${itemUrl}?${queryString.stringify(this.state.params)}`)
-      .then(res => {
-        this.setState({ item: res.data });
-        this.setState({ updateMessage: `Details under heading 1 have been updated to describe the selected records titled ${res.data.title}`})
-        this.setUrl(`${uri}?${queryString.stringify(this.state.params)}`, res.data);
-      })
-      .catch(e => console.log(e))
-      .then(() => this.setState({isItemLoading: false}));
-    axios
-      .get(`${itemUrl}/ancestors?${queryString.stringify(this.state.params)}`)
-      .then(res => {
-        this.setState({ ancestors: res.data })
-      })
-      .catch(e => console.log(e))
-      .then(() => this.setState({isAncestorsLoading: false}));
-  }
+    if (uri !== this.state.item.uri) {
+      this.setState({isItemLoading: true})
+      this.setState({isAncestorsLoading: true})
+      const itemUrl = `${process.env.REACT_APP_ARGO_BASEURL}/${uri}`
+      axios
+        .get(`${itemUrl}?${queryString.stringify(this.state.params)}`)
+        .then(res => {
+          this.setState({ item: res.data });
+          this.setState({ updateMessage: `Details under heading 1 have been updated to describe the selected records titled ${res.data.title}`})
+          this.setUrl(`${uri}?${queryString.stringify(this.state.params)}`, res.data);
+        })
+        .catch(e => console.log(e))
+        .then(() => this.setState({isItemLoading: false}));
+      axios
+        .get(`${itemUrl}/ancestors?${queryString.stringify(this.state.params)}`)
+        .then(res => {
+          this.setState({ ancestors: res.data })
+        })
+        .catch(e => console.log(e))
+        .then(() => this.setState({isAncestorsLoading: false}));
+    }
+}
 
   /** Pushes a URL and state into browser history */
   setUrl = (uri, itemData) => {

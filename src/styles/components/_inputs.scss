@@ -47,3 +47,76 @@ label {
 .hide-label label {
   @include visually-hidden;
 }
+
+/* Base for label styling */
+.checkbox:not(:checked),
+.checkbox:checked {
+  position: absolute;
+  left: -9999px;
+}
+.checkbox:not(:checked) + label,
+.checkbox:checked + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+.checkbox:not(:checked) + label:before,
+.checkbox:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0px;
+  width: 16px; height: 16px;
+}
+
+/* checked mark aspect */
+.checkbox:not(:checked) + label:after,
+.checkbox:checked + label:after {
+  content: '\2713';
+  position: absolute;
+  top: 0; left: 0;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  transition: $transition-default;
+  font-family: monospace;
+}
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.checkbox--blue:not(:checked) + label:before,
+.checkbox--blue:checked + label:before {
+  background-color: $pure-white;
+  border: 1px solid $deep-navy;
+}
+
+.checkbox--blue:not(:checked) + label:after,
+.checkbox--blue:checked + label:after {
+  background-color: $deep-blue;
+  border: 1px solid $deep-blue;
+  color: $pure-white;
+}
+
+.checkbox--orange:not(:checked) + label:before,
+.checkbox--orange:checked + label:before {
+  background-color: $pure-white;
+  border: 1px solid $med-brown;
+}
+
+.checkbox--orange:not(:checked) + label:after,
+.checkbox--orange:checked + label:after {
+  background-color: $burnt-orange;
+  border: 1px solid $burnt-orange;
+  color: $pure-white;
+}

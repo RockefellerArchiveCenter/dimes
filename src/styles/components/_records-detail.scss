@@ -33,15 +33,14 @@
   color: $deep-navy;
 }
 
+.panel__section {
+  box-sizing: border-box;
+}
+
 .panel__section--flex {
   display: flex;
-  justify-content: flex-start;
-  & .panel__section:not(:first-of-type) {
-    margin-left: 30px;
-    @media screen and (min-width: $break-md) {
-      margin-left: 40px;
-    }
-  }
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .found-in {

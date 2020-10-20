@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import "./styles.scss";
 
 
-const InputLabel = ({id, label, required}) => (
-  <label htmlFor={id}>
+const InputLabel = ({className, id, label, required}) => (
+  <label htmlFor={id} className={className}>
     {label}{required && " *"}
   </label>)
 
@@ -19,16 +19,17 @@ InputLabel.propTypes = {
 
 
 export const CheckBoxInput = (props) => (
-  <div className={props.className}>
+  <>
     <input
       type="checkbox"
+      className={`checkbox ${props.className ? props.className : ""}`}
       id={props.id}
       name={props.name ? props.name : props.id}
       onChange={props.handleChange}
       checked={props.checked}
       required={props.required} />
     <InputLabel {...props} />
-  </div>
+  </>
 )
 
 CheckBoxInput.propTypes = {

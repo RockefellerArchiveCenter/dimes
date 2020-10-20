@@ -44,6 +44,7 @@ class RecordsChild extends Component {
 
   render() {
     const { ariaLevel, item, params, savedList, setActiveRecords, toggleInList } = this.props;
+    const isMobile = window.innerWidth < 580;
     return (item.type === "object" ?
       (<div className={`child__list-item child__list-item--${item.type} ${item.isActive ? "active" : ""}`} >
         <div className="child__description">
@@ -56,18 +57,20 @@ class RecordsChild extends Component {
             <QueryHighlighter query={params.query} text={item.description} />
           </p>
         </div>
-        <div className={`child__buttons ${item.online ? "expanded" : ""}`}>
+        <div className="child__buttons">
           {item.online ? (
             <a className="btn btn-launch--content"
-              href={`${item.uri}/view`}>View Online <MaterialIcon icon="visibility" /></a>) :
+              href={`${item.uri}/view`}>{isMobile? "View" : "View Online"} <MaterialIcon icon="visibility" /></a>) :
             (null)
           }
           <ListToggleButton
             className="btn-add--content"
+            isMobile={isMobile}
             isSaved={this.state.isSaved}
             item={this.props.item}
             toggleSaved={this.toggleSaved} />
         </div>
+        <p className="child__text text--truncate">{item.description}</p>
       </div>) :
       (<AccordionItem
         uuid={item.uri}

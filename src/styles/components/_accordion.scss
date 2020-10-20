@@ -37,15 +37,30 @@
 .panel__heading {
   font-family: inherit;
   font-size: 12px;
+  font-weight: 800;
   color: $dark-gray;
   letter-spacing: 0.7px;
   text-transform: uppercase;
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 .panel__text {
   font-family: inherit;
   font-size: 15px;
   color: $dark-gray;
+  line-height: inherit;
+  white-space: pre-line;
+}
+
+.panel__text a {
+  color: $dark-gray;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+.panel__text--narrative {
+  @extend .panel__text;
   line-height: 25px;
 }
 

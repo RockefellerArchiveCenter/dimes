@@ -81,8 +81,6 @@ export const DetailSkeleton = () => (
     <ul className="panel__list--unstyled">
       <li><Skeleton /></li>
     </ul>
-    <h3 className="panel__heading"><Skeleton /></h3>
-    <p className="panel__text"><Skeleton /></p>
   </>
 )
 
@@ -91,9 +89,7 @@ export const FoundInItemSkeleton = () => (
     {Array(3)
       .fill()
       .map((item, index) => (
-        <li className="found-in__subcollection" key={index}>
-          <p className="found-in__link"><Skeleton /></p>
-        </li>
+        <p key={index} className="found-in__link"><Skeleton /></p>
       ))}
   </>
 )
