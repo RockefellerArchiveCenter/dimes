@@ -13,7 +13,7 @@
     "formik": "^2.1.5",
     "mirador": "^3.0.0",
     "pluralize": "^8.0.0",
-    "query-string": "^7.0.0",
+    "query-string": "^7.0.1",
     "react": "^16.13.1",
     "react-accessible-dropdown-menu-hook": "^2.1.1",
     "react-aria-live": "^2.0.5",
