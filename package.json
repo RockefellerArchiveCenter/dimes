@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^13.2.1",
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
-    "downshift": "^6.0.6",
+    "downshift": "^6.1.7",
     "formik": "^2.1.5",
     "mirador": "^3.0.0",
     "pluralize": "^8.0.0",
