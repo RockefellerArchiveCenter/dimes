@@ -7895,10 +7895,10 @@ minizlib@^2.1.1:
     minipass "^3.0.0"
     yallist "^4.0.0"
 
-mirador@^3.0.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/mirador/-/mirador-3.2.0.tgz#0171478d09ca810ba67bca4a34243434e4dac8f9"
-  integrity sha512-AVyI8fi06ELWIGqDjCp+fFmY4FzKvJKlr24vubISxS/s5aB1O+bfqOH+H9+kaMh9msb9OCJGmD90SMO/+Kc+6A==
+mirador@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/mirador/-/mirador-3.3.0.tgz#7a957a1db1a5388b2b8cafab00db4eb9f97557b9"
+  integrity sha512-BmGfRnWJ45B+vtiAwcFT7n9nKialfejE9UvuUK0NorO37ShArpsKr3yVSD4jQASwSR4DRRpPEG21jOk4WN7H3w==
   dependencies:
     "@material-ui/core" "^4.11.0"
     "@material-ui/icons" "^4.9.1"

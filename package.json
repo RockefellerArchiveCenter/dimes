@@ -11,7 +11,7 @@
     "classnames": "^2.2.6",
     "downshift": "^6.1.7",
     "formik": "^2.1.5",
-    "mirador": "^3.0.0",
+    "mirador": "^3.3.0",
     "pluralize": "^8.0.0",
     "query-string": "^7.0.1",
     "react": "^16.13.1",
