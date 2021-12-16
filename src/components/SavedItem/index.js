@@ -13,7 +13,7 @@ const SavedItem = props => (
         <h3 className='saved-item__title'><a href={props.uri}>{props.title}</a></h3>
         {dateString(props.dates) !== props.title && <p className='saved-item__date'>{dateString(props.dates)}</p>}
         {props.description && <p className='saved-item__description text--truncate'>{truncateString(props.description, 150)}</p>}
-        {props.parent && <p className='saved-item__found-in'>Found in: <a href={props.parentRef}>{props.parent}</a></p>}
+        {props.parent && <p className='saved-item__found-in'>Found in: {props.parent}</p>}
         {props.lastRequested && <p className='saved-item__last-requested'>Last requested on: {props.lastRequested}</p>}
       </div>
       <div className='saved-item__buttons'>
