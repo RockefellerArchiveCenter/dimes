@@ -21,7 +21,7 @@
     "react-google-recaptcha": "^2.1.0",
     "react-helmet": "^6.1.0",
     "react-highlight-words": "^0.17.0",
-    "react-loading-skeleton": "^3.0.1",
+    "react-loading-skeleton": "^3.0.2",
     "react-modal": "^3.14.4",
     "react-paginate": "^8.0.1",
     "react-router-dom": "^5.2.1",
