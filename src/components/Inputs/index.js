@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import DatePicker from 'react-datepicker'
 import {useSelect} from 'downshift'
@@ -58,20 +58,23 @@ CheckBoxInput.defaultProps = {
   checked: true,
 }
 
-export const DateInput = props => (
+export const DateInput = props => {
+  const [startDate, setStartDate] = useState(new Date())
+  
+  return(
   <>
   <label htmlFor={props.id}>{props.label}</label>
   <DatePicker
       className='dp__wrapper'
-      selected={new Date()}
+      selected={startDate}
       minDate={new Date()}
       showTimeSelect='true'
-      onChange={date => props.handleChange(date)}
+      onChange={(date:Date) => setStartDate(date)}
       dateFormat="MM/dd/yyyy h:mm aa">
   </DatePicker>
   {props.helpText && <p className='help-text' aria-describedby={`desc-${props.id}`}>{props.helpText}</p>}
   </>
-)
+)}
 
 DateInput.propTypes = {
   className: PropTypes.string,
