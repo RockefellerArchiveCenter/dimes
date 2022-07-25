@@ -110,6 +110,10 @@
   padding: 10px;
 }
 
+.modal-form__error.notice-only {
+  background: unset;
+}
+
 .selected-totals {
   width: 50%;
   float: right;
