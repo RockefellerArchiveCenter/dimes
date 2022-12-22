@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker'
 import {useSelect} from 'downshift'
 import MaterialIcon from '../MaterialIcon'
 import classnames from 'classnames'
+import {  } from "../DateHelpers";
 
 import './styles.scss'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -58,21 +59,25 @@ CheckBoxInput.defaultProps = {
   checked: true,
 }
 
-export const DateInput = props => {
-  const [startDate, setStartDate] = useState(new Date())
+export const DateInput = ({className, defaultDate, handleChange, helpText, id, label, ...props}) => {
+  const [startDate, setStartDate] = useState(defaultDate || new Date())
+  
+  useEffect(() => {
+    handleChange(startDate)
+  }, [startDate, setStartDate])
   
   return(
   <>
-  <label htmlFor={props.id}>{props.label}</label>
+  <label htmlFor={id}>{label}</label>
   <DatePicker
-      className='dp__wrapper'
+      className={className || 'dp__wrapper'}
       selected={startDate}
-      minDate={new Date()}
       showTimeSelect='true'
       onChange={(date:Date) => setStartDate(date)}
-      dateFormat="MM/dd/yyyy h:mm aa">
+      dateFormat="yyyy-MM-dd h:mm aa"
+      {...props}>
   </DatePicker>
-  {props.helpText && <p className='help-text' aria-describedby={`desc-${props.id}`}>{props.helpText}</p>}
+  {helpText && <p className='help-text' aria-describedby={`desc-${id}`}>{helpText}</p>}
   </>
 )}
 
@@ -82,6 +87,7 @@ DateInput.propTypes = {
   helpText: PropTypes.string,
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  defaultDate: PropTypes.instanceOf(Date)
 };
 
 

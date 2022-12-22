@@ -9,6 +9,8 @@
     "@testing-library/user-event": "^14.2.0",
     "axios": "^0.27.2",
     "classnames": "^2.2.6",
+    "create-react-component-cli": "^1.4.0",
+    "date-fns": "^2.29.3",
     "downshift": "^6.1.7",
     "formik": "^2.1.5",
     "mirador": "^3.3.0",
