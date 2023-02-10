@@ -269,6 +269,15 @@ const ReadingRoomSelect = ({readingRooms}) => {
   //  { value: "CAMUSIC", label: "Center for American Music Reading Room"}
   // ];
 
+  const ReadingRoomLocations = readingRooms.map(readingRoom => ({
+    value: readingRoom.sites[0],
+    label: readingRoom.name,
+  }));
+  ReadingRoomLocations.unshift({
+    value: "", 
+    label: "Please select a reading room",
+  });
+
    useEffect(() => {
     setFieldValue('site', site)
   }, [site, setSite])
@@ -281,13 +290,7 @@ const ReadingRoomSelect = ({readingRooms}) => {
         label='Select Reading Room Location'
         name='site'
         onChange={({selectedItem}) => setSite(selectedItem.value)}
-        options={readingRooms.map(readingRoom => ({
-          value: readingRoom.sites[0],
-          label: readingRoom.name,
-        })).unshift({ // aka prepend
-          value: "", 
-          label: "Please select a reading room",
-        })}
+        options={ReadingRoomLocations}
         required={true}
         selectedItem={site || ''} />
       <ErrorMessage
