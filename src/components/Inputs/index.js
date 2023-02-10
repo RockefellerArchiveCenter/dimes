@@ -4,7 +4,6 @@ import DatePicker from 'react-datepicker'
 import {useSelect} from 'downshift'
 import MaterialIcon from '../MaterialIcon'
 import classnames from 'classnames'
-import {  } from "../DateHelpers";
 
 import './styles.scss'
 import 'react-datepicker/dist/react-datepicker.css'
