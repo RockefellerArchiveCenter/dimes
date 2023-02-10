@@ -59,20 +59,20 @@ CheckBoxInput.defaultProps = {
 }
 
 export const DateInput = ({className, defaultDate, handleChange, helpText, id, label, ...props}) => {
-  const [startDate, setStartDate] = useState(defaultDate || new Date())
+  const [date, setDate] = useState(defaultDate || new Date());
   
   useEffect(() => {
-    handleChange(startDate)
-  }, [startDate, setStartDate])
+    handleChange(date);
+  }, [date, handleChange]);
   
   return(
   <>
   <label htmlFor={id}>{label}</label>
   <DatePicker
       className={className || 'dp__wrapper'}
-      selected={startDate}
+      selected={date}
       showTimeSelect='true'
-      onChange={(date:Date) => setStartDate(date)}
+      onChange={setDate}
       dateFormat="yyyy-MM-dd h:mm aa"
       {...props}>
   </DatePicker>

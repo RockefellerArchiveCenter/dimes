@@ -262,13 +262,6 @@ const ReadingRoomSelect = ({readingRooms}) => {
   const { setFieldValue } = useFormikContext();
   const [site, setSite] = useState('');
 
-  // const ReadingRoomLocations = [
-  //  { value: "", label: "Please select a reading room"},
-  //  { value: "ASCHILLMAN", label: "A&SC Hillman Library 320"},
-  //  { value: "ASCTHOMAS", label: "A&SC Thomas Boulevard"},
-  //  { value: "CAMUSIC", label: "Center for American Music Reading Room"}
-  // ];
-
   const ReadingRoomLocations = readingRooms.map(readingRoom => ({
     value: readingRoom.sites[0],
     label: readingRoom.name,
@@ -278,9 +271,9 @@ const ReadingRoomSelect = ({readingRooms}) => {
     label: "Please select a reading room",
   });
 
-   useEffect(() => {
-    setFieldValue('site', site)
-  }, [site, setSite])
+  useEffect(() => {
+    setFieldValue('site', site);
+  }, [site, setFieldValue]);
 
   return (
     <div className='form-group'>
