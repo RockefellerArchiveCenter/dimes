@@ -300,7 +300,7 @@ export const ReadingRoomRequestModal = props => {
     axios.get(`${process.env.REACT_APP_REQUEST_BROKER_BASEURL}/reading-rooms`).then(response => {
       setAeonReadingRooms(response.data);
     });
-  }, []); // empty deps array means it runs once (?)
+  }, []); // empty deps array means it runs once
 
   return (
     <ModalMyList
