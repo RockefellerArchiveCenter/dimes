@@ -258,16 +258,16 @@ EmailModal.propTypes = {
   toggleModal: PropTypes.func.isRequired,
 }
 
-const ReadingRoomSelect = () => {
+const ReadingRoomSelect = ({readingRooms}) => {
   const { setFieldValue } = useFormikContext();
   const [site, setSite] = useState('');
 
-  const ReadingRoomLocations = [
-   { value: "", label: "Please select a reading room"},
-   { value: "ASCHILLMAN", label: "A&SC Hillman Library 320"},
-   { value: "ASCTHOMAS", label: "A&SC Thomas Boulevard"},
-   { value: "CAMUSIC", label: "Center for American Music Reading Room"}
-  ];
+  // const ReadingRoomLocations = [
+  //  { value: "", label: "Please select a reading room"},
+  //  { value: "ASCHILLMAN", label: "A&SC Hillman Library 320"},
+  //  { value: "ASCTHOMAS", label: "A&SC Thomas Boulevard"},
+  //  { value: "CAMUSIC", label: "Center for American Music Reading Room"}
+  // ];
 
    useEffect(() => {
     setFieldValue('site', site)
@@ -281,12 +281,55 @@ const ReadingRoomSelect = () => {
         label='Select Reading Room Location'
         name='site'
         onChange={({selectedItem}) => setSite(selectedItem.value)}
-        options={ReadingRoomLocations}
+        options={readingRooms.map(readingRoom => ({
+          value: readingRoom.sites[0],
+          label: readingRoom.name,
+        })).unshift({ // aka prepend
+          value: "", 
+          label: "Please select a reading room",
+        })}
         required={true}
         selectedItem={site || ''} />
       <ErrorMessage
         id='site-error'
         name='site'
+        component='div'
+        className='modal-form__error' />
+    </div>
+  )
+}
+
+const ReadingRoomDateInput = ({readingRoom}) => {
+  const { setFieldValue } = useFormikContext();
+  
+  return (
+    <div className='form-group'>
+      <Field
+        component={DateInput}
+        // TODO: this handleChange alters the UI, but not the form submission ?!
+        handleChange={date => setFieldValue('scheduledDate', date)}
+        helpText='Our reading rooms are open Monday - Friday from 9:00am to 4:45pm. We will confirm this appointment request with you before you arrive.'
+        id='scheduledDate'
+        label='Requested Visit Date'
+        type='date'
+        defaultDate={addBusinessDays(new Date(), 2)}
+        minDate={addBusinessDays(new Date(), 1)}
+        filterDate={date => readingRoom?.openHours.some(x => x.dayOfWeek === date.getDay())}
+        filterTime={date => {
+          if (readingRoom === undefined) return false;                    
+          const hours = readingRoom.openHours.find(x => x.dayOfWeek === date.getDay());
+          return isWithinInterval(date, {
+            start: parse(hours.openTime, "HH:mm:ss", date),
+            end: parse(hours.closeTime, "HH:mm:ss", date),
+          });
+        } }
+        excludeDateIntervals={readingRoom?.closures.map(closure => ({
+            start: startOfDay(parseISO(closure.startDate)),
+            end: startOfDay(parseISO(closure.endDate)),                    
+        }))} />
+      <ErrorMessage
+        id='scheduledDate-error'
+        name='scheduledDate'
         component='div'
         className='modal-form__error' />
     </div>
@@ -336,7 +379,6 @@ export const ReadingRoomRequestModal = props => {
         } }
       >
         {({ errors, isSubmitting, setFieldValue, touched, values }) => {
-          const readingRoom = aeonReadingRooms.find(room => room.sites[0] === values.site);
           return (
             <Form>
               <SubmitListInput submitList={props.submitList} />
@@ -345,37 +387,10 @@ export const ReadingRoomRequestModal = props => {
                 name='items'
                 component='div'
                 className='modal-form__error' />
-              <div className='form-group'>
-                <Field
-                  component={DateInput}
-                  // TODO: this handleChange alters the UI, but not the form submission ?!
-                  handleChange={date => setFieldValue('scheduledDate', date)}
-                  helpText='Our reading rooms are open Monday - Friday from 9:00am to 4:45pm. We will confirm this appointment request with you before you arrive.'
-                  id='scheduledDate'
-                  label='Requested Visit Date'
-                  type='date'
-                  defaultDate={addBusinessDays(new Date(), 2)}
-                  minDate={addBusinessDays(new Date(), 1)}
-                  filterDate={date => readingRoom?.openHours.some(x => x.dayOfWeek === date.getDay())}
-                  filterTime={date => {
-                    if (readingRoom === undefined) return false;                    
-                    const hours = readingRoom.openHours.find(x => x.dayOfWeek === date.getDay());
-                    return isWithinInterval(date, {
-                      start: parse(hours.openTime, "HH:mm:ss", date),
-                      end: parse(hours.closeTime, "HH:mm:ss", date),
-                    });
-                  } }
-                  excludeDateIntervals={readingRoom?.closures.map(closure => ({
-                      start: startOfDay(parseISO(closure.startDate)),
-                      end: startOfDay(parseISO(closure.endDate)),                    
-                  }))} />
-                <ErrorMessage
-                  id='scheduledDate-error'
-                  name='scheduledDate'
-                  component='div'
-                  className='modal-form__error' />
-              </div>
-              <ReadingRoomSelect />
+              <ReadingRoomSelect readingRooms={aeonReadingRooms}/>
+              <ReadingRoomDateInput 
+                readingRoom={aeonReadingRooms.find(room => room.sites[0] === values.site)}
+              />              
               <FormGroup
                 label='Message for Pitt staff'
                 helpText='255 characters maximum'
