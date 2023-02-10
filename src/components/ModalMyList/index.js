@@ -10,7 +10,7 @@ import { DateInput, SelectInput } from '../Inputs'
 import MaterialIcon from '../MaterialIcon'
 import { ModalSavedItemList } from '../ModalSavedItem'
 import { getFormattedDate } from '../Helpers'
-import { addBusinessDays, parse, parseISO, isWithinInterval } from 'date-fns'
+import { addBusinessDays, parse, parseISO, startOfDay, isWithinInterval } from 'date-fns'
 import './styles.scss'
 import axios from 'axios'
 
@@ -366,8 +366,8 @@ export const ReadingRoomRequestModal = props => {
                     });
                   } }
                   excludeDateIntervals={readingRoom?.closures.map(closure => ({
-                      start: parseISO(closure.startDate),
-                      end: parseISO(closure.endDate),                    
+                      start: startOfDay(parseISO(closure.startDate)),
+                      end: startOfDay(parseISO(closure.endDate)),                    
                   }))} />
                 <ErrorMessage
                   id='scheduledDate-error'
