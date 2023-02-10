@@ -356,8 +356,9 @@ export const ReadingRoomRequestModal = props => {
                   type='date'
                   defaultDate={addBusinessDays(new Date(), 2)}
                   minDate={addBusinessDays(new Date(), 1)}
-                  filterDate={date => readingRoom.openHours.some(x => x.dayOfWeek === date.getDay())}
-                  filterTime={date => {                    
+                  filterDate={date => readingRoom?.openHours.some(x => x.dayOfWeek === date.getDay())}
+                  filterTime={date => {
+                    if (readingRoom === undefined) return false;                    
                     const hours = readingRoom.openHours.find(x => x.dayOfWeek === date.getDay());
                     return isWithinInterval(date, {
                       start: parse(hours.openTime, "HH:mm:ss", date),
