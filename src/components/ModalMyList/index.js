@@ -258,7 +258,7 @@ EmailModal.propTypes = {
   toggleModal: PropTypes.func.isRequired,
 }
 
-const ReadingRoomSelect = ({readingRooms}) => {
+const ReadingRoomSelect = ({ readingRooms }) => {
   const { setFieldValue } = useFormikContext();
   const [site, setSite] = useState('');
 
@@ -267,7 +267,7 @@ const ReadingRoomSelect = ({readingRooms}) => {
     label: readingRoom.name,
   }));
   ReadingRoomLocations.unshift({
-    value: "", 
+    value: "",
     label: "Please select a reading room",
   });
 
@@ -282,7 +282,7 @@ const ReadingRoomSelect = ({readingRooms}) => {
         id='site'
         label='Select Reading Room Location'
         name='site'
-        onChange={({selectedItem}) => setSite(selectedItem.value)}
+        onChange={({ selectedItem }) => setSite(selectedItem.value)}
         options={ReadingRoomLocations}
         required={true}
         selectedItem={site || ''} />
@@ -295,9 +295,9 @@ const ReadingRoomSelect = ({readingRooms}) => {
   )
 }
 
-const ReadingRoomDateInput = ({readingRoom}) => {
+const ReadingRoomDateInput = ({ readingRoom }) => {
   const { setFieldValue } = useFormikContext();
-  
+
   return (
     <div className='form-group'>
       <Field
@@ -312,16 +312,16 @@ const ReadingRoomDateInput = ({readingRoom}) => {
         minDate={addBusinessDays(new Date(), 1)}
         filterDate={date => readingRoom?.openHours.some(x => x.dayOfWeek === date.getDay())}
         filterTime={date => {
-          if (readingRoom === undefined) return false;                    
+          if (readingRoom === undefined) return false;
           const hours = readingRoom.openHours.find(x => x.dayOfWeek === date.getDay());
           return isWithinInterval(date, {
             start: parse(hours.openTime, "HH:mm:ss", date),
             end: parse(hours.closeTime, "HH:mm:ss", date),
           });
-        } }
+        }}
         excludeDateIntervals={readingRoom?.closures.map(closure => ({
-            start: startOfDay(parseISO(closure.startDate)),
-            end: startOfDay(parseISO(closure.endDate)),                    
+          start: startOfDay(parseISO(closure.startDate)),
+          end: startOfDay(parseISO(closure.endDate)),
         }))} />
       <ErrorMessage
         id='scheduledDate-error'
@@ -334,7 +334,7 @@ const ReadingRoomDateInput = ({readingRoom}) => {
 
 export const ReadingRoomRequestModal = props => {
   const [aeonReadingRooms, setAeonReadingRooms] = useState();
-  
+
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_REQUEST_BROKER_BASEURL}/reading-rooms`).then(response => {
       setAeonReadingRooms(response.data);
@@ -363,57 +363,54 @@ export const ReadingRoomRequestModal = props => {
           if (!values.items.length)
             errors.items = 'No items have been selected to submit.'
           return errors
-        } }
+        }}
         onSubmit={(values, { setSubmitting }) => {
-          props.toggleModal()
+          props.toggleModal();
           /* In order for Aeon to accept requests, dates need to be formatted as MM/DD/YYYY */
-          values.scheduledDate = getFormattedDate(values.scheduledDate)
+          values.scheduledDate = getFormattedDate(values.scheduledDate);
           props.handleFormSubmit(
             `${process.env.REACT_APP_REQUEST_BROKER_BASEURL}/deliver-request/reading-room`,
-            values)
-          setSubmitting(false)
-        } }
+            values);
+          setSubmitting(false);
+        }}
       >
-        {({ errors, isSubmitting, setFieldValue, touched, values }) => {
-          return (
-            <Form>
-              <SubmitListInput submitList={props.submitList} />
+        {({ errors, isSubmitting, setFieldValue, touched, values }) => (
+          <Form>
+            <SubmitListInput submitList={props.submitList} />
+            <ErrorMessage
+              id='items-error'
+              name='items'
+              component='div'
+              className='modal-form__error' />
+            <ReadingRoomSelect readingRooms={aeonReadingRooms} />
+            <ReadingRoomDateInput
+              readingRoom={aeonReadingRooms.find(room => room.sites[0] === values.site)} />
+            <FormGroup
+              label='Message for Pitt staff'
+              helpText='255 characters maximum'
+              name='questions'
+              maxLength={255}
+              component='textarea'
+              rows={5} />
+            <div className='form-group'>
+              <Field
+                component={Captcha}
+                name='recaptcha'
+                handleCaptchaChange={(response) => setFieldValue('recaptcha', response)} />
               <ErrorMessage
-                id='items-error'
-                name='items'
+                id='recaptcha-error'
+                name='recaptcha'
                 component='div'
                 className='modal-form__error' />
-              <ReadingRoomSelect readingRooms={aeonReadingRooms}/>
-              <ReadingRoomDateInput 
-                readingRoom={aeonReadingRooms.find(room => room.sites[0] === values.site)}
-              />              
-              <FormGroup
-                label='Message for Pitt staff'
-                helpText='255 characters maximum'
-                name='questions'
-                maxLength={255}
-                component='textarea'
-                rows={5} />
-              <div className='form-group'>
-                <Field
-                  component={Captcha}
-                  name='recaptcha'
-                  handleCaptchaChange={(response) => setFieldValue('recaptcha', response)} />
-                <ErrorMessage
-                  id='recaptcha-error'
-                  name='recaptcha'
-                  component='div'
-                  className='modal-form__error' />
-              </div>
-              <FormButtons
-                helpText='You may be requested to create a researcher registration account with us.'
-                submitText={`Request ${props.submitList.length ? (props.submitList.length) : '0'} ${props.submitList.length !== 1 ? 'Items' : 'Item'}`}
-                toggleModal={props.toggleModal}
-                isSubmitting={isSubmitting} />
-              <FocusError />
-            </Form>
-          )
-        }}
+            </div>
+            <FormButtons
+              helpText='You may be requested to create a researcher registration account with us.'
+              submitText={`Request ${props.submitList.length ? (props.submitList.length) : '0'} ${props.submitList.length !== 1 ? 'Items' : 'Item'}`}
+              toggleModal={props.toggleModal}
+              isSubmitting={isSubmitting} />
+            <FocusError />
+          </Form>
+        )}
       </Formik>} />
   )
 }
