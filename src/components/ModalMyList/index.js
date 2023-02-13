@@ -333,7 +333,7 @@ const ReadingRoomDateInput = ({ readingRoom }) => {
 }
 
 export const ReadingRoomRequestModal = props => {
-  const [aeonReadingRooms, setAeonReadingRooms] = useState();
+  const [aeonReadingRooms, setAeonReadingRooms] = useState([]);
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_REQUEST_BROKER_BASEURL}/reading-rooms`).then(response => {
