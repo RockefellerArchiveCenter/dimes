@@ -304,7 +304,6 @@ const ReadingRoomDateInput = ({ readingRoom }) => {
         component={DateInput}
         // TODO: this handleChange alters the UI, but not the form submission ?!
         handleChange={date => setFieldValue('scheduledDate', date)}
-        helpText='Our reading rooms are open Monday - Friday from 9:00am to 4:45pm. We will confirm this appointment request with you before you arrive.'
         id='scheduledDate'
         label='Requested Visit Date'
         type='date'
@@ -386,7 +385,7 @@ export const ReadingRoomRequestModal = props => {
             <ReadingRoomDateInput
               readingRoom={aeonReadingRooms.find(room => room.sites[0] === values.site)} />
             <FormGroup
-              label='Message for Pitt staff'
+              label='Message for RAC staff'
               helpText='255 characters maximum'
               name='questions'
               maxLength={255}
@@ -404,7 +403,6 @@ export const ReadingRoomRequestModal = props => {
                 className='modal-form__error' />
             </div>
             <FormButtons
-              helpText='You may be requested to create a researcher registration account with us.'
               submitText={`Request ${props.submitList.length ? (props.submitList.length) : '0'} ${props.submitList.length !== 1 ? 'Items' : 'Item'}`}
               toggleModal={props.toggleModal}
               isSubmitting={isSubmitting} />
