@@ -10,8 +10,6 @@
 
 # production
 /build
-*.production
-*.prod
 
 # BackstopJS
 backstop_data/html_report/
@@ -27,10 +25,3 @@ bitmaps_test/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-### Configs ###
-*.conf
-
-### Environments ###
-*.env
-env/*
