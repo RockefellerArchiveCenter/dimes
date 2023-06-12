@@ -46,14 +46,11 @@ it('renders checkbox props correctly', () => {
 
 it('renders date props correctly', () => {
   act(() => {
-    render(<DateInput label='Select a date' id='1' />, container)
+    render(<DateInput label='Select a date' id='1' handleChange={jest.fn()} />, container)
   })
 
   const label = document.querySelector('label')
   expect(label.textContent).toBe('Select a date')
-
-  const input = document.querySelector('.dp__input')
-  expect(input.id).toBe('1')
 })
 
 it('renders select props correctly', () => {

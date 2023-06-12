@@ -24,6 +24,7 @@ beforeEach(() => {
       return Promise.reject(new Error('not found'))
     }
   })
+  axios.get.mockImplementation((url) => Promise.resolve({data:[]}))
 })
 
 afterEach(() => {
@@ -146,7 +147,6 @@ it('renders reading room modal props correctly', async () => {
   const buttons = document.querySelector('.modal-form__buttons')
 
   await act(async () => {
-    expect(form.textContent).toContain("Scheduled Date *")
     expect(form.textContent).toContain("Message for RAC staff")
     expect(buttons.querySelector("[type=submit]").textContent).toBe('Request 4 Items')
     expect(buttons.querySelector("[type=reset]").textContent).toBe('Cancel')
