@@ -19,6 +19,7 @@
     "react": "^16.13.1",
     "react-accessible-dropdown-menu-hook": "^3.2.0",
     "react-aria-live": "^2.0.5",
+    "react-datepicker": "^4.13.0",
     "react-dom": "^16.13.1",
     "react-google-recaptcha": "^2.1.0",
     "react-helmet": "^6.1.0",
