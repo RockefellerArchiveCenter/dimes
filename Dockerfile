@@ -4,6 +4,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json yarn.lock ./
 RUN yarn install --silent
 COPY . ./
+RUN yarn run compile
 RUN yarn run build
 
 FROM nginx:1.17.4-alpine

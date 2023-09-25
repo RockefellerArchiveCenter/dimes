@@ -3,30 +3,25 @@
 .saved-items__item-group,
 .saved-items__loading,
 .saved-items__empty {
-  @include grid-column(12);
-  border-top: 1px dotted $faded-navy;
+  display: inline-block;
+  border-top: 1px dotted $regal-blue;
   font-family: $sans-serif-stack;
+  padding-right: 15px;
+  width: 98%;
+
+  @include lg-up {
+    padding-right: 0px;
+  }
 }
 
 .saved-items__empty {
   font-family: $sans-serif-stack;
-  padding: 20px 0px;
-  margin-top: 20px
 }
 
 .item-group__title {
+  color: $night-grey;
   font-size: 20px;
-  color: $dark-gray;
   border-bottom: none;
-  margin-top: 24px;
-  margin-bottom: 30px;
-  padding: 0;
-}
-
-.saved-item {
-  @include grid-column(12);
-  margin-bottom: 40px;
-  float: left;
 }
 
 .saved-item__row {
@@ -43,6 +38,7 @@
   flex-shrink: 0;
   flex-wrap: nowrap;
   align-items: flex-start;
+  gap: 10px;
   width: 100%;
   @include lg-up {
     width: unset;
@@ -51,23 +47,25 @@
 
 .saved-item__item-description {
   min-width: 0;
-  padding-right: 20px;
-}
-
-.saved-item__title {
-  margin: 0 0 5px 0;
-  font-size: 20px;
-  & a {
-    color: inherit;
-    text-decoration: underline;
-  }
 }
 
 @mixin saved-item-text {
-  font-family: $sans-serif-stack;
   font-size: 14px;
-  color: $dark-gray;
-  line-height: 16px;
+  & a {
+    color: $night-grey;
+    &:hover,
+    &:focus {
+      color: $crusta-orange;
+    }
+  }
+}
+
+.saved-item__title {
+  @include saved-item-text;
+  font-size: 20px;
+  & a {
+    color: $regal-blue;
+  }
 }
 
 .saved-item__date {
@@ -80,12 +78,6 @@
 
 .saved-item__found-in {
   @include saved-item-text;
-  & a {
-    @include saved-item-text;
-    color: $dark-gray;
-    font-weight: $font-weight-normal;
-    text-decoration: underline;
-  }
 }
 
 .saved-item__last-requested {

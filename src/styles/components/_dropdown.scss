@@ -1,96 +1,12 @@
 @import "../styles";
 @import "./buttons";
 
-.dropdown {
-  display: block;
-  position: relative;
-}
-
-.dropdown__list {
-  position: absolute;
-  right: 0;
-  list-style: none;
-  margin-top: 5px;
-  border-radius: 3px;
-  padding: 20px 0px;
-  width: 270px;
-  transition: $transition-default;
-  z-index: -999;
-  &.open {
-    opacity: 1;
-    z-index: 1000;
-  }
-  &.closed {
-    opacity: 0;
-  }
-}
-
-.dropdown__list--slide-left {
-  &.open {
-    transform: translateX(0px);
-  }
-  &.closed {
-    transform: translateX(270px);
-  }
-}
-
-.dropdown__list--slide-down {
-  &.open {
-    transform: translateY(0px);
-  }
-  &.closed {
-    transform: translateY(-5px);
-  }
-}
-
-.dropdown__list--orange {
-  background-color: $burnt-orange;
-  color: $pure-white;
-}
-
 .mylist__actions {
-  margin-top: 40px;
-  margin-bottom: 30px;
   display: block;
   float: right;
-  @include lg-up {
-    display: none;
-  }
 }
 
-.nav-mobile__btn {
-  margin: 5px;
-  padding: 15px;
-  background-color: $deep-navy;
-  color: $pure-white;
-  border: none;
-  border-radius: 0;
-  &:hover {
-    background-color: $deep-blue;
-    transition: $transition-default;
-  }
-  & .material-icons {
-    font-size: 20px;
-    line-height: 20px;
-  }
-}
-
-.dropdown__list--mobile {
-  @extend .dropdown__list;
-  width: 240px;
-  position: fixed;
+.mylist__actions--dropdown {
+  position: absolute;
   right: 0;
-  top: 50px;
-  height: 100%;
-  margin-top: 10px;
-  border-radius: 0;
-}
-
-.dropdown__list--navy {
-  background: $deep-navy;
-}
-
-.btn--mobile-dropdown  {
-  @extend .btn--dropdown;
-  padding: 12px 24px;
 }

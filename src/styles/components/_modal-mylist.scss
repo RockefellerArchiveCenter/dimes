@@ -1,8 +1,10 @@
+.modal-loading__text {
+  font-size: 28px;
+}
+
 .modal-list {
   width: 100%;
   float: left;
-  padding: 30px 20px;
-  box-sizing: border-box;
   @include lg-up {
     width: 66%
   }
@@ -12,20 +14,13 @@
   float: left;
   width: 100%;
   min-height: 100%;
-  background-color: $off-white;
-  border-top: 1px solid $neutral-sand;
-  padding: 30px 20px;
-  box-sizing: border-box;
+  background-color: $desert-grey;
+  border-top: 1px solid $wan-white-grey;
   font-size: 14px;
-  padding-bottom: 18px;
   @include lg-up {
     width: 34%;
     float: right;
   }
-}
-
-.modal-form__intro {
-  margin-bottom: 20px;
 }
 
 .form-group {
@@ -39,16 +34,15 @@
 
 .modal-form input, .modal-form textarea, .modal-form .select__modal__control {
   width: 100%;
-  border: 1px solid $dark-gray;
+  border: 1px solid $night-grey;
   padding: 10px;
-  box-sizing: border-box;
   &[type=checkbox] {
     width: unset;
     float: left;
   }
 }
 
-.select__modal__control .material-icons {
+.select__modal__control .material-icon {
   font-size: 20px;
   top: 25px;
   right: 10px;
@@ -59,20 +53,13 @@
   top: 16px !important;
 }
 
-.select__modal__option {
-  padding: 5px 10px;
-}
-
 .modal-form label {
   font-weight: $font-weight-bold;
   margin-bottom: 5px;
-  &[for=costs] {
-    float: none;
-    & a {
-      font-family: $sans-serif-stack;
-      font-size: 14px;
-    }
-  }
+}
+
+.select__modal__option {
+  padding: 5px 10px;
 }
 
 // font-weight for checkboxes
@@ -80,34 +67,16 @@
   font-weight: $font-weight-normal;
 }
 
-.modal-form .help-text {
-  margin-bottom: 0;
-}
-
 .modal-form .is-invalid {
-    border: 1px solid $burnt-orange;
+    border: 1px solid $flame-orange;
 }
 
 .modal-form__buttons {
   float: left;
-  margin: 10px 0;
   width: 100%;
   & > .btn {
-    margin-top: 10px;
+    margin: 10px 10px 0 0;
   }
-}
-
-.modal-form__error {
-  border-radius: 3px;
-  border: 1px solid $burnt-orange;
-  font-family: $sans-serif-stack;
-  font-size: 13px;
-  font-style: italic;
-  display: block;
-  background: $light-orange;
-  color: $dark-gray;
-  margin: 10px 0px;
-  padding: 10px;
 }
 
 .selected-totals {
@@ -115,5 +84,4 @@
   float: right;
   text-align: right;
   font-weight: $font-weight-bold;
-  margin-top: 10px;
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 import { render, unmountComponentAtNode } from 'react-dom'
+import { I18nApp } from '../../i18n'
 import {
   AgentAttributeSkeleton,
   DetailSkeleton,
   FoundInItemSkeleton,
   MinimapSkeleton,
   RecordsChildSkeleton,
-  RestrictionsSkeleton,
   SearchSkeleton,
   MyListSkeleton
 } from '..'
@@ -24,33 +24,29 @@ afterEach(() => {
 })
 
 it('renders without crashing', () => {
-  render(<SearchSkeleton />, container)
+  render(<I18nApp ReactComponent={<SearchSkeleton />} />, container)
 })
 
 it('renders without crashing', () => {
-  render(<MyListSkeleton />, container)
+  render(<I18nApp ReactComponent={<MyListSkeleton />} />, container)
 })
 
 it('renders without crashing', () => {
-  render(<AgentAttributeSkeleton />, container)
+  render(<I18nApp ReactComponent={<AgentAttributeSkeleton />} />, container)
 })
 
 it('renders without crashing', () => {
-  render(<DetailSkeleton />, container)
+  render(<I18nApp ReactComponent={<DetailSkeleton />} />, container)
 })
 
 it('renders without crashing', () => {
-  render(<FoundInItemSkeleton />, container)
+  render(<I18nApp ReactComponent={<FoundInItemSkeleton />} />, container)
 })
 
 it('renders without crashing', () => {
-  render(<RecordsChildSkeleton />, container)
+  render(<I18nApp ReactComponent={<RecordsChildSkeleton />} />, container)
 })
 
 it('renders without crashing', () => {
-  render(<RestrictionsSkeleton />, container)
-})
-
-it('renders without crashing', () => {
-  render(<MinimapSkeleton totalBoxes={184} />, container)
+  render(<I18nApp ReactComponent={<MinimapSkeleton totalBoxes={184} />} />, container)
 })

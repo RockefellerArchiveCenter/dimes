@@ -1,321 +1,83 @@
 @import "../styles";
 
-@mixin button-text {
-  font-family: $sans-serif-stack;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  vertical-align: middle;
-  &:hover, &:focus {
-    text-decoration: none;
-  }
-}
-
-@mixin icon-margin-right { // adds margin to align icon to the left of button the label
-  margin: 0px 3px 3px 0px;
-}
-
-@mixin icon-margin-left { // adds margin to align icon to the right of the button label
-  margin: 0px 0px 3px 3px;
-}
-
-.btn {
-  @include button-text;
-  border-radius: 3px;
-  display: inline-block;
-  cursor: pointer;
-  &:disabled {
-    cursor: unset;
-  }
-}
-
-.btn--block {
-  display: flex;
-}
-
-.btn--sm {
-  font-size: 10px;
-  font-weight: $font-weight-bold;
-  line-height: 16px;
-  padding: 8px 10px;
-  margin-right: 10px;
-  transition: $transition-default;
-  & .material-icons {
-    @include icon-margin-right;
-    font-size: 16px;
-  }
-}
-
-.btn--md  {
-  font-size: 12px;
-  line-height: 15px;
-  padding: 13px 14px;
-  & .material-icons {
-    @include icon-margin-right;
-    font-size: 20px;
-  }
-}
-
-.btn--lg {
-  font-weight: $font-weight-bold;
-  font-size: 14px;
-  line-height: 18px;
-  padding: 18px;
-  margin-bottom: 12px;
-  & .material-icons {
-    font-size: 20px;
-  }
-}
-
-.btn--blue {
-  background: $deep-blue;
-  color: $pure-white;
-  border: 1px solid $deep-blue;
-  &:hover, &:focus {
-    background: darken($deep-blue, 10%);
-    border: 1px solid $dark-blue;
-    color: $pure-white; //for links styled as buttons
-  }
-}
-
-.btn--light-blue {
-  background: $pale-blue;
-  color: $deep-navy;
-  border: 1px solid $deep-navy;
-  &:hover, &:focus {
-    background: darken($light-blue, 2%);
-    border: 1px solid $light-gray;
-    color: $deep-navy;
-  }
-}
-
-.btn--navy {
-  background: $deep-navy;
-  color: $pure-white;
-  border: 1px solid $deep-navy;
-  &:hover, &:focus {
-    background: darken($deep-blue, 10%);
-    border: 1px solid $deep-blue;
-    color: $off-white;
-  }
-}
-
-.btn--orange {
-  background: $burnt-orange;
-  color: $pure-white;
-  border: 1px solid $burnt-orange;
-  &:hover {
-    background: darken($burnt-orange, 10%);
-    border: 1px solid $med-brown;
-    color: $off-white;
-  }
-  &:focus {
-    color: $off-white;
-  }
-  &:disabled {
-    background: $burnt-orange;
-    color: $pure-white;
-    opacity: .7;
-  }
-}
-
-.btn--transparent {
-  background: transparent;
-  border: 1px solid $light-med-gray;
-  color: $med-gray;
-}
-
-.btn--gray {
-  background: $off-white;
-  color: $med-gray;
-  border: 1px solid $light-med-gray;
-  &:hover, &:focus {
-    background: darken($off-white, 5%);
-    color: $med-gray;
-  }
-}
-
 .btn--dark-gray {
-  background: $light-med-gray;
-  color: $pure-white;
-  border: 1px solid $light-med-gray;
+  background: $dark-grey;
+  color: $white;
+  border: 1px solid $dark-grey;
   &:hover {
-    background: darken($light-med-gray, 5%);
-    color: $pure-white;
-  }
-}
-
-.btn--black {
-  background: $pure-black;
-  color: $pure-white;
-  border: 1px solid $pure-white;
-  &:hover, &:focus {
-    color: $light-med-gray;
-  }
-  &:focus {
-    outline: solid 1px $light-med-gray;
-  }
-}
-
-.btn--back {
-  @extend .btn--gray;
-  @extend .btn--sm;
-  margin-bottom: 0;
-}
-
-.btn--back-item {
-  @extend .btn--black;
-  @extend .btn--sm;
-  margin-top: 10px;
-  &:hover, &:focus {
-    color: $light-med-gray;
-  }
-  &:focus {
-    outline: solid 1px $light-med-gray;
+    background: darken($dark-grey, 5%);
+    color: $white;
   }
 }
 
 .btn--new-search {
-  @extend .btn--back;
-  @extend .btn--sm;
-  margin-top:20px;
   position: absolute;
-  margin-left: $gutters-default;
 }
 
-.btn--search {
-  @extend .btn--orange;
-  border-radius: 0px;
-  padding: 18px 20px;
-  margin-left: -1px;
-  border: 1px solid $med-brown;
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 1px $pure-white inset;
-    background: $med-brown;
-    border: 1px solid $med-brown;
-  }
+.search__submit-btn {
+  height: 62px;
   @include md-up {
-    min-width: 150px;
-  }
-}
-
-.btn--search-results {
-  @extend .btn--search;
-  padding: 10px 12px;
-  height: 46px;
-  min-width: unset;
-}
-
-.btn--search-more {
-  @extend .btn--orange;
-  @extend .btn--sm;
-  margin-top: 15px;
-  margin-bottom: 40px;
-}
-
-.btn--dropdown {
-  display: flex;
-  border-radius: 0;
-  font-size: 12px;
-  line-height: 21px;
-  padding: 10px 14px;
-  margin: 0;
-  & .material-icons {
-    font-size: 21px;
-    margin-right: 15px;
+    .material-icon {
+      font-size: 24px;
+    }
   }
 }
 
 .btn--filter {
-  @extend .btn--light-blue;
   padding: 12px 16px;
   font-size: 14px;
   text-transform: none;
   letter-spacing: unset;
-  margin-right: 16px;
-  & .material-icons {
-    @include icon-margin-right;
+  & .material-icon {
     font-size: 18px;
   }
 }
 
 @mixin records-btn {
-  @extend .btn--sm;
-  padding: 8px;
   z-index: 998;
-  &:hover, &:focus {
-    color: $pure-white;
-  }
-  & .material-icons {
-    @include icon-margin-left;
-  }
   &.saved {
     @extend .btn--dark-gray;
   }
 }
 
-.btn-add--content {
+@mixin btn--content {
   @include records-btn;
-  @extend .btn--orange;
   @include md-up {
     position: relative;
   }
 }
 
+.btn-add--content {
+  @include btn--content;
+}
+
 .btn-launch--content {
-  @include records-btn;
-  @extend .btn--blue;
-  margin-right: 10px;
+  @include btn--content;
 }
 
 @mixin records-detail-btn {
   @include records-btn;
-  @extend .btn--orange;
   width: 100%;
-  font-size: 10px;
-  margin-bottom: 10px;
   text-align: center;
   @include md-up {
     width: unset;
   }
 }
 
-.btn-add--detail {
+.btn--detail {
   @include records-detail-btn;
-}
-
-.btn-launch--detail {
-  @include records-detail-btn;
-  @extend .btn--orange;
-  box-sizing: border-box;
+  text-align: center;
   @include md-up {
-    margin-right: 10px;
-  }
-}
-
-.btn-download--detail {
-  @include records-detail-btn;
-  @extend .btn--orange;
-  box-sizing: border-box;
-}
-
-.btn--scroll-focused {
-  & .material-icons {
-    @include icon-margin-left;
+    width: unset;
   }
 }
 
 .btn--minimap-info {
   float: right;
   border: none;
-  padding: 0px;
-  margin-right: 0px;
-  margin-top: 22px;
 }
 
 .btn--agent-identifier {
-  @extend .btn;
-  @extend .btn--md;
-  @extend .btn--gray;
+  font-weight: $font-weight-bold;
   width: 100%;
 }

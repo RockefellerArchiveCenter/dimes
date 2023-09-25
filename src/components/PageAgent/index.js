@@ -8,34 +8,43 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import PageNotFound from '../PageNotFound'
 import { AgentAttributeSkeleton, AgentRelatedCollectionsSkeleton } from '../LoadingSkeleton'
-import TileList from '../Tile'
+import CardList from '../Card'
 import AgentAttributeList from '../AgentAttribute'
 import '../Button/styles.scss'
 import { appendParams, firePageViewEvent } from '../Helpers'
 import './styles.scss'
+import { Trans, t, Select, select } from '@lingui/macro'
 
 const AgentNote = ({ source, text }) => (
   text ?
-  (<div className={'agent__note'}>
-    <h3 className='agent-note__label'>Description</h3>
+  (<div className={'agent__note mb-27'}>
+    <Trans comment='Agent note Description'>
+      <h3 className='agent-note__label m-0'>Description</h3>
+    </Trans>
     <p className='agent-note__value'>
       {text}
     </p>
-    <p className='agent-note__source'>{ source ? `Source: ${source}` : `Source: Rockefeller Archive Center` }</p>
+      <p className='agent-note__source'>
+        <Trans comment='Agent Note source'>
+          <Select value={source} _null='Source: Rockefeller Archive Center' other={`Source: ${source}`} />
+        </Trans>
+      </p>
   </div>) : (null)
 )
 
 const AgentRelatedCollections = ({ agentTitle, collections, params }) => (
   collections.length ?
   (<div className='agent__related'>
-    <h2 className='agent__section-title'>Collections Related to {agentTitle}</h2>
-    <TileList
+      <h2 className='agent__section-title heading--dotted-border pb-12'>
+        <Trans comment='Agent Related Collections'>Collections Related to {agentTitle}</Trans>
+      </h2>
+    <CardList
+      className='card--related-collections'
       hideHitCount
       items={collections}
-      params={{...params, query: agentTitle}}
-      tileClassName='tile--related-collections'/>
+      params={{...params, query: agentTitle}}/>
     { collections.length === 6 ?
-      (<a href={`/search?query=${agentTitle}&category=collection`} className='btn btn--search-more'>Search More Related Collections</a>) :
+      (<a href={`/search?query=${agentTitle}&category=collection`} className='btn btn--sm btn--orange mt-15 mb-40'><Trans comment='Message to search for more related collections'>Search More Related Collections</Trans></a>) :
       (null)
     }
   </div>) : (null)
@@ -44,13 +53,15 @@ const AgentRelatedCollections = ({ agentTitle, collections, params }) => (
 const AgentSidebar = ({ agentType, externalIdentifiers }) => {
   const linkList = externalIdentifiers.map(i =>  (
     <li key={i.url}>
-      <a className='btn--agent-identifier' href={i.url}>{i.title}</a>
+      <a className='btn btn--md btn--gray btn--agent-identifier mb-10' href={i.url}>{i.title}</a>
     </li>))
   return (
   externalIdentifiers.length ?
   (<div className='agent__sidebar'>
-    <h2 className='agent__section-title'>More about this {agentType}</h2>
-    <ul className='unstyled'>{linkList}</ul>
+    <Trans comment='Agent Sidebar Header'>
+      <h2 className='agent__section-title heading--dotted-border pb-12'>More about this {agentType}</h2>
+    </Trans>
+    <ul className='list--unstyled'>{linkList}</ul>
   </div>) : (null)
 )}
 
@@ -121,8 +132,14 @@ const PageAgent = () => {
     const agentType = agent.agent_type
     var updatedAttributes = {}
     agent.dates && agent.dates.forEach(date => {
-      const beginLabel = agentType === 'organization' ? 'Date Established' : 'Date of Birth'
-      const endLabel = agentType === 'organization' ? 'Date Disbanded' : 'Date of Death'
+      const beginLabel = t({
+        comment: 'Label for the start of the item',
+        message: select(agentType, { organization: 'Date Established', other: 'Date of Birth' })
+      })
+      const endLabel = t({
+        comment: 'Label for the end of the item',
+        message: select(agentType, { organization: 'Date Disbanded', other: 'Date of Death' })
+      })
       updatedAttributes[beginLabel] = date.begin
       updatedAttributes[endLabel] = date.end
     })
@@ -153,9 +170,9 @@ const PageAgent = () => {
   useEffect(() => {
     if (!!Object.keys(wikidata).length) {
       const desiredIdentifiers = [
-        { property: 'P214', title: 'Virtual International Authority File', prefix: 'https://viaf.org/viaf'} ,
-        { property: 'P7859', title: 'WorldCat Identities', prefix: 'https://www.worldcat.org/identities' },
-        { property: 'P3430', title: 'Social Networks and Archival Context', prefix: 'https://snaccooperative.org/ark:/99166' }]
+        { property: 'P214', title: t({ comment: 'External Identifier Title', message: 'Virtual International Authority File' }), prefix: 'https://viaf.org/viaf'} ,
+        { property: 'P7859', title: t({ comment: 'External Identifier Title', message: 'WorldCat Identities' }), prefix: 'https://www.worldcat.org/identities' },
+        { property: 'P3430', title: t({ comment: 'External Identifier Title', message: 'Social Networks and Archival Context'}), prefix: 'https://snaccooperative.org/ark:/99166' }]
       const availableIdentifiers = desiredIdentifiers.filter(c => Object.keys(wikidata.claims).includes(c.property))
       const parsedIdentifiers = availableIdentifiers.map(c => {
         const identifierValue = wikidata.claims[c.property][0].mainsnak.datavalue.value
@@ -171,12 +188,12 @@ const PageAgent = () => {
   useEffect(() => {
     const fetchAttributes = async () => {
       const desiredProperties = [
-        { property: 'P106', label: 'Occupations' },
-        { property: 'P39', label: 'Positions Held' },
-        { property: 'P19', label: 'Place of Birth' },
-        { property: 'P112', label: 'Founded by' },
-        { property: 'P159', label: 'Location of Headquarters' },
-        { property: 'P1449', label: 'Nicknames' }
+        { property: 'P106', label: t({ comment: 'Occupations property', message: 'Occupations' }) },
+        { property: 'P39', label: t({ comment: 'Positions held property', message: 'Positions Held' }) },
+        { property: 'P19', label: t({ comment: 'Place of birth property', message: 'Place of Birth' }) },
+        { property: 'P112', label: t({ comment: 'Founded by property', message: 'Founded by' }) },
+        { property: 'P159', label: t({ comment: 'Location property', message: 'Location of Headquarters' }) },
+        { property: 'P1449', label: t({ comment: 'Nicknames property', message: 'Nicknames' }) }
       ]
       const availableProperties = desiredProperties.filter(p => Object.keys(wikidata.claims).includes(p.property))
 
@@ -197,7 +214,7 @@ const PageAgent = () => {
               }
             })
           ).then(v => {
-            const valuesList = v.filter(e => e != null).join(', ')
+            const valuesList = [...new Set(v)].filter(e => e != null).join(', ')
             setAttributes(a => { return { ...a, [p.label]: valuesList }})
           })
         })
@@ -209,6 +226,11 @@ const PageAgent = () => {
       fetchAttributes()
     }
   }, [wikidata])
+
+   /** Constructs the URL for the 'Back to Search' button */
+   const searchUrl = (
+    params && params.query ? appendParams('/search/', params) : '/'
+  )
 
   if (!found) {
     return (<PageNotFound />)
@@ -224,21 +246,23 @@ const PageAgent = () => {
       </Helmet>
       <div className='container--full-width'>
         <div className='agent__wrapper'>
-          <nav className="agent__nav">
-            <a href={appendParams('/search', params)} className='btn btn--back'>
-              <span className='material-icons'>keyboard_arrow_left</span>Back to Search
+          <nav className="mt-30">
+            <a href={searchUrl} className='btn btn--sm btn--gray'>
+              <Trans comment='Back to search button'>
+                <span className='material-icon material-icon--space-after'>keyboard_arrow_left</span>Back to Search
+              </Trans>
             </a>
           </nav>
-          <main id='main' role='main'>
+          <main id='main' className="mt-60">
             <div className='agent__wrapper--description'>
               <div className='agent__main'>
-                <h1 className='agent__title'>{ agent.title || <Skeleton />}</h1>
-                  <div className='agent__description'>
+                <h1 className='agent__title mt-0 mb-30'>{ agent.title || <Skeleton />}</h1>
+                  <div>
                     {isAttributesLoading ?
                       (<AgentAttributeSkeleton />) :
                       (<>
                         { !!Object.keys(attributes).length || narrativeDescription ?
-                          <h2 className='agent__section-title'>Summary</h2> :
+                          <Trans comment='summary message'><h2 className='agent__section-title heading--dotted-border pb-12'>Summary</h2></Trans> :
                           null
                         }
                         <AgentAttributeList items={attributes} />

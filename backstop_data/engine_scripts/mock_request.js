@@ -2,7 +2,7 @@ const fs = require('fs')
 
 function createFilepath(label, url, method) {
   const labelSanitize = label.replace(/\s/g, "_").toLowerCase()
-  const urlSanitize = url.replace("http://", "").replace("https://", "").replace(/\//g, "_")
+  const urlSanitize = url.replace("http://", "").replace("https://", "").replace(/\//g, "_").replace("?", "-").replace(":", "--")
   return `backstop_data/request_reference/${labelSanitize}__${urlSanitize}__${method.toLowerCase()}`
 }
 

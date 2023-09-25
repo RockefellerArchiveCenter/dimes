@@ -1,31 +1,41 @@
 @import "../styles";
 
+/**
+* Styles for search facets
+* 1. Makes "Apply Dates" button wrap on mobile
+* 2. Positions legend inside fieldset instead of on top border line.
+**/
+.modal__body--search fieldset {
+  flex-wrap: wrap; /* 1 */
+  position: relative; /* 2 */
+}
+
 .facet {
-  font-family: $sans-serif-stack;
-  font-size: 14px;
-  border-top: 1px solid $light-blue;
-  padding: 20px 40px 30px 40px;
+  border-top: 1px solid $water-blue;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.facet:first-child {
+  border: 0px;
+  flex-direction: row;
+}
+
+.facet legend {
+  position: absolute; /* 1 */
+  top: 20px;
 }
 
 .facet__title {
-  text-transform: uppercase;
   font-size: 12px;
-  font-weight: $font-weight-bold;
-  margin-top: 0;
 }
 
 .facet__items {
   overflow: hidden;
   transition: $transition-default;
-}
-
-.facet__input {
-  margin: 3px 0px;
-  float: left;
-  width: 100%;
-  & > label {
-    float: left;
-  }
+  display: flex;
+  flex-direction: column;
 }
 
 .facet input[type=number] {
@@ -34,20 +44,17 @@
   float: left;
   margin-right: 13px;
   border-radius: 3px;
-  border: 1px solid $dark-gray;
-  box-sizing: border-box;
+  border: 1px solid $night-grey;
 }
 
 .facet__show-hide {
   font-family: $sans-serif-stack;
   font-size: 12px;
-  font-weight: $font-weight-normal;
-  color: $deep-navy;
+  color: $regal-blue;
   text-decoration: underline;
   appearance: none;
   border: none;
   background: none;
   letter-spacing: normal;
   text-transform: none;
-  padding-left: 0;
 }

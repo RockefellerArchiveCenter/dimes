@@ -10,6 +10,7 @@ import { object } from '../../../__fixtures__/object'
 import { ancestors } from '../../../__fixtures__/ancestors'
 import { childrenCollections } from '../../../__fixtures__/children'
 import { minimap } from '../../../__fixtures__/minimap'
+import { I18nApp } from '../../i18n'
 
 let container = null
 beforeEach(() => {
@@ -44,6 +45,7 @@ it('renders props correctly', async () => {
 
   await act(async () => {
     await render(
+    <I18nApp ReactComponent={
       <LiveAnnouncer>
         <MemoryRouter initialEntries={['/objects/oVDNM8UtE3ox9fiESd99Wy']}>
           <Routes>
@@ -51,7 +53,8 @@ it('renders props correctly', async () => {
               <PageRecords myListCount={1} toggleInList={jest.fn()} />} />
           </Routes>
         </MemoryRouter>
-      </LiveAnnouncer>, container)
+      </LiveAnnouncer>}
+      />, container)
   })
 
   const title = await document.querySelector('h1')

@@ -1,20 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { CheckBoxInput } from '../Inputs'
-import { RestrictionsSkeleton } from '../LoadingSkeleton'
+import { Trans } from '@lingui/macro'
 import './styles.scss'
 
 const ModalSavedItemsRestrictions = ({submit, submitReason}) => (
-  typeof submit === 'undefined' ?
-    (<RestrictionsSkeleton />) :
-    (submitReason ? (<div className='modal-form__error'>{submitReason}</div>) : (null))
+  submitReason ? (<div className='input__error'>{submitReason}</div>) : (null)
 )
 
 const ModalSavedItem = props => {
   const { ignoreRestrictions, handleChange, isChecked, submitReason, title, submit, uri } = props
 
   return (
-    <li className='modal-saved-item'>
+    <li className='modal-saved-item mb-22'>
       <CheckBoxInput
         className='checkbox--orange'
         id={uri}
@@ -49,9 +47,9 @@ const ModalSavedItemGroup = props => {
       {...item} />
   )
   return (
-    <div className='modal-saved-items__item-group'>
-      <h3 className='modal-item-group__title'>{props.title}</h3>
-      <ul className='modal-item-group__items'>
+    <div className='modal-saved-items__item-group ml-15'>
+      <h3 className='modal-item-group__title my-22 mx-0'>{props.title}</h3>
+      <ul className='modal-item-group__items list--unstyled my-15 mx-0'>
         {listItems}
       </ul>
     </div>
@@ -74,7 +72,7 @@ export const ModalSavedItemList = props => {
         groupUri={item.uri}
         ignoreRestrictions={props.ignoreRestrictions}
         handleChange={props.handleChange} />
-    )) : (<p className='saved-items__empty'>No saved items.</p>)
+    )) : (<p className='saved-items__empty mt-20 py-20 px-0'><Trans>No saved items.</Trans></p>)
   }
   return (
     <div className='modal-saved-items'>

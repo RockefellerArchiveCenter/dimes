@@ -27,6 +27,10 @@ The repository includes [BackstopJS](https://github.com/garris/BackstopJS) to te
 
 To add or update reference images, edit the scenarios in `backstop.json` and run `yarn backstop-reference`.
 
+### Translation Development
+
+The repository includes [linguijs](https://lingui.dev/) which is an [Open-source](https://github.com/lingui/js-lingui) Internationalization Framework.  This allows you to do translation work on the UI.
+
 ## License
 
 This code is released under an [MIT License](LICENSE).

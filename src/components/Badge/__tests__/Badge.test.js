@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { act } from 'react-dom/test-utils'
+import { I18nApp } from '../../i18n'
 import { Badge } from '..'
 
 it('renders without errors', () => {
@@ -8,6 +9,6 @@ it('renders without errors', () => {
   document.body.appendChild(div)
 
   act(() => {
-    render(<Badge text={"foobar"} />, div)
+    render(<I18nApp ReactComponent={<Badge text={"foobar"} />} />, div)
   })
 })

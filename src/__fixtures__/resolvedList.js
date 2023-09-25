@@ -27,6 +27,7 @@ export const resolvedList = [{
     }],
     "parent": "A-B",
     "parent_ref": "/collections/RqT6DNkTTTM2kaFxtsGKbA",
+    "submit": true,
     "online": false,
     "archivesspace_uri": "/repositories/2/archival_objects/1053534"
   }, {
@@ -56,70 +57,8 @@ export const resolvedList = [{
     }],
     "parent": "A-B",
     "parent_ref": "/collections/RqT6DNkTTTM2kaFxtsGKbA",
+    "submit": true,
     "online": false,
     "archivesspace_uri": "/repositories/2/archival_objects/1053535"
-  }]
-}, {
-  "title": "Rockefeller Foundation records",
-  "items": [{
-    "title": "Alcoholism",
-    "uri": "/objects/3htvHFf2iEoEPdDUyeofYG",
-    "dates": [{
-      "expression": "1913-1916",
-      "end": "1916",
-      "label": "creation",
-      "source": "archivesspace",
-      "type": "inclusive",
-      "begin": "1913"
-    }],
-    "extents": [{
-      "type": "folder",
-      "value": "1"
-    }],
-    "notes": [],
-    "parent": "International - General (No Program)",
-    "parent_ref": "/collections/ChqRRrDVPGqYiDftR4WszC",
-    "online": false,
-    "archivesspace_uri": "/repositories/2/archival_objects/1120778"
-  }, {
-    "title": "Animals (Experimental Laboratory)",
-    "uri": "/objects/FibGteDpazyy3DYyw2iZ5B",
-    "dates": [{
-      "expression": "1937-1942",
-      "end": "1942",
-      "label": "creation",
-      "source": "archivesspace",
-      "type": "inclusive",
-      "begin": "1937"
-    }],
-    "extents": [{
-      "type": "folder",
-      "value": "7"
-    }],
-    "notes": [],
-    "parent": "International - General (No Program)",
-    "parent_ref": "/collections/ChqRRrDVPGqYiDftR4WszC",
-    "online": false,
-    "archivesspace_uri": "/repositories/2/archival_objects/1120779"
-  }, {
-    "title": "Animals (Mongoose)",
-    "uri": "/objects/D4CrEjfyTwgssyxR8QF4tc",
-    "dates": [{
-      "expression": "1939",
-      "end": "1939",
-      "label": "creation",
-      "source": "archivesspace",
-      "type": "inclusive",
-      "begin": "1939"
-    }],
-    "extents": [{
-      "type": "folder",
-      "value": "1"
-    }],
-    "notes": [],
-    "parent": "International - General (No Program)",
-    "parent_ref": "/collections/ChqRRrDVPGqYiDftR4WszC",
-    "online": false,
-    "archivesspace_uri": "/repositories/2/archival_objects/1120786"
   }]
 }]

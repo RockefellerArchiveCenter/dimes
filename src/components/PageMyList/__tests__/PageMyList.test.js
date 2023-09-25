@@ -5,7 +5,8 @@ import { act } from 'react-dom/test-utils'
 import PageMyList from '..'
 
 import { resolvedList } from '../../../__fixtures__/resolvedList'
-import { parsedItem } from '../../../__fixtures__/parsedItem'
+import { parsedBatch } from '../../../__fixtures__/parsedBatch'
+import { I18nApp } from '../../i18n'
 
 let container = null
 beforeEach(() => {
@@ -26,8 +27,8 @@ it('renders props correctly', async () => {
   axios.post.mockImplementation((url) => {
     if (url.includes('mylist')) {
       return Promise.resolve({ data: resolvedList })
-    } else if (url.includes('process-request/parse')) {
-      return Promise.resolve({ data: parsedItem })
+    } else if (url.includes('process-request/parse-batch')) {
+      return Promise.resolve({ data: parsedBatch })
     } else {
       return Promise.reject(new Error('not found'))
     }
@@ -42,13 +43,13 @@ it('renders props correctly', async () => {
   })
 
   await act(async () => {
-    await render(<PageMyList
+    await render(<I18nApp ReactComponent={<PageMyList
       removeAllListItems={jest.fn()}
-      toggleInList={jest.fn()} />, container)
+      toggleInList={jest.fn()} />} />, container)
   })
 
   const list = await document.querySelector('.saved-items')
 
-  expect(list.children.length).toBe(2)
+  expect(list.children.length).toBe(1)
 
 })

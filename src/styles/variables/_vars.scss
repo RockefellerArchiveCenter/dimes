@@ -1,37 +1,35 @@
+// Colors by category
 
-// Colors
-$burnt-orange: #D8531E;
-$red-brown: #B63D0D; //tile label text
-$med-brown: #9E3C0F;
-$deep-brown: #662700; //NOT USED
+// Oranges
+$flame-orange: hsl(17deg 76% 48%);
+$crusta-orange: hsl(13deg 86% 60%);
+$sandy-orange: hsl(25deg 87% 64%);
+$peach-orange: hsl(30deg 100% 80%);
+$rose-violet: hsl(0deg 100% 95%);
 
-$red-orange: #F16943;
-$faded-orange: #F39452; //h4
-$peach-orange: #FFCC99; //text highlight
-$light-orange: #FFE5E5; //modal form error
+// Blues
+$regal-blue: hsl(214deg 49% 19%);
+$midnight-blue: hsl(214deg 72% 24%);
+$yale-blue: hsl(214deg 70% 35%);
+$water-blue: hsl(210deg 27% 82%);
+$solitude-blue: hsl(213deg 29% 94%);
 
-$deep-navy: #192E49;
-$faded-navy: rgba(25,45,73,0.5);
-$dark-blue: #113768; //button border
-$deep-blue: #1A5096;
-$light-blue: #C6D2DE;
-$pale-blue: #EBEFF4;
+// Browns
+$maroon-brown: hsl(23deg 100% 20%);
+$rust-red: hsl(19deg 83% 34%);
+$umber-brown: hsl(17deg 87% 38%);
 
-$light-gray: rgba(0,0,0,0.15); //box shadow
-$dark-gray: #2F2F2F;
-$med-gray: #5B5B5B;
-$light-med-gray: #A9A9A9; //button border
-$orange-gray: #BCBAB4; //tile border
-$blue-gray: rgba(117,133,154,0.3); //records content focus
-$neutral-sand: #E3E1DD;
-$lighter-gray: #EDEDEB;
-$off-white: #F6F6F4;
-$pure-white: #FFFFFF;
-$pure-black: #000000;
+// Greys
+$silver-grey: hsl(45deg 6% 72%);
+$wan-white-grey: hsl(40deg 10% 88%);
+$desert-grey: hsl(60deg 10% 96%);
 
-
-// Layout
-$content-width: 1440px;
+// Monochrome
+$black: hsl(0deg 0% 0%);
+$night-grey: hsl(0deg 0% 18%);
+$mortar-grey: hsl(0deg 0% 36%);
+$dark-grey: hsl(0deg 0% 66%);
+$white: hsl(0deg 0% 100%);
 
 $break-md: 580px;
 $break-lg: 1024px;
@@ -49,7 +47,3 @@ $font-weight-bold: 700;
 $font-weight-extra-bold: 800;
 $font-weight-heavy: 900;
 
-//Modals
-$modal-content-margin: 10%;
-$confirm-modal-content-margin: 10%;
-$confirm-modal-content-margin-lg: 30%;

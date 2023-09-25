@@ -4,8 +4,9 @@ import { render, unmountComponentAtNode } from 'react-dom'
 import { Route, Routes, MemoryRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils'
 import PageSearch from '..'
-
-import { tileItems } from '../../../__fixtures__/tileItems'
+import { I18nApp } from '../../i18n';
+import { t } from '@lingui/macro';
+import { cardItems } from '../../../__fixtures__/cardItems'
 import { facet } from '../../../__fixtures__/facet'
 import { titleSuggest } from '../../../__fixtures__/suggest'
 
@@ -31,7 +32,7 @@ it('renders props correctly', async () => {
     } else if (url.includes('suggest')) {
       return Promise.resolve({data: titleSuggest})
     } else if (url.includes('search')) {
-      return Promise.resolve({data: {count: tileItems.length, results: tileItems}})
+      return Promise.resolve({data: {count: cardItems.length, results: cardItems}})
     } else {
       return Promise.reject(new Error('not found'))
     }
@@ -39,15 +40,20 @@ it('renders props correctly', async () => {
 
   await act(async () => {
     await render(
-      <MemoryRouter initialEntries={['/search?query=banana']}>
-        <Routes>
-          <Route path='/search' element={<PageSearch />} />
-        </Routes>
-      </MemoryRouter>, container)
+      <I18nApp ReactComponent={
+        <MemoryRouter initialEntries={['/search?query=banana']}>
+          <Routes>
+            <Route path='/search' element={<PageSearch />} />
+          </Routes>
+        </MemoryRouter>
+      } />, container)
   })
 
   const title = await document.querySelector('h1')
 
-  expect(title.textContent).toBe('Search Results for “banana”')
+  expect(title.textContent).toBe(t({
+    comment: 'Search Results for Test',
+    message: 'Search Results for'
+  }) + ' “banana”')
 
 })

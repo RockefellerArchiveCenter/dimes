@@ -4,7 +4,6 @@ import DatePicker from 'react-datepicker'
 import {useSelect} from 'downshift'
 import MaterialIcon from '../MaterialIcon'
 import classnames from 'classnames'
-
 import './styles.scss'
 import 'react-datepicker/dist/react-datepicker.css'
 import 'react-datepicker/dist/react-datepicker-cssmodules.css'
@@ -113,7 +112,7 @@ export const SelectInput = props => {
         {selectedItem && selectedItem.label}
         <MaterialIcon icon={props.iconAfter ? props.iconAfter : 'unfold_more'} />
       </button>
-      <ul className={classnames('select__menu', `${props.className}__menu`, {'open': isOpen})} {...getMenuProps()}>
+      <ul className={classnames('select__menu', 'm-0', `${props.className}__menu`, {'open': isOpen})} {...getMenuProps()}>
         {isOpen &&
           props.options.map((option, index) => (
             <li className={classnames(

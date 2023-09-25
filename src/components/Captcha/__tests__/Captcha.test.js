@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { act } from 'react-dom/test-utils'
+import { I18nApp } from '../../i18n'
 import Captcha from '..'
 
 it('renders props correctly', () => {
@@ -9,12 +10,12 @@ it('renders props correctly', () => {
   const onChange = jest.fn()
 
   act(() => {
-    render(<Captcha
+    render(<I18nApp ReactComponent={<Captcha
       className='foo'
       form={{}}
-      handleCaptchaChange={onChange} />, div)
+      handleCaptchaChange={onChange} />} />, div)
   })
 
   const captcha = document.querySelector('[name=recaptcha]')
-  expect(captcha.className).toBe('captcha foo')
+  expect(captcha.className).toBe('captcha my-10 mx-0 foo')
 })

@@ -24,7 +24,7 @@
     {
       "label": "Homepage Digital Checkbox",
       "url": "http://host.docker.internal:3000/",
-      "clickSelector": "#main > div > div > form > div > div > div.input-group__search-controls > label",
+      "clickSelector": "#main > form > div > div > div.input-group__search-controls > label",
       "delay": 3000
     },
     {
@@ -109,7 +109,7 @@
     {
       "label": "Reading Room Request Modal",
       "url": "http://host.docker.internal:3000/list",
-      "clickSelector": "#main > div > div > aside > button:nth-child(2)",
+      "clickSelector": "aside > button:nth-child(2)",
       "onBeforeScript": "mock_request.js",
       "delay": 3000,
       "viewports": [
@@ -128,7 +128,7 @@
     {
       "label": "Duplication Request Modal",
       "url": "http://host.docker.internal:3000/list",
-      "clickSelector": "#main > div > div > aside > button:nth-child(2)",
+      "clickSelector": "aside > button:nth-child(3)",
       "onBeforeScript": "mock_request.js",
       "delay": 3000,
       "viewports": [
@@ -152,7 +152,7 @@
     {
       "label": "Search Facets",
       "url": "http://host.docker.internal:3000/search?category=&limit=40&query=banana",
-      "clickSelector": "#main > div > div > div.results > div.results__header > div.results__controls > button",
+      "clickSelector": "div.results__header > div.results__controls > button",
       "onBeforeScript": "mock_request.js",
       "delay": 5000
     },
@@ -171,16 +171,16 @@
       "label": "Collection",
       "url": "http://host.docker.internal:3000/collections/WY7fpswEV3oLhyjiArpHES?category=&limit=40&query=banana",
       "onBeforeScript": "mock_request.js",
-      "clickSelector": ".modal-header--minimap > button",
-      "delay": 5000
+      "clickSelector": ".modal__header--minimap > button",
+      "delay": 7000
     },
     {
       "label": "Object",
       "url": "http://host.docker.internal:3000/objects/3htvHFf2iEoEPdDUyeofYG?category=&limit=40&query=banana",
       "onBeforeScript": "mock_request.js",
       "clickSelectors": [
-        ".modal-header--minimap > button",
-        "#main > div > div > div.records__detail > button.btn.btn-add--detail"
+        ".modal__header--minimap > button",
+        ".records__detail > .btn--detail"
       ],
       "delay": 3000
     }

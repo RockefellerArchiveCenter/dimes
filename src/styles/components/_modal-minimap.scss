@@ -1,28 +1,4 @@
-.modal-content {
-  font-family: $sans-serif-stack;
-  position: absolute;
-  border: 1px solid $dark-gray;
-  background: rgb(255, 255, 255);
-  border-radius: 3px;
-  overflow: auto;
-  outline: none;
-}
-
-.modal-content--minimap {
-  @extend .modal-content;
-  top: 60px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  @include md-up {
-    top: 70px;
-    right: 0;
-    left: 50%;
-  }
-}
-
-.modal-content--minimap-info {
-  @extend .modal-content;
+.modal--minimap {
   top: 70px;
   right: 40px;
   left: 40px;
@@ -39,22 +15,22 @@
   }
 }
 
-.modal-header--minimap {
-  background-color: $pure-white;
-  margin: 14px;
+.modal__header--minimap {
+  background-color: $white;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.15;
 }
 
-.modal-header__title--minimap {
-  @extend .modal-header__title;
+.modal__header-title--minimap {
+  color: inherit;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 3px;
-  padding-left: 11px;
-  padding-top: 5px;
 }
 
-.modal-body--minimap {
-  padding: 24px;
+.modal__body--minimap {
   font-size: 13px;
   height: calc(100% - 23px);
+  line-height: 1.15;
 }

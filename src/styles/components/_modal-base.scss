@@ -1,16 +1,5 @@
 @import "../styles";
 
-.modal-overlay, .modal-overlay--facet, .modal-overlay--hits {
-  position: fixed;
-  top: 0px;
-  left: 0;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  transition: $transition-default;
-}
-
 .slide--right {
   transform: translateX(-400px);
 }
@@ -39,57 +28,8 @@
   transform: translateX(400px);
 }
 
-.modal-content {
-  font-family: $sans-serif-stack;
-  position: absolute;
-  top: $modal-content-margin;
-  left: $modal-content-margin;
-  right: $modal-content-margin;
-  bottom: $modal-content-margin;
-  border: 1px solid $dark-gray;
-  background: rgb(255, 255, 255);
-  border-radius: 3px;
-  overflow: auto;
-  outline: none;
-}
-
-.modal-header {
-  font-family: $sans-serif-stack;
-  color: $pure-white;
-  background-color: $dark-gray;
-  padding: 16px 20px 10px 20px;
-  float: left;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.modal-header__title {
-  color: inherit;
-  font-size: 20px;
-  float: left;
-  margin: 0;
-  padding: 0;
-  border-bottom: none;
-}
-
-.modal-header__button  {
-  color: inherit;
-  float: right;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.modal-body {
-  font-family: $sans-serif-stack;
-  float: left;
-  min-height: calc(80vh - 52px);
-  & a {
-    text-decoration: underline;
-  }
+.modal__body {
   @include lg-up {
-    width: 100%;
     display: flex;
-    align-items: stretch;
   }
 }

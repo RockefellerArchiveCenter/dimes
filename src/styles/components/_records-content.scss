@@ -1,12 +1,9 @@
 @import "../styles";
-@import "./material-icon";
 
 .records__content {
   font-family: $sans-serif-stack;
   width: 100%;
   float: left;
-  padding: 40px 30px;
-  box-sizing: border-box;
   @include lg-up {
     width: calc(63% - #{$minimap-width});
   }
@@ -16,7 +13,7 @@
 }
 
 .loading {
-  background: $dark-gray;
+  background: $night-grey;
   opacity: 0.8;
   top: 60px;
   bottom: 58px;
@@ -37,23 +34,21 @@
   }
 }
 
-.loading__text {
+.records-loading__text {
   font-size: 75px;
-  color: $pure-white;
+  color: $white;
 }
 
 .content__title {
   font-family: $sans-serif-stack;
   font-size: 24px;
-  color: $deep-navy;
-  border-bottom: 1px dotted $deep-navy;
-  margin-top: 0;
+  color: $regal-blue;
+  border-bottom: 1px dotted $regal-blue;
 }
 
 .collection__title {
   font-size: 21px;
-  color: $dark-gray;
-  margin-bottom: 0;
+  color: $night-grey;
 }
 
 .collection__text {
@@ -61,13 +56,14 @@
 }
 
 .child__list {
+  box-sizing: content-box;
   list-style: none;
   transition: $transition-default;
   padding-left: 20px;
   position: relative;
   &::before {
     content: "";
-    background: $orange-gray;
+    background: $silver-grey;
     width: 3px;
     height: 100%;
     position: absolute;
@@ -85,7 +81,7 @@
 }
 
 .child__list--bottom-level {
-  background-color: $pure-white;
+  background-color: $white;
   padding-left: 0px;
   &::before {
     content: none;
@@ -98,13 +94,13 @@
 }
 
 .child__list-accordion--bottom-level {
-  border: 3px solid $orange-gray;
+  border: 3px solid $silver-grey;
   margin-bottom: 15px;
   &:hover {
-    border-color: $red-orange;
+    border-color: $crusta-orange;
   }
   &:focus-within {
-    border-color: $deep-navy;
+    border-color: $regal-blue;
   }
 }
 
@@ -125,29 +121,30 @@
   position: relative;
   padding: 20px;
   &:focus-within, &.active {
-    border-color: $deep-navy;
+    border-color: $regal-blue;
   }
 }
 
 .child__list-item--object {
-  border-bottom: 1px solid $neutral-sand;
+  border-bottom: 1px solid $wan-white-grey;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   &:first-child {
-    border-top: 1px solid $neutral-sand;
+    border-top: 1px solid $wan-white-grey;
   }
   &:focus-within, &:hover, .active {
-    background: $blue-gray;
+    // background: $blue-gray;
+    background: desaturate(darken($solitude-blue, 7%),10%);
   }
 }
 
 .child__list-item--collection {
   margin-bottom: 12px;
-  border: 3px solid $orange-gray;
+  border: 3px solid $silver-grey;
   border-radius: 3px;
-  box-shadow: 0 0 4px $light-gray;
-  & .material-icons {
+  box-shadow: 0 0 5px $wan-white-grey;
+  & .material-icon {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -157,15 +154,15 @@
     content: "";
     width: 9px;
     height: 3px;
-    border-bottom: 3px solid $orange-gray;
+    border-bottom: 3px solid $silver-grey;
     position: absolute;
     top: 20px;
     left: -12px;
   }
   &:hover {
-    border-color: $red-orange;
-    & .material-icons {
-      color: $red-orange;
+    border-color: $crusta-orange;
+    & .material-icon {
+      color: $crusta-orange;
     }
   }
   &:hover.active {
@@ -178,12 +175,13 @@
 
 .child__list-item--collection.active {
   &::after {
-    @extend .material-icons;
-    content: "expand_less";
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    pointer-events: none;
+    .material-icon {
+      content: "expand_less";
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      pointer-events: none;
+    }
   }
 }
 
@@ -245,6 +243,7 @@
   appearance: none;
   border: none;
   background: none;
+  color: $black;
   text-align: left;
   font-weight: $font-weight-bold;
   cursor: pointer;
@@ -272,7 +271,9 @@
 }
 
 .child__text {
+  color: $night-grey;
   font-size: 14px;
+  font-weight: $font-weight-normal;
   order: 2;
   @include md-up {
     order: unset

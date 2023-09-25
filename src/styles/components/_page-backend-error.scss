@@ -6,28 +6,23 @@
   font-family: $serif-stack;
   text-align: center;
   min-height: 60vh;
-  margin-top: 60px;
   padding-bottom: 100px;
 }
 
-.backend-error__icon > .material-icons {
+.backend-error__icon > .material-icon {
   font-size: 100px;
-  color: $dark-gray;
+  color: $night-grey;
 }
 
 .backend-error__text {
   font-family: $sans-serif-stack;
   font-size: 20px;
-  & a {
-    text-decoration: underline;
-  }
 }
 
 .backend-error__header {
   font-family: $sans-serif-stack;
   font-size: 24px;
   font-weight: bold;
-  margin-top: 18px;
 }
 
 .backend-error__message {

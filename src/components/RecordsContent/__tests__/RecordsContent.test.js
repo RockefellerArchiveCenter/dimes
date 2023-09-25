@@ -5,6 +5,7 @@ import RecordsContent, { RecordsChild } from '..'
 
 import { collectionWithChildHits } from '../../../__fixtures__/collection'
 import { childrenCollections, childrenObjects } from '../../../__fixtures__/children'
+import { I18nApp } from '../../i18n'
 
 let container = null
 beforeEach(() => {
@@ -22,7 +23,7 @@ jest.mock('../../Hooks')
 
 it('renders props correctly', () => {
   act(() => {
-    render(<RecordsContent
+    render(<I18nApp ReactComponent={<RecordsContent
       children={childrenCollections}
       collection={collectionWithChildHits}
       isContentShown
@@ -30,7 +31,7 @@ it('renders props correctly', () => {
       params={{}}
       preExpanded={[]}
       setActiveRecords={jest.fn()}
-      toggleInList={jest.fn()} />, container)
+      toggleInList={jest.fn()} />} />, container)
   })
 
   const recordsContent = document.querySelector('.records__content')
@@ -40,17 +41,17 @@ it('renders props correctly', () => {
 it('renders with collection data', () => {
   const child = childrenCollections[Math.floor(Math.random() * childrenCollections.length)]
   act(() => {
-    render(<RecordsChild
+    render(<I18nApp ReactComponent={<RecordsChild
       isScrolled={true}
       item={child}
       myListCount={0}
-      params={{query: 'foo'}}
+      params={{ query: 'foo' }}
       preExpanded={[]}
       setActiveRecords={jest.fn()}
       setIsLoading={jest.fn()}
       setIsScrolled={jest.fn()}
       toggleInList={jest.fn()}
-            />, container)
+    />} />, container)
   })
 
   const item = document.querySelector('.child__list-item')
@@ -69,21 +70,21 @@ it('renders with collection data', () => {
 it('renders with object data', () => {
   const child = childrenObjects[Math.floor(Math.random() * childrenObjects.length)]
   act(() => {
-    render(<RecordsChild
+    render(<I18nApp ReactComponent={<RecordsChild
       isScrolled={true}
       item={child}
       myListCount={0}
-      params={{query: 'foo'}}
+      params={{ query: 'foo' }}
       preExpanded={[]}
       setActiveRecords={jest.fn()}
       setIsLoading={jest.fn()}
       setIsScrolled={jest.fn()}
       toggleInList={jest.fn()}
-            />, container)
+    />} />, container)
   })
 
   const item = document.querySelector('.child__list-item')
-  expect(document.querySelector('.btn-add--content')).toBeInTheDocument()
+  expect(document.querySelector('.btn-launch--content')).toBeInTheDocument()
   expect(item.textContent).toContain(child.title)
   expect(item.textContent).toContain(child.dates)
   if (child.description) {
@@ -100,17 +101,17 @@ it('handles expand clicks', () => {
   const child = childrenCollections[Math.floor(Math.random() * childrenCollections.length)]
   const setActiveRecords = jest.fn()
   act(() => {
-    render(<RecordsChild
+    render(<I18nApp ReactComponent={<RecordsChild
       isScrolled={true}
       item={child}
       myListCount={0}
-      params={{query: 'foo'}}
+      params={{ query: 'foo' }}
       preExpanded={[]}
       setActiveRecords={setActiveRecords}
       setIsLoading={jest.fn()}
       setIsScrolled={jest.fn()}
       toggleInList={jest.fn()}
-            />, container)
+    />} />, container)
   })
 
   const button = document.querySelector('.child__title')
@@ -127,17 +128,17 @@ it('handles list toggle clicks', () => {
   const toggleInList = jest.fn()
   const setActiveRecords = jest.fn()
   act(() => {
-    render(<RecordsChild
+    render(<I18nApp ReactComponent={<RecordsChild
       isScrolled={true}
       item={child}
       myListCount={0}
-      params={{query: 'foo'}}
+      params={{ query: 'foo' }}
       preExpanded={[]}
       setActiveRecords={setActiveRecords}
       setIsLoading={jest.fn()}
       setIsScrolled={jest.fn()}
       toggleInList={toggleInList}
-            />, container)
+    />} />, container)
   })
 
   const button = document.querySelector('.btn-add--content')

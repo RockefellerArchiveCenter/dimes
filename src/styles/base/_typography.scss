@@ -1,264 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Manuale:300,400,700|Material+Icons&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Manuale:300,400,700|Material+Icons&display=swap');
 @import '../variables/vars';
 
-// TODO: better setting of base font attributes, so we can calculate
-// TODO: use calculations for font sizes
-// TODO: replace font weights with variables
-// TODO: consider using relative units instead of pixels
-
-@mixin focus-default {
-  outline: solid 2px $med-gray;
-  outline-offset: 2px;
-}
-
-button:focus {
-  @include focus-default;
-}
-
-a:focus {
-  @include focus-default;
-}
-
-p, a {
-  font-family: inherit;
-  font-weight: $font-weight-normal;
-  font-size: inherit;
-  line-height: inherit;
-  margin: 0 0 10px 0;
-  color: $dark-gray;
-}
-
-strong, b {
-  font-family: inherit;
-  font-weight: $font-weight-bold;
-}
-
-em, i {
-  font-family: inherit;
-  font-style: italic;
-}
-
-h1 {
-  font-family: inherit;
-  font-weight: $font-weight-bold;
-  font-size: 32px;
-  color: $dark-gray;
-  @include md-up {
-    font-size: 42px;
-  }
-  @include lg-up {
-    font-size: 52px;
-  }
-}
-
-h2, h3, h4, h5, h6 {
-  font-family: inherit;
-  font-weight: $font-weight-bold;
-  color: $deep-navy;
-  margin: 0px;
-}
-
-h2 {
-  font-size: 21px;
-  border-bottom: 1.5px dotted $faded-navy;
-  // padding-bottom: 12px; // NOTE: style conflicting with Mirador
-  margin-bottom: 20px;
-  margin-top: 60px;
-  @include lg-up {
-    margin-top: 0px;
-    font-size: 28px;
-  }
-}
-
-h3 {
-  font-size: 18px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  @include lg-up {
-    font-size: 20px;
-  }
-}
-
-h4 {
-  font-size: 14px;
-  color: $faded-orange;
-  @include lg-up {
-    font-size: 16px;
-  }
-}
-
-a {
-  font-weight: $font-weight-bold;
-  color: $burnt-orange;
-  text-decoration: none;
-  transition: $transition-default;
-  &:focus {
-    text-decoration: underline;
-  }
-  &:hover, &:focus {
-    text-decoration: underline;
-    color: $red-orange;
-    cursor: pointer;
-  }
-}
-
-ul {
-  font-family: inherit;
-  line-height: 23px;
-  @include lg-up {
-    font-size: 17px;
-    line-height: 24px;
-  }
-  &.unstyled {
-    list-style: none;
-    padding-left: 0;
-  }
-}
-
-small {
-  font-family: inherit;
-  font-size: 14px;
-  line-height: 20px;
-  margin-bottom: 12px;
-  @include lg-up {
-    font-size: 15px;
-    line-height: 21px;
-  }
-}
-
-.small {
-  @extend small;
-}
-
-@mixin footer-primary-title-text {
-  font-family: $sans-serif-stack;
-  font-weight: $font-weight-heavy;
-  font-size: 21px;
-  letter-spacing: 4px;
-  line-height: 26px;
-  text-transform: uppercase;
-}
-
-@mixin footer-primary-text {
-  font-family: $serif-stack;
-  font-weight: $font-weight-normal;
-  font-size: 15px;
-  color: $deep-navy;
-  line-height: 22px;
-  margin-bottom: 10px;
-}
-
-@mixin footer-primary-link {
-  @include footer-primary-text;
-  text-decoration: underline;
-  font-weight: $font-weight-normal;
-  &:hover, &:focus {
-    color: $burnt-orange;
-    transition: $transition-default;
-  }
-}
-
-@mixin footer-secondary-text {
-  @include footer-primary-text;
-  color: $pure-white;
-}
-
-@mixin footer-secondary-link {
-  @include footer-secondary-text;
-  text-decoration: underline;
-  &:hover, &:focus {
-    color: $off-white;
-    text-decoration: none;
-    transition: $transition-default;
-  }
-}
-
-@mixin secondary-header-text {
-  font-family: $sans-serif-stack;
-  color: $pure-white;
-  font-size: 12px;
-}
-
-@mixin secondary-header-title {
-  @include secondary-header-text;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  line-height: 13px;
-  font-weight: $font-weight-heavy;
-  &:hover, &:focus {
-    color: $off-white;
-  }
-  @include md-up {
-    line-height: 18px;
-    font-size: 15px;
-  }
-}
-
-@mixin secondary-header-subtitle {
-  @include secondary-header-text;
-  font-style: italic;
-  line-height: 13px;
-}
-
-@mixin secondary-header-nav-link {
-  @include secondary-header-text;
-  font-weight: $font-weight-bold;
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  line-height: 60px;
-  &:hover, &:focus {
-    color: $off-white;
-  }
-  @include md-up  {
-    line-height: 70px;
-  }
-  @include lg-up  {
-    line-height: 60px;
-  }
-}
-
-@mixin tile-text {
-  font-family: $sans-serif-stack;
-}
-
-@mixin tile-title-text {
-  @include tile-text;
-  font-weight: $font-weight-bold;
-  font-size: 18px;
-  color: $dark-gray;
-  line-height: 22px;
-}
-
-@mixin tile-date-text {
-  @include tile-text;
-  font-weight: $font-weight-normal;
-  font-size: 15px;
-  color: $dark-gray;
-}
-
-@mixin tile-hit-count-text  {
-  @include tile-text;
-  font-size: 11px;
-  line-height: 11px;
-  font-weight: $font-weight-bold;
-  color: $pure-white;
-}
-
-@mixin tile-type-label-text {
-  @include tile-text;
-  text-transform: uppercase;
-  font-weight: $font-weight-heavy;
-  font-size: 12px;
-  color: $red-brown;
-  letter-spacing: 0.1em;
-}
 
 @mixin page-title {
-  margin-top: 30px;
-  margin-bottom: 30px;
   font-family: $sans-serif-stack;
   font-size: 24px;
-  color: $deep-navy;
+  color: $regal-blue;
   @include lg-up {
     font-size: 28px;
   }
@@ -266,23 +13,13 @@ small {
 
 .agent__title {
   @include page-title;
-  margin-top: 0;
-}
-
-.agent__subtitle {
-  margin-top: 8px;
-  margin-bottom: 40px;
-  font-family: $sans-serif-stack;
-  font-size: 16px;
-  color: $dark-gray;
 }
 
 .agent__section-title {
   text-transform: uppercase;
   font-family: $sans-serif-stack;
   font-size: 14px;
-  color: $deep-navy;
-  padding-bottom: 12px;
+  color: $regal-blue;
   letter-spacing: 2px;
 }
 
@@ -292,31 +29,14 @@ small {
   font-weight: $font-weight-bold;
   letter-spacing: 0.65px;
   text-transform: uppercase;
-  margin: 0px;
-  color: $dark-gray;
+  color: $night-grey;
 }
 
 .agent-attribute__value, .agent-note__value, .agent-note__source {
   font-family: $sans-serif-stack;
   font-size: 16px;
-  color: $dark-gray;
+  color: $night-grey;
   line-height: 25px;
-}
-
-.hero__text {
-  font-family: $serif-stack;
-  font-weight: $font-weight-bold;
-  font-size: 18px;
-  line-height: 24px;
-  color: $dark-gray;
-  @include md-up {
-    font-size: 28px;
-    line-height: 38px;
-  }
-  @include lg-up {
-    font-size: 34px;
-    line-height: 42px;
-  }
 }
 
 .mylist__title {
@@ -327,22 +47,8 @@ small {
   }
 }
 
-.results__not-found--text {
-  font-family: $sans-serif-stack;
-  font-size: 18px;
-  font-weight: 400;
-  color: $dark-gray;
-}
-
-.results__not-found--link {
-  @extend .results__not-found--text;
-  text-decoration: underline;
-  font-weight: normal;
-}
-
 .results__title {
   @include page-title;
-  margin-bottom: 13px;
 }
 
 .results__summary {
@@ -350,9 +56,3 @@ small {
   font-size: 16px;
 }
 
-.help-text {
-  font-family: $sans-serif-stack;
-  font-size: 13px;
-  font-style: italic;
-  color: $med-gray;
-}

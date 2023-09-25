@@ -13,6 +13,7 @@
   import { SavedItemList } from '../SavedItem'
   import { fetchMyList } from '../MyListHelpers'
   import { firePageViewEvent } from '../Helpers'
+  import { Trans, t } from '@lingui/macro'
   import './styles.scss'
 
   const PageMyList = ({ removeAllListItems, toggleInList }) => {
@@ -94,15 +95,21 @@
 
     /* Handle the form submission for Aeon request (duplication and reading room) */
     const handleAeonFormSubmit = (uri, submitted) => {
-      const loadingTitle = 'Preparing Request Data'
-      const loadingMessage = <p className='loading-dots'>Preparing items for your request</p>
+      const loadingTitle = t({
+        comment: 'Page Title for sending an Aeon request',
+        message: 'Preparing Request Data'
+      })
+      const loadingMessage = <p className='loading-dots'><Trans comment='Message while page loads for Aeon submissions'>Preparing items for your request</Trans></p>
       handleConfirmData(loadingTitle, loadingMessage);
       setConfirmModalOpen(true)
       axios
         .post(uri, submitted)
         .then(res => {
           const form = document.createElement('form')
-          form.action = 'https://raccess.rockarch.org/aeon.dll'
+          form.action = t({
+            comment: 'Aeon access point',
+            message: 'https://raccess.rockarch.org/aeon.dll'
+          })
           form.method = 'post'
           Object.keys(res.data).forEach(key => {
             if (Array.isArray(res.data[key])) {
@@ -117,28 +124,46 @@
           form.submit()
         })
         .catch(err => {
-          const title = 'Error submitting request'
-          const message = <><p>There was an error submitting your request.</p><p>{`The request to ${err.config.url} failed with the message ${err.code}: ${err.message}.`}</p><p>{`${err.config.data}`}</p></>
+          const title = t(
+            {
+              message: 'Error submitting request'
+            })
+          const message = <Trans comment='Message for showing an error for a request' ><p>There was an error submitting your request.</p><p>{`The request to ${err.config.url} failed with the message ${err.code}: ${err.message}.`}</p><p>{`${err.config.data}`}</p></Trans>
           handleConfirmData(title, message);
         })
     }
 
     /** Handles form submit for emails */
     const handleExportFormSubmit = (uri, submitted) => {
-      const loadingTitle = 'Sending Email'
-      const loadingMessage = <p className='loading-dots'>Adding items to your message</p>
+      const loadingTitle = t({
+        comment: 'Page Title for sending an email',
+        message: 'Sending Email'
+      })
+      const loadingMessage = <p className='loading-dots'><Trans comment='Message while page loads for email submissions' >Adding items to your message</Trans></p>
       handleConfirmData(loadingTitle, loadingMessage);
       setConfirmModalOpen(true)
       axios
         .post(uri, submitted)
         .then(res => {
-          const title = 'Email Sent'
-          var message = <p>{`Selected items in your list have been emailed to ${submitted.email}`}</p>
+          const title = t({
+            comment: 'Title displayed after emailing selected items',
+            message: 'Email Sent'
+          })
+          var message = <p>{t({
+            comment: 'Message displayed after emailing selected items',
+            message: `Selected items in your list have been emailed to ${submitted.email}`
+          })}</p>
           handleConfirmData(title, message);
         })
         .catch(err => {
-          const title = 'Error submitting request'
-          const message = `There was an error submitting your request. The error message was: ${err.toString()}`
+          const title = t({
+            comment: 'Title displayed when error occurs while submitting request',
+            message: 'Error submitting request'
+          })
+          const message = t({
+            comment: 'Message displayed when error occurs while submitting request',
+            message: `There was an error submitting your request. The error message was: ${err.toString()}`
+          })
           handleConfirmData(title, message);
         })
     }
@@ -214,9 +239,7 @@
       setSubmitList(constructSubmitList(savedList))
     }, [savedList])
 
-    /** Updates submit and submitReason if requesting is available
-    * 1. Resolve all promises before returning.
-    */
+    /** Updates submit and submitReason if requesting is available */
     useEffect(() => {
       /* Resolves savedList groups */
       function resolveGroups(list) {
@@ -228,17 +251,16 @@
       }
       /* Resolves submit status of items in savedList groups */
       async function resolveItemsStatus(group) {
-        const updatedItems = await Promise.all( /* 1 */
-          group.items.map(i => {
-            return axios
-              .post(`${process.env.REACT_APP_REQUEST_BROKER_BASEURL}/process-request/parse`, { item: i.archivesspace_uri })
-              .then(res => {
-                return { ...i, submit: res.data.submit, submitReason: res.data.submit_reason}
-              })
-              .catch(err => setBackendError(err))
-          })
-        )
-        group.items = updatedItems
+        const groupUris = group.items.map(i => i.archivesspace_uri)
+        const updatedItems = await axios
+            .post(`${process.env.REACT_APP_REQUEST_BROKER_BASEURL}/process-request/parse-batch`, { items: groupUris })
+            .then(res => {return res.data})
+            .catch(err => setBackendError(err))
+        const combinedItems = group.items.map(i => {
+          console.log(i)
+          const parsedItem = updatedItems.find(u => {console.log(u); return (u.uri === i.archivesspace_uri)})
+          return { ...i, submit: parsedItem.submit, submitReason: parsedItem.submit_reason }})
+        group.items = combinedItems
         return group
       }
 
@@ -259,35 +281,39 @@
     }
     return (
       <>
-        <Helmet
-          onChangeClientState={(newState) => firePageViewEvent(newState.title)} >
-          <title>DIMES: My List</title>
-        </Helmet>
-        <div className='container mylist flex'>
+        <Trans comment="Page Title for user's list">
+          <Helmet
+            onChangeClientState={(newState) => firePageViewEvent(newState.title)} >
+            <title>DIMES: My List</title>
+          </Helmet>
+        </Trans>
+        <div className='mylist grid container--full-width'>
           <nav>
-            <a href='/' className='btn btn--new-search'>
-              <MaterialIcon icon='keyboard_arrow_left'/>Start a New Search
+            <a href='/' className='btn btn--sm btn--gray btn--new-search mt-20 ml-30'>
+              <Trans comment='New Search button' >
+                <MaterialIcon icon='keyboard_arrow_left' className='material-icon--space-after' />Start a New Search
+              </Trans>
             </a>
           </nav>
-          <main id='main' role='main'>
-            <div className='mylist__header'>
-              <h1 className='mylist__title'>My List</h1>
-              <MyListDropdown
-                downloadCsv={downloadCsv}
-                duplicationRequest={() => isRequestingAvailable ? setDuplicationModalOpen(true) : setRequestingUnavailableModalOpen(true)}
-                emailList={() => isRequestingAvailable ? setEmailModalOpen(true) : setRequestingUnavailableModalOpen(true)}
-                readingRoomRequest={() => isRequestingAvailable ? setReadingRoomModalOpen(true) : setRequestingUnavailableModalOpen(true)}
-                removeAllItems={() => setConfirmDeleteAllModalOpen(true)} />
-            </div>
-            <MyListExportActions
-                confirmDeleteAll={() => setConfirmDeleteAllModalOpen(true)}
-                downloadCsv={downloadCsv}
-                emailList={() => isRequestingAvailable ? setEmailModalOpen(true) : setRequestingUnavailableModalOpen(true)}
-                isDownloading={isDownloading} />
-            <SavedItemList
-              items={savedList}
-              isLoading={isLoading}
-              removeFromList={removeFromList} />
+          <main id='main' className='mt-60 ml-30'>
+            <Trans comment="Header for user's list" >
+              <h1 className='mylist__title my-30 ml-15'>My List</h1>
+            </Trans>
+            <MyListDropdown
+              downloadCsv={downloadCsv}
+              duplicationRequest={() => isRequestingAvailable ? setDuplicationModalOpen(true) : setRequestingUnavailableModalOpen(true)}
+              emailList={() => isRequestingAvailable ? setEmailModalOpen(true) : setRequestingUnavailableModalOpen(true)}
+              readingRoomRequest={() => isRequestingAvailable ? setReadingRoomModalOpen(true) : setRequestingUnavailableModalOpen(true)}
+              removeAllItems={() => setConfirmDeleteAllModalOpen(true)} />
+          <MyListExportActions
+              confirmDeleteAll={() => setConfirmDeleteAllModalOpen(true)}
+              downloadCsv={downloadCsv}
+              emailList={() => isRequestingAvailable ? setEmailModalOpen(true) : setRequestingUnavailableModalOpen(true)}
+              isDownloading={isDownloading} />
+          <SavedItemList
+            items={savedList}
+            isLoading={isLoading}
+            removeFromList={removeFromList} />
           </main>
           <MyListSidebar
               duplicationRequest={() => isRequestingAvailable ? setDuplicationModalOpen(true) : setRequestingUnavailableModalOpen(true)}
@@ -322,8 +348,14 @@
         />
         <ModalConfirm
           isOpen={requestingUnavailableModalOpen}
-          message="Sorry, our system is unable to process requests right now. We're working to fix this! Please try again later."
-          title="Can't Complete Request"
+          message={t({
+            comment: 'Message shown when request failed',
+            message: "Sorry, our system is unable to process requests right now. We're working to fix this! Please try again later."
+          })}
+          title={t({
+            comment: 'Title shown when request failed',
+            message: "Can't Complete Request"
+          })}
           toggleModal={() => setRequestingUnavailableModalOpen(!requestingUnavailableModalOpen)}
         />
         <ModalConfirm
@@ -335,8 +367,8 @@
         <ModalConfirm
           isOpen={confirmDeleteAllModalOpen}
           message={
-            <>Are you sure you want to remove all the items from your list?
-            <div className='confirm-buttons'>
+            <Trans comment='Confirmation to delete all items from list' >Are you sure you want to remove all the items from your list?
+            <div className='modal-buttons--confirm mt-20'>
               <Button
                 className='btn--sm btn--orange'
                 label='Remove'
@@ -346,9 +378,12 @@
                 label='Cancel'
                 handleClick={() => setConfirmDeleteAllModalOpen(false)}/>
             </div>
-            </>
+            </Trans>
           }
-          title='Confirm Remove All'
+          title={t({
+            comment: 'Remove all confirmation title',
+            message: 'Confirm Remove All'
+          })}
           toggleModal={() => setConfirmDeleteAllModalOpen(!confirmDeleteAllModalOpen)}
         />
       </>

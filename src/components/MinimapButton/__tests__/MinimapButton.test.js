@@ -1,8 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { I18nApp } from '../../i18n'
 import MinimapButton from '..'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
-  render(<MinimapButton toggleMinimapModal={jest.fn()}/>, div)
+  render(<I18nApp ReactComponent={<MinimapButton toggleMinimapModal={jest.fn()}/>} />, div)
 })

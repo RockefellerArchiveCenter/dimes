@@ -1,37 +1,27 @@
 @import "../styles";
 
 .mylist main {
-  @include grid-column(12);
+  grid-column: span 12;
+  margin-right: 15px;
   @include lg-up {
-    width: 66%;
-    box-sizing: border-box;
+    grid-column: 1 / span 8;
+    margin-right: 0px;
   }
-}
-
-.mylist__header {
-  @include grid-column(12);
 }
 
 .mylist__export-actions {
   @include show-on-lg-up;
-  padding-bottom: 30px;
+}
+
+.mylist__export-actions .btn {
+  margin-right: 10px;
 }
 
 .mylist__sidebar {
-  width: 34%;
-  background: $off-white;
-  float: right;
-  margin-right: -30px;
-  padding: 60px 0px 60px 40px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  & > .btn {
-    align-self: flex-start;
-  }
+  align-content: start;
+  background: $desert-grey;
+  gap: 12px;
+  grid-column: 9 / span 4;
+  justify-items: start;
   @include show-on-lg-up;
-}
-
-.mylist__title {
-  margin-top: 40px;
 }

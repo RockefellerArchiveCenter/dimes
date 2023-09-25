@@ -15,7 +15,7 @@ const Button = props => (
     aria-pressed={props.ariaPressed}
     disabled={props.disabled} >
     { props.iconBefore &&
-      <MaterialIcon icon={props.iconBefore} />} {props.label} {props.iconAfter && <MaterialIcon icon={props.iconAfter} />}
+      <MaterialIcon icon={props.iconBefore} className='material-icon--space-after' />} {props.label} {props.iconAfter && <MaterialIcon icon={props.iconAfter} className='material-icon--space-before' />}
   </button>)
 
 Button.propTypes = {

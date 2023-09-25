@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { appendParams } from '../Helpers'
 import { useResizeObserver } from '../Hooks'
+import { t, Trans, plural  } from '@lingui/macro'
 import './styles.scss'
 
 /**
@@ -45,15 +46,23 @@ const Minimap = ({ data, isLoading, params, rowCount=4 }) => {
     const currentUrl = window.location.pathname
     const areaUrl = areaHits.length && areaHits[0].uri
     const isAreaActive = areaUrl === currentUrl
+    const hitPlural = t({
+      comment: "Pluralization of hit(s) for minimap boxes",
+      message: plural(areaHits.length, {one: "hit", other: "hits"})
+    })
+    const message = t({
+      comment: "Message displayed to jump to specific section within minimap",
+      message: `Jump to ${areaHits.length} ${hitPlural} in this area: ${hitTitles}`
+    })
     return (
       areaHits.length ?
       <a
-        key={idx}
-        href={appendParams(areaUrl, params)}
-        className={classnames('minimap__box', hitClass, { [`${hitClass}--active`] : isAreaActive})}
-        title={`Jump to ${areaHits.length} ${areaHits.length === 1 ? 'hit' : 'hits'} in this area: ${hitTitles}`} >
-        <span className='visually-hidden'>{`Jump to ${areaHits.length} ${areaHits.length === 1 ? 'hit' : 'hits'} in this area: ${hitTitles}`}</span>
-        <span className="material-icons" aria-hidden="true">check</span>
+          key={idx}
+          href={appendParams(areaUrl, params)}
+          className={classnames('minimap__box', hitClass, { [`${hitClass}--active`]: isAreaActive })}
+          title={message} >
+        <span className='visually-hidden'>{message}</span>
+        <span className="material-icon" aria-hidden="true">check</span>
       </a>
       :
       <div
@@ -66,8 +75,15 @@ const Minimap = ({ data, isLoading, params, rowCount=4 }) => {
 
   return (
     <>
-      <h2 className="visually-hidden">Minimap</h2>
-      <nav className={classnames('minimap', `minimap--${rowCount}-across` )} ref={minimapContainer} aria-label="Minimap">
+      <h2 className="visually-hidden">
+        <Trans comment="Header for minimap">
+          Minimap
+        </Trans>
+      </h2>
+      <nav className={classnames('minimap', `minimap--${rowCount}-across`)} ref={minimapContainer} aria-label={t({
+        comment: "Aria label for Minimap nav",
+        message: "Minimap"
+      })}>
         {loadedBoxes}
       </nav>
     </>

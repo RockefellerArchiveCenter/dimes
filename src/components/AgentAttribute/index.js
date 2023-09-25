@@ -4,7 +4,7 @@ import './styles.scss'
 
 const AgentAttribute = ({ label, value }) => (
   <div className={'agent-attribute'}>
-    <h3 className='agent-attribute__label'>{label}</h3>
+    <h3 className='agent-attribute__label m-0'>{label}</h3>
     <p className='agent-attribute__value'>{value}</p>
   </div>)
 

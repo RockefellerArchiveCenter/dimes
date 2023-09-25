@@ -5,6 +5,8 @@ import { Helmet } from 'react-helmet'
 import MaterialIcon from '../MaterialIcon'
 import Viewer from '../Viewer'
 import { firePageViewEvent } from '../Helpers'
+import { I18nApp } from '../i18n'
+import { Trans, t } from '@lingui/macro'
 import './styles.scss'
 
 const PageDigitalObject = ({isMobile}) => {
@@ -98,24 +100,29 @@ const PageDigitalObject = ({isMobile}) => {
 
   /** Custom top bar which includes additional classes  so we can style things as we want to **/
   const CustomTopBarTitle = ({ TargetComponent, targetProps  }) => (
-    <div className='viewer-bar'>
+    <I18nApp ReactComponent={<div className='viewer-bar'>
       <div className='viewer-bar__title'>
         <TargetComponent {...targetProps} />
       </div>
-      <div className='viewer-bar__buttons'>
-        <a className='btn btn--sm btn--orange'
-          href={`${process.env.REACT_APP_S3_BASEURL}/pdfs/${id}`}
-          target='_blank'
-          title='opens in a new window'
-          rel='noopener noreferrer'
+      <div className='viewer-bar__buttons mt-5 mr-10'>
+        <Trans comment='Download button for digital object'>
+          <a className='btn btn--sm btn--orange'
+            href={`${process.env.REACT_APP_S3_BASEURL}/pdfs/${id}`}
+            target='_blank'
+            title={t({
+              comment: 'Title for new window button',
+              message: 'opens in a new window'
+            })}
+            rel='noopener noreferrer'
           ><MaterialIcon icon='get_app' /> Download</a>
-        <div>
+        </Trans>
+        <Trans comment='Go back to Item details for digital object'>
           <a href={itemUrl} className='btn btn--sm btn--black'>
-            <MaterialIcon icon='keyboard_arrow_left' />Back to Item Details
+            <MaterialIcon icon='keyboard_arrow_left' className='material-icon--space-after' />Back to Item Details
           </a>
-        </div>
+        </Trans>
       </div>
-    </div>
+    </div>} />
   )
 
   /** Adds CustomTopBarTitle to Mirador plugins */
@@ -129,6 +136,9 @@ const PageDigitalObject = ({isMobile}) => {
 
   return (
     <>
+      <div>
+        TESTING THIS IS A TEST
+      </div>
       <Helmet
         onChangeClientState={(newState) => firePageViewEvent(newState.title)} >
         <title>{ itemTitle }</title>

@@ -28,6 +28,7 @@ export const checkedList = [{
     }],
     "parent": "A-B",
     "parent_ref": "/collections/RqT6DNkTTTM2kaFxtsGKbA",
+    "submit": true,
     "online": false,
     "archivesspace_uri": "/repositories/2/archival_objects/1053534"
   }, {
@@ -58,6 +59,7 @@ export const checkedList = [{
     }],
     "parent": "A-B",
     "parent_ref": "/collections/RqT6DNkTTTM2kaFxtsGKbA",
+    "submit": true,
     "online": false,
     "archivesspace_uri": "/repositories/2/archival_objects/1053535"
   }]
@@ -82,6 +84,7 @@ export const checkedList = [{
     "notes": [],
     "parent": "International - General (No Program)",
     "parent_ref": "/collections/ChqRRrDVPGqYiDftR4WszC",
+    "submit": true,
     "online": false,
     "archivesspace_uri": "/repositories/2/archival_objects/1120778"
   }, {
@@ -103,6 +106,7 @@ export const checkedList = [{
     "notes": [],
     "parent": "International - General (No Program)",
     "parent_ref": "/collections/ChqRRrDVPGqYiDftR4WszC",
+    "submit": true,
     "online": false,
     "archivesspace_uri": "/repositories/2/archival_objects/1120779"
   }, {
@@ -124,6 +128,7 @@ export const checkedList = [{
     "notes": [],
     "parent": "International - General (No Program)",
     "parent_ref": "/collections/ChqRRrDVPGqYiDftR4WszC",
+    submit: true,
     "online": false,
     "archivesspace_uri": "/repositories/2/archival_objects/1120786"
   }, {
@@ -142,6 +147,7 @@ export const checkedList = [{
     "notes": [],
     "parent": "Chicago, GOP Convention",
     "parent_ref": "/collections/Ac4QpG4hRL8M9TWchMERBL",
+    "submit": true,
     "online": false,
     "archivesspace_uri": "/repositories/2/archival_objects/472103"
   }]

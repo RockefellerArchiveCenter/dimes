@@ -55,7 +55,6 @@ const App = () => {
   return (<LiveAnnouncer>
     <SkipLink />
     <Header myListCount={myListCount} />
-    <main id='main' role='main'>
       <div className='wrapper' ref={mainWrapper}>
         <BrowserRouter>
           <Routes>
@@ -69,7 +68,6 @@ const App = () => {
           </Routes>
         </BrowserRouter>
       </div>
-    </main>
   <Footer/>
   </LiveAnnouncer>)
 }

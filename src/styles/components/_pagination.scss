@@ -1,49 +1,7 @@
 @import "../styles";
-@import "./material-icon";
 
 .pagination__list {
-  font-family: $sans-serif-stack;
-  list-style: none;
-  padding-left: 0;
   @include md-up {
     margin-bottom: 0;
-  }
-}
-
-.pagination__button {
-  display: inline-block;
-  & a {
-    @extend .material-icons;
-    pointer-events: unset;
-    font-size: 23px;
-    line-height: 23px;
-    margin-bottom: 3px;
-    &:hover, &:focus {
-      text-decoration: none;
-    }
-  }
-}
-
-.pagination__button.disabled a, .page__active a{
-  color: $dark-gray;
-  cursor: default;
-  &:hover, &:focus {
-    color: inherit;
-    cursor: inherit;
-    text-decoration: none;
-  }
-}
-
-.pagination__page, .pagination__break {
-  display: inline-block;
-  padding: 0px 5px;
-  & a {
-    font-size: 17px;
-    font-family: inherit;
-    line-height: normal;
-    margin: 0;
-  }
-  @include lg-up {
-    padding: 0px 7px;
   }
 }

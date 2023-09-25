@@ -6,14 +6,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: $pure-black;
+  background: $black;
   z-index: 998;
-  @include md-up {
-    top: 70px;
-  }
-  @include lg-up {
-    top: 60px;
-  }
 }
 
 .mosaic-tile {
@@ -54,16 +48,23 @@
     order: 0;
     margin-left: 0;
   }
+  h2 {
+    border: none;
+    padding-bottom: 0;
+  }
 }
 
 .viewer-bar__buttons {
   width:100%;
   order: 0;
   display: flex;
-  margin-top: 5px;
   justify-content: flex-end;
   @include lg-up {
     width: unset;
     order: 1;
+  }
+
+  & > .btn {
+    margin: 0 10px 10px 0;
   }
 }

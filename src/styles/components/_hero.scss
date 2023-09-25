@@ -1,44 +1,12 @@
 @import "../styles";
 
 .hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   margin-top: 10px;
-  padding: 30px;
-  box-sizing: border-box;
   @include md-up {
     margin-top: 113px;
-    justify-content: center;
-    flex-wrap: nowrap;
   }
   @include lg-up {
     margin-top: 103px;
   }
 }
 
-.hero__logo {
-  height: auto;
-  text-align: left;
-  img {
-    width: 85px;
-    @include md-up {
-      width: 120px;
-    }
-    @include lg-up {
-      width: 160px;
-    }
-  }
-}
-
-.hero__text {
-  text-align: left;
-  width: 100%;
-  @include md-up {
-    width: unset;
-    margin-left: 30px;
-  }
-  @include lg-up {
-    margin-left: 50px;
-  }
-}

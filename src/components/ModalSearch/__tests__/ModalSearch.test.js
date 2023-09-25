@@ -4,6 +4,7 @@ import { act } from 'react-dom/test-utils'
 import { FacetModal } from '..'
 
 import { facet } from '../../../__fixtures__/facet'
+import { I18nApp } from '../../i18n'
 
 let container = null
 beforeEach(() => {
@@ -19,7 +20,7 @@ afterEach(() => {
 
 it('renders props correctly', () => {
   act(() => {
-    render(<FacetModal
+    render(<I18nApp ReactComponent={<FacetModal
       appElement={container}
       handleChange={jest.fn()}
       handleDateChange={jest.fn()}
@@ -27,7 +28,7 @@ it('renders props correctly', () => {
       params={{}}
       resultsCount={2}
       data={facet}
-      toggleModal={jest.fn()} />, container)
+      toggleModal={jest.fn()} />} />, container)
   })
 
   const startYear = document.querySelector('#startYear')
@@ -46,7 +47,7 @@ it('handles clicks', () => {
   const handleDateChange = jest.fn()
 
   act(() => {
-    render(<FacetModal
+    render(<I18nApp ReactComponent={<FacetModal
       appElement={container}
       handleChange={jest.fn()}
       handleDateChange={handleDateChange}
@@ -54,10 +55,10 @@ it('handles clicks', () => {
       params={{}}
       resultsCount={2}
       data={facet}
-      toggleModal={jest.fn()} />, container)
+      toggleModal={jest.fn()} />} />, container)
   })
 
-  const apply = document.querySelector('.modal-body--search .btn')
+  const apply = document.querySelector('.modal__body--search .btn')
 
   act(() => {
     apply.dispatchEvent(new MouseEvent('click', { bubbles: true }))

@@ -2,7 +2,7 @@
 
 .btn--minimap {
   display: flex !important; // TODO: this is BS
-  background: $off-white;
+  background: $desert-grey;
   position: fixed;
   top: 80px;
   right: 30px;
@@ -14,7 +14,6 @@
 
 .btn--minimap__text {
   width: 60px;
-  margin-left: 10px;
   text-align: left;
 }
 

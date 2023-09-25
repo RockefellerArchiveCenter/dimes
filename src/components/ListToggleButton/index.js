@@ -1,23 +1,46 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Button from '../Button'
+import { t, select } from '@lingui/macro'
 import classnames from 'classnames'
 
 const ListToggleButton = ({ className, isMobile, isSaved, item, toggleSaved }) => (
   isSaved ? (
     <Button
-      ariaLabel='Remove item from list'
+      ariaLabel={t({
+        comment: 'Aria label for List Toggle button',
+        message: 'Remove item from list'
+      })}
       ariaPressed
       className={classnames('saved', className)}
-      label={isMobile ? 'Remove' : 'Remove from List'}
+      label={
+        t({
+          comment: 'Label for Remove List Toggle button',
+          message: select(isMobile, {
+            true: 'Remove',
+            other: 'Remove from List'
+          })
+        })
+      }
       iconAfter='remove_circle_outline'
       handleClick={() => toggleSaved(item)} />
   ) : (
     <Button
-      ariaLabel='Add item to list'
+      ariaLabel={t({
+        comment: 'Aria label for List Toggle button',
+        message: 'Add item to list'
+      })}
       ariaPressed={false}
       className={className}
-      label={isMobile ? 'Add' : 'Add to List'}
+      label={
+        t({
+          comment: 'Label for Add List Toggle button',
+          message: select(isMobile, {
+            true: 'Add',
+            other: 'Add to List'
+          })
+        })
+      }
       iconAfter='add_circle_outline'
       handleClick={() => toggleSaved(item)} />
   )

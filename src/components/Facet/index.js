@@ -3,21 +3,37 @@ import PropTypes from 'prop-types'
 import Button from '../Button'
 import { CheckBoxInput } from '../Inputs'
 import classnames from 'classnames'
+import { t } from '@lingui/macro'
 import './styles.scss'
 
 const ShowHideMore = ({id, isOpen, toggleOpen}) => {
   return (
     <Button
-      ariaLabel='Show all values'
+      ariaLabel={t({
+        comment: 'Aria label for Show|Hide More Button',
+        message: 'Show all values'
+      })}
       ariaPressed={isOpen}
-      className='facet__show-hide'
-      label={isOpen ? 'show less' : 'show all'}
+      className='facet__show-hide mt-3 pl-0'
+      label={
+        isOpen
+        ? 
+        t({
+          comment: 'Message shown when list is opened',
+          message: 'show less'
+        })
+        :
+        t({
+          comment: 'Message shown when list is closed',
+          message: 'show all'
+        })
+      }
       handleClick={() => toggleOpen(isOpen)} />
   )
 }
 
 const FacetItem = ({ checked, count, handleChange, label, paramKey }) => (
-  <div className='facet__input'>
+  <div className='input-group'>
     <CheckBoxInput
       className='checkbox--blue'
       id={label}
@@ -46,12 +62,12 @@ const Facet = ({ children, handleChange, items, paramKey, params, title }) => {
   return (
     facetItems.length || children ?
     (
-      <div className='facet'>
-        {title && <h3 id={title} className='facet__title'>{title}</h3>}
+      <fieldset className='facet pt-44 pb-30 px-40 ml-0'>
+        {title && <legend id={title}><h3 className='facet__title p-0 m-0'>{title}</h3></legend>}
         {children && children}
         {facetItems && <div className={classnames('facet__items', {'open': isOpen})}>{facetItems}</div>}
         {items && items.length > 5 && <ShowHideMore id={paramKey} isOpen={isOpen} toggleOpen={toggleOpen} />}
-      </div>
+      </fieldset>
     ) : null
   )
 }

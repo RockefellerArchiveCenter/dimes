@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Field, ErrorMessage, useFormikContext } from 'formik'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import { Trans } from '@lingui/macro'
 
 export const FocusError = () => {
   const { errors, isSubmitting, isValidating } = useFormikContext()
@@ -39,7 +40,7 @@ export const FormGroup = (props) => {
     }
   }
   return (
-    <div className='form-group'>
+    <div className='form-group mx-0'>
       { type !== 'checkbox' && <label htmlFor={name}>{label}</label> }
       <Field
         tabIndex='0'
@@ -55,8 +56,8 @@ export const FormGroup = (props) => {
         aria-describedby={describedBy()}
         aria-required={required} />
       { type === 'checkbox' && <label htmlFor={name}>{label}</label> }
-      { helpText && <p className='help-text' id={`desc-${name}`}>{helpText}</p> }
-      <ErrorMessage id={`${name}-error`} name={name} component='div' className='modal-form__error' />
+      { helpText && <p className='input__help-text' id={`desc-${name}`}>{helpText}</p> }
+      <ErrorMessage id={`${name}-error`} name={name} component='div' className='input__error' />
     </div>
   )
 }
@@ -77,12 +78,14 @@ FormGroup.propTypes = {
 }
 
 export const FormButtons = ({ isSubmitting, submitText, toggleModal }) => (
-  <div className='modal-form__buttons'>
+  <div className='modal-form__buttons my-10 mx-0'>
     <button type='submit' disabled={isSubmitting} className='btn btn--orange btn--sm'>
       {submitText}
     </button>
     <button type='reset' className='btn btn--gray btn--sm' onClick={toggleModal}>
-      Cancel
+      <Trans comment='Reset/Cancel Button for Form'>
+        Cancel
+      </Trans>
     </button>
   </div>
 )

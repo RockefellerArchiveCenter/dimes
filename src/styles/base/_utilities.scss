@@ -19,10 +19,6 @@ $transition-default: all 0.2s ease;
   }
 }
 
-.visually-hidden {
-  @include visually-hidden;
-}
-
 .bring-forward {
   z-index: 999999;
 }

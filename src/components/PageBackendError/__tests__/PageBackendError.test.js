@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { act, Simulate } from 'react-dom/test-utils'
+import { I18nApp } from '../../i18n'
 import PageBackendError from '..'
 
 it('renders props correctly', () => {
@@ -19,8 +20,8 @@ it('renders props correctly', () => {
   }
 
   act(() => {
-    render(<PageBackendError
-      error={error} />, div)
+    render(<I18nApp ReactComponent={<PageBackendError
+      error={error} />} />, div)
   })
 
   const page = document.querySelector('.backend-error')

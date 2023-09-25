@@ -3,6 +3,7 @@ import axios from 'axios'
 import { render, unmountComponentAtNode } from 'react-dom'
 import { Route, Routes, MemoryRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils'
+import { I18nApp } from '../../i18n'
 import PageDigitalObject from '..'
 
 import { object } from '../../../__fixtures__/object'
@@ -32,11 +33,13 @@ it('renders props correctly', async () => {
 
   await act(async () => {
     await render(
-      <MemoryRouter initialEntries={['/objects/AdnxgWuKKKheh2r3SvoAqZ/view']}>
-        <Routes>
-          <Route path='/:type/:id/view' element={<PageDigitalObject />} />
-        </Routes>
-      </MemoryRouter>, container)
+      <I18nApp ReactComponent={
+        <MemoryRouter initialEntries={['/objects/AdnxgWuKKKheh2r3SvoAqZ/view']}>
+          <Routes>
+            <Route path='/:type/:id/view' element={<PageDigitalObject />} />
+          </Routes>
+        </MemoryRouter>}
+      />, container)
   })
 
 })

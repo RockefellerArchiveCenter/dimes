@@ -3,13 +3,14 @@ import classnames from 'classnames'
 import Button from '../Button'
 import PropTypes from 'prop-types'
 import { CheckBoxInput, SelectInput, TextInput } from '../Inputs'
+import { t } from '@lingui/macro'
 import './styles.scss'
 
 const SearchForm = props => {
   var [category, setCategory] = useState(props.category || '')
   var [online, setOnline] = useState(props.online)
   var [query, setQuery] = useState(props.query)
-  const isHomePage = props.className === 'search-form--home'
+  const isHomePage = props.className === 'search search-form--home'
 
   /** Sets the search category, query and online checkbox */
   useEffect(() => {
@@ -19,22 +20,52 @@ const SearchForm = props => {
   }, [props.category, props.online, props.query])
 
   const selectOptions = [
-    { value: '', label: 'All Types' },
-    { value: 'collection', label: 'Collections' },
-    { value: 'person', label: 'People' },
-    { value: 'organization', label: 'Organizations'}
+    {
+      value: '',
+      label: t({
+        comment: 'Label for All Categories',
+        message: 'All Types'
+      })
+    },
+    {
+      value: 'collection',
+      label: t({
+        comment: 'Label for Collections category',
+        message: 'Collections'
+      })
+    },
+    {
+      value: 'person',
+      label: t({
+        comment: 'Label for People category',
+        message: 'People'
+      })
+    },
+    {
+      value: 'organization',
+      label: t({
+        comment: 'Label for Organizations category',
+        message: 'Organizations'
+      })
+    }
   ]
 
   return (
-    <form className='form--search' role='search' action='/search' method='get'>
+    <form role='search' action='/search' method='get'>
       <div className="wrapper">
         <div className={props.className}>
           <div className={classnames('input-group__search', { 'input-group__search-results': !isHomePage })}>
             <TextInput
               className={classnames('hide-label', 'input__search', { 'input__search-results': !isHomePage })}
-              label='Enter a search term'
+              label={t({
+                comment: 'Label for search textbox',
+                message: 'Enter a search term'
+              })}
               id='query'
-              placeholder='Search...'
+              placeholder={t({
+                comment: 'Placeholder text for search textbox',
+                message: 'Search...'
+              })}
               size={60}
               value={query || ''}
               handleChange={e => setQuery(e.target.value)}
@@ -42,11 +73,17 @@ const SearchForm = props => {
               required
             />
             <Button
-              className={ classnames({ 'btn--search': isHomePage, 'btn--search-results': !isHomePage })}
+              className={ classnames({ 'btn--orange search__submit-btn': isHomePage, 'btn btn--orange search__submit-btn search__results-submit-btn': !isHomePage })}
               type='submit'
-              label={isHomePage ? (props.isMobile ? null : 'Search') : null}
+              label={isHomePage ? (props.isMobile ? null : t({
+                comment: 'Label for Search button',
+                message: 'Search'
+              })) : null}
               iconAfter='search'
-              ariaLabel='Submit search'
+              ariaLabel={t({
+                comment: 'Aria Label for search submission button',
+                message: 'Submit search'
+              })}
             />
           </div>
           <div className={classnames(
@@ -57,8 +94,14 @@ const SearchForm = props => {
               hideLabel
               iconAfter='expand_more'
               id='category'
-              label='Choose a search category'
-              name='category'
+              label={t({
+                comment: 'Label for Category selector',
+                message: 'Choose a search category'
+              })}
+              name={t({
+                comment: 'Name for Category selector',
+                message: 'category'
+              })}
               onChange={({ selectedItem }) => {
                 isHomePage ? setCategory(selectedItem.value) : props.handleSearchFormChange(selectedItem.value, query, online)
               }}
@@ -67,13 +110,19 @@ const SearchForm = props => {
             />
             <CheckBoxInput
               id='online'
-              name='online'
+              name={t({
+                comment: 'Name for digital matches only checkbox',
+                message: 'online'
+              })}
               className='checkbox--blue checkbox--online input--outline'
               checked={online}
               handleChange={e => {
                 isHomePage ? setOnline(e.target.checked) : props.handleSearchFormChange(category, query, e.target.checked)
               }}
-              label='Show only results with digital matches'
+              label={t({
+                comment: 'Label for digital matches only checkbox',
+                message: 'Show only results with digital matches'
+              })}
             />
           </div>
         </div>

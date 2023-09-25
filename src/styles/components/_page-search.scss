@@ -15,7 +15,6 @@
 }
 
 .results__footer {
-  margin-bottom: 30px;
   @include lg-up {
     justify-content: flex-end;
   }
@@ -74,11 +73,10 @@
 .select__sort__wrapper {
   position: relative;
   display: inline-block;
-  box-sizing: border-box;
   margin-top: 16px;
 }
 
-.select__sort__control > .material-icons {
+.select__sort__control > .material-icon {
   top: 12px;
   right: 10px;
 }
@@ -88,7 +86,7 @@
   padding: 0px 15px;
   height: 45px;
   width: 200px;
-  border: 1px solid $dark-gray;
+  border: 1px solid $night-grey;
 }
 
 .select__sort__option {

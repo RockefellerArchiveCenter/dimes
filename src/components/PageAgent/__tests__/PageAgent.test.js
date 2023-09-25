@@ -4,6 +4,7 @@ import { render, unmountComponentAtNode } from 'react-dom'
 import { Route, Routes, MemoryRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils'
 import PageAgent from '..'
+import { I18nApp } from '../../i18n';
 
 import { agent } from '../../../__fixtures__/agents'
 import { collections } from '../../../__fixtures__/agents'
@@ -33,17 +34,19 @@ it('renders props correctly', async () => {
     }
   })
 
-  await act(async() => {
+  await act(async () => {
     await render(
-      <MemoryRouter initialEntries={['/agents/nQV9zedPVBqFgyGrXPQvBw']}>
-        <Routes>
-          <Route path='/agents/:id' element={<PageAgent />} />
-        </Routes>
-      </MemoryRouter>, container)
+      <I18nApp ReactComponent={
+        <MemoryRouter initialEntries={['/agents/nQV9zedPVBqFgyGrXPQvBw']}>
+          <Routes>
+            <Route path='/agents/:id' element={<PageAgent />} />
+          </Routes>
+        </MemoryRouter>
+      }/>, container)
   })
 
   const title = await document.querySelector('h1')
-  const children = await document.querySelector('.tile-list')
+  const children = await document.querySelector('.card-list')
 
   expect(title.textContent).toBe('Rockefeller, Nelson A. (Nelson Aldrich)')
   expect(children.children.length).toBe(8)

@@ -1,6 +1,7 @@
 import React from 'react'
 import { render, unmountComponentAtNode } from 'react-dom'
 import { act } from 'react-dom/test-utils'
+import { I18nApp } from '../../i18n'
 import {
     Accordion,
     AccordionItem,
@@ -23,19 +24,19 @@ afterEach(() => {
 })
 
 it('renders without crashing', () => {
-  render(<Accordion />, container)
+  render(<I18nApp ReactComponent={<Accordion />} />, container)
 })
 
 it('renders without crashing', () => {
-  render(<AccordionItem preExpanded={[]} />, container)
+  render(<I18nApp ReactComponent={<AccordionItem preExpanded={[]} />} />, container)
 })
 
 it('renders without crashing', () => {
-  render(<AccordionItemHeading />, container)
+  render(<I18nApp ReactComponent={<AccordionItemHeading />} />, container)
 })
 
 it('renders without crashing', () => {
-  render(<AccordionItemButton />, container)
+  render(<I18nApp ReactComponent={<AccordionItemButton />} />, container)
 })
 
 it('handles clicks', () => {
@@ -43,7 +44,7 @@ it('handles clicks', () => {
   const setIsExpanded = jest.fn()
 
   act(() => {
-    render(<AccordionItemButton setIsExpanded={setIsExpanded} onClick={onClick} />, container)
+    render(<I18nApp ReactComponent={<AccordionItemButton setIsExpanded={setIsExpanded} onClick={onClick} />} />, container)
   })
 
   const button = document.querySelector('[data-accordion-component=AccordionItemButton]')
@@ -65,7 +66,7 @@ it('handles keyboard events', () => {
   focus.focusNextSiblingOf = jest.fn()
 
   act(() => {
-    render(<AccordionItemButton setIsExpanded={setIsExpanded} onClick={onClick} />, container)
+    render(<I18nApp ReactComponent={<AccordionItemButton setIsExpanded={setIsExpanded} onClick={onClick} />} />, container)
   })
 
   const button = document.querySelector('[data-accordion-component=AccordionItemButton]')
@@ -135,5 +136,5 @@ it('handles keyboard events', () => {
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
-  render(<AccordionItemPanel />, container)
+  render(<I18nApp ReactComponent={<AccordionItemPanel />} />, container)
 })

@@ -1,6 +1,7 @@
 import React from 'react'
 import { render, unmountComponentAtNode } from 'react-dom'
 import { act } from 'react-dom/test-utils'
+import { I18nApp } from '../../i18n'
 import { ModalMinimapInfo } from '..'
 
 let container = null
@@ -17,11 +18,11 @@ afterEach(() => {
 
 it('renders props correctly', () => {
   act(() => {
-    render(<ModalMinimapInfo
+    render(<I18nApp ReactComponent={<ModalMinimapInfo
       appElement={container}
       hasSeenMinimapIntro={false}
       isOpen
-      toggleModal={jest.fn()} />, container)
+      toggleModal={jest.fn()} />} />, container)
   })
 })
 
@@ -29,14 +30,14 @@ it('handles clicks correctly', () => {
   const toggleModal = jest.fn()
 
   act(() => {
-    render(<ModalMinimapInfo
+    render(<I18nApp ReactComponent={<ModalMinimapInfo
       appElement={container}
       hasSeenMinimapIntro={false}
       isOpen
-      toggleModal={toggleModal} />, container)
+      toggleModal={toggleModal} />} />, container)
   })
 
-  const button = document.querySelector('.modal-header__button')
+  const button = document.querySelector('.modal__header-button')
 
   act(() => {
     button.dispatchEvent(new MouseEvent('click', { bubbles: true }))

@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { render, unmountComponentAtNode } from 'react-dom'
 import { act } from 'react-dom/test-utils'
+import { I18nApp } from '../../i18n'
 import {ModalSavedItemList} from '..'
 
 import { checkedList } from '../../../__fixtures__/checkedList'
@@ -33,11 +34,11 @@ it('renders props correctly', async () => {
   })
 
   await act(async () => {
-    render(<ModalSavedItemList
+    render(<I18nApp ReactComponent={<ModalSavedItemList
       items={resolvedList}
       ignoreRestrictions={true}
       handleChange={jest.fn()}
-      setSubmit={jest.fn()} />, container)
+      setSubmit={jest.fn()} />} />, container)
   })
 
   await act(async () => {
@@ -50,11 +51,11 @@ it('renders props correctly', async () => {
   })
 
   await act(async () => {
-    render(<ModalSavedItemList
+    render(<I18nApp ReactComponent={<ModalSavedItemList
       items={checkedList}
       ignoreRestrictions={true}
       handleChange={jest.fn()}
-      setSubmit={jest.fn()} />, container)
+      setSubmit={jest.fn()} />} />, container)
   })
 
   await act(async () => {

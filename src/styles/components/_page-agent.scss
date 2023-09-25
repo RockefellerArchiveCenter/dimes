@@ -3,16 +3,12 @@
 .agent__wrapper {
   margin: 0px 30px;
   @include lg-up {
-    margin-left: 80px;
-    margin-right: 40px;
+    margin: 0 40px 0 80px;
   }
 }
 
-.agent__nav {
-  margin-top: 30px;
-}
-
 .agent__wrapper--description {
+  box-sizing: content-box;
   display: flex;
   flex-wrap: wrap;
   @include lg-up {
@@ -30,14 +26,12 @@
 .agent__note {
   width: 100%;
   float: left;
-  margin-bottom: 27px;
 }
 
 .agent__sidebar {
   width: 100%;
   @include lg-up {
     width: 33%;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 0 40px;
   }
 }

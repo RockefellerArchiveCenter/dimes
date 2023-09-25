@@ -1,16 +1,8 @@
 @import "../styles";
 @import "inputs";
-@import "material-icon";
-
-input[type=search] {
-  @include input-text;
-  font-size: 18px;
-}
 
 .search-form--home {
-  display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   max-width: 1300px;
   margin: 30px 30px 110px 30px;
   @include md-up {
@@ -23,7 +15,7 @@ input[type=search] {
 
 .search-bar {
   width: 100%;
-  background-color: $pale-blue;
+  background-color: $solitude-blue;
   padding-bottom: 24px;
 }
 
@@ -41,9 +33,7 @@ input[type=search] {
 }
 
 .input-group__search {
-  display: flex;
   justify-content: center;
-  width: 100%;
 }
 
 .input-group__search-results {
@@ -56,10 +46,7 @@ input[type=search] {
 }
 
 .input-group__search-controls {
-  @extend .input-group__search;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  width: 100%;
   @include lg-up {
     width: calc(100% - 500px);
   }
@@ -75,7 +62,6 @@ input[type=search] {
 }
 
 .input__search {
-  width:100%;
   @include lg-up {
     width: calc(100% - 650px);
   }
@@ -83,15 +69,6 @@ input[type=search] {
 
 .input__search-results {
   width: unset;
-}
-
-.input__search input {
-  border: 1px solid $dark-gray;
-  padding: 20px;
-  width: 100%;
-  height: 62px;
-  border-radius: 0px;
-  appearance: none
 }
 
 .input__search-results input {
@@ -108,11 +85,10 @@ input[type=search] {
 
 .select__search__control {
   font-size: 16px;
-  border: 1px solid $orange-gray;
+  border: 1px solid $silver-grey;
   padding: 13px 15px;
   width: 180px;
-  box-sizing: border-box;
-  & > .material-icons {
+  & > .material-icon {
     right: 15px;
     top: 13px;
   }
@@ -121,4 +97,33 @@ input[type=search] {
 .select__search__option {
   font-size: 16px;
   padding: 16px 18px;
+}
+
+/**
+* Styles for the search button on the home page
+* 1. Removes the material-icon--space-before styles
+**/
+.search__submit-btn {
+  @include md-up {
+    min-width: 150px;
+
+    .material-icon {
+      margin: 0; /* 1 */
+    }
+  }
+}
+
+/**
+* Styles for the search button on the search results page
+* 1. Removes the material-icon--space-before styles
+**/
+.search__results-submit-btn {
+  height: 46px;
+  padding: 10px 12px;
+  min-width: unset;
+
+  .material-icon {
+    font-size: 24px;
+    margin-left: 0px; /* 1 */
+  }
 }

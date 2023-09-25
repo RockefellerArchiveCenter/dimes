@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { act } from 'react-dom/test-utils'
+import { I18nApp } from '../../i18n'
 import SearchForm from '..'
 
 it('renders props correctly', () => {
@@ -8,7 +9,7 @@ it('renders props correctly', () => {
   document.body.appendChild(div)
 
   act(() => {
-    render(<SearchForm className='foo' />, div)
+    render(<I18nApp ReactComponent={<SearchForm className='foo' />} />, div)
   })
 
   const wrapper = document.querySelector('form > .wrapper > div')

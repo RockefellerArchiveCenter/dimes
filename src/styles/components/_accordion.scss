@@ -1,34 +1,31 @@
 @import "../styles";
-@import "./material-icon";
 
 .accordion {
   font-family: $sans-serif-stack;
 }
 
-.accordion--details {
-  margin-top: 20px;
-}
-
 .accordion__button {
-  border-bottom: 1px dotted $deep-navy;
+  border-bottom: 1px dotted $regal-blue;
   font-family: inherit;
   font-size: 14px;
   text-transform: uppercase;
   font-weight: $font-weight-bold;
   letter-spacing: 2px;
-  color: $deep-navy;
-  padding: 12px 0px;
+  color: $regal-blue;
   cursor: pointer;
   &:focus {
     outline: none;
-    border-bottom: 1px solid $deep-navy;
+    border-bottom: 1px solid $regal-blue;
     font-weight: $font-weight-heavy;
   }
   &::after {
-    @extend .material-icons;
+    font-family: Material Icons;
     content: "keyboard_arrow_down";
     float: right;
+    font-size: 24px;
     line-height: 12px;
+    text-transform: none;
+    // }
   }
   &[aria-expanded=true] {
     &::after {
@@ -41,25 +38,21 @@
   font-family: inherit;
   font-size: 12px;
   font-weight: $font-weight-extra-bold;
-  color: $dark-gray;
+  color: $night-grey;
   letter-spacing: 0.7px;
   text-transform: uppercase;
-  margin-bottom: 5px;
-  margin-top: 10px;
 }
 
 .panel__text {
   font-family: inherit;
   font-size: 15px;
-  color: $dark-gray;
+  color: $night-grey;
   line-height: inherit;
   white-space: pre-line;
 }
 
 .panel__text a {
-  color: $dark-gray;
-  text-decoration: underline;
-  font-weight: $font-weight-normal;
+  color: $night-grey;
 }
 
 .panel__text--narrative {
@@ -69,7 +62,5 @@
 
 .panel__list--unstyled {
   list-style: none;
-  padding-left: 0;
-  margin-top: 0;
   font-family: inherit;
 }

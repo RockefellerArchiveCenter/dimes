@@ -1,0 +1,62 @@
+@import "../styles";
+
+@mixin card-type-label-text {
+  text-transform: uppercase;
+  font-weight: $font-weight-heavy;
+  font-size: 12px;
+  color: $umber-brown;
+  letter-spacing: 0.1em;
+}
+
+.card-list {
+  display: grid;
+  gap: 15px;
+
+  @include md-up {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include lg-up {
+    grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.card--related-collections {
+  @include lg-up {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card__title  {
+  order: 2;
+}
+
+.card__date {
+  order: 3;
+}
+
+.card__type-label {
+  @include card-type-label-text;
+
+  order: 0;
+  & .material-icon {
+    font-size: 12px;
+    padding-right: 6px;
+    float: left;
+    line-height: inherit;
+  }
+  & svg {
+    box-sizing: unset;
+    padding-right: 6px;
+    height: 21px;
+    vertical-align: middle;
+    float: left;
+  }
+  &::after {
+    vertical-align: middle;
+  }
+}
+
+.card__footer {
+  order: 4;
+}

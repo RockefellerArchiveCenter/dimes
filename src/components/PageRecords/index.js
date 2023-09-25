@@ -11,6 +11,7 @@ import ContextSwitcher from '../ContextSwitcher'
 import Minimap from '../Minimap'
 import MinimapButton from '../MinimapButton'
 import { ModalMinimap, ModalMinimapInfo } from '../ModalMinimap'
+import { t } from "@lingui/macro";
 import RecordsContent from '../RecordsContent'
 import RecordsDetail from '../RecordsDetail'
 import PageNotFound from '../PageNotFound'
@@ -114,7 +115,10 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
           if (itemInitialLoad) {
             setChildrenUri(`${process.env.REACT_APP_ARGO_BASEURL}${res.data.group.identifier}/children`)
           }
-          setUpdateMessage(`Details under heading 1 have been updated to describe the selected records titled ${res.data.title}`)
+          setUpdateMessage(t({
+            comment: 'Update message for selected record',
+            message: `Details under heading 1 have been updated to describe the selected records titled ${res.data.title}`
+          }))
         })
         .catch(err => {
           err.response.status === 404 ? setFound(false) : setBackendError(err) })
@@ -204,7 +208,7 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
         onChangeClientState={(newState) => firePageViewEvent(newState.title)} >
         <title>{ item.title }</title>
       </Helmet>
-      <div className='container--full-width'>
+      <main id='main' className='container--full-width'>
         {isDesktop ? null : <MinimapButton toggleMinimapModal={toggleMinimapModal}/>}
         <ContextSwitcher
           isContentShown={isContentShown}
@@ -242,7 +246,7 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
           preExpanded={preExpanded}
           setActiveRecords={setActiveRecords}
           toggleInList={toggleInList} />
-      </div>
+      </main>
       <ModalMinimapInfo
         isOpen={isMinimapInfoModalOpen}
         toggleModal={toggleMinimapInfoModal}
