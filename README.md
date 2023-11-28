@@ -30,7 +30,17 @@ To add or update reference images, edit the scenarios in `backstop.json` and run
 
 ### Translation Development
 
-The repository includes [linguijs](https://lingui.dev/) which is an [Open-source](https://github.com/lingui/js-lingui) Internationalization Framework.  This allows you to do translation work on the UI.
+The repository includes [linguijs](https://lingui.dev/) which is an 
+[Open-source](https://github.com/lingui/js-lingui) internationalization framework. This allows you to 
+customize or translate static UI elements into other languages.
+
+There are two basic commands which are used to support translation:
+- `$ yarn lingui-extract` extracts translation strings from application code. This should be run every
+  time the HTML structure of the application changes. Failure to run this will result in translated
+  strings being presented as random numbers and letters in the built application.
+- `$ yarn lingui-compile` compiles the locale files into a Javascript file which is used by the application
+  to present translated strings. This command should be run whenever changes are made to any of the 
+  locale files. 
 
 ## License
 

@@ -48,8 +48,8 @@
     "backstop-reference": "backstop reference --docker",
     "backstop-test": "backstop test --docker",
     "backstop-approve": "backstop approve",
-    "extract": "lingui extract",
-    "compile": "lingui compile"
+    "lingui-extract": "lingui extract",
+    "lingui-compile": "lingui compile"
   },
   "eslintConfig": {
     "extends": "react-app"
