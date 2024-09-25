@@ -161,6 +161,11 @@ const RecordsDetail = props => {
     props.item.uri && props.item.uri.split('/')[props.item.uri.split('/').length - 1]
   )
 
+  /** Retrieve current search params for users to refine a query based on initial search results */
+  const curr_search= new URLSearchParams(window.location.search);
+  const curr_query =  curr_search.get("query") 
+  const curr_category=  curr_search.get("category") ? curr_search.get("category"): ""
+ 
   /** Returns a citation string */
   const dates = props.item.dates && props.item.dates.map(d => d.expression).join(', ')
   const citation = (
@@ -188,6 +193,18 @@ const RecordsDetail = props => {
       label={t({ comment: 'About minimap message', message: 'about minimap' })}
     /> : null
     }
+    <form className ='refine-search-form' >
+        <input type="hidden" name="category" value={curr_category} />
+        <input type="hidden" name="limit" value="40" />
+        <label for="query" className='refine-search-label'>Refining Search:</label>
+        <input className='refine-search-input'
+               type='text' 
+               id="query"
+               name="query"
+               placeholder={curr_query || ''}
+               maxLength={255}
+               size={60}/>
+    </form>
     <nav className='records__nav'>
       <a href={searchUrl} className='btn btn--sm btn--gray'>
         <Trans comment='Message to go back to previous search'>  

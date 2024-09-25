@@ -73,3 +73,26 @@
   font-size: inherit;
   font-weight: $font-weight-normal;
 }
+
+.subquery-search-form {
+  position: relative;
+  width: 150px;
+  padding-top: 20px;
+}
+
+.subquery-search-input {
+  padding: 14px;
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+  height: 20px;
+  width: 146px;
+  background-color: unset;
+  border-radius: 3px;
+  border: 1px solid $silver-grey;
+}
+
+.subquery-search-label {
+  display: inline-block;
+  font-weight: bold;
+}
