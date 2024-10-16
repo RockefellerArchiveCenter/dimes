@@ -109,7 +109,7 @@ msgid "{source, select, null {Source: Rockefeller Archive Center} other {Source:
 msgstr "{source, select, null {Source : Rockefeller Archive Center} other {Source : {source}}}"
 
 #. Message to go back to previous search
-#: src/components/RecordsDetail/index.js:193
+#: src/components/RecordsDetail/index.js:238
 msgid "<0/>Back to Search"
 msgstr "<0/>Retour à la recherche"
 
@@ -164,12 +164,12 @@ msgid "<0><1>Search Results</1></0>"
 msgstr "<0><1>Résultats de la recherche</1></0>"
 
 #. Confirmation message when citation copied
-#: src/components/RecordsDetail/index.js:209
+#: src/components/RecordsDetail/index.js:254
 msgid "<0>Citation information copied to clipboard.</0>"
 msgstr "<0>Informations sur la citation copiées dans le presse-papiers.</0>"
 
 #. Button to copy citation text
-#: src/components/RecordsDetail/index.js:215
+#: src/components/RecordsDetail/index.js:260
 msgid "<0>Cite<1/></0>"
 msgstr "<0>Citer<1/></0>"
 
@@ -238,6 +238,11 @@ msgstr "<0>Veuillez ajouter un mot ou une phrase à rechercher.</0>"
 msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archive@rockarch.org</1>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up."
 msgstr "<0>Remarque :</0> si vous envoyez votre liste par courrier électronique à un archiviste à l'<1>adresse archive@rockarch.org,</1> veuillez indiquer votre nom et votre adresse électronique dans le champ Message, faute de quoi nous n'aurons aucun moyen de vous contacter pour assurer le suivi."
 
+#. Label for search refinement textbox
+#: src/components/RecordsDetail/index.js:212
+msgid "<0>Refining Search...</0>"
+msgstr "Affiner la recherche..."
+
 #. Submit Request title
 #: src/components/ModalMyList/index.js:537
 msgid "<0>Submit request</0>"
@@ -264,7 +269,7 @@ msgid "<0>View Online<1/></0>"
 msgstr "<0>Consulter en ligne<1/></0>"
 
 #. Buttons for online records
-#: src/components/RecordsDetail/index.js:223
+#: src/components/RecordsDetail/index.js:268
 msgid "<0>View Online<1/></0><2>Download <3/></2>{0}"
 msgstr "<0>Voir en ligne<1/></0><2>Télécharger <3/></2>{0}"
 
@@ -284,7 +289,7 @@ msgid "255 characters maximum"
 msgstr "255 caractères maximum"
 
 #. About minimap message
-#: src/components/RecordsDetail/index.js:188
+#: src/components/RecordsDetail/index.js:203
 msgid "about minimap"
 msgstr "Que’est-ce que le minimap?"
 
@@ -514,12 +519,12 @@ msgid "Format"
 msgstr "Format"
 
 #. Panel Format message
-#: src/components/RecordsDetail/index.js:72
+#: src/components/RecordsDetail/index.js:73
 msgid "Formats"
 msgstr "Formats"
 
 #. Panel Found In message
-#: src/components/RecordsDetail/index.js:89
+#: src/components/RecordsDetail/index.js:90
 msgid "Found In"
 msgstr "Trouvé dans"
 
@@ -666,6 +671,11 @@ msgstr "Site du siège"
 msgid "mailto:archive@rockarch.org"
 msgstr "mailto:archive@rockarch.org"
 
+#. Message for search refinement
+#: src/components/RecordsDetail/index.js:190
+msgid "Map navigation links have been updated to reflect new search results for {0}"
+msgstr "Les liens de navigation sur la carte ont été mis à jour pour refléter les nouveaux résultats de recherche pour {0}"
+
 #. Name of message form
 #: src/components/ModalMyList/index.js:251
 msgid "message"
@@ -742,7 +752,7 @@ msgstr "ouvre le courrier électronique"
 #: src/components/ModalMyList/index.js:520
 #: src/components/ModalMyList/index.js:583
 #: src/components/PageDigitalObject/index.js:112
-#: src/components/RecordsDetail/index.js:229
+#: src/components/RecordsDetail/index.js:274
 msgid "opens in a new window"
 msgstr "s’ouvre dans une nouvelle fenêtre"
 
@@ -889,7 +899,7 @@ msgid "Request in Reading Room"
 msgstr "Commander en salle de lecture"
 
 #. Institution name for citation
-#: src/components/RecordsDetail/index.js:169
+#: src/components/RecordsDetail/index.js:170
 msgid "Rockefeller Archive Center"
 msgstr "Rockefeller Archive Center"
 
@@ -1013,7 +1023,7 @@ msgid "Sign in to RACcess"
 msgstr "Se connecter à RACcess"
 
 #. Panel Extent Size message
-#: src/components/RecordsDetail/index.js:50
+#: src/components/RecordsDetail/index.js:51
 msgid "Size"
 msgstr "Etendue"
 
@@ -1082,6 +1092,8 @@ msgid "Subject"
 msgstr "Sujet"
 
 #. Aria Label for search submission button
+#. Aria Label for search submission button
+#: src/components/RecordsDetail/index.js:226
 #: src/components/SearchForm/index.js:83
 msgid "Submit search"
 msgstr "Soumettre la recherche"

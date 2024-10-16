@@ -109,7 +109,7 @@ msgid "{source, select, null {Source: Rockefeller Archive Center} other {Source:
 msgstr "{source, select, null {资料来源：洛克菲勒档案中心} other {来源： {source}}}"
 
 #. Message to go back to previous search
-#: src/components/RecordsDetail/index.js:193
+#: src/components/RecordsDetail/index.js:238
 msgid "<0/>Back to Search"
 msgstr "<0/>返回搜索"
 
@@ -164,12 +164,12 @@ msgid "<0><1>Search Results</1></0>"
 msgstr "<0><1>搜索结果</1></0>"
 
 #. Confirmation message when citation copied
-#: src/components/RecordsDetail/index.js:209
+#: src/components/RecordsDetail/index.js:254
 msgid "<0>Citation information copied to clipboard.</0>"
 msgstr "<0>引用信息复制到剪贴板。</0>"
 
 #. Button to copy citation text
-#: src/components/RecordsDetail/index.js:215
+#: src/components/RecordsDetail/index.js:260
 msgid "<0>Cite<1/></0>"
 msgstr "<0>引用<1/></0>"
 
@@ -238,6 +238,11 @@ msgstr "<0>请添加要搜索的单词或短语。</0>"
 msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archive@rockarch.org</1>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up."
 msgstr "<0>请注意：</0>如果要将您的名单通过电子邮件发送给<1>archive@rockarch.org</1> 的档案管理员<1>，</1>请在 \"信息 \"栏中注明您的姓名和电子邮件地址，否则我们将无法与您联系，无法跟进。"
 
+#. Label for search refinement textbox
+#: src/components/RecordsDetail/index.js:212
+msgid "<0>Refining Search...</0>"
+msgstr "重新搜索..."
+
 #. Submit Request title
 #: src/components/ModalMyList/index.js:537
 msgid "<0>Submit request</0>"
@@ -264,7 +269,7 @@ msgid "<0>View Online<1/></0>"
 msgstr "<0>在线阅读<1/></0>"
 
 #. Buttons for online records
-#: src/components/RecordsDetail/index.js:223
+#: src/components/RecordsDetail/index.js:268
 msgid "<0>View Online<1/></0><2>Download <3/></2>{0}"
 msgstr "<0>在线阅读<1/></0><2>下载<3/></2>{0}"
 
@@ -284,7 +289,7 @@ msgid "255 characters maximum"
 msgstr "最多 255 个字符"
 
 #. About minimap message
-#: src/components/RecordsDetail/index.js:188
+#: src/components/RecordsDetail/index.js:203
 msgid "about minimap"
 msgstr "关于微缩位置图"
 
@@ -514,12 +519,12 @@ msgid "Format"
 msgstr "规格"
 
 #. Panel Format message
-#: src/components/RecordsDetail/index.js:72
+#: src/components/RecordsDetail/index.js:73
 msgid "Formats"
 msgstr "格式"
 
 #. Panel Found In message
-#: src/components/RecordsDetail/index.js:89
+#: src/components/RecordsDetail/index.js:90
 msgid "Found In"
 msgstr "出处"
 
@@ -666,6 +671,11 @@ msgstr "总部所在地"
 msgid "mailto:archive@rockarch.org"
 msgstr "mailto:archive@rockarch.org"
 
+#. Message for search refinement
+#: src/components/RecordsDetail/index.js:190
+msgid "Map navigation links have been updated to reflect new search results for {0}"
+msgstr "地圖導航連結已更新，以反映新的搜尋結果 {0}"
+
 #. Name of message form
 #: src/components/ModalMyList/index.js:251
 msgid "message"
@@ -742,7 +752,7 @@ msgstr "打开电子邮件"
 #: src/components/ModalMyList/index.js:520
 #: src/components/ModalMyList/index.js:583
 #: src/components/PageDigitalObject/index.js:112
-#: src/components/RecordsDetail/index.js:229
+#: src/components/RecordsDetail/index.js:274
 msgid "opens in a new window"
 msgstr "在新窗口打开"
 
@@ -889,7 +899,7 @@ msgid "Request in Reading Room"
 msgstr "请求在阅览室阅读"
 
 #. Institution name for citation
-#: src/components/RecordsDetail/index.js:169
+#: src/components/RecordsDetail/index.js:170
 msgid "Rockefeller Archive Center"
 msgstr "洛克菲勒档案中心"
 
@@ -1013,7 +1023,7 @@ msgid "Sign in to RACcess"
 msgstr "登录 RACcess"
 
 #. Panel Extent Size message
-#: src/components/RecordsDetail/index.js:50
+#: src/components/RecordsDetail/index.js:51
 msgid "Size"
 msgstr "大小"
 
@@ -1082,6 +1092,8 @@ msgid "Subject"
 msgstr "主题"
 
 #. Aria Label for search submission button
+#. Aria Label for search submission button
+#: src/components/RecordsDetail/index.js:226
 #: src/components/SearchForm/index.js:83
 msgid "Submit search"
 msgstr "搜索"

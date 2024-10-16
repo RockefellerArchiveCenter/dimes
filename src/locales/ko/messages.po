@@ -109,7 +109,7 @@ msgid "{source, select, null {Source: Rockefeller Archive Center} other {Source:
 msgstr "{source, select, null {출처: 록펠러 아카이브 센터} other {출처: {source}}}"
 
 #. Message to go back to previous search
-#: src/components/RecordsDetail/index.js:193
+#: src/components/RecordsDetail/index.js:238
 msgid "<0/>Back to Search"
 msgstr "<0/>검색으로 돌아가기"
 
@@ -164,12 +164,12 @@ msgid "<0><1>Search Results</1></0>"
 msgstr "<0><1>검색 결과</1></0>"
 
 #. Confirmation message when citation copied
-#: src/components/RecordsDetail/index.js:209
+#: src/components/RecordsDetail/index.js:254
 msgid "<0>Citation information copied to clipboard.</0>"
 msgstr "<0>인용 정보가 클립보드에 복사되었습니다.</0>"
 
 #. Button to copy citation text
-#: src/components/RecordsDetail/index.js:215
+#: src/components/RecordsDetail/index.js:260
 msgid "<0>Cite<1/></0>"
 msgstr "<0>인용<1/></0>"
 
@@ -238,6 +238,11 @@ msgstr "<0>검색할 단어나 구문을 추가하세요.</0>"
 msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archive@rockarch.org</1>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up."
 msgstr "<0>참고:</0> 목록을 아카이브 담당자에게 이메일( <1>archive@rockarch.org</1>)로 보내는 경우 메시지 필드에 이름과 이메일 주소를 기재해 주세요. 그렇지 않으면 후속 조치를 위해 연락할 방법이 없습니다."
 
+#. Label for search refinement textbox
+#: src/components/RecordsDetail/index.js:212
+msgid "<0>Refining Search...</0>"
+msgstr "검색 세분화..."
+
 #. Submit Request title
 #: src/components/ModalMyList/index.js:537
 msgid "<0>Submit request</0>"
@@ -264,7 +269,7 @@ msgid "<0>View Online<1/></0>"
 msgstr "<0>온라인 보기<1/></0>"
 
 #. Buttons for online records
-#: src/components/RecordsDetail/index.js:223
+#: src/components/RecordsDetail/index.js:268
 msgid "<0>View Online<1/></0><2>Download <3/></2>{0}"
 msgstr "<0>온라인 보기<1/></0><2>다운로드 <3/></2>{0}"
 
@@ -284,7 +289,7 @@ msgid "255 characters maximum"
 msgstr "최대 255자"
 
 #. About minimap message
-#: src/components/RecordsDetail/index.js:188
+#: src/components/RecordsDetail/index.js:203
 msgid "about minimap"
 msgstr "미니맵 정보"
 
@@ -514,12 +519,12 @@ msgid "Format"
 msgstr "형식"
 
 #. Panel Format message
-#: src/components/RecordsDetail/index.js:72
+#: src/components/RecordsDetail/index.js:73
 msgid "Formats"
 msgstr "형식"
 
 #. Panel Found In message
-#: src/components/RecordsDetail/index.js:89
+#: src/components/RecordsDetail/index.js:90
 msgid "Found In"
 msgstr "발견 장소"
 
@@ -666,6 +671,11 @@ msgstr "본사 위치"
 msgid "mailto:archive@rockarch.org"
 msgstr "mailto:archive@rockarch.org"
 
+#. Message for search refinement
+#: src/components/RecordsDetail/index.js:190
+msgid "Map navigation links have been updated to reflect new search results for {0}"
+msgstr "에 대한 새로운 검색 결과를 반영하도록 지도 탐색 링크가 업데이트되었습니다 {0}"
+
 #. Name of message form
 #: src/components/ModalMyList/index.js:251
 msgid "message"
@@ -742,7 +752,7 @@ msgstr "이메일 열기"
 #: src/components/ModalMyList/index.js:520
 #: src/components/ModalMyList/index.js:583
 #: src/components/PageDigitalObject/index.js:112
-#: src/components/RecordsDetail/index.js:229
+#: src/components/RecordsDetail/index.js:274
 msgid "opens in a new window"
 msgstr "새 창에서 열기"
 
@@ -889,7 +899,7 @@ msgid "Request in Reading Room"
 msgstr "열람실에서 요청하기"
 
 #. Institution name for citation
-#: src/components/RecordsDetail/index.js:169
+#: src/components/RecordsDetail/index.js:170
 msgid "Rockefeller Archive Center"
 msgstr "록펠러 아카이브 센터"
 
@@ -1013,7 +1023,7 @@ msgid "Sign in to RACcess"
 msgstr "RACcess에 로그인"
 
 #. Panel Extent Size message
-#: src/components/RecordsDetail/index.js:50
+#: src/components/RecordsDetail/index.js:51
 msgid "Size"
 msgstr "크기"
 
@@ -1082,6 +1092,8 @@ msgid "Subject"
 msgstr "제목"
 
 #. Aria Label for search submission button
+#. Aria Label for search submission button
+#: src/components/RecordsDetail/index.js:226
 #: src/components/SearchForm/index.js:83
 msgid "Submit search"
 msgstr "검색 제출"

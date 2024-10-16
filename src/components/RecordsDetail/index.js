@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { LiveMessage } from 'react-aria-live'
 import pluralize from 'pluralize'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
@@ -155,7 +156,7 @@ const RecordsDetail = props => {
   const searchUrl = (
     props.params && props.params.query ? appendParams('/search/', props.params) : '/'
   )
-
+  
   /** Parses an item's identifier from its URI */
   const identifier = (
     props.item.uri && props.item.uri.split('/')[props.item.uri.split('/').length - 1]
@@ -176,7 +177,21 @@ const RecordsDetail = props => {
     setCitationCopied(true)
     setTimeout(() => {setCitationCopied(false)}, '6000')
   }
+
+  const [SearchMessage, setSearchMessage] = useState('')
+  const [refinedVal, setRefinedVal] = useState({
+    query: new URLSearchParams(window.location.search).get('query') || '',
+    category: new URLSearchParams(window.location.search).get('category') || '',
+    limit: new URLSearchParams(window.location.search).get('limit') || '40',
+  });
   
+  const handleChange = (e) => {
+    setRefinedVal({ ...refinedVal, [e.target.name]: e.target.value });
+    setSearchMessage(t({
+      comment: 'Message for search refinement',
+      message: `Map navigation links have been updated to reflect new search results for ${refinedVal.query}`
+    }));
+  };
 
   return (
   <div className={classnames('records__detail', {'hidden': props.isContentShown})}>
@@ -187,6 +202,36 @@ const RecordsDetail = props => {
       iconAfter='info'
       label={t({ comment: 'About minimap message', message: 'about minimap' })}
     /> : null
+    }
+    { process.env.REACT_APP_REFINE_SEARCH && 
+      process.env.REACT_APP_REFINE_SEARCH.toLowerCase() === 'true' ?
+      ( <div>
+        <form className='refine-search__form' >
+        <input type='hidden' name='category' value={props.params.category} />
+        <input type='hidden' name='limit' value={props.params.limit || '40'}/>
+        <Trans comment='Label for search refinement textbox'>
+            <label htmlFor='query' className='refine-search__label'>Refining Search...</label>
+        </Trans>
+        <input 
+          className='refine-search__input'
+          type='search' 
+          name='query'
+          placeholder={props.params.query} 
+          value={refinedVal.query}
+          onChange={handleChange}/>
+        <Button
+          className='btn btn--orange refine-search__btn'
+          type='submit'
+          iconAfter='search'
+          ariaLabel={t({
+            comment: 'Aria Label for search submission button',
+            message: 'Submit search'
+          })}
+        />
+        </form> 
+        <LiveMessage message={SearchMessage} aria-live='polite' />
+      </div>
+      ) : null 
     }
     <nav className='records__nav'>
       <a href={searchUrl} className='btn btn--sm btn--gray'>
