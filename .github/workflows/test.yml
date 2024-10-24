@@ -1,4 +1,4 @@
-name: Test the site
+name: Test
 
 on:
   workflow_dispatch:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     environment:
-      name: ${{ vars.DEV_ENVIRONMENT }}
+      name: development
 
     steps:
       - name: Checkout code
