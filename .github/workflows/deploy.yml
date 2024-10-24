@@ -1,4 +1,4 @@
-name: Build and Deploy to S3
+name: Deploy
 
 on:
   workflow_dispatch:
