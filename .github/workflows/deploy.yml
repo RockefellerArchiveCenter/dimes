@@ -16,15 +16,15 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
 
       - name: Use Node.js ${{ matrix.node_version }}
-        uses: actions/setup-node@v4.0.2
+        uses: actions/setup-node@v4.2.0
         with:
           node-version: 'lts/*'
 
       - name: Cache dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4.2.2
         id: yarn-cache
         with:
           path: ./node_modules
@@ -52,7 +52,7 @@ jobs:
         run: CI=false yarn run build
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4.0.2
+        uses: aws-actions/configure-aws-credentials@v4.1.0
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
