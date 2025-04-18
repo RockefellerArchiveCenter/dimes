@@ -206,7 +206,7 @@ msgstr "<0>Dernière demande le : {0}</0>"
 #. Limitations and fees title
 #: src/components/ModalMyList/index.js:509
 msgid "<0>Limitations and fees</0>"
-msgstr ""
+msgstr "<0>Limitations et redevances</0>"
 
 #. Records content is loading
 #: src/components/RecordsContent/index.js:403
@@ -266,7 +266,7 @@ msgstr "<0>Voir en ligne<1/></0><2>Télécharger <3/></2>{0}"
 #. Limitations and fees information
 #: src/components/ModalMyList/index.js:512
 msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
-msgstr ""
+msgstr "<0>Nous limitons le nombre de <1>demandes à 20 par année civile</1>.</0><2>Les PDF de référence sont gratuits. Nous facturons un <3> montant forfaitaire de 25 $ par document</3> pour les numérisations de qualité professionnelle.</2><4>Pour plus de détails, y compris les exceptions pour les documents audiovisuels et les documents surdimensionnés, consultez nos <5>services de duplication</5>.</4><6>Pour obtenir de l'aide ou demander une numérisation de qualité publication, envoyez un courriel à un archiviste à l'adresse <7>archive@rockarch.org.</7></6>"
 
 #. Full Company Address
 #: src/components/Footer/index.js:23
@@ -638,7 +638,7 @@ msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 #. Label for duplication request form
 #: src/components/ModalMyList/index.js:583
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its extent or physical condition."
-msgstr ""
+msgstr "Je comprends qu'il me faudra peut-être travailler avec un archiviste pour identifier les ressources les plus pertinentes pour ma recherche et que, dans certains cas, il n'est pas possible de numériser le matériel en raison de son étendue ou de son état physique."
 
 #. Invalid email error
 #: src/components/ModalMyList/index.js:189

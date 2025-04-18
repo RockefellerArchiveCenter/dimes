@@ -206,7 +206,7 @@ msgstr "<0>Última solicitud el: {0}</0>"
 #. Limitations and fees title
 #: src/components/ModalMyList/index.js:509
 msgid "<0>Limitations and fees</0>"
-msgstr ""
+msgstr "<0>Limitaciones y tasas</0>"
 
 #. Records content is loading
 #: src/components/RecordsContent/index.js:403
@@ -266,7 +266,7 @@ msgstr "<0>Ver en línea<1/></0><2>Descargar <3/></2>{0}"
 #. Limitations and fees information
 #: src/components/ModalMyList/index.js:512
 msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
-msgstr ""
+msgstr "<0>Limitamos el número de <1>solicitudes</1> a <1>20 por año natural</1>.</0><2>No cobramos por los PDF de referencia. Los escaneados con calidad de publicación tienen un <3> coste fijo de 25 $ por artículo</3>.</2><4>Para más información, incluidas las excepciones para materiales audiovisuales y de gran tamaño, consulte nuestros <5>servicios de duplicación</5>.</4><6>Si necesita ayuda o desea solicitar un escaneado con calidad de publicación, envíe un correo electrónico a un archivero a <7>archive@rockarch.org.</7></6>"
 
 #. Full Company Address
 #: src/components/Footer/index.js:23
@@ -638,7 +638,7 @@ msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 #. Label for duplication request form
 #: src/components/ModalMyList/index.js:583
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its extent or physical condition."
-msgstr ""
+msgstr "Entiendo que puede que necesite trabajar con un archivero para identificar los recursos más relevantes para mi investigación y que, en algunos casos, no es posible digitalizar el material debido a su extensión o estado físico."
 
 #. Invalid email error
 #: src/components/ModalMyList/index.js:189

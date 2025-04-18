@@ -206,7 +206,7 @@ msgstr "<0>最終リクエスト日{0}</0>"
 #. Limitations and fees title
 #: src/components/ModalMyList/index.js:509
 msgid "<0>Limitations and fees</0>"
-msgstr ""
+msgstr "<0>制限と手数料</0>"
 
 #. Records content is loading
 #: src/components/RecordsContent/index.js:403
@@ -266,7 +266,7 @@ msgstr "<0>オンラインで見る<1/></0><2>ダウンロード<3/></2>{0}"
 #. Limitations and fees information
 #: src/components/ModalMyList/index.js:512
 msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
-msgstr ""
+msgstr "<0><1>年間20件までと</1>させていただきます。</0><2>参照用PDFには料金はかかりません。出版物品質のスキャンには、<3>1点につき一律25ドルの料金が</3>かかります。</2><4>視聴覚資料や特大資料の例外を含む詳細については、<5>複製サービスについてを</5>お読みください。</4><6>出版物品質のスキャンをご希望の方は、<7>archive@rockarch.org。</7></6>"
 
 #. Full Company Address
 #: src/components/Footer/index.js:23
@@ -638,7 +638,7 @@ msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 #. Label for duplication request form
 #: src/components/ModalMyList/index.js:583
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its extent or physical condition."
-msgstr ""
+msgstr "私は、私の研究に最も関連する資料を特定するために、アーキビストと協力する必要がある場合があること、また、資料の範囲や物理的な状態により、デジタル化できない場合があることを理解しています。"
 
 #. Invalid email error
 #: src/components/ModalMyList/index.js:189

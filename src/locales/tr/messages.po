@@ -206,7 +206,7 @@ msgstr "<0>Son talep tarihi: {0}</0>"
 #. Limitations and fees title
 #: src/components/ModalMyList/index.js:509
 msgid "<0>Limitations and fees</0>"
-msgstr ""
+msgstr "<0>Sınırlamalar ve ücretler</0>"
 
 #. Records content is loading
 #: src/components/RecordsContent/index.js:403
@@ -266,7 +266,7 @@ msgstr "<0>Çevrimiçi Görüntüle<1/></0><2>İndi̇r <3/></2>{0}"
 #. Limitations and fees information
 #: src/components/ModalMyList/index.js:512
 msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
-msgstr ""
+msgstr "<0>Kullanıcıları <1>takvim yılı başına 20 taleple</1> sınırlandırıyoruz.</0><2>Referans PDF'ler için ücret almıyoruz. Yayın kalitesinde taramalar için <3> materyal başına 25 $ sabit ücret alınmaktadır</3>.</2><4>Görsel-işitsel ve büyük boyutlu materyaller için istisnalar da dahil olmak üzere daha fazla ayrıntı için <5>çoğaltma hizmetlerimiz</5> hakkında bilgi edinin.</4><6>Yardım almak veya yayın kalitesinde tarama talep etmek için <7>archive@rockarch.org</7> adresinden bir arşiv uzmanına e-posta gönderin.</6>"
 
 #. Full Company Address
 #: src/components/Footer/index.js:23
@@ -638,7 +638,7 @@ msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 #. Label for duplication request form
 #: src/components/ModalMyList/index.js:583
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its extent or physical condition."
-msgstr ""
+msgstr "Araştırmamla en ilgili kaynakları belirlemek için bir arşivciyle birlikte çalışmam gerekebileceğini ve bazı durumlarda malzemenin kapsamı veya fiziksel durumu nedeniyle dijitalleştirilmesinin mümkün olmadığını anlıyorum."
 
 #. Invalid email error
 #: src/components/ModalMyList/index.js:189

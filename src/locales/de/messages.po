@@ -206,7 +206,7 @@ msgstr "<0>Zuletzt angefordert am: {0}</0>"
 #. Limitations and fees title
 #: src/components/ModalMyList/index.js:509
 msgid "<0>Limitations and fees</0>"
-msgstr ""
+msgstr "<0>Beschränkungen und Gebühren</0>"
 
 #. Records content is loading
 #: src/components/RecordsContent/index.js:403
@@ -266,7 +266,7 @@ msgstr "<0>Online ansehen<1/></0><2>Herunterladen <3/></2>{0}"
 #. Limitations and fees information
 #: src/components/ModalMyList/index.js:512
 msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
-msgstr ""
+msgstr "<0>Wir begrenzen die Zahl der <1>Anfragen</1> auf <1>20 pro Kalenderjahr</1>.</0><2>Für Referenz-PDFs berechnen wir keine Gebühren. Für Scans in Publikationsqualität wird eine <3> Pauschalgebühr von 25 $ pro Dokument</3> erhoben.</2><4>Weitere Einzelheiten, einschließlich Ausnahmen für audiovisuelles und übergroßes Material, finden Sie in den Informationen zu unseren <5>Vervielfältigungsdiensten</5>.</4><6>Wenn Sie Hilfe benötigen oder einen Scan in Publikationsqualität anfordern möchten, senden Sie eine E-Mail an einen Archivar unter <7>archive@rockarch.org.</7></6>"
 
 #. Full Company Address
 #: src/components/Footer/index.js:23
@@ -638,7 +638,7 @@ msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 #. Label for duplication request form
 #: src/components/ModalMyList/index.js:583
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its extent or physical condition."
-msgstr ""
+msgstr "Mir ist bewusst, dass ich möglicherweise mit einem Archivar zusammenarbeiten muss, um die für meine Forschung wichtigsten Ressourcen zu ermitteln, und dass es in einigen Fällen aufgrund des Umfangs oder des physischen Zustands des Materials nicht möglich ist, es zu digitalisieren."
 
 #. Invalid email error
 #: src/components/ModalMyList/index.js:189
