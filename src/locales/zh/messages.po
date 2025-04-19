@@ -206,7 +206,7 @@ msgstr "<0>最后申请日期{0}</0>"
 #. Limitations and fees title
 #: src/components/ModalMyList/index.js:509
 msgid "<0>Limitations and fees</0>"
-msgstr ""
+msgstr "<0>限制和费用</0>"
 
 #. Records content is loading
 #: src/components/RecordsContent/index.js:403
@@ -266,7 +266,7 @@ msgstr "<0>在线阅读<1/></0><2>下载<3/></2>{0}"
 #. Limitations and fees information
 #: src/components/ModalMyList/index.js:512
 msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
-msgstr ""
+msgstr "<0>我们限制用户<1>每个日历年</1>只能<1>申请 20 次</1>。</0><2>我们对 PDF 参考资料不收费。出版物质量的扫描件<3>每件统一收费 25 美元</3>。</2><4>有关详细信息，包括视听资料和超大型资料的例外情况，请阅读我们的<5>复制服务</5>。</4><6>如需帮助或索取出版物质量的扫描件，请发送电子邮件至<7>archive@rockarch.org 联系</7>档案管理员。</6>"
 
 #. Full Company Address
 #: src/components/Footer/index.js:23
@@ -638,7 +638,7 @@ msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 #. Label for duplication request form
 #: src/components/ModalMyList/index.js:583
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its extent or physical condition."
-msgstr ""
+msgstr "我知道，我可能需要与档案管理员合作，以确定与我的研究最相关的资源，在某些情况下，由于资料的范围或实际状况，不可能将其数字化。"
 
 #. Invalid email error
 #: src/components/ModalMyList/index.js:189
