@@ -506,12 +506,15 @@ export const DuplicationRequestModal = props => (
     form={
       <>
         <div className='mb-20'>
-          <Trans comment='Fees and limitations title'>
-            <h3 className='mt-0'>Fees and limitations</h3>
+          <Trans comment='Limitations and fees title'>
+            <h3 className='mt-0'>Limitations and fees</h3>
           </Trans>
-          <Trans comment='Fees and limitations information'>
+          <Trans comment='Limitations and fees information'>
             <div className='mb-20'>
-              We generally charge a <strong>$25 flat fee per item</strong>, with a limit of <strong>20 items requested per calendar year</strong>.
+              We limit users to <strong>20 requests per calendar year</strong>.
+            </div>
+            <div className='mb-20'>
+              We do not charge for reference PDFs. There is a <strong>$25 flat fee per item</strong> for publication-quality scans.
             </div>
             <div className='mb-20'>
               For more details, including exceptions for audiovisual and oversized materials, read about our 
@@ -529,7 +532,7 @@ export const DuplicationRequestModal = props => (
                 </a>.
             </div>
             <div>
-              For help or to request a publication quality scan, email an archivist at 
+              For help or to request a publication-quality scan, email an archivist at 
               <a href={t({message: 'mailto:archive@rockarch.org'})}>archive@rockarch.org</a>.
             </div>
           </Trans>
@@ -576,20 +579,12 @@ export const DuplicationRequestModal = props => (
               component='div'
               className='input__error' />
             <FormGroup
-              label={<Trans comment='Label for duplication request form'>
-                I agree to pay the duplication costs for this request. See our&nbsp;
-                <a target='_blank'
-                  rel='noopener noreferrer'
-                    title={t({
-                      comment: 'Title for duplication request',
-                      message: 'opens in a new window'
-                    })}
-                    href={t({
-                      comment: 'Link for duplication request services',
-                      message: 'https://rockarch.org/collections/access-and-request-materials/#duplication-services'
-                    })}>
-                  fee schedule
-                </a>.</Trans>}
+              label={
+              <Trans comment='Label for duplication request form'>
+                I understand that I may need to work with an archivist to identify the resources most 
+                relevant to my research, and that, in some cases, it is not possible to digitize material 
+                due to its extent or physical condition. 
+              </Trans>}
               name='costs'
               type='checkbox'
               required={true}

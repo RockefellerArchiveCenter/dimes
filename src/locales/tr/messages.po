@@ -44,7 +44,7 @@ msgstr "{0, select, true {Minimap} other {Minimap Tanıtımı}}"
 
 #. Text for submiting item(s) request
 #: src/components/ModalMyList/index.js:466
-#: src/components/ModalMyList/index.js:612
+#: src/components/ModalMyList/index.js:607
 msgid "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 msgstr "{0, select, true {Materyalleri̇ Talep et {1}} other {Materyalleri̇ Talep et {2}}}"
 
@@ -118,11 +118,6 @@ msgstr "<0/>aramaya geri̇ dön"
 msgid "<0/>Start a New Search"
 msgstr "<0/>Yeni Bir Arama Başlatın"
 
-#. Download button for digital object
-#: src/components/PageDigitalObject/index.js:108
-#~ msgid "<0><1/> Download</0>"
-#~ msgstr "<0><1/> İndi̇r</0>"
-
 #. Schedule a visit button
 #: src/components/MyListSidebar/index.js:9
 msgid "<0><1/> Schedule a Visit</0>"
@@ -178,11 +173,6 @@ msgstr "<0>Alıntıla yapın<1/></0>"
 msgid "<0>Description</0>"
 msgstr "<0>Açıklama</0>"
 
-#. Fees and limitations title
-#: src/components/ModalMyList/index.js:509
-msgid "<0>Fees and limitations</0>"
-msgstr "<0>Ücretlendirme ve sınırlamalar</0>"
-
 #. Saved item found in message
 #: src/components/SavedItem/index.js:17
 msgid "<0>Found in: <1>{0}</1></0>"
@@ -213,6 +203,11 @@ msgstr "<0>keyboard_arrow_left</0>Aramaya Geri Dön"
 msgid "<0>Last requested on: {0}</0>"
 msgstr "<0>Son talep tarihi: {0}</0>"
 
+#. Limitations and fees title
+#: src/components/ModalMyList/index.js:509
+msgid "<0>Limitations and fees</0>"
+msgstr "<0>Sınırlamalar ve ücretler</0>"
+
 #. Records content is loading
 #: src/components/RecordsContent/index.js:403
 msgid "<0>Loading</0>"
@@ -239,7 +234,7 @@ msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archi
 msgstr "<0>Lütfen dikkat:</0> listenizi <1>archive@rockarch.org</1> adresindeki bir arşivciye e-posta ile gönderiyorsanız, lütfen Mesaj alanına adınızı ve e-posta adresinizi ekleyin, aksi takdirde takip etmek için sizinle iletişime geçme imkanımız olmayacaktır."
 
 #. Submit Request title
-#: src/components/ModalMyList/index.js:537
+#: src/components/ModalMyList/index.js:540
 msgid "<0>Submit request</0>"
 msgstr "<0>İstek gönder</0>"
 
@@ -268,10 +263,10 @@ msgstr "<0>Çevrimiçi Görüntüle<1/></0>"
 msgid "<0>View Online<1/></0><2>Download <3/></2>{0}"
 msgstr "<0>Çevrimiçi Görüntüle<1/></0><2>İndi̇r <3/></2>{0}"
 
-#. Fees and limitations information
+#. Limitations and fees information
 #: src/components/ModalMyList/index.js:512
-msgid "<0>We generally charge a <1>$25 flat fee per item</1>, with a limit of <2>20 items requested per calendar year</2>.</0><3>For more details, including exceptions for audiovisual and oversized materials, read about our <4>duplication services</4>.</3><5>For help or to request a publication quality scan, email an archivist at <6>archive@rockarch.org</6>.</5>"
-msgstr "<0><2>Takvim yılı başına talep edilen materyal sayısı 20</2> ile sınırlı olmak üzere, genellikle materyal <1> başına 25 ABD doları sabit ücret</1> alıyoruz.</0><3>Görsel-işitsel ve büyük boyutlu materyaller için istisnalar da dahil olmak üzere daha fazla ayrıntı için <4>çoğaltma hizmetlerimiz</4> hakkında bilgi edinin.</3><5>Yardım almak veya yayın kalitesinde tarama talep etmek için <6>archive@rockarch.org</6> adresinden bir arşiv uzmanına e-posta gönderin.</5>"
+msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
+msgstr "<0>Kullanıcıları <1>takvim yılı başına 20 taleple</1> sınırlandırıyoruz.</0><2>Referans PDF'ler için ücret almıyoruz. Yayın kalitesinde taramalar için <3> materyal başına 25 $ sabit ücret alınmaktadır</3>.</2><4>Görsel-işitsel ve büyük boyutlu materyaller için istisnalar da dahil olmak üzere daha fazla ayrıntı için <5>çoğaltma hizmetlerimiz</5> hakkında bilgi edinin.</4><6>Yardım almak veya yayın kalitesinde tarama talep etmek için <7>archive@rockarch.org</7> adresinden bir arşiv uzmanına e-posta gönderin.</6>"
 
 #. Full Company Address
 #: src/components/Footer/index.js:23
@@ -611,9 +606,7 @@ msgid "https://rockarch.org/collections/access-and-request-materials/"
 msgstr "https://rockarch.org/collections/access-and-request-materials/"
 
 #. Link for duplication request services
-#. Link for duplication request services
-#: src/components/ModalMyList/index.js:524
-#: src/components/ModalMyList/index.js:587
+#: src/components/ModalMyList/index.js:527
 msgid "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 msgstr "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 
@@ -643,9 +636,9 @@ msgid "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 
 #. Label for duplication request form
-#: src/components/ModalMyList/index.js:579
-msgid "I agree to pay the duplication costs for this request. See our <0>fee schedule</0>."
-msgstr "Bu talep için çoğaltma masraflarını ödemeyi kabul ediyorum. <0>Ücretlendirme</0> planına bakınız."
+#: src/components/ModalMyList/index.js:583
+msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its extent or physical condition."
+msgstr "Araştırmamla en ilgili kaynakları belirlemek için bir arşivciyle birlikte çalışmam gerekebileceğini ve bazı durumlarda malzemenin kapsamı veya fiziksel durumu nedeniyle dijitalleştirilmesinin mümkün olmadığını anlıyorum."
 
 #. Invalid email error
 #: src/components/ModalMyList/index.js:189
@@ -675,7 +668,7 @@ msgstr "Genel Merkezi̇n Bulunduğu Yer"
 
 #. Company Email link
 #: src/components/ModalMyList/index.js:174
-#: src/components/ModalMyList/index.js:533
+#: src/components/ModalMyList/index.js:536
 #: src/components/PageBackendError/index.js:19
 #: src/components/PrimaryLink/index.js:33
 msgid "mailto:archive@rockarch.org"
@@ -728,7 +721,7 @@ msgstr "Takma Adlar"
 #. No selected items error
 #: src/components/ModalMyList/index.js:198
 #: src/components/ModalMyList/index.js:415
-#: src/components/ModalMyList/index.js:554
+#: src/components/ModalMyList/index.js:557
 msgid "No items have been selected to submit."
 msgstr "Gönderilmek üzere hiçbir öğe seçilmemiştir."
 
@@ -751,10 +744,8 @@ msgid "opens email"
 msgstr "e-posta açar"
 
 #. Title for duplication services link
-#. Title for duplication request
 #. Title message for opening an online item
-#: src/components/ModalMyList/index.js:520
-#: src/components/ModalMyList/index.js:583
+#: src/components/ModalMyList/index.js:523
 #: src/components/RecordsDetail/index.js:210
 msgid "opens in a new window"
 msgstr "yeni bir pencerede açılır"
@@ -791,11 +782,11 @@ msgstr "Lütfen aramak için bir kelime veya cümle ekleyin."
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:277
 #: src/components/ModalMyList/index.js:194
 #: src/components/ModalMyList/index.js:412
-#: src/components/ModalMyList/index.js:547
+#: src/components/ModalMyList/index.js:550
 msgid "Please complete this field."
 msgstr "Lütfen bu alanı doldurunuz."
 
-#: src/components/ModalMyList/index.js:557
+#: src/components/ModalMyList/index.js:560
 msgid "Please limit your request to {0} items."
 msgstr "Lütfen talebinizi {0} öğe ile sınırlayın."
 
@@ -851,7 +842,7 @@ msgstr "Okuma Odası Saatleri:"
 #. Name of recaptcha error message
 #: src/components/ModalMyList/index.js:260
 #: src/components/ModalMyList/index.js:267
-#: src/components/ModalMyList/index.js:601
+#: src/components/ModalMyList/index.js:596
 msgid "recaptcha"
 msgstr "recaptcha"
 
@@ -1122,7 +1113,7 @@ msgstr "Sanal Uluslararası Yetki Dosyası"
 #. Payment Modal Form Test
 #. Costs not agreed to error
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:280
-#: src/components/ModalMyList/index.js:550
+#: src/components/ModalMyList/index.js:553
 msgid "We cannot process your request unless you agree to pay the costs of reproduction."
 msgstr "Çoğaltma masraflarını ödemeyi kabul etmediğiniz sürece talebinizi işleme koyamayız."
 
