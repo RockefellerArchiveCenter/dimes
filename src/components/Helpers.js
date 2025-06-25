@@ -82,8 +82,7 @@ export const truncateString = (text, maxLength) => {
   }
 }
 
-/** Sends a custom pageview event to Matomo Tag Manager
-* with pageTitle and pageUrl variables  */
+/** Sends a custom pageview event to Matomo Tag Manager*/
 let lastFiredUrl = null;
 
 export const firePageViewEvent = () => {
