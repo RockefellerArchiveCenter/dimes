@@ -97,7 +97,7 @@
   border: 3px solid $silver-grey;
   margin-bottom: 15px;
   &:hover {
-    border-color: $crusta-orange;
+    border-color: $umber-brown;
   }
   &:focus-within {
     border-color: $regal-blue;
@@ -160,9 +160,9 @@
     left: -12px;
   }
   &:hover {
-    border-color: $crusta-orange;
+    border-color: $umber-brown;
     & .material-icon {
-      color: $crusta-orange;
+      color: $umber-brown;
     }
   }
   &:hover.active {

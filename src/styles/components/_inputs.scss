@@ -116,7 +116,7 @@ select {
     line-height: 1;
     width: 36px;
     &:hover {
-      background-color: $flame-orange;
+      background-color: $umber-brown;
       color: $white;
     }
 
@@ -126,7 +126,7 @@ select {
     }
 
     &[aria-selected="true"] {
-      background-color: $flame-orange;
+      background-color: $umber-brown;
       color: $white;
     }
 
@@ -192,7 +192,7 @@ select {
       content: "check";
       position: absolute;
       right: 18px;
-      color: $flame-orange;
+      color: $umber-brown;
     }
   }
 }
