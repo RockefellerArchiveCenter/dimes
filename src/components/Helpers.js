@@ -82,22 +82,20 @@ export const truncateString = (text, maxLength) => {
   }
 }
 
-/** Sends a custom pageview event to Matomo Tag Manager.
-* This allows us to ensure that the correct page titles are sent.  */
-var done = false
-var prevTitle = ''
-export const firePageViewEvent = title => {
-  if (title && title !== prevTitle) {
-    done = false
+/** Sends a custom pageview event to Matomo Tag Manager*/
+let lastFiredUrl = null;
+
+export const firePageViewEvent = () => {
+  const currentUrl = window.location.href;
+  // Handle translation, data loading, etc. - if already fired for this URL, skip
+  if (currentUrl === lastFiredUrl) {
+    return;
   }
-  if (title && !done) {
-    if (window && window._mtm) {
-      let dataLayer = window._mtm || [];
-      dataLayer.push({
-        'event': 'reactPageViewEvent'
-      });
-      done = true
-      prevTitle = title
-    }
+  lastFiredUrl = currentUrl;
+  if (window && window._mtm) {
+    let dataLayer = window._mtm || [];
+    dataLayer.push({
+      event: 'reactPageViewEvent',
+    });
   }
 }
