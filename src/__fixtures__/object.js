@@ -38,6 +38,13 @@ export const object = {
             "type": "inclusive"
         }
     ],
+    files: [
+        {
+            "title": "Volunteer Urban Consulting Group, Inc., 1978-1982",
+            "download": "https://iiif.rockarch.org/pdfs/WEfD34NBP8pRbzuYB78W3z",
+            "manifest": "https://iiif.rockarch.org/manifests/WEfD34NBP8pRbzuYB78W3zq"
+        }
+    ],
     "notes": null,
     "rights_statements": null,
     "agents": null,
