@@ -109,7 +109,7 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
           setItem(res.data)
           if (res.data.online) {
             axios
-              .head(`${process.env.REACT_APP_S3_BASEURL}/pdfs/${id}`)
+              .head(res.data.files[0].download)
               .then(res => setDownloadSize(formatBytes(res.headers['content-length'])))
               .catch(e => setDownloadSize(''))
           }
