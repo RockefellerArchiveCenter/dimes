@@ -18,6 +18,8 @@ import './styles.scss'
 const PageDigitalObject = ({isMobile}) => {
 
   const [itemTitle, setItemTitle] = useState("")
+  const [manifestUrl, setManifestUrl] = useState("")
+  const [downloadUrl, setDownloadUrl] = useState("")
   const { id, type } = useParams()
 
   /** Fetches and sets item title */
@@ -25,7 +27,10 @@ const PageDigitalObject = ({isMobile}) => {
     axios
       .get(`${process.env.REACT_APP_ARGO_BASEURL}/${type}/${id}`)
       .then(res =>  {
-        setItemTitle(res.data.title)})
+        setItemTitle(res.data.title)
+        setManifestUrl(res.data.files[0].manifest)
+        setDownloadUrl(res.data.files[0].download)
+      })
       .catch(err => console.log(err))
     }, [id, type])
 
@@ -92,7 +97,7 @@ const PageDigitalObject = ({isMobile}) => {
       enabled: false
     },
     windows: [
-        { manifestId: `${process.env.REACT_APP_S3_BASEURL}/manifests/${id}` }
+        { manifestId: `${manifestUrl}` }
     ]
   }
 
@@ -114,11 +119,6 @@ const PageDigitalObject = ({isMobile}) => {
     const itemUrl = (
       params ? `/${type}/${id}${params}` : `/${type}/${id}`
     )
-
-    /** Constructs url for PDF download 
-     * In the future it may be possible to derive this from the IIIF manifest
-    */
-    const pdfDownloadUrl = `${process.env.REACT_APP_S3_BASEURL}/pdfs/${id}`
 
     /** Constructs url for single image download */
     const imageDownloadUrl = infoResponse => {
@@ -151,13 +151,14 @@ const PageDigitalObject = ({isMobile}) => {
                 message: 'Entire Item - PDF'
               })}
               iconBefore='picture_as_pdf'
-              href={pdfDownloadUrl}
+              href={downloadUrl}
               role='menuitem' />
             {canvases.map((canvas) => {
               const info = infoResponse(canvas.id)
               const pixelDimensions = info.json && `${info.json.width} x ${info.json.height} px`
               return (
               <DropdownItem
+                  key={canvas.id}
                   order={2}
                   className='btn--orange dropdown__btn dropdown__item--orange'
                   label={t({
