@@ -1,34 +1,27 @@
-import React from 'react'
-import {render} from 'react-dom'
+import { render } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import { PrimaryLinkAccessMaterials, PrimaryLinkAccessibilityPolicy, PrimaryLinkEmail, PrimaryLinkHoliday, PrimaryLinkPrivacyPolicy, PrimaryLinkRACPolicy,  } from '..'
 
 it('renders without crashing', () => {
-	const div = document.createElement('div')
-	render(<I18nApp ReactComponent={<PrimaryLinkAccessMaterials />} />, div)
+	render(<I18nApp ReactComponent={<PrimaryLinkAccessMaterials />} />)
 })
   
 it('renders without crashing', () => {
-	const div = document.createElement('div')
-	render(<I18nApp ReactComponent={<PrimaryLinkEmail />} />, div)
+	render(<I18nApp ReactComponent={<PrimaryLinkEmail />} />)
 })
 
 it('renders without crashing', () => {
-	const div = document.createElement('div')
-	render(<I18nApp ReactComponent={<PrimaryLinkHoliday />} />, div)
+	render(<I18nApp ReactComponent={<PrimaryLinkHoliday />} />)
 })
 
 it('renders without crashing', () => {
-	const div = document.createElement('div')
-	render(<I18nApp ReactComponent={<PrimaryLinkAccessibilityPolicy />} />, div)
+	render(<I18nApp ReactComponent={<PrimaryLinkAccessibilityPolicy />} />)
 })
 
 it('renders without crashing', () => {
-	const div = document.createElement('div')
-	render(<I18nApp ReactComponent={<PrimaryLinkPrivacyPolicy />} />, div)
+	render(<I18nApp ReactComponent={<PrimaryLinkPrivacyPolicy />} />)
 })
 
 it('renders without crashing', () => {
-	const div = document.createElement('div')
-	render(<I18nApp ReactComponent={<PrimaryLinkRACPolicy />} />, div)
+	render(<I18nApp ReactComponent={<PrimaryLinkRACPolicy />} />)
 })

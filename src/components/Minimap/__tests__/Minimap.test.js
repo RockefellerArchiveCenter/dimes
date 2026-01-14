@@ -1,14 +1,10 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import Minimap from '..'
 
 import { minimap } from '../../../__fixtures__/minimap.js'
 
 it('renders props correctly', () => {
-  const div = document.createElement('div')
-  document.body.appendChild(div)
 
   act(() => {
     render(
@@ -17,7 +13,7 @@ it('renders props correctly', () => {
           data={minimap}
           isLoading={false}
           params={{}} />}
-      />, div)
+      />)
   })
 
 })

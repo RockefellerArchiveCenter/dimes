@@ -1,15 +1,11 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import MaterialIcon from '..'
 
 it('renders props correctly', () => {
-  const div = document.createElement('div')
-  document.body.appendChild(div)
 
   act(() => {
-    render(<I18nApp ReactComponent={<MaterialIcon icon='close' />} />, div)
+    render(<I18nApp ReactComponent={<MaterialIcon icon='close' />} />)
   })
 
   const icon = document.querySelector('span')
@@ -17,7 +13,7 @@ it('renders props correctly', () => {
   expect(icon).toHaveAttribute('aria-hidden', 'true')
 
   act(() => {
-    render(<I18nApp ReactComponent={<MaterialIcon icon='archive_box' />} />, div)
+    render(<I18nApp ReactComponent={<MaterialIcon icon='archive_box' />} />)
   })
 
   expect(icon).toHaveAttribute('aria-hidden', 'true')

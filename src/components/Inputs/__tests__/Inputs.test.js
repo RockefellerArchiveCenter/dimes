@@ -1,7 +1,4 @@
-import React from 'react'
-import { render, unmountComponentAtNode } from 'react-dom'
-import { act } from 'react-dom/test-utils'
-import { t } from '@lingui/macro'
+import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import {
   CheckBoxInput,
@@ -10,25 +7,13 @@ import {
   TextInput,
   YearInput } from '..'
 
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
-})
-
 it('renders checkbox props correctly', () => {
   const handleChange = jest.fn()
   act(() => {
     render(<I18nApp ReactComponent={<CheckBoxInput
       label='Do you want to proceed?'
       id='1' checked
-      handleChange={handleChange} />} />, container)
+      handleChange={handleChange} />} />)
   })
 
   const input = document.querySelector('[type=checkbox]')
@@ -48,7 +33,7 @@ it('renders checkbox props correctly', () => {
 
 it('renders date props correctly', () => {
   act(() => {
-    render(<I18nApp ReactComponent={<DateInput label='Select a date' id='1' handleChange={jest.fn()} />} />, container)
+    render(<I18nApp ReactComponent={<DateInput label='Select a date' id='1' handleChange={jest.fn()} />} />)
   })
 
   const label = document.querySelector('label')
@@ -74,7 +59,7 @@ it('renders select props correctly', () => {
         label='Select an option'
         name='bar'
         onChange={onChange}
-        options={options} />, container)
+        options={options} />)
   })
 
   const label = document.querySelector('label')
@@ -85,7 +70,7 @@ it('renders select props correctly', () => {
 
 it('renders text input props correctly', () => {
   act(() => {
-    render(<I18nApp ReactComponent={<TextInput label='Foo' id='1' type='text' />} />, container)
+    render(<I18nApp ReactComponent={<TextInput label='Foo' id='1' type='text' />} />)
   })
 
   const label = document.querySelector('label')
@@ -99,7 +84,7 @@ it('renders text input props correctly', () => {
 
 it('renders year input props correctly', () => {
   act(() => {
-    render(<I18nApp ReactComponent={<YearInput label='Enter a year' id='1' />} />, container)
+    render(<I18nApp ReactComponent={<YearInput label='Enter a year' id='1' />} />)
   })
 
   const label = document.querySelector('label')

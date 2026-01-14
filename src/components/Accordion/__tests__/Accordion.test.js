@@ -1,6 +1,4 @@
-import React from 'react'
-import { render, unmountComponentAtNode } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import {
     Accordion,
@@ -11,32 +9,22 @@ import {
 } from '..'
 import * as focus from '../helpers/focus'
 
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
+it('renders without crashing', () => {
+  act(() => {
+    render(<I18nApp ReactComponent={<Accordion />} />)
+  })
 })
 
 it('renders without crashing', () => {
-  render(<I18nApp ReactComponent={<Accordion />} />, container)
+  render(<I18nApp ReactComponent={<AccordionItem preExpanded={[]} />} />)
 })
 
 it('renders without crashing', () => {
-  render(<I18nApp ReactComponent={<AccordionItem preExpanded={[]} />} />, container)
+  render(<I18nApp ReactComponent={<AccordionItemHeading />} />)
 })
 
 it('renders without crashing', () => {
-  render(<I18nApp ReactComponent={<AccordionItemHeading />} />, container)
-})
-
-it('renders without crashing', () => {
-  render(<I18nApp ReactComponent={<AccordionItemButton />} />, container)
+  render(<I18nApp ReactComponent={<AccordionItemButton />} />)
 })
 
 it('handles clicks', () => {
@@ -44,7 +32,7 @@ it('handles clicks', () => {
   const setIsExpanded = jest.fn()
 
   act(() => {
-    render(<I18nApp ReactComponent={<AccordionItemButton setIsExpanded={setIsExpanded} onClick={onClick} />} />, container)
+    render(<I18nApp ReactComponent={<AccordionItemButton setIsExpanded={setIsExpanded} onClick={onClick} />} />)
   })
 
   const button = document.querySelector('[data-accordion-component=AccordionItemButton]')
@@ -66,7 +54,7 @@ it('handles keyboard events', () => {
   focus.focusNextSiblingOf = jest.fn()
 
   act(() => {
-    render(<I18nApp ReactComponent={<AccordionItemButton setIsExpanded={setIsExpanded} onClick={onClick} />} />, container)
+    render(<I18nApp ReactComponent={<AccordionItemButton setIsExpanded={setIsExpanded} onClick={onClick} />} />)
   })
 
   const button = document.querySelector('[data-accordion-component=AccordionItemButton]')
@@ -136,5 +124,5 @@ it('handles keyboard events', () => {
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
-  render(<I18nApp ReactComponent={<AccordionItemPanel />} />, container)
+  render(<I18nApp ReactComponent={<AccordionItemPanel />} />)
 })

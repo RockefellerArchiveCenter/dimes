@@ -1,6 +1,4 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import CardList from '..'
 
@@ -11,7 +9,7 @@ it('renders props correctly', () => {
   document.body.appendChild(div)
 
   act(() => {
-    render(<I18nApp ReactComponent={<CardList items={cardItems} />} />, div)
+    render(<I18nApp ReactComponent={<CardList items={cardItems} />} />)
   })
 
   const card = document.querySelector('.card')

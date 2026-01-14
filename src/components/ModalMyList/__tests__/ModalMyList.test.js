@@ -1,7 +1,5 @@
-import React from 'react'
 import axios from 'axios'
-import { render, unmountComponentAtNode } from 'react-dom'
-import { act, Simulate } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { t } from '@lingui/macro'
 import {
   DuplicationRequestModal,
@@ -18,6 +16,7 @@ import { I18nApp } from '../../i18n'
 let container = null
 beforeEach(() => {
   container = document.createElement('div')
+  container.setAttribute('id', 'root')
   document.body.appendChild(container)
   axios.post.mockImplementation((url) => {
     if (url.includes('parse')) {
@@ -29,15 +28,9 @@ beforeEach(() => {
   axios.get.mockImplementation((url) => Promise.resolve({data:[]}))
 })
 
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
-})
-
 jest.mock('axios')
 
-it('renders props correctly', async () => {
+it('renders select props correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<ModalMyList
       appElement={container}
@@ -47,7 +40,7 @@ it('renders props correctly', async () => {
       list={resolvedList}
       setSubmit={jest.fn()}
       title='foo'
-      toggleModal={jest.fn()} />} />, container)
+      toggleModal={jest.fn()} />} />)
   })
 
   const selectButton = document.querySelector('.modal-list > button')
@@ -65,7 +58,9 @@ it('renders props correctly', async () => {
       message: 'selected: 0 items'
     }))
   })
+})
 
+it('renders deselect props correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<ModalMyList
       appElement={container}
@@ -75,8 +70,11 @@ it('renders props correctly', async () => {
       list={checkedList}
       setSubmit={jest.fn()}
       title='foo'
-      toggleModal={jest.fn()} />} />, container)
+      toggleModal={jest.fn()} />} />)
   })
+
+  const selectButton = document.querySelector('.modal-list > button')
+  const totals = document.querySelector('.selected-totals')
 
   await act(async () => {
     expect(selectButton.textContent).toContain(t({
@@ -102,7 +100,7 @@ it('renders email modal props correctly', async () => {
       setSubmit={jest.fn()}
       submitList={submitList}
       toggleList={jest.fn()}
-      toggleModal={jest.fn()} />} />, container)
+      toggleModal={jest.fn()} />} />)
   })
 
   const form = document.querySelector('.modal-form')
@@ -144,7 +142,7 @@ it('validates email modal form correctly', async () => {
       setSubmit={jest.fn()}
       submitList={submitList}
       toggleList={jest.fn()}
-      toggleModal={jest.fn()} />} />, container)
+      toggleModal={jest.fn()} />} />)
   })
 
   const form = document.querySelector('.modal-form')
@@ -175,7 +173,7 @@ it('renders reading room modal props correctly', async () => {
       setSubmit={jest.fn()}
       submitList={submitList}
       toggleList={jest.fn()}
-      toggleModal={jest.fn()} />} />, container)
+      toggleModal={jest.fn()} />} />)
   })
 
   const form = document.querySelector('.modal-form')
@@ -211,7 +209,7 @@ it('validates reading room modal form correctly', async () => {
       setSubmit={jest.fn()}
       submitList={submitList}
       toggleList={jest.fn()}
-      toggleModal={jest.fn()} />} />, container)
+      toggleModal={jest.fn()} />} />)
   })
 
   const form = document.querySelector('.modal-form')
@@ -237,7 +235,7 @@ it('renders duplication modal props correctly', async () => {
       setSubmit={jest.fn()}
       submitList={submitList}
       toggleList={jest.fn()}
-      toggleModal={jest.fn()} />} />, container)
+      toggleModal={jest.fn()} />} />)
   })
 
   const form = document.querySelector('.modal-form')
@@ -265,7 +263,7 @@ it('validates duplication modal form correctly', async () => {
       setSubmit={jest.fn()}
       submitList={submitList}
       toggleList={jest.fn()}
-      toggleModal={jest.fn()} />} />, container)
+      toggleModal={jest.fn()} />} />)
   })
 
   const form = document.querySelector('.modal-form')

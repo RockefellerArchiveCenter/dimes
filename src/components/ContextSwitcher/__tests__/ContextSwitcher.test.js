@@ -1,18 +1,13 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import { t } from '@lingui/macro'
 import ContextSwitcher from '..'
 
-it('renders props correctly', () => {
-  const div = document.createElement('div')
-  document.body.appendChild(div)
-
+it('renders collection content props correctly', () => {
   act(() => {
     render(<I18nApp ReactComponent={<ContextSwitcher
       isContentShown={false}
-      toggleIsContentShown={jest.fn()} />} />, div)
+      toggleIsContentShown={jest.fn()} />} />)
   })
 
   const switcher = document.querySelector('.toggle-wrapper > button')
@@ -21,13 +16,16 @@ it('renders props correctly', () => {
     comment: 'switcher label text content',
     message: 'Collection Content'
   }))
+})
 
+it('renders collection details props correctly', () => {
   act(() => {
     render(<I18nApp ReactComponent={<ContextSwitcher
       isContentShown
-      toggleIsContentShown={jest.fn()} />} />, div)
+      toggleIsContentShown={jest.fn()} />} />)
   })
 
+  const switcher = document.querySelector('.toggle-wrapper > button')
   expect(switcher.className).toBe('btn btn--lg btn--orange toggle-context mb-0')
   expect(switcher.textContent).toContain(t({
     comment: 'switcher label text content',
