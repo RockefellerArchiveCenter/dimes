@@ -1,4 +1,5 @@
-import { render, act } from '@testing-library/react'
+import { render } from '@testing-library/react'
+import { act } from 'react'
 import { I18nApp } from '../../i18n'
 import Button from '..'
 

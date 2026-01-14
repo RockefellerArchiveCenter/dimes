@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { t } from '@lingui/macro'
 
@@ -8,12 +6,6 @@ const PrimaryLink = ({ className, href, text }) => (
 		{text}
 	</a>
 )
-
-PrimaryLink.propTypes = {
-	className: PropTypes.string,
-	href: PropTypes.string.isRequired,
-	text: PropTypes.string.isRequired
-}
 
 export const PrimaryLinkAccessMaterials = () => (
 	<PrimaryLink

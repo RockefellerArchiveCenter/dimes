@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import Modal from 'react-modal'
 import MaterialIcon from '../MaterialIcon'
 import Minimap from '../Minimap'
@@ -47,13 +45,6 @@ export const ModalMinimapInfo = props => (
   </Modal>
 )
 
-ModalMinimapInfo.propTypes = {
-  appElement: PropTypes.object,
-  hasSeenMinimapIntro: PropTypes.bool.isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  toggleModal: PropTypes.func.isRequired
-}
-
 export const ModalMinimap = props => (
   <Modal
     appElement={props.appElement ? props.appElement : Modal.setAppElement('#root')}
@@ -89,13 +80,3 @@ export const ModalMinimap = props => (
     </div>
   </Modal>
 )
-
-ModalMinimap.propTypes = {
-  appElement: PropTypes.object,
-  data: PropTypes.object.isRequired,
-  isLoading: PropTypes.bool.isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  params: PropTypes.object,
-  rowCount: PropTypes.number,
-  toggleModal: PropTypes.func.isRequired
-}

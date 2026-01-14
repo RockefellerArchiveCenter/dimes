@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import classnames from 'classnames'
 import Button from '../Button'
-import PropTypes from 'prop-types'
 import { CheckBoxInput, SelectInput, TextInput } from '../Inputs'
 import { t } from '@lingui/macro'
 import './styles.scss'
@@ -122,11 +121,6 @@ const SearchForm = props => {
         </div>
       </div>
     </form>)
-}
-
-SearchForm.propTypes = {
-  className: PropTypes.string,
-  handleOnlineChange: PropTypes.func
 }
 
 export default SearchForm

@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react'
-import PropTypes from 'prop-types'
+import {useEffect, useState} from 'react'
 import DatePicker from 'react-datepicker'
 import {useSelect} from 'downshift'
 import MaterialIcon from '../MaterialIcon'
@@ -12,15 +11,6 @@ const InputLabel = ({className, id, label, required}) => (
   <label htmlFor={id} className={className}>
     {label}{required && ' *'}
   </label>)
-
-InputLabel.propTypes = {
-  id: PropTypes.string.isRequired,
-  label: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object
-  ]).isRequired,
-  required: PropTypes.bool
-}
 
 
 export const CheckBoxInput = props => (
@@ -38,19 +28,6 @@ export const CheckBoxInput = props => (
     <InputLabel {...props} />
   </>
 )
-
-CheckBoxInput.propTypes = {
-  checked: PropTypes.bool.isRequired,
-  className: PropTypes.string,
-  handleChange: PropTypes.func,
-  id: PropTypes.string.isRequired,
-  label: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element
-  ]).isRequired,
-  name: PropTypes.string,
-  required: PropTypes.bool
-};
 
 CheckBoxInput.defaultProps = {
   checked: true,
@@ -79,15 +56,6 @@ export const DateInput = ({className, defaultDate, handleChange, helpText, id, l
   {helpText && <p className='input__help-text' id={`desc-${id}`}>{helpText}</p>}
   </>
 )}
-
-DateInput.propTypes = {
-  className: PropTypes.string,
-  handleChange: PropTypes.func,
-  helpText: PropTypes.string,
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  defaultDate: PropTypes.instanceOf(Date),
-};
 
 
 export const SelectInput = props => {
@@ -132,15 +100,6 @@ export const SelectInput = props => {
   )
 }
 
-SelectInput.propTypes = {
-  className: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  options: PropTypes.array.isRequired,
-  required: PropTypes.bool
-}
-
 export const TextInput = props => (
   <div className={props.className}>
     <InputLabel {...props} />
@@ -158,20 +117,6 @@ export const TextInput = props => (
       value={props.value} />
    </div>
 )
-
-TextInput.propTypes = {
-  className: PropTypes.string,
-  handleChange: PropTypes.func,
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  maxLength: PropTypes.number,
-  minLength: PropTypes.number,
-  placeholder: PropTypes.string,
-  required: PropTypes.bool,
-  size: PropTypes.number,
-  type: PropTypes.oneOf(['text', 'search']).isRequired,
-  value: PropTypes.string
-};
 
 TextInput.defaultProps = {
   maxLength: 255,
@@ -193,19 +138,3 @@ export const YearInput = props => (
       required={props.required} />
   </div>
 )
-
-YearInput.propTypes = {
-  className: PropTypes.string,
-  defaultValue: PropTypes.string,
-  handleChange: PropTypes.func,
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  max: PropTypes.number,
-  min: PropTypes.number,
-  name: PropTypes.string,
-  required: PropTypes.bool,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ])
-};

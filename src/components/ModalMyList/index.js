@@ -1,7 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Formik, Form, Field, ErrorMessage, useFormikContext } from 'formik'
 import pluralize from 'pluralize'
-import PropTypes from 'prop-types'
 import Button from '../Button'
 import Modal from 'react-modal'
 import Captcha from '../Captcha'
@@ -142,16 +141,6 @@ export const ModalMyList = props => (
   </Modal>
 )
 
-ModalMyList.propTypes = {
-  appElement: PropTypes.object,
-  handleChange: PropTypes.func,
-  ignoreRestrictions: PropTypes.bool.isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  toggleModal: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  list: PropTypes.array.isRequired
-}
-
 ModalMyList.defaultProps = {
   ignoreRestrictions: false,
 }
@@ -286,17 +275,6 @@ export const EmailModal = props => (
     }
   />
 )
-
-EmailModal.propTypes = {
-  appElement: PropTypes.object,
-  handleChange: PropTypes.func,
-  handleFormSubmit: PropTypes.func.isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  list: PropTypes.array.isRequired,
-  submitList: PropTypes.array.isRequired,
-  toggleList: PropTypes.func.isRequired,
-  toggleModal: PropTypes.func.isRequired,
-}
 
 const ReadingRoomSelect = ({ readingRooms }) => {
   const { setFieldValue } = useFormikContext();
@@ -482,18 +460,6 @@ export const ReadingRoomRequestModal = props => {
   />
 )}
 
-ReadingRoomRequestModal.propTypes = {
-  appElement: PropTypes.object,
-  handleChange: PropTypes.func,
-  handleFormSubmit: PropTypes.func.isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  list: PropTypes.array.isRequired,
-  submitList: PropTypes.array.isRequired,
-  toggleList: PropTypes.func.isRequired,
-  toggleModal: PropTypes.func.isRequired,
-}
-
-
 export const DuplicationRequestModal = props => (
   <ModalMyList
     appElement={props.appElement}
@@ -622,14 +588,3 @@ export const DuplicationRequestModal = props => (
     }
   />
 )
-
-DuplicationRequestModal.propTypes = {
-  appElement: PropTypes.object,
-  handleChange: PropTypes.func,
-  handleFormSubmit: PropTypes.func.isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  list: PropTypes.array.isRequired,
-  submitList: PropTypes.array.isRequired,
-  toggleList: PropTypes.func.isRequired,
-  toggleModal: PropTypes.func.isRequired,
-}

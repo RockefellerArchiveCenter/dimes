@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import Modal from 'react-modal'
 import MaterialIcon from '../MaterialIcon'
 import { t } from '@lingui/macro'
@@ -27,16 +25,5 @@ const ModalConfirm = props => (
     </div>
   </Modal>
 )
-
-ModalConfirm.propTypes = {
-  appElement: PropTypes.object,
-  handleChange: PropTypes.func,
-  isOpen: PropTypes.bool.isRequired,
-  message: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object]).isRequired,
-  title: PropTypes.string.isRequired,
-  toggleModal: PropTypes.func.isRequired
-}
 
 export default ModalConfirm

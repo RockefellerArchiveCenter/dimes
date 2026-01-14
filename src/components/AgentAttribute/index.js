@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import './styles.scss'
 
 const AgentAttribute = ({ label, value }) => (
@@ -20,11 +18,6 @@ const AgentAttributeList = ({ items }) => {
       {listItems}
     </div>
   )
-}
-
-AgentAttribute.propTypes = {
-  label: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired
 }
 
 export default AgentAttributeList

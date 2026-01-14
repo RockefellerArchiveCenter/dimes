@@ -1,4 +1,3 @@
-import React from 'react'
 import SocialIcons from '../SocialIcons'
 import { PrimaryLinkAccessMaterials, PrimaryLinkAccessibilityPolicy, PrimaryLinkEmail, PrimaryLinkHoliday, PrimaryLinkPrivacyPolicy, PrimaryLinkRACPolicy } from '../PrimaryLink'
 import { SecondaryLinkCollectionsAPI, SecondaryLinkBulkData, SecondaryLinkLicensing, SecondaryLinkTakeDownPolicy } from '../SecondaryLink'

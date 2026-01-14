@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import pluralize from 'pluralize'
 import classnames from 'classnames'
-import PropTypes from 'prop-types'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import {
@@ -315,18 +314,5 @@ const RecordsDetail = props => {
     </Accordion>
   </div>
 )}
-
-RecordsDetail.propTypes = {
-  ancestors: PropTypes.object.isRequired,
-  downloadSize: PropTypes.string,
-  isAncestorsLoading: PropTypes.bool.isRequired,
-  isContentShown: PropTypes.bool,
-  isItemLoading: PropTypes.bool.isRequired,
-  item: PropTypes.object.isRequired,
-  myListCount: PropTypes.number.isRequired,
-  params: PropTypes.object.isRequired,
-  toggleInList: PropTypes.func.isRequired,
-  toggleMinimapModal: PropTypes.func.isRequired,
-}
 
 export default RecordsDetail;

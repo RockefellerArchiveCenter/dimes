@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { t } from '@lingui/macro'
 
 const SecondaryLink = ({ href, text }) => (
@@ -7,11 +5,6 @@ const SecondaryLink = ({ href, text }) => (
 		{text}
 	</a>
 )
-
-SecondaryLink.propTypes = {
-	href: PropTypes.string.isRequired,
-	text: PropTypes.string.isRequired
-}
 
 export const SecondaryLinkCollectionsAPI = () => (
 	<SecondaryLink

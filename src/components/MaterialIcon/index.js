@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import {ReactComponent as ArchiveBox} from './assets/archive_box.svg'
 import classnames from 'classnames'
 
@@ -9,10 +7,6 @@ const MaterialIcon = ({ className, icon }) => {
   } else {
     return <span className={classnames('material-icon', className)} aria-hidden='true'>{icon}</span>
   }
-}
-
-MaterialIcon.propTypes = {
-  icon: PropTypes.string.isRequired
 }
 
 export default MaterialIcon

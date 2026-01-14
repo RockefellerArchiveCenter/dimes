@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import PropTypes from 'prop-types'
 import ResizeObserver from 'resize-observer-polyfill'
 
 // Returns a boolean indicating if an element is visible on screen
@@ -54,8 +53,3 @@ export const useResizeObserver = ({ callback, element }) => {
   }
 
 }
-
-useResizeObserver.propTypes = {
-  element: PropTypes.object,
-  callback: PropTypes.func,
-};

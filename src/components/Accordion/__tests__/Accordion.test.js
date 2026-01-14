@@ -10,9 +10,7 @@ import {
 import * as focus from '../helpers/focus'
 
 it('renders without crashing', () => {
-  act(() => {
-    render(<I18nApp ReactComponent={<Accordion />} />)
-  })
+  render(<I18nApp ReactComponent={<Accordion />} />)
 })
 
 it('renders without crashing', () => {

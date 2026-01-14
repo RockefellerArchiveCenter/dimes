@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import Button from '../Button'
 import classnames from 'classnames'
 import { select, t } from '@lingui/macro'
@@ -34,12 +32,5 @@ const MyListExportActions = ({ confirmDeleteAll, downloadCsv, emailList, isDownl
       iconBefore='delete'
       handleClick={() => confirmDeleteAll()} />
   </div>)
-
-MyListExportActions.propTypes = {
-  confirmDeleteAll: PropTypes.func.isRequired,
-  downloadCsv: PropTypes.func.isRequired,
-  emailList: PropTypes.func.isRequired,
-  isDownloading: PropTypes.bool
-}
 
 export default MyListExportActions

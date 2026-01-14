@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { Badge } from '../Badge'
 import MaterialIcon from '../MaterialIcon'
 import { appendParams, formatMatchString } from '../Helpers'
@@ -48,12 +46,6 @@ const CardList = ({ items, params, cardClassName, className }) => {
       {listItems}
     </ul>
   )
-}
-
-CardList.propTypes = {
-  items: PropTypes.array.isRequired,
-  params: PropTypes.object,
-  cardClassName: PropTypes.string,
 }
 
 export default CardList

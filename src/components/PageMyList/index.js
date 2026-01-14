@@ -1,5 +1,4 @@
-  import React, { useEffect, useState } from 'react'
-  import PropTypes from 'prop-types'
+  import { useEffect, useState } from 'react'
   import axios from 'axios'
   import { Helmet } from 'react-helmet'
   import PageBackendError from '../PageBackendError'
@@ -392,11 +391,6 @@
         />
       </>
     );
-  }
-
-  PageMyList.propTypes = {
-    removeAllListItems: PropTypes.func.isRequired,
-    toggleInList: PropTypes.func.isRequired,
   }
 
   export default PageMyList
