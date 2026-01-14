@@ -148,11 +148,6 @@ const RecordsDetail = props => {
     props.params && props.params.query ? appendParams('/search/', props.params) : '/'
   )
 
-  /** Parses an item's identifier from its URI */
-  const identifier = (
-    props.item.uri && props.item.uri.split('/')[props.item.uri.split('/').length - 1]
-  )
-
   const handleCitationButtonClick = () => {
     setCitationCopied(true)
     setTimeout(() => {setCitationCopied(false)}, '6000')
@@ -204,8 +199,10 @@ const RecordsDetail = props => {
         <Trans comment='Buttons for online records'>
         <a className='btn btn--sm btn--orange btn--detail mr-10 mb-10 p-8'
           href={`${props.item.uri}/view`}>View Online<MaterialIcon icon='visibility' className='material-icon--space-before'/></a>
-        <a className='btn btn--sm btn--orange btn--detail mr-10 mb-10 p-8'
-          href={`${process.env.REACT_APP_S3_BASEURL}/pdfs/${identifier}`}
+        {props.item.files[0].download &&
+        <>
+          <a className='btn btn--sm btn--orange btn--detail mr-10 mb-10 p-8'
+          href={props.item.files[0].download}
           target='_blank'
           title={t({ comment: 'Title message for opening an online item', message: 'opens in a new window' })}
           rel='noopener noreferrer'
@@ -213,6 +210,8 @@ const RecordsDetail = props => {
           { props.downloadSize ?
             <p className='panel__text'>{`Acrobat PDF, ${props.downloadSize}`}</p> :
             <p className='panel__text'><Skeleton/></p> }
+          </>
+        }
         </Trans>
       }
       </>
