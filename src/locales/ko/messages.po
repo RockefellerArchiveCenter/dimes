@@ -109,7 +109,7 @@ msgid "{source, select, null {Source: Rockefeller Archive Center} other {Source:
 msgstr "{source, select, null {출처: 록펠러 아카이브 센터} other {출처: {source}}}"
 
 #. Message to go back to previous search
-#: src/components/RecordsDetail/index.js:174
+#: src/components/RecordsDetail/index.js:169
 msgid "<0/>Back to Search"
 msgstr "<0/>검색으로 돌아가기"
 
@@ -124,7 +124,7 @@ msgid "<0><1/> Schedule a Visit</0>"
 msgstr "<0><1/> 방문 예약하기</0>"
 
 #. Go back to Item details for digital object
-#: src/components/PageDigitalObject/index.js:172
+#: src/components/PageDigitalObject/index.js:173
 msgid "<0><1/>Back to Item Details</0>"
 msgstr "<0><1/>항목 세부 정보로 돌아가기</0>"
 
@@ -159,12 +159,12 @@ msgid "<0><1>Search Results</1></0>"
 msgstr "<0><1>검색 결과</1></0>"
 
 #. Confirmation message when citation copied
-#: src/components/RecordsDetail/index.js:190
+#: src/components/RecordsDetail/index.js:185
 msgid "<0>Citation information copied to clipboard.</0>"
 msgstr "<0>인용 정보가 클립보드에 복사되었습니다.</0>"
 
 #. Button to copy citation text
-#: src/components/RecordsDetail/index.js:196
+#: src/components/RecordsDetail/index.js:191
 msgid "<0>Cite<1/></0>"
 msgstr "<0>인용<1/></0>"
 
@@ -259,9 +259,9 @@ msgid "<0>View Online<1/></0>"
 msgstr "<0>온라인 보기<1/></0>"
 
 #. Buttons for online records
-#: src/components/RecordsDetail/index.js:204
-msgid "<0>View Online<1/></0><2>Download <3/></2>{0}"
-msgstr "<0>온라인 보기<1/></0><2>다운로드 <3/></2>{0}"
+#: src/components/RecordsDetail/index.js:199
+msgid "<0>View Online<1/></0>{0}"
+msgstr "<0>온라인 보기<1/></0>"
 
 #. Limitations and fees information
 #: src/components/ModalMyList/index.js:512
@@ -279,7 +279,7 @@ msgid "255 characters maximum"
 msgstr "최대 255자"
 
 #. About minimap message
-#: src/components/RecordsDetail/index.js:169
+#: src/components/RecordsDetail/index.js:164
 msgid "about minimap"
 msgstr "미니맵 정보"
 
@@ -420,7 +420,7 @@ msgid "Creator"
 msgstr "작성자"
 
 #. Message shown for downloading high-res images in digital object viewer
-#: src/components/PageDigitalObject/index.js:163
+#: src/components/PageDigitalObject/index.js:164
 msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "현재 페이지 - JPEG2000 {pixelDimensions}"
 
@@ -746,7 +746,7 @@ msgstr "이메일 열기"
 #. Title for duplication services link
 #. Title message for opening an online item
 #: src/components/ModalMyList/index.js:523
-#: src/components/RecordsDetail/index.js:210
+#: src/components/RecordsDetail/index.js:207
 msgid "opens in a new window"
 msgstr "새 창에서 열기"
 
