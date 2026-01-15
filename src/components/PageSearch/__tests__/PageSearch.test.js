@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { render, act } from '@testing-library/react'
-import { Route, Routes, MemoryRouter } from 'react-router-dom';
+import { Route, Routes, MemoryRouter } from 'react-router-dom'
 import PageSearch from '..'
-import { I18nApp } from '../../i18n';
-import { t } from '@lingui/macro';
+import { I18nApp } from '../../i18n'
+import { t } from '@lingui/macro'
 import { cardItems } from '../../../__fixtures__/cardItems'
 import { facet } from '../../../__fixtures__/facet'
 import { titleSuggest } from '../../../__fixtures__/suggest'

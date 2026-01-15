@@ -13,7 +13,7 @@ it('renders props correctly', () => {
   expect(icon).toHaveAttribute('aria-hidden', 'true')
 
   act(() => {
-    render(<I18nApp ReactComponent={<MaterialIcon icon='archive_box' />} />)
+    render(<I18nApp ReactComponent={<MaterialIcon icon='inventory2' />} />)
   })
 
   expect(icon).toHaveAttribute('aria-hidden', 'true')

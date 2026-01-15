@@ -100,23 +100,28 @@ export const SelectInput = props => {
   )
 }
 
-export const TextInput = props => (
-  <div className={props.className}>
-    <InputLabel {...props} />
-    <input
-      type={props.type}
-      id={props.id}
-      name={props.id}
-      placeholder={props.placeholder}
-      minLength={props.minLength}
-      maxLength={props.maxLength}
-      size={props.size}
-      required={props.required}
-      onChange={props.handleChange}
-      defaultValue={props.defaultValue}
-      value={props.value} />
-   </div>
-)
+export const TextInput = props => {
+  const maxLength = props.maxLength === undefined ? 255 : props.maxLength
+  const size = props.size === undefined ? 10 : props.size
+  
+  return (
+    <div className={props.className}>
+      <InputLabel {...props} />
+      <input
+        type={props.type}
+        id={props.id}
+        name={props.id}
+        placeholder={props.placeholder}
+        minLength={props.minLength}
+        maxLength={maxLength}
+        size={size}
+        required={props.required}
+        onChange={props.handleChange}
+        defaultValue={props.defaultValue}
+        value={props.value} />
+    </div>
+   )
+}
 
 TextInput.defaultProps = {
   maxLength: 255,

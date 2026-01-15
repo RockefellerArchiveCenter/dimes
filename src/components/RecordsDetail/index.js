@@ -23,7 +23,7 @@ import './styles.scss'
 const FoundInItem = ({ className, item, params, topLevel }) => (
   <>
     <li className={className}>
-      <MaterialIcon icon={topLevel ? 'archive_box' : 'subdirectory_arrow_right'} />
+      <MaterialIcon icon={topLevel ? 'inventory2' : 'subdirectory_arrow_right'} />
       <a className='found-in__link' href={appendParams(item.uri, params)}>{item.title}</a>
     </li>
     {item.child ?
