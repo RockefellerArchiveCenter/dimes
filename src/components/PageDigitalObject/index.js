@@ -40,7 +40,7 @@ const PageDigitalObject = ({isMobile}) => {
     themes: {
       rac: {
         palette: {
-          type: 'dark',
+          mode: 'dark',
           primary: {
             main: '#ffffff'
           },
