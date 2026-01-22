@@ -1,5 +1,4 @@
-import React, { createRef, useEffect } from 'react'
-import PropTypes from 'prop-types'
+import { createRef, useEffect } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import classnames from 'classnames'
 import './styles.scss'
@@ -23,12 +22,6 @@ const Captcha = ({ className, form, handleCaptchaChange }) => {
         ref={recaptchaRef} />
     </div>
   )
-}
-
-Captcha.propTypes = {
-  className: PropTypes.string,
-  form: PropTypes.object,
-  handleCaptchaChange: PropTypes.func
 }
 
 export default Captcha

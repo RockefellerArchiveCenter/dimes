@@ -1,6 +1,4 @@
-import React from 'react'
-import { render, unmountComponentAtNode } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { FacetModal } from '..'
 
 import { facet } from '../../../__fixtures__/facet'
@@ -9,13 +7,8 @@ import { I18nApp } from '../../i18n'
 let container = null
 beforeEach(() => {
   container = document.createElement('div')
+  container.setAttribute('id', 'root')
   document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
 })
 
 it('renders props correctly', () => {
@@ -28,7 +21,7 @@ it('renders props correctly', () => {
       params={{}}
       resultsCount={2}
       data={facet}
-      toggleModal={jest.fn()} />} />, container)
+      toggleModal={jest.fn()} />} />)
   })
 
   const startYear = document.querySelector('#startYear')
@@ -55,7 +48,7 @@ it('handles clicks', () => {
       params={{}}
       resultsCount={2}
       data={facet}
-      toggleModal={jest.fn()} />} />, container)
+      toggleModal={jest.fn()} />} />)
   })
 
   const apply = document.querySelector('.modal__body--search .btn')

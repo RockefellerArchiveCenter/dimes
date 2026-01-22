@@ -1,25 +1,11 @@
-import React from 'react'
-import { render, unmountComponentAtNode } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { t } from '@lingui/macro'
 import { I18nApp } from '../../i18n'
 import { FormButtons } from '..'
 
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
-})
-
 it('renders props correctly', () => {
   act(() => {
-    render(<I18nApp ReactComponent={<FormButtons submitText='foo' toggleModal={jest.fn()} />} />, container)
+    render(<I18nApp ReactComponent={<FormButtons submitText='foo' toggleModal={jest.fn()} />} />)
   })
 
   const submit = document.querySelector('div > button[type=submit]')
@@ -34,7 +20,7 @@ it('renders props correctly', () => {
 it('handles clicks correctly', () => {
   const toggleModal = jest.fn()
   act(() => {
-    render(<I18nApp ReactComponent={<FormButtons submitText='foo' toggleModal={toggleModal} />} />, container)
+    render(<I18nApp ReactComponent={<FormButtons submitText='foo' toggleModal={toggleModal} />} />)
   })
 
   const cancel = document.querySelector('div > button[type=reset]')

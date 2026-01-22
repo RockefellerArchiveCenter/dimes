@@ -1,23 +1,9 @@
-import React from 'react'
-import { render, unmountComponentAtNode } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import RecordsContent, { RecordsChild } from '..'
 
 import { collectionWithChildHits } from '../../../__fixtures__/collection'
 import { childrenCollections, childrenObjects } from '../../../__fixtures__/children'
 import { I18nApp } from '../../i18n'
-
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
-})
 
 jest.mock('../../Hooks')
 
@@ -31,7 +17,7 @@ it('renders props correctly', () => {
       params={{}}
       preExpanded={[]}
       setActiveRecords={jest.fn()}
-      toggleInList={jest.fn()} />} />, container)
+      toggleInList={jest.fn()} />} />)
   })
 
   const recordsContent = document.querySelector('.records__content')
@@ -51,7 +37,7 @@ it('renders with collection data', () => {
       setIsLoading={jest.fn()}
       setIsScrolled={jest.fn()}
       toggleInList={jest.fn()}
-    />} />, container)
+    />} />)
   })
 
   const item = document.querySelector('.child__list-item')
@@ -80,7 +66,7 @@ it('renders with object data', () => {
       setIsLoading={jest.fn()}
       setIsScrolled={jest.fn()}
       toggleInList={jest.fn()}
-    />} />, container)
+    />} />)
   })
 
   const item = document.querySelector('.child__list-item')
@@ -111,7 +97,7 @@ it('handles expand clicks', () => {
       setIsLoading={jest.fn()}
       setIsScrolled={jest.fn()}
       toggleInList={jest.fn()}
-    />} />, container)
+    />} />)
   })
 
   const button = document.querySelector('.child__title')
@@ -138,7 +124,7 @@ it('handles list toggle clicks', () => {
       setIsLoading={jest.fn()}
       setIsScrolled={jest.fn()}
       toggleInList={toggleInList}
-    />} />, container)
+    />} />)
   })
 
   const button = document.querySelector('.btn-add--content')

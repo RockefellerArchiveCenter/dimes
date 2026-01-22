@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import Highlighter from 'react-highlight-words'
 import { findChunks } from 'highlight-words-core'
 import './styles.scss'
@@ -33,11 +31,6 @@ const QueryHighlighter = ({ query, text }) => {
       findChunks={findChunksBoolean}
       />
   )
-}
-
-QueryHighlighter.propTypes = {
-  query: PropTypes.string,
-  text: PropTypes.string
 }
 
 export default QueryHighlighter

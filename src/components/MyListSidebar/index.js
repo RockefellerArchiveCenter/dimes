@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import MaterialIcon from '../MaterialIcon'
 import Button from '../Button'
 import { Trans, t } from '@lingui/macro'
@@ -34,10 +32,5 @@ const MyListSidebar = ({ duplicationRequest, readingRoomRequest }) => (
       iconBefore='content_copy'
       handleClick={() => duplicationRequest()} />
   </aside>)
-
-MyListSidebar.propTypes = {
-  duplicationRequest: PropTypes.func.isRequired,
-  readingRoomRequest: PropTypes.func.isRequired
-}
 
 export default MyListSidebar

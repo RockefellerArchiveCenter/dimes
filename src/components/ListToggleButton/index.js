@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import Button from '../Button'
 import { t, select } from '@lingui/macro'
 import classnames from 'classnames'
@@ -45,13 +43,5 @@ const ListToggleButton = ({ className, isMobile, isSaved, item, toggleSaved }) =
       handleClick={() => toggleSaved(item)} />
   )
 )
-
-ListToggleButton.propTypes = {
-  className: PropTypes.string,
-  isMobile: PropTypes.bool,
-  isSaved: PropTypes.bool.isRequired,
-  item: PropTypes.object.isRequired,
-  toggleSaved: PropTypes.func.isRequired
-}
 
 export default ListToggleButton

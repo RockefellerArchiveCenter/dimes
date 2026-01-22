@@ -1,5 +1,4 @@
-import React, { useRef, useState } from 'react'
-import PropTypes from 'prop-types'
+import { useRef, useState } from 'react'
 import classnames from 'classnames'
 import { appendParams } from '../Helpers'
 import { useResizeObserver } from '../Hooks'
@@ -88,12 +87,5 @@ const Minimap = ({ data, isLoading, params, rowCount=4 }) => {
       </nav>
     </>
 )}
-
-Minimap.propTypes = {
-  data: PropTypes.object.isRequired,
-  isLoading: PropTypes.bool.isRequired,
-  params: PropTypes.object.isRequired,
-  rowCount: PropTypes.number,
-}
 
 export default Minimap

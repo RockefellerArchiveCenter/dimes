@@ -1,19 +1,12 @@
-import React from 'react'
-import { render, unmountComponentAtNode } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import ModalConfirm from '..'
 
 let container = null
 beforeEach(() => {
   container = document.createElement('div')
+  container.setAttribute('id', 'root')
   document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
 })
 
 it('renders props correctly', () => {
@@ -23,7 +16,7 @@ it('renders props correctly', () => {
       isOpen
       message='foo'
       title='Bar'
-      toggleModal={jest.fn()} />} />, container)
+      toggleModal={jest.fn()} />} />)
   })
 
   const title = document.querySelector('.modal__header-title')
@@ -41,7 +34,7 @@ it('handles clicks correctly', () => {
       isOpen
       message='foo'
       title='Bar'
-      toggleModal={toggleModal} />} />, container)
+      toggleModal={toggleModal} />} />)
   })
 
   const button = document.querySelector('.modal__header-button')

@@ -1,6 +1,4 @@
-import React from 'react'
-import { render, unmountComponentAtNode } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import { ModalMinimap } from '..'
 
@@ -9,13 +7,8 @@ import { minimap } from '../../../__fixtures__/minimap.js'
 let container = null
 beforeEach(() => {
   container = document.createElement('div')
+  container.setAttribute('id', 'root')
   document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
 })
 
 it('renders props correctly', () => {
@@ -26,7 +19,7 @@ it('renders props correctly', () => {
       isLoading={false}
       params={{}}
       isOpen
-      toggleModal={jest.fn()} />} />, container)
+      toggleModal={jest.fn()} />} />)
   })
 })
 
@@ -40,7 +33,7 @@ it('handles clicks correctly', () => {
       isLoading={false}
       params={{}}
       isOpen
-      toggleModal={toggleModal} />} />, container)
+      toggleModal={toggleModal} />} />)
   })
 
   const button = document.querySelector('.modal__header-button')

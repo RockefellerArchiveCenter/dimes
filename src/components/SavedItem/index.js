@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import Button from '../Button'
 import MaterialIcon from '../MaterialIcon'
 import { Trans, t } from '@lingui/macro'
@@ -30,19 +28,6 @@ const SavedItem = props => (
     </div>
   </div>)
 
-SavedItem.propTypes = {
-  date: PropTypes.string,
-  description: PropTypes.string,
-  handleClick: PropTypes.func,
-  isChecked: PropTypes.bool,
-  lastRequested: PropTypes.instanceOf(Date),
-  online: PropTypes.bool,
-  parent: PropTypes.string,
-  parentRef: PropTypes.string,
-  title: PropTypes.string,
-  uri: PropTypes.string
-}
-
 const SavedItemGroup = ({ items, removeFromList, title }) => {
   const listItems = items.map((item, index) =>
     <SavedItem
@@ -62,13 +47,6 @@ const SavedItemGroup = ({ items, removeFromList, title }) => {
   )
 }
 
-SavedItemGroup.propTypes = {
-  handleChange: PropTypes.func,
-  items: PropTypes.array.isRequired,
-  removeFromList: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired
-}
-
 export const SavedItemList = ({ isLoading, items, removeFromList }) => {
   const groupItems = items => {
     return items.length ? (items.map((item) =>
@@ -84,10 +62,4 @@ export const SavedItemList = ({ isLoading, items, removeFromList }) => {
       {isLoading ? <MyListSkeleton /> : groupItems(items)}
     </div>
   )
-}
-
-SavedItemList.propTypes = {
-  isLoading: PropTypes.bool.isRequired,
-  items: PropTypes.array.isRequired,
-  removeFromList: PropTypes.func.isRequired
 }

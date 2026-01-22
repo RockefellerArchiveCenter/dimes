@@ -1,12 +1,9 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { act, Simulate } from 'react-dom/test-utils'
+import { render } from '@testing-library/react'
+import { act } from 'react'
 import { I18nApp } from '../../i18n'
 import Button from '..'
 
 it('renders props correctly', () => {
-  const div = document.createElement('div')
-  document.body.appendChild(div)
   const handleClick = jest.fn()
 
   act(() => {
@@ -14,7 +11,7 @@ it('renders props correctly', () => {
       type='submit'
       label='foo'
       className='bar'
-      handleClick={handleClick} />} />, div)
+      handleClick={handleClick} />} />)
   })
 
   const button = document.querySelector('button')

@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import MaterialIcon from '../MaterialIcon'
 import { firePageViewEvent } from '../Helpers'
@@ -30,9 +28,5 @@ const PageBackendError = ({error}) => (
     </main>
   </Trans>
 )
-
-PageBackendError.propTypes = {
-  error: PropTypes.object
-}
 
 export default PageBackendError

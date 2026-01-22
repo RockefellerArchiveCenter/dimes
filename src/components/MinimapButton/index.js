@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import minimapIcon from '../../assets/minimap.png'
 import { Trans } from '@lingui/macro'
 import './styles.scss'
@@ -16,9 +14,5 @@ const MinimapButton = ({ toggleMinimapModal }) => (
     </div>
   </button>
 )
-
-MinimapButton.propTypes = {
-  toggleMinimapModal: PropTypes.func.isRequired,
-}
 
 export default MinimapButton

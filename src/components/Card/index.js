@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { Badge } from '../Badge'
 import MaterialIcon from '../MaterialIcon'
 import { appendParams, formatMatchString } from '../Helpers'
@@ -16,7 +14,7 @@ const CategoryLabel = ({ category }) => {
       icon = 'account_balance'
       break
     default:
-      icon = 'archive_box'
+      icon = 'inventory2'
   }
   return (
     <div className={classnames('card__body-text', 'card__type-label m-0', category)}><MaterialIcon icon={icon} />{category}</div>
@@ -48,12 +46,6 @@ const CardList = ({ items, params, cardClassName, className }) => {
       {listItems}
     </ul>
   )
-}
-
-CardList.propTypes = {
-  items: PropTypes.array.isRequired,
-  params: PropTypes.object,
-  cardClassName: PropTypes.string,
 }
 
 export default CardList

@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { Field, ErrorMessage, useFormikContext } from 'formik'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { Trans } from '@lingui/macro'
 
@@ -62,21 +61,6 @@ export const FormGroup = (props) => {
   )
 }
 
-FormGroup.propTypes = {
-  children: PropTypes.array,
-  component: PropTypes.string,
-  hasErrorMsg: PropTypes.bool,
-  errors: PropTypes.object,
-  label: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object]).isRequired,
-  name: PropTypes.string.isRequired,
-  required: PropTypes.bool,
-  rows: PropTypes.number,
-  touched: PropTypes.object,
-  type: PropTypes.string
-}
-
 export const FormButtons = ({ isSubmitting, submitText, toggleModal }) => (
   <div className='modal-form__buttons my-10 mx-0'>
     <button type='submit' disabled={isSubmitting} className='btn btn--orange btn--sm'>
@@ -89,9 +73,3 @@ export const FormButtons = ({ isSubmitting, submitText, toggleModal }) => (
     </button>
   </div>
 )
-
-FormButtons.propTypes = {
-  isSubmitting: PropTypes.bool,
-  submitText: PropTypes.string.isRequired,
-  toggleModal: PropTypes.func.isRequired
-}

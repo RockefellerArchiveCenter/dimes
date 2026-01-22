@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { CheckBoxInput } from '../Inputs'
 import { Trans } from '@lingui/macro'
 import './styles.scss'
@@ -30,14 +28,6 @@ const ModalSavedItem = props => {
   )
 }
 
-ModalSavedItem.propTypes = {
-  handleChange: PropTypes.func,
-  ignoreRestrictions: PropTypes.bool,
-  isChecked: PropTypes.bool,
-  title: PropTypes.string.isRequired,
-  uri: PropTypes.string.isRequired
-}
-
 const ModalSavedItemGroup = props => {
   const listItems = props.items.map((item, index) =>
     <ModalSavedItem
@@ -56,13 +46,6 @@ const ModalSavedItemGroup = props => {
   )
 }
 
-ModalSavedItemGroup.propTypes = {
-  handleChange: PropTypes.func,
-  ignoreRestrictions: PropTypes.bool,
-  items: PropTypes.array.isRequired,
-  title: PropTypes.string.isRequired
-}
-
 export const ModalSavedItemList = props => {
   const groupItems = items => {
     return items.length ? (items.map((item) =>
@@ -79,10 +62,4 @@ export const ModalSavedItemList = props => {
       {groupItems(props.items)}
     </div>
   )
-}
-
-ModalSavedItemList.propTypes = {
-  handleChange: PropTypes.func,
-  ignoreRestrictions: PropTypes.bool,
-  items: PropTypes.array.isRequired,
 }

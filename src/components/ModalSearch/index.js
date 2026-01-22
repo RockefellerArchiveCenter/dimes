@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
+import { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 import Button from '../Button'
 import Facet from '../Facet'
@@ -100,15 +99,4 @@ export const FacetModal = props => {
       </div>
     </Modal>
   )
-}
-
-FacetModal.propTypes = {
-  appElement: PropTypes.object,
-  data: PropTypes.object.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  handleDateChange: PropTypes.func.isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  params: PropTypes.object.isRequired,
-  resultsCount: PropTypes.number.isRequired,
-  toggleModal: PropTypes.func.isRequired
 }

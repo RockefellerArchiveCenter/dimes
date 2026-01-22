@@ -1,25 +1,11 @@
-import React from 'react'
 import axios from 'axios'
-import { render, unmountComponentAtNode } from 'react-dom'
+import { render, act } from '@testing-library/react'
 import { Route, Routes, MemoryRouter } from 'react-router-dom';
-import { act } from 'react-dom/test-utils'
 import PageAgent from '..'
 import { I18nApp } from '../../i18n';
 
 import { agent } from '../../../__fixtures__/agents'
 import { collections } from '../../../__fixtures__/agents'
-
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
-})
 
 jest.mock('axios')
 
@@ -42,7 +28,7 @@ it('renders props correctly', async () => {
             <Route path='/agents/:id' element={<PageAgent />} />
           </Routes>
         </MemoryRouter>
-      }/>, container)
+      }/>)
   })
 
   const title = await document.querySelector('h1')

@@ -1,24 +1,10 @@
-import React from 'react'
-import { render, unmountComponentAtNode } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import {Nav, NavItem} from '..'
 
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
-})
-
 it('renders nav props correctly', () => {
   act(() => {
-    render(<I18nApp ReactComponent={<Nav className='foo' ariaLabel='bar' />} />, container)
+    render(<I18nApp ReactComponent={<Nav className='foo' ariaLabel='bar' />} />)
   })
 
   const nav = document.querySelector('nav')
@@ -28,7 +14,7 @@ it('renders nav props correctly', () => {
 
 it('renders navitem props correctly', () => {
   act(() => {
-    render(<I18nApp ReactComponent={<NavItem className='bar' href='#' label='Nav Item' icon='foo' />} />, container)
+    render(<I18nApp ReactComponent={<NavItem className='bar' href='#' label='Nav Item' icon='foo' />} />)
   })
 
   const navItem = document.querySelector('a')

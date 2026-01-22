@@ -1,20 +1,6 @@
-import React from 'react'
-import { render, unmountComponentAtNode } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import { MyListDropdown, NavDropdown } from '..'
-
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
-})
 
 it('renders props correctly', () => {
   act(() => {
@@ -23,7 +9,7 @@ it('renders props correctly', () => {
       duplicationRequest={jest.fn()}
       emailList={jest.fn()}
       readingRoomRequest={jest.fn()}
-      removeAllItems={jest.fn()} />} />, container)
+      removeAllItems={jest.fn()} />} />)
   })
 
   const dropdown = document.querySelector('.dropdown')
@@ -36,7 +22,7 @@ it('renders props correctly', () => {
 
 it('renders without crashing', () => {
   act(() => {
-    render(<I18nApp ReactComponent={<NavDropdown />} />, container)
+    render(<I18nApp ReactComponent={<NavDropdown />} />)
   })
 
   const dropdown = document.querySelector('.dropdown')

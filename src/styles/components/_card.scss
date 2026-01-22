@@ -41,16 +41,9 @@
   order: 0;
   & .material-icon {
     font-size: 12px;
-    padding-right: 6px;
     float: left;
     line-height: inherit;
-  }
-  & svg {
-    box-sizing: unset;
-    padding-right: 6px;
-    height: 21px;
-    vertical-align: middle;
-    float: left;
+    width: 18px;
   }
   &::after {
     vertical-align: middle;

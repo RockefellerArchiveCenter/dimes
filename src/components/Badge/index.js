@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 export const Badge = ({ className, text }) => (
@@ -7,8 +5,3 @@ export const Badge = ({ className, text }) => (
     {text}
   </span>
 )
-
-Badge.propTypes = {
-  className: PropTypes.string,
-  text: PropTypes.string.isRequired
-}

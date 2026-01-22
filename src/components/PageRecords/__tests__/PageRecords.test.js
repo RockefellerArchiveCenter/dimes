@@ -1,9 +1,7 @@
-import React from 'react'
 import axios from 'axios'
-import { LiveAnnouncer, LiveMessage } from 'react-aria-live';
-import { render, unmountComponentAtNode } from 'react-dom'
+import { LiveAnnouncer } from 'react-aria-live';
+import { render, act } from '@testing-library/react'
 import { Route, Routes, MemoryRouter } from 'react-router-dom';
-import { act } from 'react-dom/test-utils'
 import PageRecords from '..'
 
 import { object } from '../../../__fixtures__/object'
@@ -12,23 +10,14 @@ import { childrenCollections } from '../../../__fixtures__/children'
 import { minimap } from '../../../__fixtures__/minimap'
 import { I18nApp } from '../../i18n'
 
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  container.setAttribute('id', 'root')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
-})
-
 jest.mock('axios')
 jest.mock('../../Hooks')
 
 it('renders props correctly', async () => {
+  let container = document.createElement('div')
+  container.setAttribute('id', 'root')
+  document.body.appendChild(container)
+
   axios.get.mockImplementation((url) => {
     if (url.includes('ancestors')) {
       return Promise.resolve({data: ancestors})
@@ -54,7 +43,7 @@ it('renders props correctly', async () => {
           </Routes>
         </MemoryRouter>
       </LiveAnnouncer>}
-      />, container)
+      />)
   })
 
   const title = await document.querySelector('h1')

@@ -1,6 +1,4 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import CardList from '..'
 
@@ -11,11 +9,11 @@ it('renders props correctly', () => {
   document.body.appendChild(div)
 
   act(() => {
-    render(<I18nApp ReactComponent={<CardList items={cardItems} />} />, div)
+    render(<I18nApp ReactComponent={<CardList items={cardItems} />} />)
   })
 
   const card = document.querySelector('.card')
   expect(card.querySelector('.card__title').textContent).toBe('Rockefeller Foundation records')
-  expect(card.querySelector('.card__type-label').textContent).toBe('archive_box.svgcollection')
+  expect(card.querySelector('.card__type-label').textContent).toBe('inventory2collection')
   expect(card.querySelector('.card__date').textContent).toBe('1910-2000 (Bulk: 1924-1990), 1924-1990')
 })

@@ -1,24 +1,10 @@
-import React from 'react'
-import { render, unmountComponentAtNode } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import QueryHighlighter from '..'
 import { I18nApp } from '../../i18n'
 
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
-})
-
 it('finds word at beginning', () => {
   act(() => {
-    render(<I18nApp ReactComponent={<QueryHighlighter query='foo' text='foo bar baz' />} />, container)
+    render(<I18nApp ReactComponent={<QueryHighlighter query='foo' text='foo bar baz' />} />)
   })
 
   const highlight = document.querySelector('.query-highlight')
@@ -27,7 +13,7 @@ it('finds word at beginning', () => {
 
 it('finds word in middle', () => {
   act(() => {
-    render(<I18nApp ReactComponent={<QueryHighlighter query='bar baz' text='foo bar baz' />} />, container)
+    render(<I18nApp ReactComponent={<QueryHighlighter query='bar baz' text='foo bar baz' />} />)
   })
 
   const highlight = document.querySelector('.query-highlight')
@@ -36,7 +22,7 @@ it('finds word in middle', () => {
 
 it('finds phrase', () => {
   act(() => {
-    render(<I18nApp ReactComponent={<QueryHighlighter query='foo bar' text='foo bar baz' />} />, container)
+    render(<I18nApp ReactComponent={<QueryHighlighter query='foo bar' text='foo bar baz' />} />)
   })
 
   const highlight = document.querySelector('.query-highlight')
@@ -45,7 +31,7 @@ it('finds phrase', () => {
 
 it('finds phrase separated by another word', () => {
   act(() => {
-    render(<I18nApp ReactComponent={<QueryHighlighter query='foo baz' text='foo bar baz' />} />, container)
+    render(<I18nApp ReactComponent={<QueryHighlighter query='foo baz' text='foo bar baz' />} />)
   })
 
   const highlight = document.querySelector('.query-highlight')
