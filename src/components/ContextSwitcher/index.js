@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import Button from '../Button'
 import classnames from 'classnames'
 import { t, select } from '@lingui/macro'
@@ -21,10 +19,5 @@ const ContextSwitcher = ({isContentShown, toggleIsContentShown}) => (
       handleClick={toggleIsContentShown} />
   </div>
 )
-
-ContextSwitcher.propTypes = {
-  isContentShown: PropTypes.bool.isRequired,
-  toggleIsContentShown: PropTypes.func.isRequired
-}
 
 export default ContextSwitcher

@@ -1,7 +1,5 @@
-import React from 'react'
 import axios from 'axios'
-import { render, unmountComponentAtNode } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import {ModalSavedItemList} from '..'
 
@@ -16,15 +14,9 @@ beforeEach(() => {
   document.body.appendChild(container)
 })
 
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
-})
-
 jest.mock('axios')
 
-it('renders props correctly', async () => {
+it('renders resolved list correctly', async () => {
   axios.post.mockImplementation((url) => {
     if (url.includes('parse')) {
       return Promise.resolve({data: {}})
@@ -38,7 +30,7 @@ it('renders props correctly', async () => {
       items={resolvedList}
       ignoreRestrictions={true}
       handleChange={jest.fn()}
-      setSubmit={jest.fn()} />} />, container)
+      setSubmit={jest.fn()} />} />)
   })
 
   await act(async () => {
@@ -49,13 +41,15 @@ it('renders props correctly', async () => {
     const input = document.querySelector('.modal-saved-item > input')
     expect(input).not.toBeChecked()
   })
+})
 
+it('renders checked list correctly', async () => {
   await act(async () => {
     render(<I18nApp ReactComponent={<ModalSavedItemList
       items={checkedList}
       ignoreRestrictions={true}
       handleChange={jest.fn()}
-      setSubmit={jest.fn()} />} />, container)
+      setSubmit={jest.fn()} />} />)
   })
 
   await act(async () => {

@@ -1,30 +1,16 @@
-import React from 'react'
-import { render, unmountComponentAtNode } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import { t } from '@lingui/macro'
 import ListToggleButton from '..'
 
 import { object } from '../../../__fixtures__/object'
 
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
-})
-
-it('renders correctly in desktop and modal', () => {
+it('renders add button correctly in desktop', () => {
   act(() => {
     render(<I18nApp ReactComponent={<ListToggleButton
       isSaved={false}
       item={object}
-      toggleSaved={jest.fn()} />} />, container)
+      toggleSaved={jest.fn()} />} />)
   })
 
   const button = document.querySelector('button')
@@ -37,14 +23,17 @@ it('renders correctly in desktop and modal', () => {
     message: 'Add item to list'
   }))
   expect(button.className).not.toContain('saved')
+})
 
+it('renders remove button correctly in desktop', () => {
   act(() => {
     render(<I18nApp ReactComponent={<ListToggleButton
       isSaved
       item={object}
-      toggleSaved={jest.fn()} />} />, container)
+      toggleSaved={jest.fn()} />} />)
   })
 
+  const button = document.querySelector('button')
   expect(button.textContent).toContain(t({
     comment: "Test Remove button label",
     message: 'Remove from List'
@@ -54,28 +43,34 @@ it('renders correctly in desktop and modal', () => {
     message: 'Remove item from list'
   }))
   expect(button.className).toContain('saved')
+})
 
+it('renders add button correctly in mobile', () => {
   act(() => {
     render(<I18nApp ReactComponent={<ListToggleButton
       isMobile
       isSaved={false}
       item={object}
-      toggleSaved={jest.fn()} />} />, container)
+      toggleSaved={jest.fn()} />} />)
   })
 
+  const button = document.querySelector('button')
   expect(button.textContent).toContain(t({
     comment: "Test Remove button label",
     message: 'Add'
   }))
+})
 
+it('renders remove button correctly in mobile', () => {
   act(() => {
     render(<I18nApp ReactComponent={<ListToggleButton
       isMobile
       isSaved
       item={object}
-      toggleSaved={jest.fn()} />} />, container)
+      toggleSaved={jest.fn()} />} />)
   })
 
+  const button = document.querySelector('button')
   expect(button.textContent).toContain(t({
     comment: "Test Remove button label",
     message: 'Remove'
@@ -89,7 +84,7 @@ it('handles clicks correctly', () => {
     render(<I18nApp ReactComponent={<ListToggleButton
       isSaved={false}
       item={object}
-      toggleSaved={toggleSaved} />} />, container)
+      toggleSaved={toggleSaved} />} />)
   })
 
   const button = document.querySelector('button')

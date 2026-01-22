@@ -1,6 +1,4 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import Facet from '..'
 
@@ -24,11 +22,8 @@ const facetItems = [
 ]
 
 it('renders props correctly', () => {
-  const div = document.createElement('div')
-  document.body.appendChild(div)
-
   act(() => {
-    render(<I18nApp ReactComponent={<Facet handleChange={jest.fn()} title='foo' items={facetItems} />} />, div)
+    render(<I18nApp ReactComponent={<Facet handleChange={jest.fn()} title='foo' items={facetItems} />} />)
   })
 
   const title = document.querySelector('legend > h3')

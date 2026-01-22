@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import { useState } from 'react'
 import useDropdownMenu from 'react-accessible-dropdown-menu-hook'
 import MaterialIcon from '../MaterialIcon'
 import { t } from '@lingui/macro'
@@ -124,14 +123,6 @@ export const MyListDropdown = ({ downloadCsv, duplicationRequest, emailList, rea
         role='menuitem'/>
     </Dropdown>
   )
-
-MyListDropdown.propTypes = {
-  downloadCsv: PropTypes.func.isRequired,
-  duplicationRequest: PropTypes.func.isRequired,
-  emailList: PropTypes.func.isRequired,
-  readingRoomRequest: PropTypes.func.isRequired,
-  removeAllItems: PropTypes.func.isRequired
-}
 
 export const NavDropdown = () => (
   <Dropdown

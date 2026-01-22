@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { LiveMessage } from 'react-aria-live'
-import PropTypes from 'prop-types'
 import axios from 'axios'
 import { useNavigate, useLocation, useParams } from 'react-router-dom'
 import queryString from 'query-string'
@@ -272,11 +271,6 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
         toggleModal={toggleMinimapModal} />
     </React.Fragment>
   )
-}
-
-PageRecords.propTypes = {
-  myListCount: PropTypes.number.isRequired,
-  toggleInList: PropTypes.func.isRequired,
 }
 
 export default PageRecords;

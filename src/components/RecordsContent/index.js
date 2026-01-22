@@ -1,5 +1,4 @@
-import React, { useEffect, createRef, useState } from 'react'
-import PropTypes from 'prop-types'
+import { useEffect, createRef, useState } from 'react'
 import axios from 'axios'
 import {
     Accordion,
@@ -314,20 +313,6 @@ export const RecordsChild = props => {
   )
 }
 
-RecordsChild.propTypes = {
-    isScrolled: PropTypes.bool.isRequired,
-    item: PropTypes.object.isRequired,
-    myListCount: PropTypes.number.isRequired,
-    offsetAfter: PropTypes.number,
-    offsetBefore: PropTypes.number,
-    params: PropTypes.object.isRequired,
-    preExpanded: PropTypes.array.isRequired,
-    setActiveRecords: PropTypes.func.isRequired,
-    setIsLoading: PropTypes.func.isRequired,
-    setIsScrolled: PropTypes.func.isRequired,
-    toggleInList: PropTypes.func.isRequired,
-}
-
 export const RecordsContentList = props => {
 
   const { ariaLevel, isScrolled, myListCount, offsetAfter, offsetBefore, params, preExpanded,
@@ -362,22 +347,6 @@ export const RecordsContentList = props => {
       {childList(props.children)}
     </Accordion>
   )
-}
-
-RecordsContentList.propTypes = {
-  ariaLevel: PropTypes.number.isRequired,
-  children: PropTypes.array,
-  className: PropTypes.string,
-  isScrolled: PropTypes.bool.isRequired,
-  myListCount: PropTypes.number.isRequired,
-  offsetAfter: PropTypes.number,
-  offsetBefore: PropTypes.number,
-  params: PropTypes.object,
-  preExpanded: PropTypes.array,
-  setActiveRecords: PropTypes.func.isRequired,
-  setIsLoading: PropTypes.func.isRequired,
-  setIsScrolled: PropTypes.func.isRequired,
-  toggleInList: PropTypes.func.isRequired,
 }
 
 
@@ -427,19 +396,6 @@ const RecordsContent = props => {
     </div>) :
     (null)
   )
-}
-
-RecordsContent.propTypes = {
-  children: PropTypes.array.isRequired,
-  collection: PropTypes.object.isRequired,
-  isContentShown: PropTypes.bool.isRequired,
-  myListCount: PropTypes.number.isRequired,
-  offsetAfter: PropTypes.number,
-  offsetBefore: PropTypes.number,
-  params: PropTypes.object,
-  preExpanded: PropTypes.array,
-  setActiveRecords: PropTypes.func.isRequired,
-  toggleInList: PropTypes.func.isRequired,
 }
 
 export default RecordsContent;

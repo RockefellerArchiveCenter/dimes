@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import {
   getVisibleCanvases,
   selectInfoResponse,
-} from 'mirador/dist/es/src/state/selectors/canvases';
+} from 'mirador';
 import { Trans, t } from '@lingui/macro'
 import { useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
@@ -40,7 +40,7 @@ const PageDigitalObject = ({isMobile}) => {
     themes: {
       rac: {
         palette: {
-          type: 'dark',
+          mode: 'dark',
           primary: {
             main: '#ffffff'
           },
