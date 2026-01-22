@@ -30,7 +30,7 @@
     {
       "label": "Homepage Types Dropdown",
       "url": "http://host.docker.internal:3000/",
-      "clickSelector": "#downshift-0-toggle-button",
+      "clickSelector": "#downshift-_r_0_-toggle-button",
       "delay": 1000,
       "viewports": [
         {
@@ -161,7 +161,7 @@
     {
       "label": "Search Sort Dropdown",
       "url": "http://host.docker.internal:3000/search?category=&limit=40&query=banana",
-      "clickSelector": "#downshift-4-toggle-button",
+      "clickSelector": "#downshift-_r_2_-toggle-button",
       "onBeforeScript": "mock_request.js"
     },
     {
