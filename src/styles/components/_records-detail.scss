@@ -59,6 +59,15 @@
   }
 }
 
+.found-in__collection {
+  & .material-icon {
+    font-size: 12px;
+    float: left;
+    line-height: inherit;
+    width: 18px;
+  }
+}
+
 .found-in__subcollection {
   & .material-icon {
     font-size: inherit;
@@ -73,3 +82,4 @@
   font-size: inherit;
   font-weight: $font-weight-normal;
 }
+
