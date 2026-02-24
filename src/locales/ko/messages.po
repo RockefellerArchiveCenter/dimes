@@ -291,8 +291,13 @@ msgstr "<0>온라인 보기<1/></0>"
 
 #. Limitations and fees information
 #: src/components/ModalMyList/index.js:478
-msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our<5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at<7>archive@rockarch.org</7>.</6>"
+msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
 msgstr ""
+
+#. Limitations and fees information
+#: src/components/ModalMyList/index.js:478
+#~ msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our<5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at<7>archive@rockarch.org</7>.</6>"
+#~ msgstr ""
 
 #. Full Company Address
 #: src/components/Footer/index.js:22
