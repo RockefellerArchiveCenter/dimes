@@ -33,7 +33,7 @@ const Footer = () => (
                 Fax: (914) 631-6017
               </Trans><br />
               <Trans comment='Company Email'>
-                E-mail:
+                E-mail:{' '}
                 <PrimaryLinkEmail />
               </Trans>
             </p>
