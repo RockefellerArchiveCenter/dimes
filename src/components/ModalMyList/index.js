@@ -483,7 +483,7 @@ export const DuplicationRequestModal = props => (
               We do not charge for reference PDFs. There is a <strong>$25 flat fee per item</strong> for publication-quality scans.
             </div>
             <div className='mb-20'>
-              For more details, including exceptions for audiovisual and oversized materials, read about our 
+              For more details, including exceptions for audiovisual and oversized materials, read about our{' '}
               <a target='_blank'
                   rel='noopener noreferrer'
                     title={t({
@@ -498,7 +498,7 @@ export const DuplicationRequestModal = props => (
                 </a>.
             </div>
             <div>
-              For help or to request a publication-quality scan, email an archivist at 
+              For help or to request a publication-quality scan, email an archivist at{' '} 
               <a href={t({message: 'mailto:archive@rockarch.org'})}>archive@rockarch.org</a>.
             </div>
           </Trans>
