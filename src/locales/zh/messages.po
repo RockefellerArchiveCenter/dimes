@@ -488,8 +488,13 @@ msgstr "以 .csv 格式下载"
 
 #. Company Email
 #: src/components/Footer/index.js:35
-msgid "E-mail:<0/>"
-msgstr "电子邮件：<0/>"
+msgid "E-mail: <0/>"
+msgstr ""
+
+#. Company Email
+#: src/components/Footer/index.js:35
+#~ msgid "E-mail:<0/>"
+#~ msgstr "电子邮件：<0/>"
 
 #. Name of email form
 #: src/components/ModalMyList/index.js:217
