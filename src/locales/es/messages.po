@@ -488,8 +488,13 @@ msgstr "Descargar como .csv"
 
 #. Company Email
 #: src/components/Footer/index.js:35
-msgid "E-mail:<0/>"
-msgstr "Correo electrónico:<0/>"
+msgid "E-mail: <0/>"
+msgstr ""
+
+#. Company Email
+#: src/components/Footer/index.js:35
+#~ msgid "E-mail:<0/>"
+#~ msgstr "Correo electrónico:<0/>"
 
 #. Name of email form
 #: src/components/ModalMyList/index.js:217
