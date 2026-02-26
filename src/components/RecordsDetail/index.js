@@ -52,19 +52,18 @@ const PanelExtentSection = ({ extents }) => (
 )
 
 const PanelFormatSection = ({ formats, notes }) => {
-  const displayFormats = formats.filter(f => f !== 'documents')
   var formatText = []
   formatText.push(noteTextByType(notes, "physdesc"))
   formatText.push(noteTextByType(notes, "materialspec"))
   const filteredFormatText = formatText.filter(i => i != null).filter(i => i !== '')
   return (
-    displayFormats.length ? (
+    formats.length ? (
       <div className='mr-15'>
         <h3 className='panel__heading mt-10 mb-5'><Trans comment='Panel Format message'>Formats</Trans></h3>
         <ul className='panel__list--unstyled pl-0 mt-0'>
           {filteredFormatText.length ?
             (<li className='panel__text'>{filteredFormatText.join('\n')}</li>) :
-            (displayFormats.map((format, index) => (
+            (formats.map((format, index) => (
               <li key={index} className='panel__text'>{format}</li>))
             )
           }
