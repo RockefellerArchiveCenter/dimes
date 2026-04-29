@@ -41,20 +41,20 @@ export const DateInput = ({className, defaultDate, handleChange, helpText, id, l
   }, [startDate, setStartDate])
 
   return (
-  <>
-  <label htmlFor={id}>{label}</label>
-  <DatePicker
-      ariaDescribedBy={helpText && `desc-${id}`}
-      className={className || 'dp__wrapper'}
-      selected={startDate}
-      showTimeSelect='true'
-      onChange={date => setStartDate(date)}
-      dateFormat="yyyy-MM-dd h:mm aa"
-      id={id}
-      {...props}>
-  </DatePicker>
-  {helpText && <p className='input__help-text' id={`desc-${id}`}>{helpText}</p>}
-  </>
+  <div className={classnames('input')}>
+    <label htmlFor={id}>{label}</label>
+    <DatePicker
+        ariaDescribedBy={helpText && `desc-${id}`}
+        className={className || 'dp__wrapper'}
+        selected={startDate}
+        showTimeSelect='true'
+        onChange={date => setStartDate(date)}
+        dateFormat="yyyy-MM-dd h:mm aa"
+        id={id}
+        {...props}>
+    </DatePicker>
+    {helpText && <p className='input__help-text' id={`desc-${id}`}>{helpText}</p>}
+  </div>
 )}
 
 
@@ -74,7 +74,7 @@ export const SelectInput = props => {
    })
 
   return (
-    <div className={classnames('select__wrapper', `${props.className}__wrapper`, {'hide-label': props.hideLabel})} required={props.required}>
+    <div className={classnames('select__wrapper', `select`, `${props.className}__wrapper`, {'hide-label': props.hideLabel})} required={props.required}>
       <input type='hidden' name={props.name} value={selectedItem && selectedItem.value} />
       <label {...getLabelProps()}>{props.label}</label>
       <button className={classnames('select__control', `${props.className}__control`)} type='button' {...getToggleButtonProps()}>
@@ -105,7 +105,7 @@ export const TextInput = props => {
   const size = props.size === undefined ? 10 : props.size
   
   return (
-    <div className={props.className}>
+    <div className={classnames('input', props.className)}>
       <InputLabel {...props} />
       <input
         type={props.type}
@@ -129,7 +129,7 @@ TextInput.defaultProps = {
 }
 
 export const YearInput = props => (
-  <div className={props.className} >
+  <div className={classnames('input', props.className)}>
     <InputLabel {...props} />
     <input
       type='number'

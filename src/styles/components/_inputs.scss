@@ -152,14 +152,13 @@ select {
   @include input-text;
   cursor: pointer;
   background-color: $white;
-  border-radius: 0px;
+  border-radius: 3px;
   text-align: left;
   & > .material-icon {
     position: absolute;
   }
   &:focus {
-    outline: none;
-    font-weight: $font-weight-bold;
+    @include focus-default;
   }
 }
 

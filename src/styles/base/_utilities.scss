@@ -27,6 +27,11 @@ $transition-default: all 0.2s ease;
   display: flex;
 }
 
+@mixin focus-default {
+  box-shadow: 0 0 0 2px $white;
+  outline: 2px solid $regal-blue;
+  outline-offset: 2px;
+}
 
 @mixin md-up {
   @media screen and (min-width: $break-md) { @content; }
