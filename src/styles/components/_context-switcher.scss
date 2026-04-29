@@ -18,6 +18,10 @@
   justify-content: center;
   position: fixed;
   bottom: 0;
+
+  &:focus {
+    @include focus-inset;
+  }
 }
 
 .toggle-context--active {
