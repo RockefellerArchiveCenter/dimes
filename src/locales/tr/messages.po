@@ -123,7 +123,7 @@ msgid "{source, select, null {Source: Rockefeller Archive Center} other {Source:
 msgstr "{source, select, null {Kaynak: Rockefeller Arşiv Merkezi} other {Kaynak: {source}}}"
 
 #. Message to go back to previous search
-#: src/components/RecordsDetail/index.js:168
+#: src/components/RecordsDetail/index.js:167
 msgid "<0/>Back to Search"
 msgstr "<0/>aramaya geri̇ dön"
 
@@ -178,12 +178,12 @@ msgid "<0><1>Search Results</1></0>"
 msgstr "<0><1>Arama Sonuçları</1></0>"
 
 #. Confirmation message when citation copied
-#: src/components/RecordsDetail/index.js:184
+#: src/components/RecordsDetail/index.js:183
 msgid "<0>Citation information copied to clipboard.</0>"
 msgstr "<0>Alıntı bilgileri panoya kopyalandı.</0>"
 
 #. Button to copy citation text
-#: src/components/RecordsDetail/index.js:190
+#: src/components/RecordsDetail/index.js:189
 msgid "<0>Cite<1/></0>"
 msgstr "<0>Alıntıla yapın<1/></0>"
 
@@ -285,7 +285,7 @@ msgstr "<0>Çevrimiçi Görüntüle<1/></0>"
 
 #. Buttons for online records
 #. placeholder {0}: props.item.files[0].download && <> <a className='btn btn--sm btn--orange btn--detail mr-10 mb-10 p-8' href={props.item.files[0].download} target='_blank' title={t({ comment: 'Title message for opening an online item', message: 'opens in a new window' })} rel='noopener noreferrer' >Download <MaterialIcon icon='get_app' className='material-icon--space-before' /></a> { props.downloadSize ? <p className='panel__text'>{`Acrobat PDF, ${props.downloadSize}`}</p> : <p className='panel__text'><Skeleton/></p> } </>
-#: src/components/RecordsDetail/index.js:198
+#: src/components/RecordsDetail/index.js:197
 msgid "<0>View Online<1/></0>{0}"
 msgstr "<0>Çevrimiçi Görüntüle<1/></0>"
 
@@ -293,11 +293,6 @@ msgstr "<0>Çevrimiçi Görüntüle<1/></0>"
 #: src/components/ModalMyList/index.js:478
 msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
 msgstr ""
-
-#. Limitations and fees information
-#: src/components/ModalMyList/index.js:478
-#~ msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our<5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at<7>archive@rockarch.org</7>.</6>"
-#~ msgstr ""
 
 #. Full Company Address
 #: src/components/Footer/index.js:22
@@ -310,7 +305,7 @@ msgid "255 characters maximum"
 msgstr "En fazla 255 karakter"
 
 #. About minimap message
-#: src/components/RecordsDetail/index.js:163
+#: src/components/RecordsDetail/index.js:162
 msgid "about minimap"
 msgstr "minimap hakkında"
 
@@ -320,7 +315,7 @@ msgid "Accessibility Statement"
 msgstr "Erişilebilirlik Bildirimi"
 
 #. Message shown on Dropdown button
-#: src/components/Dropdown/index.js:52
+#: src/components/Dropdown/index.js:99
 msgid "Actions"
 msgstr "Eylemler"
 
@@ -387,7 +382,7 @@ msgstr "Talep Tamamlanamıyor"
 #. Reset/Cancel Button for Form
 #. Test Cancel Button Label
 #: src/components/Form/__tests__/Form.test.js:14
-#: src/components/Form/index.js:70
+#: src/components/Form/index.js:69
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:126
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:194
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:248
@@ -482,7 +477,7 @@ msgid "Download"
 msgstr "İndi̇r"
 
 #. Message shown on button within Dropdown list
-#: src/components/Dropdown/index.js:107
+#: src/components/Dropdown/index.js:144
 msgid "Download as .csv"
 msgstr ".csv olarak i̇ndi̇r"
 
@@ -490,11 +485,6 @@ msgstr ".csv olarak i̇ndi̇r"
 #: src/components/Footer/index.js:35
 msgid "E-mail: <0/>"
 msgstr ""
-
-#. Company Email
-#: src/components/Footer/index.js:35
-#~ msgid "E-mail:<0/>"
-#~ msgstr "E-posta:<0/>"
 
 #. Name of email form
 #: src/components/ModalMyList/index.js:217
@@ -509,7 +499,7 @@ msgid "Email *"
 msgstr "E-Posta *"
 
 #. Email list label
-#: src/components/Dropdown/index.js:98
+#: src/components/Dropdown/index.js:137
 #: src/components/MyListExportActions/index.js:9
 msgid "Email List"
 msgstr "Li̇steyi̇ E-posta Yoluyla Gönder"
@@ -561,12 +551,12 @@ msgid "Format"
 msgstr "Biçim"
 
 #. Panel Format message
-#: src/components/RecordsDetail/index.js:63
+#: src/components/RecordsDetail/index.js:62
 msgid "Formats"
 msgstr "Formatlar"
 
 #. Panel Found In message
-#: src/components/RecordsDetail/index.js:80
+#: src/components/RecordsDetail/index.js:79
 msgid "Found In"
 msgstr "İçeri̇si̇nde Bulundu"
 
@@ -612,7 +602,7 @@ msgstr "https://github.com/RockefellerArchiveCenter/data/"
 
 #. Link used for sign-in within Dropdown list
 #. Link used for sign-in within the Header
-#: src/components/Dropdown/index.js:142
+#: src/components/Dropdown/index.js:179
 #: src/components/Header/index.js:22
 msgid "https://raccess.rockarch.org"
 msgstr "https://raccess.rockarch.org"
@@ -712,6 +702,10 @@ msgstr "Genel Merkezi̇n Bulunduğu Yer"
 msgid "mailto:archive@rockarch.org"
 msgstr "mailto:archive@rockarch.org"
 
+#: src/components/Dropdown/index.js:164
+msgid "Menu"
+msgstr ""
+
 #. Name of message form
 #: src/components/ModalMyList/index.js:240
 msgid "message"
@@ -746,7 +740,7 @@ msgstr "Pazartesi-Cuma<0/>9:30 - 17:00 arası.<1/>"
 
 #. Message shown on button within Dropdown list
 #. Message shown on button within the Header
-#: src/components/Dropdown/index.js:149
+#: src/components/Dropdown/index.js:185
 #: src/components/Header/index.js:31
 msgid "My List"
 msgstr "Listem"
@@ -777,14 +771,14 @@ msgid "Occupations"
 msgstr "Meslekler"
 
 #. Tooltip for button
-#: src/components/Dropdown/index.js:71
+#: src/components/Dropdown/index.js:115
 msgid "opens email"
 msgstr "e-posta açar"
 
 #. Title for duplication services link
 #. Title message for opening an online item
 #: src/components/ModalMyList/index.js:489
-#: src/components/RecordsDetail/index.js:206
+#: src/components/RecordsDetail/index.js:205
 msgid "opens in a new window"
 msgstr "yeni bir pencerede açılır"
 
@@ -894,7 +888,7 @@ msgstr "Kaldır"
 
 #. Message shown on button within Dropdown list
 #. Remove all items label
-#: src/components/Dropdown/index.js:117
+#: src/components/Dropdown/index.js:152
 #: src/components/MyListExportActions/index.js:28
 msgid "Remove All Items"
 msgstr "Tüm Ögeleri̇ Kaldir"
@@ -919,14 +913,14 @@ msgstr "4 Ürün Talep Edin"
 
 #. Message shown on button within Dropdown list
 #. Shown to request copies of an item
-#: src/components/Dropdown/index.js:88
+#: src/components/Dropdown/index.js:129
 #: src/components/MyListSidebar/index.js:28
 msgid "Request Copies"
 msgstr "Kopya Talep Et"
 
 #. Message shown on button within Dropdown list
 #. Shown to Request the item in a Reading Room
-#: src/components/Dropdown/index.js:78
+#: src/components/Dropdown/index.js:121
 #: src/components/MyListSidebar/index.js:20
 msgid "Request in Reading Room"
 msgstr "Okuma odası için talep"
@@ -942,7 +936,7 @@ msgid "Save & Close"
 msgstr "Kaydet & Kapat"
 
 #. Message shown on button within Dropdown list
-#: src/components/Dropdown/index.js:64
+#: src/components/Dropdown/index.js:109
 msgid "Schedule a Visit"
 msgstr "Zi̇yaret Planla"
 
@@ -1046,7 +1040,7 @@ msgid "Show only results with digital matches"
 msgstr "Yalnızca dijital eşleşmeli sonuçları göster"
 
 #. Message shown on sign-in button
-#: src/components/Dropdown/index.js:137
+#: src/components/Dropdown/index.js:174
 #: src/components/Header/index.js:26
 msgid "Sign in to RACcess"
 msgstr "RACcess'te oturum açın"
