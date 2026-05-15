@@ -13,6 +13,10 @@
 
 .toggle-wrapper {
   width: 100%;
+  z-index: 999;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   @include lg-up {
     display: none;
   }
@@ -22,6 +26,8 @@
   border-radius: 0 !important;
   width: 100%;
   justify-content: center;
+  position: fixed;
+  bottom: 0;
 
   &:focus {
     @include focus-inset;

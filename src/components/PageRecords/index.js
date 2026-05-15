@@ -220,12 +220,10 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
         <title>{ item.title }</title>
       </Helmet>
       <main id='main' className='container--full-width'>
-        <div className='toggle-wrapper--mobile'>
-          <ContextSwitcher
+        <ContextSwitcher
           isContentShown={isContentShown}
           toggleIsContentShown={toggleIsContentShown} />
-          {isDesktop ? null : <MinimapButton toggleMinimapModal={toggleMinimapModal}/>}
-        </div>
+        {isDesktop ? null : <MinimapButton toggleMinimapModal={toggleMinimapModal}/>}
         <RecordsDetail
           ancestors={ancestors}
           citation={citation}
