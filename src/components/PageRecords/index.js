@@ -220,10 +220,12 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
         <title>{ item.title }</title>
       </Helmet>
       <main id='main' className='container--full-width'>
-        <ContextSwitcher
-          isContentShown={isContentShown}
-          toggleIsContentShown={toggleIsContentShown} />
-        {isDesktop ? null : <MinimapButton toggleMinimapModal={toggleMinimapModal}/>}
+        <nav aria-label="Collection page">
+          <ContextSwitcher
+            isContentShown={isContentShown}
+            toggleIsContentShown={toggleIsContentShown} />
+          {isDesktop ? null : <MinimapButton toggleMinimapModal={toggleMinimapModal}/>}
+        </nav>
         <RecordsDetail
           ancestors={ancestors}
           citation={citation}
