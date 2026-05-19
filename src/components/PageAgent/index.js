@@ -246,7 +246,7 @@ const PageAgent = () => {
       </Helmet>
       <div className='container--full-width'>
         <div className='agent__wrapper'>
-          <nav className="mt-30">
+          <nav className="mt-30" aria-label="Back to search">
             <a href={searchUrl} className='btn btn--sm btn--gray'>
               <Trans comment='Back to search button'>
                 <span className='material-icon material-icon--space-after'>keyboard_arrow_left</span>Back to Search

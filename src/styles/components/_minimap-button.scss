@@ -2,14 +2,11 @@
 
 .btn--minimap {
   background: $desert-grey;
+  white-space: wrap;
   position: fixed;
   top: 80px;
   right: 30px;
-  white-space: wrap;
   z-index: 999;
-  @mixin md-up {
-    top: 90px;
-  }
 }
 
 .btn--minimap__text {

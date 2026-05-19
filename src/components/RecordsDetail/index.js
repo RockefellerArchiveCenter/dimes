@@ -162,7 +162,7 @@ const RecordsDetail = props => {
       label={t({ comment: 'About minimap message', message: 'about minimap' })}
     /> : null
     }
-    <nav className='records__nav'>
+    <nav className='records__nav' aria-label="Back to search">
       <a href={searchUrl} className='btn btn--sm btn--gray'>
         <Trans comment='Message to go back to previous search'>  
           <MaterialIcon icon='keyboard_arrow_left' className='material-icon--space-after'/>Back to Search

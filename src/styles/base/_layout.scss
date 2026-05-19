@@ -19,7 +19,18 @@ form {
 }
 
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  @include lg-up {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+}
+
+// Ensures that the footer is visible on mobile when the fixed records context switcher appears.
+.wrapper:has(.toggle-wrapper) + footer {
+  margin-bottom: 56px;
+
+  @include lg-up {
+    margin-bottom: 0;
+  }
 }

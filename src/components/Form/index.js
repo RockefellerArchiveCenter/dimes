@@ -39,10 +39,9 @@ export const FormGroup = (props) => {
     }
   }
   return (
-    <div className='form-group mx-0'>
+    <div className='form-group input mx-0'>
       { type !== 'checkbox' && <label htmlFor={name}>{label}</label> }
       <Field
-        tabIndex='0'
         className={classnames({'is-invalid': errors && errors[name] && touched[name]})}
         type={type}
         name={name}
