@@ -1,52 +1,99 @@
-import { useState } from 'react'
-import useDropdownMenu from 'react-accessible-dropdown-menu-hook'
+import { useState, useEffect, useRef, Children, cloneElement } from 'react'
 import MaterialIcon from '../MaterialIcon'
 import { t } from '@lingui/macro'
 import '../Button/styles.scss'
 import classnames from 'classnames'
 import './styles.scss'
 
-export const DropdownItem = (props) => (
-  <a
-    key={props.order}
-    id={`menu-item-${props.order}`}
-    className={classnames('btn', props.className)}
-    onClick={props.handleClick}
-    href={props.href}
-    role={props.role}
-    title={props.title}>
-    {props.iconBefore && <MaterialIcon icon={props.iconBefore} />}
-    {props.label}{props.iconAfter && <MaterialIcon icon={props.iconAfter} />}
-  </a>
-)
+// Custom Disclosure Dropdown Hook
+const useDropdown = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const containerRef = useRef(null)
+  const triggerRef = useRef(null)
 
-export const Dropdown = (props) => {
-  const [className] = useState(props.className)
-  const [iconBefore] = useState(props.iconBefore)
-  const [iconBeforeOpen] = useState(props.iconBeforeOpen)
-  const [label] = useState(props.label)
-  const [listClassName] = useState(props.listClassName)
-  const [role] = useState(props.role)
-  const { buttonProps, itemProps, isOpen } = useDropdownMenu(props.children && props.children.length)
-  const openIcon = iconBeforeOpen ? iconBeforeOpen : iconBefore
+  const close = (returnFocus = true) => {
+    setIsOpen(false)
+    if (returnFocus) triggerRef.current?.focus()
+  }
+
+  const toggle = () => (isOpen ? close() : setIsOpen(true))
+
+  useEffect(() => {
+    if (!isOpen) return
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') close()
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isOpen])
+
+  const handleFocusOut = (e) => {
+    if (!containerRef.current?.contains(e.relatedTarget)) {
+      close(false)
+    }
+  }
+
+  const triggerProps = {
+    ref: triggerRef,
+    onClick: toggle,
+    'aria-expanded': isOpen,
+  }
+
+  return { isOpen, triggerProps, containerRef, handleFocusOut, close }
+}
+
+// DropdownItem
+export const DropdownItem = ({ className, href, handleClick, iconBefore, iconAfter, label, title, close }) => {
+  const Tag = href ? 'a' : 'button'
+
+  const handleItemClick = () => {
+    handleClick?.()
+    close?.()
+  }
 
   return (
-    <div className={classnames('dropdown', className)}>
+    <li>
+      <Tag
+        className={classnames('btn', className)}
+        onClick={handleItemClick}
+        href={Tag === 'a' ? href : undefined}
+        type={Tag === 'button' ? 'button' : undefined}
+        title={title}>
+        {iconBefore && <MaterialIcon icon={iconBefore} />}
+        {label}
+        {iconAfter && <MaterialIcon icon={iconAfter} />}
+      </Tag>
+    </li>
+  )
+}
+
+// Dropdown
+export const Dropdown = ({ className, buttonClassName, listClassName, iconBefore, iconBeforeOpen, label, ariaLabel, children }) => {
+  const { isOpen, triggerProps, containerRef, handleFocusOut, close } = useDropdown()
+  const openIcon = iconBeforeOpen ?? iconBefore
+
+  return (
+    <div className={classnames('dropdown', className)} ref={containerRef} onBlur={handleFocusOut}>
       <button
-        className={classnames(props.buttonClassName, { 'open': isOpen, 'closed': !isOpen })}
-        {...buttonProps} >
-        {isOpen ? (<MaterialIcon icon={openIcon} className='material-icon--space-after' />) : (iconBefore && <MaterialIcon icon={iconBefore} className='material-icon--space-after' />)}
+        className={classnames(buttonClassName, { open: isOpen, closed: !isOpen })}
+        aria-label={ariaLabel}
+        {...triggerProps}>
+        {isOpen
+          ? openIcon && <MaterialIcon icon={openIcon} className='material-icon--space-after' />
+          : iconBefore && <MaterialIcon icon={iconBefore} className='material-icon--space-after' />}
         {label}
       </button>
-      <div
-        className={classnames('dropdown__list', listClassName, { 'open': isOpen, 'closed': !isOpen})}
-        role={role} >
-        {props.children}
-      </div>
+      <ul
+        className={classnames('list--unstyled dropdown__list', listClassName, { open: isOpen, closed: !isOpen })}>
+        {Children.map(children, child => cloneElement(child, { close }))}
+      </ul>
     </div>
   )
 }
 
+// My List Dropdown
 export const MyListDropdown = ({ downloadCsv, duplicationRequest, emailList, readingRoomRequest, removeAllItems }) => (
   <Dropdown
     label={t({
@@ -56,83 +103,73 @@ export const MyListDropdown = ({ downloadCsv, duplicationRequest, emailList, rea
     iconBefore='settings'
     className='mylist__actions hide-on-lg-up mt-40 mr-30 mb-30'
     buttonClassName='btn btn--orange btn--md'
-    listClassName='dropdown__list--orange dropdown__list--slide-down mylist__actions--dropdown'
-    role='menu'>
-      <DropdownItem
-        order={1}
-        className='btn--orange dropdown__btn dropdown__item--orange'
-        label={t({
-          comment: 'Message shown on button within Dropdown list',
-          message: 'Schedule a Visit'
-        })}
-        iconBefore='account_balance'
-        href='mailto:archive@rockarch.org?subject=Scheduling a research appointment'
-        role='menuitem'
-        title={t({
-          comment: 'Tooltip for button',
-          message: 'opens email'
-        })} />
-      <DropdownItem
-        order={2}
-        className='btn--orange dropdown__btn dropdown__item--orange'
-        label={t({
-          comment: 'Message shown on button within Dropdown list',
-          message: 'Request in Reading Room'
-        })}
-        iconBefore='local_library'
-        handleClick={readingRoomRequest}
-        role='menuitem'/>
-      <DropdownItem
-        order={3}
-        className='btn--orange dropdown__btn dropdown__item--orange'
-        label={t({
-          comment: 'Message shown on button within Dropdown list',
-          message: 'Request Copies'
-        })}
-        iconBefore='content_copy'
-        handleClick={duplicationRequest}
-        role='menuitem'/>
-      <DropdownItem
-        order={4}
-        className='btn--orange dropdown__btn dropdown__item--orange'
-        label={t({
-          message: 'Email List'
-        })}
-        iconBefore='email'
-        handleClick={emailList}
-        role='menuitem'/>
-      <DropdownItem
-        order={5}
-        className='btn--orange dropdown__btn dropdown__item--orange'
-        label={t({
-          comment: 'Message shown on button within Dropdown list',
-          message: 'Download as .csv'
-        })}
-        iconBefore='get_app'
-        handleClick={downloadCsv}
-        role='menuitem'/>
-      <DropdownItem
-        order={6}
-        className='btn--orange dropdown__btn dropdown__item--orange'
-        label={t({
-          comment: 'Message shown on button within Dropdown list',
-          message: 'Remove All Items'
-        })}
-        iconBefore='delete'
-        handleClick={removeAllItems}
-        role='menuitem'/>
-    </Dropdown>
-  )
+    listClassName='dropdown__list--orange dropdown__list--slide-down mylist__actions--dropdown'>
+    <DropdownItem
+      className='btn--orange dropdown__btn dropdown__item--orange'
+      label={t({
+        comment: 'Message shown on button within Dropdown list',
+        message: 'Schedule a Visit'
+      })}
+      iconBefore='account_balance'
+      href='mailto:archive@rockarch.org?subject=Scheduling a research appointment'
+      title={t({
+        comment: 'Tooltip for button',
+        message: 'opens email'
+      })} />
+    <DropdownItem
+      className='btn--orange dropdown__btn dropdown__item--orange'
+      label={t({
+        comment: 'Message shown on button within Dropdown list',
+        message: 'Request in Reading Room'
+      })}
+      iconBefore='local_library'
+      handleClick={readingRoomRequest} />
+    <DropdownItem
+      className='btn--orange dropdown__btn dropdown__item--orange'
+      label={t({
+        comment: 'Message shown on button within Dropdown list',
+        message: 'Request Copies'
+      })}
+      iconBefore='content_copy'
+      handleClick={duplicationRequest} />
+    <DropdownItem
+      className='btn--orange dropdown__btn dropdown__item--orange'
+      label={t({
+        message: 'Email List'
+      })}
+      iconBefore='email'
+      handleClick={emailList} />
+    <DropdownItem
+      className='btn--orange dropdown__btn dropdown__item--orange'
+      label={t({
+        comment: 'Message shown on button within Dropdown list',
+        message: 'Download as .csv'
+      })}
+      iconBefore='get_app'
+      handleClick={downloadCsv} />
+    <DropdownItem
+      className='btn--orange dropdown__btn dropdown__item--orange'
+      label={t({
+        comment: 'Message shown on button within Dropdown list',
+        message: 'Remove All Items'
+      })}
+      iconBefore='delete'
+      handleClick={removeAllItems} />
+  </Dropdown>
+)
 
+// Nav DropdownDor
 export const NavDropdown = () => (
   <Dropdown
+    ariaLabel={t({
+      message: 'Menu'
+    })}
     iconBefore='menu'
     iconBeforeOpen='close'
     className='hide-on-lg-up'
     buttonClassName='btn btn--navy nav__btn--mobile'
     listClassName='dropdown__list--mobile dropdown__list--navy dropdown__list--slide-left'>
-      <DropdownItem
-      order={1}
+    <DropdownItem
       className='btn--navy dropdown__btn dropdown__btn--mobile'
       label={t({
         comment: 'Message shown on sign-in button',
@@ -143,14 +180,13 @@ export const NavDropdown = () => (
         comment: 'Link used for sign-in within Dropdown list',
         message: 'https://raccess.rockarch.org'
       })} />
-      <DropdownItem
-        order={2}
-        className='btn--navy dropdown__btn dropdown__btn--mobile'
-        label={t({
-          comment: 'Message shown on button within Dropdown list',
-          message: 'My List'
-        })}
-        iconAfter='east'
-        href='/list' />
-    </Dropdown>
+    <DropdownItem
+      className='btn--navy dropdown__btn dropdown__btn--mobile'
+      label={t({
+        comment: 'Message shown on button within Dropdown list',
+        message: 'My List'
+      })}
+      iconAfter='east'
+      href='/list' />
+  </Dropdown>
 )
