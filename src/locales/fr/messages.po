@@ -32,6 +32,12 @@ msgstr "{0, plural, one {Filtre # Résultat de recherche} other {Filtre # Résul
 msgid "{0, plural, one {hit} other {hits}}"
 msgstr "{0, plural, one {succès} other {succès}}"
 
+#. Agent Note source
+#. placeholder {0}: source ?? '_rac'
+#: src/components/PageAgent/index.js:28
+msgid "{0, select, rac {Source: Rockefeller Archive Center} other {Source: {source}}}"
+msgstr "{0, select, rac {Source: Rockefeller Archive Center} other {Source: {source}}}"
+
 #. Current Results shown of total results
 #. placeholder {0}: startItem === endItem
 #: src/components/PageSearch/index.js:236
@@ -64,12 +70,12 @@ msgid "{0, select, true {View} other {View Online}}"
 msgstr "{0, select, true {Voir} other {Voir en ligne}}"
 
 #. Label for the end of the item
-#: src/components/PageAgent/index.js:139
+#: src/components/PageAgent/index.js:143
 msgid "{agentType, select, organization {Date Disbanded} other {Date of Death}}"
 msgstr "{agentType, select, organization {Date de Dissolution} other {Date de Décès}}"
 
 #. Label for the start of the item
-#: src/components/PageAgent/index.js:135
+#: src/components/PageAgent/index.js:139
 msgid "{agentType, select, organization {Date Established} other {Date of Birth}}"
 msgstr "{agentType, select, organization {Date d'établissement} other {Date de naissance}}"
 
@@ -116,11 +122,6 @@ msgstr "{isMobile, select, true {Ajouter} other {Ajouter au panier}}"
 #: src/components/ListToggleButton/index.js:15
 msgid "{isMobile, select, true {Remove} other {Remove from List}}"
 msgstr "{isMobile, select, true {Retirer} other {Supprimer du panier}}"
-
-#. Agent Note source
-#: src/components/PageAgent/index.js:28
-msgid "{source, select, null {Source: Rockefeller Archive Center} other {Source: {source}}}"
-msgstr "{source, select, null {Source : Rockefeller Archive Center} other {Source : {source}}}"
 
 #. Message to go back to previous search
 #: src/components/RecordsDetail/index.js:167
@@ -214,7 +215,7 @@ msgid "<0>Jump to a part of the collection containing matches by clicking on an 
 msgstr "<0>Cliquez sur un carré pour accéder aux résultats de votre recherche.</0><1>Dans la petite carte au longue de la page – le “minimap” -- chaque carré représente la position d’un ou de plusieurs résultats de votre recherche.</1>"
 
 #. Back to search button
-#: src/components/PageAgent/index.js:251
+#: src/components/PageAgent/index.js:255
 msgid "<0>keyboard_arrow_left</0>Back to Search"
 msgstr "<0>keyboard_arrow_left</0>Retour à la recherche"
 
@@ -235,7 +236,7 @@ msgid "<0>Loading</0>"
 msgstr "<0>Chargement</0>"
 
 #. Agent Sidebar Header
-#: src/components/PageAgent/index.js:61
+#: src/components/PageAgent/index.js:65
 msgid "<0>More about this {agentType}</0>"
 msgstr "<0>En savoir plus {agentType}</0>"
 
@@ -260,7 +261,7 @@ msgid "<0>Submit request</0>"
 msgstr "<0>Soumettre une demande</0>"
 
 #. summary message
-#: src/components/PageAgent/index.js:265
+#: src/components/PageAgent/index.js:269
 msgid "<0>Summary</0>"
 msgstr "<0>Résumé</0>"
 
@@ -426,7 +427,7 @@ msgid "Collections data API"
 msgstr "API des données des collections RAC"
 
 #. Agent Related Collections
-#: src/components/PageAgent/index.js:39
+#: src/components/PageAgent/index.js:43
 msgid "Collections Related to {agentTitle}"
 msgstr "Collections liées à la {agentTitle}"
 
@@ -566,7 +567,7 @@ msgid "Found in:"
 msgstr "Trouvé dans :"
 
 #. Founded by property
-#: src/components/PageAgent/index.js:194
+#: src/components/PageAgent/index.js:198
 msgid "Founded by"
 msgstr "Fondée par"
 
@@ -690,7 +691,7 @@ msgid "Licensing for descriptive metadata"
 msgstr "Licences pour les métadonnées descriptives"
 
 #. Location property
-#: src/components/PageAgent/index.js:195
+#: src/components/PageAgent/index.js:199
 msgid "Location of Headquarters"
 msgstr "Site du siège"
 
@@ -746,7 +747,7 @@ msgid "My List"
 msgstr "Mon panier"
 
 #. Nicknames property
-#: src/components/PageAgent/index.js:196
+#: src/components/PageAgent/index.js:200
 msgid "Nicknames"
 msgstr "Surnoms"
 
@@ -766,7 +767,7 @@ msgid "No saved items."
 msgstr "Pas d'éléments sauvegardés."
 
 #. Occupations property
-#: src/components/PageAgent/index.js:191
+#: src/components/PageAgent/index.js:195
 msgid "Occupations"
 msgstr "Occupations"
 
@@ -798,7 +799,7 @@ msgid "Phone: (914) 366-6300"
 msgstr "Téléphone : +1 (914) 366-6300"
 
 #. Place of birth property
-#: src/components/PageAgent/index.js:193
+#: src/components/PageAgent/index.js:197
 msgid "Place of Birth"
 msgstr "Lieu de naissance"
 
@@ -837,7 +838,7 @@ msgid "Please select a reading room"
 msgstr "Veuillez sélectionner une salle de lecture"
 
 #. Positions held property
-#: src/components/PageAgent/index.js:192
+#: src/components/PageAgent/index.js:196
 msgid "Positions Held"
 msgstr "Postes occupés"
 
@@ -953,7 +954,7 @@ msgid "Search"
 msgstr "Rechercher"
 
 #. Message to search for more related collections
-#: src/components/PageAgent/index.js:47
+#: src/components/PageAgent/index.js:51
 msgid "Search More Related Collections"
 msgstr "Rechercher d’autres collections apparentées"
 
@@ -1056,7 +1057,7 @@ msgid "Skip to main content"
 msgstr "Passer au contenu principal"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:175
+#: src/components/PageAgent/index.js:179
 msgid "Social Networks and Archival Context"
 msgstr "Réseaux sociaux et contexte archivistique"
 
@@ -1141,7 +1142,7 @@ msgid "View minimap"
 msgstr "Afficher la mini-carte"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:173
+#: src/components/PageAgent/index.js:177
 msgid "Virtual International Authority File"
 msgstr "Fichier d'autorité internationale virtuelle"
 
@@ -1153,6 +1154,6 @@ msgid "We cannot process your request unless you agree to pay the costs of repro
 msgstr "Nous ne pouvons pas traiter votre demande si vous n'acceptez pas de payer les frais de reproduction."
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:174
+#: src/components/PageAgent/index.js:178
 msgid "WorldCat Identities"
 msgstr "Identités WorldCat"
