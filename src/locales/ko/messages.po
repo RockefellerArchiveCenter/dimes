@@ -32,6 +32,12 @@ msgstr "{0, plural, one {필터 # 검색 결과} other {필터 # 검색 결과}}
 msgid "{0, plural, one {hit} other {hits}}"
 msgstr "{0, plural, one {맞음} other {조회수}}"
 
+#. Agent Note source
+#. placeholder {0}: source ?? '_rac'
+#: src/components/PageAgent/index.js:28
+msgid "{0, select, rac {Source: Rockefeller Archive Center} other {Source: {source}}}"
+msgstr "{0, select, rac {출처: 록펠러 아카이브 센터} other {출처: {source}}}"
+
 #. Current Results shown of total results
 #. placeholder {0}: startItem === endItem
 #: src/components/PageSearch/index.js:236
@@ -64,12 +70,12 @@ msgid "{0, select, true {View} other {View Online}}"
 msgstr "{0, select, true {보다} other {온라인 보기}}"
 
 #. Label for the end of the item
-#: src/components/PageAgent/index.js:139
+#: src/components/PageAgent/index.js:143
 msgid "{agentType, select, organization {Date Disbanded} other {Date of Death}}"
 msgstr "{agentType, select, organization {해체 날짜} other {사망 날짜}}"
 
 #. Label for the start of the item
-#: src/components/PageAgent/index.js:135
+#: src/components/PageAgent/index.js:139
 msgid "{agentType, select, organization {Date Established} other {Date of Birth}}"
 msgstr "{agentType, select, organization {설립 날짜} other {생년월일}}"
 
@@ -116,11 +122,6 @@ msgstr "{isMobile, select, true {추가하다} other {목록에 추가}}"
 #: src/components/ListToggleButton/index.js:15
 msgid "{isMobile, select, true {Remove} other {Remove from List}}"
 msgstr "{isMobile, select, true {제거하다} other {목록에서 제거}}"
-
-#. Agent Note source
-#: src/components/PageAgent/index.js:28
-msgid "{source, select, null {Source: Rockefeller Archive Center} other {Source: {source}}}"
-msgstr "{source, select, null {출처: 록펠러 아카이브 센터} other {출처: {source}}}"
 
 #. Message to go back to previous search
 #: src/components/RecordsDetail/index.js:167
@@ -214,7 +215,7 @@ msgid "<0>Jump to a part of the collection containing matches by clicking on an 
 msgstr "<0>활성 사각형을 클릭하면 일치하는 항목이 포함된 컬렉션의 일부로 이동합니다.</0><1>미니맵 다이어그램에서 각 사각형은 이 컬렉션의 일부를 나타냅니다. 색상이 지정된 사각형은 검색에 일치하는 항목이 하나 이상 포함된 부분을 나타냅니다.</1>"
 
 #. Back to search button
-#: src/components/PageAgent/index.js:251
+#: src/components/PageAgent/index.js:255
 msgid "<0>keyboard_arrow_left</0>Back to Search"
 msgstr "<0>keyboard_arrow_left검색으로 돌아가기</0>"
 
@@ -235,7 +236,7 @@ msgid "<0>Loading</0>"
 msgstr "<0>로드 중</0>"
 
 #. Agent Sidebar Header
-#: src/components/PageAgent/index.js:61
+#: src/components/PageAgent/index.js:65
 msgid "<0>More about this {agentType}</0>"
 msgstr "<0>이에 대해 자세히 알아보기 {agentType}</0>"
 
@@ -260,7 +261,7 @@ msgid "<0>Submit request</0>"
 msgstr "<0>요청 제출</0>"
 
 #. summary message
-#: src/components/PageAgent/index.js:265
+#: src/components/PageAgent/index.js:269
 msgid "<0>Summary</0>"
 msgstr "<0>요약</0>"
 
@@ -426,7 +427,7 @@ msgid "Collections data API"
 msgstr "컬렉션 데이터 API"
 
 #. Agent Related Collections
-#: src/components/PageAgent/index.js:39
+#: src/components/PageAgent/index.js:43
 msgid "Collections Related to {agentTitle}"
 msgstr "{agentTitle}과 관련된 컬렉션"
 
@@ -566,7 +567,7 @@ msgid "Found in:"
 msgstr "발견 위치:"
 
 #. Founded by property
-#: src/components/PageAgent/index.js:194
+#: src/components/PageAgent/index.js:198
 msgid "Founded by"
 msgstr "설립자"
 
@@ -690,7 +691,7 @@ msgid "Licensing for descriptive metadata"
 msgstr "설명적 메타데이터 라이선싱"
 
 #. Location property
-#: src/components/PageAgent/index.js:195
+#: src/components/PageAgent/index.js:199
 msgid "Location of Headquarters"
 msgstr "본사 위치"
 
@@ -746,7 +747,7 @@ msgid "My List"
 msgstr "내 목록"
 
 #. Nicknames property
-#: src/components/PageAgent/index.js:196
+#: src/components/PageAgent/index.js:200
 msgid "Nicknames"
 msgstr "닉네임"
 
@@ -766,7 +767,7 @@ msgid "No saved items."
 msgstr "저장된 항목이 없습니다."
 
 #. Occupations property
-#: src/components/PageAgent/index.js:191
+#: src/components/PageAgent/index.js:195
 msgid "Occupations"
 msgstr "직업"
 
@@ -798,7 +799,7 @@ msgid "Phone: (914) 366-6300"
 msgstr "전화: (914) 366-6300"
 
 #. Place of birth property
-#: src/components/PageAgent/index.js:193
+#: src/components/PageAgent/index.js:197
 msgid "Place of Birth"
 msgstr "출생지"
 
@@ -837,7 +838,7 @@ msgid "Please select a reading room"
 msgstr "열람실을 선택해 주세요"
 
 #. Positions held property
-#: src/components/PageAgent/index.js:192
+#: src/components/PageAgent/index.js:196
 msgid "Positions Held"
 msgstr "보유 직위"
 
@@ -953,7 +954,7 @@ msgid "Search"
 msgstr "검색"
 
 #. Message to search for more related collections
-#: src/components/PageAgent/index.js:47
+#: src/components/PageAgent/index.js:51
 msgid "Search More Related Collections"
 msgstr "더 많은 관련 컬렉션 검색"
 
@@ -1056,7 +1057,7 @@ msgid "Skip to main content"
 msgstr "주 내용으로 건너뛰기"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:175
+#: src/components/PageAgent/index.js:179
 msgid "Social Networks and Archival Context"
 msgstr "소셜 네트워크 및 아카이브 컨텍스트"
 
@@ -1141,7 +1142,7 @@ msgid "View minimap"
 msgstr "미니맵 보기"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:173
+#: src/components/PageAgent/index.js:177
 msgid "Virtual International Authority File"
 msgstr "가상 국제 기관 파일"
 
@@ -1153,6 +1154,6 @@ msgid "We cannot process your request unless you agree to pay the costs of repro
 msgstr "귀하가 복제 비용 지불에 동의하지 않으면 요청을 처리할 수 없습니다."
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:174
+#: src/components/PageAgent/index.js:178
 msgid "WorldCat Identities"
 msgstr "월드캣 아이덴티티"
