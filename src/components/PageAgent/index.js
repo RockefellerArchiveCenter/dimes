@@ -26,7 +26,11 @@ const AgentNote = ({ source, text }) => (
     </p>
       <p className='agent-note__source'>
         <Trans comment='Agent Note source'>
-          <Select value={source} _null='Source: Rockefeller Archive Center' other={`Source: ${source}`} />
+          <Select
+            value={source ?? 'rac'}
+            _rac='Source: Rockefeller Archive Center'
+            other={`Source: ${source}`}
+          />
         </Trans>
       </p>
   </div>) : (null)
