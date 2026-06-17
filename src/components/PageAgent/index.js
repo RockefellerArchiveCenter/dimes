@@ -157,7 +157,8 @@ const PageAgent = () => {
   useEffect(() => {
     let noteText = agent.notes && agent.notes.map(note => note.subnotes.map(s => s.content).join('\r\n'))
     if (!noteText && wikidata.sitelinks && wikidata.sitelinks.enwiki) { /* 1 */
-      const wikidataTitle = wikidata.sitelinks.enwiki.url.split('/').at(-1)
+      console.log(wikidata)
+      const wikidataTitle = wikidata.sitelinks.enwiki.title
       axios
         .get(`https://en.wikipedia.org/api/rest_v1/page/summary/${wikidataTitle}`)
         .then(res => {
