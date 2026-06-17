@@ -106,7 +106,7 @@ const PageAgent = () => {
       axios
         .get(`https://www.wikidata.org/wiki/Special:EntityData/${wikidataId}.json`)
         .then(res => {
-          setWikidata(res.data.entities[wikidataId])
+          setWikidata(res.data.entities[wikidataId] || {})
         })
         .catch(err => console.log(err))
         .then(res => setIsWikidataLoading(false))
@@ -148,6 +148,7 @@ const PageAgent = () => {
       updatedAttributes[endLabel] = date.end
     })
     setAttributes(updatedAttributes)
+    console.log(wikidata)
     !isWikidataLoading && !Object.keys(wikidata).length && setIsAttributesLoading(false)
   }, [agent, wikidata, isWikidataLoading])
 
