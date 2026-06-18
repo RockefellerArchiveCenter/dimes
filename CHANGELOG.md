@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.1](https://github.com/RockefellerArchiveCenter/dimes/compare/v1.0.0...v1.0.1) (2026-06-18)
+
+
+### Bug Fixes
+
+* don't set null value for wikidata data ([aca3aaf](https://github.com/RockefellerArchiveCenter/dimes/commit/aca3aaff5fb723beb7daf4440850fce2f96175b3))
+* Don't set null values for Wikidata data ([e8ac987](https://github.com/RockefellerArchiveCenter/dimes/commit/e8ac9877b118a4bf4910e3a51bbf55855795c4ff))
+* update deploys ([33d822a](https://github.com/RockefellerArchiveCenter/dimes/commit/33d822a1211ea0316dad290c4d9374c769146890))
+* update workflows ([39d8dd9](https://github.com/RockefellerArchiveCenter/dimes/commit/39d8dd92b4f056078fa17f8726d126e2a34c954f))
+* update workflows ([39d8dd9](https://github.com/RockefellerArchiveCenter/dimes/commit/39d8dd92b4f056078fa17f8726d126e2a34c954f))
+* update workflows ([33d822a](https://github.com/RockefellerArchiveCenter/dimes/commit/33d822a1211ea0316dad290c4d9374c769146890))
+
 ## 1.0.0 (2026-05-31)
 
 
