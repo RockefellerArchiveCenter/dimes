@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.2](https://github.com/RockefellerArchiveCenter/dimes/compare/v1.0.1...v1.0.2) (2026-08-03)
+
+
+### Bug Fixes
+
+* **deps:** Dependency Updates ([0988e83](https://github.com/RockefellerArchiveCenter/dimes/commit/0988e8303cdd0513898ea6cac0b22bd87c013a74))
+* **deps:** Scheduled dependency updates ([c98a38d](https://github.com/RockefellerArchiveCenter/dimes/commit/c98a38ddade495d301c0e56648ef15eb75673643))
+* **deps:** Scheduled dependency updates ([c98a38d](https://github.com/RockefellerArchiveCenter/dimes/commit/c98a38ddade495d301c0e56648ef15eb75673643))
+* **deps:** Scheduled dependency updates ([0988e83](https://github.com/RockefellerArchiveCenter/dimes/commit/0988e8303cdd0513898ea6cac0b22bd87c013a74))
+* **deps:** Scheduled dependency updates ([636bc46](https://github.com/RockefellerArchiveCenter/dimes/commit/636bc46ea3c7066b158e4d817f44875b0b32c763))
+
 ## [1.0.1](https://github.com/RockefellerArchiveCenter/dimes/compare/v1.0.0...v1.0.1) (2026-06-18)
 
 
