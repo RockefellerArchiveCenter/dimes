@@ -70,6 +70,7 @@ const SearchForm = props => {
               handleChange={e => setQuery(e.target.value)}
               type='search'
               required
+              showRequiredIndicator={false}
             />
             <Button
               className={ classnames({ 'btn--orange search__submit-btn': isHomePage, 'btn btn--orange search__submit-btn search__results-submit-btn': !isHomePage })}

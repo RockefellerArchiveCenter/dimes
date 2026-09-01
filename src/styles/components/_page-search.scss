@@ -85,7 +85,7 @@
   font-size: 14px;
   padding: 0px 15px;
   height: 45px;
-  width: 200px;
+  min-width: 14.3em; //instead of 200px so that container grows with text resizing
   border: 1px solid $night-grey;
 }
 

@@ -47,13 +47,13 @@
 
 .input-group__search-controls {
   width: 100%;
+  gap: 10px;
   @include lg-up {
     width: calc(100% - 500px);
   }
 }
 
 .input-group__search-controls-results {
-  flex-wrap: nowrap;
   margin-top: 24px;
   width: 100%;
   @include lg-up {
@@ -75,19 +75,11 @@
   height: 46px;
 }
 
-.select__search__wrapper {
-  display: none;
-  margin-right: 14px;
-  @include md-up {
-    display: block;
-  }
-}
-
 .select__search__control {
   font-size: 16px;
   border: 1px solid $silver-grey;
   padding: 13px 15px;
-  width: 180px;
+  min-width: 11em; //instead of 180px so that container grows with text resizing
   & > .material-icon {
     right: 15px;
     top: 13px;

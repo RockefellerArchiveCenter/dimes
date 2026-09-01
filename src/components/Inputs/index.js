@@ -7,9 +7,9 @@ import "react-datepicker/dist/react-datepicker.css"
 import './styles.scss'
 
 
-const InputLabel = ({className, id, label, required}) => (
+const InputLabel = ({className, id, label, required, showRequiredIndicator = true}) => (
   <label htmlFor={id} className={className}>
-    {label}{required && ' *'}
+    {label}{required && showRequiredIndicator && ' *'}
   </label>)
 
 
