@@ -33,7 +33,7 @@ msgid "{0, plural, one {hit} other {hits}}"
 msgstr "{0, plural, one {击中} other {击中}}"
 
 #. Agent Note source
-#. placeholder {0}: source ?? '_rac'
+#. placeholder {0}: source ?? 'rac'
 #: src/components/PageAgent/index.js:28
 msgid "{0, select, rac {Source: Rockefeller Archive Center} other {Source: {source}}}"
 msgstr "{0, select, rac {资料来源：洛克菲勒档案中心} other {来源: {source}}}"
@@ -45,7 +45,7 @@ msgid "{0, select, true {{startItem} result} other {{startItem}-{endItem} of {re
 msgstr "{0, select, true {{startItem} result} other {{startItem}-{endItem} 的 {resultsCount} 搜索结果}}"
 
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.js:290
+#: src/components/PageSearch/index.js:291
 msgid "{0, select, true {{startItem}} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem}} other {{startItem}-{endItem} 的 {resultsCount} 搜索结果}}"
 
@@ -70,12 +70,12 @@ msgid "{0, select, true {View} other {View Online}}"
 msgstr "{0, select, true {看法} other {在线查看}}"
 
 #. Label for the end of the item
-#: src/components/PageAgent/index.js:143
+#: src/components/PageAgent/index.js:144
 msgid "{agentType, select, organization {Date Disbanded} other {Date of Death}}"
 msgstr "{agentType, select, organization {解散日期} other {死亡日期}}"
 
 #. Label for the start of the item
-#: src/components/PageAgent/index.js:139
+#: src/components/PageAgent/index.js:140
 msgid "{agentType, select, organization {Date Established} other {Date of Birth}}"
 msgstr "{agentType, select, organization {成立日期} other {出生日期}}"
 
@@ -215,7 +215,7 @@ msgid "<0>Jump to a part of the collection containing matches by clicking on an 
 msgstr "<0>点击活动方格，跳转到包含匹配项的集合部分。</0><1>在小地图中，每个方格代表该集合的一部分。彩色方格代表包含一个或多个符合搜索条件的部分.</1>"
 
 #. Back to search button
-#: src/components/PageAgent/index.js:255
+#: src/components/PageAgent/index.js:258
 msgid "<0>keyboard_arrow_left</0>Back to Search"
 msgstr "<0>键盘_arrow_left 返回</0>搜索"
 
@@ -230,13 +230,15 @@ msgstr "<0>最后申请日期{0}</0>"
 msgid "<0>Limitations and fees</0>"
 msgstr "<0>限制和费用</0>"
 
+#. Loading message
 #. Records content is loading
+#: src/components/LoadingSkeleton/index.js:12
 #: src/components/RecordsContent/index.js:372
 msgid "<0>Loading</0>"
 msgstr "<0>加载中</0>"
 
 #. Agent Sidebar Header
-#: src/components/PageAgent/index.js:65
+#: src/components/PageAgent/index.js:66
 msgid "<0>More about this {agentType}</0>"
 msgstr "<0>更多相关信息{agentType}</0>"
 
@@ -261,7 +263,7 @@ msgid "<0>Submit request</0>"
 msgstr "<0>提交申请</0>"
 
 #. summary message
-#: src/components/PageAgent/index.js:269
+#: src/components/PageAgent/index.js:272
 msgid "<0>Summary</0>"
 msgstr "<0>摘要</0>"
 
@@ -391,7 +393,7 @@ msgid "Cancel"
 msgstr "取消"
 
 #. Label for Category selector
-#: src/components/SearchForm/index.js:96
+#: src/components/SearchForm/index.js:97
 msgid "Choose a search category"
 msgstr "选择搜索类别"
 
@@ -567,7 +569,7 @@ msgid "Found in:"
 msgstr "源自:"
 
 #. Founded by property
-#: src/components/PageAgent/index.js:198
+#: src/components/PageAgent/index.js:201
 msgid "Founded by"
 msgstr "创立者"
 
@@ -691,7 +693,7 @@ msgid "Licensing for descriptive metadata"
 msgstr "描述性元数据许可"
 
 #. Location property
-#: src/components/PageAgent/index.js:199
+#: src/components/PageAgent/index.js:202
 msgid "Location of Headquarters"
 msgstr "总部所在地"
 
@@ -747,7 +749,7 @@ msgid "My List"
 msgstr "我的列表"
 
 #. Nicknames property
-#: src/components/PageAgent/index.js:200
+#: src/components/PageAgent/index.js:203
 msgid "Nicknames"
 msgstr "昵称"
 
@@ -767,7 +769,7 @@ msgid "No saved items."
 msgstr "无保存项目。"
 
 #. Occupations property
-#: src/components/PageAgent/index.js:195
+#: src/components/PageAgent/index.js:198
 msgid "Occupations"
 msgstr "职业"
 
@@ -799,7 +801,7 @@ msgid "Phone: (914) 366-6300"
 msgstr "电话：（914）366-6300"
 
 #. Place of birth property
-#: src/components/PageAgent/index.js:197
+#: src/components/PageAgent/index.js:200
 msgid "Place of Birth"
 msgstr "出生地"
 
@@ -838,7 +840,7 @@ msgid "Please select a reading room"
 msgstr "请选择阅览室"
 
 #. Positions held property
-#: src/components/PageAgent/index.js:196
+#: src/components/PageAgent/index.js:199
 msgid "Positions Held"
 msgstr "曾任职务"
 
@@ -949,12 +951,12 @@ msgid "Scheduled Date *"
 msgstr "计划来访日期 *"
 
 #. Label for Search button
-#: src/components/SearchForm/index.js:77
+#: src/components/SearchForm/index.js:78
 msgid "Search"
 msgstr "搜索"
 
 #. Message to search for more related collections
-#: src/components/PageAgent/index.js:51
+#: src/components/PageAgent/index.js:52
 msgid "Search More Related Collections"
 msgstr "搜索更多相关收藏"
 
@@ -1036,7 +1038,7 @@ msgid "show less"
 msgstr "显示较少"
 
 #. Label for digital matches only checkbox
-#: src/components/SearchForm/index.js:115
+#: src/components/SearchForm/index.js:116
 msgid "Show only results with digital matches"
 msgstr "只显示与所搜寻的内容相匹配的数字化结果"
 
@@ -1057,7 +1059,7 @@ msgid "Skip to main content"
 msgstr "跳转到主要内容"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:179
+#: src/components/PageAgent/index.js:182
 msgid "Social Networks and Archival Context"
 msgstr "社会网络和档案背景"
 
@@ -1116,7 +1118,7 @@ msgid "Subject"
 msgstr "主题"
 
 #. Aria Label for search submission button
-#: src/components/SearchForm/index.js:82
+#: src/components/SearchForm/index.js:83
 msgid "Submit search"
 msgstr "搜索"
 
@@ -1142,7 +1144,7 @@ msgid "View minimap"
 msgstr "查看最小地图"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:177
+#: src/components/PageAgent/index.js:180
 msgid "Virtual International Authority File"
 msgstr "虚拟国际权威档案"
 
@@ -1154,6 +1156,6 @@ msgid "We cannot process your request unless you agree to pay the costs of repro
 msgstr "除非您同意支付复制费用，否则我们无法处理您的申请。"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:178
+#: src/components/PageAgent/index.js:181
 msgid "WorldCat Identities"
 msgstr "WorldCat Identities"
