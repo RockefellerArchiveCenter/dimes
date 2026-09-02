@@ -281,6 +281,7 @@ const PageSearch = () => {
               { inProgress ?
                   (<SearchSkeleton />) :
                   (<CardList
+                    headingLevel={2}
                     items={items}
                     params={params} />)}
               <div className='results__footer mb-30'>

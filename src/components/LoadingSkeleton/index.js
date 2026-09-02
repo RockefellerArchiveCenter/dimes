@@ -85,9 +85,9 @@ export const AgentRelatedCollectionsSkeleton = () => (
         .map((item, index) => (
           <li className='card' key={index}>
             <Skeleton />
-            <h2 className='card__title'>
+            <h3 className='card__title'>
               <Skeleton count={3}/>
-            </h2>
+            </h3>
             <p className='card__date'>
               <Skeleton />
             </p>
