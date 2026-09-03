@@ -13,6 +13,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
+#. Indicates a required form field
+#. Indicates a required form field
+#. Indicates a required form field
+#. Indicates a required form field
+#: src/components/Form/index.js:43
+#: src/components/Form/index.js:56
+#: src/components/Inputs/index.js:13
+#: src/components/Inputs/index.js:80
+msgid "(required)"
+msgstr ""
+
 #. Message returned dependent on how many items selected
 #. placeholder {0}: extents.length
 #. placeholder {1}: extents.join(', ')
@@ -59,8 +70,8 @@ msgstr "{0, select, true {Minimap} other {Introduction de la carte minimale}}"
 #. placeholder {0}: props.submitList.length !== 1
 #. placeholder {1}: props.submitList.length
 #. placeholder {2}: props.submitList.length
-#: src/components/ModalMyList/index.js:444
-#: src/components/ModalMyList/index.js:573
+#: src/components/ModalMyList/index.js:445
+#: src/components/ModalMyList/index.js:575
 msgid "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 msgstr "{0, select, true {Demander {1} éléments} other {Demander {2} élément}}"
 
@@ -226,13 +237,13 @@ msgid "<0>Last requested on: {0}</0>"
 msgstr "<0>Dernière demande le : {0}</0>"
 
 #. Limitations and fees title
-#: src/components/ModalMyList/index.js:475
+#: src/components/ModalMyList/index.js:476
 msgid "<0>Limitations and fees</0>"
 msgstr "<0>Limitations et redevances</0>"
 
 #. Loading message
 #. Records content is loading
-#: src/components/LoadingSkeleton/index.js:12
+#: src/components/LoadingSkeleton/index.js:7
 #: src/components/RecordsContent/index.js:372
 msgid "<0>Loading</0>"
 msgstr "<0>Chargement</0>"
@@ -258,7 +269,7 @@ msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archi
 msgstr "<0>Remarque :</0> si vous envoyez votre liste par courrier électronique à un archiviste à l'<1>adresse archive@rockarch.org,</1> veuillez indiquer votre nom et votre adresse électronique dans le champ Message, faute de quoi nous n'aurons aucun moyen de vous contacter pour assurer le suivi."
 
 #. Submit Request title
-#: src/components/ModalMyList/index.js:506
+#: src/components/ModalMyList/index.js:507
 msgid "<0>Submit request</0>"
 msgstr "<0>Soumettre une demande</0>"
 
@@ -293,7 +304,7 @@ msgid "<0>View Online<1/></0>{0}"
 msgstr "<0>Consulter en ligne<1/></0>"
 
 #. Limitations and fees information
-#: src/components/ModalMyList/index.js:478
+#: src/components/ModalMyList/index.js:479
 msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
 msgstr ""
 
@@ -303,7 +314,7 @@ msgid "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 msgstr "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 
 #. helptext for RAC staff message
-#: src/components/ModalMyList/index.js:424
+#: src/components/ModalMyList/index.js:425
 msgid "255 characters maximum"
 msgstr "255 caractères maximum"
 
@@ -400,7 +411,7 @@ msgstr "Choisir une catégorie de recherche"
 #. Aria label for close.
 #: src/components/ModalConfirm/index.js:15
 #: src/components/ModalMinimap/index.js:36
-#: src/components/ModalMinimap/index.js:64
+#: src/components/ModalMinimap/index.js:65
 #: src/components/ModalMyList/index.js:110
 #: src/components/ModalSearch/index.js:49
 msgid "Close"
@@ -498,8 +509,8 @@ msgstr "email"
 #. Label of Email Form
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:110
 #: src/components/ModalMyList/index.js:213
-msgid "Email *"
-msgstr "Email *"
+msgid "Email"
+msgstr "Email"
 
 #. Email list label
 #: src/components/Dropdown/index.js:137
@@ -636,7 +647,7 @@ msgid "https://rockarch.org/collections/access-and-request-materials/"
 msgstr "https://rockarch.org/collections/access-and-request-materials/"
 
 #. Link for duplication request services
-#: src/components/ModalMyList/index.js:493
+#: src/components/ModalMyList/index.js:494
 msgid "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 msgstr "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 
@@ -666,7 +677,7 @@ msgid "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 
 #. Label for duplication request form
-#: src/components/ModalMyList/index.js:549
+#: src/components/ModalMyList/index.js:550
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its extent or physical condition."
 msgstr "Je comprends qu'il me faudra peut-être travailler avec un archiviste pour identifier les ressources les plus pertinentes pour ma recherche et que, dans certains cas, il n'est pas possible de numériser le matériel en raison de son étendue ou de son état physique."
 
@@ -699,7 +710,7 @@ msgstr "Site du siège"
 
 #. Company Email link
 #: src/components/ModalMyList/index.js:163
-#: src/components/ModalMyList/index.js:502
+#: src/components/ModalMyList/index.js:503
 #: src/components/PageBackendError/index.js:17
 #: src/components/PrimaryLink/index.js:25
 msgid "mailto:archive@rockarch.org"
@@ -723,7 +734,7 @@ msgstr "Message"
 
 #. Label for RAC staff message Form
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:187
-#: src/components/ModalMyList/index.js:420
+#: src/components/ModalMyList/index.js:421
 msgid "Message for RAC staff"
 msgstr "Message au personnel du RAC"
 
@@ -732,7 +743,7 @@ msgstr "Message au personnel du RAC"
 #. Header for modal minimap
 #: src/components/Minimap/index.js:78
 #: src/components/Minimap/index.js:82
-#: src/components/ModalMinimap/index.js:60
+#: src/components/ModalMinimap/index.js:61
 msgid "Minimap"
 msgstr "Mini-carte"
 
@@ -755,8 +766,8 @@ msgstr "Surnoms"
 
 #. No selected items error
 #: src/components/ModalMyList/index.js:187
-#: src/components/ModalMyList/index.js:393
-#: src/components/ModalMyList/index.js:523
+#: src/components/ModalMyList/index.js:394
+#: src/components/ModalMyList/index.js:524
 msgid "No items have been selected to submit."
 msgstr "Aucun élément n'a été sélectionné pour être soumis."
 
@@ -780,7 +791,7 @@ msgstr "ouvre le courrier électronique"
 
 #. Title for duplication services link
 #. Title message for opening an online item
-#: src/components/ModalMyList/index.js:489
+#: src/components/ModalMyList/index.js:490
 #: src/components/RecordsDetail/index.js:205
 msgid "opens in a new window"
 msgstr "s’ouvre dans une nouvelle fenêtre"
@@ -816,22 +827,22 @@ msgstr "Veuillez ajouter un mot ou une phrase à rechercher."
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:221
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:275
 #: src/components/ModalMyList/index.js:183
-#: src/components/ModalMyList/index.js:390
-#: src/components/ModalMyList/index.js:516
+#: src/components/ModalMyList/index.js:391
+#: src/components/ModalMyList/index.js:517
 msgid "Please complete this field."
 msgstr "Veuillez remplir ce champ."
 
 #. placeholder {0}: process.env.REACT_APP_DUPLICATION_REQUEST_LIMIT
-#: src/components/ModalMyList/index.js:526
+#: src/components/ModalMyList/index.js:527
 msgid "Please limit your request to {0} items."
 msgstr "Veuillez limiter votre demande à {0} articles."
 
 #. Missing Scheduled Date error
-#: src/components/ModalMyList/index.js:383
+#: src/components/ModalMyList/index.js:384
 msgid "Please provide the date of your research visit."
 msgstr "Veuillez indiquer la date de votre visite de recherche."
 
-#: src/components/ModalMyList/index.js:387
+#: src/components/ModalMyList/index.js:388
 msgid "Please select a location of a reading room."
 msgstr "Veuillez sélectionner l'emplacement d'une salle de lecture."
 
@@ -878,7 +889,7 @@ msgstr "Horaires de la salle de lecture:"
 #. Name of recaptcha error message
 #: src/components/ModalMyList/index.js:249
 #: src/components/ModalMyList/index.js:256
-#: src/components/ModalMyList/index.js:562
+#: src/components/ModalMyList/index.js:564
 msgid "recaptcha"
 msgstr "recaptcha"
 
@@ -946,9 +957,9 @@ msgstr "Planifier une visite"
 #. Label for scheduling date
 #. Scheduled Date Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:183
-#: src/components/ModalMyList/index.js:329
-msgid "Scheduled Date *"
-msgstr "Date prévue *"
+#: src/components/ModalMyList/index.js:330
+msgid "Scheduled Date"
+msgstr "Date prévue"
 
 #. Label for Search button
 #: src/components/SearchForm/index.js:78
@@ -1151,7 +1162,7 @@ msgstr "Fichier d'autorité internationale virtuelle"
 #. Costs not agreed to error
 #. Payment Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:278
-#: src/components/ModalMyList/index.js:519
+#: src/components/ModalMyList/index.js:520
 msgid "We cannot process your request unless you agree to pay the costs of reproduction."
 msgstr "Nous ne pouvons pas traiter votre demande si vous n'acceptez pas de payer les frais de reproduction."
 

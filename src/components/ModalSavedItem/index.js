@@ -2,12 +2,13 @@ import { CheckBoxInput } from '../Inputs'
 import { Trans } from '@lingui/macro'
 import './styles.scss'
 
-const ModalSavedItemsRestrictions = ({submit, submitReason}) => (
-  submitReason ? (<div className='input__error'>{submitReason}</div>) : (null)
+const ModalSavedItemsRestrictions = ({id, submit, submitReason}) => (
+  submitReason ? (<div className='input__error' id={id}>{submitReason}</div>) : (null)
 )
 
 const ModalSavedItem = props => {
   const { ignoreRestrictions, handleChange, isChecked, submitReason, title, submit, uri } = props
+  const restrictionId = !ignoreRestrictions && submitReason ? `${uri}-restriction` : undefined
 
   return (
     <li className='modal-saved-item mb-22'>
@@ -17,10 +18,12 @@ const ModalSavedItem = props => {
         checked={isChecked || false}
         label={title}
         handleChange={handleChange}
+        ariaDescribedBy={restrictionId}
         disabled={!ignoreRestrictions && !submit} />
       {ignoreRestrictions ?
         (null) :
         (<ModalSavedItemsRestrictions
+          id={restrictionId}
           submit={submit}
           submitReason={submitReason} />)
       }

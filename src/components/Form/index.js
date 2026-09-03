@@ -23,7 +23,7 @@ export const FocusError = () => {
 }
 
 export const FormGroup = (props) => {
-  const { children, component, errors, helpText, maxLength, label, name, required, rows, touched, type } = props
+  const { children, component, errors, helpText, maxLength, label, name, required, rows, showRequiredIndicator = true, touched, type } = props
   /** Return text for aria describedBy label */
   const describedBy = () => {
     if (helpText) {
@@ -40,7 +40,7 @@ export const FormGroup = (props) => {
   }
   return (
     <div className='form-group input mx-0'>
-      { type !== 'checkbox' && <label htmlFor={name}>{label}</label> }
+      { type !== 'checkbox' && <label htmlFor={name}>{label}{required && showRequiredIndicator && <>{' '}<Trans comment='Indicates a required form field'>(required)</Trans></>}</label> }
       <Field
         className={classnames({'is-invalid': errors && errors[name] && touched[name]})}
         type={type}
@@ -53,7 +53,7 @@ export const FormGroup = (props) => {
         aria-invalid={errors && errors[name] && touched[name] ? 'true' : null}
         aria-describedby={describedBy()}
         aria-required={required} />
-      { type === 'checkbox' && <label htmlFor={name}>{label}</label> }
+      { type === 'checkbox' && <label htmlFor={name}>{label}{required && showRequiredIndicator && <>{' '}<Trans comment='Indicates a required form field'>(required)</Trans></>}</label> }
       { helpText && <p className='input__help-text' id={`desc-${name}`}>{helpText}</p> }
       <ErrorMessage id={`${name}-error`} name={name} component='div' className='input__error' />
     </div>
