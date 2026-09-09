@@ -18,10 +18,8 @@ const ModalConfirm = props => (
         <MaterialIcon icon='close' />
       </button>
     </div>
-    <div className='modal-body--confirm'>
-      <div className='modal-message px-40 py-40'>
-        {props.message}
-      </div>
+    <div className='modal-message px-40 py-40'>
+      {props.message}
     </div>
   </Modal>
 )
