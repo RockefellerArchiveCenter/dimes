@@ -77,6 +77,7 @@ export const SelectInput = props => {
     items: props.options,
     selectedItem: props.selectedItem,
     onSelectedItemChange: props.onChange,
+    toggleButtonId: props.id,
    })
 
   return (

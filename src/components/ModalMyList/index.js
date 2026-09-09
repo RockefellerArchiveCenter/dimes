@@ -572,7 +572,7 @@ export const DuplicationRequestModal = props => (
                   })}
                 handleCaptchaChange={(response) => setFieldValue('recaptcha', response)} />
               <ErrorMessage
-                id='captcha-error'
+                id='recaptcha-error'
                 name='recaptcha'
                 component='div'
                 className='input__error' />
