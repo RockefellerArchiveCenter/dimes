@@ -17,10 +17,10 @@ msgstr ""
 #. Indicates a required form field
 #. Indicates a required form field
 #. Indicates a required form field
-#: src/components/Form/index.js:43
-#: src/components/Form/index.js:56
+#: src/components/Form/index.js:48
+#: src/components/Form/index.js:61
 #: src/components/Inputs/index.js:13
-#: src/components/Inputs/index.js:80
+#: src/components/Inputs/index.js:86
 msgid "(required)"
 msgstr ""
 
@@ -70,13 +70,13 @@ msgstr "{0, select, true {Minimap} other {ミニマップの紹介}}"
 #. placeholder {0}: props.submitList.length !== 1
 #. placeholder {1}: props.submitList.length
 #. placeholder {2}: props.submitList.length
-#: src/components/ModalMyList/index.js:445
-#: src/components/ModalMyList/index.js:575
+#: src/components/ModalMyList/index.js:451
+#: src/components/ModalMyList/index.js:581
 msgid "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 msgstr "{0, select, true {リクエスト {1} アイテム} other {リクエスト {2} アイテム}}"
 
 #. placeholder {0}: props.isMobile
-#: src/components/RecordsContent/index.js:233
+#: src/components/RecordsContent/index.js:235
 msgid "{0, select, true {View} other {View Online}}"
 msgstr "{0, select, true {観る} other {オンラインで見る}}"
 
@@ -130,7 +130,7 @@ msgid "{isMobile, select, true {Add} other {Add to List}}"
 msgstr "{isMobile, select, true {追加} other {リストに追加}}。"
 
 #. Label for Remove List Toggle button
-#: src/components/ListToggleButton/index.js:15
+#: src/components/ListToggleButton/index.js:17
 msgid "{isMobile, select, true {Remove} other {Remove from List}}"
 msgstr "{isMobile, select, true {取り除く} other {リストから削除する}}"
 
@@ -237,14 +237,14 @@ msgid "<0>Last requested on: {0}</0>"
 msgstr "<0>最終リクエスト日{0}</0>"
 
 #. Limitations and fees title
-#: src/components/ModalMyList/index.js:476
+#: src/components/ModalMyList/index.js:482
 msgid "<0>Limitations and fees</0>"
 msgstr "<0>制限と手数料</0>"
 
 #. Loading message
 #. Records content is loading
 #: src/components/LoadingSkeleton/index.js:7
-#: src/components/RecordsContent/index.js:372
+#: src/components/RecordsContent/index.js:375
 msgid "<0>Loading</0>"
 msgstr "<0>ローディング</0>"
 
@@ -269,7 +269,7 @@ msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archi
 msgstr "<0>注意：</0> <1>archive@rockarch.org</1> のアーキビストにリストをEメールで送る場合は、メッセージ欄にお名前とEメールアドレスをご記入ください。"
 
 #. Submit Request title
-#: src/components/ModalMyList/index.js:507
+#: src/components/ModalMyList/index.js:513
 msgid "<0>Submit request</0>"
 msgstr "<0>リクエストを送信</0>"
 
@@ -304,7 +304,7 @@ msgid "<0>View Online<1/></0>{0}"
 msgstr "<0>オンラインで見る<1/></0>"
 
 #. Limitations and fees information
-#: src/components/ModalMyList/index.js:479
+#: src/components/ModalMyList/index.js:485
 msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
 msgstr ""
 
@@ -314,7 +314,7 @@ msgid "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 msgstr "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 
 #. helptext for RAC staff message
-#: src/components/ModalMyList/index.js:425
+#: src/components/ModalMyList/index.js:431
 msgid "255 characters maximum"
 msgstr "最大255文字"
 
@@ -334,16 +334,9 @@ msgid "Actions"
 msgstr "アクション"
 
 #. Test Remove button label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:58
+#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:50
 msgid "Add"
 msgstr "追加"
-
-#. Aria label for List Toggle button
-#. Test Add button aria label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:21
-#: src/components/ListToggleButton/index.js:27
-msgid "Add item to list"
-msgstr "アイテムをリストに追加"
 
 #. Test Add button label
 #: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:17
@@ -396,7 +389,7 @@ msgstr "リクエストを完了できない"
 #. Reset/Cancel Button for Form
 #. Test Cancel Button Label
 #: src/components/Form/__tests__/Form.test.js:14
-#: src/components/Form/index.js:69
+#: src/components/Form/index.js:74
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:126
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:194
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:248
@@ -420,7 +413,7 @@ msgstr "閉じる"
 #. Collection Content title
 #. switcher label text content
 #: src/components/ContextSwitcher/__tests__/ContextSwitcher.test.js:15
-#: src/components/RecordsContent/index.js:376
+#: src/components/RecordsContent/index.js:379
 msgid "Collection Content"
 msgstr "コレクション内容"
 
@@ -534,7 +527,7 @@ msgid "Enter a search term"
 msgstr "検索語を入力"
 
 #. Helptext for scheduling date.
-#: src/components/ModalMyList/index.js:324
+#: src/components/ModalMyList/index.js:330
 msgid "Enter the date of your research visit (mm/dd/yyyy)"
 msgstr "研究訪問の日付（mm/dd/yyyy）を入力してください。"
 
@@ -647,7 +640,7 @@ msgid "https://rockarch.org/collections/access-and-request-materials/"
 msgstr "https://rockarch.org/collections/access-and-request-materials/"
 
 #. Link for duplication request services
-#: src/components/ModalMyList/index.js:494
+#: src/components/ModalMyList/index.js:500
 msgid "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 msgstr "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 
@@ -677,7 +670,7 @@ msgid "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 
 #. Label for duplication request form
-#: src/components/ModalMyList/index.js:550
+#: src/components/ModalMyList/index.js:556
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its extent or physical condition."
 msgstr "私は、私の研究に最も関連する資料を特定するために、アーキビストと協力する必要がある場合があること、また、資料の範囲や物理的な状態により、デジタル化できない場合があることを理解しています。"
 
@@ -710,7 +703,7 @@ msgstr "所在地"
 
 #. Company Email link
 #: src/components/ModalMyList/index.js:163
-#: src/components/ModalMyList/index.js:503
+#: src/components/ModalMyList/index.js:509
 #: src/components/PageBackendError/index.js:17
 #: src/components/PrimaryLink/index.js:25
 msgid "mailto:archive@rockarch.org"
@@ -734,7 +727,7 @@ msgstr "メッセージ"
 
 #. Label for RAC staff message Form
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:187
-#: src/components/ModalMyList/index.js:421
+#: src/components/ModalMyList/index.js:427
 msgid "Message for RAC staff"
 msgstr "RACスタッフへのメッセージ"
 
@@ -766,16 +759,16 @@ msgstr "ニックネーム"
 
 #. No selected items error
 #: src/components/ModalMyList/index.js:187
-#: src/components/ModalMyList/index.js:394
-#: src/components/ModalMyList/index.js:524
+#: src/components/ModalMyList/index.js:400
+#: src/components/ModalMyList/index.js:530
 msgid "No items have been selected to submit."
 msgstr "提出するアイテムが選択されていない。"
 
 #. Empty Saved Items Test
 #. Message displayed when user has no saved items
-#: src/components/ModalSavedItem/index.js:58
+#: src/components/ModalSavedItem/index.js:61
 #: src/components/SavedItem/__tests__/SavedItem.test.js:41
-#: src/components/SavedItem/index.js:57
+#: src/components/SavedItem/index.js:61
 msgid "No saved items."
 msgstr "アイテムは保存されていません。"
 
@@ -791,7 +784,7 @@ msgstr "メールを開く"
 
 #. Title for duplication services link
 #. Title message for opening an online item
-#: src/components/ModalMyList/index.js:490
+#: src/components/ModalMyList/index.js:496
 #: src/components/RecordsDetail/index.js:205
 msgid "opens in a new window"
 msgstr "新しいウィンドウで開きます"
@@ -827,26 +820,26 @@ msgstr "検索する語句を追加してください。"
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:221
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:275
 #: src/components/ModalMyList/index.js:183
-#: src/components/ModalMyList/index.js:391
-#: src/components/ModalMyList/index.js:517
+#: src/components/ModalMyList/index.js:397
+#: src/components/ModalMyList/index.js:523
 msgid "Please complete this field."
 msgstr "この欄にご記入ください。"
 
 #. placeholder {0}: process.env.REACT_APP_DUPLICATION_REQUEST_LIMIT
-#: src/components/ModalMyList/index.js:527
+#: src/components/ModalMyList/index.js:533
 msgid "Please limit your request to {0} items."
 msgstr "リクエストは{0}アイテムに限定してください。"
 
 #. Missing Scheduled Date error
-#: src/components/ModalMyList/index.js:384
+#: src/components/ModalMyList/index.js:390
 msgid "Please provide the date of your research visit."
 msgstr "研究訪問の日付をご記入ください。"
 
-#: src/components/ModalMyList/index.js:388
+#: src/components/ModalMyList/index.js:394
 msgid "Please select a location of a reading room."
 msgstr "閲覧室の場所を選択してください。"
 
-#: src/components/ModalMyList/index.js:289
+#: src/components/ModalMyList/index.js:290
 msgid "Please select a reading room"
 msgstr "閲覧室を選択してください"
 
@@ -889,14 +882,14 @@ msgstr "閲覧室の開室時間:"
 #. Name of recaptcha error message
 #: src/components/ModalMyList/index.js:249
 #: src/components/ModalMyList/index.js:256
-#: src/components/ModalMyList/index.js:564
+#: src/components/ModalMyList/index.js:570
 msgid "recaptcha"
 msgstr "リキャプチャ"
 
 #. Label to remove saved item
 #. Test Remove button label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:74
-#: src/components/SavedItem/index.js:23
+#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:66
+#: src/components/SavedItem/index.js:25
 msgid "Remove"
 msgstr "削除"
 
@@ -908,16 +901,9 @@ msgid "Remove All Items"
 msgstr "全アイテムを削除"
 
 #. Test Remove button label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:37
+#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:33
 msgid "Remove from List"
 msgstr "リストから除去"
-
-#. Aria label for List Toggle button
-#. Test Remove button aria label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:41
-#: src/components/ListToggleButton/index.js:8
-msgid "Remove item from list"
-msgstr "リストから項目を削除する"
 
 #. Request items Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:190
@@ -957,7 +943,7 @@ msgstr "来館予約"
 #. Label for scheduling date
 #. Scheduled Date Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:183
-#: src/components/ModalMyList/index.js:330
+#: src/components/ModalMyList/index.js:336
 msgid "Scheduled Date"
 msgstr "予定日"
 
@@ -1001,7 +987,7 @@ msgstr "休日スケジュール"
 msgid "Select all items"
 msgstr "すべてのアイテムを選択"
 
-#: src/components/ModalMyList/index.js:301
+#: src/components/ModalMyList/index.js:304
 msgid "Select Reading Room Location"
 msgstr "読書室の場所を選択"
 
@@ -1162,7 +1148,7 @@ msgstr "仮想国際機関ファイル"
 #. Costs not agreed to error
 #. Payment Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:278
-#: src/components/ModalMyList/index.js:520
+#: src/components/ModalMyList/index.js:526
 msgid "We cannot process your request unless you agree to pay the costs of reproduction."
 msgstr "お客様が複製費用の支払いに同意されない限り、当社はお客様のご依頼を処理することはできません。"
 
