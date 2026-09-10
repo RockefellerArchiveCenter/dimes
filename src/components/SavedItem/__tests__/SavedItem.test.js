@@ -16,8 +16,8 @@ it('renders list correctly', () => {
   expect(list.children.length).toBe(resolvedList.length)
   const groupTitle = document.querySelector('h2.item-group__title')
   expect(groupTitle.textContent).toBe('Cary Reich papers')
-  const itemDescription = document.querySelector('.saved-item')
-  expect(itemDescription.querySelector('.saved-item__title').textContent).toBe('Abramovitz, Max')
+  const itemDescription = document.querySelector('li.saved-item')
+  expect(itemDescription.querySelector('h3.saved-item__title').textContent).toBe('Abramovitz, Max')
   expect(itemDescription.querySelector('.saved-item__date').textContent).toBe('1982 September 28')
   // Update once Argo has been updated
   // expect(itemDescription.querySelector(".saved-item__description").textContent).toBe("Abramovitz, Max")
