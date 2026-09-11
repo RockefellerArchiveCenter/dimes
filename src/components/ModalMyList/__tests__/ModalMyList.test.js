@@ -109,7 +109,7 @@ it('renders email modal props correctly', async () => {
   await act(async () => {
     expect(form.textContent).toContain(t({
       comment: 'Email Modal Form Test',
-      message: "Email *"
+      message: "Email"
     }))
     expect(form.textContent).toContain(t({
       comment: 'Subject Modal Form Test',
@@ -182,7 +182,7 @@ it('renders reading room modal props correctly', async () => {
   await act(async () => {
     expect(form.textContent).toContain(t({
       comment: 'Scheduled Date Modal Form Test',
-      message: "Scheduled Date *"
+      message: "Scheduled Date"
     }))
     expect(form.textContent).toContain(t({
       message: "Message for RAC staff"

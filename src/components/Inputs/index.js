@@ -3,13 +3,14 @@ import DatePicker from 'react-datepicker'
 import {useSelect} from 'downshift'
 import MaterialIcon from '../MaterialIcon'
 import classnames from 'classnames'
+import { Trans } from '@lingui/macro'
 import "react-datepicker/dist/react-datepicker.css"
 import './styles.scss'
 
 
-const InputLabel = ({className, id, label, required}) => (
+const InputLabel = ({className, id, label, required, showRequiredIndicator = true}) => (
   <label htmlFor={id} className={className}>
-    {label}{required && ' *'}
+    {label}{required && showRequiredIndicator && <>{' '}<Trans comment='Indicates a required form field'>(required)</Trans></>}
   </label>)
 
 
@@ -24,6 +25,7 @@ export const CheckBoxInput = props => (
       checked={props.checked}
       value={props.checked}
       required={props.required}
+      aria-describedby={props.ariaDescribedBy}
       disabled={props.disabled} />
     <InputLabel {...props} />
   </>
@@ -33,18 +35,22 @@ CheckBoxInput.defaultProps = {
   checked: true,
 }
 
-export const DateInput = ({className, defaultDate, handleChange, helpText, id, label, ...props}) => {
+export const DateInput = ({ariaDescribedBy, ariaInvalid, className, defaultDate, handleChange, helpText, id, label, required, ...props}) => {
   const [startDate, setStartDate] = useState(defaultDate || new Date())
 
   useEffect(() => {
     handleChange(startDate)
   }, [startDate, setStartDate])
 
+  const describedBy = [helpText && `desc-${id}`, ariaDescribedBy].filter(Boolean).join(' ') || undefined
+
   return (
   <div className={classnames('input')}>
-    <label htmlFor={id}>{label}</label>
+    <InputLabel id={id} label={label} required={required} />
     <DatePicker
-        ariaDescribedBy={helpText && `desc-${id}`}
+        ariaDescribedBy={describedBy}
+        ariaInvalid={ariaInvalid}
+        ariaRequired={required}
         className={className || 'dp__wrapper'}
         selected={startDate}
         showTimeSelect='true'
@@ -71,13 +77,18 @@ export const SelectInput = props => {
     items: props.options,
     selectedItem: props.selectedItem,
     onSelectedItemChange: props.onChange,
+    toggleButtonId: props.id,
    })
 
   return (
-    <div className={classnames('select__wrapper', `select`, `${props.className}__wrapper`, {'hide-label': props.hideLabel})} required={props.required}>
+    <div className={classnames('select__wrapper', `select`, `${props.className}__wrapper`, {'hide-label': props.hideLabel})}>
       <input type='hidden' name={props.name} value={selectedItem && selectedItem.value} />
-      <label {...getLabelProps()}>{props.label}</label>
-      <button className={classnames('select__control', `${props.className}__control`)} type='button' {...getToggleButtonProps()}>
+      <label {...getLabelProps()}>{props.label}{props.required && <>{' '}<Trans comment='Indicates a required form field'>(required)</Trans></>}</label>
+      <button className={classnames('select__control', `${props.className}__control`)} 
+        type='button' {...getToggleButtonProps()} 
+        aria-describedby={props.ariaDescribedBy} 
+        aria-invalid={props.ariaInvalid} 
+        aria-required={props.required}>
         {selectedItem && selectedItem.label}
         <MaterialIcon icon={props.iconAfter ? props.iconAfter : 'unfold_more'} />
       </button>

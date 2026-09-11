@@ -13,6 +13,17 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.4\n"
 
+#. Indicates a required form field
+#. Indicates a required form field
+#. Indicates a required form field
+#. Indicates a required form field
+#: src/components/Form/index.js:48
+#: src/components/Form/index.js:61
+#: src/components/Inputs/index.js:13
+#: src/components/Inputs/index.js:86
+msgid "(required)"
+msgstr ""
+
 #. Message returned dependent on how many items selected
 #. placeholder {0}: extents.length
 #. placeholder {1}: extents.join(', ')
@@ -33,7 +44,7 @@ msgid "{0, plural, one {hit} other {hits}}"
 msgstr "{0, plural, one {击中} other {击中}}"
 
 #. Agent Note source
-#. placeholder {0}: source ?? '_rac'
+#. placeholder {0}: source ?? 'rac'
 #: src/components/PageAgent/index.js:28
 msgid "{0, select, rac {Source: Rockefeller Archive Center} other {Source: {source}}}"
 msgstr "{0, select, rac {资料来源：洛克菲勒档案中心} other {来源: {source}}}"
@@ -45,7 +56,7 @@ msgid "{0, select, true {{startItem} result} other {{startItem}-{endItem} of {re
 msgstr "{0, select, true {{startItem} result} other {{startItem}-{endItem} 的 {resultsCount} 搜索结果}}"
 
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.js:290
+#: src/components/PageSearch/index.js:291
 msgid "{0, select, true {{startItem}} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem}} other {{startItem}-{endItem} 的 {resultsCount} 搜索结果}}"
 
@@ -59,23 +70,23 @@ msgstr "{0, select, true {Minimap} other {引入最小图}}"
 #. placeholder {0}: props.submitList.length !== 1
 #. placeholder {1}: props.submitList.length
 #. placeholder {2}: props.submitList.length
-#: src/components/ModalMyList/index.js:444
-#: src/components/ModalMyList/index.js:573
+#: src/components/ModalMyList/index.js:451
+#: src/components/ModalMyList/index.js:581
 msgid "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 msgstr "{0, select, true {请求 {1} 项目} other {请求 {2} 项目}}"
 
 #. placeholder {0}: props.isMobile
-#: src/components/RecordsContent/index.js:233
+#: src/components/RecordsContent/index.js:235
 msgid "{0, select, true {View} other {View Online}}"
 msgstr "{0, select, true {看法} other {在线查看}}"
 
 #. Label for the end of the item
-#: src/components/PageAgent/index.js:143
+#: src/components/PageAgent/index.js:144
 msgid "{agentType, select, organization {Date Disbanded} other {Date of Death}}"
 msgstr "{agentType, select, organization {解散日期} other {死亡日期}}"
 
 #. Label for the start of the item
-#: src/components/PageAgent/index.js:139
+#: src/components/PageAgent/index.js:140
 msgid "{agentType, select, organization {Date Established} other {Date of Birth}}"
 msgstr "{agentType, select, organization {成立日期} other {出生日期}}"
 
@@ -119,7 +130,7 @@ msgid "{isMobile, select, true {Add} other {Add to List}}"
 msgstr "{isMobile, select, true {添加} other {添加到列表}}"
 
 #. Label for Remove List Toggle button
-#: src/components/ListToggleButton/index.js:15
+#: src/components/ListToggleButton/index.js:17
 msgid "{isMobile, select, true {Remove} other {Remove from List}}"
 msgstr "{isMobile, select, true {消除} other {从列表中移除}}"
 
@@ -215,7 +226,7 @@ msgid "<0>Jump to a part of the collection containing matches by clicking on an 
 msgstr "<0>点击活动方格，跳转到包含匹配项的集合部分。</0><1>在小地图中，每个方格代表该集合的一部分。彩色方格代表包含一个或多个符合搜索条件的部分.</1>"
 
 #. Back to search button
-#: src/components/PageAgent/index.js:255
+#: src/components/PageAgent/index.js:258
 msgid "<0>keyboard_arrow_left</0>Back to Search"
 msgstr "<0>键盘_arrow_left 返回</0>搜索"
 
@@ -226,17 +237,19 @@ msgid "<0>Last requested on: {0}</0>"
 msgstr "<0>最后申请日期{0}</0>"
 
 #. Limitations and fees title
-#: src/components/ModalMyList/index.js:475
+#: src/components/ModalMyList/index.js:482
 msgid "<0>Limitations and fees</0>"
 msgstr "<0>限制和费用</0>"
 
+#. Loading message
 #. Records content is loading
-#: src/components/RecordsContent/index.js:372
+#: src/components/LoadingSkeleton/index.js:7
+#: src/components/RecordsContent/index.js:375
 msgid "<0>Loading</0>"
 msgstr "<0>加载中</0>"
 
 #. Agent Sidebar Header
-#: src/components/PageAgent/index.js:65
+#: src/components/PageAgent/index.js:66
 msgid "<0>More about this {agentType}</0>"
 msgstr "<0>更多相关信息{agentType}</0>"
 
@@ -256,12 +269,12 @@ msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archi
 msgstr "<0>请注意：</0>如果要将您的名单通过电子邮件发送给<1>archive@rockarch.org</1> 的档案管理员<1>，</1>请在 \"信息 \"栏中注明您的姓名和电子邮件地址，否则我们将无法与您联系，无法跟进。"
 
 #. Submit Request title
-#: src/components/ModalMyList/index.js:506
+#: src/components/ModalMyList/index.js:513
 msgid "<0>Submit request</0>"
 msgstr "<0>提交申请</0>"
 
 #. summary message
-#: src/components/PageAgent/index.js:269
+#: src/components/PageAgent/index.js:272
 msgid "<0>Summary</0>"
 msgstr "<0>摘要</0>"
 
@@ -291,7 +304,7 @@ msgid "<0>View Online<1/></0>{0}"
 msgstr "<0>在线阅读<1/></0>"
 
 #. Limitations and fees information
-#: src/components/ModalMyList/index.js:478
+#: src/components/ModalMyList/index.js:485
 msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
 msgstr ""
 
@@ -301,7 +314,7 @@ msgid "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 msgstr "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 
 #. helptext for RAC staff message
-#: src/components/ModalMyList/index.js:424
+#: src/components/ModalMyList/index.js:431
 msgid "255 characters maximum"
 msgstr "最多 255 个字符"
 
@@ -321,16 +334,9 @@ msgid "Actions"
 msgstr "操作"
 
 #. Test Remove button label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:58
+#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:50
 msgid "Add"
 msgstr "添加"
-
-#. Aria label for List Toggle button
-#. Test Add button aria label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:21
-#: src/components/ListToggleButton/index.js:27
-msgid "Add item to list"
-msgstr "将项目添加到列表"
 
 #. Test Add button label
 #: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:17
@@ -383,7 +389,7 @@ msgstr "无法完成请求"
 #. Reset/Cancel Button for Form
 #. Test Cancel Button Label
 #: src/components/Form/__tests__/Form.test.js:14
-#: src/components/Form/index.js:69
+#: src/components/Form/index.js:74
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:126
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:194
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:248
@@ -391,14 +397,14 @@ msgid "Cancel"
 msgstr "取消"
 
 #. Label for Category selector
-#: src/components/SearchForm/index.js:96
+#: src/components/SearchForm/index.js:97
 msgid "Choose a search category"
 msgstr "选择搜索类别"
 
 #. Aria label for close.
 #: src/components/ModalConfirm/index.js:15
 #: src/components/ModalMinimap/index.js:36
-#: src/components/ModalMinimap/index.js:64
+#: src/components/ModalMinimap/index.js:65
 #: src/components/ModalMyList/index.js:110
 #: src/components/ModalSearch/index.js:49
 msgid "Close"
@@ -407,7 +413,7 @@ msgstr "关闭"
 #. Collection Content title
 #. switcher label text content
 #: src/components/ContextSwitcher/__tests__/ContextSwitcher.test.js:15
-#: src/components/RecordsContent/index.js:376
+#: src/components/RecordsContent/index.js:379
 msgid "Collection Content"
 msgstr "收藏内容目录"
 
@@ -496,8 +502,8 @@ msgstr "电子邮件"
 #. Label of Email Form
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:110
 #: src/components/ModalMyList/index.js:213
-msgid "Email *"
-msgstr "邮箱 *"
+msgid "Email"
+msgstr "邮箱"
 
 #. Email list label
 #: src/components/Dropdown/index.js:137
@@ -521,7 +527,7 @@ msgid "Enter a search term"
 msgstr "输入一个搜索词"
 
 #. Helptext for scheduling date.
-#: src/components/ModalMyList/index.js:324
+#: src/components/ModalMyList/index.js:330
 msgid "Enter the date of your research visit (mm/dd/yyyy)"
 msgstr "请输入研究访问日期（月/日/年）"
 
@@ -567,7 +573,7 @@ msgid "Found in:"
 msgstr "源自:"
 
 #. Founded by property
-#: src/components/PageAgent/index.js:198
+#: src/components/PageAgent/index.js:201
 msgid "Founded by"
 msgstr "创立者"
 
@@ -634,7 +640,7 @@ msgid "https://rockarch.org/collections/access-and-request-materials/"
 msgstr "https://rockarch.org/collections/access-and-request-materials/"
 
 #. Link for duplication request services
-#: src/components/ModalMyList/index.js:493
+#: src/components/ModalMyList/index.js:500
 msgid "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 msgstr "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 
@@ -664,7 +670,7 @@ msgid "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 
 #. Label for duplication request form
-#: src/components/ModalMyList/index.js:549
+#: src/components/ModalMyList/index.js:556
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its extent or physical condition."
 msgstr "我知道，我可能需要与档案管理员合作，以确定与我的研究最相关的资源，在某些情况下，由于资料的范围或实际状况，不可能将其数字化。"
 
@@ -691,13 +697,13 @@ msgid "Licensing for descriptive metadata"
 msgstr "描述性元数据许可"
 
 #. Location property
-#: src/components/PageAgent/index.js:199
+#: src/components/PageAgent/index.js:202
 msgid "Location of Headquarters"
 msgstr "总部所在地"
 
 #. Company Email link
 #: src/components/ModalMyList/index.js:163
-#: src/components/ModalMyList/index.js:502
+#: src/components/ModalMyList/index.js:509
 #: src/components/PageBackendError/index.js:17
 #: src/components/PrimaryLink/index.js:25
 msgid "mailto:archive@rockarch.org"
@@ -721,7 +727,7 @@ msgstr "信息"
 
 #. Label for RAC staff message Form
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:187
-#: src/components/ModalMyList/index.js:420
+#: src/components/ModalMyList/index.js:427
 msgid "Message for RAC staff"
 msgstr "给洛克菲勒档案中心的档案管理员留言"
 
@@ -730,7 +736,7 @@ msgstr "给洛克菲勒档案中心的档案管理员留言"
 #. Header for modal minimap
 #: src/components/Minimap/index.js:78
 #: src/components/Minimap/index.js:82
-#: src/components/ModalMinimap/index.js:60
+#: src/components/ModalMinimap/index.js:61
 msgid "Minimap"
 msgstr "迷你地图"
 
@@ -747,27 +753,27 @@ msgid "My List"
 msgstr "我的列表"
 
 #. Nicknames property
-#: src/components/PageAgent/index.js:200
+#: src/components/PageAgent/index.js:203
 msgid "Nicknames"
 msgstr "昵称"
 
 #. No selected items error
 #: src/components/ModalMyList/index.js:187
-#: src/components/ModalMyList/index.js:393
-#: src/components/ModalMyList/index.js:523
+#: src/components/ModalMyList/index.js:400
+#: src/components/ModalMyList/index.js:530
 msgid "No items have been selected to submit."
 msgstr "没有选择要提交的项目。"
 
 #. Empty Saved Items Test
 #. Message displayed when user has no saved items
-#: src/components/ModalSavedItem/index.js:58
+#: src/components/ModalSavedItem/index.js:61
 #: src/components/SavedItem/__tests__/SavedItem.test.js:41
-#: src/components/SavedItem/index.js:57
+#: src/components/SavedItem/index.js:61
 msgid "No saved items."
 msgstr "无保存项目。"
 
 #. Occupations property
-#: src/components/PageAgent/index.js:195
+#: src/components/PageAgent/index.js:198
 msgid "Occupations"
 msgstr "职业"
 
@@ -778,7 +784,7 @@ msgstr "打开电子邮件"
 
 #. Title for duplication services link
 #. Title message for opening an online item
-#: src/components/ModalMyList/index.js:489
+#: src/components/ModalMyList/index.js:496
 #: src/components/RecordsDetail/index.js:205
 msgid "opens in a new window"
 msgstr "在新窗口打开"
@@ -799,7 +805,7 @@ msgid "Phone: (914) 366-6300"
 msgstr "电话：（914）366-6300"
 
 #. Place of birth property
-#: src/components/PageAgent/index.js:197
+#: src/components/PageAgent/index.js:200
 msgid "Place of Birth"
 msgstr "出生地"
 
@@ -814,31 +820,31 @@ msgstr "请添加要搜索的单词或短语。"
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:221
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:275
 #: src/components/ModalMyList/index.js:183
-#: src/components/ModalMyList/index.js:390
-#: src/components/ModalMyList/index.js:516
+#: src/components/ModalMyList/index.js:397
+#: src/components/ModalMyList/index.js:523
 msgid "Please complete this field."
 msgstr "请填写此栏。"
 
 #. placeholder {0}: process.env.REACT_APP_DUPLICATION_REQUEST_LIMIT
-#: src/components/ModalMyList/index.js:526
+#: src/components/ModalMyList/index.js:533
 msgid "Please limit your request to {0} items."
 msgstr "请将请求限制在 {0} 个项目内。"
 
 #. Missing Scheduled Date error
-#: src/components/ModalMyList/index.js:383
+#: src/components/ModalMyList/index.js:390
 msgid "Please provide the date of your research visit."
 msgstr "请提供研究访问的日期。"
 
-#: src/components/ModalMyList/index.js:387
+#: src/components/ModalMyList/index.js:394
 msgid "Please select a location of a reading room."
 msgstr "请选择阅览室的位置。"
 
-#: src/components/ModalMyList/index.js:289
+#: src/components/ModalMyList/index.js:290
 msgid "Please select a reading room"
 msgstr "请选择阅览室"
 
 #. Positions held property
-#: src/components/PageAgent/index.js:196
+#: src/components/PageAgent/index.js:199
 msgid "Positions Held"
 msgstr "曾任职务"
 
@@ -876,14 +882,14 @@ msgstr "阅览室开放时间:"
 #. Name of recaptcha error message
 #: src/components/ModalMyList/index.js:249
 #: src/components/ModalMyList/index.js:256
-#: src/components/ModalMyList/index.js:562
+#: src/components/ModalMyList/index.js:570
 msgid "recaptcha"
 msgstr "重新验证"
 
 #. Label to remove saved item
 #. Test Remove button label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:74
-#: src/components/SavedItem/index.js:23
+#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:66
+#: src/components/SavedItem/index.js:25
 msgid "Remove"
 msgstr "删除"
 
@@ -895,16 +901,9 @@ msgid "Remove All Items"
 msgstr "删除所有项目"
 
 #. Test Remove button label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:37
+#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:33
 msgid "Remove from List"
 msgstr "从清单中移除"
-
-#. Aria label for List Toggle button
-#. Test Remove button aria label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:41
-#: src/components/ListToggleButton/index.js:8
-msgid "Remove item from list"
-msgstr "从列表中删除项目"
 
 #. Request items Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:190
@@ -944,17 +943,17 @@ msgstr "到访预约"
 #. Label for scheduling date
 #. Scheduled Date Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:183
-#: src/components/ModalMyList/index.js:329
-msgid "Scheduled Date *"
-msgstr "计划来访日期 *"
+#: src/components/ModalMyList/index.js:336
+msgid "Scheduled Date"
+msgstr "计划来访日期"
 
 #. Label for Search button
-#: src/components/SearchForm/index.js:77
+#: src/components/SearchForm/index.js:78
 msgid "Search"
 msgstr "搜索"
 
 #. Message to search for more related collections
-#: src/components/PageAgent/index.js:51
+#: src/components/PageAgent/index.js:52
 msgid "Search More Related Collections"
 msgstr "搜索更多相关收藏"
 
@@ -988,7 +987,7 @@ msgstr "查看假期安排"
 msgid "Select all items"
 msgstr "选择所有项目"
 
-#: src/components/ModalMyList/index.js:301
+#: src/components/ModalMyList/index.js:304
 msgid "Select Reading Room Location"
 msgstr "选择阅览室位置"
 
@@ -1036,7 +1035,7 @@ msgid "show less"
 msgstr "显示较少"
 
 #. Label for digital matches only checkbox
-#: src/components/SearchForm/index.js:115
+#: src/components/SearchForm/index.js:116
 msgid "Show only results with digital matches"
 msgstr "只显示与所搜寻的内容相匹配的数字化结果"
 
@@ -1057,7 +1056,7 @@ msgid "Skip to main content"
 msgstr "跳转到主要内容"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:179
+#: src/components/PageAgent/index.js:182
 msgid "Social Networks and Archival Context"
 msgstr "社会网络和档案背景"
 
@@ -1116,7 +1115,7 @@ msgid "Subject"
 msgstr "主题"
 
 #. Aria Label for search submission button
-#: src/components/SearchForm/index.js:82
+#: src/components/SearchForm/index.js:83
 msgid "Submit search"
 msgstr "搜索"
 
@@ -1142,18 +1141,18 @@ msgid "View minimap"
 msgstr "查看最小地图"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:177
+#: src/components/PageAgent/index.js:180
 msgid "Virtual International Authority File"
 msgstr "虚拟国际权威档案"
 
 #. Costs not agreed to error
 #. Payment Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:278
-#: src/components/ModalMyList/index.js:519
+#: src/components/ModalMyList/index.js:526
 msgid "We cannot process your request unless you agree to pay the costs of reproduction."
 msgstr "除非您同意支付复制费用，否则我们无法处理您的申请。"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:178
+#: src/components/PageAgent/index.js:181
 msgid "WorldCat Identities"
 msgstr "WorldCat Identities"

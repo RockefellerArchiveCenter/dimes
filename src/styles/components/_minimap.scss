@@ -9,7 +9,11 @@
   z-index: 998;
 }
 
+/**
+* 1. Show the same number of rows at every width and zoom level. The 8 must match 
+* the rowCount passed to Minimap in ModalMinimap.
+**/
 .minimap__wrapper--modal {
+  aspect-ratio: 8 / 10; /* 1 */
   width: 100%;
-  height: calc(100% - 72px);
 }

@@ -13,6 +13,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
+#. Indicates a required form field
+#. Indicates a required form field
+#. Indicates a required form field
+#. Indicates a required form field
+#: src/components/Form/index.js:48
+#: src/components/Form/index.js:61
+#: src/components/Inputs/index.js:13
+#: src/components/Inputs/index.js:86
+msgid "(required)"
+msgstr ""
+
 #. Message returned dependent on how many items selected
 #. placeholder {0}: extents.length
 #. placeholder {1}: extents.join(', ')
@@ -33,7 +44,7 @@ msgid "{0, plural, one {hit} other {hits}}"
 msgstr "{0, plural, one {der Hit} other {die Hits}}"
 
 #. Agent Note source
-#. placeholder {0}: source ?? '_rac'
+#. placeholder {0}: source ?? 'rac'
 #: src/components/PageAgent/index.js:28
 msgid "{0, select, rac {Source: Rockefeller Archive Center} other {Source: {source}}}"
 msgstr "{0, select, rac {Quelle: Rockefeller Archive Center} other {Quelle: {source}}}"
@@ -45,7 +56,7 @@ msgid "{0, select, true {{startItem} result} other {{startItem}-{endItem} of {re
 msgstr "{0, select, true {{startItem} result} other {{startItem}-{endItem} von {resultsCount} Ergebnissen}}"
 
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.js:290
+#: src/components/PageSearch/index.js:291
 msgid "{0, select, true {{startItem}} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem}} other {{startItem}-{endItem} von {resultsCount} Ergebnissen}}"
 
@@ -59,23 +70,23 @@ msgstr "{0, select, true {Minimap} other {Einführung in die Minimap}}"
 #. placeholder {0}: props.submitList.length !== 1
 #. placeholder {1}: props.submitList.length
 #. placeholder {2}: props.submitList.length
-#: src/components/ModalMyList/index.js:444
-#: src/components/ModalMyList/index.js:573
+#: src/components/ModalMyList/index.js:451
+#: src/components/ModalMyList/index.js:581
 msgid "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 msgstr "{0, select, true {Anfordern {1} Element} other {Anfordern {2} Elemente}}"
 
 #. placeholder {0}: props.isMobile
-#: src/components/RecordsContent/index.js:233
+#: src/components/RecordsContent/index.js:235
 msgid "{0, select, true {View} other {View Online}}"
 msgstr "{0, select, true {Ansehen} other {Online ansehen}}"
 
 #. Label for the end of the item
-#: src/components/PageAgent/index.js:143
+#: src/components/PageAgent/index.js:144
 msgid "{agentType, select, organization {Date Disbanded} other {Date of Death}}"
 msgstr "{agentType, select, organization {Auflösungsdatum} other {Todesdatum}}"
 
 #. Label for the start of the item
-#: src/components/PageAgent/index.js:139
+#: src/components/PageAgent/index.js:140
 msgid "{agentType, select, organization {Date Established} other {Date of Birth}}"
 msgstr "{agentType, select, organisation {Datum der Gründung} other {Geburtsdatum}}"
 
@@ -119,7 +130,7 @@ msgid "{isMobile, select, true {Add} other {Add to List}}"
 msgstr "{isMobile, select, true {Hinzufügen} other {Zur Liste hinzufügen}}"
 
 #. Label for Remove List Toggle button
-#: src/components/ListToggleButton/index.js:15
+#: src/components/ListToggleButton/index.js:17
 msgid "{isMobile, select, true {Remove} other {Remove from List}}"
 msgstr "{isMobile, select, true {Entfernen} other {Aus Liste entfernen}}"
 
@@ -215,7 +226,7 @@ msgid "<0>Jump to a part of the collection containing matches by clicking on an 
 msgstr "<0>Springen Sie zu einem Teil der Sammlung, der Übereinstimmungen enthält, indem Sie auf ein aktives Quadrat klicken.</0><1>Im Minimap-Diagramm stellt jedes Quadrat einen Teil dieser Sammlung dar. Farbige Quadrate stellen Teile dar, die einen oder mehrere Treffer für Ihre Suche enthalten.</1>"
 
 #. Back to search button
-#: src/components/PageAgent/index.js:255
+#: src/components/PageAgent/index.js:258
 msgid "<0>keyboard_arrow_left</0>Back to Search"
 msgstr "<0>keyboard_arrow_left</0>Zurück zur Suche"
 
@@ -226,17 +237,19 @@ msgid "<0>Last requested on: {0}</0>"
 msgstr "<0>Zuletzt angefordert am: {0}</0>"
 
 #. Limitations and fees title
-#: src/components/ModalMyList/index.js:475
+#: src/components/ModalMyList/index.js:482
 msgid "<0>Limitations and fees</0>"
 msgstr "<0>Beschränkungen und Gebühren</0>"
 
+#. Loading message
 #. Records content is loading
-#: src/components/RecordsContent/index.js:372
+#: src/components/LoadingSkeleton/index.js:7
+#: src/components/RecordsContent/index.js:375
 msgid "<0>Loading</0>"
 msgstr "<0>Laden</0>"
 
 #. Agent Sidebar Header
-#: src/components/PageAgent/index.js:65
+#: src/components/PageAgent/index.js:66
 msgid "<0>More about this {agentType}</0>"
 msgstr "<0>Mehr zu dieser {agentType}</0>"
 
@@ -256,12 +269,12 @@ msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archi
 msgstr "<0>Bitte beachten Sie:</0> Wenn Sie Ihre Liste per E-Mail an einen Archivar unter <1>archive@rockarch.org senden,</1> geben Sie bitte Ihren Namen und Ihre E-Mail-Adresse im Feld \"Nachricht\" an, da wir sonst keine Möglichkeit haben, Sie zu kontaktieren, um die Liste weiter zu bearbeiten."
 
 #. Submit Request title
-#: src/components/ModalMyList/index.js:506
+#: src/components/ModalMyList/index.js:513
 msgid "<0>Submit request</0>"
 msgstr "<0>Antrag einreichen</0>"
 
 #. summary message
-#: src/components/PageAgent/index.js:269
+#: src/components/PageAgent/index.js:272
 msgid "<0>Summary</0>"
 msgstr "<0>Zusammenfassung</0>"
 
@@ -291,7 +304,7 @@ msgid "<0>View Online<1/></0>{0}"
 msgstr "<0>Online ansehen<1/></0>"
 
 #. Limitations and fees information
-#: src/components/ModalMyList/index.js:478
+#: src/components/ModalMyList/index.js:485
 msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
 msgstr ""
 
@@ -301,7 +314,7 @@ msgid "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 msgstr "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 
 #. helptext for RAC staff message
-#: src/components/ModalMyList/index.js:424
+#: src/components/ModalMyList/index.js:431
 msgid "255 characters maximum"
 msgstr "Maximal 255 Zeichen"
 
@@ -321,16 +334,9 @@ msgid "Actions"
 msgstr "Aktionen"
 
 #. Test Remove button label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:58
+#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:50
 msgid "Add"
 msgstr "Hinzufügen"
-
-#. Aria label for List Toggle button
-#. Test Add button aria label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:21
-#: src/components/ListToggleButton/index.js:27
-msgid "Add item to list"
-msgstr "Einträge zur Liste hinzufügen"
 
 #. Test Add button label
 #: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:17
@@ -383,7 +389,7 @@ msgstr "Anfrage kann nicht abgeschlossen werden"
 #. Reset/Cancel Button for Form
 #. Test Cancel Button Label
 #: src/components/Form/__tests__/Form.test.js:14
-#: src/components/Form/index.js:69
+#: src/components/Form/index.js:74
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:126
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:194
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:248
@@ -391,14 +397,14 @@ msgid "Cancel"
 msgstr "Abbrechen"
 
 #. Label for Category selector
-#: src/components/SearchForm/index.js:96
+#: src/components/SearchForm/index.js:97
 msgid "Choose a search category"
 msgstr "Wählen Sie eine Suchkategorie"
 
 #. Aria label for close.
 #: src/components/ModalConfirm/index.js:15
 #: src/components/ModalMinimap/index.js:36
-#: src/components/ModalMinimap/index.js:64
+#: src/components/ModalMinimap/index.js:65
 #: src/components/ModalMyList/index.js:110
 #: src/components/ModalSearch/index.js:49
 msgid "Close"
@@ -407,7 +413,7 @@ msgstr "Schließen"
 #. Collection Content title
 #. switcher label text content
 #: src/components/ContextSwitcher/__tests__/ContextSwitcher.test.js:15
-#: src/components/RecordsContent/index.js:376
+#: src/components/RecordsContent/index.js:379
 msgid "Collection Content"
 msgstr "Sammlung Inhalt"
 
@@ -496,8 +502,8 @@ msgstr "E-Mail"
 #. Label of Email Form
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:110
 #: src/components/ModalMyList/index.js:213
-msgid "Email *"
-msgstr "E-Mail *"
+msgid "Email"
+msgstr "E-Mail"
 
 #. Email list label
 #: src/components/Dropdown/index.js:137
@@ -521,7 +527,7 @@ msgid "Enter a search term"
 msgstr "Geben Sie einen Suchbegriff ein"
 
 #. Helptext for scheduling date.
-#: src/components/ModalMyList/index.js:324
+#: src/components/ModalMyList/index.js:330
 msgid "Enter the date of your research visit (mm/dd/yyyy)"
 msgstr "Geben Sie das Datum Ihres Forschungsaufenthalts an (mm/dd/yyyy)"
 
@@ -567,7 +573,7 @@ msgid "Found in:"
 msgstr "Gefunden in:"
 
 #. Founded by property
-#: src/components/PageAgent/index.js:198
+#: src/components/PageAgent/index.js:201
 msgid "Founded by"
 msgstr "Gegründet von"
 
@@ -634,7 +640,7 @@ msgid "https://rockarch.org/collections/access-and-request-materials/"
 msgstr "https://rockarch.org/collections/access-and-request-materials/"
 
 #. Link for duplication request services
-#: src/components/ModalMyList/index.js:493
+#: src/components/ModalMyList/index.js:500
 msgid "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 msgstr "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 
@@ -664,7 +670,7 @@ msgid "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 
 #. Label for duplication request form
-#: src/components/ModalMyList/index.js:549
+#: src/components/ModalMyList/index.js:556
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its extent or physical condition."
 msgstr "Mir ist bewusst, dass ich möglicherweise mit einem Archivar zusammenarbeiten muss, um die für meine Forschung wichtigsten Ressourcen zu ermitteln, und dass es in einigen Fällen aufgrund des Umfangs oder des physischen Zustands des Materials nicht möglich ist, es zu digitalisieren."
 
@@ -691,13 +697,13 @@ msgid "Licensing for descriptive metadata"
 msgstr "Lizenzierung für beschreibende Metadaten"
 
 #. Location property
-#: src/components/PageAgent/index.js:199
+#: src/components/PageAgent/index.js:202
 msgid "Location of Headquarters"
 msgstr "Standort des Hauptsitzes"
 
 #. Company Email link
 #: src/components/ModalMyList/index.js:163
-#: src/components/ModalMyList/index.js:502
+#: src/components/ModalMyList/index.js:509
 #: src/components/PageBackendError/index.js:17
 #: src/components/PrimaryLink/index.js:25
 msgid "mailto:archive@rockarch.org"
@@ -721,7 +727,7 @@ msgstr "Nachricht"
 
 #. Label for RAC staff message Form
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:187
-#: src/components/ModalMyList/index.js:420
+#: src/components/ModalMyList/index.js:427
 msgid "Message for RAC staff"
 msgstr "Nachricht an das RAC"
 
@@ -730,7 +736,7 @@ msgstr "Nachricht an das RAC"
 #. Header for modal minimap
 #: src/components/Minimap/index.js:78
 #: src/components/Minimap/index.js:82
-#: src/components/ModalMinimap/index.js:60
+#: src/components/ModalMinimap/index.js:61
 msgid "Minimap"
 msgstr "Minimap"
 
@@ -747,27 +753,27 @@ msgid "My List"
 msgstr "Meine Einträge"
 
 #. Nicknames property
-#: src/components/PageAgent/index.js:200
+#: src/components/PageAgent/index.js:203
 msgid "Nicknames"
 msgstr "Spitznamen"
 
 #. No selected items error
 #: src/components/ModalMyList/index.js:187
-#: src/components/ModalMyList/index.js:393
-#: src/components/ModalMyList/index.js:523
+#: src/components/ModalMyList/index.js:400
+#: src/components/ModalMyList/index.js:530
 msgid "No items have been selected to submit."
 msgstr "Es wurden keine Einträge zur Einreichung ausgewählt."
 
 #. Empty Saved Items Test
 #. Message displayed when user has no saved items
-#: src/components/ModalSavedItem/index.js:58
+#: src/components/ModalSavedItem/index.js:61
 #: src/components/SavedItem/__tests__/SavedItem.test.js:41
-#: src/components/SavedItem/index.js:57
+#: src/components/SavedItem/index.js:61
 msgid "No saved items."
 msgstr "Keine gespeicherten Elemente."
 
 #. Occupations property
-#: src/components/PageAgent/index.js:195
+#: src/components/PageAgent/index.js:198
 msgid "Occupations"
 msgstr "Belegungen"
 
@@ -778,7 +784,7 @@ msgstr "öffnet E-Mail"
 
 #. Title for duplication services link
 #. Title message for opening an online item
-#: src/components/ModalMyList/index.js:489
+#: src/components/ModalMyList/index.js:496
 #: src/components/RecordsDetail/index.js:205
 msgid "opens in a new window"
 msgstr "öffnet sich in einem neuen Fenster"
@@ -799,7 +805,7 @@ msgid "Phone: (914) 366-6300"
 msgstr "Telefon: (914) 366-6300"
 
 #. Place of birth property
-#: src/components/PageAgent/index.js:197
+#: src/components/PageAgent/index.js:200
 msgid "Place of Birth"
 msgstr "Geburtsort"
 
@@ -814,31 +820,31 @@ msgstr "Bitte geben Sie ein Wort oder einen Satz ein, nach dem Sie suchen möcht
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:221
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:275
 #: src/components/ModalMyList/index.js:183
-#: src/components/ModalMyList/index.js:390
-#: src/components/ModalMyList/index.js:516
+#: src/components/ModalMyList/index.js:397
+#: src/components/ModalMyList/index.js:523
 msgid "Please complete this field."
 msgstr "Bitte füllen Sie dieses Feld aus."
 
 #. placeholder {0}: process.env.REACT_APP_DUPLICATION_REQUEST_LIMIT
-#: src/components/ModalMyList/index.js:526
+#: src/components/ModalMyList/index.js:533
 msgid "Please limit your request to {0} items."
 msgstr "Bitte beschränken Sie Ihre Anfrage auf {0} Artikel."
 
 #. Missing Scheduled Date error
-#: src/components/ModalMyList/index.js:383
+#: src/components/ModalMyList/index.js:390
 msgid "Please provide the date of your research visit."
 msgstr "Bitte geben Sie das Datum Ihres Forschungsaufenthalts an."
 
-#: src/components/ModalMyList/index.js:387
+#: src/components/ModalMyList/index.js:394
 msgid "Please select a location of a reading room."
 msgstr "Bitte wählen Sie einen Standort für einen Lesesaal."
 
-#: src/components/ModalMyList/index.js:289
+#: src/components/ModalMyList/index.js:290
 msgid "Please select a reading room"
 msgstr "Bitte wählen Sie einen Lesesaal"
 
 #. Positions held property
-#: src/components/PageAgent/index.js:196
+#: src/components/PageAgent/index.js:199
 msgid "Positions Held"
 msgstr "Gehaltene Positionen"
 
@@ -876,14 +882,14 @@ msgstr "Öffnungszeiten des Lesesaals:"
 #. Name of recaptcha error message
 #: src/components/ModalMyList/index.js:249
 #: src/components/ModalMyList/index.js:256
-#: src/components/ModalMyList/index.js:562
+#: src/components/ModalMyList/index.js:570
 msgid "recaptcha"
 msgstr "recaptcha"
 
 #. Label to remove saved item
 #. Test Remove button label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:74
-#: src/components/SavedItem/index.js:23
+#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:66
+#: src/components/SavedItem/index.js:25
 msgid "Remove"
 msgstr "Entfernen"
 
@@ -895,16 +901,9 @@ msgid "Remove All Items"
 msgstr "Alle Einträge entfernen"
 
 #. Test Remove button label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:37
+#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:33
 msgid "Remove from List"
 msgstr "Von Wunschliste entfernen"
-
-#. Aria label for List Toggle button
-#. Test Remove button aria label
-#: src/components/ListToggleButton/__tests__/ListToggleButton.test.js:41
-#: src/components/ListToggleButton/index.js:8
-msgid "Remove item from list"
-msgstr "Element aus der Liste entfernen"
 
 #. Request items Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:190
@@ -944,17 +943,17 @@ msgstr "Besuch vereinbaren"
 #. Label for scheduling date
 #. Scheduled Date Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:183
-#: src/components/ModalMyList/index.js:329
-msgid "Scheduled Date *"
-msgstr "Geplantes Datum *"
+#: src/components/ModalMyList/index.js:336
+msgid "Scheduled Date"
+msgstr "Geplantes Datum"
 
 #. Label for Search button
-#: src/components/SearchForm/index.js:77
+#: src/components/SearchForm/index.js:78
 msgid "Search"
 msgstr "Suche"
 
 #. Message to search for more related collections
-#: src/components/PageAgent/index.js:51
+#: src/components/PageAgent/index.js:52
 msgid "Search More Related Collections"
 msgstr "Weitere verwandte Sammlungen durchsuchen"
 
@@ -988,7 +987,7 @@ msgstr "Feiertage, an denen das Archiv geschlossen ist"
 msgid "Select all items"
 msgstr "Alle Einträge auswählen"
 
-#: src/components/ModalMyList/index.js:301
+#: src/components/ModalMyList/index.js:304
 msgid "Select Reading Room Location"
 msgstr "Standort des Lesesaals auswählen"
 
@@ -1036,7 +1035,7 @@ msgid "show less"
 msgstr "weniger anzeigen"
 
 #. Label for digital matches only checkbox
-#: src/components/SearchForm/index.js:115
+#: src/components/SearchForm/index.js:116
 msgid "Show only results with digital matches"
 msgstr "Nur Ergebnisse mit digitaler Verfügbarkeit anzeigenn"
 
@@ -1057,7 +1056,7 @@ msgid "Skip to main content"
 msgstr "Zum Hauptinhalt springen"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:179
+#: src/components/PageAgent/index.js:182
 msgid "Social Networks and Archival Context"
 msgstr "Soziale Netzwerke und archivarischer Kontext"
 
@@ -1116,7 +1115,7 @@ msgid "Subject"
 msgstr "Schlagwort"
 
 #. Aria Label for search submission button
-#: src/components/SearchForm/index.js:82
+#: src/components/SearchForm/index.js:83
 msgid "Submit search"
 msgstr "Suche starten"
 
@@ -1142,18 +1141,18 @@ msgid "View minimap"
 msgstr "Minimap anzeigen"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:177
+#: src/components/PageAgent/index.js:180
 msgid "Virtual International Authority File"
 msgstr "Virtuelle internationale Behördenakte"
 
 #. Costs not agreed to error
 #. Payment Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.js:278
-#: src/components/ModalMyList/index.js:519
+#: src/components/ModalMyList/index.js:526
 msgid "We cannot process your request unless you agree to pay the costs of reproduction."
 msgstr "Wir können Ihren Antrag nur bearbeiten, wenn Sie sich bereit erklären, die Kosten für die Reproduktion zu übernehmen."
 
 #. External Identifier Title
-#: src/components/PageAgent/index.js:178
+#: src/components/PageAgent/index.js:181
 msgid "WorldCat Identities"
 msgstr "WorldCat-Identitäten"

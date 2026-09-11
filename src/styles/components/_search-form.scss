@@ -47,13 +47,14 @@
 
 .input-group__search-controls {
   width: 100%;
+  gap: 10px;
+  margin-top: 20px;
   @include lg-up {
     width: calc(100% - 500px);
   }
 }
 
 .input-group__search-controls-results {
-  flex-wrap: nowrap;
   margin-top: 24px;
   width: 100%;
   @include lg-up {
@@ -61,33 +62,35 @@
   }
 }
 
+/**
+* Set width as flex-basis because the RAC style library's `flex: 1 1 0px`
+* overrides `width`.
+**/
 .input__search {
   @include lg-up {
-    width: calc(100% - 650px);
+    flex: 0 1 calc(100% - 650px);
   }
 }
 
+/**
+* Restores the RAC style library default flex value
+**/
 .input__search-results {
+  flex: 1 1 0px;
   width: unset;
 }
 
 .input__search-results input {
-  height: 46px;
-}
-
-.select__search__wrapper {
-  display: none;
-  margin-right: 14px;
-  @include md-up {
-    display: block;
-  }
+  height: auto;
+  min-height: 46px;
+  padding: 11px 20px;
 }
 
 .select__search__control {
   font-size: 16px;
   border: 1px solid $silver-grey;
   padding: 13px 15px;
-  width: 180px;
+  min-width: 11em; //instead of 180px so that container grows with text resizing
   & > .material-icon {
     right: 15px;
     top: 13px;
@@ -101,8 +104,12 @@
 
 /**
 * Styles for the search button on the home page
+1. Overrides the RAC style library's `align-self: flex-end` to support text resizing
+*    with our icon button size, which is smaller than the library default.
 **/
 .search__submit-btn {
+  align-self: stretch; /* 1 */
+
   @include md-up {
     justify-content: center;
     min-width: 150px;
@@ -114,7 +121,8 @@
 * 1. Removes the material-icon--space-before styles
 **/
 .search__results-submit-btn {
-  height: 46px;
+  height: auto;
+  min-height: 46px;
   padding: 10px 12px;
   min-width: unset;
 

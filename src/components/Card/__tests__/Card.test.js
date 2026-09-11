@@ -13,6 +13,7 @@ it('renders props correctly', () => {
   })
 
   const card = document.querySelector('.card')
+  expect(card.querySelector('.card__title').tagName).toBe('H2')
   expect(card.querySelector('.card__title').textContent).toBe('Rockefeller Foundation records')
   expect(card.querySelector('.card__type-label').textContent).toBe('inventory2collection')
   expect(card.querySelector('.card__date').textContent).toBe('1910-2000 (Bulk: 1924-1990), 1924-1990')

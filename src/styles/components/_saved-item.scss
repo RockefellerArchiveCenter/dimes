@@ -24,6 +24,11 @@
   border-bottom: none;
 }
 
+.item-group__items {
+  font: inherit;
+  margin: 0;
+}
+
 .saved-item__row {
   display: flex;
   justify-content: space-between;
