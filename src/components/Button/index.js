@@ -5,9 +5,11 @@ import './styles.scss'
 const Button = props => (
   <button
     type={props.type}
+    id={props.id}
     className={classnames('btn', props.className)}
     onClick={props.handleClick}
     aria-label={props.ariaLabel}
+    aria-labelledby={props.ariaLabelledBy}
     aria-haspopup={props.ariaHasPopup}
     aria-expanded={props.ariaExpanded}
     aria-pressed={props.ariaPressed}

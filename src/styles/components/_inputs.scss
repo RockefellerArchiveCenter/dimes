@@ -176,6 +176,14 @@ select {
   }
 }
 
+/**
+* Add keyboard focus styles on select options with sufficient contrast. Downshift keeps
+* focus on the toggle button, so more complex selector is required.
+**/
+.select__control:focus-visible ~ .select__menu .select__option.is-focused {
+  @include focus-inset;
+}
+
 .select__option {
   color: $black;
   font-family: $sans-serif-stack;

@@ -13,6 +13,6 @@ it('renders props correctly', () => {
       handleCaptchaChange={onChange} />} />)
   })
 
-  const captcha = document.querySelector('[name=recaptcha]')
+  const captcha = document.querySelector('.captcha')
   expect(captcha.className).toBe('captcha my-10 mx-0 foo')
 })
