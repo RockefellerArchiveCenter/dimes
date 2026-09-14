@@ -185,6 +185,12 @@
         ".records__detail > .btn--detail"
       ],
       "delay": 3000
+    },
+    {
+      "label": "Agent",
+      "url": "http://host.docker.internal:3000/agents/nQV9zedPVBqFgyGrXPQvBw",
+      "onBeforeScript": "mock_request.js",
+      "delay": 3000
     }
   ],
   "paths": {
