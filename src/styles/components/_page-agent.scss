@@ -8,17 +8,14 @@
 }
 
 .agent__wrapper--description {
-  box-sizing: content-box;
   display: flex;
   flex-wrap: wrap;
-  @include lg-up {
-    flex-wrap: nowrap;
-  }
 }
 
 .agent__main {
   width: 100%;
   @include lg-up {
+    flex: 1 1 0;
     padding-right: 48px;
   }
 }
@@ -31,7 +28,8 @@
 .agent__sidebar {
   width: 100%;
   @include lg-up {
-    width: 33%;
+    width: auto;
+    flex: 0 0 33%;
     padding: 0 40px;
   }
 }
