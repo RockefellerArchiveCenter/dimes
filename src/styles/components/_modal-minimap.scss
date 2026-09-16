@@ -1,12 +1,32 @@
-.modal--minimap {
-  top: 70px;
-  right: 40px;
-  left: 40px;
-  bottom: unset;
+@import "../styles";
+
+$minimap-modal-content-margin: 8px;
+$minimap-modal-content-margin-md: 40px;
+
+.modal--minimap-panel {
+  top: $minimap-modal-content-margin;
+  left: $minimap-modal-content-margin;
+  right: $minimap-modal-content-margin;
+  bottom: $minimap-modal-content-margin;
   @include md-up {
-    top: 100px;
+    top: $minimap-modal-content-margin-md;
+    left: $minimap-modal-content-margin-md;
+    right: $minimap-modal-content-margin-md;
+    bottom: $minimap-modal-content-margin-md;
+  }
+}
+
+.modal--minimap-info {
+  top: 10px;
+  right: 20px;
+  left: 20px;
+  bottom: unset;
+  max-height: calc(100% - 20px);
+  @include md-up {
+    top: 80px;
     right: 25%;
     left: 25%;
+    max-height: calc(100% - 90px);
   }
   @include lg-up {
     top: 80px;

@@ -22,7 +22,7 @@ export const ModalMinimapInfo = props => (
     appElement={props.appElement ? props.appElement : Modal.setAppElement('#root')}
     isOpen={props.isOpen}
     onRequestClose={props.toggleModal}
-    className='modal modal--minimap'
+    className='modal modal--minimap-info'
     overlayClassName='modal__overlay' >
     <div className='modal__header--minimap mt-14 mr-14'>
       <h2 className='modal__header-title--minimap m-0 pt-5 pb-0 pl-24'>
@@ -50,6 +50,7 @@ export const ModalMinimap = props => (
     appElement={props.appElement ? props.appElement : Modal.setAppElement('#root')}
     isOpen={props.isOpen}
     onRequestClose={props.toggleModal}
+    className='modal modal--minimap-panel'
     overlayClassName={{
       base: 'modal__overlay slide--left',
       afterOpen: 'slide--left--after-open',

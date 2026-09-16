@@ -21,9 +21,13 @@ const CategoryLabel = ({ category }) => {
   )
 }
 
-const Card = ({ category, className, date, hit_count, online_hit_count, params, title, uri }) => (
+const Card = ({ category, className, date, headingLevel, hit_count, online_hit_count, params, title, uri }) => {
+  const CardHeading = `h${headingLevel}`
+  return (
   <li className={classnames('card', className)}>
-    <a className='card__title' href={appendParams(uri, params)}>{title}</a>
+    <CardHeading className='card__title'>
+      <a href={appendParams(uri, params)}>{title}</a>
+    </CardHeading>
     {category ? (<CategoryLabel category={category} />) : null }
     <p className='card__body-text card__date'>{date}</p>
     <div className='card__footer'>
@@ -31,14 +35,16 @@ const Card = ({ category, className, date, hit_count, online_hit_count, params, 
       {online_hit_count ? <Badge className='badge--blue' text={formatMatchString(online_hit_count, true)} /> : null}
     </div>
   </li>)
+}
 
-const CardList = ({ items, params, cardClassName, className }) => {
+const CardList = ({ items, params, cardClassName, className, headingLevel = 2 }) => {
   const listItems = items.map(item =>
     <Card
       key={item.uri}
       {...item}
       params={params}
       className={cardClassName}
+      headingLevel={headingLevel}
       date={item.dates?.length ? item.dates.map(d => d.expression).join(', ') : null} />
   )
   return (

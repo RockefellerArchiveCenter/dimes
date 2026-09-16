@@ -44,6 +44,7 @@ const AgentRelatedCollections = ({ agentTitle, collections, params }) => (
       </h2>
     <CardList
       className='card--related-collections'
+      headingLevel={3}
       hideHitCount
       items={collections}
       params={{...params, query: agentTitle}}/>

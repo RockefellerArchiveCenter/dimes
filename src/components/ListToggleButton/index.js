@@ -2,13 +2,15 @@ import Button from '../Button'
 import { t, select } from '@lingui/macro'
 import classnames from 'classnames'
 
-const ListToggleButton = ({ className, isMobile, isSaved, item, toggleSaved }) => (
+const ListToggleButton = ({ className, isMobile, isSaved, item, titleId, toggleSaved }) => {
+  const buttonId = `toggle-${item.uri}`
+  const ariaLabelledBy = titleId ? `${buttonId} ${titleId}` : undefined
+
+  return (
   isSaved ? (
     <Button
-      ariaLabel={t({
-        comment: 'Aria label for List Toggle button',
-        message: 'Remove item from list'
-      })}
+      id={buttonId}
+      ariaLabelledBy={ariaLabelledBy}
       ariaPressed
       className={classnames('saved', className)}
       label={
@@ -24,10 +26,8 @@ const ListToggleButton = ({ className, isMobile, isSaved, item, toggleSaved }) =
       handleClick={() => toggleSaved(item)} />
   ) : (
     <Button
-      ariaLabel={t({
-        comment: 'Aria label for List Toggle button',
-        message: 'Add item to list'
-      })}
+      id={buttonId}
+      ariaLabelledBy={ariaLabelledBy}
       ariaPressed={false}
       className={className}
       label={
@@ -41,7 +41,7 @@ const ListToggleButton = ({ className, isMobile, isSaved, item, toggleSaved }) =
       }
       iconAfter='add_circle_outline'
       handleClick={() => toggleSaved(item)} />
-  )
-)
+  ))
+}
 
 export default ListToggleButton

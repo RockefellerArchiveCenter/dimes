@@ -194,7 +194,7 @@ const PageDigitalObject = ({isMobile}) => {
         onChangeClientState={(newState) => firePageViewEvent(newState.title)} >
         <title>{ itemTitle }</title>
       </Helmet>
-      <div className='viewer'>
+      <div id='main' className='viewer'>
         <Viewer config={configs} plugins={[ViewerNavBarPlugin]} />
       </div>
     </>
