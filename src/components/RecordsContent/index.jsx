@@ -39,7 +39,7 @@ export const RecordsChild = props => {
   const [offsetAfter, setOffsetAfter] = useState(props.offsetAfter)
   const [offsetBefore, setOffsetBefore] = useState(props.offsetBefore)
   const currentUrl = window.location.pathname
-  const itemUri = `${process.env.REACT_APP_ARGO_BASEURL}${item.uri}/children`
+  const itemUri = `${import.meta.env.REACT_APP_ARGO_BASEURL}${item.uri}/children`
   const query = item.hit_count ? params.query : null
   const pageSize = 5
   const targetElementLoaded = item.uri === currentUrl /* 6 */
@@ -142,7 +142,7 @@ export const RecordsChild = props => {
     if (!children.length) {
       getPages(
         appendParams(
-          `${process.env.REACT_APP_ARGO_BASEURL}${uri}/children`,
+          `${import.meta.env.REACT_APP_ARGO_BASEURL}${uri}/children`,
           {...props.params, limit: pageSize}
         )
       )

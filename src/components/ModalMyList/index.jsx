@@ -193,7 +193,7 @@ export const EmailModal = props => (
           onSubmit={(values, { setSubmitting }) => {
             props.toggleModal()
             props.handleFormSubmit(
-              `${process.env.REACT_APP_REQUEST_BROKER_BASEURL}/deliver-request/email`,
+              `${import.meta.env.REACT_APP_REQUEST_BROKER_BASEURL}/deliver-request/email`,
               values);
             setSubmitting(false);
           }}
@@ -340,8 +340,8 @@ const ReadingRoomDateInput = ({ readingRoom }) => {
         type='date'
         defaultDate={addBusinessDays(new Date(), readingRoom?.policies[0]?.appointmentMinLeadDays || 1)}
         minDate={addBusinessDays(new Date(), readingRoom?.policies[0]?.appointmentMinLeadDays || 1)}
-        filterDate={!!process.env.REACT_APP_ENABLE_READING_ROOM_SELECT ? date => readingRoom?.openHours.some(x => x.dayOfWeek === date.getDay()) : null}
-        filterTime={!!process.env.REACT_APP_ENABLE_READING_ROOM_SELECT ? date => {
+        filterDate={!!import.meta.env.REACT_APP_ENABLE_READING_ROOM_SELECT ? date => readingRoom?.openHours.some(x => x.dayOfWeek === date.getDay()) : null}
+        filterTime={!!import.meta.env.REACT_APP_ENABLE_READING_ROOM_SELECT ? date => {
           if (readingRoom === undefined) return false;
           const hours = readingRoom.openHours.find(x => x.dayOfWeek === date.getDay());
           return isWithinInterval(date, {
@@ -366,8 +366,8 @@ export const ReadingRoomRequestModal = props => {
   const [aeonReadingRooms, setAeonReadingRooms] = useState([]);
 
   useEffect(() => {
-    if (!!process.env.REACT_APP_ENABLE_READING_ROOM_SELECT) {
-      axios.get(`${process.env.REACT_APP_REQUEST_BROKER_BASEURL}/reading-rooms`).then(response => {
+    if (!!import.meta.env.REACT_APP_ENABLE_READING_ROOM_SELECT) {
+      axios.get(`${import.meta.env.REACT_APP_REQUEST_BROKER_BASEURL}/reading-rooms`).then(response => {
         setAeonReadingRooms(response.data);
       });
     }
@@ -391,7 +391,7 @@ export const ReadingRoomRequestModal = props => {
             comment: 'Missing Scheduled Date error',
             message: 'Please provide the date of your research visit.'
           });
-          if (!!process.env.REACT_APP_ENABLE_READING_ROOM_SELECT && !values.site) errors.site = t({
+          if (!!import.meta.env.REACT_APP_ENABLE_READING_ROOM_SELECT && !values.site) errors.site = t({
             message: 'Please select a location of a reading room.'
           })
           if (!values.recaptcha) errors.recaptcha = t({
@@ -407,7 +407,7 @@ export const ReadingRoomRequestModal = props => {
           /* In order for Aeon to accept requests, dates need to be formatted as MM/DD/YYYY */
           values.scheduledDate = getFormattedDate(values.scheduledDate)
           props.handleFormSubmit(
-            `${process.env.REACT_APP_REQUEST_BROKER_BASEURL}/deliver-request/reading-room`,
+            `${import.meta.env.REACT_APP_REQUEST_BROKER_BASEURL}/deliver-request/reading-room`,
             values);
           setSubmitting(false);
         }}
@@ -420,7 +420,7 @@ export const ReadingRoomRequestModal = props => {
             name='items'
             component='div'
             className='input__error' />
-          {!!process.env.REACT_APP_ENABLE_READING_ROOM_SELECT && <ReadingRoomSelect readingRooms={aeonReadingRooms} />}
+          {!!import.meta.env.REACT_APP_ENABLE_READING_ROOM_SELECT && <ReadingRoomSelect readingRooms={aeonReadingRooms} />}
           <ReadingRoomDateInput
             readingRoom={aeonReadingRooms.find(room => room.sites[0] === values.site)} />
           <FormGroup
@@ -530,15 +530,15 @@ export const DuplicationRequestModal = props => (
             if (!values.items.length) errors.items = t({
               message: 'No items have been selected to submit.'
             })
-            if (!!process.env.REACT_APP_DUPLICATION_REQUEST_LIMIT & values.items.length > Number(process.env.REACT_APP_DUPLICATION_REQUEST_LIMIT)) errors.items = t({
-              message: `Please limit your request to ${process.env.REACT_APP_DUPLICATION_REQUEST_LIMIT} items.`
+            if (!!import.meta.env.REACT_APP_DUPLICATION_REQUEST_LIMIT & values.items.length > Number(import.meta.env.REACT_APP_DUPLICATION_REQUEST_LIMIT)) errors.items = t({
+              message: `Please limit your request to ${import.meta.env.REACT_APP_DUPLICATION_REQUEST_LIMIT} items.`
             })
             return errors;
           }}
           onSubmit={(values, { setSubmitting }) => {
             props.toggleModal()
             props.handleFormSubmit(
-              `${process.env.REACT_APP_REQUEST_BROKER_BASEURL}/deliver-request/duplication`,
+              `${import.meta.env.REACT_APP_REQUEST_BROKER_BASEURL}/deliver-request/duplication`,
               values);
             setSubmitting(false);
           }}

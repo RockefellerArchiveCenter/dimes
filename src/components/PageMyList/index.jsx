@@ -56,7 +56,7 @@
       setIsDownloading(true)
       axios
         .post(
-          `${process.env.REACT_APP_REQUEST_BROKER_BASEURL}/download-csv/`,
+          `${import.meta.env.REACT_APP_REQUEST_BROKER_BASEURL}/download-csv/`,
           {items: constructSubmitList(savedList, true)})
         .then(res => {
           const blob = new Blob([res.data], { type: 'text/csv' })
@@ -171,7 +171,7 @@
     const fetchList = () => {
       const list = fetchMyList();
       axios
-        .post(`${process.env.REACT_APP_ARGO_BASEURL}/mylist`, { list: list })
+        .post(`${import.meta.env.REACT_APP_ARGO_BASEURL}/mylist`, { list: list })
         .then(res => {
           setSavedList(res.data)
         })
@@ -223,7 +223,7 @@
     useEffect(() => {
       fetchList()
       axios
-        .get(`${process.env.REACT_APP_REQUEST_BROKER_BASEURL}/status/`)
+        .get(`${import.meta.env.REACT_APP_REQUEST_BROKER_BASEURL}/status/`)
         .then(res => res.data.pong && setIsRequestingAvailable(true))
         .catch(err => console.log(err))
     }, [])
@@ -253,7 +253,7 @@
       async function resolveItemsStatus(group) {
         const groupUris = group.items.map(i => i.archivesspace_uri)
         const updatedItems = await axios
-            .post(`${process.env.REACT_APP_REQUEST_BROKER_BASEURL}/process-request/parse-batch`, { items: groupUris })
+            .post(`${import.meta.env.REACT_APP_REQUEST_BROKER_BASEURL}/process-request/parse-batch`, { items: groupUris })
             .then(res => {return res.data})
             .catch(err => setBackendError(err))
         const storedList = fetchMyList()

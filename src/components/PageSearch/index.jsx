@@ -84,7 +84,7 @@ const PageSearch = () => {
   useEffect(() => {
     if (params.query) {
       axios
-        .get(appendParams(`${process.env.REACT_APP_ARGO_BASEURL}/facets`, params))
+        .get(appendParams(`${import.meta.env.REACT_APP_ARGO_BASEURL}/facets`, params))
         .then(res => setFacetData(res.data))
         .catch(err => setBackendError(err));
     }
@@ -94,7 +94,7 @@ const PageSearch = () => {
   useEffect(() => {
     if (params.query) {
       axios
-        .get(`${process.env.REACT_APP_ARGO_BASEURL}/search/suggest?title_suggest=${params.query}`)
+        .get(`${import.meta.env.REACT_APP_ARGO_BASEURL}/search/suggest?title_suggest=${params.query}`)
         .then(res => {
           const suggestions = res.data.title_suggest.reduce((a, c) => {
             const options = c.options.map(o => o.text)
@@ -112,7 +112,7 @@ const PageSearch = () => {
       navigate(appendParams(pathname, params))
       setInProgress(true)
       axios
-        .get(appendParams(`${process.env.REACT_APP_ARGO_BASEURL}/search`, params))
+        .get(appendParams(`${import.meta.env.REACT_APP_ARGO_BASEURL}/search`, params))
         .then(res => {
           setItems(res.data.results)
           setResultsCount(res.data.count)
