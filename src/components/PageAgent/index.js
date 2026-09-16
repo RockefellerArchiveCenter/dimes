@@ -11,7 +11,7 @@ import { AgentAttributeSkeleton, AgentRelatedCollectionsSkeleton } from '../Load
 import CardList from '../Card'
 import AgentAttributeList from '../AgentAttribute'
 import '../Button/styles.scss'
-import { appendParams, firePageViewEvent } from '../Helpers'
+import { buildHref, firePageViewEvent } from '../Helpers'
 import './styles.scss'
 import { Trans, t, Select, select } from '@lingui/macro'
 
@@ -44,6 +44,7 @@ const AgentRelatedCollections = ({ agentTitle, collections, params }) => (
       </h2>
     <CardList
       className='card--related-collections'
+      headingLevel={3}
       hideHitCount
       items={collections}
       params={{...params, query: agentTitle}}/>
@@ -235,7 +236,7 @@ const PageAgent = () => {
 
    /** Constructs the URL for the 'Back to Search' button */
    const searchUrl = (
-    params && params.query ? appendParams('/search/', params) : '/'
+    params && params.query ? buildHref('/search/', params) : '/'
   )
 
   if (!found) {

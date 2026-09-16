@@ -13,6 +13,7 @@ it('renders checkbox props correctly', () => {
     render(<I18nApp ReactComponent={<CheckBoxInput
       label='Do you want to proceed?'
       id='1' checked
+      required
       handleChange={handleChange} />} />)
   })
 
@@ -21,7 +22,7 @@ it('renders checkbox props correctly', () => {
   expect(input.id).toBe('1')
   expect(input.name).toBe('1')
   const label = document.querySelector('label')
-  expect(label.textContent).toBe('Do you want to proceed?')
+  expect(label.textContent).toBe('Do you want to proceed? (required)')
   expect(label.htmlFor).toBe('1')
 
   act(() => {

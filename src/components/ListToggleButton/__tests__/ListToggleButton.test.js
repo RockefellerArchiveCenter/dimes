@@ -18,10 +18,6 @@ it('renders add button correctly in desktop', () => {
     comment: "Test Add button label",
     message: 'Add to List'
   }))
-  expect(button).toHaveAttribute('aria-label', t({
-    comment: "Test Add button aria label",
-    message: 'Add item to list'
-  }))
   expect(button.className).not.toContain('saved')
 })
 
@@ -37,10 +33,6 @@ it('renders remove button correctly in desktop', () => {
   expect(button.textContent).toContain(t({
     comment: "Test Remove button label",
     message: 'Remove from List'
-  }))
-  expect(button).toHaveAttribute('aria-label', t({
-    comment: "Test Remove button aria label",
-    message: 'Remove item from list'
   }))
   expect(button.className).toContain('saved')
 })

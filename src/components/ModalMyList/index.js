@@ -212,7 +212,7 @@ export const EmailModal = props => (
             <FormGroup
               label={t({
                 comment: 'Label of Email Form',
-                message: 'Email *'
+                message: 'Email'
               })}
               name={t({
                 comment: 'Name of email form',
@@ -277,7 +277,8 @@ export const EmailModal = props => (
 )
 
 const ReadingRoomSelect = ({ readingRooms }) => {
-  const { setFieldValue } = useFormikContext();
+  const { errors, setFieldValue, touched } = useFormikContext();
+  const hasError = !!(errors.site && touched.site)
   const [site, setSite] = useState('');
 
   const ReadingRoomLocations = readingRooms.map(readingRoom => ({
@@ -297,6 +298,8 @@ const ReadingRoomSelect = ({ readingRooms }) => {
     <div className='form-group'>
       <SelectInput
         className='select__modal'
+        ariaDescribedBy={hasError ? 'site-error' : undefined}
+        ariaInvalid={hasError ? 'true' : undefined}
         id='site'
         label={t({message: 'Select Reading Room Location'})}
         name='site'
@@ -308,27 +311,31 @@ const ReadingRoomSelect = ({ readingRooms }) => {
         id='site-error'
         name='site'
         component='div'
-        className='modal-form__error' />
+        className='input__error' />
     </div>
   )
 }
 
 const ReadingRoomDateInput = ({ readingRoom }) => {
-  const { setFieldValue } = useFormikContext();
+  const { errors, setFieldValue, touched } = useFormikContext();
+  const hasError = !!(errors.scheduledDate && touched.scheduledDate)
 
   return (
     <div className='form-group'>
       <Field
         component={DateInput}
+        ariaDescribedBy={hasError ? 'scheduledDate-error' : undefined}
+        ariaInvalid={hasError ? 'true' : undefined}
         handleChange={date => setFieldValue('scheduledDate', date)}
         helpText={t({
           comment: 'Helptext for scheduling date.',
           message: 'Enter the date of your research visit (mm/dd/yyyy)'
         })}
         id='scheduledDate'
+        required={true}
         label={t({
           comment: 'Label for scheduling date',
-          message: 'Scheduled Date *'
+          message: 'Scheduled Date'
         })}
         type='date'
         defaultDate={addBusinessDays(new Date(), readingRoom?.policies[0]?.appointmentMinLeadDays || 1)}
@@ -350,7 +357,7 @@ const ReadingRoomDateInput = ({ readingRoom }) => {
         id='scheduledDate-error'
         name='scheduledDate'
         component='div'
-        className='modal-form__error' />
+        className='input__error' />
     </div>
   )
 }
@@ -554,6 +561,7 @@ export const DuplicationRequestModal = props => (
               name='costs'
               type='checkbox'
               required={true}
+              showRequiredIndicator={false}
               errors={errors}
               touched={touched} />
             <div className='form-group mx-0'>
@@ -564,7 +572,7 @@ export const DuplicationRequestModal = props => (
                   })}
                 handleCaptchaChange={(response) => setFieldValue('recaptcha', response)} />
               <ErrorMessage
-                id='captcha-error'
+                id='recaptcha-error'
                 name='recaptcha'
                 component='div'
                 className='input__error' />

@@ -7,10 +7,12 @@ $confirm-modal-content-margin-lg: 30%;
   left: $confirm-modal-content-margin;
   right: $confirm-modal-content-margin;
   bottom: auto;
+  max-height: calc(100% - $confirm-modal-content-margin * 2);
   @include lg-up {
     top: $confirm-modal-content-margin-lg;
     left: $confirm-modal-content-margin-lg;
     right: $confirm-modal-content-margin-lg;
+    max-height: calc(100% - $confirm-modal-content-margin-lg * 2);
   }
 }
 

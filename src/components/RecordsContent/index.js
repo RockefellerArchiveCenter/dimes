@@ -229,6 +229,8 @@ export const RecordsChild = props => {
       <div className='child__buttons'>
         {item.online ? (
           <a className='btn btn--sm btn--blue btn-launch--content mr-10 p-8'
+            id={`view-${item.uri}`}
+            aria-labelledby={`view-${item.uri} accordion__heading-${item.uri}`}
             href={`${item.uri}/view`}>{
               t({
                 message: select(props.isMobile, {
@@ -242,6 +244,7 @@ export const RecordsChild = props => {
         }
         <ListToggleButton
           className='btn--sm btn--orange btn-add--content mr-10 p-8'
+          titleId={`accordion__heading-${item.uri}`}
           isMobile={props.isMobile}
           isSaved={isSaved}
           item={props.item}
