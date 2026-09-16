@@ -16,7 +16,6 @@
     "@mui/material": "^7.3.7",
     "@mui/styled-engine": "^7.3.7",
     "@mui/system": "^7.3.7",
-    "@reecelucas/react-datepicker": "^2.0.0",
     "axios": "^1.13.2",
     "classnames": "^2.2.6",
     "date-fns": "^4.1.0",
@@ -39,14 +38,11 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "resize-observer-polyfill": "^1.5.1",
-    "sass": "^1.52.3",
-    "url": "^0.11.0"
+    "sass": "^1.52.3"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@blueprintjs/core": "^6.5.0",
-    "@blueprintjs/icons": "^6.4.0",
     "@lingui/cli": "^5.7.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
