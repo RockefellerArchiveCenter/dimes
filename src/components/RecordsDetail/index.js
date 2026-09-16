@@ -16,7 +16,7 @@ import MaterialIcon from '../MaterialIcon'
 import QueryHighlighter from '../QueryHighlighter'
 import { Trans, t } from '@lingui/macro'
 import { DetailSkeleton, FoundInItemSkeleton } from '../LoadingSkeleton'
-import { appendParams, dateString, hasAccessOrUse, noteText, noteTextByType } from '../Helpers'
+import { buildHref, dateString, hasAccessOrUse, noteText, noteTextByType } from '../Helpers'
 import { isItemSaved } from '../MyListHelpers'
 import './styles.scss'
 
@@ -24,7 +24,7 @@ const FoundInItem = ({ className, item, params, topLevel }) => (
   <>
     <li className={className}>
       <MaterialIcon icon={topLevel ? 'inventory2' : 'subdirectory_arrow_right'} />
-      <a className='found-in__link' href={appendParams(item.uri, params)}>{item.title}</a>
+      <a className='found-in__link' href={buildHref(item.uri, params)}>{item.title}</a>
     </li>
     {item.child ?
       (<FoundInItem
@@ -96,7 +96,7 @@ const PanelLinkedListSection = ({ listData, params, title }) =>  (
       <h3 className='panel__heading mt-10 mb-5'>{title}</h3>
       <ul className='panel__list--unstyled pl-0 mt-0'>
         {listData.map((item, index) => (
-        <li key={index} className='panel__text'><a href={appendParams(item.uri, params)}>{item.title}</a></li>))}
+        <li key={index} className='panel__text'><a href={buildHref(item.uri, params)}>{item.title}</a></li>))}
       </ul>
     </div>) :
     (null)
@@ -143,7 +143,7 @@ const RecordsDetail = props => {
 
   /** Constructs the URL for the 'Back to Search' button */
   const searchUrl = (
-    props.params && props.params.query ? appendParams('/search/', props.params) : '/'
+    props.params && props.params.query ? buildHref('/search/', props.params) : '/'
   )
 
   const handleCitationButtonClick = () => {

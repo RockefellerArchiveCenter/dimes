@@ -1,6 +1,6 @@
 import { Badge } from '../Badge'
 import MaterialIcon from '../MaterialIcon'
-import { appendParams, formatMatchString } from '../Helpers'
+import { buildHref, formatMatchString } from '../Helpers'
 import classnames from 'classnames'
 import './styles.scss'
 
@@ -26,7 +26,7 @@ const Card = ({ category, className, date, headingLevel, hit_count, online_hit_c
   return (
   <li className={classnames('card', className)}>
     <CardHeading className='card__title'>
-      <a href={appendParams(uri, params)}>{title}</a>
+      <a href={buildHref(uri, params)}>{title}</a>
     </CardHeading>
     {category ? (<CategoryLabel category={category} />) : null }
     <p className='card__body-text card__date'>{date}</p>

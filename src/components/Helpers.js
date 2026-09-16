@@ -24,9 +24,24 @@ export const noteTextByType = (notes, noteType) => {
   return filteredNotes ? filteredNotes.map(note => note.subnotes.map(s => s.content)).join('\r') : null
 }
 
-/** Adds params (passed as an object) to a URL */
+/** Adds params to a request URL. Use buildHref for anything rendered as an href. */
 export const appendParams = (url, params) => {
   return `${url}?${queryString.stringify(params)}`
+}
+
+/** Adds params to a same-origin href. Anything resolving off-site is rejected. */
+export const buildHref = (path, params) => {
+  const origin = window.location.origin
+  try {
+    const url = new URL(path, origin)
+    if (url.origin !== origin) {
+      return '/'
+    }
+    url.search = queryString.stringify(params || {})
+    return `${url.pathname}${url.search}${url.hash}`
+  } catch {
+    return '/'
+  }
 }
 
 /** Returns a date formatted as mm/dd/yyyy */

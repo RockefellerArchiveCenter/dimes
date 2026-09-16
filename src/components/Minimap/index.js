@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import classnames from 'classnames'
-import { appendParams } from '../Helpers'
+import { buildHref } from '../Helpers'
 import { useResizeObserver } from '../Hooks'
 import { t, Trans, plural  } from '@lingui/macro'
 import './styles.scss'
@@ -57,7 +57,7 @@ const Minimap = ({ data, isLoading, params, rowCount=4 }) => {
       areaHits.length ?
       <a
           key={idx}
-          href={appendParams(areaUrl, params)}
+          href={buildHref(areaUrl, params)}
           className={classnames('minimap__box', hitClass, { [`${hitClass}--active`]: isAreaActive })}
           title={message} >
         <span className='visually-hidden'>{message}</span>
