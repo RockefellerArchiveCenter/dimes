@@ -1,5 +1,5 @@
 import { render, act } from '@testing-library/react'
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 import { I18nApp } from '../../i18n'
 import { FormButtons } from '..'
 

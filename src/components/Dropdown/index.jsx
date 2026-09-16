@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, Children, cloneElement } from 'react'
 import MaterialIcon from '../MaterialIcon'
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 import '../Button/styles.scss'
 import classnames from 'classnames'
 import './styles.scss'

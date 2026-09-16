@@ -12,7 +12,8 @@
   import { SavedItemList } from '../SavedItem'
   import { fetchMyList } from '../MyListHelpers'
   import { firePageViewEvent } from '../Helpers'
-  import { Trans, t } from '@lingui/macro'
+  import { t } from '@lingui/core/macro'
+  import { Trans } from '@lingui/react/macro'
   import './styles.scss'
 
   const PageMyList = ({ removeAllListItems, toggleInList }) => {

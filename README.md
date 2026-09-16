@@ -72,17 +72,18 @@ DIMES uses a [macro implementation](https://lingui.dev/guides/message-extraction
 
 #### Updating HTML structure
 
-1. If adding a new HTML element for translation, first make sure that the HTML file includes
-  `import { Trans } from "@lingui/ macro";`.
+1. If adding a new HTML element for translation, first make sure that the file includes
+  `import { Trans } from "@lingui/react/macro";` for JSX, or
+  `import { t } from "@lingui/core/macro";` for strings outside JSX (button labels, placeholders, aria-labels).
 2. Wrap the desired string to transform in the `<Trans>` macro if adding a new element, or update
   the HTML structure within an already existing `<Trans>` tag.
 3. Run `$ yarn lingui-extract` to add or update any translation strings from the updated HTML structure.
   Failure to run this will result in translated strings being presented as random numbers and letters in the built application. This command's output will also show any translation items without translations. If you have removed
   translation strings you may want to run `yarn lingui-extract --clean` which will remove any missing strings from the `messages.po` file.
 4. Update or add `msgstr` lines in all `messages.po` files based on the changes.
-4. Run `$ yarn lingui-compile` to update the locale files into Javascript files which are used by the application
+5. Run `$ yarn lingui-compile` to update the locale files into Javascript files which are used by the application
   to present translated strings.
-5. Commit updated code to the GitHub repository.
+6. Commit updated code to the GitHub repository.
 
 #### Changing translation strings
 

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Trans, t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
+import { Trans } from '@lingui/react/macro'
 
 const SocialIcons = () => (
   <Trans comment='Social Icons Titles'>

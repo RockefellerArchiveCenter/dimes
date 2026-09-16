@@ -1,5 +1,5 @@
 import minimapIcon from '../../assets/minimap.png'
-import { Trans } from '@lingui/macro'
+import { Trans } from '@lingui/react/macro'
 import './styles.scss'
 
 const MinimapButton = ({ toggleMinimapModal }) => (

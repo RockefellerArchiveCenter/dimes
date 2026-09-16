@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker'
 import {useSelect} from 'downshift'
 import MaterialIcon from '../MaterialIcon'
 import classnames from 'classnames'
-import { Trans } from '@lingui/macro'
+import { Trans } from '@lingui/react/macro'
 import "react-datepicker/dist/react-datepicker.css"
 import './styles.scss'
 

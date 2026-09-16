@@ -1,6 +1,7 @@
 import Button from '../Button'
 import MaterialIcon from '../MaterialIcon'
-import { Trans, t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
+import { Trans } from '@lingui/react/macro'
 import { MyListSkeleton } from '../LoadingSkeleton'
 import { dateString, truncateString } from '../Helpers'
 import './styles.scss'

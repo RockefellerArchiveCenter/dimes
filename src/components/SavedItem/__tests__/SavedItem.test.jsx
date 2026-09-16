@@ -1,6 +1,6 @@
 import { render, act } from '@testing-library/react'
 import { SavedItemList } from '..'
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 import { resolvedList } from '../../../__fixtures__/resolvedList'
 import { I18nApp } from '../../i18n'
 

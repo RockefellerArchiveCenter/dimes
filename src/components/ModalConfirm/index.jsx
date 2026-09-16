@@ -1,6 +1,6 @@
 import Modal from 'react-modal'
 import MaterialIcon from '../MaterialIcon'
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 import './styles.scss'
 
 const ModalConfirm = props => (

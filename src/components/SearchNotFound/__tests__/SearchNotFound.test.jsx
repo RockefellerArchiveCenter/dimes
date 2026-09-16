@@ -1,7 +1,7 @@
 import { render, act } from '@testing-library/react'
 import SearchNotFound from '..'
 import { I18nApp } from '../../i18n'
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 
 const suggestions = ["foo", "bar"]
 const query = "bananas"

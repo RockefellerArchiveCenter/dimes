@@ -2,7 +2,8 @@ import { useRef, useState } from 'react'
 import classnames from 'classnames'
 import { buildHref } from '../Helpers'
 import { useResizeObserver } from '../Hooks'
-import { t, Trans, plural  } from '@lingui/macro'
+import { Trans } from '@lingui/react/macro'
+import { t, plural } from '@lingui/core/macro'
 import './styles.scss'
 
 /**

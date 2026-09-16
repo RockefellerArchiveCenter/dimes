@@ -1,6 +1,6 @@
 import React from 'react'
 import Skeleton from 'react-loading-skeleton'
-import { Trans } from '@lingui/macro'
+import { Trans } from '@lingui/react/macro'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 const LoadingMessage = () => (

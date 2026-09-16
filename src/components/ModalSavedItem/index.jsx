@@ -1,5 +1,5 @@
 import { CheckBoxInput } from '../Inputs'
-import { Trans } from '@lingui/macro'
+import { Trans } from '@lingui/react/macro'
 import './styles.scss'
 
 const ModalSavedItemsRestrictions = ({id, submit, submitReason}) => (

@@ -1,5 +1,5 @@
 import Button from '../Button'
-import { t, select } from '@lingui/macro'
+import { t, select } from '@lingui/core/macro'
 import classnames from 'classnames'
 
 const ListToggleButton = ({ className, isMobile, isSaved, item, titleId, toggleSaved }) => {

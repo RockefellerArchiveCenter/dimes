@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Field, ErrorMessage, useFormikContext } from 'formik'
 import classnames from 'classnames'
-import { Trans } from '@lingui/macro'
+import { Trans } from '@lingui/react/macro'
 
 export const FocusError = () => {
   const { isValidating, submitCount } = useFormikContext()

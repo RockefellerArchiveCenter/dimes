@@ -1,6 +1,7 @@
 import MaterialIcon from '../MaterialIcon'
 import Button from '../Button'
-import { Trans, t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
+import { Trans } from '@lingui/react/macro'
 
 const MyListSidebar = ({ duplicationRequest, readingRoomRequest }) => (
   <aside className='mylist__sidebar py-60 pr-0 pl-40 mr--15'>

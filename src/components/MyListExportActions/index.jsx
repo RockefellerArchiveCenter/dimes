@@ -1,6 +1,6 @@
 import Button from '../Button'
 import classnames from 'classnames'
-import { select, t } from '@lingui/macro'
+import { select, t } from '@lingui/core/macro'
 
 const MyListExportActions = ({ confirmDeleteAll, downloadCsv, emailList, isDownloading }) => (
   <div className='mylist__export-actions pb-30'>

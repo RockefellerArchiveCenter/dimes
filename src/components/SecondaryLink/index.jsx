@@ -1,4 +1,4 @@
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 
 const SecondaryLink = ({ href, text }) => (
 	<a className='footer-secondary__link' href={href}>

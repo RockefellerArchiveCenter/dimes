@@ -1,7 +1,8 @@
 import Modal from 'react-modal'
 import MaterialIcon from '../MaterialIcon'
 import Minimap from '../Minimap'
-import { t, Trans, Select } from '@lingui/macro'
+import { Trans, Select } from '@lingui/react/macro'
+import { t } from '@lingui/core/macro'
 import './styles.scss'
 
 const minimapAboutText = <Trans comment='The about section for minimaps.'>

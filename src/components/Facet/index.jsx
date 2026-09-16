@@ -2,7 +2,7 @@ import {useState} from 'react'
 import Button from '../Button'
 import { CheckBoxInput } from '../Inputs'
 import classnames from 'classnames'
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 import './styles.scss'
 
 const ShowHideMore = ({id, isOpen, toggleOpen}) => {

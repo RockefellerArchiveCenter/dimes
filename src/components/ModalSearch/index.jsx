@@ -4,7 +4,8 @@ import Button from '../Button'
 import Facet from '../Facet'
 import { YearInput } from '../Inputs'
 import './styles.scss'
-import { Plural, Trans, t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
+import { Plural, Trans } from '@lingui/react/macro'
 
 export const FacetModal = props => {
   var [startYear, setStartYear] = useState(0)

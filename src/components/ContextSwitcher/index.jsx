@@ -1,6 +1,6 @@
 import Button from '../Button'
 import classnames from 'classnames'
-import { t, select } from '@lingui/macro'
+import { t, select } from '@lingui/core/macro'
 import './styles.scss'
 
 const ContextSwitcher = ({isContentShown, toggleIsContentShown}) => (

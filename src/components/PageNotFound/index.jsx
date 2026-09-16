@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import MaterialIcon from '../MaterialIcon'
 import { firePageViewEvent } from '../Helpers'
 import './styles.scss'
-import { Trans } from '@lingui/macro'
+import { Trans } from '@lingui/react/macro'
 
 const PageNotFound = () => (
   <Trans comment='Page Not Found'>

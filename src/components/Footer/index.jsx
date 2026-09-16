@@ -1,7 +1,7 @@
 import SocialIcons from '../SocialIcons'
 import { PrimaryLinkAccessMaterials, PrimaryLinkAccessibilityPolicy, PrimaryLinkEmail, PrimaryLinkHoliday, PrimaryLinkPrivacyPolicy, PrimaryLinkRACPolicy } from '../PrimaryLink'
 import { SecondaryLinkCollectionsAPI, SecondaryLinkBulkData, SecondaryLinkLicensing, SecondaryLinkTakeDownPolicy } from '../SecondaryLink'
-import { Trans } from '@lingui/macro'
+import { Trans } from '@lingui/react/macro'
 
 const Footer = () => (
   <footer role='contentinfo'>

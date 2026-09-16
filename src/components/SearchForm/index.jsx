@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import classnames from 'classnames'
 import Button from '../Button'
 import { CheckBoxInput, SelectInput, TextInput } from '../Inputs'
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 import './styles.scss'
 
 const SearchForm = props => {

@@ -1,5 +1,6 @@
 import { Nav, NavItem } from '../Nav'
-import { t, Trans } from '@lingui/macro'
+import { Trans } from '@lingui/react/macro'
+import { t } from '@lingui/core/macro'
 
 const Header = ({ myListCount }) => (
   <header className='header header--blue'>

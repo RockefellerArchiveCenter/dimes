@@ -13,7 +13,8 @@ import AgentAttributeList from '../AgentAttribute'
 import '../Button/styles.scss'
 import { buildHref, firePageViewEvent } from '../Helpers'
 import './styles.scss'
-import { Trans, t, Select, select } from '@lingui/macro'
+import { t, select } from '@lingui/core/macro'
+import { Trans, Select } from '@lingui/react/macro'
 
 const AgentNote = ({ source, text }) => (
   text ?

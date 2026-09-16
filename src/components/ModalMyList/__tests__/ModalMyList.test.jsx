@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { render, act } from '@testing-library/react'
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 import {
   DuplicationRequestModal,
   EmailModal,

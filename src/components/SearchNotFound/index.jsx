@@ -1,6 +1,6 @@
 import React from 'react'
 import './styles.scss'
-import { Trans } from '@lingui/macro'
+import { Trans } from '@lingui/react/macro'
 
 
 const SuggestionItem = ({text}) => (

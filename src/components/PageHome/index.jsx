@@ -3,7 +3,7 @@ import Hero from '../Hero';
 import SearchForm from '../SearchForm';
 import { firePageViewEvent } from '../Helpers';
 import './styles.scss';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro'
 
 const PageHome = ({isMobile}) => (
   <Trans comment='Page Home'>

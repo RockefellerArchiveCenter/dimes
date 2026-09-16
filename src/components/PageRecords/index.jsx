@@ -10,7 +10,7 @@ import ContextSwitcher from '../ContextSwitcher'
 import Minimap from '../Minimap'
 import MinimapButton from '../MinimapButton'
 import { ModalMinimap, ModalMinimapInfo } from '../ModalMinimap'
-import { t } from "@lingui/macro";
+import { t } from '@lingui/core/macro'
 import RecordsContent from '../RecordsContent'
 import RecordsDetail from '../RecordsDetail'
 import PageNotFound from '../PageNotFound'

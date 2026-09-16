@@ -15,7 +15,8 @@ import { appendParams, dateString, formatMatchString, truncateString} from '../H
 import { useOnScreen } from '../Hooks'
 import { isItemSaved } from '../MyListHelpers'
 import { RecordsChildSkeleton } from '../LoadingSkeleton'
-import { Trans, t, select } from '@lingui/macro';
+import { t, select } from '@lingui/core/macro'
+import { Trans } from '@lingui/react/macro'
 import classnames from 'classnames'
 import './styles.scss'
 

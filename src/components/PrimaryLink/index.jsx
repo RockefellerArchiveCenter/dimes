@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 
 const PrimaryLink = ({ className, href, text }) => (
 	<a className={classnames('footer-primary__link', className)} href={href}>
