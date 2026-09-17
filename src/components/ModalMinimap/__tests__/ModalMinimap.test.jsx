@@ -19,12 +19,12 @@ it('renders props correctly', () => {
       isLoading={false}
       params={{}}
       isOpen
-      toggleModal={jest.fn()} />} />)
+      toggleModal={vi.fn()} />} />)
   })
 })
 
 it('handles clicks correctly', () => {
-  const toggleModal = jest.fn()
+  const toggleModal = vi.fn()
 
   act(() => {
     render(<I18nApp ReactComponent={<ModalMinimap

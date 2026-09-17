@@ -23,7 +23,7 @@ const facetItems = [
 
 it('renders props correctly', () => {
   act(() => {
-    render(<I18nApp ReactComponent={<Facet handleChange={jest.fn()} title='foo' items={facetItems} />} />)
+    render(<I18nApp ReactComponent={<Facet handleChange={vi.fn()} title='foo' items={facetItems} />} />)
   })
 
   const title = document.querySelector('legend > h3')

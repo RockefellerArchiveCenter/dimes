@@ -26,8 +26,8 @@ it('renders without crashing', () => {
 })
 
 it('handles clicks', () => {
-  const onClick = jest.fn()
-  const setIsExpanded = jest.fn()
+  const onClick = vi.fn()
+  const setIsExpanded = vi.fn()
 
   act(() => {
     render(<I18nApp ReactComponent={<AccordionItemButton setIsExpanded={setIsExpanded} onClick={onClick} />} />)
@@ -44,12 +44,12 @@ it('handles clicks', () => {
 })
 
 it('handles keyboard events', () => {
-  const onClick = jest.fn()
-  const setIsExpanded = jest.fn()
-  focus.focusFirstSiblingOf = jest.fn()
-  focus.focusLastSiblingOf = jest.fn()
-  focus.focusPreviousSiblingOf = jest.fn()
-  focus.focusNextSiblingOf = jest.fn()
+  const onClick = vi.fn()
+  const setIsExpanded = vi.fn()
+  focus.focusFirstSiblingOf = vi.fn()
+  focus.focusLastSiblingOf = vi.fn()
+  focus.focusPreviousSiblingOf = vi.fn()
+  focus.focusNextSiblingOf = vi.fn()
 
   act(() => {
     render(<I18nApp ReactComponent={<AccordionItemButton setIsExpanded={setIsExpanded} onClick={onClick} />} />)
@@ -62,14 +62,14 @@ it('handles keyboard events', () => {
   })
   expect(onClick).toHaveBeenCalledTimes(1)
   expect(setIsExpanded).toHaveBeenCalledTimes(1)
-  jest.clearAllMocks()
+  vi.clearAllMocks()
 
   act(() => {
     button.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }))
   })
   expect(onClick).toHaveBeenCalledTimes(1)
   expect(setIsExpanded).toHaveBeenCalledTimes(1)
-  jest.clearAllMocks()
+  vi.clearAllMocks()
 
   act(() => {
     button.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 40, bubbles: true }))
@@ -77,7 +77,7 @@ it('handles keyboard events', () => {
   expect(onClick).toHaveBeenCalledTimes(0)
   expect(setIsExpanded).toHaveBeenCalledTimes(0)
   expect(focus.focusNextSiblingOf).toHaveBeenCalledTimes(1)
-  jest.clearAllMocks()
+  vi.clearAllMocks()
 
   act(() => {
     button.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 35, bubbles: true }))
@@ -85,7 +85,7 @@ it('handles keyboard events', () => {
   expect(onClick).toHaveBeenCalledTimes(0)
   expect(setIsExpanded).toHaveBeenCalledTimes(0)
   expect(focus.focusLastSiblingOf).toHaveBeenCalledTimes(1)
-  jest.clearAllMocks()
+  vi.clearAllMocks()
 
   act(() => {
     button.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 36, bubbles: true }))
@@ -93,7 +93,7 @@ it('handles keyboard events', () => {
   expect(onClick).toHaveBeenCalledTimes(0)
   expect(setIsExpanded).toHaveBeenCalledTimes(0)
   expect(focus.focusFirstSiblingOf).toHaveBeenCalledTimes(1)
-  jest.clearAllMocks()
+  vi.clearAllMocks()
 
   act(() => {
     button.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 37, bubbles: true }))
@@ -101,7 +101,7 @@ it('handles keyboard events', () => {
   expect(onClick).toHaveBeenCalledTimes(0)
   expect(setIsExpanded).toHaveBeenCalledTimes(0)
   expect(focus.focusPreviousSiblingOf).toHaveBeenCalledTimes(1)
-  jest.clearAllMocks()
+  vi.clearAllMocks()
 
   act(() => {
     button.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 39, bubbles: true }))
@@ -109,7 +109,7 @@ it('handles keyboard events', () => {
   expect(onClick).toHaveBeenCalledTimes(0)
   expect(setIsExpanded).toHaveBeenCalledTimes(0)
   expect(focus.focusNextSiblingOf).toHaveBeenCalledTimes(1)
-  jest.clearAllMocks()
+  vi.clearAllMocks()
 
   act(() => {
     button.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 38, bubbles: true }))
@@ -117,7 +117,7 @@ it('handles keyboard events', () => {
   expect(onClick).toHaveBeenCalledTimes(0)
   expect(setIsExpanded).toHaveBeenCalledTimes(0)
   expect(focus.focusPreviousSiblingOf).toHaveBeenCalledTimes(1)
-  jest.clearAllMocks()
+  vi.clearAllMocks()
 })
 
 it('renders without crashing', () => {

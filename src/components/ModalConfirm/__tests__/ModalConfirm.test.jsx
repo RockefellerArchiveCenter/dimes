@@ -16,7 +16,7 @@ it('renders props correctly', () => {
       isOpen
       message='foo'
       title='Bar'
-      toggleModal={jest.fn()} />} />)
+      toggleModal={vi.fn()} />} />)
   })
 
   const title = document.querySelector('.modal__header-title')
@@ -26,7 +26,7 @@ it('renders props correctly', () => {
 })
 
 it('handles clicks correctly', () => {
-  const toggleModal = jest.fn()
+  const toggleModal = vi.fn()
 
   act(() => {
     render(<I18nApp ReactComponent={<ModalConfirm

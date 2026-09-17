@@ -5,11 +5,11 @@ import { MyListDropdown, NavDropdown } from '..'
 it('renders props correctly', () => {
   act(() => {
     render(<I18nApp ReactComponent={<MyListDropdown
-      downloadCsv={jest.fn()}
-      duplicationRequest={jest.fn()}
-      emailList={jest.fn()}
-      readingRoomRequest={jest.fn()}
-      removeAllItems={jest.fn()} />} />)
+      downloadCsv={vi.fn()}
+      duplicationRequest={vi.fn()}
+      emailList={vi.fn()}
+      readingRoomRequest={vi.fn()}
+      removeAllItems={vi.fn()} />} />)
   })
 
   const dropdown = document.querySelector('.dropdown')

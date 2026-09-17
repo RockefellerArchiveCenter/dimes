@@ -14,7 +14,7 @@ beforeEach(() => {
   document.body.appendChild(container)
 })
 
-jest.mock('axios')
+vi.mock('axios')
 
 it('renders resolved list correctly', async () => {
   axios.post.mockImplementation((url) => {
@@ -29,8 +29,8 @@ it('renders resolved list correctly', async () => {
     render(<I18nApp ReactComponent={<ModalSavedItemList
       items={resolvedList}
       ignoreRestrictions={true}
-      handleChange={jest.fn()}
-      setSubmit={jest.fn()} />} />)
+      handleChange={vi.fn()}
+      setSubmit={vi.fn()} />} />)
   })
 
   await act(async () => {
@@ -48,8 +48,8 @@ it('renders checked list correctly', async () => {
     render(<I18nApp ReactComponent={<ModalSavedItemList
       items={checkedList}
       ignoreRestrictions={true}
-      handleChange={jest.fn()}
-      setSubmit={jest.fn()} />} />)
+      handleChange={vi.fn()}
+      setSubmit={vi.fn()} />} />)
   })
 
   await act(async () => {

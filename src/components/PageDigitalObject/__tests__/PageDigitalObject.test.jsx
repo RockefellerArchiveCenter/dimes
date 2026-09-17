@@ -6,7 +6,7 @@ import PageDigitalObject from '..'
 
 import { object } from '../../../__fixtures__/object'
 
-jest.mock('axios')
+vi.mock('axios')
 
 it('renders props correctly', async () => {
   axios.get.mockImplementation((url) => {

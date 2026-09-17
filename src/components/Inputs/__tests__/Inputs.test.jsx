@@ -8,7 +8,7 @@ import {
   YearInput } from '..'
 
 it('renders checkbox props correctly', () => {
-  const handleChange = jest.fn()
+  const handleChange = vi.fn()
   act(() => {
     render(<I18nApp ReactComponent={<CheckBoxInput
       label='Do you want to proceed?'
@@ -34,7 +34,7 @@ it('renders checkbox props correctly', () => {
 
 it('renders date props correctly', () => {
   act(() => {
-    render(<I18nApp ReactComponent={<DateInput label='Select a date' id='1' handleChange={jest.fn()} />} />)
+    render(<I18nApp ReactComponent={<DateInput label='Select a date' id='1' handleChange={vi.fn()} />} />)
   })
 
   const label = document.querySelector('label')
@@ -50,7 +50,7 @@ it('renders select props correctly', () => {
     {value: 'foo', label: 'Foo'},
     {value: 'bar', label: 'Bar'}
   ]
-  const onChange = jest.fn()
+  const onChange = vi.fn()
 
   act(() => {
     render(

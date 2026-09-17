@@ -4,7 +4,7 @@ import Captcha from '..'
 
 it('renders props correctly', () => {
 
-  const onChange = jest.fn()
+  const onChange = vi.fn()
 
   act(() => {
     render(<I18nApp ReactComponent={<Captcha

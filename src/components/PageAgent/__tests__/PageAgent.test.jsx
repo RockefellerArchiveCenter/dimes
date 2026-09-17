@@ -7,7 +7,7 @@ import { I18nApp } from '../../i18n';
 import { agent } from '../../../__fixtures__/agents'
 import { collections } from '../../../__fixtures__/agents'
 
-jest.mock('axios')
+vi.mock('axios')
 
 it('renders props correctly', async () => {
   axios.get.mockImplementation((url) => {

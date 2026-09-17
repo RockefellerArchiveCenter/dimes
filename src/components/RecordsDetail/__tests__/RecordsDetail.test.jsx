@@ -16,8 +16,8 @@ it('renders no ancestors without crashing', () => {
       item={collectionWithChildHits}
       myListCount={0}
       params={{}}
-      toggleInList={jest.fn()}
-      toggleMinimapModal={jest.fn()} />} />)
+      toggleInList={vi.fn()}
+      toggleMinimapModal={vi.fn()} />} />)
   })
 })
 
@@ -31,7 +31,7 @@ it('renders ancestors without crashing', () => {
       item={object}
       myListCount={0}
       params={{}}
-      toggleInList={jest.fn()}
-      toggleMinimapModal={jest.fn()} />} />)
+      toggleInList={vi.fn()}
+      toggleMinimapModal={vi.fn()} />} />)
   })
 })

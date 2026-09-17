@@ -4,8 +4,8 @@ import { I18nApp } from '../../i18n'
 
 it('renders without crashing', () => {
   render(<I18nApp ReactComponent={<MyListSidebar
-    duplicationRequest={jest.fn()}
-    readingRoomRequest={jest.fn()}
-    sendEmail={jest.fn()} />
+    duplicationRequest={vi.fn()}
+    readingRoomRequest={vi.fn()}
+    sendEmail={vi.fn()} />
   } />)
 })

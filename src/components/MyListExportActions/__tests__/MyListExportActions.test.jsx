@@ -5,9 +5,9 @@ import MyListExportActions from '..'
 it('renders without crashing', () => {
   render(<I18nApp ReactComponent={
     <MyListExportActions
-      confirmDeleteAll={jest.fn()}
-      downloadCsv={jest.fn()}
-      emailList={jest.fn()}
+      confirmDeleteAll={vi.fn()}
+      downloadCsv={vi.fn()}
+      emailList={vi.fn()}
     />} 
   />)
 })

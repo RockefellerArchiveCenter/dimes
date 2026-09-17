@@ -12,7 +12,7 @@ beforeEach(() => {
   document.body.appendChild(container)
 })
 
-jest.mock('axios')
+vi.mock('axios')
 
 it('renders props correctly', async () => {
   axios.post.mockImplementation((url) => {
@@ -37,8 +37,8 @@ it('renders props correctly', async () => {
 
   await act(async () => {
     await render(<I18nApp ReactComponent={<PageMyList
-      removeAllListItems={jest.fn()}
-      toggleInList={jest.fn()} />} />)
+      removeAllListItems={vi.fn()}
+      toggleInList={vi.fn()} />} />)
   })
 
   const list = await document.querySelector('.saved-items')

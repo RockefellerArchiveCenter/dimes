@@ -8,7 +8,7 @@ import { cardItems } from '../../../__fixtures__/cardItems'
 import { facet } from '../../../__fixtures__/facet'
 import { titleSuggest } from '../../../__fixtures__/suggest'
 
-jest.mock('axios')
+vi.mock('axios')
 
 it('renders props correctly', async () => {
   let container = document.createElement('div')

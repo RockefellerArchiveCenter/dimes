@@ -5,7 +5,7 @@ import { SearchPagination } from '..'
 it('renders without crashing', () => {
   render(
     <I18nApp ReactComponent={<SearchPagination
-      handlePageClick={jest.fn()}
+      handlePageClick={vi.fn()}
       offset={0}
       pageCount={20}
       pageSize={40}

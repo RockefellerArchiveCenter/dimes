@@ -5,7 +5,7 @@ import { collectionWithChildHits } from '../../../__fixtures__/collection'
 import { childrenCollections, childrenObjects } from '../../../__fixtures__/children'
 import { I18nApp } from '../../i18n'
 
-jest.mock('../../Hooks')
+vi.mock('../../Hooks')
 
 it('renders props correctly', () => {
   act(() => {
@@ -16,8 +16,8 @@ it('renders props correctly', () => {
       myListCount={1}
       params={{}}
       preExpanded={[]}
-      setActiveRecords={jest.fn()}
-      toggleInList={jest.fn()} />} />)
+      setActiveRecords={vi.fn()}
+      toggleInList={vi.fn()} />} />)
   })
 
   const recordsContent = document.querySelector('.records__content')
@@ -33,10 +33,10 @@ it('renders with collection data', () => {
       myListCount={0}
       params={{ query: 'foo' }}
       preExpanded={[]}
-      setActiveRecords={jest.fn()}
-      setIsLoading={jest.fn()}
-      setIsScrolled={jest.fn()}
-      toggleInList={jest.fn()}
+      setActiveRecords={vi.fn()}
+      setIsLoading={vi.fn()}
+      setIsScrolled={vi.fn()}
+      toggleInList={vi.fn()}
     />} />)
   })
 
@@ -62,10 +62,10 @@ it('renders with object data', () => {
       myListCount={0}
       params={{ query: 'foo' }}
       preExpanded={[]}
-      setActiveRecords={jest.fn()}
-      setIsLoading={jest.fn()}
-      setIsScrolled={jest.fn()}
-      toggleInList={jest.fn()}
+      setActiveRecords={vi.fn()}
+      setIsLoading={vi.fn()}
+      setIsScrolled={vi.fn()}
+      toggleInList={vi.fn()}
     />} />)
   })
 
@@ -85,7 +85,7 @@ it('renders with object data', () => {
 
 it('handles expand clicks', () => {
   const child = childrenCollections[Math.floor(Math.random() * childrenCollections.length)]
-  const setActiveRecords = jest.fn()
+  const setActiveRecords = vi.fn()
   act(() => {
     render(<I18nApp ReactComponent={<RecordsChild
       isScrolled={true}
@@ -94,9 +94,9 @@ it('handles expand clicks', () => {
       params={{ query: 'foo' }}
       preExpanded={[]}
       setActiveRecords={setActiveRecords}
-      setIsLoading={jest.fn()}
-      setIsScrolled={jest.fn()}
-      toggleInList={jest.fn()}
+      setIsLoading={vi.fn()}
+      setIsScrolled={vi.fn()}
+      toggleInList={vi.fn()}
     />} />)
   })
 
@@ -111,8 +111,8 @@ it('handles expand clicks', () => {
 
 it('handles list toggle clicks', () => {
   const child = childrenObjects[Math.floor(Math.random() * childrenObjects.length)]
-  const toggleInList = jest.fn()
-  const setActiveRecords = jest.fn()
+  const toggleInList = vi.fn()
+  const setActiveRecords = vi.fn()
   act(() => {
     render(<I18nApp ReactComponent={<RecordsChild
       isScrolled={true}
@@ -121,8 +121,8 @@ it('handles list toggle clicks', () => {
       params={{ query: 'foo' }}
       preExpanded={[]}
       setActiveRecords={setActiveRecords}
-      setIsLoading={jest.fn()}
-      setIsScrolled={jest.fn()}
+      setIsLoading={vi.fn()}
+      setIsScrolled={vi.fn()}
       toggleInList={toggleInList}
     />} />)
   })

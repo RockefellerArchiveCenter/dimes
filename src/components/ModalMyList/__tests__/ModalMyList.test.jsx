@@ -28,19 +28,19 @@ beforeEach(() => {
   axios.get.mockImplementation((url) => Promise.resolve({data:[]}))
 })
 
-jest.mock('axios')
+vi.mock('axios')
 
 it('renders select props correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<ModalMyList
       appElement={container}
-      handleChange={jest.fn()}
+      handleChange={vi.fn()}
       ignoreRestrictions={true}
       isOpen={true}
       list={resolvedList}
-      setSubmit={jest.fn()}
+      setSubmit={vi.fn()}
       title='foo'
-      toggleModal={jest.fn()} />} />)
+      toggleModal={vi.fn()} />} />)
   })
 
   const selectButton = document.querySelector('.modal-list > button')
@@ -64,13 +64,13 @@ it('renders deselect props correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<ModalMyList
       appElement={container}
-      handleChange={jest.fn()}
+      handleChange={vi.fn()}
       ignoreRestrictions={true}
       isOpen={true}
       list={checkedList}
-      setSubmit={jest.fn()}
+      setSubmit={vi.fn()}
       title='foo'
-      toggleModal={jest.fn()} />} />)
+      toggleModal={vi.fn()} />} />)
   })
 
   const selectButton = document.querySelector('.modal-list > button')
@@ -92,15 +92,15 @@ it('renders email modal props correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<EmailModal
       appElement={container}
-      handleChange={jest.fn()}
-      handleFormSubmit={jest.fn()}
+      handleChange={vi.fn()}
+      handleFormSubmit={vi.fn()}
       ignoreRestrictions={true}
       isOpen={true}
       list={resolvedList}
-      setSubmit={jest.fn()}
+      setSubmit={vi.fn()}
       submitList={submitList}
-      toggleList={jest.fn()}
-      toggleModal={jest.fn()} />} />)
+      toggleList={vi.fn()}
+      toggleModal={vi.fn()} />} />)
   })
 
   const form = document.querySelector('.modal-form')
@@ -134,15 +134,15 @@ it('validates email modal form correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<EmailModal
       appElement={container}
-      handleChange={jest.fn()}
-      handleFormSubmit={jest.fn()}
+      handleChange={vi.fn()}
+      handleFormSubmit={vi.fn()}
       ignoreRestrictions={true}
       isOpen={true}
       list={resolvedList}
-      setSubmit={jest.fn()}
+      setSubmit={vi.fn()}
       submitList={submitList}
-      toggleList={jest.fn()}
-      toggleModal={jest.fn()} />} />)
+      toggleList={vi.fn()}
+      toggleModal={vi.fn()} />} />)
   })
 
   const form = document.querySelector('.modal-form')
@@ -165,15 +165,15 @@ it('renders reading room modal props correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<ReadingRoomRequestModal
       appElement={container}
-      handleChange={jest.fn()}
-      handleFormSubmit={jest.fn()}
+      handleChange={vi.fn()}
+      handleFormSubmit={vi.fn()}
       ignoreRestrictions={true}
       isOpen={true}
       list={resolvedList}
-      setSubmit={jest.fn()}
+      setSubmit={vi.fn()}
       submitList={submitList}
-      toggleList={jest.fn()}
-      toggleModal={jest.fn()} />} />)
+      toggleList={vi.fn()}
+      toggleModal={vi.fn()} />} />)
   })
 
   const form = document.querySelector('.modal-form')
@@ -201,15 +201,15 @@ it('validates reading room modal form correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<ReadingRoomRequestModal
       appElement={container}
-      handleChange={jest.fn()}
-      handleFormSubmit={jest.fn()}
+      handleChange={vi.fn()}
+      handleFormSubmit={vi.fn()}
       ignoreRestrictions={true}
       isOpen={true}
       list={resolvedList}
-      setSubmit={jest.fn()}
+      setSubmit={vi.fn()}
       submitList={submitList}
-      toggleList={jest.fn()}
-      toggleModal={jest.fn()} />} />)
+      toggleList={vi.fn()}
+      toggleModal={vi.fn()} />} />)
   })
 
   const form = document.querySelector('.modal-form')
@@ -227,15 +227,15 @@ it('renders duplication modal props correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<DuplicationRequestModal
       appElement={container}
-      handleChange={jest.fn()}
-      handleFormSubmit={jest.fn()}
+      handleChange={vi.fn()}
+      handleFormSubmit={vi.fn()}
       ignoreRestrictions={true}
       isOpen={true}
       list={resolvedList}
-      setSubmit={jest.fn()}
+      setSubmit={vi.fn()}
       submitList={submitList}
-      toggleList={jest.fn()}
-      toggleModal={jest.fn()} />} />)
+      toggleList={vi.fn()}
+      toggleModal={vi.fn()} />} />)
   })
 
   const form = document.querySelector('.modal-form')
@@ -255,15 +255,15 @@ it('validates duplication modal form correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<DuplicationRequestModal
       appElement={container}
-      handleChange={jest.fn()}
-      handleFormSubmit={jest.fn()}
+      handleChange={vi.fn()}
+      handleFormSubmit={vi.fn()}
       ignoreRestrictions={true}
       isOpen={true}
       list={resolvedList}
-      setSubmit={jest.fn()}
+      setSubmit={vi.fn()}
       submitList={submitList}
-      toggleList={jest.fn()}
-      toggleModal={jest.fn()} />} />)
+      toggleList={vi.fn()}
+      toggleModal={vi.fn()} />} />)
   })
 
   const form = document.querySelector('.modal-form')

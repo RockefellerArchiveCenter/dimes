@@ -10,8 +10,8 @@ import { childrenCollections } from '../../../__fixtures__/children'
 import { minimap } from '../../../__fixtures__/minimap'
 import { I18nApp } from '../../i18n'
 
-jest.mock('axios')
-jest.mock('../../Hooks')
+vi.mock('axios')
+vi.mock('../../Hooks')
 
 it('renders props correctly', async () => {
   let container = document.createElement('div')
@@ -39,7 +39,7 @@ it('renders props correctly', async () => {
         <MemoryRouter initialEntries={['/objects/oVDNM8UtE3ox9fiESd99Wy']}>
           <Routes>
             <Route path='/:type/:id' element={
-              <PageRecords myListCount={1} toggleInList={jest.fn()} />} />
+              <PageRecords myListCount={1} toggleInList={vi.fn()} />} />
           </Routes>
         </MemoryRouter>
       </LiveAnnouncer>}

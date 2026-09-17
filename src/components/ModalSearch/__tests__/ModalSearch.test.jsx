@@ -15,13 +15,13 @@ it('renders props correctly', () => {
   act(() => {
     render(<I18nApp ReactComponent={<FacetModal
       appElement={container}
-      handleChange={jest.fn()}
-      handleDateChange={jest.fn()}
+      handleChange={vi.fn()}
+      handleDateChange={vi.fn()}
       isOpen
       params={{}}
       resultsCount={2}
       data={facet}
-      toggleModal={jest.fn()} />} />)
+      toggleModal={vi.fn()} />} />)
   })
 
   const startYear = document.querySelector('#startYear')
@@ -37,18 +37,18 @@ it('renders props correctly', () => {
 })
 
 it('handles clicks', () => {
-  const handleDateChange = jest.fn()
+  const handleDateChange = vi.fn()
 
   act(() => {
     render(<I18nApp ReactComponent={<FacetModal
       appElement={container}
-      handleChange={jest.fn()}
+      handleChange={vi.fn()}
       handleDateChange={handleDateChange}
       isOpen
       params={{}}
       resultsCount={2}
       data={facet}
-      toggleModal={jest.fn()} />} />)
+      toggleModal={vi.fn()} />} />)
   })
 
   const apply = document.querySelector('.modal__body--search .btn')

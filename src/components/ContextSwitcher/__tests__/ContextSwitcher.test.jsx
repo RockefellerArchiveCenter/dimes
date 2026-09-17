@@ -7,7 +7,7 @@ it('renders collection content props correctly', () => {
   act(() => {
     render(<I18nApp ReactComponent={<ContextSwitcher
       isContentShown={false}
-      toggleIsContentShown={jest.fn()} />} />)
+      toggleIsContentShown={vi.fn()} />} />)
   })
 
   const switcher = document.querySelector('.toggle-wrapper > button')
@@ -22,7 +22,7 @@ it('renders collection details props correctly', () => {
   act(() => {
     render(<I18nApp ReactComponent={<ContextSwitcher
       isContentShown
-      toggleIsContentShown={jest.fn()} />} />)
+      toggleIsContentShown={vi.fn()} />} />)
   })
 
   const switcher = document.querySelector('.toggle-wrapper > button')

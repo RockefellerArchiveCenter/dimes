@@ -5,7 +5,7 @@ import { FormButtons } from '..'
 
 it('renders props correctly', () => {
   act(() => {
-    render(<I18nApp ReactComponent={<FormButtons submitText='foo' toggleModal={jest.fn()} />} />)
+    render(<I18nApp ReactComponent={<FormButtons submitText='foo' toggleModal={vi.fn()} />} />)
   })
 
   const submit = document.querySelector('div > button[type=submit]')
@@ -18,7 +18,7 @@ it('renders props correctly', () => {
 })
 
 it('handles clicks correctly', () => {
-  const toggleModal = jest.fn()
+  const toggleModal = vi.fn()
   act(() => {
     render(<I18nApp ReactComponent={<FormButtons submitText='foo' toggleModal={toggleModal} />} />)
   })

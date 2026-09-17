@@ -10,7 +10,7 @@ it('renders add button correctly in desktop', () => {
     render(<I18nApp ReactComponent={<ListToggleButton
       isSaved={false}
       item={object}
-      toggleSaved={jest.fn()} />} />)
+      toggleSaved={vi.fn()} />} />)
   })
 
   const button = document.querySelector('button')
@@ -26,7 +26,7 @@ it('renders remove button correctly in desktop', () => {
     render(<I18nApp ReactComponent={<ListToggleButton
       isSaved
       item={object}
-      toggleSaved={jest.fn()} />} />)
+      toggleSaved={vi.fn()} />} />)
   })
 
   const button = document.querySelector('button')
@@ -43,7 +43,7 @@ it('renders add button correctly in mobile', () => {
       isMobile
       isSaved={false}
       item={object}
-      toggleSaved={jest.fn()} />} />)
+      toggleSaved={vi.fn()} />} />)
   })
 
   const button = document.querySelector('button')
@@ -59,7 +59,7 @@ it('renders remove button correctly in mobile', () => {
       isMobile
       isSaved
       item={object}
-      toggleSaved={jest.fn()} />} />)
+      toggleSaved={vi.fn()} />} />)
   })
 
   const button = document.querySelector('button')
@@ -70,7 +70,7 @@ it('renders remove button correctly in mobile', () => {
 })
 
 it('handles clicks correctly', () => {
-  const toggleSaved = jest.fn()
+  const toggleSaved = vi.fn()
 
   act(() => {
     render(<I18nApp ReactComponent={<ListToggleButton

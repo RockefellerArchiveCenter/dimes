@@ -4,7 +4,7 @@ import { I18nApp } from '../../i18n'
 import Button from '..'
 
 it('renders props correctly', () => {
-  const handleClick = jest.fn()
+  const handleClick = vi.fn()
 
   act(() => {
     render(<I18nApp ReactComponent={<Button

@@ -9,7 +9,7 @@ it('renders list correctly', () => {
     render(<I18nApp ReactComponent={<SavedItemList
       items={resolvedList}
       isLoading={false}
-      removeFromList={jest.fn()} />} />)
+      removeFromList={vi.fn()} />} />)
   })
 
   const list = document.querySelector('.saved-items')
@@ -34,7 +34,7 @@ it('renders empty list correctly', async () => {
     render(<I18nApp ReactComponent={<SavedItemList
       items={[]}
       isLoading={false}
-      removeFromList={jest.fn()} />} />)
+      removeFromList={vi.fn()} />} />)
   })
 
   const list = document.querySelector('.saved-items')
@@ -45,7 +45,7 @@ it('renders empty list correctly', async () => {
 })
 
 it('handles clicks', () => {
-  const handleClick = jest.fn()
+  const handleClick = vi.fn()
 
   act(() => {
     render(<I18nApp ReactComponent={<SavedItemList
