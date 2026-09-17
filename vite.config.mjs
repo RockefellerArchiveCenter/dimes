@@ -10,4 +10,9 @@ export default defineConfig({
   server: {
     allowedHosts: ['host.docker.internal'],
   },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/setupTests.js',
+  },
 })
