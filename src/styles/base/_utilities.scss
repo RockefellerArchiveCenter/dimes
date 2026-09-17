@@ -1,23 +1,4 @@
-@import "../variables/vars";
-
-$transition-default: all 0.2s ease;
-
-@mixin visually-hidden {
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    &:focus {
-      clip: auto;
-      height: auto;
-      overflow: auto;
-      position: absolute;
-      width: auto;
-      z-index: 1000;
-  }
-}
+@import '../abstracts';
 
 .bring-forward {
   z-index: 999999;
@@ -25,47 +6,6 @@ $transition-default: all 0.2s ease;
 
 .flex {
   display: flex;
-}
-
-@mixin focus-default {
-  box-shadow: 0 0 0 2px $white;
-  outline: 2px solid $regal-blue;
-  outline-offset: 2px;
-}
-
-@mixin focus-inset {
-  outline: none;
-  box-shadow:
-    inset 0 0 0 2px $white,
-    inset 0 0 0 4px $regal-blue;
-}
-
-@mixin md-up {
-  @media screen and (min-width: $break-md) { @content; }
-}
-@mixin lg-up {
-  @media screen and (min-width: $break-lg) { @content; }
-}
-
-@mixin show-on-md-up {
-  display: none;
-  @include md-up {
-    display: inherit;
-  }
-}
-
-@mixin hide-on-md-up {
-  display: inherit;
-  @include md-up {
-    display: none
-  }
-}
-
-@mixin show-on-lg-up {
-  display: none;
-  @include lg-up {
-    display: inherit;
-  }
 }
 
 .hide-on-lg-up {
