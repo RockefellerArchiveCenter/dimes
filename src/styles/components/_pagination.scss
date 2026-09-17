@@ -1,7 +1,7 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 .pagination__list {
-  @include md-up {
+  @include abs.md-up {
     margin-bottom: 0;
   }
 }

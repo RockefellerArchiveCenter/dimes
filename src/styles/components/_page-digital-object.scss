@@ -1,4 +1,4 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 .viewer {
   position: absolute;
@@ -6,7 +6,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: $black;
+  background: abs.$black;
   z-index: 998;
 }
 
@@ -34,7 +34,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  @include lg-up {
+  @include abs.lg-up {
     justify-content: space-between;
   }
 }
@@ -43,7 +43,7 @@
   width: 100%;
   order: 1;
   margin-left: -37px;
-  @include lg-up {
+  @include abs.lg-up {
     width: unset;
     order: 0;
     margin-left: 0;
@@ -59,7 +59,7 @@
   order: 0;
   display: flex;
   justify-content: flex-end;
-  @include lg-up {
+  @include abs.lg-up {
     width: unset;
     order: 1;
   }

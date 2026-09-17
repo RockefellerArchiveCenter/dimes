@@ -1,16 +1,17 @@
-@import "../styles";
-@import "./saved-item";
+@use '../abstracts' as abs;
+
+@use "saved-item";
 
 .modal-saved-items__item-group {
-  border-top: 1px dotted $regal-blue;
+  border-top: 1px dotted abs.$regal-blue;
   &:first-of-type {
     margin-top: 22px;
   }
 }
 
 .modal-item-group__items {
-  font-weight: $font-weight-bold;
-  color: $night-grey;
+  font-weight: abs.$font-weight-bold;
+  color: abs.$night-grey;
 }
 
 .modal-item-group__items label {

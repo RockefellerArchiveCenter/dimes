@@ -1,19 +1,19 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 .not-found {
   height: 100%;
   max-width: 80%;
-  font-family: $serif-stack;
+  font-family: abs.$serif-stack;
   text-align: center;
   min-height: 60vh;
 }
 
 .not-found__icon > .material-icon {
   font-size: 100px;
-  color: $night-grey;
+  color: abs.$night-grey;
 }
 
 .not-found__text {
-  font-family: $sans-serif-stack;
+  font-family: abs.$sans-serif-stack;
   font-size: 20px;
 }

@@ -1,22 +1,22 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 .accordion {
-  font-family: $sans-serif-stack;
+  font-family: abs.$sans-serif-stack;
 }
 
 .accordion__button {
-  border-bottom: 1px dotted $regal-blue;
+  border-bottom: 1px dotted abs.$regal-blue;
   font-family: inherit;
   font-size: 14px;
   text-transform: uppercase;
-  font-weight: $font-weight-bold;
+  font-weight: abs.$font-weight-bold;
   letter-spacing: 2px;
-  color: $regal-blue;
+  color: abs.$regal-blue;
   cursor: pointer;
   &:focus {
     outline: none;
-    border-bottom: 1px solid $regal-blue;
-    font-weight: $font-weight-heavy;
+    border-bottom: 1px solid abs.$regal-blue;
+    font-weight: abs.$font-weight-heavy;
   }
   &::after {
     font-family: Material Icons;
@@ -37,8 +37,8 @@
 .panel__heading {
   font-family: inherit;
   font-size: 12px;
-  font-weight: $font-weight-extra-bold;
-  color: $night-grey;
+  font-weight: abs.$font-weight-extra-bold;
+  color: abs.$night-grey;
   letter-spacing: 0.7px;
   text-transform: uppercase;
 }
@@ -46,13 +46,13 @@
 .panel__text {
   font-family: inherit;
   font-size: 15px;
-  color: $night-grey;
+  color: abs.$night-grey;
   line-height: inherit;
   white-space: pre-line;
 }
 
 .panel__text a {
-  color: $night-grey;
+  color: abs.$night-grey;
 }
 
 .panel__text--narrative {

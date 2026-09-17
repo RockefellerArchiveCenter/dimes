@@ -1,11 +1,11 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 .hero {
   margin-top: 10px;
-  @include md-up {
+  @include abs.md-up {
     margin-top: 113px;
   }
-  @include lg-up {
+  @include abs.lg-up {
     margin-top: 103px;
   }
 }

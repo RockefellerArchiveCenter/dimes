@@ -1,4 +1,4 @@
-@import '../abstracts';
+@use '../abstracts' as abs;
 
 .bring-forward {
   z-index: 999999;
@@ -10,7 +10,7 @@
 
 .hide-on-lg-up {
   display: inherit;
-  @include lg-up {
+  @include abs.lg-up {
     display: none;
   }
 }

@@ -1,4 +1,4 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 .agent__attributes {
   width: 100%;
@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   column-gap: 15px;
 
-  @include md-up {
+  @include abs.md-up {
     flex-wrap: nowrap;
   }
 }
@@ -15,7 +15,7 @@
   margin-bottom: 24px;
   min-width: 18%;
   flex-grow: 1;
-  @include lg-up {
+  @include abs.lg-up {
     margin-bottom: 27px;
   }
 }

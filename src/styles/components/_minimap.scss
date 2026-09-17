@@ -1,7 +1,7 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 .minimap__wrapper {
-  width: $minimap-width;
+  width: abs.$minimap-width;
   height: calc(100vh - 60px);
   float: left;
   position: sticky;
