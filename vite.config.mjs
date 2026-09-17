@@ -7,4 +7,7 @@ export default defineConfig({
   plugins: [react(), babel({ presets: [linguiTransformerBabelPreset()] })],
   envPrefix: ['REACT_APP_', 'VITE_'],
   build: { outDir: 'build' },
+  server: {
+    allowedHosts: ['host.docker.internal'],
+  },
 })
