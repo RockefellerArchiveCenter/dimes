@@ -7,6 +7,6 @@ it('renders props correctly', () => {
     render(<I18nApp ReactComponent={<Header myListCount={4} />} />)
   })
 
-  list = document.querySelector('#list')
+  const list = document.querySelector('#list')
   expect(list.textContent).toContain('(4)')
 })
