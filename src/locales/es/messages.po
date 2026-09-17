@@ -825,7 +825,7 @@ msgstr "Por favor, añada una palabra o frase a buscar."
 msgid "Please complete this field."
 msgstr "Rellene este campo."
 
-#. placeholder {0}: import.meta.env.REACT_APP_DUPLICATION_REQUEST_LIMIT
+#. placeholder {0}: import.meta.env.VITE_DUPLICATION_REQUEST_LIMIT
 #: src/components/ModalMyList/index.jsx:534
 msgid "Please limit your request to {0} items."
 msgstr "Por favor, limite su solicitud a {0} artículos."

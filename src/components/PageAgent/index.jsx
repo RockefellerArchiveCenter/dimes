@@ -93,7 +93,7 @@ const PageAgent = () => {
   /** Fetches data about collections associated with the agent from the RAC API */
   const fetchCollections = ({ title }) => {
     axios
-      .get(`${import.meta.env.REACT_APP_ARGO_BASEURL}/search?query=${title}&category=collection&limit=6`)
+      .get(`${import.meta.env.VITE_ARGO_BASEURL}/search?query=${title}&category=collection&limit=6`)
       .then(res => {
         setCollections(res.data.results);
         setIsCollectionsLoading(false);
@@ -122,7 +122,7 @@ const PageAgent = () => {
     const initialParams = queryString.parse(search, { parseBooleans: true });
     setParams(initialParams)
     axios
-      .get(`${import.meta.env.REACT_APP_ARGO_BASEURL}/agents/${id}`)
+      .get(`${import.meta.env.VITE_ARGO_BASEURL}/agents/${id}`)
       .then(res => {
         setAgent(res.data);
         fetchCollections(res.data);

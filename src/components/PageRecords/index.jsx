@@ -58,7 +58,7 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
   /** Updates state with item found at URL. */
   const setActiveRecords = uri => {
     if (uri !== item.uri) {
-      const itemUrl = `${import.meta.env.REACT_APP_ARGO_BASEURL}${uri}`
+      const itemUrl = `${import.meta.env.VITE_ARGO_BASEURL}${uri}`
       setItemUri(itemUrl)
     }
   }
@@ -78,8 +78,8 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
   */
   const toggleMinimapInfoModal = () => {
     setIsMinimapInfoModalOpen(!isMinimapInfoModalOpen)
-    !(!!localStorage.getItem(`${import.meta.env.REACT_APP_MINIMAP_KEY}`)) &&
-      localStorage.setItem(`${import.meta.env.REACT_APP_MINIMAP_KEY}`, 1) &&  /* 1 */
+    !(!!localStorage.getItem(`${import.meta.env.VITE_MINIMAP_KEY}`)) &&
+      localStorage.setItem(`${import.meta.env.VITE_MINIMAP_KEY}`, 1) &&  /* 1 */
       setHasSeenMinimapIntro(true)
   }
 
@@ -92,7 +92,7 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
       setChildrenUri('') /* 1 */
       setChildren([]) /* 1 */
       const itemPath = `/${type}/${id}`
-      const itemUrl = `${import.meta.env.REACT_APP_ARGO_BASEURL}${itemPath}`
+      const itemUrl = `${import.meta.env.VITE_ARGO_BASEURL}${itemPath}`
       setItemInitialLoad(true) /* 2 */
       setItemUri(itemUrl)
     }
@@ -113,7 +113,7 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
               .catch(e => setDownloadSize(''))
           }
           if (itemInitialLoad) {
-            setChildrenUri(`${import.meta.env.REACT_APP_ARGO_BASEURL}${res.data.group.identifier}/children`)
+            setChildrenUri(`${import.meta.env.VITE_ARGO_BASEURL}${res.data.group.identifier}/children`)
           }
           setUpdateMessage(t({
             comment: 'Update message for selected record',
@@ -149,7 +149,7 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
         .then(res => {
           setAncestors(res.data)
           if (itemInitialLoad) {
-            setPreExpanded(constructPreExpanded(res.data, [itemUri.replace(`${import.meta.env.REACT_APP_ARGO_BASEURL}`, '')]))
+            setPreExpanded(constructPreExpanded(res.data, [itemUri.replace(`${import.meta.env.VITE_ARGO_BASEURL}`, '')]))
           }
         })
         .catch(e => setBackendError(e))
@@ -179,7 +179,7 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
         setIsMinimapLoading(false)
       } else {
         axios
-          .get(appendParams(`${import.meta.env.REACT_APP_ARGO_BASEURL}${item.group.identifier}/minimap`, params))
+          .get(appendParams(`${import.meta.env.VITE_ARGO_BASEURL}${item.group.identifier}/minimap`, params))
           .then(res => setMinimap(res.data))
           .catch(e => setBackendError(e))
           .then(() => setIsMinimapLoading(false))
@@ -190,7 +190,7 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
   /** Pushes a updated URL and state into browser history when itemUri changes */
   useEffect(() => {
     if (itemUri && !itemInitialLoad) {
-      const updatedUri = appendParams(itemUri.replace(`${import.meta.env.REACT_APP_ARGO_BASEURL}`, ''), params)
+      const updatedUri = appendParams(itemUri.replace(`${import.meta.env.VITE_ARGO_BASEURL}`, ''), params)
       navigate(updatedUri, {})
     }
   }, [itemUri])
@@ -198,12 +198,12 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
   /** Set initial variables */
   useEffect(() => {
     const itemPath = `/${type}/${id}`
-    const fullUrl = `${import.meta.env.REACT_APP_ARGO_BASEURL}${itemPath}`
+    const fullUrl = `${import.meta.env.VITE_ARGO_BASEURL}${itemPath}`
     const parsedParams = queryString.parse(search, { parseBooleans: true });
     setParams(parsedParams)
     setItemUri(fullUrl)
-    setHasSeenMinimapIntro(!!localStorage.getItem(`${import.meta.env.REACT_APP_MINIMAP_KEY}`))
-    setIsMinimapInfoModalOpen(!(!!localStorage.getItem(`${import.meta.env.REACT_APP_MINIMAP_KEY}`)))
+    setHasSeenMinimapIntro(!!localStorage.getItem(`${import.meta.env.VITE_MINIMAP_KEY}`))
+    setIsMinimapInfoModalOpen(!(!!localStorage.getItem(`${import.meta.env.VITE_MINIMAP_KEY}`)))
   }, [])
 
   if (!found) {

@@ -26,7 +26,7 @@ const PageDigitalObject = ({isMobile}) => {
   /** Fetches and sets item title */
   useEffect(() => {
     axios
-      .get(`${import.meta.env.REACT_APP_ARGO_BASEURL}/${type}/${id}`)
+      .get(`${import.meta.env.VITE_ARGO_BASEURL}/${type}/${id}`)
       .then(res =>  {
         setItemTitle(res.data.title)
         setManifestUrl(res.data.files[0].manifest)
@@ -124,7 +124,7 @@ const PageDigitalObject = ({isMobile}) => {
     /** Constructs url for single image download */
     const imageDownloadUrl = infoResponse => {
       const imagePath = infoResponse.id && infoResponse.id.split('/').at(-1)
-      const downloadUrl = `${import.meta.env.REACT_APP_S3_BASEURL}/images/${imagePath}?response-content-disposition=attachment;filename=${imagePath}.jp2`
+      const downloadUrl = `${import.meta.env.VITE_S3_BASEURL}/images/${imagePath}?response-content-disposition=attachment;filename=${imagePath}.jp2`
       return downloadUrl
     }
   

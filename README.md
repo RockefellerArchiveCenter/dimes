@@ -9,11 +9,11 @@ In order to support a variety of use cases, there are several configuration opti
 
 ### Aeon Reading Room Integration
 
-Available dates for reading rooms can be pulled from Aeon via the request broker by setting the `REACT_APP_ENABLE_READING_ROOM_SELECT` environment variable. Not setting this environment variable or leaving it blank will disable this feature. Setting this environment variable to any string will activate it.
+Available dates for reading rooms can be pulled from Aeon via the request broker by setting the `VITE_ENABLE_READING_ROOM_SELECT` environment variable. Not setting this environment variable or leaving it blank will disable this feature. Setting this environment variable to any string will activate it.
 
 ### Duplication Request Limits
 
-It is possible to limit the number of duplication requests a user can submit at once by setting the `REACT_APP_DUPLICATION_REQUEST_LIMIT` environment variable.  Not setting this environment variable or leaving it blank will disable this feature.
+It is possible to limit the number of duplication requests a user can submit at once by setting the `VITE_DUPLICATION_REQUEST_LIMIT` environment variable.  Not setting this environment variable or leaving it blank will disable this feature.
 
 ## Local Development
 

@@ -1,13 +1,13 @@
 
 /** Fetches My List */
 export const fetchMyList = () => {
-  var existing = localStorage.getItem(`${import.meta.env.REACT_APP_LOCALSTORAGE_KEY}`)
+  var existing = localStorage.getItem(`${import.meta.env.VITE_LOCALSTORAGE_KEY}`)
   return existing ? JSON.parse(existing) : []
 }
 
 /** Saves My List */
 export const saveMyList = updated => {
-  localStorage.setItem(`${import.meta.env.REACT_APP_LOCALSTORAGE_KEY}`, JSON.stringify(updated))
+  localStorage.setItem(`${import.meta.env.VITE_LOCALSTORAGE_KEY}`, JSON.stringify(updated))
 }
 
 /** Removes an item from My List */

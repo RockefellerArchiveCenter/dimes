@@ -825,7 +825,7 @@ msgstr "검색할 단어나 구문을 추가하세요."
 msgid "Please complete this field."
 msgstr "이 필드를 작성해 주세요."
 
-#. placeholder {0}: import.meta.env.REACT_APP_DUPLICATION_REQUEST_LIMIT
+#. placeholder {0}: import.meta.env.VITE_DUPLICATION_REQUEST_LIMIT
 #: src/components/ModalMyList/index.jsx:534
 msgid "Please limit your request to {0} items."
 msgstr "요청을 {0}개 항목으로 제한해 주세요."

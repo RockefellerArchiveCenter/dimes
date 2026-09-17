@@ -825,7 +825,7 @@ msgstr "请添加要搜索的单词或短语。"
 msgid "Please complete this field."
 msgstr "请填写此栏。"
 
-#. placeholder {0}: import.meta.env.REACT_APP_DUPLICATION_REQUEST_LIMIT
+#. placeholder {0}: import.meta.env.VITE_DUPLICATION_REQUEST_LIMIT
 #: src/components/ModalMyList/index.jsx:534
 msgid "Please limit your request to {0} items."
 msgstr "请将请求限制在 {0} 个项目内。"

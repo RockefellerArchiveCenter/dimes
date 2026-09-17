@@ -825,7 +825,7 @@ msgstr "Lütfen aramak için bir kelime veya cümle ekleyin."
 msgid "Please complete this field."
 msgstr "Lütfen bu alanı doldurunuz."
 
-#. placeholder {0}: import.meta.env.REACT_APP_DUPLICATION_REQUEST_LIMIT
+#. placeholder {0}: import.meta.env.VITE_DUPLICATION_REQUEST_LIMIT
 #: src/components/ModalMyList/index.jsx:534
 msgid "Please limit your request to {0} items."
 msgstr "Lütfen talebinizi {0} öğe ile sınırlayın."
