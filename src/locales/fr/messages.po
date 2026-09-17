@@ -97,12 +97,12 @@ msgid "{deselect, select, true {Deselect all items} other {Select all items}}"
 msgstr "{deselect, select, true {Désélectionner tous les éléments} other {Sélectionner tous les éléments}}"
 
 #. Pluralization of digital match(es)
-#: src/components/Helpers.js:61
+#: src/components/Helpers.js:76
 msgid "{hitCount, plural, one {digital match} other {digital matches}}"
 msgstr "{hitCount, plural, one {occurence numérique} other {occurences numériques}}"
 
 #. Pluralization of match(es)
-#: src/components/Helpers.js:57
+#: src/components/Helpers.js:72
 msgid "{hitCount, plural, one {match} other {matches}}"
 msgstr "{hitCount, plural, one {occurence} other {occurences}}"
 
@@ -305,8 +305,8 @@ msgstr "<0>Consulter en ligne<1/></0>"
 
 #. Limitations and fees information
 #: src/components/ModalMyList/index.js:485
-msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
-msgstr ""
+msgid "<0>We limit users to <1>10 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
+msgstr "<0>Nous limitons le nombre de <1>demandes à 10 par année civile</1>.</0><2>Les PDF de référence sont gratuits. Nous facturons un <3> montant forfaitaire de 25 $ par document</3> pour les numérisations de qualité professionnelle.</2><4>Pour plus de détails, y compris les exceptions pour les documents audiovisuels et les documents surdimensionnés, consultez nos <5>services de duplication</5>.</4><6>Pour obtenir de l'aide ou demander une numérisation de qualité publication, envoyez un courriel à un archiviste à l'adresse <7>archive@rockarch.org.</7></6>"
 
 #. Full Company Address
 #: src/components/Footer/index.js:22
@@ -491,7 +491,7 @@ msgstr "Télécharger au format .csv"
 #. Company Email
 #: src/components/Footer/index.js:35
 msgid "E-mail: <0/>"
-msgstr ""
+msgstr "E-mail : <0/>"
 
 #. Name of email form
 #: src/components/ModalMyList/index.js:217
@@ -671,7 +671,7 @@ msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 
 #. Label for duplication request form
 #: src/components/ModalMyList/index.js:556
-msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its extent or physical condition."
+msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its volume or physical condition."
 msgstr "Je comprends qu'il me faudra peut-être travailler avec un archiviste pour identifier les ressources les plus pertinentes pour ma recherche et que, dans certains cas, il n'est pas possible de numériser le matériel en raison de son étendue ou de son état physique."
 
 #. Invalid email error
