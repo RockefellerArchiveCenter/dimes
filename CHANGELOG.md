@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/RockefellerArchiveCenter/dimes/compare/v1.1.0...v1.1.1) (2026-09-17)
+
+
+### Bug Fixes
+
+* restore and update limitations and fees translations ([8ddf35f](https://github.com/RockefellerArchiveCenter/dimes/commit/8ddf35f816a1b4baae9822b57ae723b3a9b6382b))
+* update duplication request limit ([1cf3cdd](https://github.com/RockefellerArchiveCenter/dimes/commit/1cf3cddd51c0413fdc47f4a5fdc6e8f884059e1f))
+
 ## [1.1.0](https://github.com/RockefellerArchiveCenter/dimes/compare/v1.0.2...v1.1.0) (2026-09-16)
 
 
