@@ -9,6 +9,8 @@ import {
 } from '..'
 import * as focus from '../helpers/focus'
 
+vi.mock('../helpers/focus')
+
 it('renders without crashing', () => {
   render(<I18nApp ReactComponent={<Accordion />} />)
 })
@@ -46,10 +48,6 @@ it('handles clicks', () => {
 it('handles keyboard events', () => {
   const onClick = vi.fn()
   const setIsExpanded = vi.fn()
-  focus.focusFirstSiblingOf = vi.fn()
-  focus.focusLastSiblingOf = vi.fn()
-  focus.focusPreviousSiblingOf = vi.fn()
-  focus.focusNextSiblingOf = vi.fn()
 
   act(() => {
     render(<I18nApp ReactComponent={<AccordionItemButton setIsExpanded={setIsExpanded} onClick={onClick} />} />)

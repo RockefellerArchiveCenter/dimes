@@ -25,8 +25,8 @@ it('renders list correctly', () => {
     comment: 'Found In Test',
     message: 'Found in:'
   }) + ' A-B')
-  expect(itemDescription).not.toContain('.saved-item__last-requested')
-  expect(itemDescription).not.toContain('.btn .btn--blue .btn--sm')
+  expect(itemDescription.querySelector('.saved-item__last-requested')).toBeNull()
+  expect(itemDescription.querySelector('.btn.btn--blue.btn--sm')).toBeNull()
 })
 
 it('renders empty list correctly', async () => {
