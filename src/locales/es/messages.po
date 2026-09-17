@@ -97,12 +97,12 @@ msgid "{deselect, select, true {Deselect all items} other {Select all items}}"
 msgstr "{deselect, select, true {Deseleccionar todos los elementos} other {Seleccionar todos los elementos}}"
 
 #. Pluralization of digital match(es)
-#: src/components/Helpers.js:61
+#: src/components/Helpers.js:76
 msgid "{hitCount, plural, one {digital match} other {digital matches}}"
 msgstr "{hitCount, plural, one {coincidencia digital} other {coincidencias digitalizadas}}"
 
 #. Pluralization of match(es)
-#: src/components/Helpers.js:57
+#: src/components/Helpers.js:72
 msgid "{hitCount, plural, one {match} other {matches}}"
 msgstr "{hitCount, plural, one {el coincidencia} other {coincidencias}}"
 
@@ -305,7 +305,7 @@ msgstr "<0>Ver en línea<1/></0>"
 
 #. Limitations and fees information
 #: src/components/ModalMyList/index.js:485
-msgid "<0>We limit users to <1>20 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
+msgid "<0>We limit users to <1>10 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
 msgstr ""
 
 #. Full Company Address
@@ -671,8 +671,8 @@ msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 
 #. Label for duplication request form
 #: src/components/ModalMyList/index.js:556
-msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its extent or physical condition."
-msgstr "Entiendo que puede que necesite trabajar con un archivero para identificar los recursos más relevantes para mi investigación y que, en algunos casos, no es posible digitalizar el material debido a su extensión o estado físico."
+msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its volume or physical condition."
+msgstr ""
 
 #. Invalid email error
 #: src/components/ModalMyList/index.js:178
