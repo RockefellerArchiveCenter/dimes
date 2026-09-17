@@ -34,5 +34,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --ignore-scripts
 
+      - name: Test
+        run: yarn test
+
       - name: Test build
         run: yarn build
