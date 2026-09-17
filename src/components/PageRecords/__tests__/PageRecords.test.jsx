@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { LiveAnnouncer } from 'react-aria-live';
 import { render, act } from '@testing-library/react'
-import { Route, Routes, MemoryRouter } from 'react-router-dom';
+import { Route, Routes, MemoryRouter } from 'react-router';
 import PageRecords from '..'
 
 import { object } from '../../../__fixtures__/object'

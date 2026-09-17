@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { render, act } from '@testing-library/react'
-import { Route, Routes, MemoryRouter } from 'react-router-dom';
+import { Route, Routes, MemoryRouter } from 'react-router';
 import PageAgent from '..'
 import { I18nApp } from '../../i18n';
 

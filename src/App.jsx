@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { LiveAnnouncer } from 'react-aria-live';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import SkipLink from './components/SkipLink';
@@ -63,7 +63,7 @@ const App = () => {
             <Route path='/:type/:id/view' element={<PageDigitalObject />} />
             <Route path='/:type/:id' element={<PageRecords myListCount={myListCount} toggleInList={toggleInList} isDesktop={isDesktop} isMobile={isMobile} />} />
             <Route path='/agents/:id' element={<PageAgent />} />
-            <Route exact path='/' element={<PageHome isMobile={isMobile} />} />
+            <Route path='/' element={<PageHome isMobile={isMobile} />} />
             <Route path='*' element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
