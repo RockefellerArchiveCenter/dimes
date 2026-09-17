@@ -173,18 +173,6 @@
   }
 }
 
-.child__list-item--collection.active {
-  &::after {
-    .material-icon {
-      content: "expand_less";
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      pointer-events: none;
-    }
-  }
-}
-
 .child__list-item--bottom-level {
   border: 0;
   margin-bottom: 0;

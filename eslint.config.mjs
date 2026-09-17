@@ -12,7 +12,7 @@ export default [
     languageOptions: { sourceType: 'commonjs', globals: globals.node },
   },
   {
-    files: ['vite.config.js', 'eslint.config.mjs'],
+    files: ['vite.config.mjs', 'eslint.config.mjs'],
     languageOptions: { sourceType: 'module', globals: globals.node },
   },
   {

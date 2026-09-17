@@ -26,6 +26,13 @@ Install dependencies and run the development server:
     $ yarn install
     $ yarn start
 
+The development server runs at http://localhost:5173.
+
+To build for production and preview the result locally:
+
+    $ yarn build
+    $ yarn preview
+
 ### Linting
 
 The repository uses [ESLint](https://eslint.org/) with flat config
