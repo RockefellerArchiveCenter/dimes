@@ -35,15 +35,22 @@
     "sass": "^1.52.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "@lingui/cli": "^6.7.0",
     "@lingui/vite-plugin": "^6.7.0",
     "@rolldown/plugin-babel": "^0.2.4",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.1",
-    "@vitejs/plugin-react": "6.1.1",
+    "@vitejs/plugin-react": "^6.1.1",
     "backstopjs": "^6.3.23",
-    "vite": "8.3.0"
+    "eslint": "^9.39.5",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.12.0",
+    "husky": "^9.1.7",
+    "vite": "^8.3.0"
   },
   "scripts": {
     "start": "vite",
@@ -54,7 +61,8 @@
     "backstop-test": "backstop test --docker",
     "backstop-approve": "backstop approve",
     "lingui-extract": "lingui extract",
-    "lingui-compile": "lingui compile"
+    "lingui-compile": "lingui compile",
+    "prepare": "husky"
   },
   "browserslist": {
     "production": [

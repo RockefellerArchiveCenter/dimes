@@ -26,6 +26,15 @@ Install dependencies and run the development server:
     $ yarn install
     $ yarn start
 
+### Linting
+
+The repository uses [ESLint](https://eslint.org/) with flat config
+(`eslint.config.mjs`), including the `react`, `react-hooks` and `jsx-a11y` plugins.
+
+    $ yarn lint
+
+A [Husky](https://typicode.github.io/husky/) pre-commit hook runs `yarn lint` before each commit. Errors block the commit, but warnings do not.
+
 ### Visual regression testing
 
 The repository includes [BackstopJS](https://github.com/garris/BackstopJS) to test visual changes to the site by comparing a set of reference images for different screen sizes. Anytime the CSS styles are changed, use BackstopJS to test locally:
