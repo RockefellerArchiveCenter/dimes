@@ -161,7 +161,7 @@ export const EmailModal = props => (
       <>
         <div className='mb-20'>
             <Trans comment='Note to user about including name and email address'>
-              <strong>Please note:</strong> if are emailing your list to an archivist at <a href={t({message: 'mailto:archive@rockarch.org'})}>archive@rockarch.org</a>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up.
+              <span className='text--bold'>Please note:</span> if are emailing your list to an archivist at <a href={t({message: 'mailto:archive@rockarch.org'})}>archive@rockarch.org</a>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up.
             </Trans>
           </div>
         <Formik
@@ -485,10 +485,10 @@ export const DuplicationRequestModal = props => (
           </Trans>
           <Trans comment='Limitations and fees information'>
             <div className='mb-20'>
-              We limit users to <strong>20 requests per calendar year</strong>.
+              We limit users to <span className='text--bold'>10 requests per calendar year</span>.
             </div>
             <div className='mb-20'>
-              We do not charge for reference PDFs. There is a <strong>$25 flat fee per item</strong> for publication-quality scans.
+              We do not charge for reference PDFs. There is a <span className='text--bold'>$25 flat fee per item</span> for publication-quality scans.
             </div>
             <div className='mb-20'>
               For more details, including exceptions for audiovisual and oversized materials, read about our{' '}
@@ -557,7 +557,7 @@ export const DuplicationRequestModal = props => (
               <Trans comment='Label for duplication request form'>
                 I understand that I may need to work with an archivist to identify the resources most 
                 relevant to my research, and that, in some cases, it is not possible to digitize material 
-                due to its extent or physical condition. 
+                due to its volume or physical condition.
               </Trans>}
               name='costs'
               type='checkbox'
