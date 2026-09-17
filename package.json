@@ -1,11 +1,6 @@
 {
   "name": "dimes",
   "version": "0.1.0",
-  "jest": {
-    "transformIgnorePatterns": [
-      "<rootDir>/node_modules/(?!(mirador|manifesto.js|react-datepicker|react-loading-skeleton))/"
-    ]
-  },
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -51,18 +46,15 @@
     "vite": "8.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint",
     "backstop-reference": "backstop reference --docker",
     "backstop-test": "backstop test --docker",
     "backstop-approve": "backstop approve",
     "lingui-extract": "lingui extract",
     "lingui-compile": "lingui compile"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
