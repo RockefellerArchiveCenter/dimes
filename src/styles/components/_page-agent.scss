@@ -1,8 +1,8 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 .agent__wrapper {
   margin: 0px 30px;
-  @include lg-up {
+  @include abs.lg-up {
     margin: 0 40px 0 80px;
   }
 }
@@ -14,7 +14,7 @@
 
 .agent__main {
   width: 100%;
-  @include lg-up {
+  @include abs.lg-up {
     flex: 1 1 0;
     padding-right: 48px;
   }
@@ -27,7 +27,7 @@
 
 .agent__sidebar {
   width: 100%;
-  @include lg-up {
+  @include abs.lg-up {
     width: auto;
     flex: 0 0 33%;
     padding: 0 40px;

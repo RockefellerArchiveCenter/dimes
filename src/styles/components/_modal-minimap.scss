@@ -1,4 +1,4 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 $minimap-modal-content-margin: 8px;
 $minimap-modal-content-margin-md: 40px;
@@ -8,7 +8,7 @@ $minimap-modal-content-margin-md: 40px;
   left: $minimap-modal-content-margin;
   right: $minimap-modal-content-margin;
   bottom: $minimap-modal-content-margin;
-  @include md-up {
+  @include abs.md-up {
     top: $minimap-modal-content-margin-md;
     left: $minimap-modal-content-margin-md;
     right: $minimap-modal-content-margin-md;
@@ -22,13 +22,13 @@ $minimap-modal-content-margin-md: 40px;
   left: 20px;
   bottom: unset;
   max-height: calc(100% - 20px);
-  @include md-up {
+  @include abs.md-up {
     top: 80px;
     right: 25%;
     left: 25%;
     max-height: calc(100% - 90px);
   }
-  @include lg-up {
+  @include abs.lg-up {
     top: 80px;
     left: 10%;
     right: calc(63% + 20px);
@@ -36,7 +36,7 @@ $minimap-modal-content-margin-md: 40px;
 }
 
 .modal__header--minimap {
-  background-color: $white;
+  background-color: abs.$white;
   display: flex;
   justify-content: space-between;
   line-height: 1.15;

@@ -1,4 +1,4 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 .slide--right {
   transform: translateX(-400px);
@@ -29,7 +29,7 @@
 }
 
 .modal__body {
-  @include lg-up {
+  @include abs.lg-up {
     display: flex;
   }
 }

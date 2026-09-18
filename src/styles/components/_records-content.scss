@@ -1,19 +1,20 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
+@use "sass:color";
 .records__content {
-  font-family: $sans-serif-stack;
+  font-family: abs.$sans-serif-stack;
   width: 100%;
   float: left;
-  @include lg-up {
-    width: calc(63% - #{$minimap-width});
+  @include abs.lg-up {
+    width: calc(63% - #{abs.$minimap-width});
   }
   &.hidden {
-    @include show-on-lg-up;
+    @include abs.show-on-lg-up;
   }
 }
 
 .loading {
-  background: $night-grey;
+  background: abs.$night-grey;
   opacity: 0.8;
   top: 60px;
   bottom: 58px;
@@ -24,31 +25,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @include md-up {
+  @include abs.md-up {
     top: 70px;
   }
-  @include lg-up {
+  @include abs.lg-up {
     top: 60px;
     bottom: 0;
-    left: calc(37% + #{$minimap-width});
+    left: calc(37% + #{abs.$minimap-width});
   }
 }
 
 .records-loading__text {
   font-size: 75px;
-  color: $white;
+  color: abs.$white;
 }
 
 .content__title {
-  font-family: $sans-serif-stack;
+  font-family: abs.$sans-serif-stack;
   font-size: 24px;
-  color: $regal-blue;
-  border-bottom: 1px dotted $regal-blue;
+  color: abs.$regal-blue;
+  border-bottom: 1px dotted abs.$regal-blue;
 }
 
 .collection__title {
   font-size: 21px;
-  color: $night-grey;
+  color: abs.$night-grey;
 }
 
 .collection__text {
@@ -58,12 +59,12 @@
 .child__list {
   box-sizing: content-box;
   list-style: none;
-  transition: $transition-default;
+  transition: abs.$transition-default;
   padding-left: 20px;
   position: relative;
   &::before {
     content: "";
-    background: $silver-grey;
+    background: abs.$silver-grey;
     width: 3px;
     height: 100%;
     position: absolute;
@@ -81,7 +82,7 @@
 }
 
 .child__list--bottom-level {
-  background-color: $white;
+  background-color: abs.$white;
   padding-left: 0px;
   &::before {
     content: none;
@@ -94,13 +95,13 @@
 }
 
 .child__list-accordion--bottom-level {
-  border: 3px solid $silver-grey;
+  border: 3px solid abs.$silver-grey;
   margin-bottom: 15px;
   &:hover {
-    border-color: $umber-brown;
+    border-color: abs.$umber-brown;
   }
   &:focus-within {
-    border-color: $regal-blue;
+    border-color: abs.$regal-blue;
   }
 }
 
@@ -121,29 +122,29 @@
   position: relative;
   padding: 20px;
   &:focus-within, &.active {
-    border-color: $regal-blue;
+    border-color: abs.$regal-blue;
   }
 }
 
 .child__list-item--object {
-  border-bottom: 1px solid $wan-white-grey;
+  border-bottom: 1px solid abs.$wan-white-grey;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   &:first-child {
-    border-top: 1px solid $wan-white-grey;
+    border-top: 1px solid abs.$wan-white-grey;
   }
   &:focus-within, &:hover, .active {
     // background: $blue-gray;
-    background: desaturate(darken($solitude-blue, 7%),10%);
+    background: color.adjust(color.adjust(abs.$solitude-blue, $lightness: -7%),$saturation: -10%);
   }
 }
 
 .child__list-item--collection {
   margin-bottom: 12px;
-  border: 3px solid $silver-grey;
+  border: 3px solid abs.$silver-grey;
   border-radius: 3px;
-  box-shadow: 0 0 5px $wan-white-grey;
+  box-shadow: 0 0 5px abs.$wan-white-grey;
   & .material-icon {
     position: absolute;
     top: 15px;
@@ -154,33 +155,21 @@
     content: "";
     width: 9px;
     height: 3px;
-    border-bottom: 3px solid $silver-grey;
+    border-bottom: 3px solid abs.$silver-grey;
     position: absolute;
     top: 20px;
     left: -12px;
   }
   &:hover {
-    border-color: $umber-brown;
+    border-color: abs.$umber-brown;
     & .material-icon {
-      color: $umber-brown;
+      color: abs.$umber-brown;
     }
   }
   &:hover.active {
     border-color: inherit;
     &::after {
       color: inherit;
-    }
-  }
-}
-
-.child__list-item--collection.active {
-  &::after {
-    .material-icon {
-      content: "expand_less";
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      pointer-events: none;
     }
   }
 }
@@ -218,7 +207,7 @@
 .child__description {
   min-width: 0;
   order: 1;
-  @include md-up {
+  @include abs.md-up {
     order: unset;
     flex-basis: 50%;
     flex-grow: 2;
@@ -231,7 +220,7 @@
   align-items: flex-start;
   flex-shrink: 0;
   order: 3;
-  @include md-up {
+  @include abs.md-up {
     width: unset;
     order: unset;
     justify-content: flex-end;
@@ -243,9 +232,9 @@
   appearance: none;
   border: none;
   background: none;
-  color: $black;
+  color: abs.$black;
   text-align: left;
-  font-weight: $font-weight-bold;
+  font-weight: abs.$font-weight-bold;
   cursor: pointer;
   padding-left: 0;
   padding-right: 20px;
@@ -268,7 +257,7 @@
 
 
     &::after {
-      @include focus-inset;
+      @include abs.focus-inset;
     }
   }
 }
@@ -283,11 +272,11 @@
 }
 
 .child__text {
-  color: $night-grey;
+  color: abs.$night-grey;
   font-size: 14px;
-  font-weight: $font-weight-normal;
+  font-weight: abs.$font-weight-normal;
   order: 2;
-  @include md-up {
+  @include abs.md-up {
     order: unset
   }
 }

@@ -1,12 +1,12 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 .query-highlight {
-  background-color: $peach-orange;
+  background-color: abs.$peach-orange;
 }
 
 .query-highlight::before,
 .query-highlight::after {
-  @include visually-hidden;
+  @include abs.visually-hidden;
 }
 
 .query-highlight::before {

@@ -1,5 +1,5 @@
 import queryString from 'query-string'
-import { t, plural } from '@lingui/macro'
+import { t, plural } from '@lingui/core/macro'
 
 /** Returns a string from a date object or string */
 export const dateString = dates => {

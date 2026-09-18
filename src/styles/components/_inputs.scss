@@ -1,12 +1,13 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
+@use "sass:color";
 @mixin input-text {
-  font-family: $sans-serif-stack;
-  color: $night-grey;
+  font-family: abs.$sans-serif-stack;
+  color: abs.$night-grey;
 }
 
 @mixin placeholder-text {
-  color: $mortar-grey;
+  color: abs.$mortar-grey;
   font-size: 18px;
 }
 
@@ -28,7 +29,7 @@ select {
 }
 
 .hide-label label {
-  @include visually-hidden;
+  @include abs.visually-hidden;
 }
 
 .input--outline {
@@ -38,12 +39,12 @@ select {
 .checkbox--online:not(:checked) + label,
 .checkbox--online:checked + label {
   padding: 13px 15px 13px 45px;
-  background: darken($desert-grey, 4%);
+  background: color.adjust(abs.$desert-grey, $lightness: -4%);
 }
 
 .checkbox--online:checked + label {
-  background: $yale-blue;
-  color: $white;
+  background: abs.$yale-blue;
+  color: abs.$white;
 }
 
 .checkbox--online:not(:checked) + label:before,
@@ -54,19 +55,19 @@ select {
 
 .checkbox--online:not(:checked) + label:after,
 .checkbox--online:checked + label:after {
-  background-color: $white;
-  border: 1px solid $yale-blue;
-  color: $yale-blue;
+  background-color: abs.$white;
+  border: 1px solid abs.$yale-blue;
+  color: abs.$yale-blue;
   top: 13px;
   left: 15px;
 }
 
 .dp__calendar {
-  background-color: $white;
+  background-color: abs.$white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
   position: absolute;
   z-index: 999;
-  @include lg-up {
+  @include abs.lg-up {
     right: 20px;
   }
 }
@@ -78,19 +79,19 @@ select {
 }
 
 .dp__month {
-  font-weight: $font-weight-bold;
+  font-weight: abs.$font-weight-bold;
   text-align: center;
   width: 200px;
 }
 
 .dp__button {
-  border: 1px solid $wan-white-grey;
+  border: 1px solid abs.$wan-white-grey;
   border-radius: 2px;
-  color: $night-grey;
+  color: abs.$night-grey;
   cursor: pointer;
   line-height: 1;
   & .material-icon {
-    color: $mortar-grey;
+    color: abs.$mortar-grey;
   }
 }
 
@@ -105,8 +106,8 @@ select {
   }
 
   th {
-    color: $mortar-grey;
-    font-weight: $font-weight-normal;
+    color: abs.$mortar-grey;
+    font-weight: abs.$font-weight-normal;
     line-height: 1.6;
   }
 
@@ -116,8 +117,8 @@ select {
     line-height: 1;
     width: 36px;
     &:hover {
-      background-color: $umber-brown;
-      color: $white;
+      background-color: abs.$umber-brown;
+      color: abs.$white;
     }
 
     &[aria-disabled="true"] {
@@ -126,12 +127,12 @@ select {
     }
 
     &[aria-selected="true"] {
-      background-color: $umber-brown;
-      color: $white;
+      background-color: abs.$umber-brown;
+      color: abs.$white;
     }
 
     &:not(:empty) {
-      border: 1px solid $wan-white-grey;
+      border: 1px solid abs.$wan-white-grey;
     }
   }
 }
@@ -151,20 +152,20 @@ select {
 .select__control {
   @include input-text;
   cursor: pointer;
-  background-color: $white;
+  background-color: abs.$white;
   border-radius: 3px;
   text-align: left;
   & > .material-icon {
     position: absolute;
   }
   &:focus {
-    @include focus-default;
+    @include abs.focus-default;
   }
 }
 
 .select__menu {
   position: absolute;
-  background-color: $white;
+  background-color: abs.$white;
   border-radius: 0;
   list-style: none;
   padding-left: 0;
@@ -172,7 +173,7 @@ select {
   width: 100%;
   z-index: 999;
   &.open {
-    border: 1px solid $night-grey;
+    border: 1px solid abs.$night-grey;
   }
 }
 
@@ -181,25 +182,25 @@ select {
 * focus on the toggle button, so more complex selector is required.
 **/
 .select__control:focus-visible ~ .select__menu .select__option.is-focused {
-  @include focus-inset;
+  @include abs.focus-inset;
 }
 
 .select__option {
-  color: $black;
-  font-family: $sans-serif-stack;
+  color: abs.$black;
+  font-family: abs.$sans-serif-stack;
   cursor: pointer;
   &.is-focused {
-    background: darken($desert-grey, 4%);
+    background: color.adjust(abs.$desert-grey, $lightness: -4%);
   }
   &.is-selected {
-    font-weight: $font-weight-bold;
+    font-weight: abs.$font-weight-bold;
     &::after {
       font-family: Material Icons;
       font-size: 20px;
       content: "check";
       position: absolute;
       right: 18px;
-      color: $umber-brown;
+      color: abs.$umber-brown;
     }
   }
 }

@@ -1,3 +1,5 @@
+@use '../abstracts' as abs;
+
 html {
   scroll-behavior: smooth;
 }
@@ -19,7 +21,7 @@ form {
 }
 
 .header {
-  @include lg-up {
+  @include abs.lg-up {
     position: sticky;
     top: 0;
     z-index: 999;
@@ -30,7 +32,7 @@ form {
 .wrapper:has(.toggle-wrapper) + footer {
   margin-bottom: 56px;
 
-  @include lg-up {
+  @include abs.lg-up {
     margin-bottom: 0;
   }
 }
