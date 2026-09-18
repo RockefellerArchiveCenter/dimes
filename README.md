@@ -26,7 +26,7 @@ Install dependencies and run the development server:
     $ yarn install
     $ yarn start
 
-The development server runs at http://localhost:5173.
+The development server runs at http://localhost:3000.
 
 To build for production and preview the result locally:
 

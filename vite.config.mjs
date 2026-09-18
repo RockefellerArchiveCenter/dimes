@@ -7,6 +7,8 @@ export default defineConfig({
   plugins: [react(), babel({ presets: [linguiTransformerBabelPreset()] })],
   build: { outDir: 'build' },
   server: {
+    port: 3000,
+    strictPort: true,
     allowedHosts: ['host.docker.internal'],
   },
   test: {
