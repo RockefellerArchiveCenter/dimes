@@ -1,25 +1,25 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 .saved-items__item-group,
 .saved-items__loading,
 .saved-items__empty {
   display: inline-block;
-  border-top: 1px dotted $regal-blue;
-  font-family: $sans-serif-stack;
+  border-top: 1px dotted abs.$regal-blue;
+  font-family: abs.$sans-serif-stack;
   padding-right: 15px;
   width: 98%;
 
-  @include lg-up {
+  @include abs.lg-up {
     padding-right: 0px;
   }
 }
 
 .saved-items__empty {
-  font-family: $sans-serif-stack;
+  font-family: abs.$sans-serif-stack;
 }
 
 .item-group__title {
-  color: $night-grey;
+  color: abs.$night-grey;
   font-size: 20px;
   border-bottom: none;
 }
@@ -33,7 +33,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  @include lg-up {
+  @include abs.lg-up {
     flex-wrap: nowrap;
   }
 }
@@ -45,7 +45,7 @@
   align-items: flex-start;
   gap: 10px;
   width: 100%;
-  @include lg-up {
+  @include abs.lg-up {
     width: unset;
   }
 }
@@ -57,10 +57,10 @@
 @mixin saved-item-text {
   font-size: 14px;
   & a {
-    color: $night-grey;
+    color: abs.$night-grey;
     &:hover,
     &:focus {
-      color: $crusta-orange;
+      color: abs.$crusta-orange;
     }
   }
 }
@@ -69,7 +69,7 @@
   @include saved-item-text;
   font-size: 20px;
   & a {
-    color: $regal-blue;
+    color: abs.$regal-blue;
   }
 }
 

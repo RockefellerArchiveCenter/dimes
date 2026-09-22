@@ -1,7 +1,7 @@
-@import "../variables/vars";
+@use "../abstracts";
 
 .btn--minimap {
-  background: $desert-grey;
+  background: abstracts.$desert-grey;
   white-space: wrap;
   position: fixed;
   top: 80px;

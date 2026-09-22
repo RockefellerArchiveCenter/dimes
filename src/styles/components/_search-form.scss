@@ -1,27 +1,28 @@
-@import "../styles";
-@import "inputs";
+@use '../abstracts' as abs;
+
+@use "inputs";
 
 .search-form--home {
   justify-content: center;
   max-width: 1300px;
   margin: 30px 30px 110px 30px;
-  @include md-up {
+  @include abs.md-up {
     margin: 59px 75px 190px 75px;
   }
-  @include lg-up {
+  @include abs.lg-up {
     margin: 64px 0 233px 0;
   }
 }
 
 .search-bar {
   width: 100%;
-  background-color: $solitude-blue;
+  background-color: abs.$solitude-blue;
   padding-bottom: 24px;
 }
 
 .results, .search-form--results {
   margin: 0px 30px;
-  @include lg-up {
+  @include abs.lg-up {
     margin: 0px 80px;
   }
 }
@@ -39,7 +40,7 @@
 .input-group__search-results {
   justify-content: flex-start;
   margin-top: 24px;
-  @include md-up {
+  @include abs.md-up {
     margin-right: 30px;
     width: 460px;
   }
@@ -49,7 +50,7 @@
   width: 100%;
   gap: 10px;
   margin-top: 20px;
-  @include lg-up {
+  @include abs.lg-up {
     width: calc(100% - 500px);
   }
 }
@@ -57,7 +58,7 @@
 .input-group__search-controls-results {
   margin-top: 24px;
   width: 100%;
-  @include lg-up {
+  @include abs.lg-up {
     width: unset;
   }
 }
@@ -67,7 +68,7 @@
 * overrides `width`.
 **/
 .input__search {
-  @include lg-up {
+  @include abs.lg-up {
     flex: 0 1 calc(100% - 650px);
   }
 }
@@ -88,7 +89,7 @@
 
 .select__search__control {
   font-size: 16px;
-  border: 1px solid $silver-grey;
+  border: 1px solid abs.$silver-grey;
   padding: 13px 15px;
   min-width: 11em; //instead of 180px so that container grows with text resizing
   & > .material-icon {
@@ -110,7 +111,7 @@
 .search__submit-btn {
   align-self: stretch; /* 1 */
 
-  @include md-up {
+  @include abs.md-up {
     justify-content: center;
     min-width: 150px;
   }

@@ -1,32 +1,33 @@
-@import "../styles";
-@import "inputs";
+@use '../abstracts' as abs;
+
+@use "inputs";
 
 .results__header, .results__footer {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  @include md-up {
+  @include abs.md-up {
     align-items: flex-end;
   }
-  @include lg-up {
+  @include abs.lg-up {
     flex-wrap: nowrap;
     align-items: flex-end;
   }
 }
 
 .results__footer {
-  @include lg-up {
+  @include abs.lg-up {
     justify-content: flex-end;
   }
 }
 
 .results__summary {
   width: 100%;
-  @include md-up {
+  @include abs.md-up {
     width: 50%;
     order: 0;
   }
-  @include lg-up {
+  @include abs.lg-up {
     width: unset;
     order: 1;
     text-align: right;
@@ -36,17 +37,17 @@
 .results__summary--text {
   font-family: inherit;
   min-width: 225px;
-  @include lg-up {
+  @include abs.lg-up {
     margin-bottom: 3px;
   }
 }
 
 .results__controls {
   width: 100%;
-  @include md-up {
+  @include abs.md-up {
     order: 2
   }
-  @include lg-up {
+  @include abs.lg-up {
     width: unset;
     order: 0;
     flex-grow: 1;
@@ -55,14 +56,14 @@
 
 .results__pagination {
   width: 100%;
-  @include md-up {
+  @include abs.md-up {
     width: 50%;
     order: 1;
     margin-bottom: 10px;
     text-align: right;
     align-self: flex-end;
   }
-  @include lg-up {
+  @include abs.lg-up {
     width: unset;
     order: 2;
     margin-left: 10px;
@@ -86,7 +87,7 @@
   padding: 0px 15px;
   height: 45px;
   min-width: 14.3em; //instead of 200px so that container grows with text resizing
-  border: 1px solid $night-grey;
+  border: 1px solid abs.$night-grey;
 }
 
 .select__sort__option {

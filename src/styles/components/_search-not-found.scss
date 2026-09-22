@@ -1,7 +1,7 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 .results__not-found--text {
-  font-family: $sans-serif-stack;
+  font-family: abs.$sans-serif-stack;
   font-size: 18px;
-  color: $night-grey;
+  color: abs.$night-grey;
 }

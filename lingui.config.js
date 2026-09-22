@@ -2,6 +2,7 @@
 module.exports = {
 	locales: ["de", "en", "es", "fr", "it", "ja", "ko", "pt", "tr", "zh"],
 	sourceLocale: "en",
+	compileNamespace: "es",
 	fallbackLocales: {
 		"default": "en"
 	},
@@ -9,6 +10,5 @@ module.exports = {
 		path: "src/locales/{locale}/messages",
 		include: ["src"],
 		exclude: ["**/node_modules/**", "src/styles/**", "src/locales**"]
-	}],
-	format: "po"
+	}]
  }

@@ -1,10 +1,10 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 @mixin card-type-label-text {
   text-transform: uppercase;
-  font-weight: $font-weight-heavy;
+  font-weight: abs.$font-weight-heavy;
   font-size: 12px;
-  color: $umber-brown;
+  color: abs.$umber-brown;
   letter-spacing: 0.1em;
 }
 
@@ -12,17 +12,17 @@
   display: grid;
   gap: 15px;
 
-  @include md-up {
+  @include abs.md-up {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @include lg-up {
+  @include abs.lg-up {
     grid-template-columns: repeat(4, 1fr);
     }
 }
 
 .card--related-collections {
-  @include lg-up {
+  @include abs.lg-up {
     grid-template-columns: repeat(3, 1fr);
   }
 }

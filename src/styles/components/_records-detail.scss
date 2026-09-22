@@ -1,20 +1,21 @@
-@import "../styles";
-@import "./buttons";
+@use '../abstracts' as abs;
+
+@use "buttons";
 
 .records__detail {
-  background-color: $desert-grey;
+  background-color: abs.$desert-grey;
   width: 100%;
   height: 100%;
   padding: 0px 30px 110px 30px;
   float: left;
-  font-family: $sans-serif-stack;
+  font-family: abs.$sans-serif-stack;
   &.hidden {
-    @include show-on-lg-up;
+    @include abs.show-on-lg-up;
   }
-  @include md-up {
+  @include abs.md-up {
     padding: 0px 40px 50px 40px;
   }
-  @include lg-up {
+  @include abs.lg-up {
     width: 37%;
     max-height: 100vh;
     position: sticky;
@@ -34,9 +35,9 @@
 }
 
 .records__title {
-  font-family: $sans-serif-stack;
+  font-family: abs.$sans-serif-stack;
   font-size: 28px;
-  color: $regal-blue;
+  color: abs.$regal-blue;
 }
 
 .panel__section--flex {
@@ -47,13 +48,13 @@
 
 .found-in {
   box-sizing: content-box;
-  font-family: $sans-serif-stack;
+  font-family: abs.$sans-serif-stack;
   font-size: 13px;
   & svg {
     width: 13px;
     vertical-align: middle;
     padding-right: 2px;
-    fill: $regal-blue;
+    fill: abs.$regal-blue;
   }
 }
 
@@ -78,6 +79,6 @@
   font-family: inherit;
   color: inherit;
   font-size: inherit;
-  font-weight: $font-weight-normal;
+  font-weight: abs.$font-weight-normal;
 }
 
