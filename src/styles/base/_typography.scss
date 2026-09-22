@@ -1,5 +1,5 @@
 // @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Manuale:300,400,700|Material+Icons&display=swap');
-@import '../variables/vars';
+@use '../abstracts' as abs;
 
 p,
 a {
@@ -7,57 +7,48 @@ a {
   font-size: inherit;
 }
 
-@mixin page-title {
-  font-family: $sans-serif-stack;
-  font-size: 24px;
-  color: $regal-blue;
-  @include lg-up {
-    font-size: 28px;
-  }
-}
-
 .agent__title {
-  @include page-title;
+  @include abs.page-title;
 }
 
 .agent__section-title {
   text-transform: uppercase;
-  font-family: $sans-serif-stack;
+  font-family: abs.$sans-serif-stack;
   font-size: 14px;
-  color: $regal-blue;
+  color: abs.$regal-blue;
   letter-spacing: 2px;
 }
 
 .agent-attribute__label, .agent-note__label {
-  font-family: $sans-serif-stack;
+  font-family: abs.$sans-serif-stack;
   font-size: 12px;
-  font-weight: $font-weight-bold;
+  font-weight: abs.$font-weight-bold;
   letter-spacing: 0.65px;
   text-transform: uppercase;
-  color: $night-grey;
+  color: abs.$night-grey;
 }
 
 .agent-attribute__value, .agent-note__value, .agent-note__source {
-  font-family: $sans-serif-stack;
+  font-family: abs.$sans-serif-stack;
   font-size: 16px;
-  color: $night-grey;
+  color: abs.$night-grey;
   line-height: 25px;
 }
 
 .mylist__title {
-  @include page-title;
+  @include abs.page-title;
   float: left;
-  @include lg-up {
+  @include abs.lg-up {
     float: none;
   }
 }
 
 .results__title {
-  @include page-title;
+  @include abs.page-title;
 }
 
 .results__summary {
-  font-family: $sans-serif-stack;
+  font-family: abs.$sans-serif-stack;
   font-size: 16px;
 }
 

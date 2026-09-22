@@ -9,11 +9,11 @@ In order to support a variety of use cases, there are several configuration opti
 
 ### Aeon Reading Room Integration
 
-Available dates for reading rooms can be pulled from Aeon via the request broker by setting the `REACT_APP_ENABLE_READING_ROOM_SELECT` environment variable. Not setting this environment variable or leaving it blank will disable this feature. Setting this environment variable to any string will activate it.
+Available dates for reading rooms can be pulled from Aeon via the request broker by setting the `VITE_ENABLE_READING_ROOM_SELECT` environment variable. Not setting this environment variable or leaving it blank will disable this feature. Setting this environment variable to any string will activate it.
 
 ### Duplication Request Limits
 
-It is possible to limit the number of duplication requests a user can submit at once by setting the `REACT_APP_DUPLICATION_REQUEST_LIMIT` environment variable.  Not setting this environment variable or leaving it blank will disable this feature.
+It is possible to limit the number of duplication requests a user can submit at once by setting the `VITE_DUPLICATION_REQUEST_LIMIT` environment variable.  Not setting this environment variable or leaving it blank will disable this feature.
 
 ## Local Development
 
@@ -25,6 +25,28 @@ Install dependencies and run the development server:
 
     $ yarn install
     $ yarn start
+
+The development server runs at http://localhost:3000.
+
+To build for production and preview the result locally:
+
+    $ yarn build
+    $ yarn preview
+
+### Linting
+
+The repository uses [ESLint](https://eslint.org/) with flat config
+(`eslint.config.mjs`), including the `react`, `react-hooks` and `jsx-a11y` plugins.
+
+    $ yarn lint
+
+A [Husky](https://typicode.github.io/husky/) pre-commit hook runs `yarn lint` before each commit. Errors block the commit, but warnings do not.
+
+### Tests
+
+The repository uses [Vitest](https://vitest.dev/) with [Testing Library](https://testing-library.com/) and a jsdom environment, configured in the `test` block of `vite.config.mjs`.
+
+    $ yarn test
 
 ### Visual regression testing
 
@@ -72,17 +94,18 @@ DIMES uses a [macro implementation](https://lingui.dev/guides/message-extraction
 
 #### Updating HTML structure
 
-1. If adding a new HTML element for translation, first make sure that the HTML file includes
-  `import { Trans } from "@lingui/ macro";`.
+1. If adding a new HTML element for translation, first make sure that the file includes
+  `import { Trans } from "@lingui/react/macro";` for JSX, or
+  `import { t } from "@lingui/core/macro";` for strings outside JSX (button labels, placeholders, aria-labels).
 2. Wrap the desired string to transform in the `<Trans>` macro if adding a new element, or update
   the HTML structure within an already existing `<Trans>` tag.
 3. Run `$ yarn lingui-extract` to add or update any translation strings from the updated HTML structure.
   Failure to run this will result in translated strings being presented as random numbers and letters in the built application. This command's output will also show any translation items without translations. If you have removed
   translation strings you may want to run `yarn lingui-extract --clean` which will remove any missing strings from the `messages.po` file.
 4. Update or add `msgstr` lines in all `messages.po` files based on the changes.
-4. Run `$ yarn lingui-compile` to update the locale files into Javascript files which are used by the application
+5. Run `$ yarn lingui-compile` to update the locale files into Javascript files which are used by the application
   to present translated strings.
-5. Commit updated code to the GitHub repository.
+6. Commit updated code to the GitHub repository.
 
 #### Changing translation strings
 

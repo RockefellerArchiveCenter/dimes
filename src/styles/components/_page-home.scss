@@ -1,6 +1,6 @@
-@import "../styles";
+@use '../abstracts' as abs;
 
 .home {
-  background: $desert-grey;
+  background: abs.$desert-grey;
   width: 100%;
 }

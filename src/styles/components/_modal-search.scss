@@ -1,3 +1,5 @@
+@use '../abstracts' as abs;
+
 .modal--facet {
   bottom: auto;
   top: 0;
@@ -6,13 +8,13 @@
   max-width: 420px;
   height: 100vh;
   border-radius: 0px;
-  background-color: $solitude-blue;
-  @include md-up {
+  background-color: abs.$solitude-blue;
+  @include abs.md-up {
     width: 420px;
   }
 }
 
 .modal__header--search {
-  color: $regal-blue;
-  background-color: $solitude-blue;
+  color: abs.$regal-blue;
+  background-color: abs.$solitude-blue;
 }

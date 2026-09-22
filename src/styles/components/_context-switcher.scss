@@ -1,12 +1,13 @@
-@import "../styles";
-@import "./buttons";
+@use '../abstracts' as abs;
+
+@use "buttons";
 
 .toggle-wrapper--mobile {
-  background-color: $desert-grey;
+  background-color: abs.$desert-grey;
   display: flex;
   flex-direction: column;
 
-  @include lg-up {
+  @include abs.lg-up {
     display: none;
   }
 }
@@ -17,7 +18,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  @include lg-up {
+  @include abs.lg-up {
     display: none;
   }
 }
@@ -30,19 +31,19 @@
   bottom: 0;
 
   &:focus {
-    @include focus-inset;
+    @include abs.focus-inset;
   }
 }
 
 .toggle-context--active {
   opacity: 0;
-  @include md-up {
+  @include abs.md-up {
     opacity: 1;
-    background: $desert-grey;
-    color: $night-grey;
+    background: abs.$desert-grey;
+    color: abs.$night-grey;
     &:hover, &:focus {
-      background: $wan-white-grey;
-      color: $night-grey;
+      background: abs.$wan-white-grey;
+      color: abs.$night-grey;
     }
   }
 }
