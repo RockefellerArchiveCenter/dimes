@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/RockefellerArchiveCenter/dimes/compare/v1.1.1...v2.0.0) (2026-09-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* replace create-react-app with vite
+
+### Bug Fixes
+
+* adjust failing tests that relied on jest behaviour ([ab103a6](https://github.com/RockefellerArchiveCenter/dimes/commit/ab103a600973c3681b203a4cb1f3bcc48f731f6b))
+
+
+### Build System
+
+* replace create-react-app with vite ([ac4317c](https://github.com/RockefellerArchiveCenter/dimes/commit/ac4317cb0509a6d9a6e93663a211cbbe17eee242))
+
 ## [1.1.1](https://github.com/RockefellerArchiveCenter/dimes/compare/v1.1.0...v1.1.1) (2026-09-17)
 
 
