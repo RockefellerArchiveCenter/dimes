@@ -22,20 +22,28 @@ import './styles.scss'
 
 const PageSearch = () => {
 
+  /** Declared before state: the params initialiser reads search and pageSize */
+  const { pathname, search } = useLocation()
+  const navigate = useNavigate()
+  const pageSize = 40
+
   const [backendError, setBackendError] = useState({})
   const [facetIsOpen, setFacetIsOpen] = useState(false)
   const [facetData, setFacetData] = useState({})
   const [inProgress, setInProgress] = useState(true)
   const [items, setItems] = useState([])
-  const [params, setParams] = useState({ query: '', category: '' })
+  const [params, setParams] = useState(() => {
+    const parsed = { query: '', category: '', ...queryString.parse(search, { parseBooleans: true }) }
+    parsed.limit = pageSize
+    const parsedOffset = +(parsed.offset)
+    if (parsedOffset > 0) { parsed.offset = parsedOffset } else { delete parsed.offset }
+    return parsed
+  })
   const [pageCount, setPageCount] = useState(0)
   const [startItem, setStartItem] = useState(0)
   const [endItem, setEndItem] = useState(0)
   const [resultsCount, setResultsCount] = useState(0)
   const [suggestions, setSuggestions] = useState([])
-  const pageSize = 40
-  const { pathname, search } = useLocation()
-  const navigate = useNavigate()
   const hasBackendError = !!Object.keys(backendError).length
   const pageTitle = withSiteTitle(t({
     comment: 'Search Results title',
@@ -64,15 +72,6 @@ const PageSearch = () => {
       })
     }
   ]
-
-  /** Execute search on initial page load */
-  useEffect(() => {
-    let params = queryString.parse(search, { parseBooleans: true })
-    params.limit = pageSize
-    const parsedOffset = +(params.offset)
-    if (parsedOffset > 0) { params.offset = parsedOffset } else { delete params.offset }
-    setParams(params)
-  }, [])
 
   /** Set first search result */
   useEffect(() => {
