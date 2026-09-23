@@ -51,12 +51,12 @@ msgstr "{0, select, rac {资料来源：洛克菲勒档案中心} other {来源:
 
 #. Current Results shown of total results
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:239
+#: src/components/PageSearch/index.jsx:244
 msgid "{0, select, true {{startItem} result} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem} result} other {{startItem}-{endItem} 的 {resultsCount} 搜索结果}}"
 
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:294
+#: src/components/PageSearch/index.jsx:299
 msgid "{0, select, true {{startItem}} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem}} other {{startItem}-{endItem} 的 {resultsCount} 搜索结果}}"
 
@@ -530,7 +530,7 @@ msgid "Fax: (914) 631-6017"
 msgstr "传真：（914）631-6017"
 
 #. Label for Filters button
-#: src/components/PageSearch/index.jsx:252
+#: src/components/PageSearch/index.jsx:257
 msgid "Filters"
 msgstr "筛选"
 
@@ -757,7 +757,7 @@ msgid "No saved items."
 msgstr "无保存项目。"
 
 #. Search results header with no search term
-#: src/components/PageSearch/index.jsx:218
+#: src/components/PageSearch/index.jsx:223
 msgid "No search query entered"
 msgstr "没有输入搜索查询"
 
@@ -967,16 +967,16 @@ msgid "Search Our Collections.Discover People and Organizations.Access Digital C
 msgstr "搜索我们的藏品、发现人物和组织、访问数字内容。"
 
 #. Search Results title
-#. Search Results title
-#: src/components/PageSearch/__tests__/PageSearch.test.jsx:52
-#: src/components/PageSearch/index.jsx:49
+#: src/components/PageSearch/index.jsx:54
 msgid "Search Results"
 msgstr "搜索结果"
 
+#. Search Results title with query
 #. Search results header with results
 #. Search results header with results
-#: src/components/PageSearch/__tests__/PageSearch.test.jsx:47
-#: src/components/PageSearch/index.jsx:227
+#: src/components/PageSearch/__tests__/PageSearch.test.jsx:45
+#: src/components/PageSearch/index.jsx:50
+#: src/components/PageSearch/index.jsx:232
 msgid "Search Results for “{query}”"
 msgstr "“{query}”的搜索结果"
 
@@ -986,7 +986,7 @@ msgid "Search..."
 msgstr "搜索..."
 
 #. Search results header while searching
-#: src/components/PageSearch/index.jsx:213
+#: src/components/PageSearch/index.jsx:218
 msgid "Searching"
 msgstr "搜寻中"
 
@@ -1084,32 +1084,32 @@ msgid "Sorry, the requested page was not found!"
 msgstr "抱歉，未找到所请求的页面！"
 
 #. Search results header with no results
-#: src/components/PageSearch/index.jsx:223
+#: src/components/PageSearch/index.jsx:228
 msgid "Sorry, there are no search results for “{query}”"
 msgstr "很抱歉，没有找到相应的搜索结果 “{query}”"
 
 #. Name for sort results input
-#: src/components/PageSearch/index.jsx:262
+#: src/components/PageSearch/index.jsx:267
 msgid "sort"
 msgstr "排序"
 
 #. Sort by creator name label
-#: src/components/PageSearch/index.jsx:70
+#: src/components/PageSearch/index.jsx:75
 msgid "Sort by creator name"
 msgstr "按创作者姓名排序"
 
 #. Sort by relevance label
-#: src/components/PageSearch/index.jsx:58
+#: src/components/PageSearch/index.jsx:63
 msgid "Sort by relevance"
 msgstr "按相关性排序"
 
 #. Sort by title label
-#: src/components/PageSearch/index.jsx:64
+#: src/components/PageSearch/index.jsx:69
 msgid "Sort by title"
 msgstr "按标题排序"
 
 #. Label for sort results input
-#: src/components/PageSearch/index.jsx:267
+#: src/components/PageSearch/index.jsx:272
 msgid "Sort search results"
 msgstr "搜索结果排序"
 

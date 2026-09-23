@@ -51,12 +51,12 @@ msgstr "{0, select, rac {출처: 록펠러 아카이브 센터} other {출처: {
 
 #. Current Results shown of total results
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:239
+#: src/components/PageSearch/index.jsx:244
 msgid "{0, select, true {{startItem} result} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem} result} other {{startItem}-{endItem} 총 {resultsCount} 가지 결과}}"
 
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:294
+#: src/components/PageSearch/index.jsx:299
 msgid "{0, select, true {{startItem}} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem}} other {{startItem}-{endItem} 중 {resultsCount} 결과}}"
 
@@ -530,7 +530,7 @@ msgid "Fax: (914) 631-6017"
 msgstr "팩스: (914) 631-6017"
 
 #. Label for Filters button
-#: src/components/PageSearch/index.jsx:252
+#: src/components/PageSearch/index.jsx:257
 msgid "Filters"
 msgstr "필터"
 
@@ -757,7 +757,7 @@ msgid "No saved items."
 msgstr "저장된 항목이 없습니다."
 
 #. Search results header with no search term
-#: src/components/PageSearch/index.jsx:218
+#: src/components/PageSearch/index.jsx:223
 msgid "No search query entered"
 msgstr "검색어 입력 없음"
 
@@ -967,16 +967,16 @@ msgid "Search Our Collections.Discover People and Organizations.Access Digital C
 msgstr "컬렉션 검색. 인물 및 조직 검색. 디지털 자료 이용."
 
 #. Search Results title
-#. Search Results title
-#: src/components/PageSearch/__tests__/PageSearch.test.jsx:52
-#: src/components/PageSearch/index.jsx:49
+#: src/components/PageSearch/index.jsx:54
 msgid "Search Results"
 msgstr "검색 결과"
 
+#. Search Results title with query
 #. Search results header with results
 #. Search results header with results
-#: src/components/PageSearch/__tests__/PageSearch.test.jsx:47
-#: src/components/PageSearch/index.jsx:227
+#: src/components/PageSearch/__tests__/PageSearch.test.jsx:45
+#: src/components/PageSearch/index.jsx:50
+#: src/components/PageSearch/index.jsx:232
 msgid "Search Results for “{query}”"
 msgstr "“{query}”에 대한 검색 결과 "
 
@@ -986,7 +986,7 @@ msgid "Search..."
 msgstr "검색..."
 
 #. Search results header while searching
-#: src/components/PageSearch/index.jsx:213
+#: src/components/PageSearch/index.jsx:218
 msgid "Searching"
 msgstr "수색"
 
@@ -1084,32 +1084,32 @@ msgid "Sorry, the requested page was not found!"
 msgstr "요청하신 페이지를 찾을 수 없습니다!"
 
 #. Search results header with no results
-#: src/components/PageSearch/index.jsx:223
+#: src/components/PageSearch/index.jsx:228
 msgid "Sorry, there are no search results for “{query}”"
 msgstr "실례합니다, “{query}”에 대한 검색 결과가 없습니다"
 
 #. Name for sort results input
-#: src/components/PageSearch/index.jsx:262
+#: src/components/PageSearch/index.jsx:267
 msgid "sort"
 msgstr "정렬"
 
 #. Sort by creator name label
-#: src/components/PageSearch/index.jsx:70
+#: src/components/PageSearch/index.jsx:75
 msgid "Sort by creator name"
 msgstr "작성자명별로 정렬"
 
 #. Sort by relevance label
-#: src/components/PageSearch/index.jsx:58
+#: src/components/PageSearch/index.jsx:63
 msgid "Sort by relevance"
 msgstr "관련성별로 정렬"
 
 #. Sort by title label
-#: src/components/PageSearch/index.jsx:64
+#: src/components/PageSearch/index.jsx:69
 msgid "Sort by title"
 msgstr "제목별로 정렬"
 
 #. Label for sort results input
-#: src/components/PageSearch/index.jsx:267
+#: src/components/PageSearch/index.jsx:272
 msgid "Sort search results"
 msgstr "검색 결과 정렬"
 

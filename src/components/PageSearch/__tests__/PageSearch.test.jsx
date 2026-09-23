@@ -42,17 +42,14 @@ it('renders props correctly', async () => {
       } />)
   })
 
-  const title = await document.querySelector('h1')
-
-  expect(title.textContent).toBe(t({
+  const header = t({
     comment: 'Search results header with results',
     message: `Search Results for “${{ query: 'banana' }}”`
-  }))
+  })
 
-  const pageTitle = t({
-    comment: 'Search Results title',
-    message: 'Search Results'
-  }) + ' - DIMES'
+  expect(document.querySelector('h1').textContent).toBe(header)
+
+  const pageTitle = `${header} - DIMES`
 
   expect(document.title).toBe(pageTitle)
   expect(window._mtm).toEqual([{

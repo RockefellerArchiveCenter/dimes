@@ -46,10 +46,15 @@ const PageSearch = () => {
   const [suggestions, setSuggestions] = useState([])
   const hasBackendError = !!Object.keys(backendError).length
   const cleanQuery = params.query.replace(/"([^"]+(?="))"/g, '$1')
-  const pageTitle = withSiteTitle(t({
-    comment: 'Search Results title',
-    message: 'Search Results'
-  }))
+  const pageTitle = withSiteTitle(params.query
+    ? t({
+      comment: 'Search Results title with query',
+      message: `Search Results for “${{ query: cleanQuery }}”`
+    })
+    : t({
+      comment: 'Search Results title',
+      message: 'Search Results'
+    }))
 
   usePageView(hasBackendError ? null : pageTitle)
 
