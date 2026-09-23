@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router'
 import ResizeObserver from 'resize-observer-polyfill'
 
 // Returns a boolean indicating if an element is visible on screen
@@ -52,4 +53,24 @@ export const useResizeObserver = ({ callback, element }) => {
     }
   }
 
+}
+
+// Sets the document title and sends a pageview event to Matomo Tag Manager
+export const usePageView = title => {
+
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    if (!title) {
+      return
+    }
+    document.title = title
+    if (window._mtm) {
+      window._mtm.push({
+        event: 'reactPageViewEvent',
+        pageTitle: title,
+        pageUrl: window.location.href,
+      })
+    }
+  }, [pathname, title])
 }
