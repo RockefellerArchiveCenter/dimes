@@ -106,14 +106,6 @@ msgstr "{hitCount, plural, one {项匹配的数字化内容 } other {项匹配�
 msgid "{hitCount, plural, one {match} other {matches}}"
 msgstr "{hitCount, plural, one {匹配} other {匹配}}"
 
-#. Search Results header
-#. placeholder {0}: params.query
-#. placeholder {1}: `“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`
-#. placeholder {2}: `“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`
-#: src/components/PageSearch/index.jsx:212
-msgid "{inProgress, select, true {Searching} other {{0, select, false {No search query entered} other {{resultsCount, plural, =0 {Sorry, there are no search results for {1}} other {Search Results for {2}}}}}}}"
-msgstr "{inProgress, select, true {搜寻中} other {{0, select, false {没有输入搜索查询} other {{resultsCount, plural, =0 {很抱歉，没有找到相应的搜索结果 {1}} other {的搜索结果 {2}}}}}}}"
-
 #. Label for Context Switcher
 #: src/components/ContextSwitcher/index.jsx:12
 msgid "{isContentShown, select, true {Collection Details} other {Collection Content}}"
@@ -764,6 +756,11 @@ msgstr "没有选择要提交的项目。"
 msgid "No saved items."
 msgstr "无保存项目。"
 
+#. Search results header with no search term
+#: src/components/PageSearch/index.jsx:218
+msgid "No search query entered"
+msgstr "没有输入搜索查询"
+
 #. Occupations property
 #: src/components/PageAgent/index.jsx:202
 msgid "Occupations"
@@ -972,19 +969,26 @@ msgstr "搜索我们的藏品、发现人物和组织、访问数字内容。"
 #. Search Results title
 #. Search Results title
 #: src/components/PageSearch/__tests__/PageSearch.test.jsx:52
-#: src/components/PageSearch/index.jsx:40
+#: src/components/PageSearch/index.jsx:49
 msgid "Search Results"
 msgstr "搜索结果"
 
-#. Search Results for Test
+#. Search results header with results
+#. Search results header with results
 #: src/components/PageSearch/__tests__/PageSearch.test.jsx:47
-msgid "Search Results for"
-msgstr "搜索结果"
+#: src/components/PageSearch/index.jsx:227
+msgid "Search Results for “{query}”"
+msgstr "“{query}”的搜索结果"
 
 #. Placeholder text for search textbox
 #: src/components/SearchForm/index.jsx:64
 msgid "Search..."
 msgstr "搜索..."
+
+#. Search results header while searching
+#: src/components/PageSearch/index.jsx:213
+msgid "Searching"
+msgstr "搜寻中"
 
 #. Holiday Schedule message
 #: src/components/PrimaryLink/index.jsx:42
@@ -1079,23 +1083,28 @@ msgstr "很抱歉，我们的系统现在无法处理申请。我们正在努力
 msgid "Sorry, the requested page was not found!"
 msgstr "抱歉，未找到所请求的页面！"
 
+#. Search results header with no results
+#: src/components/PageSearch/index.jsx:223
+msgid "Sorry, there are no search results for “{query}”"
+msgstr "很抱歉，没有找到相应的搜索结果 “{query}”"
+
 #. Name for sort results input
 #: src/components/PageSearch/index.jsx:262
 msgid "sort"
 msgstr "排序"
 
 #. Sort by creator name label
-#: src/components/PageSearch/index.jsx:61
+#: src/components/PageSearch/index.jsx:70
 msgid "Sort by creator name"
 msgstr "按创作者姓名排序"
 
 #. Sort by relevance label
-#: src/components/PageSearch/index.jsx:49
+#: src/components/PageSearch/index.jsx:58
 msgid "Sort by relevance"
 msgstr "按相关性排序"
 
 #. Sort by title label
-#: src/components/PageSearch/index.jsx:55
+#: src/components/PageSearch/index.jsx:64
 msgid "Sort by title"
 msgstr "按标题排序"
 

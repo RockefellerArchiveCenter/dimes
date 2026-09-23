@@ -12,7 +12,7 @@ import { SearchSkeleton } from '../LoadingSkeleton'
 import { FacetModal } from '../ModalSearch'
 import { SearchPagination } from '../Pagination'
 import { t } from '@lingui/core/macro'
-import { Plural, Select, Trans } from '@lingui/react/macro'
+import { Select, Trans } from '@lingui/react/macro'
 import SearchForm from '../SearchForm'
 import SearchNotFound from '../SearchNotFound'
 import CardList from '../Card'
@@ -45,6 +45,7 @@ const PageSearch = () => {
   const [resultsCount, setResultsCount] = useState(0)
   const [suggestions, setSuggestions] = useState([])
   const hasBackendError = !!Object.keys(backendError).length
+  const cleanQuery = params.query.replace(/"([^"]+(?="))"/g, '$1')
   const pageTitle = withSiteTitle(t({
     comment: 'Search Results title',
     message: 'Search Results'
@@ -208,25 +209,25 @@ const PageSearch = () => {
         </div>
         <main id='main' className='results'>
           <h1 className={classnames('results__title mt-30 mb-13', { 'loading-dots': inProgress })}>
-            <Trans comment='Search Results header'>
-              <Select
-                value={inProgress}
-                _true="Searching"
-                other=
-                {
-                  <Select value={params.query}
-                    _false='No search query entered'
-                    other={
-                      <Plural
-                        value={resultsCount}
-                        _0={`Sorry, there are no search results for ${`“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`}`}
-                        other={`Search Results for ${`“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`}`}
-                      />
-                    }
-                  />
-                }
-              />
-            </Trans>
+            {inProgress
+              ? t({
+                comment: 'Search results header while searching',
+                message: 'Searching'
+              })
+              : !params.query
+                ? t({
+                  comment: 'Search results header with no search term',
+                  message: 'No search query entered'
+                })
+                : resultsCount === 0
+                  ? t({
+                    comment: 'Search results header with no results',
+                    message: `Sorry, there are no search results for “${{ query: cleanQuery }}”`
+                  })
+                  : t({
+                    comment: 'Search results header with results',
+                    message: `Search Results for “${{ query: cleanQuery }}”`
+                  })}
           </h1>
           {!resultsCount && !inProgress ?
             (<SearchNotFound suggestions={suggestions} query={params.query}/>) :

@@ -106,14 +106,6 @@ msgstr "{hitCount, plural, one {デジタルマッチ} other {デジタルマッ
 msgid "{hitCount, plural, one {match} other {matches}}"
 msgstr "{hitCount, plural, one {マッチ} other {マッチ}}"
 
-#. Search Results header
-#. placeholder {0}: params.query
-#. placeholder {1}: `“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`
-#. placeholder {2}: `“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`
-#: src/components/PageSearch/index.jsx:212
-msgid "{inProgress, select, true {Searching} other {{0, select, false {No search query entered} other {{resultsCount, plural, =0 {Sorry, there are no search results for {1}} other {Search Results for {2}}}}}}}"
-msgstr "{inProgress, select, true {検索中} other {{0, select, false {検索クエリが入力されていません} other {{resultsCount, plural, =0 {申し訳ありませんが、{1}の検索結果はありません} other {{2}の検索結果}}}}}}"
-
 #. Label for Context Switcher
 #: src/components/ContextSwitcher/index.jsx:12
 msgid "{isContentShown, select, true {Collection Details} other {Collection Content}}"
@@ -764,6 +756,11 @@ msgstr "提出するアイテムが選択されていない。"
 msgid "No saved items."
 msgstr "アイテムは保存されていません。"
 
+#. Search results header with no search term
+#: src/components/PageSearch/index.jsx:218
+msgid "No search query entered"
+msgstr "検索クエリが入力されていません"
+
 #. Occupations property
 #: src/components/PageAgent/index.jsx:202
 msgid "Occupations"
@@ -972,19 +969,26 @@ msgstr "コレクションを検索する.人と組織を発見する.デジタ�
 #. Search Results title
 #. Search Results title
 #: src/components/PageSearch/__tests__/PageSearch.test.jsx:52
-#: src/components/PageSearch/index.jsx:40
+#: src/components/PageSearch/index.jsx:49
 msgid "Search Results"
 msgstr "検索結果"
 
-#. Search Results for Test
+#. Search results header with results
+#. Search results header with results
 #: src/components/PageSearch/__tests__/PageSearch.test.jsx:47
-msgid "Search Results for"
-msgstr "検索結果"
+#: src/components/PageSearch/index.jsx:227
+msgid "Search Results for “{query}”"
+msgstr "“{query}”の検索結果"
 
 #. Placeholder text for search textbox
 #: src/components/SearchForm/index.jsx:64
 msgid "Search..."
 msgstr "検索…"
+
+#. Search results header while searching
+#: src/components/PageSearch/index.jsx:213
+msgid "Searching"
+msgstr "検索中"
 
 #. Holiday Schedule message
 #: src/components/PrimaryLink/index.jsx:42
@@ -1079,23 +1083,28 @@ msgstr "申し訳ございません。現在、システムでリクエストを
 msgid "Sorry, the requested page was not found!"
 msgstr "リクエストされたページは見つかりませんでした！"
 
+#. Search results header with no results
+#: src/components/PageSearch/index.jsx:223
+msgid "Sorry, there are no search results for “{query}”"
+msgstr "申し訳ありませんが、“{query}”の検索結果はありません"
+
 #. Name for sort results input
 #: src/components/PageSearch/index.jsx:262
 msgid "sort"
 msgstr "ソート"
 
 #. Sort by creator name label
-#: src/components/PageSearch/index.jsx:61
+#: src/components/PageSearch/index.jsx:70
 msgid "Sort by creator name"
 msgstr "クリエイター名順"
 
 #. Sort by relevance label
-#: src/components/PageSearch/index.jsx:49
+#: src/components/PageSearch/index.jsx:58
 msgid "Sort by relevance"
 msgstr "関連性でソート"
 
 #. Sort by title label
-#: src/components/PageSearch/index.jsx:55
+#: src/components/PageSearch/index.jsx:64
 msgid "Sort by title"
 msgstr "タイトル順"
 

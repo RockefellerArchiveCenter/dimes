@@ -106,14 +106,6 @@ msgstr "{hitCount, plural, one {contenuto digitali} other {contenuti digitali}}"
 msgid "{hitCount, plural, one {match} other {matches}}"
 msgstr "{hitCount, plural, one {corrispondenze} other {corrispondenzi}}"
 
-#. Search Results header
-#. placeholder {0}: params.query
-#. placeholder {1}: `“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`
-#. placeholder {2}: `“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`
-#: src/components/PageSearch/index.jsx:212
-msgid "{inProgress, select, true {Searching} other {{0, select, false {No search query entered} other {{resultsCount, plural, =0 {Sorry, there are no search results for {1}} other {Search Results for {2}}}}}}}"
-msgstr "{inProgress, select, true {Ricerca} other {{0, select, false {Nessuna query di ricerca inserita} other {{resultsCount, plural, =0 {Siamo Spiacente, ricerca {1} non ha prodotto risultati} other {Risultati di ricerca per {2}}}}}}}"
-
 #. Label for Context Switcher
 #: src/components/ContextSwitcher/index.jsx:12
 msgid "{isContentShown, select, true {Collection Details} other {Collection Content}}"
@@ -764,6 +756,11 @@ msgstr "Non sono stati selezionati articoli da inviare."
 msgid "No saved items."
 msgstr "Nessun elemento salvato."
 
+#. Search results header with no search term
+#: src/components/PageSearch/index.jsx:218
+msgid "No search query entered"
+msgstr "Nessuna query di ricerca inserita"
+
 #. Occupations property
 #: src/components/PageAgent/index.jsx:202
 msgid "Occupations"
@@ -972,19 +969,26 @@ msgstr "Cerca nelle nostre collezioni.Trova persone e organizzazioni.Accedi ai c
 #. Search Results title
 #. Search Results title
 #: src/components/PageSearch/__tests__/PageSearch.test.jsx:52
-#: src/components/PageSearch/index.jsx:40
+#: src/components/PageSearch/index.jsx:49
 msgid "Search Results"
 msgstr "Risultati"
 
-#. Search Results for Test
+#. Search results header with results
+#. Search results header with results
 #: src/components/PageSearch/__tests__/PageSearch.test.jsx:47
-msgid "Search Results for"
-msgstr "Risultati per"
+#: src/components/PageSearch/index.jsx:227
+msgid "Search Results for “{query}”"
+msgstr "Risultati di ricerca per “{query}”"
 
 #. Placeholder text for search textbox
 #: src/components/SearchForm/index.jsx:64
 msgid "Search..."
 msgstr "Cerca..."
+
+#. Search results header while searching
+#: src/components/PageSearch/index.jsx:213
+msgid "Searching"
+msgstr "Ricerca"
 
 #. Holiday Schedule message
 #: src/components/PrimaryLink/index.jsx:42
@@ -1079,23 +1083,28 @@ msgstr "Siamo spiacenti, il nostro sistema non è in grado di elaborare le richi
 msgid "Sorry, the requested page was not found!"
 msgstr "Siamo Spiacente, la pagina richiesta non è stata trovata!"
 
+#. Search results header with no results
+#: src/components/PageSearch/index.jsx:223
+msgid "Sorry, there are no search results for “{query}”"
+msgstr "Siamo Spiacente, ricerca “{query}” non ha prodotto risultati"
+
 #. Name for sort results input
 #: src/components/PageSearch/index.jsx:262
 msgid "sort"
 msgstr "ordina"
 
 #. Sort by creator name label
-#: src/components/PageSearch/index.jsx:61
+#: src/components/PageSearch/index.jsx:70
 msgid "Sort by creator name"
 msgstr "Ordina per soggetto produttore"
 
 #. Sort by relevance label
-#: src/components/PageSearch/index.jsx:49
+#: src/components/PageSearch/index.jsx:58
 msgid "Sort by relevance"
 msgstr "Ordina per rilevanza"
 
 #. Sort by title label
-#: src/components/PageSearch/index.jsx:55
+#: src/components/PageSearch/index.jsx:64
 msgid "Sort by title"
 msgstr "Ordina per titolo"
 
