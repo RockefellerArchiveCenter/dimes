@@ -4,7 +4,6 @@ import axios from 'axios'
 import { useNavigate, useLocation, useParams } from 'react-router'
 import queryString from 'query-string'
 import classnames from 'classnames'
-import { Helmet } from 'react-helmet'
 import PageBackendError from '../PageBackendError'
 import ContextSwitcher from '../ContextSwitcher'
 import Minimap from '../Minimap'
@@ -14,7 +13,8 @@ import { t } from '@lingui/core/macro'
 import RecordsContent from '../RecordsContent'
 import RecordsDetail from '../RecordsDetail'
 import PageNotFound from '../PageNotFound'
-import { appendParams, firePageViewEvent, formatBytes } from '../Helpers'
+import { appendParams, formatBytes } from '../Helpers'
+import { usePageView } from '../Hooks'
 
 const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
 
@@ -43,6 +43,9 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
   const { id, type } = useParams()
   const { search } = useLocation()
   const pageSize = 5
+  const hasBackendError = !!Object.keys(backendError).length
+
+  usePageView(found && !hasBackendError ? item.title : null)
 
   /** Constructs a preExpanded list based on an item's ancestors */
   const constructPreExpanded = (ancestors, list) => {
@@ -209,16 +212,12 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
   if (!found) {
     return (<PageNotFound />)
   }
-  if (!!Object.keys(backendError).length) {
+  if (hasBackendError) {
     return (<PageBackendError error={backendError} />)
   }
   return (
     <React.Fragment>
       <LiveMessage message={updateMessage} aria-live='polite' />
-      <Helmet
-        onChangeClientState={(newState) => firePageViewEvent(newState.title)} >
-        <title>{ item.title }</title>
-      </Helmet>
       <main id='main' className='container--full-width'>
         <nav aria-label="Collection page">
           <ContextSwitcher

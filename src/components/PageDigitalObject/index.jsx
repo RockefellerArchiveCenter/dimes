@@ -7,12 +7,11 @@ import {
 import { t } from '@lingui/core/macro'
 import { Trans } from '@lingui/react/macro'
 import { useParams } from 'react-router'
-import { Helmet } from 'react-helmet'
 import MaterialIcon from '../MaterialIcon'
 import { Dropdown, DropdownItem } from '../Dropdown';
 import { I18nApp } from '../i18n'
 import Viewer from '../Viewer'
-import { firePageViewEvent } from '../Helpers'
+import { usePageView } from '../Hooks'
 import './styles.scss'
 
 
@@ -22,6 +21,8 @@ const PageDigitalObject = ({isMobile}) => {
   const [manifestUrl, setManifestUrl] = useState("")
   const [downloadUrl, setDownloadUrl] = useState("")
   const { id, type } = useParams()
+
+  usePageView(itemTitle)
 
   /** Fetches and sets item title */
   useEffect(() => {
@@ -191,10 +192,6 @@ const PageDigitalObject = ({isMobile}) => {
 
   return (
     <>
-      <Helmet
-        onChangeClientState={(newState) => firePageViewEvent(newState.title)} >
-        <title>{ itemTitle }</title>
-      </Helmet>
       <div id='main' className='viewer'>
         <Viewer config={configs} plugins={[ViewerNavBarPlugin]} />
       </div>

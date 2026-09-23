@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useLocation, useParams } from 'react-router'
 import queryString from 'query-string'
-import { Helmet } from 'react-helmet'
 import PageBackendError from '../PageBackendError'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -11,7 +10,8 @@ import { AgentAttributeSkeleton, AgentRelatedCollectionsSkeleton } from '../Load
 import CardList from '../Card'
 import AgentAttributeList from '../AgentAttribute'
 import '../Button/styles.scss'
-import { buildHref, firePageViewEvent } from '../Helpers'
+import { buildHref } from '../Helpers'
+import { usePageView } from '../Hooks'
 import './styles.scss'
 import { t, select } from '@lingui/core/macro'
 import { Trans, Select } from '@lingui/react/macro'
@@ -89,6 +89,9 @@ const PageAgent = () => {
   const [params, setParams] = useState({})
   const { id } = useParams()
   const { search } = useLocation()
+  const hasBackendError = !!Object.keys(backendError).length
+
+  usePageView(found && !hasBackendError ? agent.title : null)
 
   /** Fetches data about collections associated with the agent from the RAC API */
   const fetchCollections = ({ title }) => {
@@ -243,15 +246,11 @@ const PageAgent = () => {
   if (!found) {
     return (<PageNotFound />)
   }
-  if (!!Object.keys(backendError).length) {
+  if (hasBackendError) {
     return (<PageBackendError error={backendError} />)
   }
   return (
     <React.Fragment>
-      <Helmet
-        onChangeClientState={(newState) => firePageViewEvent(newState.title)} >
-        <title>{ agent.title }</title>
-      </Helmet>
       <div className='container--full-width'>
         <div className='agent__wrapper'>
           <nav className="mt-30" aria-label="Back to search">

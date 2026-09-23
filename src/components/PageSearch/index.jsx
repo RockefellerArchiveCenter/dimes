@@ -4,7 +4,6 @@ import classnames from 'classnames'
 import queryString from 'query-string'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import { Helmet } from 'react-helmet'
 import { useNavigate, useLocation } from 'react-router'
 import PageBackendError from '../PageBackendError'
 import Button from '../Button'
@@ -17,7 +16,8 @@ import { Plural, Select, Trans } from '@lingui/react/macro'
 import SearchForm from '../SearchForm'
 import SearchNotFound from '../SearchNotFound'
 import CardList from '../Card'
-import { appendParams, firePageViewEvent } from '../Helpers'
+import { appendParams } from '../Helpers'
+import { usePageView } from '../Hooks'
 import './styles.scss'
 
 const PageSearch = () => {
@@ -36,6 +36,14 @@ const PageSearch = () => {
   const pageSize = 40
   const { pathname, search } = useLocation()
   const navigate = useNavigate()
+  const hasBackendError = !!Object.keys(backendError).length
+  const pageTitle = t({
+    comment: 'Search Results title',
+    message: 'Search Results'
+  })
+
+  usePageView(hasBackendError ? null : pageTitle)
+
   const sortOptions = [
     {
       value: '', label: t({
@@ -185,17 +193,11 @@ const PageSearch = () => {
     setFacetIsOpen(!facetIsOpen)
   }
 
-  if (!!Object.keys(backendError).length) {
+  if (hasBackendError) {
     return <PageBackendError error={backendError} />
   }
   return (
     <React.Fragment>
-      <Trans comment='Search Results title'>
-        <Helmet
-          onChangeClientState={(newState) => firePageViewEvent(newState.title)} >
-          <title>Search Results</title>
-        </Helmet>
-      </Trans>
       <div className='container--full-width'>
         <div className='search-bar'>
           <SearchForm
