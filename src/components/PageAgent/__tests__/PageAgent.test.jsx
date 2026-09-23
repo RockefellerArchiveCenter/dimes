@@ -9,6 +9,10 @@ import { collections } from '../../../__fixtures__/agents'
 
 vi.mock('axios')
 
+beforeEach(() => {
+  window._mtm = []
+})
+
 it('renders props correctly', async () => {
   axios.get.mockImplementation((url) => {
     if (url.includes('agents')) {
@@ -36,4 +40,11 @@ it('renders props correctly', async () => {
 
   expect(title.textContent).toBe('Rockefeller, Nelson A. (Nelson Aldrich)')
   expect(children.children.length).toBe(8)
+
+  expect(document.title).toBe(agent.title)
+  expect(window._mtm).toEqual([{
+    event: 'reactPageViewEvent',
+    pageTitle: agent.title,
+    pageUrl: window.location.href,
+  }])
 })

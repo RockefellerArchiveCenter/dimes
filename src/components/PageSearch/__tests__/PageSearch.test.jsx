@@ -10,6 +10,10 @@ import { titleSuggest } from '../../../__fixtures__/suggest'
 
 vi.mock('axios')
 
+beforeEach(() => {
+  window._mtm = []
+})
+
 it('renders props correctly', async () => {
   let container = document.createElement('div')
   container.setAttribute('id', 'root')
@@ -44,5 +48,17 @@ it('renders props correctly', async () => {
     comment: 'Search Results for Test',
     message: 'Search Results for'
   }) + ' “banana”')
+
+  const pageTitle = t({
+    comment: 'Search Results title',
+    message: 'Search Results'
+  })
+
+  expect(document.title).toBe(pageTitle)
+  expect(window._mtm).toEqual([{
+    event: 'reactPageViewEvent',
+    pageTitle: pageTitle,
+    pageUrl: window.location.href,
+  }])
 
 })
