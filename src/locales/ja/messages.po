@@ -51,12 +51,12 @@ msgstr "{0, select, rac {出典: Rockefeller Archive Center} other {出典: {sou
 
 #. Current Results shown of total results
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:237
+#: src/components/PageSearch/index.jsx:239
 msgid "{0, select, true {{startItem} result} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem} result} other {{startItem}-{endItem} の {resultsCount} 結果}}"
 
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:292
+#: src/components/PageSearch/index.jsx:294
 msgid "{0, select, true {{startItem}} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem}} other {{startItem}-{endItem} の {resultsCount} 結果}}"
 
@@ -81,12 +81,12 @@ msgid "{0, select, true {View} other {View Online}}"
 msgstr "{0, select, true {観る} other {オンラインで見る}}"
 
 #. Label for the end of the item
-#: src/components/PageAgent/index.jsx:145
+#: src/components/PageAgent/index.jsx:148
 msgid "{agentType, select, organization {Date Disbanded} other {Date of Death}}"
 msgstr "{agentType, select, organization {解散日} other {死亡日}}"
 
 #. Label for the start of the item
-#: src/components/PageAgent/index.jsx:141
+#: src/components/PageAgent/index.jsx:144
 msgid "{agentType, select, organization {Date Established} other {Date of Birth}}"
 msgstr "{agentType, select, organization {設立日} other {生年月日}}"
 
@@ -110,7 +110,7 @@ msgstr "{hitCount, plural, one {マッチ} other {マッチ}}"
 #. placeholder {0}: params.query
 #. placeholder {1}: `“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`
 #. placeholder {2}: `“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`
-#: src/components/PageSearch/index.jsx:210
+#: src/components/PageSearch/index.jsx:212
 msgid "{inProgress, select, true {Searching} other {{0, select, false {No search query entered} other {{resultsCount, plural, =0 {Sorry, there are no search results for {1}} other {Search Results for {2}}}}}}}"
 msgstr "{inProgress, select, true {検索中} other {{0, select, false {検索クエリが入力されていません} other {{resultsCount, plural, =0 {申し訳ありませんが、{1}の検索結果はありません} other {{2}の検索結果}}}}}}"
 
@@ -150,29 +150,14 @@ msgid "<0><1/> Schedule a Visit</0>"
 msgstr "<0><1/> 来店予約</0>"
 
 #. Go back to Item details for digital object
-#: src/components/PageDigitalObject/index.jsx:174
+#: src/components/PageDigitalObject/index.jsx:175
 msgid "<0><1/>Back to Item Details</0>"
 msgstr "<0><1/>アイテム詳細に戻る</0>"
 
-#. Social Icons Titles
-#: src/components/SocialIcons/index.jsx:6
-msgid "<0><1><2><3><4>Facebook Logo</4><5/></3></2></1><6><7><8><9>Instagram Logo</9><10/></8></7></6><11><12><13><14>LinkedIn Logo</14><15/></13></12></11><16><17><18><19>YouTube Logo</19><20/></18></17></16></0>"
-msgstr "<0><1><2><3><4>Facebookのロゴ</4><5/></3></2></1><6><7><8><9>Instagramロゴ</9><10/></8></7></6><11><12><13><14>LinkedInロゴ</14><15/></13></12></11><16><17><18><19>YouTubeロゴ</19><20/></18></17></16></0>"
-
-#. Page Title for user's list
-#: src/components/PageMyList/index.jsx:288
-msgid "<0><1>DIMES: My List</1></0>"
-msgstr "<0><1>DIMESマイリスト</1></0>"
-
-#. Page Home
-#: src/components/PageHome/index.jsx:9
-msgid "<0><1>DIMES: Online Collections and Catalog of Rockefeller Archive Center</1></0><2><3/><4/></2>"
-msgstr "<0><1>DIMESロックフェラー・アーカイブ・センターのオンライン・コレクションとカタログ</1></0><2><3/><4/></2>"
-
 #. Page Not Found
-#: src/components/PageNotFound/index.jsx:9
-msgid "<0><1>Page Not Found</1></0><2><3><4/></3><5>Sorry, the requested page was not found!</5><6>Try <7>a search</7> to find what you're looking for.</6></2>"
-msgstr "<0><1>ページが見つかりません</1></0><2><3><4/></3><5>リクエストされたページは見つかりませんでした！</5><6><7>検索して</7>お探しのものを見つけてください。</6></2>"
+#: src/components/PageNotFound/index.jsx:16
+msgid "<0><1><2/></1><3>Sorry, the requested page was not found!</3><4>Try <5>a search</5> to find what you're looking for.</4></0>"
+msgstr "<0><1><2/></1><3>リクエストされたページは見つかりませんでした！</3><4><5>検索して</5>お探しのものを見つけてください。</4></0>"
 
 #. Page Backend Error
 #. placeholder {0}: error.config.url
@@ -180,14 +165,14 @@ msgstr "<0><1>ページが見つかりません</1></0><2><3><4/></3><5>リク�
 #. placeholder {2}: error.message
 #. placeholder {3}: error.response.data ? <p className='backend-error__message'>{JSON.stringify(error.response.data)}</p> : null
 #. placeholder {4}: error.config.data ? <> <p className='backend-error__header mt-18'>Request data:</p> <p className='backend-error__message'>{error.config.data}</p> </> : null
-#: src/components/PageBackendError/index.jsx:9
-msgid "<0><1>Page Not Found</1></0><2><3><4/></3><5>There was an error fetching data.</5><6>The request to {0} failed.</6><7>To report this problem, send us an email at <8>archive@rockarch.org</8>.</7><9>Error message:</9><10>{1}: {2}</10>{3}{4}</2>"
-msgstr "<0><1>ページが見つかりません</1></0><2><3><4/></3><5>データの取得にエラーが発生しました。</5><6>{0} へのリクエストは失敗しました。</6><7>この問題を報告するには、<8>archive@rockarch.org</8> までメールをお送りください。</7><9>エラーメッセージ</9><10>{1}:{2}</10>{3}{4}</2>"
+#: src/components/PageBackendError/index.jsx:15
+msgid "<0><1><2/></1><3>There was an error fetching data.</3><4>The request to {0} failed.</4><5>To report this problem, send us an email at <6>archive@rockarch.org</6>.</5><7>Error message:</7><8>{1}: {2}</8>{3}{4}</0>"
+msgstr "<0><1><2/></1><3>データの取得にエラーが発生しました。</3><4>{0} へのリクエストは失敗しました。</4><5>この問題を報告するには、<6>archive@rockarch.org</6> までメールをお送りください。</5><7>エラーメッセージ</7><8>{1}:{2}</8>{3}{4}</0>"
 
-#. Search Results title
-#: src/components/PageSearch/index.jsx:193
-msgid "<0><1>Search Results</1></0>"
-msgstr "<0><1>検索結果</1></0>"
+#. Social Icons Titles
+#: src/components/SocialIcons/index.jsx:6
+msgid "<0><1><2><3><4>Facebook Logo</4><5/></3></2></1><6><7><8><9>Instagram Logo</9><10/></8></7></6><11><12><13><14>LinkedIn Logo</14><15/></13></12></11><16><17><18><19>YouTube Logo</19><20/></18></17></16></0>"
+msgstr "<0><1><2><3><4>Facebookのロゴ</4><5/></3></2></1><6><7><8><9>Instagramロゴ</9><10/></8></7></6><11><12><13><14>LinkedInロゴ</14><15/></13></12></11><16><17><18><19>YouTubeロゴ</19><20/></18></17></16></0>"
 
 #. Confirmation message when citation copied
 #: src/components/RecordsDetail/index.jsx:184
@@ -226,7 +211,7 @@ msgid "<0>Jump to a part of the collection containing matches by clicking on an 
 msgstr "<0>アクティブなマスをクリックすることで、マッチを含むコレクションの一部にジャンプします。</0><1>ミニマップ図では、各マスがコレクションの一部を表しています。色のついた四角は、検索に1つ以上マッチする部分を表しています。</1>"
 
 #. Back to search button
-#: src/components/PageAgent/index.jsx:259
+#: src/components/PageAgent/index.jsx:258
 msgid "<0>keyboard_arrow_left</0>Back to Search"
 msgstr "<0>keyboard_arrow_left</0>検索に戻る"
 
@@ -274,7 +259,7 @@ msgid "<0>Submit request</0>"
 msgstr "<0>リクエストを送信</0>"
 
 #. summary message
-#: src/components/PageAgent/index.jsx:273
+#: src/components/PageAgent/index.jsx:272
 msgid "<0>Summary</0>"
 msgstr "<0>概要</0>"
 
@@ -288,7 +273,7 @@ msgstr "<0>ミニマップは、アクティブな四角をクリックするこ
 #. placeholder {1}: err.code
 #. placeholder {2}: err.message
 #. placeholder {3}: err.config.data
-#: src/components/PageMyList/index.jsx:131
+#: src/components/PageMyList/index.jsx:137
 msgid "<0>There was an error submitting your request.</0><1>The request to {0} failed with the message {1}: {2}.</1><2>{3}</2>"
 msgstr "<0>リクエストの送信にエラーが発生しました。</0><1>{0} へのリクエストは{1}:{2} というメッセージで失敗しました。</1><2>{3}</2>"
 
@@ -344,7 +329,7 @@ msgid "Add to List"
 msgstr "リストに追加"
 
 #. Message while page loads for email submissions
-#: src/components/PageMyList/index.jsx:142
+#: src/components/PageMyList/index.jsx:148
 msgid "Adding items to your message"
 msgstr "メッセージに項目を追加する"
 
@@ -453,7 +438,7 @@ msgid "Creator"
 msgstr "作成者"
 
 #. Message shown for downloading high-res images in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:165
+#: src/components/PageDigitalObject/index.jsx:166
 msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "現在のページ - JPEG2000 {pixelDimensions}"
 
@@ -469,9 +454,19 @@ msgstr "すべての項目の選択を解除する"
 
 #. Update message for selected record
 #. placeholder {0}: res.data.title
-#: src/components/PageRecords/index.jsx:118
+#: src/components/PageRecords/index.jsx:121
 msgid "Details under heading 1 have been updated to describe the selected records titled {0}"
 msgstr "見出し1の詳細が更新され、{0}と題された選択されたレコードが記述されている。"
+
+#. Page Title for user's list
+#: src/components/PageMyList/index.jsx:35
+msgid "DIMES: My List"
+msgstr "DIMESマイリスト"
+
+#. Page Home
+#: src/components/PageHome/index.jsx:9
+msgid "DIMES: Online Collections and Catalog of Rockefeller Archive Center"
+msgstr "DIMESロックフェラー・アーカイブ・センターのオンライン・コレクションとカタログ"
 
 #. Title displayed within the Header
 #: src/components/Header/index.jsx:11
@@ -479,7 +474,7 @@ msgid "dimes.rockarch.org"
 msgstr "dimes.rockarch.org"
 
 #. Message shown on download dropdown button
-#: src/components/PageDigitalObject/index.jsx:138
+#: src/components/PageDigitalObject/index.jsx:139
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -512,7 +507,7 @@ msgid "Email List"
 msgstr "メールリスト"
 
 #. Title displayed after emailing selected items
-#: src/components/PageMyList/index.jsx:148
+#: src/components/PageMyList/index.jsx:154
 msgid "Email Sent"
 msgstr "送信されたメール"
 
@@ -532,13 +527,13 @@ msgid "Enter the date of your research visit (mm/dd/yyyy)"
 msgstr "研究訪問の日付（mm/dd/yyyy）を入力してください。"
 
 #. Message shown for downloading PDF in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:150
+#: src/components/PageDigitalObject/index.jsx:151
 msgid "Entire Item - PDF"
 msgstr "アイテム全体 - PDF"
 
 #. Title displayed when error occurs while submitting request
-#: src/components/PageMyList/index.jsx:128
-#: src/components/PageMyList/index.jsx:159
+#: src/components/PageMyList/index.jsx:134
+#: src/components/PageMyList/index.jsx:165
 msgid "Error submitting request"
 msgstr "リクエスト送信エラー"
 
@@ -548,7 +543,7 @@ msgid "Fax: (914) 631-6017"
 msgstr "ファックス：(914) 631-6017"
 
 #. Label for Filters button
-#: src/components/PageSearch/index.jsx:250
+#: src/components/PageSearch/index.jsx:252
 msgid "Filters"
 msgstr "フィルター"
 
@@ -573,7 +568,7 @@ msgid "Found in:"
 msgstr "右資料内："
 
 #. Founded by property
-#: src/components/PageAgent/index.jsx:202
+#: src/components/PageAgent/index.jsx:205
 msgid "Founded by"
 msgstr "設立者"
 
@@ -615,7 +610,7 @@ msgid "https://raccess.rockarch.org"
 msgstr "https://raccess.rockarch.org"
 
 #. Aeon access point
-#: src/components/PageMyList/index.jsx:109
+#: src/components/PageMyList/index.jsx:115
 msgid "https://raccess.rockarch.org/aeon.dll"
 msgstr "https://raccess.rockarch.org/aeon.dll"
 
@@ -697,14 +692,14 @@ msgid "Licensing for descriptive metadata"
 msgstr "記述的メタデータのライセンス"
 
 #. Location property
-#: src/components/PageAgent/index.jsx:203
+#: src/components/PageAgent/index.jsx:206
 msgid "Location of Headquarters"
 msgstr "所在地"
 
 #. Company Email link
 #: src/components/ModalMyList/index.jsx:164
 #: src/components/ModalMyList/index.jsx:510
-#: src/components/PageBackendError/index.jsx:18
+#: src/components/PageBackendError/index.jsx:20
 #: src/components/PrimaryLink/index.jsx:25
 msgid "mailto:archive@rockarch.org"
 msgstr "mailto:archive@rockarch.org"
@@ -753,7 +748,7 @@ msgid "My List"
 msgstr "マイリスト"
 
 #. Nicknames property
-#: src/components/PageAgent/index.jsx:204
+#: src/components/PageAgent/index.jsx:207
 msgid "Nicknames"
 msgstr "ニックネーム"
 
@@ -773,7 +768,7 @@ msgid "No saved items."
 msgstr "アイテムは保存されていません。"
 
 #. Occupations property
-#: src/components/PageAgent/index.jsx:199
+#: src/components/PageAgent/index.jsx:202
 msgid "Occupations"
 msgstr "職業"
 
@@ -794,6 +789,13 @@ msgstr "新しいウィンドウで開きます"
 msgid "Organizations"
 msgstr "組織"
 
+#. Page Backend Error title
+#. Page Not Found
+#: src/components/PageBackendError/index.jsx:9
+#: src/components/PageNotFound/index.jsx:10
+msgid "Page Not Found"
+msgstr "ページが見つかりません"
+
 #. Label for People category
 #: src/components/SearchForm/index.jsx:38
 msgid "People"
@@ -805,7 +807,7 @@ msgid "Phone: (914) 366-6300"
 msgstr "電話： (914) 366-6300"
 
 #. Place of birth property
-#: src/components/PageAgent/index.jsx:201
+#: src/components/PageAgent/index.jsx:204
 msgid "Place of Birth"
 msgstr "出生地"
 
@@ -844,7 +846,7 @@ msgid "Please select a reading room"
 msgstr "閲覧室を選択してください"
 
 #. Positions held property
-#: src/components/PageAgent/index.jsx:200
+#: src/components/PageAgent/index.jsx:203
 msgid "Positions Held"
 msgstr "役職"
 
@@ -854,12 +856,12 @@ msgid "Preparing items"
 msgstr "アイテムの準備"
 
 #. Message while page loads for Aeon submissions
-#: src/components/PageMyList/index.jsx:102
+#: src/components/PageMyList/index.jsx:108
 msgid "Preparing items for your request"
 msgstr "ご依頼品の準備"
 
 #. Page Title for sending an Aeon request
-#: src/components/PageMyList/index.jsx:98
+#: src/components/PageMyList/index.jsx:104
 msgid "Preparing Request Data"
 msgstr "リクエストデータの準備"
 
@@ -963,12 +965,19 @@ msgid "Search Our Collections.<0/>Discover People and Organizations.<1/>Access D
 msgstr "コレクションを検索.<0/>人や組織を調査.<1/>デジタルコンテンツへのアクセス."
 
 #. Page Home Test
-#: src/components/PageHome/__tests__/PageHome.test.jsx:12
+#: src/components/PageHome/__tests__/PageHome.test.jsx:16
 msgid "Search Our Collections.Discover People and Organizations.Access Digital Content."
 msgstr "コレクションを検索する.人と組織を発見する.デジタルコンテンツにアクセスする."
 
+#. Search Results title
+#. Search Results title
+#: src/components/PageSearch/__tests__/PageSearch.test.jsx:52
+#: src/components/PageSearch/index.jsx:40
+msgid "Search Results"
+msgstr "検索結果"
+
 #. Search Results for Test
-#: src/components/PageSearch/__tests__/PageSearch.test.jsx:43
+#: src/components/PageSearch/__tests__/PageSearch.test.jsx:47
 msgid "Search Results for"
 msgstr "検索結果"
 
@@ -993,7 +1002,7 @@ msgstr "読書室の場所を選択"
 
 #. Message displayed after emailing selected items
 #. placeholder {0}: submitted.email
-#: src/components/PageMyList/index.jsx:152
+#: src/components/PageMyList/index.jsx:158
 msgid "Selected items in your list have been emailed to {0}"
 msgstr "リスト内の選択されたアイテムが{0}にEメールで送信されました。"
 
@@ -1015,7 +1024,7 @@ msgid "Send List"
 msgstr "リストの送信"
 
 #. Page Title for sending an email
-#: src/components/PageMyList/index.jsx:138
+#: src/components/PageMyList/index.jsx:144
 msgid "Sending Email"
 msgstr "このテキストは、送信メールの末尾に配置されます"
 
@@ -1056,7 +1065,7 @@ msgid "Skip to main content"
 msgstr "コンテンツへスキップ"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:183
+#: src/components/PageAgent/index.jsx:186
 msgid "Social Networks and Archival Context"
 msgstr "社会的ネットワークとアーカイブの文脈"
 
@@ -1066,32 +1075,32 @@ msgid "Sorry, our system is unable to process requests right now. We're working 
 msgstr "申し訳ございません。現在、システムでリクエストを処理することができません。現在修正中です！後でもう一度お試しください。"
 
 #. Page Not Found Test
-#: src/components/PageNotFound/__tests__/PageNotFound.test.jsx:12
+#: src/components/PageNotFound/__tests__/PageNotFound.test.jsx:16
 msgid "Sorry, the requested page was not found!"
 msgstr "リクエストされたページは見つかりませんでした！"
 
 #. Name for sort results input
-#: src/components/PageSearch/index.jsx:260
+#: src/components/PageSearch/index.jsx:262
 msgid "sort"
 msgstr "ソート"
 
 #. Sort by creator name label
-#: src/components/PageSearch/index.jsx:53
+#: src/components/PageSearch/index.jsx:61
 msgid "Sort by creator name"
 msgstr "クリエイター名順"
 
 #. Sort by relevance label
-#: src/components/PageSearch/index.jsx:41
+#: src/components/PageSearch/index.jsx:49
 msgid "Sort by relevance"
 msgstr "関連性でソート"
 
 #. Sort by title label
-#: src/components/PageSearch/index.jsx:47
+#: src/components/PageSearch/index.jsx:55
 msgid "Sort by title"
 msgstr "タイトル順"
 
 #. Label for sort results input
-#: src/components/PageSearch/index.jsx:265
+#: src/components/PageSearch/index.jsx:267
 msgid "Sort search results"
 msgstr "検索結果の並べ替え"
 
@@ -1131,7 +1140,7 @@ msgstr "ロックフェラー・アーカイブ・センターのオンライン
 
 #. Message displayed when error occurs while submitting request
 #. placeholder {0}: err.toString()
-#: src/components/PageMyList/index.jsx:163
+#: src/components/PageMyList/index.jsx:169
 msgid "There was an error submitting your request. The error message was: {0}"
 msgstr "リクエストの送信にエラーが発生しました。エラーメッセージは{0}"
 
@@ -1141,7 +1150,7 @@ msgid "View minimap"
 msgstr "ミニマップを見る"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:181
+#: src/components/PageAgent/index.jsx:184
 msgid "Virtual International Authority File"
 msgstr "仮想国際機関ファイル"
 
@@ -1153,6 +1162,6 @@ msgid "We cannot process your request unless you agree to pay the costs of repro
 msgstr "お客様が複製費用の支払いに同意されない限り、当社はお客様のご依頼を処理することはできません。"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:182
+#: src/components/PageAgent/index.jsx:185
 msgid "WorldCat Identities"
 msgstr "WorldCat Identities"
