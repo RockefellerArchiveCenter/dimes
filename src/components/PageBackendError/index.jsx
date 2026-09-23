@@ -1,4 +1,5 @@
 import MaterialIcon from '../MaterialIcon'
+import { withSiteTitle } from '../Helpers'
 import { usePageView } from '../Hooks'
 import './styles.scss'
 import { t } from '@lingui/core/macro'
@@ -6,10 +7,10 @@ import { Trans } from '@lingui/react/macro'
 
 const PageBackendError = ({error}) => {
 
-  usePageView(t({
+  usePageView(withSiteTitle(t({
     comment: 'Page Backend Error title',
-    message: 'Page Not Found'
-  }))
+    message: 'Error'
+  })))
 
   return (
     <Trans comment='Page Backend Error'>

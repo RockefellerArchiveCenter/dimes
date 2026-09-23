@@ -11,6 +11,7 @@ import MaterialIcon from '../MaterialIcon'
 import { Dropdown, DropdownItem } from '../Dropdown';
 import { I18nApp } from '../i18n'
 import Viewer from '../Viewer'
+import { withSiteTitle } from '../Helpers'
 import { usePageView } from '../Hooks'
 import './styles.scss'
 
@@ -22,7 +23,10 @@ const PageDigitalObject = ({isMobile}) => {
   const [downloadUrl, setDownloadUrl] = useState("")
   const { id, type } = useParams()
 
-  usePageView(itemTitle)
+  usePageView(withSiteTitle(itemTitle && `${itemTitle} - ${t({
+    comment: 'Digital object viewer page title',
+    message: 'View Online'
+  })}`))
 
   /** Fetches and sets item title */
   useEffect(() => {

@@ -10,6 +10,7 @@
   import MyListSidebar from '../MyListSidebar'
   import { SavedItemList } from '../SavedItem'
   import { fetchMyList } from '../MyListHelpers'
+  import { withSiteTitle } from '../Helpers'
   import { usePageView } from '../Hooks'
   import { t } from '@lingui/core/macro'
   import { Trans } from '@lingui/react/macro'
@@ -32,10 +33,10 @@
     const [confirmModalTitle, setConfirmModalTitle] = useState('')
     const [confirmModalMessage, setConfirmModalMessage] = useState('')
     const hasBackendError = !!Object.keys(backendError).length
-    const pageTitle = t({
-      comment: "Page Title for user's list",
-      message: 'DIMES: My List'
-    })
+    const pageTitle = withSiteTitle(t({
+      comment: "Page title for user's list",
+      message: 'My List'
+    }))
 
     usePageView(hasBackendError ? null : pageTitle)
 

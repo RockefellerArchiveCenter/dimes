@@ -96,3 +96,7 @@ export const truncateString = (text, maxLength) => {
     return null
   }
 }
+
+/** Composes a page title as [page] - [site] */
+export const SITE_TITLE = 'DIMES'
+export const withSiteTitle = page => page ? `${page} - ${SITE_TITLE}` : null

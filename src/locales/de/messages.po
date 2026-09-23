@@ -140,7 +140,7 @@ msgid "<0/>Back to Search"
 msgstr "<0/>Zurück zur Suche"
 
 #. New Search button
-#: src/components/PageMyList/index.jsx:297
+#: src/components/PageMyList/index.jsx:298
 msgid "<0/>Start a New Search"
 msgstr "<0/>Eine neue Suche starten"
 
@@ -150,12 +150,12 @@ msgid "<0><1/> Schedule a Visit</0>"
 msgstr "<0><1/> Besuch vereinbaren</0>"
 
 #. Go back to Item details for digital object
-#: src/components/PageDigitalObject/index.jsx:175
+#: src/components/PageDigitalObject/index.jsx:179
 msgid "<0><1/>Back to Item Details</0>"
 msgstr "<0><1/>Zurück zu den Trefferdetails</0>"
 
 #. Page Not Found
-#: src/components/PageNotFound/index.jsx:16
+#: src/components/PageNotFound/index.jsx:17
 msgid "<0><1><2/></1><3>Sorry, the requested page was not found!</3><4>Try <5>a search</5> to find what you're looking for.</4></0>"
 msgstr "<0><1><2/></1><3>Leider wurde die angeforderte Seite nicht gefunden!</3><4>Versuchen Sie <5>eine Suche</5>, um zu finden, was Sie suchen.</4></0>"
 
@@ -165,7 +165,7 @@ msgstr "<0><1><2/></1><3>Leider wurde die angeforderte Seite nicht gefunden!</3>
 #. placeholder {2}: error.message
 #. placeholder {3}: error.response.data ? <p className='backend-error__message'>{JSON.stringify(error.response.data)}</p> : null
 #. placeholder {4}: error.config.data ? <> <p className='backend-error__header mt-18'>Request data:</p> <p className='backend-error__message'>{error.config.data}</p> </> : null
-#: src/components/PageBackendError/index.jsx:15
+#: src/components/PageBackendError/index.jsx:16
 msgid "<0><1><2/></1><3>There was an error fetching data.</3><4>The request to {0} failed.</4><5>To report this problem, send us an email at <6>archive@rockarch.org</6>.</5><7>Error message:</7><8>{1}: {2}</8>{3}{4}</0>"
 msgstr "<0><1><2/></1><3>Es ist ein Fehler beim Abrufen von Daten aufgetreten.</3><4>Die Anfrage an {0} ist fehlgeschlagen.</4><5>Um dieses Problem zu melden, senden Sie uns eine E-Mail an <6>archive@rockarch.org.</6></5><7>Fehlermeldung:</7><8>{1}: {2}</8>{3}{4}</0>"
 
@@ -239,7 +239,7 @@ msgid "<0>More about this {agentType}</0>"
 msgstr "<0>Mehr zu dieser {agentType}</0>"
 
 #. Header for user's list
-#: src/components/PageMyList/index.jsx:303
+#: src/components/PageMyList/index.jsx:304
 msgid "<0>My List</0>"
 msgstr "<0>Meine Liste</0>"
 
@@ -273,7 +273,7 @@ msgstr "<0>Die Minimap ist eine neue Funktion, mit der Sie schnell zu den Treffe
 #. placeholder {1}: err.code
 #. placeholder {2}: err.message
 #. placeholder {3}: err.config.data
-#: src/components/PageMyList/index.jsx:137
+#: src/components/PageMyList/index.jsx:138
 msgid "<0>There was an error submitting your request.</0><1>The request to {0} failed with the message {1}: {2}.</1><2>{3}</2>"
 msgstr "<0>Bei der Übermittlung Ihrer Anfrage ist ein Fehler aufgetreten.</0><1>Die Anfrage an {0} schlug mit der Meldung {1}: {2} fehl.</1><2>{3}</2>"
 
@@ -329,7 +329,7 @@ msgid "Add to List"
 msgstr "Zur Liste hinzufügen"
 
 #. Message while page loads for email submissions
-#: src/components/PageMyList/index.jsx:148
+#: src/components/PageMyList/index.jsx:149
 msgid "Adding items to your message"
 msgstr "Hinzufügen von Elementen zu Ihrer Nachricht"
 
@@ -356,7 +356,7 @@ msgid "archive@rockarch.org"
 msgstr "archive@rockarch.org"
 
 #. Confirmation to delete all items from list
-#: src/components/PageMyList/index.jsx:374
+#: src/components/PageMyList/index.jsx:375
 msgid "Are you sure you want to remove all the items from your list?<0><1/><2/></0>"
 msgstr "Sind Sie sicher, dass Sie alle Einträge von Ihrer Liste entfernen möchten?<0><1/><2/></0>"
 
@@ -366,7 +366,7 @@ msgid "Bulk data download"
 msgstr "Bulk-Daten-Download"
 
 #. Title shown when request failed
-#: src/components/PageMyList/index.jsx:359
+#: src/components/PageMyList/index.jsx:360
 msgid "Can't Complete Request"
 msgstr "Anfrage kann nicht abgeschlossen werden"
 
@@ -423,7 +423,7 @@ msgid "Collections Related to {agentTitle}"
 msgstr "Verwandte Sammlungen {agentTitle}"
 
 #. Remove all confirmation title
-#: src/components/PageMyList/index.jsx:387
+#: src/components/PageMyList/index.jsx:388
 msgid "Confirm Remove All"
 msgstr "Bestätigen Alle entfernen"
 
@@ -438,7 +438,7 @@ msgid "Creator"
 msgstr "Urheber"
 
 #. Message shown for downloading high-res images in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:166
+#: src/components/PageDigitalObject/index.jsx:170
 msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "Aktuelle Seite - JPEG2000 {pixelDimensions}"
 
@@ -458,23 +458,13 @@ msgstr "Alle Elemente abwählen"
 msgid "Details under heading 1 have been updated to describe the selected records titled {0}"
 msgstr "Die Angaben in Rubrik 1 wurden aktualisiert, um die ausgewählten Datensätze mit dem Titel {0} zu beschreiben"
 
-#. Page Title for user's list
-#: src/components/PageMyList/index.jsx:35
-msgid "DIMES: My List"
-msgstr "DIMES: Meine Liste"
-
-#. Page Home
-#: src/components/PageHome/index.jsx:9
-msgid "DIMES: Online Collections and Catalog of Rockefeller Archive Center"
-msgstr "DIMES: Online-Sammlungen und Katalog des Rockefeller Archive Center"
-
 #. Title displayed within the Header
 #: src/components/Header/index.jsx:11
 msgid "dimes.rockarch.org"
 msgstr "dimes.rockarch.org"
 
 #. Message shown on download dropdown button
-#: src/components/PageDigitalObject/index.jsx:139
+#: src/components/PageDigitalObject/index.jsx:143
 msgid "Download"
 msgstr "Herunterladen"
 
@@ -507,7 +497,7 @@ msgid "Email List"
 msgstr "Liste per E-Mail versenden"
 
 #. Title displayed after emailing selected items
-#: src/components/PageMyList/index.jsx:154
+#: src/components/PageMyList/index.jsx:155
 msgid "Email Sent"
 msgstr "E-Mail Gesendet"
 
@@ -527,13 +517,18 @@ msgid "Enter the date of your research visit (mm/dd/yyyy)"
 msgstr "Geben Sie das Datum Ihres Forschungsaufenthalts an (mm/dd/yyyy)"
 
 #. Message shown for downloading PDF in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:151
+#: src/components/PageDigitalObject/index.jsx:155
 msgid "Entire Item - PDF"
 msgstr "Gesamter Artikel - PDF"
 
+#. Page Backend Error title
+#: src/components/PageBackendError/index.jsx:10
+msgid "Error"
+msgstr "Fehler"
+
 #. Title displayed when error occurs while submitting request
-#: src/components/PageMyList/index.jsx:134
-#: src/components/PageMyList/index.jsx:165
+#: src/components/PageMyList/index.jsx:135
+#: src/components/PageMyList/index.jsx:166
 msgid "Error submitting request"
 msgstr "Fehler beim Absenden der Anfrage"
 
@@ -610,7 +605,7 @@ msgid "https://raccess.rockarch.org"
 msgstr "https://raccess.rockarch.org"
 
 #. Aeon access point
-#: src/components/PageMyList/index.jsx:115
+#: src/components/PageMyList/index.jsx:116
 msgid "https://raccess.rockarch.org/aeon.dll"
 msgstr "https://raccess.rockarch.org/aeon.dll"
 
@@ -699,7 +694,7 @@ msgstr "Standort des Hauptsitzes"
 #. Company Email link
 #: src/components/ModalMyList/index.jsx:164
 #: src/components/ModalMyList/index.jsx:510
-#: src/components/PageBackendError/index.jsx:20
+#: src/components/PageBackendError/index.jsx:21
 #: src/components/PrimaryLink/index.jsx:25
 msgid "mailto:archive@rockarch.org"
 msgstr "mailto:archive@rockarch.org"
@@ -742,8 +737,10 @@ msgstr "Montag-Freitag<0/>9:30 Uhr bis 17:00 Uhr.<1/>"
 
 #. Message shown on button within Dropdown list
 #. Message shown on button within the Header
+#. Page title for user's list
 #: src/components/Dropdown/index.jsx:185
 #: src/components/Header/index.jsx:32
+#: src/components/PageMyList/index.jsx:36
 msgid "My List"
 msgstr "Meine Einträge"
 
@@ -772,6 +769,11 @@ msgstr "Keine gespeicherten Elemente."
 msgid "Occupations"
 msgstr "Belegungen"
 
+#. Page Home title
+#: src/components/PageHome/index.jsx:10
+msgid "Online Collections and Catalog of Rockefeller Archive Center"
+msgstr "Online-Sammlungen und Katalog des Rockefeller Archive Center"
+
 #. Tooltip for button
 #: src/components/Dropdown/index.jsx:115
 msgid "opens email"
@@ -789,10 +791,8 @@ msgstr "öffnet sich in einem neuen Fenster"
 msgid "Organizations"
 msgstr "Organisationen"
 
-#. Page Backend Error title
-#. Page Not Found
-#: src/components/PageBackendError/index.jsx:9
-#: src/components/PageNotFound/index.jsx:10
+#. Page Not Found title
+#: src/components/PageNotFound/index.jsx:11
 msgid "Page Not Found"
 msgstr "Seite nicht gefunden"
 
@@ -856,12 +856,12 @@ msgid "Preparing items"
 msgstr "Vorbereiten von Einträge"
 
 #. Message while page loads for Aeon submissions
-#: src/components/PageMyList/index.jsx:108
+#: src/components/PageMyList/index.jsx:109
 msgid "Preparing items for your request"
 msgstr "Vorbereiten von Einträge für Ihre Anfordern"
 
 #. Page Title for sending an Aeon request
-#: src/components/PageMyList/index.jsx:104
+#: src/components/PageMyList/index.jsx:105
 msgid "Preparing Request Data"
 msgstr "Anforderungsdaten vorbereiten"
 
@@ -1002,7 +1002,7 @@ msgstr "Standort des Lesesaals auswählen"
 
 #. Message displayed after emailing selected items
 #. placeholder {0}: submitted.email
-#: src/components/PageMyList/index.jsx:158
+#: src/components/PageMyList/index.jsx:159
 msgid "Selected items in your list have been emailed to {0}"
 msgstr "Ausgewählte Einträge in Ihrer Liste wurden per E-Mail an {0} gesendet"
 
@@ -1024,7 +1024,7 @@ msgid "Send List"
 msgstr "Liste Senden"
 
 #. Page Title for sending an email
-#: src/components/PageMyList/index.jsx:144
+#: src/components/PageMyList/index.jsx:145
 msgid "Sending Email"
 msgstr "Versenden von E-Mails"
 
@@ -1070,7 +1070,7 @@ msgid "Social Networks and Archival Context"
 msgstr "Soziale Netzwerke und archivarischer Kontext"
 
 #. Message shown when request failed
-#: src/components/PageMyList/index.jsx:355
+#: src/components/PageMyList/index.jsx:356
 msgid "Sorry, our system is unable to process requests right now. We're working to fix this! Please try again later."
 msgstr "Leider kann unser System im Moment keine Anfordern bearbeiten. Wir arbeiten an der Behebung des Problems! Bitte versuchen Sie es später noch einmal."
 
@@ -1140,7 +1140,7 @@ msgstr "Die Online-Sammlung und der Katalog des Rockefeller Archive Center"
 
 #. Message displayed when error occurs while submitting request
 #. placeholder {0}: err.toString()
-#: src/components/PageMyList/index.jsx:169
+#: src/components/PageMyList/index.jsx:170
 msgid "There was an error submitting your request. The error message was: {0}"
 msgstr "Bei der Übermittlung Ihrer Anfrage ist ein Fehler aufgetreten. Die Fehlermeldung lautete: {0}"
 
@@ -1148,6 +1148,11 @@ msgstr "Bei der Übermittlung Ihrer Anfrage ist ein Fehler aufgetreten. Die Fehl
 #: src/components/MinimapButton/index.jsx:11
 msgid "View minimap"
 msgstr "Minimap anzeigen"
+
+#. Digital object viewer page title
+#: src/components/PageDigitalObject/index.jsx:26
+msgid "View Online"
+msgstr "Online ansehen"
 
 #. External Identifier Title
 #: src/components/PageAgent/index.jsx:184

@@ -1,5 +1,6 @@
 import React from 'react'
 import MaterialIcon from '../MaterialIcon'
+import { withSiteTitle } from '../Helpers'
 import { usePageView } from '../Hooks'
 import './styles.scss'
 import { t } from '@lingui/core/macro'
@@ -7,10 +8,10 @@ import { Trans } from '@lingui/react/macro'
 
 const PageNotFound = () => {
 
-  usePageView(t({
-    comment: 'Page Not Found',
+  usePageView(withSiteTitle(t({
+    comment: 'Page Not Found title',
     message: 'Page Not Found'
-  }))
+  })))
 
   return (
     <Trans comment='Page Not Found'>

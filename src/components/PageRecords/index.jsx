@@ -13,7 +13,7 @@ import { t } from '@lingui/core/macro'
 import RecordsContent from '../RecordsContent'
 import RecordsDetail from '../RecordsDetail'
 import PageNotFound from '../PageNotFound'
-import { appendParams, formatBytes } from '../Helpers'
+import { appendParams, formatBytes, withSiteTitle } from '../Helpers'
 import { usePageView } from '../Hooks'
 
 const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
@@ -45,7 +45,7 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
   const pageSize = 5
   const hasBackendError = !!Object.keys(backendError).length
 
-  usePageView(found && !hasBackendError ? item.title : null)
+  usePageView(found && !hasBackendError ? withSiteTitle(item.title) : null)
 
   /** Constructs a preExpanded list based on an item's ancestors */
   const constructPreExpanded = (ancestors, list) => {

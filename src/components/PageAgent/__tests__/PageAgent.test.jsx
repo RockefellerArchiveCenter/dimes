@@ -41,10 +41,12 @@ it('renders props correctly', async () => {
   expect(title.textContent).toBe('Rockefeller, Nelson A. (Nelson Aldrich)')
   expect(children.children.length).toBe(8)
 
-  expect(document.title).toBe(agent.title)
+  const pageTitle = `${agent.title} - DIMES`
+
+  expect(document.title).toBe(pageTitle)
   expect(window._mtm).toEqual([{
     event: 'reactPageViewEvent',
-    pageTitle: agent.title,
+    pageTitle: pageTitle,
     pageUrl: window.location.href,
   }])
 })

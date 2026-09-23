@@ -16,7 +16,7 @@ import { Plural, Select, Trans } from '@lingui/react/macro'
 import SearchForm from '../SearchForm'
 import SearchNotFound from '../SearchNotFound'
 import CardList from '../Card'
-import { appendParams } from '../Helpers'
+import { appendParams, withSiteTitle } from '../Helpers'
 import { usePageView } from '../Hooks'
 import './styles.scss'
 
@@ -37,10 +37,10 @@ const PageSearch = () => {
   const { pathname, search } = useLocation()
   const navigate = useNavigate()
   const hasBackendError = !!Object.keys(backendError).length
-  const pageTitle = t({
+  const pageTitle = withSiteTitle(t({
     comment: 'Search Results title',
     message: 'Search Results'
-  })
+  }))
 
   usePageView(hasBackendError ? null : pageTitle)
 

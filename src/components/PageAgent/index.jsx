@@ -10,7 +10,7 @@ import { AgentAttributeSkeleton, AgentRelatedCollectionsSkeleton } from '../Load
 import CardList from '../Card'
 import AgentAttributeList from '../AgentAttribute'
 import '../Button/styles.scss'
-import { buildHref } from '../Helpers'
+import { buildHref, withSiteTitle } from '../Helpers'
 import { usePageView } from '../Hooks'
 import './styles.scss'
 import { t, select } from '@lingui/core/macro'
@@ -91,7 +91,7 @@ const PageAgent = () => {
   const { search } = useLocation()
   const hasBackendError = !!Object.keys(backendError).length
 
-  usePageView(found && !hasBackendError ? agent.title : null)
+  usePageView(found && !hasBackendError ? withSiteTitle(agent.title) : null)
 
   /** Fetches data about collections associated with the agent from the RAC API */
   const fetchCollections = ({ title }) => {

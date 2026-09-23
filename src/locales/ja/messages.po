@@ -140,7 +140,7 @@ msgid "<0/>Back to Search"
 msgstr "<0/>検索に戻る"
 
 #. New Search button
-#: src/components/PageMyList/index.jsx:297
+#: src/components/PageMyList/index.jsx:298
 msgid "<0/>Start a New Search"
 msgstr "<0/>新しい検索を開始する"
 
@@ -150,12 +150,12 @@ msgid "<0><1/> Schedule a Visit</0>"
 msgstr "<0><1/> 来店予約</0>"
 
 #. Go back to Item details for digital object
-#: src/components/PageDigitalObject/index.jsx:175
+#: src/components/PageDigitalObject/index.jsx:179
 msgid "<0><1/>Back to Item Details</0>"
 msgstr "<0><1/>アイテム詳細に戻る</0>"
 
 #. Page Not Found
-#: src/components/PageNotFound/index.jsx:16
+#: src/components/PageNotFound/index.jsx:17
 msgid "<0><1><2/></1><3>Sorry, the requested page was not found!</3><4>Try <5>a search</5> to find what you're looking for.</4></0>"
 msgstr "<0><1><2/></1><3>リクエストされたページは見つかりませんでした！</3><4><5>検索して</5>お探しのものを見つけてください。</4></0>"
 
@@ -165,7 +165,7 @@ msgstr "<0><1><2/></1><3>リクエストされたページは見つかりませ�
 #. placeholder {2}: error.message
 #. placeholder {3}: error.response.data ? <p className='backend-error__message'>{JSON.stringify(error.response.data)}</p> : null
 #. placeholder {4}: error.config.data ? <> <p className='backend-error__header mt-18'>Request data:</p> <p className='backend-error__message'>{error.config.data}</p> </> : null
-#: src/components/PageBackendError/index.jsx:15
+#: src/components/PageBackendError/index.jsx:16
 msgid "<0><1><2/></1><3>There was an error fetching data.</3><4>The request to {0} failed.</4><5>To report this problem, send us an email at <6>archive@rockarch.org</6>.</5><7>Error message:</7><8>{1}: {2}</8>{3}{4}</0>"
 msgstr "<0><1><2/></1><3>データの取得にエラーが発生しました。</3><4>{0} へのリクエストは失敗しました。</4><5>この問題を報告するには、<6>archive@rockarch.org</6> までメールをお送りください。</5><7>エラーメッセージ</7><8>{1}:{2}</8>{3}{4}</0>"
 
@@ -239,7 +239,7 @@ msgid "<0>More about this {agentType}</0>"
 msgstr "<0>詳細はこちら{agentType}</0>"
 
 #. Header for user's list
-#: src/components/PageMyList/index.jsx:303
+#: src/components/PageMyList/index.jsx:304
 msgid "<0>My List</0>"
 msgstr "<0>マイリスト</0>"
 
@@ -273,7 +273,7 @@ msgstr "<0>ミニマップは、アクティブな四角をクリックするこ
 #. placeholder {1}: err.code
 #. placeholder {2}: err.message
 #. placeholder {3}: err.config.data
-#: src/components/PageMyList/index.jsx:137
+#: src/components/PageMyList/index.jsx:138
 msgid "<0>There was an error submitting your request.</0><1>The request to {0} failed with the message {1}: {2}.</1><2>{3}</2>"
 msgstr "<0>リクエストの送信にエラーが発生しました。</0><1>{0} へのリクエストは{1}:{2} というメッセージで失敗しました。</1><2>{3}</2>"
 
@@ -329,7 +329,7 @@ msgid "Add to List"
 msgstr "リストに追加"
 
 #. Message while page loads for email submissions
-#: src/components/PageMyList/index.jsx:148
+#: src/components/PageMyList/index.jsx:149
 msgid "Adding items to your message"
 msgstr "メッセージに項目を追加する"
 
@@ -356,7 +356,7 @@ msgid "archive@rockarch.org"
 msgstr "archive@rockarch.org"
 
 #. Confirmation to delete all items from list
-#: src/components/PageMyList/index.jsx:374
+#: src/components/PageMyList/index.jsx:375
 msgid "Are you sure you want to remove all the items from your list?<0><1/><2/></0>"
 msgstr "リストからすべての項目を削除してもよろしいですか？<0><1/><2/></0>"
 
@@ -366,7 +366,7 @@ msgid "Bulk data download"
 msgstr "一括データダウンロード"
 
 #. Title shown when request failed
-#: src/components/PageMyList/index.jsx:359
+#: src/components/PageMyList/index.jsx:360
 msgid "Can't Complete Request"
 msgstr "リクエストを完了できない"
 
@@ -423,7 +423,7 @@ msgid "Collections Related to {agentTitle}"
 msgstr "{agentTitle} に関連するコレクション"
 
 #. Remove all confirmation title
-#: src/components/PageMyList/index.jsx:387
+#: src/components/PageMyList/index.jsx:388
 msgid "Confirm Remove All"
 msgstr "すべて削除を確認する"
 
@@ -438,7 +438,7 @@ msgid "Creator"
 msgstr "作成者"
 
 #. Message shown for downloading high-res images in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:166
+#: src/components/PageDigitalObject/index.jsx:170
 msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "現在のページ - JPEG2000 {pixelDimensions}"
 
@@ -458,23 +458,13 @@ msgstr "すべての項目の選択を解除する"
 msgid "Details under heading 1 have been updated to describe the selected records titled {0}"
 msgstr "見出し1の詳細が更新され、{0}と題された選択されたレコードが記述されている。"
 
-#. Page Title for user's list
-#: src/components/PageMyList/index.jsx:35
-msgid "DIMES: My List"
-msgstr "DIMESマイリスト"
-
-#. Page Home
-#: src/components/PageHome/index.jsx:9
-msgid "DIMES: Online Collections and Catalog of Rockefeller Archive Center"
-msgstr "DIMESロックフェラー・アーカイブ・センターのオンライン・コレクションとカタログ"
-
 #. Title displayed within the Header
 #: src/components/Header/index.jsx:11
 msgid "dimes.rockarch.org"
 msgstr "dimes.rockarch.org"
 
 #. Message shown on download dropdown button
-#: src/components/PageDigitalObject/index.jsx:139
+#: src/components/PageDigitalObject/index.jsx:143
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -507,7 +497,7 @@ msgid "Email List"
 msgstr "メールリスト"
 
 #. Title displayed after emailing selected items
-#: src/components/PageMyList/index.jsx:154
+#: src/components/PageMyList/index.jsx:155
 msgid "Email Sent"
 msgstr "送信されたメール"
 
@@ -527,13 +517,18 @@ msgid "Enter the date of your research visit (mm/dd/yyyy)"
 msgstr "研究訪問の日付（mm/dd/yyyy）を入力してください。"
 
 #. Message shown for downloading PDF in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:151
+#: src/components/PageDigitalObject/index.jsx:155
 msgid "Entire Item - PDF"
 msgstr "アイテム全体 - PDF"
 
+#. Page Backend Error title
+#: src/components/PageBackendError/index.jsx:10
+msgid "Error"
+msgstr "エラー"
+
 #. Title displayed when error occurs while submitting request
-#: src/components/PageMyList/index.jsx:134
-#: src/components/PageMyList/index.jsx:165
+#: src/components/PageMyList/index.jsx:135
+#: src/components/PageMyList/index.jsx:166
 msgid "Error submitting request"
 msgstr "リクエスト送信エラー"
 
@@ -610,7 +605,7 @@ msgid "https://raccess.rockarch.org"
 msgstr "https://raccess.rockarch.org"
 
 #. Aeon access point
-#: src/components/PageMyList/index.jsx:115
+#: src/components/PageMyList/index.jsx:116
 msgid "https://raccess.rockarch.org/aeon.dll"
 msgstr "https://raccess.rockarch.org/aeon.dll"
 
@@ -699,7 +694,7 @@ msgstr "所在地"
 #. Company Email link
 #: src/components/ModalMyList/index.jsx:164
 #: src/components/ModalMyList/index.jsx:510
-#: src/components/PageBackendError/index.jsx:20
+#: src/components/PageBackendError/index.jsx:21
 #: src/components/PrimaryLink/index.jsx:25
 msgid "mailto:archive@rockarch.org"
 msgstr "mailto:archive@rockarch.org"
@@ -742,8 +737,10 @@ msgstr "月～金<0/>午前9:30～午後5:00<1/>"
 
 #. Message shown on button within Dropdown list
 #. Message shown on button within the Header
+#. Page title for user's list
 #: src/components/Dropdown/index.jsx:185
 #: src/components/Header/index.jsx:32
+#: src/components/PageMyList/index.jsx:36
 msgid "My List"
 msgstr "マイリスト"
 
@@ -772,6 +769,11 @@ msgstr "アイテムは保存されていません。"
 msgid "Occupations"
 msgstr "職業"
 
+#. Page Home title
+#: src/components/PageHome/index.jsx:10
+msgid "Online Collections and Catalog of Rockefeller Archive Center"
+msgstr "ロックフェラー・アーカイブ・センターのオンライン・コレクションとカタログ"
+
 #. Tooltip for button
 #: src/components/Dropdown/index.jsx:115
 msgid "opens email"
@@ -789,10 +791,8 @@ msgstr "新しいウィンドウで開きます"
 msgid "Organizations"
 msgstr "組織"
 
-#. Page Backend Error title
-#. Page Not Found
-#: src/components/PageBackendError/index.jsx:9
-#: src/components/PageNotFound/index.jsx:10
+#. Page Not Found title
+#: src/components/PageNotFound/index.jsx:11
 msgid "Page Not Found"
 msgstr "ページが見つかりません"
 
@@ -856,12 +856,12 @@ msgid "Preparing items"
 msgstr "アイテムの準備"
 
 #. Message while page loads for Aeon submissions
-#: src/components/PageMyList/index.jsx:108
+#: src/components/PageMyList/index.jsx:109
 msgid "Preparing items for your request"
 msgstr "ご依頼品の準備"
 
 #. Page Title for sending an Aeon request
-#: src/components/PageMyList/index.jsx:104
+#: src/components/PageMyList/index.jsx:105
 msgid "Preparing Request Data"
 msgstr "リクエストデータの準備"
 
@@ -1002,7 +1002,7 @@ msgstr "読書室の場所を選択"
 
 #. Message displayed after emailing selected items
 #. placeholder {0}: submitted.email
-#: src/components/PageMyList/index.jsx:158
+#: src/components/PageMyList/index.jsx:159
 msgid "Selected items in your list have been emailed to {0}"
 msgstr "リスト内の選択されたアイテムが{0}にEメールで送信されました。"
 
@@ -1024,7 +1024,7 @@ msgid "Send List"
 msgstr "リストの送信"
 
 #. Page Title for sending an email
-#: src/components/PageMyList/index.jsx:144
+#: src/components/PageMyList/index.jsx:145
 msgid "Sending Email"
 msgstr "このテキストは、送信メールの末尾に配置されます"
 
@@ -1070,7 +1070,7 @@ msgid "Social Networks and Archival Context"
 msgstr "社会的ネットワークとアーカイブの文脈"
 
 #. Message shown when request failed
-#: src/components/PageMyList/index.jsx:355
+#: src/components/PageMyList/index.jsx:356
 msgid "Sorry, our system is unable to process requests right now. We're working to fix this! Please try again later."
 msgstr "申し訳ございません。現在、システムでリクエストを処理することができません。現在修正中です！後でもう一度お試しください。"
 
@@ -1140,7 +1140,7 @@ msgstr "ロックフェラー・アーカイブ・センターのオンライン
 
 #. Message displayed when error occurs while submitting request
 #. placeholder {0}: err.toString()
-#: src/components/PageMyList/index.jsx:169
+#: src/components/PageMyList/index.jsx:170
 msgid "There was an error submitting your request. The error message was: {0}"
 msgstr "リクエストの送信にエラーが発生しました。エラーメッセージは{0}"
 
@@ -1148,6 +1148,11 @@ msgstr "リクエストの送信にエラーが発生しました。エラーメ
 #: src/components/MinimapButton/index.jsx:11
 msgid "View minimap"
 msgstr "ミニマップを見る"
+
+#. Digital object viewer page title
+#: src/components/PageDigitalObject/index.jsx:26
+msgid "View Online"
+msgstr "オンラインで見る"
 
 #. External Identifier Title
 #: src/components/PageAgent/index.jsx:184
