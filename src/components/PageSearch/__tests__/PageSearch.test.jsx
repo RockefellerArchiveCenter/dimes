@@ -10,6 +10,10 @@ import { titleSuggest } from '../../../__fixtures__/suggest'
 
 vi.mock('axios')
 
+beforeEach(() => {
+  window._mtm = []
+})
+
 it('renders props correctly', async () => {
   let container = document.createElement('div')
   container.setAttribute('id', 'root')
@@ -38,11 +42,20 @@ it('renders props correctly', async () => {
       } />)
   })
 
-  const title = await document.querySelector('h1')
+  const header = t({
+    comment: 'Search results header with results',
+    message: `Search Results for “${{ query: 'banana' }}”`
+  })
 
-  expect(title.textContent).toBe(t({
-    comment: 'Search Results for Test',
-    message: 'Search Results for'
-  }) + ' “banana”')
+  expect(document.querySelector('h1').textContent).toBe(header)
+
+  const pageTitle = `${header} - DIMES`
+
+  expect(document.title).toBe(pageTitle)
+  expect(window._mtm).toEqual([{
+    event: 'reactPageViewEvent',
+    pageTitle: pageTitle,
+    pageUrl: window.location.href,
+  }])
 
 })

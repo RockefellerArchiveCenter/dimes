@@ -1,6 +1,5 @@
   import { useEffect, useState } from 'react'
   import axios from 'axios'
-  import { Helmet } from 'react-helmet'
   import PageBackendError from '../PageBackendError'
   import Button from '../Button'
   import { MyListDropdown } from '../Dropdown'
@@ -11,7 +10,8 @@
   import MyListSidebar from '../MyListSidebar'
   import { SavedItemList } from '../SavedItem'
   import { fetchMyList } from '../MyListHelpers'
-  import { firePageViewEvent } from '../Helpers'
+  import { withSiteTitle } from '../Helpers'
+  import { usePageView } from '../Hooks'
   import { t } from '@lingui/core/macro'
   import { Trans } from '@lingui/react/macro'
   import './styles.scss'
@@ -32,6 +32,13 @@
     const [confirmModalOpen, setConfirmModalOpen] = useState(false)
     const [confirmModalTitle, setConfirmModalTitle] = useState('')
     const [confirmModalMessage, setConfirmModalMessage] = useState('')
+    const hasBackendError = !!Object.keys(backendError).length
+    const pageTitle = withSiteTitle(t({
+      comment: "Page title for user's list",
+      message: 'My List'
+    }))
+
+    usePageView(hasBackendError ? null : pageTitle)
 
     /** Returns a list of ArchivesSpace URIs for checked items in list */
     const constructSubmitList = (list, allItems) => {
@@ -280,17 +287,11 @@
       }
     }, [savedList.length, isRequestingAvailable])
 
-    if (!!Object.keys(backendError).length) {
+    if (hasBackendError) {
       return <PageBackendError error={backendError} />
     }
     return (
       <>
-        <Trans comment="Page Title for user's list">
-          <Helmet
-            onChangeClientState={(newState) => firePageViewEvent(newState.title)} >
-            <title>DIMES: My List</title>
-          </Helmet>
-        </Trans>
         <div className='mylist grid container--full-width'>
           <nav>
             <a href='/' className='btn btn--sm btn--gray btn--new-search mt-20 ml-30'>

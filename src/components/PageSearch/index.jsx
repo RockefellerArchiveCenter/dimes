@@ -4,7 +4,6 @@ import classnames from 'classnames'
 import queryString from 'query-string'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import { Helmet } from 'react-helmet'
 import { useNavigate, useLocation } from 'react-router'
 import PageBackendError from '../PageBackendError'
 import Button from '../Button'
@@ -13,29 +12,52 @@ import { SearchSkeleton } from '../LoadingSkeleton'
 import { FacetModal } from '../ModalSearch'
 import { SearchPagination } from '../Pagination'
 import { t } from '@lingui/core/macro'
-import { Plural, Select, Trans } from '@lingui/react/macro'
+import { Select, Trans } from '@lingui/react/macro'
 import SearchForm from '../SearchForm'
 import SearchNotFound from '../SearchNotFound'
 import CardList from '../Card'
-import { appendParams, firePageViewEvent } from '../Helpers'
+import { appendParams, withSiteTitle } from '../Helpers'
+import { usePageView } from '../Hooks'
 import './styles.scss'
 
 const PageSearch = () => {
+
+  /** Declared before state: the params initialiser reads search and pageSize */
+  const { pathname, search } = useLocation()
+  const navigate = useNavigate()
+  const pageSize = 40
 
   const [backendError, setBackendError] = useState({})
   const [facetIsOpen, setFacetIsOpen] = useState(false)
   const [facetData, setFacetData] = useState({})
   const [inProgress, setInProgress] = useState(true)
   const [items, setItems] = useState([])
-  const [params, setParams] = useState({ query: '', category: '' })
+  const [params, setParams] = useState(() => {
+    const parsed = { query: '', category: '', ...queryString.parse(search, { parseBooleans: true }) }
+    parsed.limit = pageSize
+    const parsedOffset = +(parsed.offset)
+    if (parsedOffset > 0) { parsed.offset = parsedOffset } else { delete parsed.offset }
+    return parsed
+  })
   const [pageCount, setPageCount] = useState(0)
   const [startItem, setStartItem] = useState(0)
   const [endItem, setEndItem] = useState(0)
   const [resultsCount, setResultsCount] = useState(0)
   const [suggestions, setSuggestions] = useState([])
-  const pageSize = 40
-  const { pathname, search } = useLocation()
-  const navigate = useNavigate()
+  const hasBackendError = !!Object.keys(backendError).length
+  const cleanQuery = params.query.replace(/"([^"]+(?="))"/g, '$1')
+  const pageTitle = withSiteTitle(params.query
+    ? t({
+      comment: 'Search Results title with query',
+      message: `Search Results for “${{ query: cleanQuery }}”`
+    })
+    : t({
+      comment: 'Search Results title',
+      message: 'Search Results'
+    }))
+
+  usePageView(hasBackendError ? null : pageTitle)
+
   const sortOptions = [
     {
       value: '', label: t({
@@ -56,15 +78,6 @@ const PageSearch = () => {
       })
     }
   ]
-
-  /** Execute search on initial page load */
-  useEffect(() => {
-    let params = queryString.parse(search, { parseBooleans: true })
-    params.limit = pageSize
-    const parsedOffset = +(params.offset)
-    if (parsedOffset > 0) { params.offset = parsedOffset } else { delete params.offset }
-    setParams(params)
-  }, [])
 
   /** Set first search result */
   useEffect(() => {
@@ -185,17 +198,11 @@ const PageSearch = () => {
     setFacetIsOpen(!facetIsOpen)
   }
 
-  if (!!Object.keys(backendError).length) {
+  if (hasBackendError) {
     return <PageBackendError error={backendError} />
   }
   return (
     <React.Fragment>
-      <Trans comment='Search Results title'>
-        <Helmet
-          onChangeClientState={(newState) => firePageViewEvent(newState.title)} >
-          <title>Search Results</title>
-        </Helmet>
-      </Trans>
       <div className='container--full-width'>
         <div className='search-bar'>
           <SearchForm
@@ -207,25 +214,25 @@ const PageSearch = () => {
         </div>
         <main id='main' className='results'>
           <h1 className={classnames('results__title mt-30 mb-13', { 'loading-dots': inProgress })}>
-            <Trans comment='Search Results header'>
-              <Select
-                value={inProgress}
-                _true="Searching"
-                other=
-                {
-                  <Select value={params.query}
-                    _false='No search query entered'
-                    other={
-                      <Plural
-                        value={resultsCount}
-                        _0={`Sorry, there are no search results for ${`“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`}`}
-                        other={`Search Results for ${`“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`}`}
-                      />
-                    }
-                  />
-                }
-              />
-            </Trans>
+            {inProgress
+              ? t({
+                comment: 'Search results header while searching',
+                message: 'Searching'
+              })
+              : !params.query
+                ? t({
+                  comment: 'Search results header with no search term',
+                  message: 'No search query entered'
+                })
+                : resultsCount === 0
+                  ? t({
+                    comment: 'Search results header with no results',
+                    message: `Sorry, there are no search results for “${{ query: cleanQuery }}”`
+                  })
+                  : t({
+                    comment: 'Search results header with results',
+                    message: `Search Results for “${{ query: cleanQuery }}”`
+                  })}
           </h1>
           {!resultsCount && !inProgress ?
             (<SearchNotFound suggestions={suggestions} query={params.query}/>) :
