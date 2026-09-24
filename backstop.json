@@ -111,7 +111,7 @@
     {
       "label": "Reading Room Request Modal",
       "url": "http://host.docker.internal:3000/list",
-      "clickSelector": "aside > button:nth-child(2)",
+      "clickSelector": ".mylist__sidebar > button:nth-child(2)",
       "onBeforeScript": "mock_request.js",
       "delay": 3000,
       "viewports": [
@@ -130,7 +130,7 @@
     {
       "label": "Duplication Request Modal",
       "url": "http://host.docker.internal:3000/list",
-      "clickSelector": "aside > button:nth-child(3)",
+      "clickSelector": ".mylist__sidebar > button:nth-child(3)",
       "onBeforeScript": "mock_request.js",
       "delay": 3000,
       "viewports": [
