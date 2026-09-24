@@ -309,6 +309,9 @@
               emailList={() => isRequestingAvailable ? setEmailModalOpen(true) : setRequestingUnavailableModalOpen(true)}
               readingRoomRequest={() => isRequestingAvailable ? setReadingRoomModalOpen(true) : setRequestingUnavailableModalOpen(true)}
               removeAllItems={() => setConfirmDeleteAllModalOpen(true)} />
+          <MyListSidebar
+              duplicationRequest={() => isRequestingAvailable ? setDuplicationModalOpen(true) : setRequestingUnavailableModalOpen(true)}
+              readingRoomRequest={() => isRequestingAvailable ? setReadingRoomModalOpen(true) : setRequestingUnavailableModalOpen(true)} />
           <MyListExportActions
               confirmDeleteAll={() => setConfirmDeleteAllModalOpen(true)}
               downloadCsv={downloadCsv}
@@ -319,9 +322,6 @@
             isLoading={isLoading}
             removeFromList={removeFromList} />
           </main>
-          <MyListSidebar
-              duplicationRequest={() => isRequestingAvailable ? setDuplicationModalOpen(true) : setRequestingUnavailableModalOpen(true)}
-              readingRoomRequest={() => isRequestingAvailable ? setReadingRoomModalOpen(true) : setRequestingUnavailableModalOpen(true)} />
         </div>
         <EmailModal
           isOpen={emailModalOpen}

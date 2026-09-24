@@ -4,7 +4,7 @@ import { t } from '@lingui/core/macro'
 import { Trans } from '@lingui/react/macro'
 
 const MyListSidebar = ({ duplicationRequest, readingRoomRequest }) => (
-  <aside className='mylist__sidebar py-60 pr-0 pl-40 mr--15'>
+  <div className='mylist__sidebar py-60 pr-0 pl-40 mr--15'>
     <Trans comment='Schedule a visit button'>
       <a
         className='btn btn--orange btn--lg'
@@ -32,6 +32,6 @@ const MyListSidebar = ({ duplicationRequest, readingRoomRequest }) => (
       })}
       iconBefore='content_copy'
       handleClick={() => duplicationRequest()} />
-  </aside>)
+  </div>)
 
 export default MyListSidebar

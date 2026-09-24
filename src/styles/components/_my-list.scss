@@ -4,13 +4,22 @@
   grid-column: span 12;
   margin-right: 15px;
   @include abs.lg-up {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.mylist main > *:not(.mylist__sidebar) {
+  @include abs.lg-up {
     grid-column: 1 / span 8;
-    margin-right: 0px;
   }
 }
 
 .mylist__export-actions {
   @include abs.show-on-lg-up;
+  @include abs.lg-up {
+    display: block;
+  }
 }
 
 .mylist__export-actions .btn {
@@ -22,6 +31,10 @@
   background: abs.$desert-grey;
   gap: 12px;
   grid-column: 9 / span 4;
+  grid-row: 1 / span 3;
   justify-items: start;
   @include abs.show-on-lg-up;
+  @include abs.lg-up {
+    margin-top: -60px;
+  }
 }
