@@ -469,9 +469,9 @@ msgstr "Desmarcar todos os itens"
 
 #. Update message for selected record
 #. placeholder {0}: res.data.title
-#: src/components/PageRecords/index.jsx:118
-msgid "Details under heading 1 have been updated to describe the selected records titled {0}"
-msgstr "Os detalhes do cabeçalho 1 foram atualizados para descrever os registros selecionados intitulados {0}"
+#: src/components/PageRecords/index.jsx:117
+msgid "Details under heading 1 now describe {0}"
+msgstr "Os detalhes do cabeçalho 1 agora descrevem {0}"
 
 #. Title displayed within the Header
 #: src/components/Header/index.jsx:11

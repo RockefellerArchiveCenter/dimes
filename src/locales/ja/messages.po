@@ -469,9 +469,9 @@ msgstr "すべての項目の選択を解除する"
 
 #. Update message for selected record
 #. placeholder {0}: res.data.title
-#: src/components/PageRecords/index.jsx:118
-msgid "Details under heading 1 have been updated to describe the selected records titled {0}"
-msgstr "見出し1の詳細が更新され、{0}と題された選択されたレコードが記述されている。"
+#: src/components/PageRecords/index.jsx:117
+msgid "Details under heading 1 now describe {0}"
+msgstr "見出し1の詳細が{0}を説明しています。"
 
 #. Title displayed within the Header
 #: src/components/Header/index.jsx:11

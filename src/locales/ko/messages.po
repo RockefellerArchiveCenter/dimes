@@ -469,9 +469,9 @@ msgstr "모든 항목 선택 해제"
 
 #. Update message for selected record
 #. placeholder {0}: res.data.title
-#: src/components/PageRecords/index.jsx:118
-msgid "Details under heading 1 have been updated to describe the selected records titled {0}"
-msgstr "제목 1 아래의 세부 정보가 {0}이라는 제목의 선택된 레코드를 설명하도록 업데이트되었습니다"
+#: src/components/PageRecords/index.jsx:117
+msgid "Details under heading 1 now describe {0}"
+msgstr "제목 1 아래의 세부 정보가 이제 {0} 레코드를 설명합니다"
 
 #. Title displayed within the Header
 #: src/components/Header/index.jsx:11

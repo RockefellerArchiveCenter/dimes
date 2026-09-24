@@ -469,9 +469,9 @@ msgstr "取消选择所有项目"
 
 #. Update message for selected record
 #. placeholder {0}: res.data.title
-#: src/components/PageRecords/index.jsx:118
-msgid "Details under heading 1 have been updated to describe the selected records titled {0}"
-msgstr "标题 1 下的详细内容已更新，以描述题为 {0} 的选定记录。"
+#: src/components/PageRecords/index.jsx:117
+msgid "Details under heading 1 now describe {0}"
+msgstr "标题 1 下的详细内容现在描述的是 {0}。"
 
 #. Title displayed within the Header
 #: src/components/Header/index.jsx:11
