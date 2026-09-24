@@ -68,7 +68,7 @@ export const usePageView = title => {
     if (window._mtm) {
       window._mtm.push({
         event: 'reactPageViewEvent',
-        pageTitle: title,
+        pageTitle: document.title,
         pageUrl: window.location.href,
       })
     }
