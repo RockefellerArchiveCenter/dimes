@@ -469,9 +469,9 @@ msgstr "Alle Elemente abwählen"
 
 #. Update message for selected record
 #. placeholder {0}: res.data.title
-#: src/components/PageRecords/index.jsx:118
-msgid "Details under heading 1 have been updated to describe the selected records titled {0}"
-msgstr "Die Angaben in Rubrik 1 wurden aktualisiert, um die ausgewählten Datensätze mit dem Titel {0} zu beschreiben"
+#: src/components/PageRecords/index.jsx:117
+msgid "Details under heading 1 now describe {0}"
+msgstr "Die Angaben in Rubrik 1 beschreiben jetzt {0}"
 
 #. Title displayed within the Header
 #: src/components/Header/index.jsx:11
