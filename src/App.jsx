@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { LiveAnnouncer } from 'react-aria-live';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -52,7 +51,7 @@ const App = () => {
     setMyListCount(countMyList())
   }, [])
 
-  return (<LiveAnnouncer>
+  return (<>
     <SkipLink />
     <Header myListCount={myListCount} />
       <div className='wrapper' ref={mainWrapper}>
@@ -69,7 +68,7 @@ const App = () => {
         </BrowserRouter>
       </div>
   <Footer/>
-  </LiveAnnouncer>)
+  </>)
 }
 
 export default App;
