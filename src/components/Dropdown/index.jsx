@@ -107,19 +107,15 @@ export const MyListDropdown = ({ downloadCsv, duplicationRequest, emailList, rea
     <DropdownItem
       className='btn--orange dropdown__btn dropdown__item--orange'
       label={t({
-        comment: 'Message shown on button within Dropdown list',
+        comment: 'Schedule a visit link in Dropdown list',
         message: 'Schedule a Visit'
       })}
       iconBefore='account_balance'
-      href='mailto:archive@rockarch.org?subject=Scheduling a research appointment'
-      title={t({
-        comment: 'Tooltip for button',
-        message: 'opens email'
-      })} />
+      href='https://raccess.rockarch.org/aeon.dll?Action=10&Form=94' />
     <DropdownItem
       className='btn--orange dropdown__btn dropdown__item--orange'
       label={t({
-        comment: 'Message shown on button within Dropdown list',
+        comment: 'Request in Reading Room button in Dropdown list',
         message: 'Request in Reading Room'
       })}
       iconBefore='local_library'
@@ -127,7 +123,7 @@ export const MyListDropdown = ({ downloadCsv, duplicationRequest, emailList, rea
     <DropdownItem
       className='btn--orange dropdown__btn dropdown__item--orange'
       label={t({
-        comment: 'Message shown on button within Dropdown list',
+        comment: 'Request Copies button in Dropdown list',
         message: 'Request Copies'
       })}
       iconBefore='content_copy'
@@ -135,6 +131,7 @@ export const MyListDropdown = ({ downloadCsv, duplicationRequest, emailList, rea
     <DropdownItem
       className='btn--orange dropdown__btn dropdown__item--orange'
       label={t({
+        comment: 'Email List button in Dropdown list',
         message: 'Email List'
       })}
       iconBefore='email'
@@ -142,7 +139,7 @@ export const MyListDropdown = ({ downloadCsv, duplicationRequest, emailList, rea
     <DropdownItem
       className='btn--orange dropdown__btn dropdown__item--orange'
       label={t({
-        comment: 'Message shown on button within Dropdown list',
+        comment: 'Download as .csv button in Dropdown list',
         message: 'Download as .csv'
       })}
       iconBefore='get_app'
@@ -150,7 +147,7 @@ export const MyListDropdown = ({ downloadCsv, duplicationRequest, emailList, rea
     <DropdownItem
       className='btn--orange dropdown__btn dropdown__item--orange'
       label={t({
-        comment: 'Message shown on button within Dropdown list',
+        comment: 'Remove All Items button in Dropdown list',
         message: 'Remove All Items'
       })}
       iconBefore='delete'

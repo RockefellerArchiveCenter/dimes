@@ -19,8 +19,8 @@ msgstr ""
 #. Indicates a required form field
 #: src/components/Form/index.jsx:48
 #: src/components/Form/index.jsx:61
-#: src/components/Inputs/index.jsx:13
-#: src/components/Inputs/index.jsx:86
+#: src/components/Inputs/index.jsx:15
+#: src/components/Inputs/index.jsx:115
 msgid "(required)"
 msgstr ""
 
@@ -143,11 +143,6 @@ msgstr "<0/>Zurück zur Suche"
 #: src/components/PageMyList/index.jsx:297
 msgid "<0/>Start a New Search"
 msgstr "<0/>Eine neue Suche starten"
-
-#. Schedule a visit button
-#: src/components/MyListSidebar/index.jsx:8
-msgid "<0><1/> Schedule a Visit</0>"
-msgstr "<0><1/> Besuch vereinbaren</0>"
 
 #. Go back to Item details for digital object
 #: src/components/PageDigitalObject/index.jsx:174
@@ -483,8 +478,8 @@ msgstr "dimes.rockarch.org"
 msgid "Download"
 msgstr "Herunterladen"
 
-#. Message shown on button within Dropdown list
-#: src/components/Dropdown/index.jsx:144
+#. Download as .csv button in Dropdown list
+#: src/components/Dropdown/index.jsx:141
 msgid "Download as .csv"
 msgstr "Als .csv herunterladen"
 
@@ -505,8 +500,9 @@ msgstr "E-Mail"
 msgid "Email"
 msgstr "E-Mail"
 
+#. Email List button in Dropdown list
 #. Email list label
-#: src/components/Dropdown/index.jsx:137
+#: src/components/Dropdown/index.jsx:133
 #: src/components/MyListExportActions/index.jsx:9
 msgid "Email List"
 msgstr "Liste per E-Mail versenden"
@@ -609,7 +605,7 @@ msgstr "https://github.com/RockefellerArchiveCenter/data/"
 
 #. Link used for sign-in within Dropdown list
 #. Link used for sign-in within the Header
-#: src/components/Dropdown/index.jsx:179
+#: src/components/Dropdown/index.jsx:176
 #: src/components/Header/index.jsx:23
 msgid "https://raccess.rockarch.org"
 msgstr "https://raccess.rockarch.org"
@@ -618,11 +614,6 @@ msgstr "https://raccess.rockarch.org"
 #: src/components/PageMyList/index.jsx:109
 msgid "https://raccess.rockarch.org/aeon.dll"
 msgstr "https://raccess.rockarch.org/aeon.dll"
-
-#. Scheduling an appointment email link
-#: src/components/MyListSidebar/index.jsx:11
-msgid "https://raccess.rockarch.org/aeon.dll?Action=10&Form=94"
-msgstr "https://raccess.rockarch.org/aeon.dll?Action=10&Form=94"
 
 #. Accessibility Statement Link
 #: src/components/PrimaryLink/index.jsx:51
@@ -709,7 +700,7 @@ msgstr "Standort des Hauptsitzes"
 msgid "mailto:archive@rockarch.org"
 msgstr "mailto:archive@rockarch.org"
 
-#: src/components/Dropdown/index.jsx:164
+#: src/components/Dropdown/index.jsx:161
 msgid "Menu"
 msgstr ""
 
@@ -747,7 +738,7 @@ msgstr "Montag-Freitag<0/>9:30 Uhr bis 17:00 Uhr.<1/>"
 
 #. Message shown on button within Dropdown list
 #. Message shown on button within the Header
-#: src/components/Dropdown/index.jsx:185
+#: src/components/Dropdown/index.jsx:182
 #: src/components/Header/index.jsx:32
 msgid "My List"
 msgstr "Meine Einträge"
@@ -777,10 +768,10 @@ msgstr "Keine gespeicherten Elemente."
 msgid "Occupations"
 msgstr "Belegungen"
 
-#. Tooltip for button
-#: src/components/Dropdown/index.jsx:115
-msgid "opens email"
-msgstr "öffnet E-Mail"
+#. Aria label for opening the date and time picker
+#: src/components/Inputs/index.jsx:53
+msgid "Open date and time picker"
+msgstr ""
 
 #. Title for duplication services link
 #. Title message for opening an online item
@@ -893,9 +884,9 @@ msgstr "recaptcha"
 msgid "Remove"
 msgstr "Entfernen"
 
-#. Message shown on button within Dropdown list
+#. Remove All Items button in Dropdown list
 #. Remove all items label
-#: src/components/Dropdown/index.jsx:152
+#: src/components/Dropdown/index.jsx:149
 #: src/components/MyListExportActions/index.jsx:28
 msgid "Remove All Items"
 msgstr "Alle Einträge entfernen"
@@ -911,17 +902,17 @@ msgstr "Von Wunschliste entfernen"
 msgid "Request 4 Items"
 msgstr "Anfordern 4 Elemente"
 
-#. Message shown on button within Dropdown list
-#. Shown to request copies of an item
-#: src/components/Dropdown/index.jsx:129
-#: src/components/MyListSidebar/index.jsx:29
+#. Request Copies button in Dropdown list
+#. Request copies button in Sidebar
+#: src/components/Dropdown/index.jsx:125
+#: src/components/MyListSidebar/index.jsx:27
 msgid "Request Copies"
 msgstr "Reproduktionen anfordern"
 
-#. Message shown on button within Dropdown list
-#. Shown to Request the item in a Reading Room
-#: src/components/Dropdown/index.jsx:121
-#: src/components/MyListSidebar/index.jsx:21
+#. Request in Reading Room button in Dropdown list
+#. Request in Reading Room button in Sidebar
+#: src/components/Dropdown/index.jsx:117
+#: src/components/MyListSidebar/index.jsx:19
 msgid "Request in Reading Room"
 msgstr "In den Lesesaal Anfordern"
 
@@ -935,8 +926,10 @@ msgstr "Rockefeller Archive Center"
 msgid "Save & Close"
 msgstr "Speichern & Schließen"
 
-#. Message shown on button within Dropdown list
+#. Schedule a visit link in Dropdown list
+#. Schedule a visit link in Sidebar
 #: src/components/Dropdown/index.jsx:109
+#: src/components/MyListSidebar/index.jsx:12
 msgid "Schedule a Visit"
 msgstr "Besuch vereinbaren"
 
@@ -1040,7 +1033,7 @@ msgid "Show only results with digital matches"
 msgstr "Nur Ergebnisse mit digitaler Verfügbarkeit anzeigenn"
 
 #. Message shown on sign-in button
-#: src/components/Dropdown/index.jsx:174
+#: src/components/Dropdown/index.jsx:171
 #: src/components/Header/index.jsx:27
 msgid "Sign in to RACcess"
 msgstr "Bei RACcess anmelden"

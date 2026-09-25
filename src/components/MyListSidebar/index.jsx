@@ -5,21 +5,19 @@ import { Trans } from '@lingui/react/macro'
 
 const MyListSidebar = ({ duplicationRequest, readingRoomRequest }) => (
   <div className='mylist__sidebar py-60 pr-0 pl-40 mr--15'>
-    <Trans comment='Schedule a visit button'>
-      <a
-        className='btn btn--orange btn--lg'
-        href={t({
-          comment: 'Scheduling an appointment email link',
-          message: 'https://raccess.rockarch.org/aeon.dll?Action=10&Form=94'
-        })}
-        title='opens email'>
-        <MaterialIcon icon='account_balance' className='material-icon--space-after' /> Schedule a Visit
-      </a>
-    </Trans>
+    <a
+      className='btn btn--orange btn--lg'
+      href='https://raccess.rockarch.org/aeon.dll?Action=10&Form=94'>
+      <MaterialIcon icon='account_balance' className='material-icon--space-after' />
+      {t({
+        comment: 'Schedule a visit link in Sidebar',
+        message: 'Schedule a Visit'
+      })}
+    </a>
     <Button
       className='btn--orange btn--lg'
       label={t({
-        comment: 'Shown to Request the item in a Reading Room',
+        comment: 'Request in Reading Room button in Sidebar',
         message: 'Request in Reading Room'
       })}
       iconBefore='local_library'
@@ -27,7 +25,7 @@ const MyListSidebar = ({ duplicationRequest, readingRoomRequest }) => (
     <Button
       className='btn--orange btn--lg'
       label={t({
-        comment: 'Shown to request copies of an item',
+        comment: 'Request copies button in Sidebar',
         message: 'Request Copies'
       })}
       iconBefore='content_copy'
