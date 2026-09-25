@@ -138,13 +138,16 @@ select {
 }
 
 /**
-* Overrides react-datepicker.css to fit the full time into the visible space
+* Overrides react-datepicker.css to align font styles.
 **/
 .react-datepicker__time-list-item {
-  padding-left: 3px !important;
-  padding-right: 3px !important;
+  font-family: abs.$sans-serif-stack;
+  font-size: 0.8rem;
 }
 
+/**
+* Layout styles for the button added to open the datepicker.
+**/
 .dp__input-wrapper {
   align-items: stretch;
   display: flex;
