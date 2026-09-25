@@ -1,8 +1,10 @@
 import {useEffect, useState} from 'react'
+import Button from '../Button'
 import DatePicker from 'react-datepicker'
 import {useSelect} from 'downshift'
 import MaterialIcon from '../MaterialIcon'
 import classnames from 'classnames'
+import { t } from '@lingui/core/macro'
 import { Trans } from '@lingui/react/macro'
 import "react-datepicker/dist/react-datepicker.css"
 import './styles.scss'
@@ -35,6 +37,30 @@ CheckBoxInput.defaultProps = {
   checked: true,
 }
 
+// Custom input supports accessibility of DatePicker by keeping the date 
+// field input editable while using a separate button to open the datepicker.
+const DatePickerInput = ({inputRef, value, onClick, ...props}) => (
+  <div className='dp__input-wrapper'>
+    <input
+      {...props}
+      ref={inputRef}
+      value={value || ''}
+    />
+    <Button
+      type='button'
+      className='btn btn--gray dp__calendar-button'
+      handleClick={onClick}
+      ariaLabel={t({
+        comment: 'Aria label for opening the date and time picker',
+        message: 'Open date and time picker'
+})}
+      ariaHasPopup='dialog'
+      iconAfter='calendar_today'
+    />
+  </div>
+)
+
+
 export const DateInput = ({ariaDescribedBy, ariaInvalid, className, defaultDate, handleChange, helpText, id, label, required, ...props}) => {
   const [startDate, setStartDate] = useState(defaultDate || new Date())
 
@@ -53,12 +79,15 @@ export const DateInput = ({ariaDescribedBy, ariaInvalid, className, defaultDate,
         ariaRequired={required}
         className={className || 'dp__wrapper'}
         selected={startDate}
-        showTimeSelect='true'
+        showTimeSelect
         onChange={date => setStartDate(date)}
         dateFormat="yyyy-MM-dd h:mm aa"
         id={id}
-        {...props}>
-    </DatePicker>
+        preventOpenOnFocus // Use the seperate button in DatePickerInput to open
+        customInput={<DatePickerInput />}
+        customInputRef='inputRef'
+        {...props}
+    />
     {helpText && <p className='input__help-text' id={`desc-${id}`}>{helpText}</p>}
   </div>
 )}

@@ -145,6 +145,19 @@ select {
   padding-right: 3px !important;
 }
 
+.dp__input-wrapper {
+  align-items: stretch;
+  display: flex;
+}
+
+.dp__input-wrapper input {
+  flex: 1;
+}
+
+.dp__calendar-button {
+  margin-left: 5px;
+}
+
 .select__wrapper {
   position: relative;
 }
