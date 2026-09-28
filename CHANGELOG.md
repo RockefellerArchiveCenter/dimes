@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.1.0](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.0.0...v2.1.0) (2026-09-28)
+
+
+### Features
+
+* add usePageView hook for document titles and Matomo pageviews ([2c30766](https://github.com/RockefellerArchiveCenter/dimes/commit/2c3076644b460b94589d142aa4f756043cfa45b5))
+
+
+### Bug Fixes
+
+* add MemoryRouter to tests for usePageView ([ebf24a9](https://github.com/RockefellerArchiveCenter/dimes/commit/ebf24a986db5e96de23e44ac3b540c2286876290))
+* add search query to site title ([e2d6d34](https://github.com/RockefellerArchiveCenter/dimes/commit/e2d6d3418c3286cb6a1455b029e9ca9d0ca54d9d))
+* align page title conventions to improve a11y ([835744b](https://github.com/RockefellerArchiveCenter/dimes/commit/835744b131d2b6f26c246abf3bf6b0f52c5a8bd7))
+* **deps:** remove react-helmet ([62bf8bf](https://github.com/RockefellerArchiveCenter/dimes/commit/62bf8bff398f4e88075627f61654a42c0d3783ab))
+* follow matomo docs rec for title value ([ddd7122](https://github.com/RockefellerArchiveCenter/dimes/commit/ddd71220a070deb488d6ad314a795c8addebb716))
+* initialise search params from the URL before rendering ([bfa2115](https://github.com/RockefellerArchiveCenter/dimes/commit/bfa2115aae24fa3b94713c3e30bc88f6f5e3217b))
+* remove the replaced Matomo firePageViewEvent ([3a41adb](https://github.com/RockefellerArchiveCenter/dimes/commit/3a41adbbdea842ab911f689a61a2e2915aa06b87))
+* show the correct search results headers for missing values ([fa05ac7](https://github.com/RockefellerArchiveCenter/dimes/commit/fa05ac766f1b2a73ff814a4feaee7442a9cb3724))
+* update translation files to align with react-helmet removal ([a4c338f](https://github.com/RockefellerArchiveCenter/dimes/commit/a4c338fbb29008255129c25c4502a9f350873b1c))
+* use usePageView hook for page titles and Matomo pageviews ([f4508f2](https://github.com/RockefellerArchiveCenter/dimes/commit/f4508f23d47e9d40dca1d8e42b999693d66d9fd8))
+
 ## [2.0.0](https://github.com/RockefellerArchiveCenter/dimes/compare/v1.1.1...v2.0.0) (2026-09-22)
 
 
