@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { LiveAnnouncer } from 'react-aria-live';
 import { render, act } from '@testing-library/react'
 import { Route, Routes, MemoryRouter } from 'react-router';
 import PageRecords from '..'
@@ -35,14 +34,12 @@ it('renders props correctly', async () => {
   await act(async () => {
     await render(
     <I18nApp ReactComponent={
-      <LiveAnnouncer>
-        <MemoryRouter initialEntries={['/objects/oVDNM8UtE3ox9fiESd99Wy']}>
-          <Routes>
-            <Route path='/:type/:id' element={
-              <PageRecords myListCount={1} toggleInList={vi.fn()} />} />
-          </Routes>
-        </MemoryRouter>
-      </LiveAnnouncer>}
+      <MemoryRouter initialEntries={['/objects/oVDNM8UtE3ox9fiESd99Wy']}>
+        <Routes>
+          <Route path='/:type/:id' element={
+            <PageRecords myListCount={1} toggleInList={vi.fn()} />} />
+        </Routes>
+      </MemoryRouter>}
       />)
   })
 

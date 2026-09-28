@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { LiveMessage } from 'react-aria-live'
+import { announce } from '@react-aria/live-announcer'
 import axios from 'axios'
 import { useNavigate, useLocation, useParams } from 'react-router'
 import queryString from 'query-string'
 import classnames from 'classnames'
-import { Helmet } from 'react-helmet'
 import PageBackendError from '../PageBackendError'
 import ContextSwitcher from '../ContextSwitcher'
 import Minimap from '../Minimap'
@@ -14,7 +13,8 @@ import { t } from '@lingui/core/macro'
 import RecordsContent from '../RecordsContent'
 import RecordsDetail from '../RecordsDetail'
 import PageNotFound from '../PageNotFound'
-import { appendParams, firePageViewEvent, formatBytes } from '../Helpers'
+import { appendParams, formatBytes, withSiteTitle } from '../Helpers'
+import { usePageView } from '../Hooks'
 
 const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
 
@@ -38,11 +38,13 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
   const [minimap, setMinimap] = useState({ hits: [] })
   const [params, setParams] = useState({})
   const [preExpanded, setPreExpanded] = useState([])
-  const [updateMessage, setUpdateMessage] = useState('')
   const navigate = useNavigate()
   const { id, type } = useParams()
   const { search } = useLocation()
   const pageSize = 5
+  const hasBackendError = !!Object.keys(backendError).length
+
+  usePageView(found && !hasBackendError ? withSiteTitle(item.title) : null)
 
   /** Constructs a preExpanded list based on an item's ancestors */
   const constructPreExpanded = (ancestors, list) => {
@@ -115,10 +117,10 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
           if (itemInitialLoad) {
             setChildrenUri(`${import.meta.env.VITE_ARGO_BASEURL}${res.data.group.identifier}/children`)
           }
-          setUpdateMessage(t({
+          announce(t({
             comment: 'Update message for selected record',
-            message: `Details under heading 1 have been updated to describe the selected records titled ${res.data.title}`
-          }))
+            message: `Details under heading 1 now describe ${res.data.title}`
+          }), 'polite')
         })
         .catch(err => {
           err.response.status === 404 ? setFound(false) : setBackendError(err) })
@@ -209,16 +211,11 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
   if (!found) {
     return (<PageNotFound />)
   }
-  if (!!Object.keys(backendError).length) {
+  if (hasBackendError) {
     return (<PageBackendError error={backendError} />)
   }
   return (
     <React.Fragment>
-      <LiveMessage message={updateMessage} aria-live='polite' />
-      <Helmet
-        onChangeClientState={(newState) => firePageViewEvent(newState.title)} >
-        <title>{ item.title }</title>
-      </Helmet>
       <main id='main' className='container--full-width'>
         <nav aria-label="Collection page">
           <ContextSwitcher
