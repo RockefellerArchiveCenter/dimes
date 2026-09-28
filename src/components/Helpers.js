@@ -97,20 +97,6 @@ export const truncateString = (text, maxLength) => {
   }
 }
 
-/** Sends a custom pageview event to Matomo Tag Manager*/
-let lastFiredUrl = null;
-
-export const firePageViewEvent = () => {
-  const currentUrl = window.location.href;
-  // Handle translation, data loading, etc. - if already fired for this URL, skip
-  if (currentUrl === lastFiredUrl) {
-    return;
-  }
-  lastFiredUrl = currentUrl;
-  if (window && window._mtm) {
-    let dataLayer = window._mtm || [];
-    dataLayer.push({
-      event: 'reactPageViewEvent',
-    });
-  }
-}
+/** Composes a page title as [page] - [site] */
+export const SITE_TITLE = 'DIMES'
+export const withSiteTitle = page => page ? `${page} - ${SITE_TITLE}` : null

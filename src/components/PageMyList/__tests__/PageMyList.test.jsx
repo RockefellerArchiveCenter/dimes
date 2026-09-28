@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { render, act } from '@testing-library/react'
+import { MemoryRouter } from 'react-router'
 import PageMyList from '..'
 
 import { resolvedList } from '../../../__fixtures__/resolvedList'
@@ -36,9 +37,12 @@ it('renders props correctly', async () => {
   })
 
   await act(async () => {
-    await render(<I18nApp ReactComponent={<PageMyList
-      removeAllListItems={vi.fn()}
-      toggleInList={vi.fn()} />} />)
+    await render(
+      <MemoryRouter initialEntries={['/list']}>
+        <I18nApp ReactComponent={<PageMyList
+          removeAllListItems={vi.fn()}
+          toggleInList={vi.fn()} />} />
+      </MemoryRouter>)
   })
 
   const list = await document.querySelector('.saved-items')

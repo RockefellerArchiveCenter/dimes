@@ -24,7 +24,6 @@
     "react-datepicker": "^9.1.0",
     "react-dom": "^19.0.0",
     "react-google-recaptcha": "^3.1.0",
-    "react-helmet": "^6.1.0",
     "react-highlight-words": "^0.21.0",
     "react-i18next": "^17.0.14",
     "react-loading-skeleton": "^3.1.0",

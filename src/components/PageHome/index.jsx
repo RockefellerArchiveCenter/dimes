@@ -1,21 +1,23 @@
-import { Helmet } from 'react-helmet';
 import Hero from '../Hero';
 import SearchForm from '../SearchForm';
-import { firePageViewEvent } from '../Helpers';
+import { SITE_TITLE } from '../Helpers';
+import { usePageView } from '../Hooks';
 import './styles.scss';
-import { Trans } from '@lingui/react/macro'
+import { t } from '@lingui/core/macro'
 
-const PageHome = ({isMobile}) => (
-  <Trans comment='Page Home'>
-    <Helmet
-      onChangeClientState={(newState) => firePageViewEvent(newState.title)} >
-      <title>DIMES: Online Collections and Catalog of Rockefeller Archive Center</title>
-    </Helmet>
+const PageHome = ({isMobile}) => {
+
+  usePageView(`${SITE_TITLE} - ${t({
+    comment: 'Page Home title',
+    message: 'Online Collections and Catalog of Rockefeller Archive Center'
+  })}`)
+
+  return (
     <main id='main' className='home'>
       <Hero />
       <SearchForm className='search search-form--home' isMobile={isMobile}/>
     </main>
-  </Trans>
-)
+  )
+}
 
 export default PageHome
