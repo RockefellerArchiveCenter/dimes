@@ -51,12 +51,12 @@ msgstr "{0, select, rac {资料来源：洛克菲勒档案中心} other {来源:
 
 #. Current Results shown of total results
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:237
+#: src/components/PageSearch/index.jsx:244
 msgid "{0, select, true {{startItem} result} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem} result} other {{startItem}-{endItem} 的 {resultsCount} 搜索结果}}"
 
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:292
+#: src/components/PageSearch/index.jsx:299
 msgid "{0, select, true {{startItem}} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem}} other {{startItem}-{endItem} 的 {resultsCount} 搜索结果}}"
 
@@ -81,12 +81,12 @@ msgid "{0, select, true {View} other {View Online}}"
 msgstr "{0, select, true {看法} other {在线查看}}"
 
 #. Label for the end of the item
-#: src/components/PageAgent/index.jsx:145
+#: src/components/PageAgent/index.jsx:148
 msgid "{agentType, select, organization {Date Disbanded} other {Date of Death}}"
 msgstr "{agentType, select, organization {解散日期} other {死亡日期}}"
 
 #. Label for the start of the item
-#: src/components/PageAgent/index.jsx:141
+#: src/components/PageAgent/index.jsx:144
 msgid "{agentType, select, organization {Date Established} other {Date of Birth}}"
 msgstr "{agentType, select, organization {成立日期} other {出生日期}}"
 
@@ -105,14 +105,6 @@ msgstr "{hitCount, plural, one {项匹配的数字化内容 } other {项匹配�
 #: src/components/Helpers.js:72
 msgid "{hitCount, plural, one {match} other {matches}}"
 msgstr "{hitCount, plural, one {匹配} other {匹配}}"
-
-#. Search Results header
-#. placeholder {0}: params.query
-#. placeholder {1}: `“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`
-#. placeholder {2}: `“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`
-#: src/components/PageSearch/index.jsx:210
-msgid "{inProgress, select, true {Searching} other {{0, select, false {No search query entered} other {{resultsCount, plural, =0 {Sorry, there are no search results for {1}} other {Search Results for {2}}}}}}}"
-msgstr "{inProgress, select, true {搜寻中} other {{0, select, false {没有输入搜索查询} other {{resultsCount, plural, =0 {很抱歉，没有找到相应的搜索结果 {1}} other {的搜索结果 {2}}}}}}}"
 
 #. Label for Context Switcher
 #: src/components/ContextSwitcher/index.jsx:12
@@ -140,7 +132,7 @@ msgid "<0/>Back to Search"
 msgstr "<0/>返回搜索"
 
 #. New Search button
-#: src/components/PageMyList/index.jsx:297
+#: src/components/PageMyList/index.jsx:298
 msgid "<0/>Start a New Search"
 msgstr "<0/>开始新的搜索"
 
@@ -150,29 +142,14 @@ msgid "<0><1/> Schedule a Visit</0>"
 msgstr "<0><1/> 到访预约</0>"
 
 #. Go back to Item details for digital object
-#: src/components/PageDigitalObject/index.jsx:174
+#: src/components/PageDigitalObject/index.jsx:179
 msgid "<0><1/>Back to Item Details</0>"
 msgstr "<0><1/>返回项目详情</0>"
 
-#. Social Icons Titles
-#: src/components/SocialIcons/index.jsx:6
-msgid "<0><1><2><3><4>Facebook Logo</4><5/></3></2></1><6><7><8><9>Instagram Logo</9><10/></8></7></6><11><12><13><14>LinkedIn Logo</14><15/></13></12></11><16><17><18><19>YouTube Logo</19><20/></18></17></16></0>"
-msgstr "<0><1><2><3><4>Facebook 徽标</4><5/></3></2></1><6><7><8><9>Instagram 徽标</9><10/></8></7></6><11><12><13><14>LinkedIn 徽标</14><15/></13></12></11><16><17><18><19>YouTube 徽标</19><20/></18></17></16></0>"
-
-#. Page Title for user's list
-#: src/components/PageMyList/index.jsx:288
-msgid "<0><1>DIMES: My List</1></0>"
-msgstr "<0><1>DIMES：我的收藏目录</1></0>"
-
-#. Page Home
-#: src/components/PageHome/index.jsx:9
-msgid "<0><1>DIMES: Online Collections and Catalog of Rockefeller Archive Center</1></0><2><3/><4/></2>"
-msgstr "<0><1>DIMES：洛克菲勒档案中心的在线藏品和目录</1></0><2><3/><4/></2>"
-
 #. Page Not Found
-#: src/components/PageNotFound/index.jsx:9
-msgid "<0><1>Page Not Found</1></0><2><3><4/></3><5>Sorry, the requested page was not found!</5><6>Try <7>a search</7> to find what you're looking for.</6></2>"
-msgstr "<0><1>未找到页面</1></0><2><3><4/></3><5>抱歉，未找到所请求的页面！</5><6>请尝试<7>搜索</7>，以找到您要找的内容。</6></2>"
+#: src/components/PageNotFound/index.jsx:17
+msgid "<0><1><2/></1><3>Sorry, the requested page was not found!</3><4>Try <5>a search</5> to find what you're looking for.</4></0>"
+msgstr "<0><1><2/></1><3>抱歉，未找到所请求的页面！</3><4>请尝试<5>搜索</5>，以找到您要找的内容。</4></0>"
 
 #. Page Backend Error
 #. placeholder {0}: error.config.url
@@ -180,14 +157,14 @@ msgstr "<0><1>未找到页面</1></0><2><3><4/></3><5>抱歉，未找到所请�
 #. placeholder {2}: error.message
 #. placeholder {3}: error.response.data ? <p className='backend-error__message'>{JSON.stringify(error.response.data)}</p> : null
 #. placeholder {4}: error.config.data ? <> <p className='backend-error__header mt-18'>Request data:</p> <p className='backend-error__message'>{error.config.data}</p> </> : null
-#: src/components/PageBackendError/index.jsx:9
-msgid "<0><1>Page Not Found</1></0><2><3><4/></3><5>There was an error fetching data.</5><6>The request to {0} failed.</6><7>To report this problem, send us an email at <8>archive@rockarch.org</8>.</7><9>Error message:</9><10>{1}: {2}</10>{3}{4}</2>"
-msgstr "<0><1>未找到页面</1></0><2><3><4/></3><5>获取数据时出现错误。</5><6>{0} 请求失败。</6><7>要报告此问题，请发送电子邮件至<8>archive@rockarch.org。</8></7><9>错误信息：</9><10>{1}:{2}</10>{3}{4}</2>"
+#: src/components/PageBackendError/index.jsx:16
+msgid "<0><1><2/></1><3>There was an error fetching data.</3><4>The request to {0} failed.</4><5>To report this problem, send us an email at <6>archive@rockarch.org</6>.</5><7>Error message:</7><8>{1}: {2}</8>{3}{4}</0>"
+msgstr "<0><1><2/></1><3>获取数据时出现错误。</3><4>{0} 请求失败。</4><5>要报告此问题，请发送电子邮件至<6>archive@rockarch.org。</6></5><7>错误信息：</7><8>{1}:{2}</8>{3}{4}</0>"
 
-#. Search Results title
-#: src/components/PageSearch/index.jsx:193
-msgid "<0><1>Search Results</1></0>"
-msgstr "<0><1>搜索结果</1></0>"
+#. Social Icons Titles
+#: src/components/SocialIcons/index.jsx:6
+msgid "<0><1><2><3><4>Facebook Logo</4><5/></3></2></1><6><7><8><9>Instagram Logo</9><10/></8></7></6><11><12><13><14>LinkedIn Logo</14><15/></13></12></11><16><17><18><19>YouTube Logo</19><20/></18></17></16></0>"
+msgstr "<0><1><2><3><4>Facebook 徽标</4><5/></3></2></1><6><7><8><9>Instagram 徽标</9><10/></8></7></6><11><12><13><14>LinkedIn 徽标</14><15/></13></12></11><16><17><18><19>YouTube 徽标</19><20/></18></17></16></0>"
 
 #. Confirmation message when citation copied
 #: src/components/RecordsDetail/index.jsx:184
@@ -226,7 +203,7 @@ msgid "<0>Jump to a part of the collection containing matches by clicking on an 
 msgstr "<0>点击活动方格，跳转到包含匹配项的集合部分。</0><1>在小地图中，每个方格代表该集合的一部分。彩色方格代表包含一个或多个符合搜索条件的部分.</1>"
 
 #. Back to search button
-#: src/components/PageAgent/index.jsx:259
+#: src/components/PageAgent/index.jsx:258
 msgid "<0>keyboard_arrow_left</0>Back to Search"
 msgstr "<0>键盘_arrow_left 返回</0>搜索"
 
@@ -254,7 +231,7 @@ msgid "<0>More about this {agentType}</0>"
 msgstr "<0>更多相关信息{agentType}</0>"
 
 #. Header for user's list
-#: src/components/PageMyList/index.jsx:303
+#: src/components/PageMyList/index.jsx:304
 msgid "<0>My List</0>"
 msgstr "<0>我的收藏目录</0>"
 
@@ -274,7 +251,7 @@ msgid "<0>Submit request</0>"
 msgstr "<0>提交申请</0>"
 
 #. summary message
-#: src/components/PageAgent/index.jsx:273
+#: src/components/PageAgent/index.jsx:272
 msgid "<0>Summary</0>"
 msgstr "<0>摘要</0>"
 
@@ -288,7 +265,7 @@ msgstr "<0>点击活动方格，跳转到所匹配的专辑的一项内容。</0
 #. placeholder {1}: err.code
 #. placeholder {2}: err.message
 #. placeholder {3}: err.config.data
-#: src/components/PageMyList/index.jsx:131
+#: src/components/PageMyList/index.jsx:138
 msgid "<0>There was an error submitting your request.</0><1>The request to {0} failed with the message {1}: {2}.</1><2>{3}</2>"
 msgstr "<0>提交请求时出现错误。</0><1>请求{0} 失败，显示信息{1}:{2}.</1><2>{3}</2>"
 
@@ -344,7 +321,7 @@ msgid "Add to List"
 msgstr "添加到列表"
 
 #. Message while page loads for email submissions
-#: src/components/PageMyList/index.jsx:142
+#: src/components/PageMyList/index.jsx:149
 msgid "Adding items to your message"
 msgstr "在信息中添加项目"
 
@@ -371,7 +348,7 @@ msgid "archive@rockarch.org"
 msgstr "archive@rockarch.org"
 
 #. Confirmation to delete all items from list
-#: src/components/PageMyList/index.jsx:374
+#: src/components/PageMyList/index.jsx:375
 msgid "Are you sure you want to remove all the items from your list?<0><1/><2/></0>"
 msgstr "您确定要删除列表中的所有项目吗？<0><1/><2/></0>"
 
@@ -381,7 +358,7 @@ msgid "Bulk data download"
 msgstr "批量数据下载"
 
 #. Title shown when request failed
-#: src/components/PageMyList/index.jsx:359
+#: src/components/PageMyList/index.jsx:360
 msgid "Can't Complete Request"
 msgstr "无法完成请求"
 
@@ -438,7 +415,7 @@ msgid "Collections Related to {agentTitle}"
 msgstr "与 {agentTitle} 相关的收藏"
 
 #. Remove all confirmation title
-#: src/components/PageMyList/index.jsx:387
+#: src/components/PageMyList/index.jsx:388
 msgid "Confirm Remove All"
 msgstr "确认全部删除"
 
@@ -453,7 +430,7 @@ msgid "Creator"
 msgstr "创建者"
 
 #. Message shown for downloading high-res images in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:165
+#: src/components/PageDigitalObject/index.jsx:170
 msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "当前页面 - JPEG2000 {pixelDimensions}"
 
@@ -469,7 +446,7 @@ msgstr "取消选择所有项目"
 
 #. Update message for selected record
 #. placeholder {0}: res.data.title
-#: src/components/PageRecords/index.jsx:118
+#: src/components/PageRecords/index.jsx:121
 msgid "Details under heading 1 have been updated to describe the selected records titled {0}"
 msgstr "标题 1 下的详细内容已更新，以描述题为 {0} 的选定记录。"
 
@@ -479,7 +456,7 @@ msgid "dimes.rockarch.org"
 msgstr "dimes.rockarch.org"
 
 #. Message shown on download dropdown button
-#: src/components/PageDigitalObject/index.jsx:138
+#: src/components/PageDigitalObject/index.jsx:143
 msgid "Download"
 msgstr "下载"
 
@@ -512,7 +489,7 @@ msgid "Email List"
 msgstr "邮件列表"
 
 #. Title displayed after emailing selected items
-#: src/components/PageMyList/index.jsx:148
+#: src/components/PageMyList/index.jsx:155
 msgid "Email Sent"
 msgstr "邮件已发送"
 
@@ -532,13 +509,18 @@ msgid "Enter the date of your research visit (mm/dd/yyyy)"
 msgstr "请输入研究访问日期（月/日/年）"
 
 #. Message shown for downloading PDF in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:150
+#: src/components/PageDigitalObject/index.jsx:155
 msgid "Entire Item - PDF"
 msgstr "整个项目 - PDF"
 
+#. Page Backend Error title
+#: src/components/PageBackendError/index.jsx:10
+msgid "Error"
+msgstr "错误"
+
 #. Title displayed when error occurs while submitting request
-#: src/components/PageMyList/index.jsx:128
-#: src/components/PageMyList/index.jsx:159
+#: src/components/PageMyList/index.jsx:135
+#: src/components/PageMyList/index.jsx:166
 msgid "Error submitting request"
 msgstr "提交申请出错"
 
@@ -548,7 +530,7 @@ msgid "Fax: (914) 631-6017"
 msgstr "传真：（914）631-6017"
 
 #. Label for Filters button
-#: src/components/PageSearch/index.jsx:250
+#: src/components/PageSearch/index.jsx:257
 msgid "Filters"
 msgstr "筛选"
 
@@ -573,7 +555,7 @@ msgid "Found in:"
 msgstr "源自:"
 
 #. Founded by property
-#: src/components/PageAgent/index.jsx:202
+#: src/components/PageAgent/index.jsx:205
 msgid "Founded by"
 msgstr "创立者"
 
@@ -615,7 +597,7 @@ msgid "https://raccess.rockarch.org"
 msgstr "https://raccess.rockarch.org"
 
 #. Aeon access point
-#: src/components/PageMyList/index.jsx:109
+#: src/components/PageMyList/index.jsx:116
 msgid "https://raccess.rockarch.org/aeon.dll"
 msgstr "https://raccess.rockarch.org/aeon.dll"
 
@@ -697,14 +679,14 @@ msgid "Licensing for descriptive metadata"
 msgstr "描述性元数据许可"
 
 #. Location property
-#: src/components/PageAgent/index.jsx:203
+#: src/components/PageAgent/index.jsx:206
 msgid "Location of Headquarters"
 msgstr "总部所在地"
 
 #. Company Email link
 #: src/components/ModalMyList/index.jsx:164
 #: src/components/ModalMyList/index.jsx:510
-#: src/components/PageBackendError/index.jsx:18
+#: src/components/PageBackendError/index.jsx:21
 #: src/components/PrimaryLink/index.jsx:25
 msgid "mailto:archive@rockarch.org"
 msgstr "mailto:archive@rockarch.org"
@@ -747,13 +729,15 @@ msgstr "星期一至星期五<0/>上午 9:30 至下午 5:00。<1/>"
 
 #. Message shown on button within Dropdown list
 #. Message shown on button within the Header
+#. Page title for user's list
 #: src/components/Dropdown/index.jsx:185
 #: src/components/Header/index.jsx:32
+#: src/components/PageMyList/index.jsx:36
 msgid "My List"
 msgstr "我的列表"
 
 #. Nicknames property
-#: src/components/PageAgent/index.jsx:204
+#: src/components/PageAgent/index.jsx:207
 msgid "Nicknames"
 msgstr "昵称"
 
@@ -772,10 +756,20 @@ msgstr "没有选择要提交的项目。"
 msgid "No saved items."
 msgstr "无保存项目。"
 
+#. Search results header with no search term
+#: src/components/PageSearch/index.jsx:223
+msgid "No search query entered"
+msgstr "没有输入搜索查询"
+
 #. Occupations property
-#: src/components/PageAgent/index.jsx:199
+#: src/components/PageAgent/index.jsx:202
 msgid "Occupations"
 msgstr "职业"
+
+#. Page Home title
+#: src/components/PageHome/index.jsx:10
+msgid "Online Collections and Catalog of Rockefeller Archive Center"
+msgstr "洛克菲勒档案中心的在线藏品和目录"
 
 #. Tooltip for button
 #: src/components/Dropdown/index.jsx:115
@@ -794,6 +788,11 @@ msgstr "在新窗口打开"
 msgid "Organizations"
 msgstr "组织"
 
+#. Page Not Found title
+#: src/components/PageNotFound/index.jsx:11
+msgid "Page Not Found"
+msgstr "未找到页面"
+
 #. Label for People category
 #: src/components/SearchForm/index.jsx:38
 msgid "People"
@@ -805,7 +804,7 @@ msgid "Phone: (914) 366-6300"
 msgstr "电话：（914）366-6300"
 
 #. Place of birth property
-#: src/components/PageAgent/index.jsx:201
+#: src/components/PageAgent/index.jsx:204
 msgid "Place of Birth"
 msgstr "出生地"
 
@@ -844,7 +843,7 @@ msgid "Please select a reading room"
 msgstr "请选择阅览室"
 
 #. Positions held property
-#: src/components/PageAgent/index.jsx:200
+#: src/components/PageAgent/index.jsx:203
 msgid "Positions Held"
 msgstr "曾任职务"
 
@@ -854,12 +853,12 @@ msgid "Preparing items"
 msgstr "准备项目"
 
 #. Message while page loads for Aeon submissions
-#: src/components/PageMyList/index.jsx:102
+#: src/components/PageMyList/index.jsx:109
 msgid "Preparing items for your request"
 msgstr "为您的要求准备物品"
 
 #. Page Title for sending an Aeon request
-#: src/components/PageMyList/index.jsx:98
+#: src/components/PageMyList/index.jsx:105
 msgid "Preparing Request Data"
 msgstr "准备申请数据"
 
@@ -963,19 +962,33 @@ msgid "Search Our Collections.<0/>Discover People and Organizations.<1/>Access D
 msgstr "探索我们的馆藏。<0/>发现历史人物和组织。<1/>访问数字化内容。"
 
 #. Page Home Test
-#: src/components/PageHome/__tests__/PageHome.test.jsx:12
+#: src/components/PageHome/__tests__/PageHome.test.jsx:16
 msgid "Search Our Collections.Discover People and Organizations.Access Digital Content."
 msgstr "搜索我们的藏品、发现人物和组织、访问数字内容。"
 
-#. Search Results for Test
-#: src/components/PageSearch/__tests__/PageSearch.test.jsx:43
-msgid "Search Results for"
+#. Search Results title
+#: src/components/PageSearch/index.jsx:54
+msgid "Search Results"
 msgstr "搜索结果"
+
+#. Search Results title with query
+#. Search results header with results
+#. Search results header with results
+#: src/components/PageSearch/__tests__/PageSearch.test.jsx:45
+#: src/components/PageSearch/index.jsx:50
+#: src/components/PageSearch/index.jsx:232
+msgid "Search Results for “{query}”"
+msgstr "“{query}”的搜索结果"
 
 #. Placeholder text for search textbox
 #: src/components/SearchForm/index.jsx:64
 msgid "Search..."
 msgstr "搜索..."
+
+#. Search results header while searching
+#: src/components/PageSearch/index.jsx:218
+msgid "Searching"
+msgstr "搜寻中"
 
 #. Holiday Schedule message
 #: src/components/PrimaryLink/index.jsx:42
@@ -993,7 +1006,7 @@ msgstr "选择阅览室位置"
 
 #. Message displayed after emailing selected items
 #. placeholder {0}: submitted.email
-#: src/components/PageMyList/index.jsx:152
+#: src/components/PageMyList/index.jsx:159
 msgid "Selected items in your list have been emailed to {0}"
 msgstr "您清单中的选定项目已通过电子邮件发送至 {0}"
 
@@ -1015,7 +1028,7 @@ msgid "Send List"
 msgstr "发送列表"
 
 #. Page Title for sending an email
-#: src/components/PageMyList/index.jsx:138
+#: src/components/PageMyList/index.jsx:145
 msgid "Sending Email"
 msgstr "发送电子邮件"
 
@@ -1056,42 +1069,47 @@ msgid "Skip to main content"
 msgstr "跳转到主要内容"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:183
+#: src/components/PageAgent/index.jsx:186
 msgid "Social Networks and Archival Context"
 msgstr "社会网络和档案背景"
 
 #. Message shown when request failed
-#: src/components/PageMyList/index.jsx:355
+#: src/components/PageMyList/index.jsx:356
 msgid "Sorry, our system is unable to process requests right now. We're working to fix this! Please try again later."
 msgstr "很抱歉，我们的系统现在无法处理申请。我们正在努力修复！请稍后再试。"
 
 #. Page Not Found Test
-#: src/components/PageNotFound/__tests__/PageNotFound.test.jsx:12
+#: src/components/PageNotFound/__tests__/PageNotFound.test.jsx:16
 msgid "Sorry, the requested page was not found!"
 msgstr "抱歉，未找到所请求的页面！"
 
+#. Search results header with no results
+#: src/components/PageSearch/index.jsx:228
+msgid "Sorry, there are no search results for “{query}”"
+msgstr "很抱歉，没有找到相应的搜索结果 “{query}”"
+
 #. Name for sort results input
-#: src/components/PageSearch/index.jsx:260
+#: src/components/PageSearch/index.jsx:267
 msgid "sort"
 msgstr "排序"
 
 #. Sort by creator name label
-#: src/components/PageSearch/index.jsx:53
+#: src/components/PageSearch/index.jsx:75
 msgid "Sort by creator name"
 msgstr "按创作者姓名排序"
 
 #. Sort by relevance label
-#: src/components/PageSearch/index.jsx:41
+#: src/components/PageSearch/index.jsx:63
 msgid "Sort by relevance"
 msgstr "按相关性排序"
 
 #. Sort by title label
-#: src/components/PageSearch/index.jsx:47
+#: src/components/PageSearch/index.jsx:69
 msgid "Sort by title"
 msgstr "按标题排序"
 
 #. Label for sort results input
-#: src/components/PageSearch/index.jsx:265
+#: src/components/PageSearch/index.jsx:272
 msgid "Sort search results"
 msgstr "搜索结果排序"
 
@@ -1131,7 +1149,7 @@ msgstr "洛克菲勒档案中心的在线收藏和目录"
 
 #. Message displayed when error occurs while submitting request
 #. placeholder {0}: err.toString()
-#: src/components/PageMyList/index.jsx:163
+#: src/components/PageMyList/index.jsx:170
 msgid "There was an error submitting your request. The error message was: {0}"
 msgstr "提交您的请求时出现错误。错误信息为{0}"
 
@@ -1140,8 +1158,13 @@ msgstr "提交您的请求时出现错误。错误信息为{0}"
 msgid "View minimap"
 msgstr "查看最小地图"
 
+#. Digital object viewer page title
+#: src/components/PageDigitalObject/index.jsx:26
+msgid "View Online"
+msgstr "在线查看"
+
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:181
+#: src/components/PageAgent/index.jsx:184
 msgid "Virtual International Authority File"
 msgstr "虚拟国际权威档案"
 
@@ -1153,6 +1176,6 @@ msgid "We cannot process your request unless you agree to pay the costs of repro
 msgstr "除非您同意支付复制费用，否则我们无法处理您的申请。"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:182
+#: src/components/PageAgent/index.jsx:185
 msgid "WorldCat Identities"
 msgstr "WorldCat Identities"

@@ -1,4 +1,5 @@
 import { render, act } from '@testing-library/react'
+import { MemoryRouter } from 'react-router'
 import { I18nApp } from '../../i18n'
 import PageBackendError from '..'
 
@@ -16,8 +17,11 @@ it('renders props correctly', () => {
   }
 
   act(() => {
-    render(<I18nApp ReactComponent={<PageBackendError
-      error={error} />} />)
+    render(
+      <MemoryRouter>
+        <I18nApp ReactComponent={<PageBackendError
+          error={error} />} />
+      </MemoryRouter>)
   })
 
   const page = document.querySelector('.backend-error')
