@@ -1,4 +1,5 @@
 import { render, act } from '@testing-library/react'
+import { MemoryRouter } from 'react-router'
 import { I18nApp } from '../../i18n'
 import { t } from '@lingui/core/macro'
 import PageHome from '..'
@@ -6,7 +7,10 @@ import PageHome from '..'
 it('renders props correctly', () => {
 
   act(() => {
-    render(<I18nApp ReactComponent={<PageHome  />} />)
+    render(
+      <MemoryRouter>
+        <I18nApp ReactComponent={<PageHome  />} />
+      </MemoryRouter>)
   })
 
   expect(document.querySelector('h1').textContent).toBe(t({

@@ -51,12 +51,12 @@ msgstr "{0, select, rac {Kaynak: Rockefeller Archive Center} other {Kaynak: {sou
 
 #. Current Results shown of total results
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:237
+#: src/components/PageSearch/index.jsx:244
 msgid "{0, select, true {{startItem} result} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem} result} other {{resultsCount} sonuçtan {startItem}-{endItem} arası görüntüleniyor}}"
 
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:292
+#: src/components/PageSearch/index.jsx:299
 msgid "{0, select, true {{startItem}} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem}} other {{startItem}-{endItem} -den {resultsCount} sonuçlar}}"
 
@@ -81,12 +81,12 @@ msgid "{0, select, true {View} other {View Online}}"
 msgstr "{0, select, true {Görüş} other {Çevri̇mi̇çi̇ Görüntüle}}"
 
 #. Label for the end of the item
-#: src/components/PageAgent/index.jsx:145
+#: src/components/PageAgent/index.jsx:148
 msgid "{agentType, select, organization {Date Disbanded} other {Date of Death}}"
 msgstr "{agentType, select, organization {Dağıtılma Tarihi} other {Ölüm tarihi}}"
 
 #. Label for the start of the item
-#: src/components/PageAgent/index.jsx:141
+#: src/components/PageAgent/index.jsx:144
 msgid "{agentType, select, organization {Date Established} other {Date of Birth}}"
 msgstr "{agentType, select, organization {Kuruluş Tarihi} other {Doğum Tarihi}}"
 
@@ -105,14 +105,6 @@ msgstr "{hitCount, plural, one {dijital eşleşme} other {dijital eşleşme}}"
 #: src/components/Helpers.js:72
 msgid "{hitCount, plural, one {match} other {matches}}"
 msgstr "{hitCount, plural, one {eşleşme} other {eşleşme}}"
-
-#. Search Results header
-#. placeholder {0}: params.query
-#. placeholder {1}: `“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`
-#. placeholder {2}: `“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`
-#: src/components/PageSearch/index.jsx:210
-msgid "{inProgress, select, true {Searching} other {{0, select, false {No search query entered} other {{resultsCount, plural, =0 {Sorry, there are no search results for {1}} other {Search Results for {2}}}}}}}"
-msgstr "{inProgress, select, true {Aranıyor} other {{0, select, false {Arama sorgusu girilmemiş} other {{resultsCount, plural, =0 {Maalesef, {1} için arama sonucu yok} other {{2} için Arama Sonuçları}}}}}}"
 
 #. Label for Context Switcher
 #: src/components/ContextSwitcher/index.jsx:12
@@ -140,7 +132,7 @@ msgid "<0/>Back to Search"
 msgstr "<0/>aramaya geri̇ dön"
 
 #. New Search button
-#: src/components/PageMyList/index.jsx:297
+#: src/components/PageMyList/index.jsx:298
 msgid "<0/>Start a New Search"
 msgstr "<0/>Yeni Bir Arama Başlatın"
 
@@ -150,29 +142,14 @@ msgid "<0><1/> Schedule a Visit</0>"
 msgstr "<0><1/> Zi̇yaret Planla</0>"
 
 #. Go back to Item details for digital object
-#: src/components/PageDigitalObject/index.jsx:174
+#: src/components/PageDigitalObject/index.jsx:179
 msgid "<0><1/>Back to Item Details</0>"
 msgstr "<0><1/>Madde Detaylarina Geri̇ Dön</0>"
 
-#. Social Icons Titles
-#: src/components/SocialIcons/index.jsx:6
-msgid "<0><1><2><3><4>Facebook Logo</4><5/></3></2></1><6><7><8><9>Instagram Logo</9><10/></8></7></6><11><12><13><14>LinkedIn Logo</14><15/></13></12></11><16><17><18><19>YouTube Logo</19><20/></18></17></16></0>"
-msgstr "<0><1><2><3><4>Facebook Logosu</4><5/></3></2></1><6><7><8><9>Instagram Logosu</9><10/></8></7></6><11><12><13><14>LinkedIn Logosu</14><15/></13></12></11><16><17><18><19>YouTube Logosu</19><20/></18></17></16></0>"
-
-#. Page Title for user's list
-#: src/components/PageMyList/index.jsx:288
-msgid "<0><1>DIMES: My List</1></0>"
-msgstr "<0><1>DIMES: Listem</1></0>"
-
-#. Page Home
-#: src/components/PageHome/index.jsx:9
-msgid "<0><1>DIMES: Online Collections and Catalog of Rockefeller Archive Center</1></0><2><3/><4/></2>"
-msgstr "<0><1>DIMES: Rockefeller Arşiv Merkezi Online Koleksiyonları ve Kataloğu</1></0><2><3/><4/></2>"
-
 #. Page Not Found
-#: src/components/PageNotFound/index.jsx:9
-msgid "<0><1>Page Not Found</1></0><2><3><4/></3><5>Sorry, the requested page was not found!</5><6>Try <7>a search</7> to find what you're looking for.</6></2>"
-msgstr "<0><1>Sayfa Bulunamadı</1></0><2><3><4/></3><5>Üzgünüz, istenen sayfa bulunamadı!</5><6>Aradığınızı bulmak için <7>bir arama</7> yapmayı deneyin.</6></2>"
+#: src/components/PageNotFound/index.jsx:17
+msgid "<0><1><2/></1><3>Sorry, the requested page was not found!</3><4>Try <5>a search</5> to find what you're looking for.</4></0>"
+msgstr "<0><1><2/></1><3>Üzgünüz, istenen sayfa bulunamadı!</3><4>Aradığınızı bulmak için <5>bir arama</5> yapmayı deneyin.</4></0>"
 
 #. Page Backend Error
 #. placeholder {0}: error.config.url
@@ -180,14 +157,14 @@ msgstr "<0><1>Sayfa Bulunamadı</1></0><2><3><4/></3><5>Üzgünüz, istenen sayf
 #. placeholder {2}: error.message
 #. placeholder {3}: error.response.data ? <p className='backend-error__message'>{JSON.stringify(error.response.data)}</p> : null
 #. placeholder {4}: error.config.data ? <> <p className='backend-error__header mt-18'>Request data:</p> <p className='backend-error__message'>{error.config.data}</p> </> : null
-#: src/components/PageBackendError/index.jsx:9
-msgid "<0><1>Page Not Found</1></0><2><3><4/></3><5>There was an error fetching data.</5><6>The request to {0} failed.</6><7>To report this problem, send us an email at <8>archive@rockarch.org</8>.</7><9>Error message:</9><10>{1}: {2}</10>{3}{4}</2>"
-msgstr "<0><1>Sayfa Bulunamadı</1></0><2><3><4/></3><5>Veri alınırken bir hata oluştu.</5><6>{0} adresine yapılan istek başarısız oldu.</6><7>Bu sorunu bildirmek için bize <8>archive@rockarch.org</8> adresinden bir e-posta gönderin.</7><9>Hata mesajı:</9><10>{1}: {2}</10>{3}{4}</2>"
+#: src/components/PageBackendError/index.jsx:16
+msgid "<0><1><2/></1><3>There was an error fetching data.</3><4>The request to {0} failed.</4><5>To report this problem, send us an email at <6>archive@rockarch.org</6>.</5><7>Error message:</7><8>{1}: {2}</8>{3}{4}</0>"
+msgstr "<0><1><2/></1><3>Veri alınırken bir hata oluştu.</3><4>{0} adresine yapılan istek başarısız oldu.</4><5>Bu sorunu bildirmek için bize <6>archive@rockarch.org</6> adresinden bir e-posta gönderin.</5><7>Hata mesajı:</7><8>{1}: {2}</8>{3}{4}</0>"
 
-#. Search Results title
-#: src/components/PageSearch/index.jsx:193
-msgid "<0><1>Search Results</1></0>"
-msgstr "<0><1>Arama Sonuçları</1></0>"
+#. Social Icons Titles
+#: src/components/SocialIcons/index.jsx:6
+msgid "<0><1><2><3><4>Facebook Logo</4><5/></3></2></1><6><7><8><9>Instagram Logo</9><10/></8></7></6><11><12><13><14>LinkedIn Logo</14><15/></13></12></11><16><17><18><19>YouTube Logo</19><20/></18></17></16></0>"
+msgstr "<0><1><2><3><4>Facebook Logosu</4><5/></3></2></1><6><7><8><9>Instagram Logosu</9><10/></8></7></6><11><12><13><14>LinkedIn Logosu</14><15/></13></12></11><16><17><18><19>YouTube Logosu</19><20/></18></17></16></0>"
 
 #. Confirmation message when citation copied
 #: src/components/RecordsDetail/index.jsx:184
@@ -226,7 +203,7 @@ msgid "<0>Jump to a part of the collection containing matches by clicking on an 
 msgstr "<0>Aktif bir kareye tıklayarak koleksiyonun eşleşme içeren bir bölümüne atlayın.</0><1>Minimap diyagramında, her kare bu koleksiyonun bir bölümünü temsil eder. Renkli kareler, aramanız için bir veya daha fazla eşleşme içeren bölümleri temsil eder.</1>"
 
 #. Back to search button
-#: src/components/PageAgent/index.jsx:259
+#: src/components/PageAgent/index.jsx:258
 msgid "<0>keyboard_arrow_left</0>Back to Search"
 msgstr "<0>keyboard_arrow_left</0>Aramaya Geri Dön"
 
@@ -254,7 +231,7 @@ msgid "<0>More about this {agentType}</0>"
 msgstr "<0>Hakkında daha fazla bilgi {agentType}</0>"
 
 #. Header for user's list
-#: src/components/PageMyList/index.jsx:303
+#: src/components/PageMyList/index.jsx:304
 msgid "<0>My List</0>"
 msgstr "<0>Listem</0>"
 
@@ -274,7 +251,7 @@ msgid "<0>Submit request</0>"
 msgstr "<0>İstek gönder</0>"
 
 #. summary message
-#: src/components/PageAgent/index.jsx:273
+#: src/components/PageAgent/index.jsx:272
 msgid "<0>Summary</0>"
 msgstr "<0>Özet</0>"
 
@@ -288,7 +265,7 @@ msgstr "<0>Mini harita, aktif bir kareye tıklayarak bir koleksiyondaki arama e�
 #. placeholder {1}: err.code
 #. placeholder {2}: err.message
 #. placeholder {3}: err.config.data
-#: src/components/PageMyList/index.jsx:131
+#: src/components/PageMyList/index.jsx:138
 msgid "<0>There was an error submitting your request.</0><1>The request to {0} failed with the message {1}: {2}.</1><2>{3}</2>"
 msgstr "<0>İsteğinizi gönderirken bir hata oluştu.</0><1>{0} adresine yapılan istek {1}: {2} mesajı ile başarısız oldu.</1><2>{3}</2>"
 
@@ -344,7 +321,7 @@ msgid "Add to List"
 msgstr "Li̇steye Ekle"
 
 #. Message while page loads for email submissions
-#: src/components/PageMyList/index.jsx:142
+#: src/components/PageMyList/index.jsx:149
 msgid "Adding items to your message"
 msgstr "Mesajınıza öğe ekleme"
 
@@ -371,7 +348,7 @@ msgid "archive@rockarch.org"
 msgstr "archive@rockarch.org"
 
 #. Confirmation to delete all items from list
-#: src/components/PageMyList/index.jsx:374
+#: src/components/PageMyList/index.jsx:375
 msgid "Are you sure you want to remove all the items from your list?<0><1/><2/></0>"
 msgstr "Listenizdeki tüm öğeleri kaldırmak istediğinizden emin misiniz?<0><1/><2/></0>"
 
@@ -381,7 +358,7 @@ msgid "Bulk data download"
 msgstr "Toplu veri indirme"
 
 #. Title shown when request failed
-#: src/components/PageMyList/index.jsx:359
+#: src/components/PageMyList/index.jsx:360
 msgid "Can't Complete Request"
 msgstr "Talep Tamamlanamıyor"
 
@@ -438,7 +415,7 @@ msgid "Collections Related to {agentTitle}"
 msgstr "{agentTitle} İle İlgi̇li̇ Koleksi̇yonlar"
 
 #. Remove all confirmation title
-#: src/components/PageMyList/index.jsx:387
+#: src/components/PageMyList/index.jsx:388
 msgid "Confirm Remove All"
 msgstr "Onaylayın Tümünü Kaldır"
 
@@ -453,7 +430,7 @@ msgid "Creator"
 msgstr "Oluşturan"
 
 #. Message shown for downloading high-res images in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:165
+#: src/components/PageDigitalObject/index.jsx:170
 msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "Geçerli Sayfa - JPEG2000 {pixelDimensions}"
 
@@ -469,7 +446,7 @@ msgstr "Tum ogelerin secimini kaldiriniz."
 
 #. Update message for selected record
 #. placeholder {0}: res.data.title
-#: src/components/PageRecords/index.jsx:118
+#: src/components/PageRecords/index.jsx:121
 msgid "Details under heading 1 have been updated to describe the selected records titled {0}"
 msgstr "Başlık 1 altındaki detaylar {0} başlıklı seçilmiş kayıtları tanımlayacak şekilde güncellenmiştir"
 
@@ -479,7 +456,7 @@ msgid "dimes.rockarch.org"
 msgstr "dimes.rockarch.org"
 
 #. Message shown on download dropdown button
-#: src/components/PageDigitalObject/index.jsx:138
+#: src/components/PageDigitalObject/index.jsx:143
 msgid "Download"
 msgstr "İndi̇r"
 
@@ -512,7 +489,7 @@ msgid "Email List"
 msgstr "Li̇steyi̇ E-posta Yoluyla Gönder"
 
 #. Title displayed after emailing selected items
-#: src/components/PageMyList/index.jsx:148
+#: src/components/PageMyList/index.jsx:155
 msgid "Email Sent"
 msgstr "E-posta Gönderildi"
 
@@ -532,13 +509,18 @@ msgid "Enter the date of your research visit (mm/dd/yyyy)"
 msgstr "Araştırma ziyaretinizin tarihini girin (aa/gg/yyyy)"
 
 #. Message shown for downloading PDF in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:150
+#: src/components/PageDigitalObject/index.jsx:155
 msgid "Entire Item - PDF"
 msgstr "Ürünün Tamamı - PDF"
 
+#. Page Backend Error title
+#: src/components/PageBackendError/index.jsx:10
+msgid "Error"
+msgstr "Hata"
+
 #. Title displayed when error occurs while submitting request
-#: src/components/PageMyList/index.jsx:128
-#: src/components/PageMyList/index.jsx:159
+#: src/components/PageMyList/index.jsx:135
+#: src/components/PageMyList/index.jsx:166
 msgid "Error submitting request"
 msgstr "İstek gönderilirken hata oluştu"
 
@@ -548,7 +530,7 @@ msgid "Fax: (914) 631-6017"
 msgstr "Faks: (914) 631-6017"
 
 #. Label for Filters button
-#: src/components/PageSearch/index.jsx:250
+#: src/components/PageSearch/index.jsx:257
 msgid "Filters"
 msgstr "Filtreler"
 
@@ -573,7 +555,7 @@ msgid "Found in:"
 msgstr "İçeri̇si̇nde Bulundu:"
 
 #. Founded by property
-#: src/components/PageAgent/index.jsx:202
+#: src/components/PageAgent/index.jsx:205
 msgid "Founded by"
 msgstr "Kurucusu"
 
@@ -615,7 +597,7 @@ msgid "https://raccess.rockarch.org"
 msgstr "https://raccess.rockarch.org"
 
 #. Aeon access point
-#: src/components/PageMyList/index.jsx:109
+#: src/components/PageMyList/index.jsx:116
 msgid "https://raccess.rockarch.org/aeon.dll"
 msgstr "https://raccess.rockarch.org/aeon.dll"
 
@@ -697,14 +679,14 @@ msgid "Licensing for descriptive metadata"
 msgstr "Açıklayıcı meta veriler için lisanslama"
 
 #. Location property
-#: src/components/PageAgent/index.jsx:203
+#: src/components/PageAgent/index.jsx:206
 msgid "Location of Headquarters"
 msgstr "Genel Merkezi̇n Bulunduğu Yer"
 
 #. Company Email link
 #: src/components/ModalMyList/index.jsx:164
 #: src/components/ModalMyList/index.jsx:510
-#: src/components/PageBackendError/index.jsx:18
+#: src/components/PageBackendError/index.jsx:21
 #: src/components/PrimaryLink/index.jsx:25
 msgid "mailto:archive@rockarch.org"
 msgstr "mailto:archive@rockarch.org"
@@ -747,13 +729,15 @@ msgstr "Pazartesi-Cuma<0/>9:30 - 17:00 arası.<1/>"
 
 #. Message shown on button within Dropdown list
 #. Message shown on button within the Header
+#. Page title for user's list
 #: src/components/Dropdown/index.jsx:185
 #: src/components/Header/index.jsx:32
+#: src/components/PageMyList/index.jsx:36
 msgid "My List"
 msgstr "Listem"
 
 #. Nicknames property
-#: src/components/PageAgent/index.jsx:204
+#: src/components/PageAgent/index.jsx:207
 msgid "Nicknames"
 msgstr "Takma Adlar"
 
@@ -772,10 +756,20 @@ msgstr "Gönderilmek üzere hiçbir öğe seçilmemiştir."
 msgid "No saved items."
 msgstr "Kayıtlı öğe yok."
 
+#. Search results header with no search term
+#: src/components/PageSearch/index.jsx:223
+msgid "No search query entered"
+msgstr "Arama sorgusu girilmemiş"
+
 #. Occupations property
-#: src/components/PageAgent/index.jsx:199
+#: src/components/PageAgent/index.jsx:202
 msgid "Occupations"
 msgstr "Meslekler"
+
+#. Page Home title
+#: src/components/PageHome/index.jsx:10
+msgid "Online Collections and Catalog of Rockefeller Archive Center"
+msgstr "Rockefeller Arşiv Merkezi Online Koleksiyonları ve Kataloğu"
 
 #. Tooltip for button
 #: src/components/Dropdown/index.jsx:115
@@ -794,6 +788,11 @@ msgstr "yeni bir pencerede açılır"
 msgid "Organizations"
 msgstr "Kuruluşlar"
 
+#. Page Not Found title
+#: src/components/PageNotFound/index.jsx:11
+msgid "Page Not Found"
+msgstr "Sayfa Bulunamadı"
+
 #. Label for People category
 #: src/components/SearchForm/index.jsx:38
 msgid "People"
@@ -805,7 +804,7 @@ msgid "Phone: (914) 366-6300"
 msgstr "Telefon: (914) 366-6300"
 
 #. Place of birth property
-#: src/components/PageAgent/index.jsx:201
+#: src/components/PageAgent/index.jsx:204
 msgid "Place of Birth"
 msgstr "Doğum yeri"
 
@@ -844,7 +843,7 @@ msgid "Please select a reading room"
 msgstr "Lütfen bir okuma odası seçin"
 
 #. Positions held property
-#: src/components/PageAgent/index.jsx:200
+#: src/components/PageAgent/index.jsx:203
 msgid "Positions Held"
 msgstr "Bulunduğu Pozisyonlar"
 
@@ -854,12 +853,12 @@ msgid "Preparing items"
 msgstr "Ögeler hazırlanıyor"
 
 #. Message while page loads for Aeon submissions
-#: src/components/PageMyList/index.jsx:102
+#: src/components/PageMyList/index.jsx:109
 msgid "Preparing items for your request"
 msgstr "Talebiniz için ürün hazırlama"
 
 #. Page Title for sending an Aeon request
-#: src/components/PageMyList/index.jsx:98
+#: src/components/PageMyList/index.jsx:105
 msgid "Preparing Request Data"
 msgstr "Talep Verilerinin Hazırlanması"
 
@@ -963,19 +962,33 @@ msgid "Search Our Collections.<0/>Discover People and Organizations.<1/>Access D
 msgstr "Koleksiyonlarımızda Arama Yapın.<0/>Kişi ve Kuruluşları Keşfedin.<1/>Dijital İçeriğe Erişin."
 
 #. Page Home Test
-#: src/components/PageHome/__tests__/PageHome.test.jsx:12
+#: src/components/PageHome/__tests__/PageHome.test.jsx:16
 msgid "Search Our Collections.Discover People and Organizations.Access Digital Content."
 msgstr "Koleksiyonlarımızda Arama Yapın.Kişi ve Kuruluşları Keşfedin.Dijital İçeriğe Erişin."
 
-#. Search Results for Test
-#: src/components/PageSearch/__tests__/PageSearch.test.jsx:43
-msgid "Search Results for"
+#. Search Results title
+#: src/components/PageSearch/index.jsx:54
+msgid "Search Results"
 msgstr "Arama Sonuçları"
+
+#. Search Results title with query
+#. Search results header with results
+#. Search results header with results
+#: src/components/PageSearch/__tests__/PageSearch.test.jsx:45
+#: src/components/PageSearch/index.jsx:50
+#: src/components/PageSearch/index.jsx:232
+msgid "Search Results for “{query}”"
+msgstr "“{query}” için Arama Sonuçları"
 
 #. Placeholder text for search textbox
 #: src/components/SearchForm/index.jsx:64
 msgid "Search..."
 msgstr "Ara..."
+
+#. Search results header while searching
+#: src/components/PageSearch/index.jsx:218
+msgid "Searching"
+msgstr "Aranıyor"
 
 #. Holiday Schedule message
 #: src/components/PrimaryLink/index.jsx:42
@@ -993,7 +1006,7 @@ msgstr "Okuma Odası Konumunu Seçin"
 
 #. Message displayed after emailing selected items
 #. placeholder {0}: submitted.email
-#: src/components/PageMyList/index.jsx:152
+#: src/components/PageMyList/index.jsx:159
 msgid "Selected items in your list have been emailed to {0}"
 msgstr "Listenizdeki seçili öğeler {0} adresine e-posta ile gönderildi"
 
@@ -1015,7 +1028,7 @@ msgid "Send List"
 msgstr "Li̇steyi̇ Gönder"
 
 #. Page Title for sending an email
-#: src/components/PageMyList/index.jsx:138
+#: src/components/PageMyList/index.jsx:145
 msgid "Sending Email"
 msgstr "E-posta Gönderme"
 
@@ -1056,42 +1069,47 @@ msgid "Skip to main content"
 msgstr "Ana içeriğe geç"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:183
+#: src/components/PageAgent/index.jsx:186
 msgid "Social Networks and Archival Context"
 msgstr "Sosyal Ağlar ve Arşiv Bağlamı"
 
 #. Message shown when request failed
-#: src/components/PageMyList/index.jsx:355
+#: src/components/PageMyList/index.jsx:356
 msgid "Sorry, our system is unable to process requests right now. We're working to fix this! Please try again later."
 msgstr "Üzgünüz, sistemimiz şu anda talepleri işleme koyamıyor. Bunu düzeltmek için çalışıyoruz! Lütfen daha sonra tekrar deneyin."
 
 #. Page Not Found Test
-#: src/components/PageNotFound/__tests__/PageNotFound.test.jsx:12
+#: src/components/PageNotFound/__tests__/PageNotFound.test.jsx:16
 msgid "Sorry, the requested page was not found!"
 msgstr "Üzgünüz, istenen sayfa bulunamadı!"
 
+#. Search results header with no results
+#: src/components/PageSearch/index.jsx:228
+msgid "Sorry, there are no search results for “{query}”"
+msgstr "Maalesef, “{query}” için arama sonucu yok"
+
 #. Name for sort results input
-#: src/components/PageSearch/index.jsx:260
+#: src/components/PageSearch/index.jsx:267
 msgid "sort"
 msgstr "sıra"
 
 #. Sort by creator name label
-#: src/components/PageSearch/index.jsx:53
+#: src/components/PageSearch/index.jsx:75
 msgid "Sort by creator name"
 msgstr "İçeriği oluşturanın adına göre sıral"
 
 #. Sort by relevance label
-#: src/components/PageSearch/index.jsx:41
+#: src/components/PageSearch/index.jsx:63
 msgid "Sort by relevance"
 msgstr "Alaka düzeyine göre sırala"
 
 #. Sort by title label
-#: src/components/PageSearch/index.jsx:47
+#: src/components/PageSearch/index.jsx:69
 msgid "Sort by title"
 msgstr "Başlığa göre sırala"
 
 #. Label for sort results input
-#: src/components/PageSearch/index.jsx:265
+#: src/components/PageSearch/index.jsx:272
 msgid "Sort search results"
 msgstr "Arama sonuçlarını sırala"
 
@@ -1131,7 +1149,7 @@ msgstr "Rockefeller Arşiv Merkezi Çevrimiçi Koleksiyonu ve Kataloğu"
 
 #. Message displayed when error occurs while submitting request
 #. placeholder {0}: err.toString()
-#: src/components/PageMyList/index.jsx:163
+#: src/components/PageMyList/index.jsx:170
 msgid "There was an error submitting your request. The error message was: {0}"
 msgstr "İsteğinizi gönderirken bir hata oluştu. Hata mesajı şöyleydi: {0}"
 
@@ -1140,8 +1158,13 @@ msgstr "İsteğinizi gönderirken bir hata oluştu. Hata mesajı şöyleydi: {0}
 msgid "View minimap"
 msgstr "Minimap'i görüntüle"
 
+#. Digital object viewer page title
+#: src/components/PageDigitalObject/index.jsx:26
+msgid "View Online"
+msgstr "Çevri̇mi̇çi̇ Görüntüle"
+
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:181
+#: src/components/PageAgent/index.jsx:184
 msgid "Virtual International Authority File"
 msgstr "Sanal Uluslararası Yetki Dosyası"
 
@@ -1153,6 +1176,6 @@ msgid "We cannot process your request unless you agree to pay the costs of repro
 msgstr "Çoğaltma masraflarını ödemeyi kabul etmediğiniz sürece talebinizi işleme koyamayız."
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:182
+#: src/components/PageAgent/index.jsx:185
 msgid "WorldCat Identities"
 msgstr "WorldCat Kimlikleri"

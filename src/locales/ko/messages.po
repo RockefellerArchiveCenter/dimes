@@ -51,12 +51,12 @@ msgstr "{0, select, rac {출처: 록펠러 아카이브 센터} other {출처: {
 
 #. Current Results shown of total results
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:237
+#: src/components/PageSearch/index.jsx:244
 msgid "{0, select, true {{startItem} result} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem} result} other {{startItem}-{endItem} 총 {resultsCount} 가지 결과}}"
 
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:292
+#: src/components/PageSearch/index.jsx:299
 msgid "{0, select, true {{startItem}} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem}} other {{startItem}-{endItem} 중 {resultsCount} 결과}}"
 
@@ -81,12 +81,12 @@ msgid "{0, select, true {View} other {View Online}}"
 msgstr "{0, select, true {보다} other {온라인 보기}}"
 
 #. Label for the end of the item
-#: src/components/PageAgent/index.jsx:145
+#: src/components/PageAgent/index.jsx:148
 msgid "{agentType, select, organization {Date Disbanded} other {Date of Death}}"
 msgstr "{agentType, select, organization {해체 날짜} other {사망 날짜}}"
 
 #. Label for the start of the item
-#: src/components/PageAgent/index.jsx:141
+#: src/components/PageAgent/index.jsx:144
 msgid "{agentType, select, organization {Date Established} other {Date of Birth}}"
 msgstr "{agentType, select, organization {설립 날짜} other {생년월일}}"
 
@@ -105,14 +105,6 @@ msgstr "{hitCount, plural, one {디지털 일치} other {디지털 일치}}"
 #: src/components/Helpers.js:72
 msgid "{hitCount, plural, one {match} other {matches}}"
 msgstr "{hitCount, plural, one {일치} other {일치}}"
-
-#. Search Results header
-#. placeholder {0}: params.query
-#. placeholder {1}: `“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`
-#. placeholder {2}: `“${params.query.replace(/"([^"]+(?="))"/g, '$1')}”`
-#: src/components/PageSearch/index.jsx:210
-msgid "{inProgress, select, true {Searching} other {{0, select, false {No search query entered} other {{resultsCount, plural, =0 {Sorry, there are no search results for {1}} other {Search Results for {2}}}}}}}"
-msgstr "{inProgress, select, true {수색} other {{0, select, false {검색어 입력 없음} other {{resultsCount, plural, =0 {실례합니다, {1}에 대한 검색 결과가 없습니다} other {{2}에 대한 검색 결과 }}}}}}"
 
 #. Label for Context Switcher
 #: src/components/ContextSwitcher/index.jsx:12
@@ -140,7 +132,7 @@ msgid "<0/>Back to Search"
 msgstr "<0/>검색으로 돌아가기"
 
 #. New Search button
-#: src/components/PageMyList/index.jsx:297
+#: src/components/PageMyList/index.jsx:298
 msgid "<0/>Start a New Search"
 msgstr "<0/>새 검색 시작"
 
@@ -150,29 +142,14 @@ msgid "<0><1/> Schedule a Visit</0>"
 msgstr "<0><1/> 방문 예약하기</0>"
 
 #. Go back to Item details for digital object
-#: src/components/PageDigitalObject/index.jsx:174
+#: src/components/PageDigitalObject/index.jsx:179
 msgid "<0><1/>Back to Item Details</0>"
 msgstr "<0><1/>항목 세부 정보로 돌아가기</0>"
 
-#. Social Icons Titles
-#: src/components/SocialIcons/index.jsx:6
-msgid "<0><1><2><3><4>Facebook Logo</4><5/></3></2></1><6><7><8><9>Instagram Logo</9><10/></8></7></6><11><12><13><14>LinkedIn Logo</14><15/></13></12></11><16><17><18><19>YouTube Logo</19><20/></18></17></16></0>"
-msgstr "<0><1><2><3><4>페이스북 로고</4><5/></3></2></1><6><7><8><9>인스타그램 로고</9><10/></8></7></6><11><12><13><14>링크드인 로고</14><15/></13></12></11><16><17><18><19>YouTube 로고</19><20/></18></17></16></0>"
-
-#. Page Title for user's list
-#: src/components/PageMyList/index.jsx:288
-msgid "<0><1>DIMES: My List</1></0>"
-msgstr "<0><1>DIMES: 내 목록</1></0>"
-
-#. Page Home
-#: src/components/PageHome/index.jsx:9
-msgid "<0><1>DIMES: Online Collections and Catalog of Rockefeller Archive Center</1></0><2><3/><4/></2>"
-msgstr "<0><1>DIMES: 록펠러 아카이브 센터의 온라인 컬렉션 및 카탈로그</1></0><2><3/><4/></2>"
-
 #. Page Not Found
-#: src/components/PageNotFound/index.jsx:9
-msgid "<0><1>Page Not Found</1></0><2><3><4/></3><5>Sorry, the requested page was not found!</5><6>Try <7>a search</7> to find what you're looking for.</6></2>"
-msgstr "<0><1>페이지를 찾을 수 없음</1></0><2><3><4/></3><5>요청하신 페이지를 찾을 수 없습니다!</5><6><7>검색을</7> 통해 원하는 내용을 찾아보세요.</6></2>"
+#: src/components/PageNotFound/index.jsx:17
+msgid "<0><1><2/></1><3>Sorry, the requested page was not found!</3><4>Try <5>a search</5> to find what you're looking for.</4></0>"
+msgstr "<0><1><2/></1><3>요청하신 페이지를 찾을 수 없습니다!</3><4><5>검색을</5> 통해 원하는 내용을 찾아보세요.</4></0>"
 
 #. Page Backend Error
 #. placeholder {0}: error.config.url
@@ -180,14 +157,14 @@ msgstr "<0><1>페이지를 찾을 수 없음</1></0><2><3><4/></3><5>요청하�
 #. placeholder {2}: error.message
 #. placeholder {3}: error.response.data ? <p className='backend-error__message'>{JSON.stringify(error.response.data)}</p> : null
 #. placeholder {4}: error.config.data ? <> <p className='backend-error__header mt-18'>Request data:</p> <p className='backend-error__message'>{error.config.data}</p> </> : null
-#: src/components/PageBackendError/index.jsx:9
-msgid "<0><1>Page Not Found</1></0><2><3><4/></3><5>There was an error fetching data.</5><6>The request to {0} failed.</6><7>To report this problem, send us an email at <8>archive@rockarch.org</8>.</7><9>Error message:</9><10>{1}: {2}</10>{3}{4}</2>"
-msgstr "<0><1>페이지를 찾을 수 없음</1></0><2><3><4/></3><5>데이터를 가져오는 동안 오류가 발생했습니다.</5><6>{0} 에 대한 요청이 실패했습니다.</6><7>이 문제를 신고하려면 <8>archive@rockarch.org</8> 으로 이메일을 보내주세요.</7><9>오류 메시지</9><10>{1}: {2}</10>{3}{4}</2>"
+#: src/components/PageBackendError/index.jsx:16
+msgid "<0><1><2/></1><3>There was an error fetching data.</3><4>The request to {0} failed.</4><5>To report this problem, send us an email at <6>archive@rockarch.org</6>.</5><7>Error message:</7><8>{1}: {2}</8>{3}{4}</0>"
+msgstr "<0><1><2/></1><3>데이터를 가져오는 동안 오류가 발생했습니다.</3><4>{0} 에 대한 요청이 실패했습니다.</4><5>이 문제를 신고하려면 <6>archive@rockarch.org</6> 으로 이메일을 보내주세요.</5><7>오류 메시지</7><8>{1}: {2}</8>{3}{4}</0>"
 
-#. Search Results title
-#: src/components/PageSearch/index.jsx:193
-msgid "<0><1>Search Results</1></0>"
-msgstr "<0><1>검색 결과</1></0>"
+#. Social Icons Titles
+#: src/components/SocialIcons/index.jsx:6
+msgid "<0><1><2><3><4>Facebook Logo</4><5/></3></2></1><6><7><8><9>Instagram Logo</9><10/></8></7></6><11><12><13><14>LinkedIn Logo</14><15/></13></12></11><16><17><18><19>YouTube Logo</19><20/></18></17></16></0>"
+msgstr "<0><1><2><3><4>페이스북 로고</4><5/></3></2></1><6><7><8><9>인스타그램 로고</9><10/></8></7></6><11><12><13><14>링크드인 로고</14><15/></13></12></11><16><17><18><19>YouTube 로고</19><20/></18></17></16></0>"
 
 #. Confirmation message when citation copied
 #: src/components/RecordsDetail/index.jsx:184
@@ -226,7 +203,7 @@ msgid "<0>Jump to a part of the collection containing matches by clicking on an 
 msgstr "<0>활성 사각형을 클릭하면 일치하는 항목이 포함된 컬렉션의 일부로 이동합니다.</0><1>미니맵 다이어그램에서 각 사각형은 이 컬렉션의 일부를 나타냅니다. 색상이 지정된 사각형은 검색에 일치하는 항목이 하나 이상 포함된 부분을 나타냅니다.</1>"
 
 #. Back to search button
-#: src/components/PageAgent/index.jsx:259
+#: src/components/PageAgent/index.jsx:258
 msgid "<0>keyboard_arrow_left</0>Back to Search"
 msgstr "<0>keyboard_arrow_left검색으로 돌아가기</0>"
 
@@ -254,7 +231,7 @@ msgid "<0>More about this {agentType}</0>"
 msgstr "<0>이에 대해 자세히 알아보기 {agentType}</0>"
 
 #. Header for user's list
-#: src/components/PageMyList/index.jsx:303
+#: src/components/PageMyList/index.jsx:304
 msgid "<0>My List</0>"
 msgstr "<0>내 목록</0>"
 
@@ -274,7 +251,7 @@ msgid "<0>Submit request</0>"
 msgstr "<0>요청 제출</0>"
 
 #. summary message
-#: src/components/PageAgent/index.jsx:273
+#: src/components/PageAgent/index.jsx:272
 msgid "<0>Summary</0>"
 msgstr "<0>요약</0>"
 
@@ -288,7 +265,7 @@ msgstr "<0>미니맵은 활성 사각형을 클릭하여 컬렉션의 검색 일
 #. placeholder {1}: err.code
 #. placeholder {2}: err.message
 #. placeholder {3}: err.config.data
-#: src/components/PageMyList/index.jsx:131
+#: src/components/PageMyList/index.jsx:138
 msgid "<0>There was an error submitting your request.</0><1>The request to {0} failed with the message {1}: {2}.</1><2>{3}</2>"
 msgstr "<0>요청을 제출하는 동안 오류가 발생했습니다.</0><1>{1}: {2} 라는 메시지와 함께 {0} 에 대한 요청이 실패했습니다.</1><2>{3}</2>"
 
@@ -344,7 +321,7 @@ msgid "Add to List"
 msgstr "목록에 추가"
 
 #. Message while page loads for email submissions
-#: src/components/PageMyList/index.jsx:142
+#: src/components/PageMyList/index.jsx:149
 msgid "Adding items to your message"
 msgstr "메시지에 항목 추가하기"
 
@@ -371,7 +348,7 @@ msgid "archive@rockarch.org"
 msgstr "archive@rockarch.org"
 
 #. Confirmation to delete all items from list
-#: src/components/PageMyList/index.jsx:374
+#: src/components/PageMyList/index.jsx:375
 msgid "Are you sure you want to remove all the items from your list?<0><1/><2/></0>"
 msgstr "목록에서 모든 항목을 삭제하시겠습니까?<0><1/><2/></0>"
 
@@ -381,7 +358,7 @@ msgid "Bulk data download"
 msgstr "대량 데이터 다운로드"
 
 #. Title shown when request failed
-#: src/components/PageMyList/index.jsx:359
+#: src/components/PageMyList/index.jsx:360
 msgid "Can't Complete Request"
 msgstr "요청을 완료할 수 없음"
 
@@ -438,7 +415,7 @@ msgid "Collections Related to {agentTitle}"
 msgstr "{agentTitle}과 관련된 컬렉션"
 
 #. Remove all confirmation title
-#: src/components/PageMyList/index.jsx:387
+#: src/components/PageMyList/index.jsx:388
 msgid "Confirm Remove All"
 msgstr "모두 제거 확인"
 
@@ -453,7 +430,7 @@ msgid "Creator"
 msgstr "작성자"
 
 #. Message shown for downloading high-res images in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:165
+#: src/components/PageDigitalObject/index.jsx:170
 msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "현재 페이지 - JPEG2000 {pixelDimensions}"
 
@@ -469,7 +446,7 @@ msgstr "모든 항목 선택 해제"
 
 #. Update message for selected record
 #. placeholder {0}: res.data.title
-#: src/components/PageRecords/index.jsx:118
+#: src/components/PageRecords/index.jsx:121
 msgid "Details under heading 1 have been updated to describe the selected records titled {0}"
 msgstr "제목 1 아래의 세부 정보가 {0}이라는 제목의 선택된 레코드를 설명하도록 업데이트되었습니다"
 
@@ -479,7 +456,7 @@ msgid "dimes.rockarch.org"
 msgstr "dimes.rockarch.org"
 
 #. Message shown on download dropdown button
-#: src/components/PageDigitalObject/index.jsx:138
+#: src/components/PageDigitalObject/index.jsx:143
 msgid "Download"
 msgstr "다운로드"
 
@@ -512,7 +489,7 @@ msgid "Email List"
 msgstr "목록 이메일 전송"
 
 #. Title displayed after emailing selected items
-#: src/components/PageMyList/index.jsx:148
+#: src/components/PageMyList/index.jsx:155
 msgid "Email Sent"
 msgstr "이메일 전송"
 
@@ -532,13 +509,18 @@ msgid "Enter the date of your research visit (mm/dd/yyyy)"
 msgstr "연구 방문 날짜(월/일/년/월/일)를 입력하세요"
 
 #. Message shown for downloading PDF in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:150
+#: src/components/PageDigitalObject/index.jsx:155
 msgid "Entire Item - PDF"
 msgstr "전체 항목 - PDF"
 
+#. Page Backend Error title
+#: src/components/PageBackendError/index.jsx:10
+msgid "Error"
+msgstr "오류"
+
 #. Title displayed when error occurs while submitting request
-#: src/components/PageMyList/index.jsx:128
-#: src/components/PageMyList/index.jsx:159
+#: src/components/PageMyList/index.jsx:135
+#: src/components/PageMyList/index.jsx:166
 msgid "Error submitting request"
 msgstr "요청 제출 오류"
 
@@ -548,7 +530,7 @@ msgid "Fax: (914) 631-6017"
 msgstr "팩스: (914) 631-6017"
 
 #. Label for Filters button
-#: src/components/PageSearch/index.jsx:250
+#: src/components/PageSearch/index.jsx:257
 msgid "Filters"
 msgstr "필터"
 
@@ -573,7 +555,7 @@ msgid "Found in:"
 msgstr "발견 위치:"
 
 #. Founded by property
-#: src/components/PageAgent/index.jsx:202
+#: src/components/PageAgent/index.jsx:205
 msgid "Founded by"
 msgstr "설립자"
 
@@ -615,7 +597,7 @@ msgid "https://raccess.rockarch.org"
 msgstr "https://raccess.rockarch.org"
 
 #. Aeon access point
-#: src/components/PageMyList/index.jsx:109
+#: src/components/PageMyList/index.jsx:116
 msgid "https://raccess.rockarch.org/aeon.dll"
 msgstr "https://raccess.rockarch.org/aeon.dll"
 
@@ -697,14 +679,14 @@ msgid "Licensing for descriptive metadata"
 msgstr "설명적 메타데이터 라이선싱"
 
 #. Location property
-#: src/components/PageAgent/index.jsx:203
+#: src/components/PageAgent/index.jsx:206
 msgid "Location of Headquarters"
 msgstr "본사 위치"
 
 #. Company Email link
 #: src/components/ModalMyList/index.jsx:164
 #: src/components/ModalMyList/index.jsx:510
-#: src/components/PageBackendError/index.jsx:18
+#: src/components/PageBackendError/index.jsx:21
 #: src/components/PrimaryLink/index.jsx:25
 msgid "mailto:archive@rockarch.org"
 msgstr "mailto:archive@rockarch.org"
@@ -747,13 +729,15 @@ msgstr "월요일~금요일<0/>오전 9:30~오후 5:00<1/>"
 
 #. Message shown on button within Dropdown list
 #. Message shown on button within the Header
+#. Page title for user's list
 #: src/components/Dropdown/index.jsx:185
 #: src/components/Header/index.jsx:32
+#: src/components/PageMyList/index.jsx:36
 msgid "My List"
 msgstr "내 목록"
 
 #. Nicknames property
-#: src/components/PageAgent/index.jsx:204
+#: src/components/PageAgent/index.jsx:207
 msgid "Nicknames"
 msgstr "닉네임"
 
@@ -772,10 +756,20 @@ msgstr "제출할 항목이 선택되지 않았습니다."
 msgid "No saved items."
 msgstr "저장된 항목이 없습니다."
 
+#. Search results header with no search term
+#: src/components/PageSearch/index.jsx:223
+msgid "No search query entered"
+msgstr "검색어 입력 없음"
+
 #. Occupations property
-#: src/components/PageAgent/index.jsx:199
+#: src/components/PageAgent/index.jsx:202
 msgid "Occupations"
 msgstr "직업"
+
+#. Page Home title
+#: src/components/PageHome/index.jsx:10
+msgid "Online Collections and Catalog of Rockefeller Archive Center"
+msgstr "록펠러 아카이브 센터의 온라인 컬렉션 및 카탈로그"
 
 #. Tooltip for button
 #: src/components/Dropdown/index.jsx:115
@@ -794,6 +788,11 @@ msgstr "새 창에서 열기"
 msgid "Organizations"
 msgstr "기관"
 
+#. Page Not Found title
+#: src/components/PageNotFound/index.jsx:11
+msgid "Page Not Found"
+msgstr "페이지를 찾을 수 없음"
+
 #. Label for People category
 #: src/components/SearchForm/index.jsx:38
 msgid "People"
@@ -805,7 +804,7 @@ msgid "Phone: (914) 366-6300"
 msgstr "전화: (914) 366-6300"
 
 #. Place of birth property
-#: src/components/PageAgent/index.jsx:201
+#: src/components/PageAgent/index.jsx:204
 msgid "Place of Birth"
 msgstr "출생지"
 
@@ -844,7 +843,7 @@ msgid "Please select a reading room"
 msgstr "열람실을 선택해 주세요"
 
 #. Positions held property
-#: src/components/PageAgent/index.jsx:200
+#: src/components/PageAgent/index.jsx:203
 msgid "Positions Held"
 msgstr "보유 직위"
 
@@ -854,12 +853,12 @@ msgid "Preparing items"
 msgstr "항목 준비"
 
 #. Message while page loads for Aeon submissions
-#: src/components/PageMyList/index.jsx:102
+#: src/components/PageMyList/index.jsx:109
 msgid "Preparing items for your request"
 msgstr "요청에 대한 항목 준비"
 
 #. Page Title for sending an Aeon request
-#: src/components/PageMyList/index.jsx:98
+#: src/components/PageMyList/index.jsx:105
 msgid "Preparing Request Data"
 msgstr "요청 데이터 준비"
 
@@ -963,19 +962,33 @@ msgid "Search Our Collections.<0/>Discover People and Organizations.<1/>Access D
 msgstr "컬렉션 검색.<0/>인물 및 조직 검색.<1/>디지털 자료 이용."
 
 #. Page Home Test
-#: src/components/PageHome/__tests__/PageHome.test.jsx:12
+#: src/components/PageHome/__tests__/PageHome.test.jsx:16
 msgid "Search Our Collections.Discover People and Organizations.Access Digital Content."
 msgstr "컬렉션 검색. 인물 및 조직 검색. 디지털 자료 이용."
 
-#. Search Results for Test
-#: src/components/PageSearch/__tests__/PageSearch.test.jsx:43
-msgid "Search Results for"
+#. Search Results title
+#: src/components/PageSearch/index.jsx:54
+msgid "Search Results"
 msgstr "검색 결과"
+
+#. Search Results title with query
+#. Search results header with results
+#. Search results header with results
+#: src/components/PageSearch/__tests__/PageSearch.test.jsx:45
+#: src/components/PageSearch/index.jsx:50
+#: src/components/PageSearch/index.jsx:232
+msgid "Search Results for “{query}”"
+msgstr "“{query}”에 대한 검색 결과 "
 
 #. Placeholder text for search textbox
 #: src/components/SearchForm/index.jsx:64
 msgid "Search..."
 msgstr "검색..."
+
+#. Search results header while searching
+#: src/components/PageSearch/index.jsx:218
+msgid "Searching"
+msgstr "수색"
 
 #. Holiday Schedule message
 #: src/components/PrimaryLink/index.jsx:42
@@ -993,7 +1006,7 @@ msgstr "열람실 위치 선택"
 
 #. Message displayed after emailing selected items
 #. placeholder {0}: submitted.email
-#: src/components/PageMyList/index.jsx:152
+#: src/components/PageMyList/index.jsx:159
 msgid "Selected items in your list have been emailed to {0}"
 msgstr "목록에서 선택한 항목이 {0}으로 이메일이 전송되었습니다"
 
@@ -1015,7 +1028,7 @@ msgid "Send List"
 msgstr "목록 보내기"
 
 #. Page Title for sending an email
-#: src/components/PageMyList/index.jsx:138
+#: src/components/PageMyList/index.jsx:145
 msgid "Sending Email"
 msgstr "이메일 보내기"
 
@@ -1056,42 +1069,47 @@ msgid "Skip to main content"
 msgstr "주 내용으로 건너뛰기"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:183
+#: src/components/PageAgent/index.jsx:186
 msgid "Social Networks and Archival Context"
 msgstr "소셜 네트워크 및 아카이브 컨텍스트"
 
 #. Message shown when request failed
-#: src/components/PageMyList/index.jsx:355
+#: src/components/PageMyList/index.jsx:356
 msgid "Sorry, our system is unable to process requests right now. We're working to fix this! Please try again later."
 msgstr "죄송합니다. 지금 시스템에서 요청을 처리할 수 없습니다. 이 문제를 해결하기 위해 노력 중입니다! 잠시 후 다시 시도해 주세요."
 
 #. Page Not Found Test
-#: src/components/PageNotFound/__tests__/PageNotFound.test.jsx:12
+#: src/components/PageNotFound/__tests__/PageNotFound.test.jsx:16
 msgid "Sorry, the requested page was not found!"
 msgstr "요청하신 페이지를 찾을 수 없습니다!"
 
+#. Search results header with no results
+#: src/components/PageSearch/index.jsx:228
+msgid "Sorry, there are no search results for “{query}”"
+msgstr "실례합니다, “{query}”에 대한 검색 결과가 없습니다"
+
 #. Name for sort results input
-#: src/components/PageSearch/index.jsx:260
+#: src/components/PageSearch/index.jsx:267
 msgid "sort"
 msgstr "정렬"
 
 #. Sort by creator name label
-#: src/components/PageSearch/index.jsx:53
+#: src/components/PageSearch/index.jsx:75
 msgid "Sort by creator name"
 msgstr "작성자명별로 정렬"
 
 #. Sort by relevance label
-#: src/components/PageSearch/index.jsx:41
+#: src/components/PageSearch/index.jsx:63
 msgid "Sort by relevance"
 msgstr "관련성별로 정렬"
 
 #. Sort by title label
-#: src/components/PageSearch/index.jsx:47
+#: src/components/PageSearch/index.jsx:69
 msgid "Sort by title"
 msgstr "제목별로 정렬"
 
 #. Label for sort results input
-#: src/components/PageSearch/index.jsx:265
+#: src/components/PageSearch/index.jsx:272
 msgid "Sort search results"
 msgstr "검색 결과 정렬"
 
@@ -1131,7 +1149,7 @@ msgstr "록펠러 아카이브 센터의 온라인 컬렉션과 목록"
 
 #. Message displayed when error occurs while submitting request
 #. placeholder {0}: err.toString()
-#: src/components/PageMyList/index.jsx:163
+#: src/components/PageMyList/index.jsx:170
 msgid "There was an error submitting your request. The error message was: {0}"
 msgstr "요청을 제출하는 동안 오류가 발생했습니다. 오류 메시지는 다음과 같습니다: {0}"
 
@@ -1140,8 +1158,13 @@ msgstr "요청을 제출하는 동안 오류가 발생했습니다. 오류 메�
 msgid "View minimap"
 msgstr "미니맵 보기"
 
+#. Digital object viewer page title
+#: src/components/PageDigitalObject/index.jsx:26
+msgid "View Online"
+msgstr "온라인 보기"
+
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:181
+#: src/components/PageAgent/index.jsx:184
 msgid "Virtual International Authority File"
 msgstr "가상 국제 기관 파일"
 
@@ -1153,6 +1176,6 @@ msgid "We cannot process your request unless you agree to pay the costs of repro
 msgstr "귀하가 복제 비용 지불에 동의하지 않으면 요청을 처리할 수 없습니다."
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:182
+#: src/components/PageAgent/index.jsx:185
 msgid "WorldCat Identities"
 msgstr "월드캣 아이덴티티"
