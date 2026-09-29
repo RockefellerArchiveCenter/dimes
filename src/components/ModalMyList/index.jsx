@@ -149,7 +149,10 @@ ModalMyList.defaultProps = {
 
 export const EmailModal = props => (
   <ModalMyList
-    title='Email List'
+    title={t({
+      comment: 'Title of the modal for emailing the list',
+      message: 'Email List'
+    })}
     handleChange={props.handleChange}
     ignoreRestrictions={true}
     isOpen={props.isOpen}
@@ -375,7 +378,10 @@ export const ReadingRoomRequestModal = props => {
 
   return (
   <ModalMyList
-    title='Request in Reading Room'
+    title={t({
+      comment: 'Title of the modal for requesting items in the reading room',
+      message: 'Request in Reading Room'
+    })}
     handleChange={props.handleChange}
     isOpen={props.isOpen}
     toggleList={props.toggleList}
@@ -468,7 +474,10 @@ export const ReadingRoomRequestModal = props => {
 
 export const DuplicationRequestModal = props => (
   <ModalMyList
-    title='Request Copies'
+    title={t({
+      comment: 'Title of the modal for requesting copies of items',
+      message: 'Request Copies'
+    })}
     handleChange={props.handleChange}
     isOpen={props.isOpen}
     toggleList={props.toggleList}

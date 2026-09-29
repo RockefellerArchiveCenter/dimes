@@ -376,11 +376,17 @@
             <div className='modal-buttons--confirm mt-20'>
               <Button
                 className='btn--sm btn--orange'
-                label='Remove'
+                label={t({
+                  comment: 'Button that confirms removing all items from the list',
+                  message: 'Remove'
+                })}
                 handleClick={() => {removeAllFromList(); setConfirmDeleteAllModalOpen(false)}} />
               <Button
                 className='btn--sm btn--gray'
-                label='Cancel'
+                label={t({
+                  comment: 'Button that cancels removing all items from the list',
+                  message: 'Cancel'
+                })}
                 handleClick={() => setConfirmDeleteAllModalOpen(false)}/>
             </div>
             </Trans>
