@@ -239,7 +239,7 @@ const PageSearch = () => {
             <>
               <div className='results__header'>
                 <div className='results__summary'>
-                  <p className='results__summary--text'>
+                  <p className='results__summary--text' role='status'>
                     {inProgress ? (<Skeleton />) :
                       <Trans comment='Current Results shown of total results'>
                         <Select
