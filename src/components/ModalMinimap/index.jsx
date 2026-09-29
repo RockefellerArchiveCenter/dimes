@@ -23,10 +23,11 @@ export const ModalMinimapInfo = props => (
     appElement={props.appElement ? props.appElement : Modal.setAppElement('#root')}
     isOpen={props.isOpen}
     onRequestClose={props.toggleModal}
+    aria={{ labelledby: 'modal-minimap-info-title' }}
     className='modal modal--minimap-info'
     overlayClassName='modal__overlay' >
     <div className='modal__header--minimap mt-14 mr-14'>
-      <h2 className='modal__header-title--minimap m-0 pt-5 pb-0 pl-24'>
+      <h2 id='modal-minimap-info-title' className='modal__header-title--minimap m-0 pt-5 pb-0 pl-24'>
         <Trans comment='Minimap header'>
           <Select
             value={props.hasSeenMinimapIntro}
@@ -51,6 +52,7 @@ export const ModalMinimap = props => (
     appElement={props.appElement ? props.appElement : Modal.setAppElement('#root')}
     isOpen={props.isOpen}
     onRequestClose={props.toggleModal}
+    aria={{ labelledby: 'modal-minimap-title' }}
     className='modal modal--minimap-panel'
     overlayClassName={{
       base: 'modal__overlay slide--left',
@@ -58,7 +60,7 @@ export const ModalMinimap = props => (
       beforeClose: 'slide--left--before-close'
     }} >
     <div className='modal__header--minimap mt-14 mr-14'>
-      <h2 className='modal__header-title--minimap m-0 m-0 pt-5 pb-0 pl-24'>
+      <h2 id='modal-minimap-title' className='modal__header-title--minimap m-0 m-0 pt-5 pb-0 pl-24'>
         <Trans comment='Header for modal minimap'>
           Minimap
         </Trans>

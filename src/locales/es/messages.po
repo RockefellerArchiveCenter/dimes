@@ -33,7 +33,7 @@ msgstr "{0, plural, =0 {seleccionado: 0 elementos} other {seleccionado: {1}}}"
 
 #. Filter results message
 #. placeholder {0}: props.resultsCount
-#: src/components/ModalSearch/index.jsx:44
+#: src/components/ModalSearch/index.jsx:45
 msgid "{0, plural, one {Filter # Search Result} other {Filter # Search Results}}"
 msgstr "{0, plural, one {Filtro # Resultado de búsqueda} other {Filtro # Resultados de búsqueda}}"
 
@@ -51,18 +51,18 @@ msgstr "{0, select, rac {Fuente: Rockefeller Archive Center} other {Fuente: {sou
 
 #. Current Results shown of total results
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:244
+#: src/components/PageSearch/index.jsx:247
 msgid "{0, select, true {{startItem} result} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem} result} other {{startItem}-{endItem} de {resultsCount} results}}"
 
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:299
+#: src/components/PageSearch/index.jsx:303
 msgid "{0, select, true {{startItem}} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem}} other {{startItem}-{endItem} de {resultsCount} resultados}}"
 
 #. Minimap header
 #. placeholder {0}: props.hasSeenMinimapIntro
-#: src/components/ModalMinimap/index.jsx:30
+#: src/components/ModalMinimap/index.jsx:31
 msgid "{0, select, true {Minimap} other {Introducing the Minimap}}"
 msgstr "{0, select, true {Minimap} other {Introducción al minimapa}}"
 
@@ -70,8 +70,8 @@ msgstr "{0, select, true {Minimap} other {Introducción al minimapa}}"
 #. placeholder {0}: props.submitList.length !== 1
 #. placeholder {1}: props.submitList.length
 #. placeholder {2}: props.submitList.length
-#: src/components/ModalMyList/index.jsx:452
-#: src/components/ModalMyList/index.jsx:582
+#: src/components/ModalMyList/index.jsx:453
+#: src/components/ModalMyList/index.jsx:583
 msgid "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 msgstr "{0, select, true {Solicitar {1} Items} other {Solicitar {2} Item}}"
 
@@ -209,7 +209,7 @@ msgid "<0>Last requested on: {0}</0>"
 msgstr "<0>Última solicitud el: {0}</0>"
 
 #. Limitations and fees title
-#: src/components/ModalMyList/index.jsx:483
+#: src/components/ModalMyList/index.jsx:484
 msgid "<0>Limitations and fees</0>"
 msgstr "<0>Limitaciones y tasas</0>"
 
@@ -236,12 +236,12 @@ msgid "<0>Please add a word or phrase to search for.</0>"
 msgstr "<0>Por favor, añada una palabra o frase a buscar.</0>"
 
 #. Note to user about including name and email address
-#: src/components/ModalMyList/index.jsx:163
+#: src/components/ModalMyList/index.jsx:164
 msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archive@rockarch.org</1>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up."
 msgstr "<0>Nota:</0> si envía su lista por correo electrónico a un archivero de <1>archive@rockarch.org,</1> incluya su nombre y dirección de correo electrónico en el campo Mensaje; de lo contrario, no podremos ponernos en contacto con usted para hacer un seguimiento."
 
 #. Submit Request title
-#: src/components/ModalMyList/index.jsx:514
+#: src/components/ModalMyList/index.jsx:515
 msgid "<0>Submit request</0>"
 msgstr "<0>Enviar solicitud</0>"
 
@@ -276,7 +276,7 @@ msgid "<0>View Online<1/></0>{0}"
 msgstr "<0>Ver en línea<1/></0>"
 
 #. Limitations and fees information
-#: src/components/ModalMyList/index.jsx:486
+#: src/components/ModalMyList/index.jsx:487
 msgid "<0>We limit users to <1>10 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
 msgstr "<0>Limitamos el número de solicitudes a <1>10 por año natural</1>.</0><2>No cobramos por los PDF de referencia. Los escaneados con calidad de publicación tienen un <3> coste fijo de 25 $ por artículo</3>.</2><4>Para más información, incluidas las excepciones para materiales audiovisuales y de gran tamaño, consulte nuestros <5>servicios de duplicación</5>.</4><6>Si necesita ayuda o desea solicitar un escaneado con calidad de publicación, envíe un correo electrónico a un archivero a <7>archive@rockarch.org.</7></6>"
 
@@ -286,7 +286,7 @@ msgid "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 msgstr "15 Dayton Avenue<0/>Sleepy Hollow, Nueva York 10591"
 
 #. helptext for RAC staff message
-#: src/components/ModalMyList/index.jsx:432
+#: src/components/ModalMyList/index.jsx:433
 msgid "255 characters maximum"
 msgstr "255 caracteres máximo"
 
@@ -328,12 +328,12 @@ msgstr "Todas las categorías"
 #. Missing email address error
 #. Modal Form Missing Email Address Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:158
-#: src/components/ModalMyList/index.jsx:172
+#: src/components/ModalMyList/index.jsx:173
 msgid "An email address is required."
 msgstr "Se requiere un correo electrónico."
 
 #. Label to apply dates shown from date range
-#: src/components/ModalSearch/index.jsx:80
+#: src/components/ModalSearch/index.jsx:77
 msgid "apply dates"
 msgstr "aplicar fechas"
 
@@ -373,12 +373,10 @@ msgstr "Cancelar"
 msgid "Choose a search category"
 msgstr "Elija una categoría de búsqueda"
 
-#. Aria label for close.
-#: src/components/ModalConfirm/index.jsx:15
-#: src/components/ModalMinimap/index.jsx:37
-#: src/components/ModalMinimap/index.jsx:66
-#: src/components/ModalMyList/index.jsx:111
-#: src/components/ModalSearch/index.jsx:50
+#: src/components/ModalConfirm/index.jsx:16
+#: src/components/ModalMinimap/index.jsx:38
+#: src/components/ModalMinimap/index.jsx:68
+#: src/components/ModalMyList/index.jsx:112
 msgid "Close"
 msgstr "Cerrar"
 
@@ -420,7 +418,7 @@ msgid "Copyright © Rockefeller Archive Center. All rights reserved."
 msgstr "Copyright © Centro de Archivos Rockefeller. Todos los derechos reservados."
 
 #. Title for Creator filter
-#: src/components/ModalSearch/index.jsx:93
+#: src/components/ModalSearch/index.jsx:90
 msgid "Creator"
 msgstr "Autor"
 
@@ -430,7 +428,7 @@ msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "Página actual - JPEG2000 {pixelDimensions}"
 
 #. title for Date Range
-#: src/components/ModalSearch/index.jsx:61
+#: src/components/ModalSearch/index.jsx:58
 msgid "Date Range"
 msgstr "Rango de Fecha"
 
@@ -466,14 +464,14 @@ msgid "E-mail: <0/>"
 msgstr "Correo electrónico: <0/>"
 
 #. Name of email form
-#: src/components/ModalMyList/index.jsx:218
+#: src/components/ModalMyList/index.jsx:219
 msgid "email"
 msgstr "email"
 
 #. Email Modal Form Test
 #. Label of Email Form
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:110
-#: src/components/ModalMyList/index.jsx:214
+#: src/components/ModalMyList/index.jsx:215
 msgid "Email"
 msgstr "Correo electrónico"
 
@@ -490,7 +488,7 @@ msgid "Email Sent"
 msgstr "Email enviado"
 
 #. Label for the end year input
-#: src/components/ModalSearch/index.jsx:74
+#: src/components/ModalSearch/index.jsx:71
 msgid "End Year"
 msgstr "Año final"
 
@@ -500,7 +498,7 @@ msgid "Enter a search term"
 msgstr "Introduce tu búsqueda"
 
 #. Helptext for scheduling date.
-#: src/components/ModalMyList/index.jsx:331
+#: src/components/ModalMyList/index.jsx:332
 msgid "Enter the date of your research visit (mm/dd/yyyy)"
 msgstr "Introduzca la fecha de su visita de investigación (mm/dd/aaaa)"
 
@@ -526,12 +524,12 @@ msgid "Fax: (914) 631-6017"
 msgstr "Fax: (914) 631-6017"
 
 #. Label for Filters button
-#: src/components/PageSearch/index.jsx:257
+#: src/components/PageSearch/index.jsx:260
 msgid "Filters"
 msgstr "Filtros"
 
 #. Title for Format filter
-#: src/components/ModalSearch/index.jsx:87
+#: src/components/ModalSearch/index.jsx:84
 msgid "Format"
 msgstr "Formato"
 
@@ -613,7 +611,7 @@ msgid "https://rockarch.org/collections/access-and-request-materials/"
 msgstr "https://rockarch.org/collections/access-and-request-materials/"
 
 #. Link for duplication request services
-#: src/components/ModalMyList/index.jsx:501
+#: src/components/ModalMyList/index.jsx:502
 msgid "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 msgstr "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 
@@ -643,18 +641,18 @@ msgid "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 
 #. Label for duplication request form
-#: src/components/ModalMyList/index.jsx:557
+#: src/components/ModalMyList/index.jsx:558
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its volume or physical condition."
 msgstr "Entiendo que puede que necesite trabajar con un archivero para identificar los recursos más relevantes para mi investigación y que, en algunos casos, no es posible digitalizar el material debido a su extensión o estado físico."
 
 #. Invalid email error
-#: src/components/ModalMyList/index.jsx:179
+#: src/components/ModalMyList/index.jsx:180
 msgid "Invalid email address provided."
 msgstr "Dirección de correo electrónico no válida."
 
 #. Name of items error message
 #: src/components/ModalMyList/index.jsx:31
-#: src/components/ModalMyList/index.jsx:207
+#: src/components/ModalMyList/index.jsx:208
 msgid "items"
 msgstr "artículos"
 
@@ -685,8 +683,8 @@ msgid "Location of Headquarters"
 msgstr "Ubicación de oficinas centrales"
 
 #. Company Email link
-#: src/components/ModalMyList/index.jsx:164
-#: src/components/ModalMyList/index.jsx:510
+#: src/components/ModalMyList/index.jsx:165
+#: src/components/ModalMyList/index.jsx:511
 #: src/components/PageBackendError/index.jsx:21
 #: src/components/PrimaryLink/index.jsx:25
 msgid "mailto:archive@rockarch.org"
@@ -697,20 +695,20 @@ msgid "Menu"
 msgstr ""
 
 #. Name of message form
-#: src/components/ModalMyList/index.jsx:241
+#: src/components/ModalMyList/index.jsx:242
 msgid "message"
 msgstr "mensaje"
 
 #. Label of Message Form
 #. Message Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:118
-#: src/components/ModalMyList/index.jsx:237
+#: src/components/ModalMyList/index.jsx:238
 msgid "Message"
 msgstr "Mensaje"
 
 #. Label for RAC staff message Form
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:187
-#: src/components/ModalMyList/index.jsx:428
+#: src/components/ModalMyList/index.jsx:429
 msgid "Message for RAC staff"
 msgstr "Mensaje para el personal del RAC"
 
@@ -719,7 +717,7 @@ msgstr "Mensaje para el personal del RAC"
 #. Header for modal minimap
 #: src/components/Minimap/index.jsx:79
 #: src/components/Minimap/index.jsx:83
-#: src/components/ModalMinimap/index.jsx:62
+#: src/components/ModalMinimap/index.jsx:64
 msgid "Minimap"
 msgstr "Minimapa"
 
@@ -748,9 +746,9 @@ msgid "Nicknames"
 msgstr "Apodos"
 
 #. No selected items error
-#: src/components/ModalMyList/index.jsx:188
-#: src/components/ModalMyList/index.jsx:401
-#: src/components/ModalMyList/index.jsx:531
+#: src/components/ModalMyList/index.jsx:189
+#: src/components/ModalMyList/index.jsx:402
+#: src/components/ModalMyList/index.jsx:532
 msgid "No items have been selected to submit."
 msgstr "No se ha seleccionado ningún artículo para presentar."
 
@@ -763,7 +761,7 @@ msgid "No saved items."
 msgstr "No hay elementos guardados."
 
 #. Search results header with no search term
-#: src/components/PageSearch/index.jsx:223
+#: src/components/PageSearch/index.jsx:226
 msgid "No search query entered"
 msgstr "No se ha introducido ninguna consulta de búsqueda"
 
@@ -784,7 +782,7 @@ msgstr ""
 
 #. Title for duplication services link
 #. Title message for opening an online item
-#: src/components/ModalMyList/index.jsx:497
+#: src/components/ModalMyList/index.jsx:498
 #: src/components/RecordsDetail/index.jsx:206
 msgid "opens in a new window"
 msgstr "el enlace se abre en una ventana nueva"
@@ -824,27 +822,27 @@ msgstr "Por favor, añada una palabra o frase a buscar."
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:154
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:221
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:275
-#: src/components/ModalMyList/index.jsx:184
-#: src/components/ModalMyList/index.jsx:398
-#: src/components/ModalMyList/index.jsx:524
+#: src/components/ModalMyList/index.jsx:185
+#: src/components/ModalMyList/index.jsx:399
+#: src/components/ModalMyList/index.jsx:525
 msgid "Please complete this field."
 msgstr "Rellene este campo."
 
 #. placeholder {0}: import.meta.env.VITE_DUPLICATION_REQUEST_LIMIT
-#: src/components/ModalMyList/index.jsx:534
+#: src/components/ModalMyList/index.jsx:535
 msgid "Please limit your request to {0} items."
 msgstr "Por favor, limite su solicitud a {0} artículos."
 
 #. Missing Scheduled Date error
-#: src/components/ModalMyList/index.jsx:391
+#: src/components/ModalMyList/index.jsx:392
 msgid "Please provide the date of your research visit."
 msgstr "Indique la fecha de su visita de investigación."
 
-#: src/components/ModalMyList/index.jsx:395
+#: src/components/ModalMyList/index.jsx:396
 msgid "Please select a location of a reading room."
 msgstr "Seleccione la ubicación de una sala de lectura."
 
-#: src/components/ModalMyList/index.jsx:291
+#: src/components/ModalMyList/index.jsx:292
 msgid "Please select a reading room"
 msgstr "Seleccione una sala de lectura"
 
@@ -854,7 +852,7 @@ msgid "Positions Held"
 msgstr "Cargos desempeñados"
 
 #. Message while MyList modal loads items
-#: src/components/ModalMyList/index.jsx:139
+#: src/components/ModalMyList/index.jsx:140
 msgid "Preparing items"
 msgstr "Preparando artículos"
 
@@ -890,9 +888,9 @@ msgstr "Horario de la sala de lectura:"
 
 #. Name of recaptcha element
 #. Name of recaptcha error message
-#: src/components/ModalMyList/index.jsx:250
-#: src/components/ModalMyList/index.jsx:257
-#: src/components/ModalMyList/index.jsx:571
+#: src/components/ModalMyList/index.jsx:251
+#: src/components/ModalMyList/index.jsx:258
+#: src/components/ModalMyList/index.jsx:572
 msgid "recaptcha"
 msgstr "recaptcha"
 
@@ -941,7 +939,7 @@ msgid "Rockefeller<0/>Archive Center"
 msgstr "Rockefeller<0/>Archive Center"
 
 #. Shown for the user to save and close the filter
-#: src/components/ModalSearch/index.jsx:54
+#: src/components/ModalSearch/index.jsx:51
 msgid "Save & Close"
 msgstr "Guardar & Cerrar"
 
@@ -955,7 +953,7 @@ msgstr "Programar una Visita"
 #. Label for scheduling date
 #. Scheduled Date Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:183
-#: src/components/ModalMyList/index.jsx:337
+#: src/components/ModalMyList/index.jsx:338
 msgid "Scheduled Date"
 msgstr "Fecha"
 
@@ -989,7 +987,7 @@ msgstr "Resultados de la búsqueda"
 #. Search results header with results
 #: src/components/PageSearch/__tests__/PageSearch.test.jsx:45
 #: src/components/PageSearch/index.jsx:50
-#: src/components/PageSearch/index.jsx:232
+#: src/components/PageSearch/index.jsx:235
 msgid "Search Results for “{query}”"
 msgstr "Resultados para la búsqueda “{query}”"
 
@@ -999,7 +997,7 @@ msgid "Search..."
 msgstr "Buscar..."
 
 #. Search results header while searching
-#: src/components/PageSearch/index.jsx:218
+#: src/components/PageSearch/index.jsx:221
 msgid "Searching"
 msgstr "Buscando"
 
@@ -1013,7 +1011,7 @@ msgstr "Ver calendario de vacaciones"
 msgid "Select all items"
 msgstr "Seleccionar todos los artículos"
 
-#: src/components/ModalMyList/index.jsx:305
+#: src/components/ModalMyList/index.jsx:306
 msgid "Select Reading Room Location"
 msgstr "Seleccione la ubicación de la sala de lectura"
 
@@ -1036,7 +1034,7 @@ msgstr "seleccionados: 0 items"
 #. Modal Form Submit Test
 #. Send List sumbit message
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:122
-#: src/components/ModalMyList/index.jsx:265
+#: src/components/ModalMyList/index.jsx:266
 msgid "Send List"
 msgstr "Enviar lista"
 
@@ -1097,12 +1095,12 @@ msgid "Sorry, the requested page was not found!"
 msgstr "Lo sentimos, no se ha encontrado la página solicitada!"
 
 #. Search results header with no results
-#: src/components/PageSearch/index.jsx:228
+#: src/components/PageSearch/index.jsx:231
 msgid "Sorry, there are no search results for “{query}”"
 msgstr "Lo sentimos, la búsqueda  “{query}” no arrojó resultados"
 
 #. Name for sort results input
-#: src/components/PageSearch/index.jsx:267
+#: src/components/PageSearch/index.jsx:270
 msgid "sort"
 msgstr "ordenar"
 
@@ -1122,17 +1120,17 @@ msgid "Sort by title"
 msgstr "Ordenar por título"
 
 #. Label for sort results input
-#: src/components/PageSearch/index.jsx:272
+#: src/components/PageSearch/index.jsx:275
 msgid "Sort search results"
 msgstr "Ordenar los resultados de la búsqueda"
 
 #. Label for the start year input
-#: src/components/ModalSearch/index.jsx:66
+#: src/components/ModalSearch/index.jsx:63
 msgid "Start Year"
 msgstr "Año de inicio"
 
 #. Name of subject form
-#: src/components/ModalMyList/index.jsx:231
+#: src/components/ModalMyList/index.jsx:232
 msgid "subject"
 msgstr "asunto"
 
@@ -1140,8 +1138,8 @@ msgstr "asunto"
 #. Subject Modal Form Test
 #. Title for Subject filter
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:114
-#: src/components/ModalMyList/index.jsx:227
-#: src/components/ModalSearch/index.jsx:99
+#: src/components/ModalMyList/index.jsx:228
+#: src/components/ModalSearch/index.jsx:96
 msgid "Subject"
 msgstr "Asunto"
 
@@ -1184,7 +1182,7 @@ msgstr "Fichero virtual de autoridades internacionales"
 #. Costs not agreed to error
 #. Payment Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:278
-#: src/components/ModalMyList/index.jsx:527
+#: src/components/ModalMyList/index.jsx:528
 msgid "We cannot process your request unless you agree to pay the costs of reproduction."
 msgstr "No podemos tramitar su solicitud a menos que acepte pagar los costes de reproducción."
 
