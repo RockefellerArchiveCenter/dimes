@@ -658,6 +658,16 @@ msgstr "無効な電子メール アドレスが指定されました。"
 msgid "items"
 msgstr "アイテム"
 
+#. Accessible label for the pagination button that skips back several pages
+#: src/components/Pagination/index.jsx:27
+msgid "Jump backward"
+msgstr ""
+
+#. Accessible label for the pagination button that skips ahead several pages
+#: src/components/Pagination/index.jsx:23
+msgid "Jump forward"
+msgstr ""
+
 #. Message displayed to jump to specific section within minimap
 #. placeholder {0}: areaHits.length
 #: src/components/Minimap/index.jsx:53
@@ -726,6 +736,11 @@ msgstr "月～金<0/>午前9:30～午後5:00<1/>"
 #: src/components/PageMyList/index.jsx:36
 msgid "My List"
 msgstr "マイリスト"
+
+#. Accessible label for the next page pagination button
+#: src/components/Pagination/index.jsx:16
+msgid "Next page"
+msgstr ""
 
 #. Nicknames property
 #: src/components/PageAgent/index.jsx:207
@@ -852,6 +867,11 @@ msgstr "ご依頼品の準備"
 #: src/components/PageMyList/index.jsx:105
 msgid "Preparing Request Data"
 msgstr "リクエストデータの準備"
+
+#. Accessible label for the previous page pagination button
+#: src/components/Pagination/index.jsx:10
+msgid "Previous page"
+msgstr ""
 
 #. Privacy Policy message
 #: src/components/PrimaryLink/index.jsx:68

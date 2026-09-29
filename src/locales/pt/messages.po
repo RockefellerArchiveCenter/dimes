@@ -658,6 +658,16 @@ msgstr "Endereço de e-mail inválido fornecido."
 msgid "items"
 msgstr "itens"
 
+#. Accessible label for the pagination button that skips back several pages
+#: src/components/Pagination/index.jsx:27
+msgid "Jump backward"
+msgstr ""
+
+#. Accessible label for the pagination button that skips ahead several pages
+#: src/components/Pagination/index.jsx:23
+msgid "Jump forward"
+msgstr ""
+
 #. Message displayed to jump to specific section within minimap
 #. placeholder {0}: areaHits.length
 #: src/components/Minimap/index.jsx:53
@@ -726,6 +736,11 @@ msgstr "Segunda-feira a sexta-feira<0/>9:30 a.m. a 5:00 p.m.<1/>"
 #: src/components/PageMyList/index.jsx:36
 msgid "My List"
 msgstr "Minha lista"
+
+#. Accessible label for the next page pagination button
+#: src/components/Pagination/index.jsx:16
+msgid "Next page"
+msgstr ""
 
 #. Nicknames property
 #: src/components/PageAgent/index.jsx:207
@@ -852,6 +867,11 @@ msgstr "Preparação de itens para sua solicitação"
 #: src/components/PageMyList/index.jsx:105
 msgid "Preparing Request Data"
 msgstr "Preparação dos dados da solicitação"
+
+#. Accessible label for the previous page pagination button
+#: src/components/Pagination/index.jsx:10
+msgid "Previous page"
+msgstr ""
 
 #. Privacy Policy message
 #: src/components/PrimaryLink/index.jsx:68

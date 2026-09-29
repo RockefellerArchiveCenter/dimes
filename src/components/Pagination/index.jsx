@@ -1,16 +1,34 @@
 import ReactPaginate from 'react-paginate'
+import { t } from '@lingui/core/macro'
+import MaterialIcon from '../MaterialIcon'
 import './styles.scss'
 
 export const SearchPagination = props => (
   <ReactPaginate
-    previousLabel={'keyboard_arrow_left'}
+    previousLabel={<MaterialIcon icon='keyboard_arrow_left' />}
     previousClassName={'pagination__button'}
-    previousLinkClassName={'material-icon'}
-    nextLabel={'keyboard_arrow_right'}
+    previousAriaLabel={t({
+      comment: 'Accessible label for the previous page pagination button',
+      message: 'Previous page'
+    })}
+    nextLabel={<MaterialIcon icon='keyboard_arrow_right' />}
     nextClassName={'pagination__button'}
-    nextLinkClassName={'material-icon'}
+    nextAriaLabel={t({
+      comment: 'Accessible label for the next page pagination button',
+      message: 'Next page'
+    })}
     breakLabel={'...'}
     breakClassName={'pagination__break'}
+    breakAriaLabels={{
+      forward: `... ${t({
+        comment: 'Accessible label for the pagination button that skips ahead several pages',
+        message: 'Jump forward'
+      })}`,
+      backward: `... ${t({
+        comment: 'Accessible label for the pagination button that skips back several pages',
+        message: 'Jump backward'
+      })}`
+    }}
     forcePage={Math.ceil((props.offset || 0) / props.pageSize)}
     pageCount={props.pageCount}
     marginPagesDisplayed={1}
