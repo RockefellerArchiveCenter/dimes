@@ -13,11 +13,7 @@ import { resolvedList } from '../../../__fixtures__/resolvedList'
 import { submitList } from '../../../__fixtures__/submitList'
 import { I18nApp } from '../../i18n'
 
-let container = null
 beforeEach(() => {
-  container = document.createElement('div')
-  container.setAttribute('id', 'root')
-  document.body.appendChild(container)
   axios.post.mockImplementation((url) => {
     if (url.includes('parse')) {
       return Promise.resolve({data: {}})
@@ -33,7 +29,6 @@ vi.mock('axios')
 it('renders select props correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<ModalMyList
-      appElement={container}
       handleChange={vi.fn()}
       ignoreRestrictions={true}
       isOpen={true}
@@ -63,7 +58,6 @@ it('renders select props correctly', async () => {
 it('renders deselect props correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<ModalMyList
-      appElement={container}
       handleChange={vi.fn()}
       ignoreRestrictions={true}
       isOpen={true}
@@ -91,7 +85,6 @@ it('renders deselect props correctly', async () => {
 it('renders email modal props correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<EmailModal
-      appElement={container}
       handleChange={vi.fn()}
       handleFormSubmit={vi.fn()}
       ignoreRestrictions={true}
@@ -133,7 +126,6 @@ it('renders email modal props correctly', async () => {
 it('validates email modal form correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<EmailModal
-      appElement={container}
       handleChange={vi.fn()}
       handleFormSubmit={vi.fn()}
       ignoreRestrictions={true}
@@ -164,7 +156,6 @@ it('validates email modal form correctly', async () => {
 it('renders reading room modal props correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<ReadingRoomRequestModal
-      appElement={container}
       handleChange={vi.fn()}
       handleFormSubmit={vi.fn()}
       ignoreRestrictions={true}
@@ -200,7 +191,6 @@ it('renders reading room modal props correctly', async () => {
 it('validates reading room modal form correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<ReadingRoomRequestModal
-      appElement={container}
       handleChange={vi.fn()}
       handleFormSubmit={vi.fn()}
       ignoreRestrictions={true}
@@ -226,7 +216,6 @@ it('validates reading room modal form correctly', async () => {
 it('renders duplication modal props correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<DuplicationRequestModal
-      appElement={container}
       handleChange={vi.fn()}
       handleFormSubmit={vi.fn()}
       ignoreRestrictions={true}
@@ -254,7 +243,6 @@ it('renders duplication modal props correctly', async () => {
 it('validates duplication modal form correctly', async () => {
   act(() => {
     render(<I18nApp ReactComponent={<DuplicationRequestModal
-      appElement={container}
       handleChange={vi.fn()}
       handleFormSubmit={vi.fn()}
       ignoreRestrictions={true}

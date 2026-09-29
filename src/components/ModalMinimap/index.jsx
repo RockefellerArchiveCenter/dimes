@@ -20,7 +20,6 @@ const minimapIntroText = <Trans comment='The introduction for minimaps.'>
 
 export const ModalMinimapInfo = props => (
   <Modal
-    appElement={props.appElement ? props.appElement : Modal.setAppElement('#root')}
     isOpen={props.isOpen}
     onRequestClose={props.toggleModal}
     aria={{ labelledby: 'modal-minimap-info-title' }}
@@ -49,7 +48,6 @@ export const ModalMinimapInfo = props => (
 
 export const ModalMinimap = props => (
   <Modal
-    appElement={props.appElement ? props.appElement : Modal.setAppElement('#root')}
     isOpen={props.isOpen}
     onRequestClose={props.toggleModal}
     aria={{ labelledby: 'modal-minimap-title' }}

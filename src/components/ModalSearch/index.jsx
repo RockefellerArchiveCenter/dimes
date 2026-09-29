@@ -29,7 +29,6 @@ export const FacetModal = props => {
 
   return (
     <Modal
-      appElement={props.appElement ? props.appElement : Modal.setAppElement('#root')}
       isOpen={props.isOpen}
       onRequestClose={props.toggleModal}
       aria={{ labelledby: 'modal-facet-title' }}

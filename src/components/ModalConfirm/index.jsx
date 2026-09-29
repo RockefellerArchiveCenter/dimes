@@ -5,7 +5,6 @@ import './styles.scss'
 
 const ModalConfirm = props => (
   <Modal
-    appElement={props.appElement ? props.appElement : Modal.setAppElement('#root')}
     isOpen={props.isOpen}
     onRequestClose={props.toggleModal}
     aria={{ labelledby: 'modal-confirm-title' }}

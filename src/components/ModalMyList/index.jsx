@@ -101,7 +101,6 @@ export const SelectedTotals = ({ items }) => {
 
 export const ModalMyList = props => (
   <Modal
-    appElement={props.appElement ? props.appElement : Modal.setAppElement('#root')}
     isOpen={props.isOpen}
     onRequestClose={props.toggleModal}
     aria={{ labelledby: 'modal-mylist-title' }}
@@ -150,7 +149,6 @@ ModalMyList.defaultProps = {
 
 export const EmailModal = props => (
   <ModalMyList
-    appElement={props.appElement}
     title='Email List'
     handleChange={props.handleChange}
     ignoreRestrictions={true}
@@ -377,7 +375,6 @@ export const ReadingRoomRequestModal = props => {
 
   return (
   <ModalMyList
-    appElement={props.appElement}
     title='Request in Reading Room'
     handleChange={props.handleChange}
     isOpen={props.isOpen}
@@ -471,7 +468,6 @@ export const ReadingRoomRequestModal = props => {
 
 export const DuplicationRequestModal = props => (
   <ModalMyList
-    appElement={props.appElement}
     title='Request Copies'
     handleChange={props.handleChange}
     isOpen={props.isOpen}
