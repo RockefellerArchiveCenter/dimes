@@ -16,7 +16,7 @@ import { Select, Trans } from '@lingui/react/macro'
 import SearchForm from '../SearchForm'
 import SearchNotFound from '../SearchNotFound'
 import CardList from '../Card'
-import { appendParams, withSiteTitle } from '../Helpers'
+import { appendParams, buildHref, withSiteTitle } from '../Helpers'
 import { usePageView } from '../Hooks'
 import './styles.scss'
 
@@ -185,6 +185,9 @@ const PageSearch = () => {
     setParams(newParams)
   };
 
+  /** Builds the href for a pagination link (react-paginate passes page numbers) */
+  const pageHref = page => buildHref(pathname, { ...params, offset: (page - 1) * pageSize })
+
   /** Changes sort based on user input */
   const handleSortChange = value => {
     let newParams = { ...params }
@@ -282,6 +285,7 @@ const PageSearch = () => {
                       offset={params.offset}
                       pageSize={pageSize}
                       pageCount={pageCount}
+                      hrefBuilder={pageHref}
                       handlePageClick={handlePageClick} />
                   )}
                 </div>
@@ -310,6 +314,7 @@ const PageSearch = () => {
                       offset={params.offset}
                       pageSize={pageSize}
                       pageCount={pageCount}
+                      hrefBuilder={pageHref}
                       handlePageClick={handlePageClick} />
                   )}
               </div>

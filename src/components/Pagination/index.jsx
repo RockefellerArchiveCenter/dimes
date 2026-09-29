@@ -29,6 +29,7 @@ export const SearchPagination = props => (
         message: 'Jump backward'
       })}`
     }}
+    hrefBuilder={props.hrefBuilder}
     forcePage={Math.ceil((props.offset || 0) / props.pageSize)}
     pageCount={props.pageCount}
     marginPagesDisplayed={1}
