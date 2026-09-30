@@ -99,7 +99,7 @@ export const SelectedTotals = ({ items }) => {
 }
 
 
-export const ModalMyList = props => (
+export const ModalMyList = ({ ignoreRestrictions = false, ...props }) => (
   <Modal
     isOpen={props.isOpen}
     onRequestClose={props.toggleModal}
@@ -116,17 +116,17 @@ export const ModalMyList = props => (
     <div className='modal__body p-0'>
       <div className='modal-list py-30 px-20'>
         <ModalToggleListButton
-          ignoreRestrictions={props.ignoreRestrictions}
+          ignoreRestrictions={ignoreRestrictions}
           items={props.list}
           toggleList={props.toggleList} />
         <SelectedTotals items={props.list} />
         <ModalSavedItemList
-          ignoreRestrictions={props.ignoreRestrictions}
+          ignoreRestrictions={ignoreRestrictions}
           items={props.list}
           handleChange={props.handleChange} />
         <SelectedTotals items={props.list} />
         <ModalToggleListButton
-          ignoreRestrictions={props.ignoreRestrictions}
+          ignoreRestrictions={ignoreRestrictions}
           items={props.list}
           toggleList={props.toggleList} />
       </div>
@@ -141,11 +141,6 @@ export const ModalMyList = props => (
     </div>)}
   </Modal>
 )
-
-ModalMyList.defaultProps = {
-  ignoreRestrictions: false,
-}
-
 
 export const EmailModal = props => (
   <ModalMyList

@@ -16,7 +16,7 @@ const InputLabel = ({className, id, label, required, showRequiredIndicator = tru
   </label>)
 
 
-export const CheckBoxInput = props => (
+export const CheckBoxInput = ({ checked = false, ...props }) => (
   <>
     <input
       type='checkbox'
@@ -24,18 +24,14 @@ export const CheckBoxInput = props => (
       id={props.id}
       name={props.name ? props.name : props.id}
       onChange={props.handleChange}
-      checked={props.checked}
-      value={props.checked}
+      checked={checked}
+      value={checked}
       required={props.required}
       aria-describedby={props.ariaDescribedBy}
       disabled={props.disabled} />
     <InputLabel {...props} />
   </>
 )
-
-CheckBoxInput.defaultProps = {
-  checked: true,
-}
 
 // Custom input supports accessibility of DatePicker by keeping the date 
 // field input editable while using a separate button to open the datepicker.
@@ -140,33 +136,23 @@ export const SelectInput = props => {
   )
 }
 
-export const TextInput = props => {
-  const maxLength = props.maxLength === undefined ? 255 : props.maxLength
-  const size = props.size === undefined ? 10 : props.size
-  
-  return (
-    <div className={classnames('input', props.className)}>
-      <InputLabel {...props} />
-      <input
-        type={props.type}
-        id={props.id}
-        name={props.id}
-        placeholder={props.placeholder}
-        minLength={props.minLength}
-        maxLength={maxLength}
-        size={size}
-        required={props.required}
-        onChange={props.handleChange}
-        defaultValue={props.defaultValue}
-        value={props.value} />
-    </div>
-   )
-}
-
-TextInput.defaultProps = {
-  maxLength: 255,
-  size: 10
-}
+export const TextInput = ({ maxLength = 255, size = 10, ...props }) => (
+  <div className={classnames('input', props.className)}>
+    <InputLabel {...props} />
+    <input
+      type={props.type}
+      id={props.id}
+      name={props.id}
+      placeholder={props.placeholder}
+      minLength={props.minLength}
+      maxLength={maxLength}
+      size={size}
+      required={props.required}
+      onChange={props.handleChange}
+      defaultValue={props.defaultValue}
+      value={props.value} />
+  </div>
+)
 
 export const YearInput = props => (
   <div className={classnames('input', props.className)}>

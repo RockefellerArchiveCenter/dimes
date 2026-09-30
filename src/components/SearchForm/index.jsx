@@ -7,7 +7,7 @@ import './styles.scss'
 
 const SearchForm = props => {
   var [category, setCategory] = useState(props.category || '')
-  var [online, setOnline] = useState(props.online)
+  var [online, setOnline] = useState(props.online ? true : false)
   var [query, setQuery] = useState(props.query)
   const isHomePage = props.className === 'search search-form--home'
 
