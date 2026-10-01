@@ -28,7 +28,7 @@ export const FocusError = () => {
 }
 
 export const FormGroup = (props) => {
-  const { children, component, errors, helpText, maxLength, label, name, required, rows, showRequiredIndicator = true, touched, type } = props
+  const { autoComplete, children, component, errors, helpText, maxLength, label, name, required, rows, showRequiredIndicator = true, touched, type } = props
   /** Return text for aria describedBy label */
   const describedBy = () => {
     if (helpText) {
@@ -51,6 +51,7 @@ export const FormGroup = (props) => {
         type={type}
         name={name}
         id={name}
+        autoComplete={autoComplete}
         component={component}
         rows={rows}
         children={children}

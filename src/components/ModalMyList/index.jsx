@@ -217,6 +217,7 @@ export const EmailModal = props => (
                 message: 'email'
               })}
               type='email'
+              autoComplete='email'
               required={true}
               errors={errors}
               touched={touched} />
