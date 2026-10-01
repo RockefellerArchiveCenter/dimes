@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { BrowserRouter, Routes, Route, useMatch } from 'react-router';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import SkipLink from './components/SkipLink';
@@ -12,6 +12,8 @@ import PageSearch from './components/PageSearch';
 import PageNotFound from './components/PageNotFound';
 import { fetchMyList, isItemSaved, removeItem, saveItem, saveMyList } from './components/MyListHelpers';
 import { useResizeObserver } from './components/Hooks';
+
+const AppFooter = () => useMatch('/:type/:id/view') ? null : <Footer />
 
 const App = () => {
   const desktopSize = 1024
@@ -54,8 +56,8 @@ const App = () => {
   return (<>
     <SkipLink />
     <Header myListCount={myListCount} />
-      <div className='wrapper' ref={mainWrapper}>
-        <BrowserRouter>
+      <BrowserRouter>
+        <div className='wrapper' ref={mainWrapper}>
           <Routes>
             <Route path='/list' element={<PageMyList removeAllListItems={removeAllListItems} toggleInList={toggleInList} />} />
             <Route path='/search' element={<PageSearch />} />
@@ -65,9 +67,9 @@ const App = () => {
             <Route path='/' element={<PageHome isMobile={isMobile} />} />
             <Route path='*' element={<PageNotFound />} />
           </Routes>
-        </BrowserRouter>
-      </div>
-  <Footer/>
+        </div>
+        <AppFooter />
+      </BrowserRouter>
   </>)
 }
 
