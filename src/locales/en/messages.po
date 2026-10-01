@@ -18,7 +18,7 @@ msgstr ""
 #. Indicates a required form field
 #. Indicates a required form field
 #: src/components/Form/index.jsx:48
-#: src/components/Form/index.jsx:61
+#: src/components/Form/index.jsx:62
 #: src/components/Inputs/index.jsx:15
 #: src/components/Inputs/index.jsx:111
 msgid "(required)"
@@ -39,7 +39,7 @@ msgstr "{0, plural, one {Filter # Search Result} other {Filter # Search Results}
 
 #. Pluralization of hit(s) for minimap boxes
 #. placeholder {0}: areaHits.length
-#: src/components/Minimap/index.jsx:49
+#: src/components/Minimap/index.jsx:50
 msgid "{0, plural, one {hit} other {hits}}"
 msgstr "{0, plural, one {hit} other {hits}}"
 
@@ -70,8 +70,8 @@ msgstr "{0, select, true {Minimap} other {Introducing the Minimap}}"
 #. placeholder {0}: props.submitList.length !== 1
 #. placeholder {1}: props.submitList.length
 #. placeholder {2}: props.submitList.length
-#: src/components/ModalMyList/index.jsx:451
-#: src/components/ModalMyList/index.jsx:583
+#: src/components/ModalMyList/index.jsx:452
+#: src/components/ModalMyList/index.jsx:584
 msgid "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 msgstr "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 
@@ -134,7 +134,7 @@ msgid "<0/>Back to Search"
 msgstr "<0/>Back to Search"
 
 #. New Search button
-#: src/components/PageMyList/index.jsx:298
+#: src/components/PageMyList/index.jsx:299
 msgid "<0/>Start a New Search"
 msgstr "<0/>Start a New Search"
 
@@ -196,8 +196,13 @@ msgstr "<0>Here are some suggested search terms:</0>"
 
 #. The about section for minimaps.
 #: src/components/ModalMinimap/index.jsx:8
-msgid "<0>Jump to a part of the collection containing matches by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
-msgstr "<0>Jump to a part of the collection containing matches by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
+#~ msgid "<0>Jump to a part of the collection containing matches by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
+#~ msgstr "<0>Jump to a part of the collection containing matches by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
+
+#. The about section for minimaps.
+#: src/components/ModalMinimap/index.jsx:8
+msgid "<0>Jump to a part of the collection containing matches by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Interactive squares represent parts that contain one or more matches for your search.</1>"
+msgstr "<0>Jump to a part of the collection containing matches by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Interactive squares represent parts that contain one or more matches for your search.</1>"
 
 #. Back to search button
 #: src/components/PageAgent/index.jsx:258
@@ -211,7 +216,7 @@ msgid "<0>Last requested on: {0}</0>"
 msgstr "<0>Last requested on: {0}</0>"
 
 #. Limitations and fees title
-#: src/components/ModalMyList/index.jsx:484
+#: src/components/ModalMyList/index.jsx:485
 msgid "<0>Limitations and fees</0>"
 msgstr "<0>Limitations and fees</0>"
 
@@ -228,7 +233,7 @@ msgid "<0>More about this {agentType}</0>"
 msgstr "<0>More about this {agentType}</0>"
 
 #. Header for user's list
-#: src/components/PageMyList/index.jsx:304
+#: src/components/PageMyList/index.jsx:305
 msgid "<0>My List</0>"
 msgstr "<0>My List</0>"
 
@@ -243,7 +248,7 @@ msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archi
 msgstr "<0>Please note:</0> if are emailing your list to an archivist at <1>archive@rockarch.org</1>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up."
 
 #. Submit Request title
-#: src/components/ModalMyList/index.jsx:515
+#: src/components/ModalMyList/index.jsx:516
 msgid "<0>Submit request</0>"
 msgstr "<0>Submit request</0>"
 
@@ -254,8 +259,13 @@ msgstr "<0>Summary</0>"
 
 #. The introduction for minimaps.
 #: src/components/ModalMinimap/index.jsx:14
-msgid "<0>The minimap is a new feature that allows you to quickly jump to search matches in a collection by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
-msgstr "<0>The minimap is a new feature that allows you to quickly jump to search matches in a collection by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
+#~ msgid "<0>The minimap is a new feature that allows you to quickly jump to search matches in a collection by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
+#~ msgstr "<0>The minimap is a new feature that allows you to quickly jump to search matches in a collection by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
+
+#. The introduction for minimaps.
+#: src/components/ModalMinimap/index.jsx:14
+msgid "<0>The minimap is a new feature that allows you to quickly jump to search matches in a collection by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Interactive squares represent parts that contain one or more matches for your search.</1>"
+msgstr "<0>The minimap is a new feature that allows you to quickly jump to search matches in a collection by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Interactive squares represent parts that contain one or more matches for your search.</1>"
 
 #. Message for showing an error for a request
 #. placeholder {0}: err.config.url
@@ -278,7 +288,7 @@ msgid "<0>View Online<1/></0>{0}"
 msgstr "<0>View Online<1/></0>{0}"
 
 #. Limitations and fees information
-#: src/components/ModalMyList/index.jsx:487
+#: src/components/ModalMyList/index.jsx:488
 msgid "<0>We limit users to <1>10 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
 msgstr "<0>We limit users to <1>10 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
 
@@ -288,7 +298,7 @@ msgid "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 msgstr "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 
 #. helptext for RAC staff message
-#: src/components/ModalMyList/index.jsx:431
+#: src/components/ModalMyList/index.jsx:432
 msgid "255 characters maximum"
 msgstr "255 characters maximum"
 
@@ -345,7 +355,7 @@ msgid "archive@rockarch.org"
 msgstr "archive@rockarch.org"
 
 #. Confirmation to delete all items from list
-#: src/components/PageMyList/index.jsx:375
+#: src/components/PageMyList/index.jsx:376
 msgid "Are you sure you want to remove all the items from your list?<0><1/><2/></0>"
 msgstr "Are you sure you want to remove all the items from your list?<0><1/><2/></0>"
 
@@ -355,7 +365,7 @@ msgid "Bulk data download"
 msgstr "Bulk data download"
 
 #. Title shown when request failed
-#: src/components/PageMyList/index.jsx:360
+#: src/components/PageMyList/index.jsx:361
 msgid "Can't Complete Request"
 msgstr "Can't Complete Request"
 
@@ -364,11 +374,11 @@ msgstr "Can't Complete Request"
 #. Reset/Cancel Button for Form
 #. Test Cancel Button Label
 #: src/components/Form/__tests__/Form.test.jsx:14
-#: src/components/Form/index.jsx:74
+#: src/components/Form/index.jsx:75
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:119
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:185
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:237
-#: src/components/PageMyList/index.jsx:386
+#: src/components/PageMyList/index.jsx:387
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -412,7 +422,7 @@ msgid "Collections Related to {agentTitle}"
 msgstr "Collections Related to {agentTitle}"
 
 #. Remove all confirmation title
-#: src/components/PageMyList/index.jsx:394
+#: src/components/PageMyList/index.jsx:395
 msgid "Confirm Remove All"
 msgstr "Confirm Remove All"
 
@@ -509,7 +519,7 @@ msgstr "Enter a search term"
 #~ msgstr "Enter the date of your research visit (mm/dd/yyyy)"
 
 #. Helptext for scheduling date.
-#: src/components/ModalMyList/index.jsx:328
+#: src/components/ModalMyList/index.jsx:329
 msgid "Enter the date of your research visit (yyyy-mm-dd)"
 msgstr "Enter the date of your research visit (yyyy-mm-dd)"
 
@@ -634,7 +644,7 @@ msgid "https://rockarch.org/collections/access-and-request-materials/"
 msgstr "https://rockarch.org/collections/access-and-request-materials/"
 
 #. Link for duplication request services
-#: src/components/ModalMyList/index.jsx:502
+#: src/components/ModalMyList/index.jsx:503
 msgid "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 msgstr "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 
@@ -664,7 +674,7 @@ msgid "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 
 #. Label for duplication request form
-#: src/components/ModalMyList/index.jsx:558
+#: src/components/ModalMyList/index.jsx:559
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its volume or physical condition."
 msgstr "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its volume or physical condition."
 
@@ -691,9 +701,15 @@ msgstr "Jump forward"
 
 #. Message displayed to jump to specific section within minimap
 #. placeholder {0}: areaHits.length
-#: src/components/Minimap/index.jsx:53
+#: src/components/Minimap/index.jsx:59
 msgid "Jump to {0} {hitPlural} in this area: {hitTitles}"
 msgstr "Jump to {0} {hitPlural} in this area: {hitTitles}"
+
+#. Message displayed to jump to specific section within minimap that contains digital matches
+#. placeholder {0}: areaHits.length
+#: src/components/Minimap/index.jsx:55
+msgid "Jump to {0} {hitPlural} with digital match in this area: {hitTitles}"
+msgstr "Jump to {0} {hitPlural} with digital match in this area: {hitTitles}"
 
 #. Licensing message
 #: src/components/SecondaryLink/index.jsx:41
@@ -707,7 +723,7 @@ msgstr "Location of Headquarters"
 
 #. Company Email link
 #: src/components/ModalMyList/index.jsx:161
-#: src/components/ModalMyList/index.jsx:511
+#: src/components/ModalMyList/index.jsx:512
 #: src/components/PageBackendError/index.jsx:21
 #: src/components/PrimaryLink/index.jsx:25
 msgid "mailto:archive@rockarch.org"
@@ -718,28 +734,28 @@ msgid "Menu"
 msgstr "Menu"
 
 #. Name of message form
-#: src/components/ModalMyList/index.jsx:238
+#: src/components/ModalMyList/index.jsx:239
 msgid "message"
 msgstr "message"
 
 #. Label of Message Form
 #. Message Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:111
-#: src/components/ModalMyList/index.jsx:234
+#: src/components/ModalMyList/index.jsx:235
 msgid "Message"
 msgstr "Message"
 
 #. Label for RAC staff message Form
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:178
-#: src/components/ModalMyList/index.jsx:427
+#: src/components/ModalMyList/index.jsx:428
 msgid "Message for RAC staff"
 msgstr "Message for RAC staff"
 
 #. Aria label for Minimap nav
 #. Header for minimap
 #. Header for modal minimap
-#: src/components/Minimap/index.jsx:79
-#: src/components/Minimap/index.jsx:83
+#: src/components/Minimap/index.jsx:85
+#: src/components/Minimap/index.jsx:89
 #: src/components/ModalMinimap/index.jsx:62
 msgid "Minimap"
 msgstr "Minimap"
@@ -772,8 +788,8 @@ msgstr "Nicknames"
 
 #. No selected items error
 #: src/components/ModalMyList/index.jsx:185
-#: src/components/ModalMyList/index.jsx:400
-#: src/components/ModalMyList/index.jsx:532
+#: src/components/ModalMyList/index.jsx:401
+#: src/components/ModalMyList/index.jsx:533
 msgid "No items have been selected to submit."
 msgstr "No items have been selected to submit."
 
@@ -807,7 +823,7 @@ msgstr "Open date and time picker"
 
 #. Title for duplication services link
 #. Title message for opening an online item
-#: src/components/ModalMyList/index.jsx:498
+#: src/components/ModalMyList/index.jsx:499
 #: src/components/RecordsDetail/index.jsx:206
 msgid "opens in a new window"
 msgstr "opens in a new window"
@@ -848,26 +864,26 @@ msgstr "Please add a word or phrase to search for."
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:211
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:263
 #: src/components/ModalMyList/index.jsx:181
-#: src/components/ModalMyList/index.jsx:397
-#: src/components/ModalMyList/index.jsx:525
+#: src/components/ModalMyList/index.jsx:398
+#: src/components/ModalMyList/index.jsx:526
 msgid "Please complete this field."
 msgstr "Please complete this field."
 
 #. placeholder {0}: import.meta.env.VITE_DUPLICATION_REQUEST_LIMIT
-#: src/components/ModalMyList/index.jsx:535
+#: src/components/ModalMyList/index.jsx:536
 msgid "Please limit your request to {0} items."
 msgstr "Please limit your request to {0} items."
 
 #. Missing Scheduled Date error
-#: src/components/ModalMyList/index.jsx:390
+#: src/components/ModalMyList/index.jsx:391
 msgid "Please provide the date of your research visit."
 msgstr "Please provide the date of your research visit."
 
-#: src/components/ModalMyList/index.jsx:394
+#: src/components/ModalMyList/index.jsx:395
 msgid "Please select a location of a reading room."
 msgstr "Please select a location of a reading room."
 
-#: src/components/ModalMyList/index.jsx:288
+#: src/components/ModalMyList/index.jsx:289
 msgid "Please select a reading room"
 msgstr "Please select a reading room"
 
@@ -913,9 +929,9 @@ msgstr "Reading Room Hours:"
 
 #. Name of recaptcha element
 #. Name of recaptcha error message
-#: src/components/ModalMyList/index.jsx:247
-#: src/components/ModalMyList/index.jsx:254
-#: src/components/ModalMyList/index.jsx:572
+#: src/components/ModalMyList/index.jsx:248
+#: src/components/ModalMyList/index.jsx:255
+#: src/components/ModalMyList/index.jsx:573
 msgid "recaptcha"
 msgstr "recaptcha"
 
@@ -928,7 +944,7 @@ msgstr "Related sites"
 #. Label to remove saved item
 #. Test Remove button label
 #: src/components/ListToggleButton/__tests__/ListToggleButton.test.jsx:66
-#: src/components/PageMyList/index.jsx:379
+#: src/components/PageMyList/index.jsx:380
 #: src/components/SavedItem/index.jsx:26
 msgid "Remove"
 msgstr "Remove"
@@ -955,7 +971,7 @@ msgstr "Request 4 Items"
 #. Request copies button in Sidebar
 #. Title of the modal for requesting copies of items
 #: src/components/Dropdown/index.jsx:125
-#: src/components/ModalMyList/index.jsx:472
+#: src/components/ModalMyList/index.jsx:473
 #: src/components/MyListSidebar/index.jsx:27
 msgid "Request Copies"
 msgstr "Request Copies"
@@ -964,7 +980,7 @@ msgstr "Request Copies"
 #. Request in Reading Room button in Sidebar
 #. Title of the modal for requesting items in the reading room
 #: src/components/Dropdown/index.jsx:117
-#: src/components/ModalMyList/index.jsx:376
+#: src/components/ModalMyList/index.jsx:377
 #: src/components/MyListSidebar/index.jsx:19
 msgid "Request in Reading Room"
 msgstr "Request in Reading Room"
@@ -994,7 +1010,7 @@ msgstr "Schedule a Visit"
 #. Label for scheduling date
 #. Scheduled Date Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:174
-#: src/components/ModalMyList/index.jsx:334
+#: src/components/ModalMyList/index.jsx:335
 msgid "Scheduled Date"
 msgstr "Scheduled Date"
 
@@ -1054,7 +1070,7 @@ msgstr "See holiday schedule"
 msgid "Select all items"
 msgstr "Select all items"
 
-#: src/components/ModalMyList/index.jsx:302
+#: src/components/ModalMyList/index.jsx:303
 msgid "Select Reading Room Location"
 msgstr "Select Reading Room Location"
 
@@ -1077,7 +1093,7 @@ msgstr "selected: 0 items"
 #. Modal Form Submit Test
 #. Send List sumbit message
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:115
-#: src/components/ModalMyList/index.jsx:262
+#: src/components/ModalMyList/index.jsx:263
 msgid "Send List"
 msgstr "Send List"
 
@@ -1150,7 +1166,7 @@ msgid "Social Networks and Archival Context"
 msgstr "Social Networks and Archival Context"
 
 #. Message shown when request failed
-#: src/components/PageMyList/index.jsx:356
+#: src/components/PageMyList/index.jsx:357
 msgid "Sorry, our system is unable to process requests right now. We're working to fix this! Please try again later."
 msgstr "Sorry, our system is unable to process requests right now. We're working to fix this! Please try again later."
 
@@ -1195,7 +1211,7 @@ msgid "Start Year"
 msgstr "Start Year"
 
 #. Name of subject form
-#: src/components/ModalMyList/index.jsx:228
+#: src/components/ModalMyList/index.jsx:229
 msgid "subject"
 msgstr "subject"
 
@@ -1203,7 +1219,7 @@ msgstr "subject"
 #. Subject Modal Form Test
 #. Title for Subject filter
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:107
-#: src/components/ModalMyList/index.jsx:224
+#: src/components/ModalMyList/index.jsx:225
 #: src/components/ModalSearch/index.jsx:95
 msgid "Subject"
 msgstr "Subject"
@@ -1247,7 +1263,7 @@ msgstr "Virtual International Authority File"
 #. Costs not agreed to error
 #. Payment Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:266
-#: src/components/ModalMyList/index.jsx:528
+#: src/components/ModalMyList/index.jsx:529
 msgid "We cannot process your request unless you agree to pay the costs of reproduction."
 msgstr "We cannot process your request unless you agree to pay the costs of reproduction."
 

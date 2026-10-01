@@ -8,14 +8,14 @@ import './styles.scss'
 const minimapAboutText = <Trans comment='The about section for minimaps.'>
   <p>Jump to a part of the collection containing matches by clicking on an active square.</p>
   <p>In the minimap diagram, each square represents part of this collection.
-  Colored squares represent parts that contain one or more matches for your search.</p>
+  Interactive squares represent parts that contain one or more matches for your search.</p>
 </Trans>
 
 const minimapIntroText = <Trans comment='The introduction for minimaps.'>
   <p>The minimap is a new feature that allows you to quickly jump to search matches in a
   collection by clicking on an active square.</p>
   <p>In the minimap diagram, each square represents part of this collection.
-  Colored squares represent parts that contain one or more matches for your search.</p>
+  Interactive squares represent parts that contain one or more matches for your search.</p>
 </Trans>
 
 export const ModalMinimapInfo = props => (

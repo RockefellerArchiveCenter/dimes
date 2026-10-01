@@ -18,7 +18,7 @@ msgstr ""
 #. Indicates a required form field
 #. Indicates a required form field
 #: src/components/Form/index.jsx:48
-#: src/components/Form/index.jsx:61
+#: src/components/Form/index.jsx:62
 #: src/components/Inputs/index.jsx:15
 #: src/components/Inputs/index.jsx:111
 msgid "(required)"
@@ -39,7 +39,7 @@ msgstr "{0, plural, one {过滤后的#搜索结果} other {过滤后的#搜索�
 
 #. Pluralization of hit(s) for minimap boxes
 #. placeholder {0}: areaHits.length
-#: src/components/Minimap/index.jsx:49
+#: src/components/Minimap/index.jsx:50
 msgid "{0, plural, one {hit} other {hits}}"
 msgstr "{0, plural, one {击中} other {击中}}"
 
@@ -70,8 +70,8 @@ msgstr "{0, select, true {Minimap} other {引入最小图}}"
 #. placeholder {0}: props.submitList.length !== 1
 #. placeholder {1}: props.submitList.length
 #. placeholder {2}: props.submitList.length
-#: src/components/ModalMyList/index.jsx:451
-#: src/components/ModalMyList/index.jsx:583
+#: src/components/ModalMyList/index.jsx:452
+#: src/components/ModalMyList/index.jsx:584
 msgid "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 msgstr "{0, select, true {请求 {1} 项目} other {请求 {2} 项目}}"
 
@@ -134,7 +134,7 @@ msgid "<0/>Back to Search"
 msgstr "<0/>返回搜索"
 
 #. New Search button
-#: src/components/PageMyList/index.jsx:298
+#: src/components/PageMyList/index.jsx:299
 msgid "<0/>Start a New Search"
 msgstr "<0/>开始新的搜索"
 
@@ -196,8 +196,13 @@ msgstr "<0>以下是一些建议的搜索条件：</0>"
 
 #. The about section for minimaps.
 #: src/components/ModalMinimap/index.jsx:8
-msgid "<0>Jump to a part of the collection containing matches by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
-msgstr "<0>点击活动方格，跳转到包含匹配项的集合部分。</0><1>在小地图中，每个方格代表该集合的一部分。彩色方格代表包含一个或多个符合搜索条件的部分.</1>"
+#~ msgid "<0>Jump to a part of the collection containing matches by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
+#~ msgstr "<0>点击活动方格，跳转到包含匹配项的集合部分。</0><1>在小地图中，每个方格代表该集合的一部分。彩色方格代表包含一个或多个符合搜索条件的部分.</1>"
+
+#. The about section for minimaps.
+#: src/components/ModalMinimap/index.jsx:8
+msgid "<0>Jump to a part of the collection containing matches by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Interactive squares represent parts that contain one or more matches for your search.</1>"
+msgstr ""
 
 #. Back to search button
 #: src/components/PageAgent/index.jsx:258
@@ -211,7 +216,7 @@ msgid "<0>Last requested on: {0}</0>"
 msgstr "<0>最后申请日期{0}</0>"
 
 #. Limitations and fees title
-#: src/components/ModalMyList/index.jsx:484
+#: src/components/ModalMyList/index.jsx:485
 msgid "<0>Limitations and fees</0>"
 msgstr "<0>限制和费用</0>"
 
@@ -228,7 +233,7 @@ msgid "<0>More about this {agentType}</0>"
 msgstr "<0>更多相关信息{agentType}</0>"
 
 #. Header for user's list
-#: src/components/PageMyList/index.jsx:304
+#: src/components/PageMyList/index.jsx:305
 msgid "<0>My List</0>"
 msgstr "<0>我的收藏目录</0>"
 
@@ -243,7 +248,7 @@ msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archi
 msgstr "<0>请注意：</0>如果要将您的名单通过电子邮件发送给<1>archive@rockarch.org</1> 的档案管理员<1>，</1>请在 \"信息 \"栏中注明您的姓名和电子邮件地址，否则我们将无法与您联系，无法跟进。"
 
 #. Submit Request title
-#: src/components/ModalMyList/index.jsx:515
+#: src/components/ModalMyList/index.jsx:516
 msgid "<0>Submit request</0>"
 msgstr "<0>提交申请</0>"
 
@@ -254,8 +259,13 @@ msgstr "<0>摘要</0>"
 
 #. The introduction for minimaps.
 #: src/components/ModalMinimap/index.jsx:14
-msgid "<0>The minimap is a new feature that allows you to quickly jump to search matches in a collection by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
-msgstr "<0>点击活动方格，跳转到所匹配的专辑的一项内容。</0><1>在微缩位置图中，每个方格代表该专辑的一个内容。彩色方格代表包含一个或多个符合搜索条件的内容。</1>"
+#~ msgid "<0>The minimap is a new feature that allows you to quickly jump to search matches in a collection by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
+#~ msgstr "<0>点击活动方格，跳转到所匹配的专辑的一项内容。</0><1>在微缩位置图中，每个方格代表该专辑的一个内容。彩色方格代表包含一个或多个符合搜索条件的内容。</1>"
+
+#. The introduction for minimaps.
+#: src/components/ModalMinimap/index.jsx:14
+msgid "<0>The minimap is a new feature that allows you to quickly jump to search matches in a collection by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Interactive squares represent parts that contain one or more matches for your search.</1>"
+msgstr ""
 
 #. Message for showing an error for a request
 #. placeholder {0}: err.config.url
@@ -278,7 +288,7 @@ msgid "<0>View Online<1/></0>{0}"
 msgstr "<0>在线阅读<1/></0>"
 
 #. Limitations and fees information
-#: src/components/ModalMyList/index.jsx:487
+#: src/components/ModalMyList/index.jsx:488
 msgid "<0>We limit users to <1>10 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
 msgstr "<0>我们限制用户<1>每个日历年只能申请 10 次</1>。</0><2>我们对 PDF 参考资料不收费。出版物质量的扫描件<3>每件统一收费 25 美元</3>。</2><4>有关详细信息，包括视听资料和超大型资料的例外情况，请阅读我们的<5>复制服务</5>。</4><6>如需帮助或索取出版物质量的扫描件，请发送电子邮件至<7>archive@rockarch.org 联系</7>档案管理员。</6>"
 
@@ -288,7 +298,7 @@ msgid "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 msgstr "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 
 #. helptext for RAC staff message
-#: src/components/ModalMyList/index.jsx:431
+#: src/components/ModalMyList/index.jsx:432
 msgid "255 characters maximum"
 msgstr "最多 255 个字符"
 
@@ -345,7 +355,7 @@ msgid "archive@rockarch.org"
 msgstr "archive@rockarch.org"
 
 #. Confirmation to delete all items from list
-#: src/components/PageMyList/index.jsx:375
+#: src/components/PageMyList/index.jsx:376
 msgid "Are you sure you want to remove all the items from your list?<0><1/><2/></0>"
 msgstr "您确定要删除列表中的所有项目吗？<0><1/><2/></0>"
 
@@ -355,7 +365,7 @@ msgid "Bulk data download"
 msgstr "批量数据下载"
 
 #. Title shown when request failed
-#: src/components/PageMyList/index.jsx:360
+#: src/components/PageMyList/index.jsx:361
 msgid "Can't Complete Request"
 msgstr "无法完成请求"
 
@@ -364,11 +374,11 @@ msgstr "无法完成请求"
 #. Reset/Cancel Button for Form
 #. Test Cancel Button Label
 #: src/components/Form/__tests__/Form.test.jsx:14
-#: src/components/Form/index.jsx:74
+#: src/components/Form/index.jsx:75
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:119
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:185
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:237
-#: src/components/PageMyList/index.jsx:386
+#: src/components/PageMyList/index.jsx:387
 msgid "Cancel"
 msgstr "取消"
 
@@ -412,7 +422,7 @@ msgid "Collections Related to {agentTitle}"
 msgstr "与 {agentTitle} 相关的收藏"
 
 #. Remove all confirmation title
-#: src/components/PageMyList/index.jsx:394
+#: src/components/PageMyList/index.jsx:395
 msgid "Confirm Remove All"
 msgstr "确认全部删除"
 
@@ -509,7 +519,7 @@ msgstr "输入一个搜索词"
 #~ msgstr "请输入研究访问日期（月/日/年）"
 
 #. Helptext for scheduling date.
-#: src/components/ModalMyList/index.jsx:328
+#: src/components/ModalMyList/index.jsx:329
 msgid "Enter the date of your research visit (yyyy-mm-dd)"
 msgstr ""
 
@@ -634,7 +644,7 @@ msgid "https://rockarch.org/collections/access-and-request-materials/"
 msgstr "https://rockarch.org/collections/access-and-request-materials/"
 
 #. Link for duplication request services
-#: src/components/ModalMyList/index.jsx:502
+#: src/components/ModalMyList/index.jsx:503
 msgid "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 msgstr "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 
@@ -664,7 +674,7 @@ msgid "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 
 #. Label for duplication request form
-#: src/components/ModalMyList/index.jsx:558
+#: src/components/ModalMyList/index.jsx:559
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its volume or physical condition."
 msgstr "我知道，我可能需要与档案管理员合作，以确定与我的研究最相关的资源，在某些情况下，由于资料的范围或实际状况，不可能将其数字化。"
 
@@ -691,9 +701,15 @@ msgstr ""
 
 #. Message displayed to jump to specific section within minimap
 #. placeholder {0}: areaHits.length
-#: src/components/Minimap/index.jsx:53
+#: src/components/Minimap/index.jsx:59
 msgid "Jump to {0} {hitPlural} in this area: {hitTitles}"
 msgstr "跳转到该区域的 {0} {hitPlural}：{hitTitles}"
+
+#. Message displayed to jump to specific section within minimap that contains digital matches
+#. placeholder {0}: areaHits.length
+#: src/components/Minimap/index.jsx:55
+msgid "Jump to {0} {hitPlural} with digital match in this area: {hitTitles}"
+msgstr ""
 
 #. Licensing message
 #: src/components/SecondaryLink/index.jsx:41
@@ -707,7 +723,7 @@ msgstr "总部所在地"
 
 #. Company Email link
 #: src/components/ModalMyList/index.jsx:161
-#: src/components/ModalMyList/index.jsx:511
+#: src/components/ModalMyList/index.jsx:512
 #: src/components/PageBackendError/index.jsx:21
 #: src/components/PrimaryLink/index.jsx:25
 msgid "mailto:archive@rockarch.org"
@@ -718,28 +734,28 @@ msgid "Menu"
 msgstr ""
 
 #. Name of message form
-#: src/components/ModalMyList/index.jsx:238
+#: src/components/ModalMyList/index.jsx:239
 msgid "message"
 msgstr "信息"
 
 #. Label of Message Form
 #. Message Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:111
-#: src/components/ModalMyList/index.jsx:234
+#: src/components/ModalMyList/index.jsx:235
 msgid "Message"
 msgstr "信息"
 
 #. Label for RAC staff message Form
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:178
-#: src/components/ModalMyList/index.jsx:427
+#: src/components/ModalMyList/index.jsx:428
 msgid "Message for RAC staff"
 msgstr "给洛克菲勒档案中心的档案管理员留言"
 
 #. Aria label for Minimap nav
 #. Header for minimap
 #. Header for modal minimap
-#: src/components/Minimap/index.jsx:79
-#: src/components/Minimap/index.jsx:83
+#: src/components/Minimap/index.jsx:85
+#: src/components/Minimap/index.jsx:89
 #: src/components/ModalMinimap/index.jsx:62
 msgid "Minimap"
 msgstr "迷你地图"
@@ -772,8 +788,8 @@ msgstr "昵称"
 
 #. No selected items error
 #: src/components/ModalMyList/index.jsx:185
-#: src/components/ModalMyList/index.jsx:400
-#: src/components/ModalMyList/index.jsx:532
+#: src/components/ModalMyList/index.jsx:401
+#: src/components/ModalMyList/index.jsx:533
 msgid "No items have been selected to submit."
 msgstr "没有选择要提交的项目。"
 
@@ -807,7 +823,7 @@ msgstr ""
 
 #. Title for duplication services link
 #. Title message for opening an online item
-#: src/components/ModalMyList/index.jsx:498
+#: src/components/ModalMyList/index.jsx:499
 #: src/components/RecordsDetail/index.jsx:206
 msgid "opens in a new window"
 msgstr "在新窗口打开"
@@ -848,26 +864,26 @@ msgstr "请添加要搜索的单词或短语。"
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:211
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:263
 #: src/components/ModalMyList/index.jsx:181
-#: src/components/ModalMyList/index.jsx:397
-#: src/components/ModalMyList/index.jsx:525
+#: src/components/ModalMyList/index.jsx:398
+#: src/components/ModalMyList/index.jsx:526
 msgid "Please complete this field."
 msgstr "请填写此栏。"
 
 #. placeholder {0}: import.meta.env.VITE_DUPLICATION_REQUEST_LIMIT
-#: src/components/ModalMyList/index.jsx:535
+#: src/components/ModalMyList/index.jsx:536
 msgid "Please limit your request to {0} items."
 msgstr "请将请求限制在 {0} 个项目内。"
 
 #. Missing Scheduled Date error
-#: src/components/ModalMyList/index.jsx:390
+#: src/components/ModalMyList/index.jsx:391
 msgid "Please provide the date of your research visit."
 msgstr "请提供研究访问的日期。"
 
-#: src/components/ModalMyList/index.jsx:394
+#: src/components/ModalMyList/index.jsx:395
 msgid "Please select a location of a reading room."
 msgstr "请选择阅览室的位置。"
 
-#: src/components/ModalMyList/index.jsx:288
+#: src/components/ModalMyList/index.jsx:289
 msgid "Please select a reading room"
 msgstr "请选择阅览室"
 
@@ -913,9 +929,9 @@ msgstr "阅览室开放时间:"
 
 #. Name of recaptcha element
 #. Name of recaptcha error message
-#: src/components/ModalMyList/index.jsx:247
-#: src/components/ModalMyList/index.jsx:254
-#: src/components/ModalMyList/index.jsx:572
+#: src/components/ModalMyList/index.jsx:248
+#: src/components/ModalMyList/index.jsx:255
+#: src/components/ModalMyList/index.jsx:573
 msgid "recaptcha"
 msgstr "重新验证"
 
@@ -928,7 +944,7 @@ msgstr ""
 #. Label to remove saved item
 #. Test Remove button label
 #: src/components/ListToggleButton/__tests__/ListToggleButton.test.jsx:66
-#: src/components/PageMyList/index.jsx:379
+#: src/components/PageMyList/index.jsx:380
 #: src/components/SavedItem/index.jsx:26
 msgid "Remove"
 msgstr "删除"
@@ -955,7 +971,7 @@ msgstr "申请 4 个项目"
 #. Request copies button in Sidebar
 #. Title of the modal for requesting copies of items
 #: src/components/Dropdown/index.jsx:125
-#: src/components/ModalMyList/index.jsx:472
+#: src/components/ModalMyList/index.jsx:473
 #: src/components/MyListSidebar/index.jsx:27
 msgid "Request Copies"
 msgstr "索取副本"
@@ -964,7 +980,7 @@ msgstr "索取副本"
 #. Request in Reading Room button in Sidebar
 #. Title of the modal for requesting items in the reading room
 #: src/components/Dropdown/index.jsx:117
-#: src/components/ModalMyList/index.jsx:376
+#: src/components/ModalMyList/index.jsx:377
 #: src/components/MyListSidebar/index.jsx:19
 msgid "Request in Reading Room"
 msgstr "请求在阅览室阅读"
@@ -994,7 +1010,7 @@ msgstr "到访预约"
 #. Label for scheduling date
 #. Scheduled Date Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:174
-#: src/components/ModalMyList/index.jsx:334
+#: src/components/ModalMyList/index.jsx:335
 msgid "Scheduled Date"
 msgstr "计划来访日期"
 
@@ -1054,7 +1070,7 @@ msgstr "查看假期安排"
 msgid "Select all items"
 msgstr "选择所有项目"
 
-#: src/components/ModalMyList/index.jsx:302
+#: src/components/ModalMyList/index.jsx:303
 msgid "Select Reading Room Location"
 msgstr "选择阅览室位置"
 
@@ -1077,7 +1093,7 @@ msgstr "选定： 0 项"
 #. Modal Form Submit Test
 #. Send List sumbit message
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:115
-#: src/components/ModalMyList/index.jsx:262
+#: src/components/ModalMyList/index.jsx:263
 msgid "Send List"
 msgstr "发送列表"
 
@@ -1150,7 +1166,7 @@ msgid "Social Networks and Archival Context"
 msgstr "社会网络和档案背景"
 
 #. Message shown when request failed
-#: src/components/PageMyList/index.jsx:356
+#: src/components/PageMyList/index.jsx:357
 msgid "Sorry, our system is unable to process requests right now. We're working to fix this! Please try again later."
 msgstr "很抱歉，我们的系统现在无法处理申请。我们正在努力修复！请稍后再试。"
 
@@ -1195,7 +1211,7 @@ msgid "Start Year"
 msgstr "开始年份"
 
 #. Name of subject form
-#: src/components/ModalMyList/index.jsx:228
+#: src/components/ModalMyList/index.jsx:229
 msgid "subject"
 msgstr "主题"
 
@@ -1203,7 +1219,7 @@ msgstr "主题"
 #. Subject Modal Form Test
 #. Title for Subject filter
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:107
-#: src/components/ModalMyList/index.jsx:224
+#: src/components/ModalMyList/index.jsx:225
 #: src/components/ModalSearch/index.jsx:95
 msgid "Subject"
 msgstr "主题"
@@ -1247,7 +1263,7 @@ msgstr "虚拟国际权威档案"
 #. Costs not agreed to error
 #. Payment Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:266
-#: src/components/ModalMyList/index.jsx:528
+#: src/components/ModalMyList/index.jsx:529
 msgid "We cannot process your request unless you agree to pay the costs of reproduction."
 msgstr "除非您同意支付复制费用，否则我们无法处理您的申请。"
 
