@@ -248,6 +248,22 @@
   }
 }
 
+
+// Control link styles for child titles that are links.
+a.child__title {
+  display: inline-block;
+  margin: 0;
+  padding: 1px 20px 1px 0;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: abs.$black;
+    text-decoration: none;
+  }
+}
+
 .child__title--object {
   font-size: 16px;
 

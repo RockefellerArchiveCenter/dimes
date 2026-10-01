@@ -11,7 +11,7 @@ import { Badge } from '../Badge'
 import ListToggleButton from '../ListToggleButton'
 import MaterialIcon from '../MaterialIcon'
 import QueryHighlighter from '../QueryHighlighter'
-import { appendParams, dateString, formatMatchString, truncateString} from '../Helpers'
+import { appendParams, buildHref, dateString, formatMatchString, truncateString} from '../Helpers'
 import { useOnScreen } from '../Hooks'
 import { isItemSaved } from '../MyListHelpers'
 import { RecordsChildSkeleton } from '../LoadingSkeleton'
@@ -220,11 +220,15 @@ export const RecordsChild = props => {
   return (item.type === 'object' ?
     (<div className={classnames('child__list-item', `child__list-item--${item.type}`)} >
       <div className='child__description'>
-        <button id={`accordion__heading-${item.uri}`}
-                className={classnames('child__title', `child__title--${item.type}`)}
-                onClick={() => handleItemClick(item.uri)}>
+        <a id={`accordion__heading-${item.uri}`}
+           className={classnames('child__title', `child__title--${item.type}`)}
+           href={buildHref(item.uri, params)}
+           onClick={e => {
+             e.preventDefault()
+             handleItemClick(item.uri)
+           }}>
           <QueryHighlighter query={query} text={item.title} />
-        </button>
+        </a>
         {item.dates === item.title ? (null) : (<p className='child__text'>{item.dates}</p>)}
       </div>
       <div className='child__buttons'>
