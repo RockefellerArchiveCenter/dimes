@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useId, useState} from 'react'
 import Button from '../Button'
 import { CheckBoxInput } from '../Inputs'
 import classnames from 'classnames'
@@ -29,16 +29,20 @@ const ShowHideMore = ({id, isOpen, title, toggleOpen}) => {
   )
 }
 
-const FacetItem = ({ checked, count, handleChange, label, paramKey }) => (
-  <div className='input-group'>
-    <CheckBoxInput
-      className='checkbox--blue'
-      id={label}
-      label={`${label} (${count})`}
-      checked={checked}
-      handleChange={e => handleChange(e, paramKey)} />
-  </div>
-)
+const FacetItem = ({ checked, count, handleChange, label, paramKey }) => {
+  const id = useId()
+  return (
+    <div className='input-group'>
+      <CheckBoxInput
+        className='checkbox--blue'
+        id={id}
+        name={label}
+        label={`${label} (${count})`}
+        checked={checked}
+        handleChange={e => handleChange(e, paramKey)} />
+    </div>
+  )
+}
 
 const Facet = ({ children, handleChange, items, paramKey, params, title }) => {
   const [isOpen, setIsOpen] = useState(false)
