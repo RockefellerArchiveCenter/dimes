@@ -57,3 +57,13 @@ export const SecondaryLinkTakeDownPolicy = () => (
 		})}
 	/>
 )
+
+export const SecondaryLinkSiteMap = () => (
+	<SecondaryLink
+		href='/sitemap'
+		text={t({
+			comment: 'Site map message',
+			message: 'Site map'
+		})}
+	/>
+)

@@ -1,0 +1,9 @@
+@use '../abstracts' as abs;
+
+.sitemap {
+  margin: 0 30px 60px 30px;
+
+  @include abs.lg-up {
+    margin: 0 80px 60px 80px;
+  }
+}

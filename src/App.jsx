@@ -9,6 +9,7 @@ import PageDigitalObject from './components/PageDigitalObject';
 import PageHome from './components/PageHome';
 import PageMyList from './components/PageMyList';
 import PageSearch from './components/PageSearch';
+import PageSiteMap from './components/PageSiteMap';
 import PageNotFound from './components/PageNotFound';
 import { fetchMyList, isItemSaved, removeItem, saveItem, saveMyList } from './components/MyListHelpers';
 import { useResizeObserver } from './components/Hooks';
@@ -64,6 +65,7 @@ const App = () => {
             <Route path='/:type/:id/view' element={<PageDigitalObject />} />
             <Route path='/:type/:id' element={<PageRecords myListCount={myListCount} toggleInList={toggleInList} isDesktop={isDesktop} isMobile={isMobile} />} />
             <Route path='/agents/:id' element={<PageAgent />} />
+            <Route path='/sitemap' element={<PageSiteMap />} />
             <Route path='/' element={<PageHome isMobile={isMobile} />} />
             <Route path='*' element={<PageNotFound />} />
           </Routes>

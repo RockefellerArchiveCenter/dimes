@@ -52,6 +52,11 @@
       "onBeforeScript": "mock_request.js"
     },
     {
+      "label": "Site Map",
+      "url": "http://host.docker.internal:3000/sitemap",
+      "delay": 1000
+    },
+    {
       "label": "Requesting Unavailable Modal",
       "url": "http://host.docker.internal:3000/list",
       "clickSelector": "#main > div.mylist__export-actions > button:nth-child(1)",

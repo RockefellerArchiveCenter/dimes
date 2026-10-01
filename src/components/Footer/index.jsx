@@ -1,6 +1,6 @@
 import SocialIcons from '../SocialIcons'
 import { PrimaryLinkAccessMaterials, PrimaryLinkAccessibilityPolicy, PrimaryLinkEmail, PrimaryLinkHoliday, PrimaryLinkPrivacyPolicy, PrimaryLinkRACPolicy } from '../PrimaryLink'
-import { SecondaryLinkCollectionsAPI, SecondaryLinkBulkData, SecondaryLinkLicensing, SecondaryLinkTakeDownPolicy } from '../SecondaryLink'
+import { SecondaryLinkCollectionsAPI, SecondaryLinkBulkData, SecondaryLinkLicensing, SecondaryLinkSiteMap, SecondaryLinkTakeDownPolicy } from '../SecondaryLink'
 import { Trans } from '@lingui/react/macro'
 
 const Footer = () => (
@@ -83,6 +83,9 @@ const Footer = () => (
           </li>
           <li className='footer-secondary__list-item'>
             <SecondaryLinkTakeDownPolicy />
+          </li>
+          <li className='footer-secondary__list-item'>
+            <SecondaryLinkSiteMap />
           </li>
         </ul>
       </div>
