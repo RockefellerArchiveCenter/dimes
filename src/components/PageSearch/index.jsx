@@ -280,7 +280,7 @@ const PageSearch = () => {
                     options={sortOptions} />
                 </div>
                 <div className='results__pagination'>
-                  { inProgress ? (null) : (
+                  { pageCount > 0 && (
                     <SearchPagination
                       offset={params.offset}
                       pageSize={pageSize}
@@ -309,7 +309,7 @@ const PageSearch = () => {
                   </p>
                 </div>
                 <div className='results__pagination'>
-                  { inProgress ? (null) : (
+                  { pageCount > 0 && (
                     <SearchPagination
                       offset={params.offset}
                       pageSize={pageSize}
