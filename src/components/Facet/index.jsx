@@ -5,27 +5,25 @@ import classnames from 'classnames'
 import { t } from '@lingui/core/macro'
 import './styles.scss'
 
-const ShowHideMore = ({id, isOpen, toggleOpen}) => {
+const ShowHideMore = ({id, isOpen, title, toggleOpen}) => {
   return (
     <Button
-      ariaLabel={t({
-        comment: 'Aria label for Show|Hide More Button',
-        message: 'Show all values'
-      })}
-      ariaPressed={isOpen}
+      id={id}
+      ariaExpanded={isOpen}
       className='facet__show-hide mt-3 pl-0'
       label={
-        isOpen
-        ? 
-        t({
-          comment: 'Message shown when list is opened',
-          message: 'show less'
-        })
-        :
-        t({
-          comment: 'Message shown when list is closed',
-          message: 'show all'
-        })
+        <>
+          {isOpen
+            ? t({
+              comment: 'Message shown when list is opened',
+              message: 'Show less'
+            })
+            : t({
+              comment: 'Message shown when list is closed',
+              message: 'Show all'
+            })}
+          <span className='visually-hidden'> {title}</span>
+        </>
       }
       handleClick={() => toggleOpen(isOpen)} />
   )
@@ -65,7 +63,7 @@ const Facet = ({ children, handleChange, items, paramKey, params, title }) => {
         {title && <legend id={title}><h3 className='facet__title p-0 m-0'>{title}</h3></legend>}
         {children && children}
         {facetItems && <div className={classnames('facet__items', {'open': isOpen})}>{facetItems}</div>}
-        {items && items.length > 5 && <ShowHideMore id={paramKey} isOpen={isOpen} toggleOpen={toggleOpen} />}
+        {items && items.length > 5 && <ShowHideMore id={paramKey} isOpen={isOpen} title={title} toggleOpen={toggleOpen} />}
       </fieldset>
     ) : null
   )

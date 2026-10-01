@@ -1083,18 +1083,28 @@ msgstr "이메일 보내기"
 
 #. Message shown when list is closed
 #: src/components/Facet/index.jsx:25
-msgid "show all"
-msgstr "모두 보기"
+#~ msgid "show all"
+#~ msgstr "모두 보기"
+
+#. Message shown when list is closed
+#: src/components/Facet/index.jsx:21
+msgid "Show all"
+msgstr ""
 
 #. Aria label for Show|Hide More Button
 #: src/components/Facet/index.jsx:11
-msgid "Show all values"
-msgstr "모든 값 표시"
+#~ msgid "Show all values"
+#~ msgstr "모든 값 표시"
 
 #. Message shown when list is opened
 #: src/components/Facet/index.jsx:20
-msgid "show less"
-msgstr "적게 표시"
+#~ msgid "show less"
+#~ msgstr "적게 표시"
+
+#. Message shown when list is opened
+#: src/components/Facet/index.jsx:17
+msgid "Show less"
+msgstr ""
 
 #. Label for digital matches only checkbox
 #: src/components/SearchForm/index.jsx:116

@@ -1083,18 +1083,28 @@ msgstr "Envío de correo electrónico"
 
 #. Message shown when list is closed
 #: src/components/Facet/index.jsx:25
-msgid "show all"
-msgstr "mostrar todo"
+#~ msgid "show all"
+#~ msgstr "mostrar todo"
+
+#. Message shown when list is closed
+#: src/components/Facet/index.jsx:21
+msgid "Show all"
+msgstr ""
 
 #. Aria label for Show|Hide More Button
 #: src/components/Facet/index.jsx:11
-msgid "Show all values"
-msgstr "Mostrar todos los valores"
+#~ msgid "Show all values"
+#~ msgstr "Mostrar todos los valores"
 
 #. Message shown when list is opened
 #: src/components/Facet/index.jsx:20
-msgid "show less"
-msgstr "ver menos"
+#~ msgid "show less"
+#~ msgstr "ver menos"
+
+#. Message shown when list is opened
+#: src/components/Facet/index.jsx:17
+msgid "Show less"
+msgstr ""
 
 #. Label for digital matches only checkbox
 #: src/components/SearchForm/index.jsx:116

@@ -1083,18 +1083,28 @@ msgstr "このテキストは、送信メールの末尾に配置されます"
 
 #. Message shown when list is closed
 #: src/components/Facet/index.jsx:25
-msgid "show all"
-msgstr "すべて表示"
+#~ msgid "show all"
+#~ msgstr "すべて表示"
+
+#. Message shown when list is closed
+#: src/components/Facet/index.jsx:21
+msgid "Show all"
+msgstr ""
 
 #. Aria label for Show|Hide More Button
 #: src/components/Facet/index.jsx:11
-msgid "Show all values"
-msgstr "すべての値を表示"
+#~ msgid "Show all values"
+#~ msgstr "すべての値を表示"
 
 #. Message shown when list is opened
 #: src/components/Facet/index.jsx:20
-msgid "show less"
-msgstr "閉じる"
+#~ msgid "show less"
+#~ msgstr "閉じる"
+
+#. Message shown when list is opened
+#: src/components/Facet/index.jsx:17
+msgid "Show less"
+msgstr ""
 
 #. Label for digital matches only checkbox
 #: src/components/SearchForm/index.jsx:116
