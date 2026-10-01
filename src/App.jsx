@@ -12,6 +12,8 @@ import PageSearch from './components/PageSearch';
 import PageSiteMap from './components/PageSiteMap';
 import PageNotFound from './components/PageNotFound';
 import { fetchMyList, isItemSaved, removeItem, saveItem, saveMyList } from './components/MyListHelpers';
+import { announce } from '@react-aria/live-announcer'
+import { t } from '@lingui/core/macro'
 import { useResizeObserver } from './components/Hooks';
 
 const AppFooter = () => useMatch('/:type/:id/view') ? null : <Footer />
@@ -41,12 +43,25 @@ const App = () => {
   const removeAllListItems = () => {
     saveMyList([]);
     setMyListCount(0)
+    announce(t({
+      comment: 'Announced after removing all items from My List',
+      message: 'All items removed from list'
+    }), 'polite')
   }
 
   const toggleInList = item => {
     const saved = isItemSaved(item)
     saved ? removeItem(item) : saveItem(item)
     setMyListCount(countMyList())
+    announce(saved
+      ? t({
+        comment: 'Announced after removing an item from My List',
+        message: 'Item removed from list'
+      })
+      : t({
+        comment: 'Announced after adding an item to My List',
+        message: 'Item added to list'
+      }), 'polite')
     return !saved
   }
 
