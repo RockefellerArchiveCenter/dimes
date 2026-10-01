@@ -283,9 +283,13 @@ a.child__title {
 .child__title--collection {
   font-size: 18px;
 
-  &:focus {
+  &:focus-visible {
     box-shadow: none;
     outline: none;
+
+    &::after {
+      @include abs.focus-inset;
+    }
   }
 }
 

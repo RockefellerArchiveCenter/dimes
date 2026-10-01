@@ -13,10 +13,8 @@
   letter-spacing: 2px;
   color: abs.$regal-blue;
   cursor: pointer;
-  &:focus {
-    outline: none;
-    border-bottom: 1px solid abs.$regal-blue;
-    font-weight: abs.$font-weight-heavy;
+  &:focus-visible {
+    @include abs.focus-default;
   }
   .material-icon {
     float: right;
