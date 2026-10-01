@@ -76,7 +76,6 @@ export const ModalToggleListButton = ({ ignoreRestrictions, items, toggleList })
           }
         )
       })}
-      ariaPressed={deselect}
       iconBefore={deselect ? 'check_box_outline_blank' : 'check_box'} />
   )
 }

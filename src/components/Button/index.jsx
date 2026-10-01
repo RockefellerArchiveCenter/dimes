@@ -12,7 +12,6 @@ const Button = props => (
     aria-labelledby={props.ariaLabelledBy}
     aria-haspopup={props.ariaHasPopup}
     aria-expanded={props.ariaExpanded}
-    aria-pressed={props.ariaPressed}
     disabled={props.disabled} >
     { props.iconBefore &&
       <MaterialIcon icon={props.iconBefore} className='material-icon--space-after' />} {props.label} {props.iconAfter && <MaterialIcon icon={props.iconAfter} className='material-icon--space-before' />}
