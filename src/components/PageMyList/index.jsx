@@ -196,6 +196,7 @@
     /** Remove single item from list */
     const removeFromList = item => {
       toggleInList(item);
+      document.getElementById('mylist-title')?.focus()
       var filteredList = [];
       for (const group of savedList) {
         var newGroup = {...group}
@@ -302,7 +303,7 @@
           </nav>
           <main id='main' className='mt-60 ml-30'>
             <Trans comment="Header for user's list" >
-              <h1 className='mylist__title my-30 ml-15'>My List</h1>
+              <h1 id='mylist-title' tabIndex={-1} className='mylist__title my-30 ml-15'>My List</h1>
             </Trans>
             <MyListDropdown
               downloadCsv={downloadCsv}

@@ -34,9 +34,9 @@ const SavedItem = props => (
   </li>)
 
 const SavedItemGroup = ({ items, removeFromList, title }) => {
-  const listItems = items.map((item, index) =>
+  const listItems = items.map(item =>
     <SavedItem
-      key={index}
+      key={item.uri}
       parentRef={item.parent_ref}
       {...item}
       handleClick={() => removeFromList(item)} />
