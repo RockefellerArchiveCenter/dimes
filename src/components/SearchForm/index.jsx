@@ -92,7 +92,7 @@ const SearchForm = props => {
             <SelectInput
               className='select__search'
               hideLabel
-              iconAfter='expand_more'
+              iconAfter='keyboard_arrow_down'
               id='category'
               label={t({
                 comment: 'Label for Category selector',

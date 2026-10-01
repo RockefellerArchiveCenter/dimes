@@ -34,7 +34,6 @@ export const RecordsChild = props => {
           setIsLoading, setIsScrolled, toggleInList } = props
   const [children, setChildren] = useState([])
   const [childCount, setChildCount] = useState(0)
-  const [isExpanded, setIsExpanded] = useState(false)
   const [isLoadingBefore, setIsLoadingBefore] = useState(false)
   const [isSaved, setIsSaved] = useState(false)
   const [offsetAfter, setOffsetAfter] = useState(props.offsetAfter)
@@ -138,7 +137,6 @@ export const RecordsChild = props => {
 
   /** Loads all children of a collection */
   const handleCollectionClick = uri => {
-    setIsExpanded(!isExpanded)
     props.setActiveRecords(uri)
     if (!children.length) {
       getPages(
@@ -293,7 +291,6 @@ export const RecordsChild = props => {
               {item.online_hit_count ? <Badge className='badge--blue' text={formatMatchString(item.online_hit_count, true)} /> : null}
             </div>
             : null}
-          <MaterialIcon icon={isExpanded ? 'expand_less' : 'expand_more'} />
         </AccordionItemButton>
       </AccordionItemHeading>
       {(children.length) ?

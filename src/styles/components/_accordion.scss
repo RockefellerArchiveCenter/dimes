@@ -18,19 +18,9 @@
     border-bottom: 1px solid abs.$regal-blue;
     font-weight: abs.$font-weight-heavy;
   }
-  &::after {
-    font-family: Material Icons;
-    content: "keyboard_arrow_down";
+  .material-icon {
     float: right;
-    font-size: 24px;
     line-height: 12px;
-    text-transform: none;
-    // }
-  }
-  &[aria-expanded=true] {
-    &::after {
-      content: "keyboard_arrow_up";
-    }
   }
 }
 

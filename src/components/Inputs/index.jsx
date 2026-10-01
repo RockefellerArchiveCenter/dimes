@@ -129,6 +129,7 @@ export const SelectInput = props => {
               key={index}
               {...getItemProps({ option: option.value, index })} >
               {option.label}
+              {option === selectedItem && <MaterialIcon icon='check' />}
             </li>
           ))}
       </ul>

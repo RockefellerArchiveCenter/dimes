@@ -9,6 +9,7 @@ import PageNotFound from '../PageNotFound'
 import { AgentAttributeSkeleton, AgentRelatedCollectionsSkeleton } from '../LoadingSkeleton'
 import CardList from '../Card'
 import AgentAttributeList from '../AgentAttribute'
+import MaterialIcon from '../MaterialIcon'
 import '../Button/styles.scss'
 import { buildHref, withSiteTitle } from '../Helpers'
 import { usePageView } from '../Hooks'
@@ -256,7 +257,7 @@ const PageAgent = () => {
           <nav className="mt-30" aria-label="Back to search">
             <a href={searchUrl} className='btn btn--sm btn--gray'>
               <Trans comment='Back to search button'>
-                <span className='material-icon material-icon--space-after'>keyboard_arrow_left</span>Back to Search
+                <MaterialIcon icon='keyboard_arrow_left' className='material-icon--space-after' />Back to Search
               </Trans>
             </a>
           </nav>

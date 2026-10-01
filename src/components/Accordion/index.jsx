@@ -6,6 +6,7 @@ import {
     focusPreviousSiblingOf
 } from './helpers/focus'
 import keycodes from './helpers/keycodes'
+import MaterialIcon from '../MaterialIcon'
 
 /** Adds props to an array of children */
 const addPropsToChildren = (children, props) => (
@@ -96,6 +97,7 @@ export const AccordionItemButton = ({ className, children, isExpanded, onClick, 
       onClick={handleClick}
       onKeyDown={handleKeyPress} >
       {children}
+      <MaterialIcon icon={isExpanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} />
     </div>
   )
 }

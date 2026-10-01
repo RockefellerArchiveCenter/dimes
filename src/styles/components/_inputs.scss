@@ -210,10 +210,8 @@ select {
   }
   &.is-selected {
     font-weight: abs.$font-weight-bold;
-    &::after {
-      font-family: Material Icons;
+    .material-icon {
       font-size: 20px;
-      content: "check";
       position: absolute;
       right: 18px;
       color: abs.$umber-brown;
