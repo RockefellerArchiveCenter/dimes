@@ -100,7 +100,7 @@ export const SelectInput = props => {
     getItemProps,
   } = useSelect({
     items: props.options,
-    selectedItem: props.selectedItem,
+    selectedItem: selectedItem ?? null,
     onSelectedItemChange: props.onChange,
     toggleButtonId: props.id,
    })
@@ -127,7 +127,7 @@ export const SelectInput = props => {
                 {'is-selected': option === selectedItem}
               )}
               key={index}
-              {...getItemProps({ option: option.value, index })} >
+              {...getItemProps({ item: option, index })} >
               {option.label}
               {option === selectedItem && <MaterialIcon icon='check' />}
             </li>
