@@ -327,7 +327,7 @@ const ReadingRoomDateInput = ({ readingRoom }) => {
         handleChange={date => setFieldValue('scheduledDate', date)}
         helpText={t({
           comment: 'Helptext for scheduling date.',
-          message: 'Enter the date of your research visit (mm/dd/yyyy)'
+          message: 'Enter the date of your research visit (yyyy-mm-dd)'
         })}
         id='scheduledDate'
         required={true}

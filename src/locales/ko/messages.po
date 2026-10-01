@@ -505,8 +505,13 @@ msgstr "검색어 입력"
 
 #. Helptext for scheduling date.
 #: src/components/ModalMyList/index.jsx:328
-msgid "Enter the date of your research visit (mm/dd/yyyy)"
-msgstr "연구 방문 날짜(월/일/년/월/일)를 입력하세요"
+#~ msgid "Enter the date of your research visit (mm/dd/yyyy)"
+#~ msgstr "연구 방문 날짜(월/일/년/월/일)를 입력하세요"
+
+#. Helptext for scheduling date.
+#: src/components/ModalMyList/index.jsx:328
+msgid "Enter the date of your research visit (yyyy-mm-dd)"
+msgstr ""
 
 #. Message shown for downloading PDF in digital object viewer
 #: src/components/PageDigitalObject/index.jsx:155

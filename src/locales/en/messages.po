@@ -505,8 +505,13 @@ msgstr "Enter a search term"
 
 #. Helptext for scheduling date.
 #: src/components/ModalMyList/index.jsx:328
-msgid "Enter the date of your research visit (mm/dd/yyyy)"
-msgstr "Enter the date of your research visit (mm/dd/yyyy)"
+#~ msgid "Enter the date of your research visit (mm/dd/yyyy)"
+#~ msgstr "Enter the date of your research visit (mm/dd/yyyy)"
+
+#. Helptext for scheduling date.
+#: src/components/ModalMyList/index.jsx:328
+msgid "Enter the date of your research visit (yyyy-mm-dd)"
+msgstr "Enter the date of your research visit (yyyy-mm-dd)"
 
 #. Message shown for downloading PDF in digital object viewer
 #: src/components/PageDigitalObject/index.jsx:155
