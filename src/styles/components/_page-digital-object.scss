@@ -31,6 +31,7 @@
 
 .viewer-bar {
   width: 100%;
+  min-width: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -58,6 +59,8 @@
   width:100%;
   order: 0;
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
   justify-content: flex-end;
   @include abs.lg-up {
     width: unset;
