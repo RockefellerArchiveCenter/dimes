@@ -31,6 +31,12 @@ msgstr ""
 msgid "{0, plural, =0 {selected: 0 items} other {selected: {1}}}"
 msgstr "{0, plural, =0 {seçilen: 0 öğe} other {seçilen: {1}}}"
 
+#. Announced when a search returns results
+#. placeholder {0}: res.data.count
+#: src/components/PageSearch/index.jsx:140
+msgid "{0, plural, one {# result found} other {# results found}}"
+msgstr ""
+
 #. Filter results message
 #. placeholder {0}: props.resultsCount
 #: src/components/ModalSearch/index.jsx:44
@@ -51,12 +57,12 @@ msgstr "{0, select, rac {Kaynak: Rockefeller Archive Center} other {Kaynak: {sou
 
 #. Current Results shown of total results
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:247
+#: src/components/PageSearch/index.jsx:257
 msgid "{0, select, true {{startItem} result} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem} result} other {{resultsCount} sonuçtan {startItem}-{endItem} arası görüntüleniyor}}"
 
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:303
+#: src/components/PageSearch/index.jsx:313
 msgid "{0, select, true {{startItem}} other {{startItem}-{endItem} of {resultsCount} results}}"
 msgstr "{0, select, true {{startItem}} other {{startItem}-{endItem} -den {resultsCount} sonuçlar}}"
 
@@ -70,8 +76,8 @@ msgstr "{0, select, true {Minimap} other {Minimap Tanıtımı}}"
 #. placeholder {0}: props.submitList.length !== 1
 #. placeholder {1}: props.submitList.length
 #. placeholder {2}: props.submitList.length
-#: src/components/ModalMyList/index.jsx:452
-#: src/components/ModalMyList/index.jsx:584
+#: src/components/ModalMyList/index.jsx:454
+#: src/components/ModalMyList/index.jsx:586
 msgid "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 msgstr "{0, select, true {Materyalleri̇ Talep et {1}} other {Materyalleri̇ Talep et {2}}}"
 
@@ -117,12 +123,12 @@ msgid "{isDownloading, select, true {Downloading} other {Download as .CSV}}"
 msgstr "{isDownloading, select, true {İndiriliyor} other {.CSV olarak i̇ndi̇r}}"
 
 #. Label for Add List Toggle button
-#: src/components/ListToggleButton/index.jsx:34
+#: src/components/ListToggleButton/index.jsx:32
 msgid "{isMobile, select, true {Add} other {Add to List}}"
 msgstr "{isMobile, select, true {Eklemek} other {Listeye Ekle}}"
 
 #. Label for Remove List Toggle button
-#: src/components/ListToggleButton/index.jsx:17
+#: src/components/ListToggleButton/index.jsx:16
 msgid "{isMobile, select, true {Remove} other {Remove from List}}"
 msgstr "{isMobile, select, true {Kaldırmak} other {Listeden Kaldır}}"
 
@@ -134,7 +140,7 @@ msgid "<0/>Back to Search"
 msgstr "<0/>aramaya geri̇ dön"
 
 #. New Search button
-#: src/components/PageMyList/index.jsx:299
+#: src/components/PageMyList/index.jsx:305
 msgid "<0/>Start a New Search"
 msgstr "<0/>Yeni Bir Arama Başlatın"
 
@@ -216,7 +222,7 @@ msgid "<0>Last requested on: {0}</0>"
 msgstr "<0>Son talep tarihi: {0}</0>"
 
 #. Limitations and fees title
-#: src/components/ModalMyList/index.jsx:485
+#: src/components/ModalMyList/index.jsx:487
 msgid "<0>Limitations and fees</0>"
 msgstr "<0>Sınırlamalar ve ücretler</0>"
 
@@ -233,7 +239,7 @@ msgid "<0>More about this {agentType}</0>"
 msgstr "<0>Hakkında daha fazla bilgi {agentType}</0>"
 
 #. Header for user's list
-#: src/components/PageMyList/index.jsx:305
+#: src/components/PageMyList/index.jsx:311
 msgid "<0>My List</0>"
 msgstr "<0>Listem</0>"
 
@@ -243,12 +249,12 @@ msgid "<0>Please add a word or phrase to search for.</0>"
 msgstr "<0>Lütfen aramak için bir kelime veya cümle ekleyin.</0>"
 
 #. Note to user about including name and email address
-#: src/components/ModalMyList/index.jsx:160
+#: src/components/ModalMyList/index.jsx:162
 msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archive@rockarch.org</1>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up."
 msgstr "<0>Lütfen dikkat:</0> listenizi <1>archive@rockarch.org</1> adresindeki bir arşivciye e-posta ile gönderiyorsanız, lütfen Mesaj alanına adınızı ve e-posta adresinizi ekleyin, aksi takdirde takip etmek için sizinle iletişime geçme imkanımız olmayacaktır."
 
 #. Submit Request title
-#: src/components/ModalMyList/index.jsx:516
+#: src/components/ModalMyList/index.jsx:518
 msgid "<0>Submit request</0>"
 msgstr "<0>İstek gönder</0>"
 
@@ -272,7 +278,7 @@ msgstr ""
 #. placeholder {1}: err.code
 #. placeholder {2}: err.message
 #. placeholder {3}: err.config.data
-#: src/components/PageMyList/index.jsx:138
+#: src/components/PageMyList/index.jsx:144
 msgid "<0>There was an error submitting your request.</0><1>The request to {0} failed with the message {1}: {2}.</1><2>{3}</2>"
 msgstr "<0>İsteğinizi gönderirken bir hata oluştu.</0><1>{0} adresine yapılan istek {1}: {2} mesajı ile başarısız oldu.</1><2>{3}</2>"
 
@@ -288,7 +294,7 @@ msgid "<0>View Online<1/></0>{0}"
 msgstr "<0>Çevrimiçi Görüntüle<1/></0>"
 
 #. Limitations and fees information
-#: src/components/ModalMyList/index.jsx:488
+#: src/components/ModalMyList/index.jsx:490
 msgid "<0>We limit users to <1>10 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
 msgstr "<0>Kullanıcıları <1>takvim yılı başına 10 taleple</1> sınırlandırıyoruz.</0><2>Referans PDF'ler için ücret almıyoruz. Yayın kalitesinde taramalar için <3> materyal başına 25 $ sabit ücret alınmaktadır</3>.</2><4>Görsel-işitsel ve büyük boyutlu materyaller için istisnalar da dahil olmak üzere daha fazla ayrıntı için <5>çoğaltma hizmetlerimiz</5> hakkında bilgi edinin.</4><6>Yardım almak veya yayın kalitesinde tarama talep etmek için <7>archive@rockarch.org</7> adresinden bir arşiv uzmanına e-posta gönderin.</6>"
 
@@ -298,7 +304,7 @@ msgid "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 msgstr "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 
 #. helptext for RAC staff message
-#: src/components/ModalMyList/index.jsx:432
+#: src/components/ModalMyList/index.jsx:434
 msgid "255 characters maximum"
 msgstr "En fazla 255 karakter"
 
@@ -328,9 +334,14 @@ msgid "Add to List"
 msgstr "Li̇steye Ekle"
 
 #. Message while page loads for email submissions
-#: src/components/PageMyList/index.jsx:149
+#: src/components/PageMyList/index.jsx:155
 msgid "Adding items to your message"
 msgstr "Mesajınıza öğe ekleme"
+
+#. Announced after removing all items from My List
+#: src/App.jsx:46
+msgid "All items removed from list"
+msgstr ""
 
 #. Label for All Categories
 #: src/components/SearchForm/index.jsx:24
@@ -340,7 +351,7 @@ msgstr "Tüm Türler"
 #. Missing email address error
 #. Modal Form Missing Email Address Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:150
-#: src/components/ModalMyList/index.jsx:169
+#: src/components/ModalMyList/index.jsx:171
 msgid "An email address is required."
 msgstr "Bir e-posta adresi gerekiyor."
 
@@ -355,7 +366,7 @@ msgid "archive@rockarch.org"
 msgstr "archive@rockarch.org"
 
 #. Confirmation to delete all items from list
-#: src/components/PageMyList/index.jsx:376
+#: src/components/PageMyList/index.jsx:382
 msgid "Are you sure you want to remove all the items from your list?<0><1/><2/></0>"
 msgstr "Listenizdeki tüm öğeleri kaldırmak istediğinizden emin misiniz?<0><1/><2/></0>"
 
@@ -365,7 +376,7 @@ msgid "Bulk data download"
 msgstr "Toplu veri indirme"
 
 #. Title shown when request failed
-#: src/components/PageMyList/index.jsx:361
+#: src/components/PageMyList/index.jsx:367
 msgid "Can't Complete Request"
 msgstr "Talep Tamamlanamıyor"
 
@@ -378,7 +389,7 @@ msgstr "Talep Tamamlanamıyor"
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:119
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:185
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:237
-#: src/components/PageMyList/index.jsx:387
+#: src/components/PageMyList/index.jsx:393
 msgid "Cancel"
 msgstr "İptal"
 
@@ -390,7 +401,7 @@ msgstr "Bir arama kategorisi seçin"
 #: src/components/ModalConfirm/index.jsx:15
 #: src/components/ModalMinimap/index.jsx:37
 #: src/components/ModalMinimap/index.jsx:66
-#: src/components/ModalMyList/index.jsx:111
+#: src/components/ModalMyList/index.jsx:113
 msgid "Close"
 msgstr "Kapat"
 
@@ -422,7 +433,7 @@ msgid "Collections Related to {agentTitle}"
 msgstr "{agentTitle} İle İlgi̇li̇ Koleksi̇yonlar"
 
 #. Remove all confirmation title
-#: src/components/PageMyList/index.jsx:395
+#: src/components/PageMyList/index.jsx:401
 msgid "Confirm Remove All"
 msgstr "Onaylayın Tümünü Kaldır"
 
@@ -472,20 +483,25 @@ msgstr "İndi̇r"
 msgid "Download as .csv"
 msgstr ".csv olarak i̇ndi̇r"
 
+#. Announced when the My List CSV download has finished
+#: src/components/PageMyList/index.jsx:76
+msgid "Download complete"
+msgstr ""
+
 #. Company Email
 #: src/components/Footer/index.jsx:35
 msgid "E-mail: <0/>"
 msgstr "E-posta: <0/>"
 
 #. Name of email form
-#: src/components/ModalMyList/index.jsx:215
+#: src/components/ModalMyList/index.jsx:217
 msgid "email"
 msgstr "eposta"
 
 #. Email Modal Form Test
 #. Label of Email Form
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:103
-#: src/components/ModalMyList/index.jsx:211
+#: src/components/ModalMyList/index.jsx:213
 msgid "Email"
 msgstr "E-Posta"
 
@@ -493,13 +509,13 @@ msgstr "E-Posta"
 #. Email list label
 #. Title of the modal for emailing the list
 #: src/components/Dropdown/index.jsx:133
-#: src/components/ModalMyList/index.jsx:147
+#: src/components/ModalMyList/index.jsx:149
 #: src/components/MyListExportActions/index.jsx:9
 msgid "Email List"
 msgstr "Li̇steyi̇ E-posta Yoluyla Gönder"
 
 #. Title displayed after emailing selected items
-#: src/components/PageMyList/index.jsx:155
+#: src/components/PageMyList/index.jsx:161
 msgid "Email Sent"
 msgstr "E-posta Gönderildi"
 
@@ -519,9 +535,9 @@ msgstr "Bir arama terimi girin"
 #~ msgstr "Araştırma ziyaretinizin tarihini girin (aa/gg/yyyy)"
 
 #. Helptext for scheduling date.
-#: src/components/ModalMyList/index.jsx:329
+#: src/components/ModalMyList/index.jsx:331
 msgid "Enter the date of your research visit (yyyy-mm-dd)"
-msgstr ""
+msgstr "Araştırma ziyaretinizin tarihini girin (yyyy-aa-gg)"
 
 #. Message shown for downloading PDF in digital object viewer
 #: src/components/PageDigitalObject/index.jsx:155
@@ -534,8 +550,8 @@ msgid "Error"
 msgstr "Hata"
 
 #. Title displayed when error occurs while submitting request
-#: src/components/PageMyList/index.jsx:135
-#: src/components/PageMyList/index.jsx:166
+#: src/components/PageMyList/index.jsx:141
+#: src/components/PageMyList/index.jsx:172
 msgid "Error submitting request"
 msgstr "İstek gönderilirken hata oluştu"
 
@@ -545,7 +561,7 @@ msgid "Fax: (914) 631-6017"
 msgstr "Faks: (914) 631-6017"
 
 #. Label for Filters button
-#: src/components/PageSearch/index.jsx:260
+#: src/components/PageSearch/index.jsx:270
 msgid "Filters"
 msgstr "Filtreler"
 
@@ -619,7 +635,7 @@ msgid "https://raccess.rockarch.org"
 msgstr "https://raccess.rockarch.org"
 
 #. Aeon access point
-#: src/components/PageMyList/index.jsx:116
+#: src/components/PageMyList/index.jsx:122
 msgid "https://raccess.rockarch.org/aeon.dll"
 msgstr "https://raccess.rockarch.org/aeon.dll"
 
@@ -644,7 +660,7 @@ msgid "https://rockarch.org/collections/access-and-request-materials/"
 msgstr "https://rockarch.org/collections/access-and-request-materials/"
 
 #. Link for duplication request services
-#: src/components/ModalMyList/index.jsx:503
+#: src/components/ModalMyList/index.jsx:505
 msgid "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 msgstr "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 
@@ -674,18 +690,28 @@ msgid "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 
 #. Label for duplication request form
-#: src/components/ModalMyList/index.jsx:559
+#: src/components/ModalMyList/index.jsx:561
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its volume or physical condition."
 msgstr "Araştırmamla en ilgili kaynakları belirlemek için bir arşivciyle birlikte çalışmam gerekebileceğini ve bazı durumlarda malzemenin kapsamı veya fiziksel durumu nedeniyle dijitalleştirilmesinin mümkün olmadığını anlıyorum."
 
 #. Invalid email error
-#: src/components/ModalMyList/index.jsx:176
+#: src/components/ModalMyList/index.jsx:178
 msgid "Invalid email address provided."
 msgstr "Geçersiz e-posta adresi verildi."
 
+#. Announced after adding an item to My List
+#: src/App.jsx:61
+msgid "Item added to list"
+msgstr ""
+
+#. Announced after removing an item from My List
+#: src/App.jsx:57
+msgid "Item removed from list"
+msgstr ""
+
 #. Name of items error message
 #: src/components/ModalMyList/index.jsx:31
-#: src/components/ModalMyList/index.jsx:204
+#: src/components/ModalMyList/index.jsx:206
 msgid "items"
 msgstr "öğeler"
 
@@ -709,7 +735,7 @@ msgstr "Bu alanda {0} {hitPlural}'e atlayın: {hitTitles}"
 #. placeholder {0}: areaHits.length
 #: src/components/Minimap/index.jsx:55
 msgid "Jump to {0} {hitPlural} with digital match in this area: {hitTitles}"
-msgstr ""
+msgstr "Bu alanda dijital eşleşmesi olan {0} {hitPlural}'e atlayın: {hitTitles}"
 
 #. Licensing message
 #: src/components/SecondaryLink/index.jsx:41
@@ -722,8 +748,8 @@ msgid "Location of Headquarters"
 msgstr "Genel Merkezi̇n Bulunduğu Yer"
 
 #. Company Email link
-#: src/components/ModalMyList/index.jsx:161
-#: src/components/ModalMyList/index.jsx:512
+#: src/components/ModalMyList/index.jsx:163
+#: src/components/ModalMyList/index.jsx:514
 #: src/components/PageBackendError/index.jsx:21
 #: src/components/PrimaryLink/index.jsx:25
 msgid "mailto:archive@rockarch.org"
@@ -734,20 +760,20 @@ msgid "Menu"
 msgstr ""
 
 #. Name of message form
-#: src/components/ModalMyList/index.jsx:239
+#: src/components/ModalMyList/index.jsx:241
 msgid "message"
 msgstr "mesaj"
 
 #. Label of Message Form
 #. Message Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:111
-#: src/components/ModalMyList/index.jsx:235
+#: src/components/ModalMyList/index.jsx:237
 msgid "Message"
 msgstr "Mesaj"
 
 #. Label for RAC staff message Form
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:178
-#: src/components/ModalMyList/index.jsx:428
+#: src/components/ModalMyList/index.jsx:430
 msgid "Message for RAC staff"
 msgstr "RAC personeline mesaj"
 
@@ -771,7 +797,7 @@ msgstr "Pazartesi-Cuma<0/>9:30 - 17:00 arası.<1/>"
 #. Site map link to My List page
 #: src/components/Dropdown/index.jsx:182
 #: src/components/Header/index.jsx:32
-#: src/components/PageMyList/index.jsx:36
+#: src/components/PageMyList/index.jsx:37
 #: src/components/PageSiteMap/index.jsx:23
 msgid "My List"
 msgstr "Listem"
@@ -787,11 +813,16 @@ msgid "Nicknames"
 msgstr "Takma Adlar"
 
 #. No selected items error
-#: src/components/ModalMyList/index.jsx:185
-#: src/components/ModalMyList/index.jsx:401
-#: src/components/ModalMyList/index.jsx:533
+#: src/components/ModalMyList/index.jsx:187
+#: src/components/ModalMyList/index.jsx:403
+#: src/components/ModalMyList/index.jsx:535
 msgid "No items have been selected to submit."
 msgstr "Gönderilmek üzere hiçbir öğe seçilmemiştir."
+
+#. Announced when a search returns no results
+#: src/components/PageSearch/index.jsx:136
+msgid "No results found"
+msgstr "Arama sonucu yok"
 
 #. Empty Saved Items Test
 #. Message displayed when user has no saved items
@@ -802,7 +833,7 @@ msgid "No saved items."
 msgstr "Kayıtlı öğe yok."
 
 #. Search results header with no search term
-#: src/components/PageSearch/index.jsx:226
+#: src/components/PageSearch/index.jsx:236
 msgid "No search query entered"
 msgstr "Arama sorgusu girilmemiş"
 
@@ -823,7 +854,7 @@ msgstr ""
 
 #. Title for duplication services link
 #. Title message for opening an online item
-#: src/components/ModalMyList/index.jsx:499
+#: src/components/ModalMyList/index.jsx:501
 #: src/components/RecordsDetail/index.jsx:206
 msgid "opens in a new window"
 msgstr "yeni bir pencerede açılır"
@@ -863,27 +894,27 @@ msgstr "Lütfen aramak için bir kelime veya cümle ekleyin."
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:146
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:211
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:263
-#: src/components/ModalMyList/index.jsx:181
-#: src/components/ModalMyList/index.jsx:398
-#: src/components/ModalMyList/index.jsx:526
+#: src/components/ModalMyList/index.jsx:183
+#: src/components/ModalMyList/index.jsx:400
+#: src/components/ModalMyList/index.jsx:528
 msgid "Please complete this field."
 msgstr "Lütfen bu alanı doldurunuz."
 
 #. placeholder {0}: import.meta.env.VITE_DUPLICATION_REQUEST_LIMIT
-#: src/components/ModalMyList/index.jsx:536
+#: src/components/ModalMyList/index.jsx:538
 msgid "Please limit your request to {0} items."
 msgstr "Lütfen talebinizi {0} öğe ile sınırlayın."
 
 #. Missing Scheduled Date error
-#: src/components/ModalMyList/index.jsx:391
+#: src/components/ModalMyList/index.jsx:393
 msgid "Please provide the date of your research visit."
 msgstr "Lütfen araştırma ziyaretinizin tarihini belirtiniz."
 
-#: src/components/ModalMyList/index.jsx:395
+#: src/components/ModalMyList/index.jsx:397
 msgid "Please select a location of a reading room."
 msgstr "Lütfen bir okuma odası konumu seçin."
 
-#: src/components/ModalMyList/index.jsx:289
+#: src/components/ModalMyList/index.jsx:291
 msgid "Please select a reading room"
 msgstr "Lütfen bir okuma odası seçin"
 
@@ -893,17 +924,17 @@ msgid "Positions Held"
 msgstr "Bulunduğu Pozisyonlar"
 
 #. Message while MyList modal loads items
-#: src/components/ModalMyList/index.jsx:139
+#: src/components/ModalMyList/index.jsx:141
 msgid "Preparing items"
 msgstr "Ögeler hazırlanıyor"
 
 #. Message while page loads for Aeon submissions
-#: src/components/PageMyList/index.jsx:109
+#: src/components/PageMyList/index.jsx:115
 msgid "Preparing items for your request"
 msgstr "Talebiniz için ürün hazırlama"
 
 #. Page Title for sending an Aeon request
-#: src/components/PageMyList/index.jsx:105
+#: src/components/PageMyList/index.jsx:111
 msgid "Preparing Request Data"
 msgstr "Talep Verilerinin Hazırlanması"
 
@@ -929,9 +960,9 @@ msgstr "Okuma Odası Saatleri:"
 
 #. Name of recaptcha element
 #. Name of recaptcha error message
-#: src/components/ModalMyList/index.jsx:248
-#: src/components/ModalMyList/index.jsx:255
-#: src/components/ModalMyList/index.jsx:573
+#: src/components/ModalMyList/index.jsx:250
+#: src/components/ModalMyList/index.jsx:257
+#: src/components/ModalMyList/index.jsx:575
 msgid "recaptcha"
 msgstr "recaptcha"
 
@@ -944,7 +975,7 @@ msgstr ""
 #. Label to remove saved item
 #. Test Remove button label
 #: src/components/ListToggleButton/__tests__/ListToggleButton.test.jsx:66
-#: src/components/PageMyList/index.jsx:380
+#: src/components/PageMyList/index.jsx:386
 #: src/components/SavedItem/index.jsx:26
 msgid "Remove"
 msgstr "Kaldır"
@@ -971,7 +1002,7 @@ msgstr "4 Ürün Talep Edin"
 #. Request copies button in Sidebar
 #. Title of the modal for requesting copies of items
 #: src/components/Dropdown/index.jsx:125
-#: src/components/ModalMyList/index.jsx:473
+#: src/components/ModalMyList/index.jsx:475
 #: src/components/MyListSidebar/index.jsx:27
 msgid "Request Copies"
 msgstr "Kopya Talep Et"
@@ -980,7 +1011,7 @@ msgstr "Kopya Talep Et"
 #. Request in Reading Room button in Sidebar
 #. Title of the modal for requesting items in the reading room
 #: src/components/Dropdown/index.jsx:117
-#: src/components/ModalMyList/index.jsx:377
+#: src/components/ModalMyList/index.jsx:379
 #: src/components/MyListSidebar/index.jsx:19
 msgid "Request in Reading Room"
 msgstr "Okuma odası için talep"
@@ -1010,7 +1041,7 @@ msgstr "Zi̇yaret Planla"
 #. Label for scheduling date
 #. Scheduled Date Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:174
-#: src/components/ModalMyList/index.jsx:335
+#: src/components/ModalMyList/index.jsx:337
 msgid "Scheduled Date"
 msgstr "Planlanan Tarih"
 
@@ -1037,7 +1068,7 @@ msgid "Search Our Collections.Discover People and Organizations.Access Digital C
 msgstr "Koleksiyonlarımızda Arama Yapın.Kişi ve Kuruluşları Keşfedin.Dijital İçeriğe Erişin."
 
 #. Search Results title
-#: src/components/PageSearch/index.jsx:54
+#: src/components/PageSearch/index.jsx:55
 msgid "Search Results"
 msgstr "Arama Sonuçları"
 
@@ -1045,8 +1076,8 @@ msgstr "Arama Sonuçları"
 #. Search results header with results
 #. Search results header with results
 #: src/components/PageSearch/__tests__/PageSearch.test.jsx:45
-#: src/components/PageSearch/index.jsx:50
-#: src/components/PageSearch/index.jsx:235
+#: src/components/PageSearch/index.jsx:51
+#: src/components/PageSearch/index.jsx:245
 msgid "Search Results for “{query}”"
 msgstr "“{query}” için Arama Sonuçları"
 
@@ -1056,7 +1087,7 @@ msgid "Search..."
 msgstr "Ara..."
 
 #. Search results header while searching
-#: src/components/PageSearch/index.jsx:221
+#: src/components/PageSearch/index.jsx:231
 msgid "Searching"
 msgstr "Aranıyor"
 
@@ -1070,13 +1101,13 @@ msgstr "Resmi Tatiller"
 msgid "Select all items"
 msgstr "Tüm Ögeleri̇ Seç"
 
-#: src/components/ModalMyList/index.jsx:303
+#: src/components/ModalMyList/index.jsx:305
 msgid "Select Reading Room Location"
 msgstr "Okuma Odası Konumunu Seçin"
 
 #. Message displayed after emailing selected items
 #. placeholder {0}: submitted.email
-#: src/components/PageMyList/index.jsx:159
+#: src/components/PageMyList/index.jsx:165
 msgid "Selected items in your list have been emailed to {0}"
 msgstr "Listenizdeki seçili öğeler {0} adresine e-posta ile gönderildi"
 
@@ -1093,12 +1124,12 @@ msgstr "seçi̇len: 0 öğe"
 #. Modal Form Submit Test
 #. Send List sumbit message
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:115
-#: src/components/ModalMyList/index.jsx:263
+#: src/components/ModalMyList/index.jsx:265
 msgid "Send List"
 msgstr "Li̇steyi̇ Gönder"
 
 #. Page Title for sending an email
-#: src/components/PageMyList/index.jsx:145
+#: src/components/PageMyList/index.jsx:151
 msgid "Sending Email"
 msgstr "E-posta Gönderme"
 
@@ -1110,7 +1141,7 @@ msgstr "E-posta Gönderme"
 #. Message shown when list is closed
 #: src/components/Facet/index.jsx:21
 msgid "Show all"
-msgstr ""
+msgstr "Tümünü Göster"
 
 #. Aria label for Show|Hide More Button
 #: src/components/Facet/index.jsx:11
@@ -1125,7 +1156,7 @@ msgstr ""
 #. Message shown when list is opened
 #: src/components/Facet/index.jsx:17
 msgid "Show less"
-msgstr ""
+msgstr "Daha az göster"
 
 #. Label for digital matches only checkbox
 #: src/components/SearchForm/index.jsx:116
@@ -1166,7 +1197,7 @@ msgid "Social Networks and Archival Context"
 msgstr "Sosyal Ağlar ve Arşiv Bağlamı"
 
 #. Message shown when request failed
-#: src/components/PageMyList/index.jsx:357
+#: src/components/PageMyList/index.jsx:363
 msgid "Sorry, our system is unable to process requests right now. We're working to fix this! Please try again later."
 msgstr "Üzgünüz, sistemimiz şu anda talepleri işleme koyamıyor. Bunu düzeltmek için çalışıyoruz! Lütfen daha sonra tekrar deneyin."
 
@@ -1176,32 +1207,32 @@ msgid "Sorry, the requested page was not found!"
 msgstr "Üzgünüz, istenen sayfa bulunamadı!"
 
 #. Search results header with no results
-#: src/components/PageSearch/index.jsx:231
+#: src/components/PageSearch/index.jsx:241
 msgid "Sorry, there are no search results for “{query}”"
 msgstr "Maalesef, “{query}” için arama sonucu yok"
 
 #. Name for sort results input
-#: src/components/PageSearch/index.jsx:270
+#: src/components/PageSearch/index.jsx:280
 msgid "sort"
 msgstr "sıra"
 
 #. Sort by creator name label
-#: src/components/PageSearch/index.jsx:75
+#: src/components/PageSearch/index.jsx:76
 msgid "Sort by creator name"
 msgstr "İçeriği oluşturanın adına göre sıral"
 
 #. Sort by relevance label
-#: src/components/PageSearch/index.jsx:63
+#: src/components/PageSearch/index.jsx:64
 msgid "Sort by relevance"
 msgstr "Alaka düzeyine göre sırala"
 
 #. Sort by title label
-#: src/components/PageSearch/index.jsx:69
+#: src/components/PageSearch/index.jsx:70
 msgid "Sort by title"
 msgstr "Başlığa göre sırala"
 
 #. Label for sort results input
-#: src/components/PageSearch/index.jsx:275
+#: src/components/PageSearch/index.jsx:285
 msgid "Sort search results"
 msgstr "Arama sonuçlarını sırala"
 
@@ -1211,7 +1242,7 @@ msgid "Start Year"
 msgstr "Başlangıç ​​Yılı"
 
 #. Name of subject form
-#: src/components/ModalMyList/index.jsx:229
+#: src/components/ModalMyList/index.jsx:231
 msgid "subject"
 msgstr "konu"
 
@@ -1219,7 +1250,7 @@ msgstr "konu"
 #. Subject Modal Form Test
 #. Title for Subject filter
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:107
-#: src/components/ModalMyList/index.jsx:225
+#: src/components/ModalMyList/index.jsx:227
 #: src/components/ModalSearch/index.jsx:95
 msgid "Subject"
 msgstr "Konu"
@@ -1241,7 +1272,7 @@ msgstr "Rockefeller Arşiv Merkezi Çevrimiçi Koleksiyonu ve Kataloğu"
 
 #. Message displayed when error occurs while submitting request
 #. placeholder {0}: err.toString()
-#: src/components/PageMyList/index.jsx:170
+#: src/components/PageMyList/index.jsx:176
 msgid "There was an error submitting your request. The error message was: {0}"
 msgstr "İsteğinizi gönderirken bir hata oluştu. Hata mesajı şöyleydi: {0}"
 
@@ -1263,7 +1294,7 @@ msgstr "Sanal Uluslararası Yetki Dosyası"
 #. Costs not agreed to error
 #. Payment Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:266
-#: src/components/ModalMyList/index.jsx:529
+#: src/components/ModalMyList/index.jsx:531
 msgid "We cannot process your request unless you agree to pay the costs of reproduction."
 msgstr "Çoğaltma masraflarını ödemeyi kabul etmediğiniz sürece talebinizi işleme koyamayız."
 

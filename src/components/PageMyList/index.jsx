@@ -12,6 +12,7 @@
   import { fetchMyList } from '../MyListHelpers'
   import { withSiteTitle } from '../Helpers'
   import { usePageView } from '../Hooks'
+  import { announce } from '@react-aria/live-announcer'
   import { t } from '@lingui/core/macro'
   import { Trans } from '@lingui/react/macro'
   import './styles.scss'
@@ -72,6 +73,10 @@
           link.href = window.URL.createObjectURL(blob)
           link.download = `dimes-${new Date().toISOString()}.csv`
           link.click()
+          announce(t({
+            comment: 'Announced when the My List CSV download has finished',
+            message: 'Download complete'
+          }), 'polite')
         })
         .catch(err => setBackendError(err))
         .then(() => setIsDownloading(false));
@@ -87,9 +92,10 @@
     }
 
     /** Sets messages in confirm modal */
-    const handleConfirmData = (title, message) => {
+    const handleConfirmData = (title, message, shouldAnnounce = false) => {
       setConfirmModalTitle(title)
       setConfirmModalMessage(message)
+      shouldAnnounce && announce(title, 'polite')
     }
 
     /** Creates HTML input elements */
@@ -136,7 +142,7 @@
               message: 'Error submitting request'
             })
           const message = <Trans comment='Message for showing an error for a request' ><p>There was an error submitting your request.</p><p>{`The request to ${err.config.url} failed with the message ${err.code}: ${err.message}.`}</p><p>{`${err.config.data}`}</p></Trans>
-          handleConfirmData(title, message);
+          handleConfirmData(title, message, true);
         })
     }
 
@@ -160,7 +166,7 @@
             comment: 'Message displayed after emailing selected items',
             message: `Selected items in your list have been emailed to ${submitted.email}`
           })}</p>
-          handleConfirmData(title, message);
+          handleConfirmData(title, message, true);
         })
         .catch(err => {
           const title = t({
@@ -171,7 +177,7 @@
             comment: 'Message displayed when error occurs while submitting request',
             message: `There was an error submitting your request. The error message was: ${err.toString()}`
           })
-          handleConfirmData(title, message);
+          handleConfirmData(title, message, true);
         })
     }
 

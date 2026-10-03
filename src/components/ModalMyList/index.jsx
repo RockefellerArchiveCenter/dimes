@@ -84,7 +84,7 @@ export const ModalToggleListButton = ({ ignoreRestrictions, items, toggleList })
 * Only checked items are included in this calculation. A default of '1 item' is
 * provided for items with no extents (which usually means no instance).
 */
-export const SelectedTotals = ({ items }) => {
+export const SelectedTotals = ({ isLive = false, items }) => {
   const selectedExtents = items.map(
     g => g.items.filter(i => i.isChecked).map(
       i => i.extents ? i.extents: {'type': 'item', 'value': 1} )).flat(2)
@@ -94,7 +94,10 @@ export const SelectedTotals = ({ items }) => {
       {...total, [current.type]: parseFloat(current.value)}
   ), {})
   const extents = Object.entries(totals).map(e => pluralize(e[0], e[1], true))
-  return <p className='selected-totals mt-10'><Trans comment='Message returned dependent on how many items selected' ><Plural value={extents.length} _0="selected: 0 items" other={`selected: ${extents.join(', ')}`} /></Trans></p>
+  return <p className='selected-totals mt-10' role={isLive ? 'status' : undefined}>
+    <Trans comment='Message returned dependent on how many items selected' >
+      <Plural value={extents.length} _0="selected: 0 items" other={`selected: ${extents.join(', ')}`} />
+    </Trans></p>
 }
 
 
@@ -118,7 +121,7 @@ export const ModalMyList = ({ ignoreRestrictions = false, ...props }) => (
           ignoreRestrictions={ignoreRestrictions}
           items={props.list}
           toggleList={props.toggleList} />
-        <SelectedTotals items={props.list} />
+        <SelectedTotals isLive items={props.list} />
         <ModalSavedItemList
           ignoreRestrictions={ignoreRestrictions}
           items={props.list}

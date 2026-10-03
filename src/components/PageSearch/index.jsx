@@ -11,7 +11,8 @@ import { SelectInput } from '../Inputs'
 import { SearchSkeleton } from '../LoadingSkeleton'
 import { FacetModal } from '../ModalSearch'
 import { SearchPagination } from '../Pagination'
-import { t } from '@lingui/core/macro'
+import { announce } from '@react-aria/live-announcer'
+import { t, plural } from '@lingui/core/macro'
 import { Select, Trans } from '@lingui/react/macro'
 import SearchForm from '../SearchForm'
 import SearchNotFound from '../SearchNotFound'
@@ -131,6 +132,15 @@ const PageSearch = () => {
           setItems(res.data.results)
           setResultsCount(res.data.count)
           setPageCount(Math.ceil(res.data.count / pageSize))
+          announce(res.data.count === 0
+            ? t({
+              comment: 'Announced when a search returns no results',
+              message: 'No results found'
+            })
+            : t({
+              comment: 'Announced when a search returns results',
+              message: plural(res.data.count, {one: '# result found', other: '# results found'})
+            }), 'polite')
         })
         .catch(err => setBackendError(err))
         .then(res => setInProgress(false));
@@ -242,7 +252,7 @@ const PageSearch = () => {
             <>
               <div className='results__header'>
                 <div className='results__summary'>
-                  <p className='results__summary--text' role='status'>
+                  <p className='results__summary--text'>
                     {inProgress ? (<Skeleton />) :
                       <Trans comment='Current Results shown of total results'>
                         <Select
