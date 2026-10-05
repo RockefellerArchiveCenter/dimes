@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.1.1](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.1.0...v2.1.1) (2026-10-05)
+
+
+### Bug Fixes
+
+* **deps:** Dependency Updates ([644cca0](https://github.com/RockefellerArchiveCenter/dimes/commit/644cca0114d745fa8726f3a25095a95489975d36))
+* **deps:** Scheduled dependency updates ([85b4f75](https://github.com/RockefellerArchiveCenter/dimes/commit/85b4f75f6964287f3d8e697f87a02eca0eecae3a))
+* **deps:** update to mirador 4.2.6 and mui 9 dependencies ([7bcf308](https://github.com/RockefellerArchiveCenter/dimes/commit/7bcf3085beac99ef349f6b3bd3edac9151e20fe9))
+
 ## [2.1.0](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.0.0...v2.1.0) (2026-09-28)
 
 
