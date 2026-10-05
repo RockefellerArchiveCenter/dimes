@@ -81,7 +81,7 @@ export const RecordsChild = props => {
   *    that the html element's scrollTop is set instantaneously.
   */
   const getPageBefore = (uri, params) => {
-    if (!offsetBefore) { return }
+    if (!offsetBefore || !refBefore.current) { return }
     setIsLoadingBefore(true)
     const updatedParams = {
       ...params,
@@ -96,9 +96,11 @@ export const RecordsChild = props => {
         .then(res => {
           setChildren(children => res.data.results.concat(children))
           const currentScroll = wrapperElement.scrollHeight - pastScroll /* 4 */
-          document.documentElement.style.scrollBehavior = 'auto' /* 4 */
-          document.documentElement.scrollTop = document.documentElement.scrollTop + currentScroll /* 4 */
-          document.documentElement.style.scrollBehavior = '' /* 4 */
+          if (currentScroll > 0) {
+            document.documentElement.style.scrollBehavior = 'auto' /* 4 */
+            document.documentElement.scrollTop = document.documentElement.scrollTop + currentScroll /* 4 */
+            document.documentElement.style.scrollBehavior = '' /* 4 */
+          }
           setOffsetBefore(updatedParams.offset)
         }
       )
