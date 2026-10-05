@@ -372,11 +372,10 @@ const RecordsContent = props => {
   const [isLoading, setIsLoading] = useState(true)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  /** Focus on loading overlay when page is loading */
+  /** Announce loading to screen readers when page is loading */
   useEffect(() => {
     if (isLoading) {
-      const overlay = document.getElementById('content-loading')
-      overlay && overlay.focus()
+      announce(t({ comment: 'Screen reader announcement that records content is loading', message: 'Collection content loading' }), 'polite')
     }
   }, [isLoading, preExpanded])
 
@@ -384,9 +383,9 @@ const RecordsContent = props => {
   children ?
     (<div className={classnames('records__content', 'py-40', 'px-30', {'hidden': !isContentShown})}>
       {isLoading ? (
-        <div className='loading'>
+        <div className='loading' aria-hidden='true'>
             <Trans comment='Records content is loading'>
-              <p id='content-loading' className='records-loading__text loading-dots'>Loading</p>
+              <div className='records-loading__text loading-dots'>Loading</div>
             </Trans>
         </div>) : (null)}
       <h2 className='content__title mt-0 pb-0'><Trans comment='Collection Content title'>Collection Content</Trans></h2>

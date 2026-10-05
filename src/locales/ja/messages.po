@@ -249,7 +249,7 @@ msgstr "<0>制限と手数料</0>"
 #. Loading message
 #. Records content is loading
 #: src/components/LoadingSkeleton/index.jsx:7
-#: src/components/RecordsContent/index.jsx:388
+#: src/components/RecordsContent/index.jsx:387
 msgid "<0>Loading</0>"
 msgstr "<0>ローディング</0>"
 
@@ -469,9 +469,14 @@ msgstr "コレクション"
 #. Collection Content title
 #. switcher label text content
 #: src/components/ContextSwitcher/__tests__/ContextSwitcher.test.jsx:15
-#: src/components/RecordsContent/index.jsx:392
+#: src/components/RecordsContent/index.jsx:391
 msgid "Collection Content"
 msgstr "コレクション内容"
+
+#. Screen reader announcement that records content is loading
+#: src/components/RecordsContent/index.jsx:378
+msgid "Collection content loading"
+msgstr "コレクション内容を読み込み中"
 
 #. switcher label text content
 #: src/components/ContextSwitcher/__tests__/ContextSwitcher.test.jsx:30

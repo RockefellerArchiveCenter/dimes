@@ -249,7 +249,7 @@ msgstr "<0>제한 및 수수료</0>"
 #. Loading message
 #. Records content is loading
 #: src/components/LoadingSkeleton/index.jsx:7
-#: src/components/RecordsContent/index.jsx:388
+#: src/components/RecordsContent/index.jsx:387
 msgid "<0>Loading</0>"
 msgstr "<0>로드 중</0>"
 
@@ -469,9 +469,14 @@ msgstr "컬렉션"
 #. Collection Content title
 #. switcher label text content
 #: src/components/ContextSwitcher/__tests__/ContextSwitcher.test.jsx:15
-#: src/components/RecordsContent/index.jsx:392
+#: src/components/RecordsContent/index.jsx:391
 msgid "Collection Content"
 msgstr "컬렉션 콘텐츠"
+
+#. Screen reader announcement that records content is loading
+#: src/components/RecordsContent/index.jsx:378
+msgid "Collection content loading"
+msgstr "컬렉션 콘텐츠 로드 중"
 
 #. switcher label text content
 #: src/components/ContextSwitcher/__tests__/ContextSwitcher.test.jsx:30

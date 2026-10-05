@@ -249,7 +249,7 @@ msgstr "<0>Limitations and fees</0>"
 #. Loading message
 #. Records content is loading
 #: src/components/LoadingSkeleton/index.jsx:7
-#: src/components/RecordsContent/index.jsx:388
+#: src/components/RecordsContent/index.jsx:387
 msgid "<0>Loading</0>"
 msgstr "<0>Loading</0>"
 
@@ -469,9 +469,14 @@ msgstr "Collection"
 #. Collection Content title
 #. switcher label text content
 #: src/components/ContextSwitcher/__tests__/ContextSwitcher.test.jsx:15
-#: src/components/RecordsContent/index.jsx:392
+#: src/components/RecordsContent/index.jsx:391
 msgid "Collection Content"
 msgstr "Collection Content"
+
+#. Screen reader announcement that records content is loading
+#: src/components/RecordsContent/index.jsx:378
+msgid "Collection content loading"
+msgstr "Collection content loading"
 
 #. switcher label text content
 #: src/components/ContextSwitcher/__tests__/ContextSwitcher.test.jsx:30
