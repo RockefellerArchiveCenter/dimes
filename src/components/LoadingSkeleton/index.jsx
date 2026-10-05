@@ -71,20 +71,20 @@ export const MyListSkeleton = () => (
 export const AgentAttributeSkeleton = () => (
   <>
     <LoadingMessage />
-    <div className='agent__attributes' aria-hidden='true'>
+    <dl className='agent__attributes mb-40' aria-hidden='true'>
       {Array(4)
         .fill()
         .map((item, index) => (
           <div key={index} className='agent-attribute'>
-            <p className='agent-attribute__label m-0'>
+            <dt className='agent-attribute__label m-0'>
               <Skeleton />
-            </p>
-            <p className='agent-attribute__value'>
+            </dt>
+            <dd className='agent-attribute__value ml-0'>
               <Skeleton />
-            </p>
+            </dd>
           </div>
         ))}
-    </div>
+    </dl>
   </>
 )
 
