@@ -15,7 +15,8 @@ import { appendParams, buildHref, dateString, formatMatchString, truncateString}
 import { useOnScreen } from '../Hooks'
 import { isItemSaved } from '../MyListHelpers'
 import { RecordsChildSkeleton } from '../LoadingSkeleton'
-import { t, select } from '@lingui/core/macro'
+import { announce } from '@react-aria/live-announcer'
+import { plural, t, select } from '@lingui/core/macro'
 import { Trans } from '@lingui/react/macro'
 import classnames from 'classnames'
 import './styles.scss'
@@ -52,12 +53,15 @@ export const RecordsChild = props => {
   const isAfterVisible = useOnScreen(refAfter) /* 5 */
 
   /* Loads all pages of paginated content */
-  const getPages = uri => {
+  const getPages = (uri, shouldAnnounce) => {
     axios
         .get(uri)
         .then(res => {
           setChildCount(res.data.count)
           setChildren(children => children.concat(res.data.results))
+          shouldAnnounce && announce(
+            t({message: plural(res.data.count, {one: '# item', other: '# items'})}),
+            'polite')
           res.data.next && getPages(res.data.next)
         }
       )
@@ -143,7 +147,8 @@ export const RecordsChild = props => {
         appendParams(
           `${import.meta.env.VITE_ARGO_BASEURL}${uri}/children`,
           {...props.params, limit: pageSize}
-        )
+        ),
+        true
       )
     }
   }
@@ -220,6 +225,8 @@ export const RecordsChild = props => {
       <div className='child__description'>
         <a id={`accordion__heading-${item.uri}`}
            className={classnames('child__title', `child__title--${item.type}`)}
+           aria-current={targetElementLoaded ? 'page' : undefined}
+           aria-describedby={item.hit_count ? `accordion__badges-${item.uri}` : undefined}
            href={buildHref(item.uri, params)}
            onClick={e => {
              e.preventDefault()
@@ -257,7 +264,7 @@ export const RecordsChild = props => {
         <QueryHighlighter query={query} text={truncateString(item.description, 200)} />
       </p>
       {item.hit_count ?
-        <div className="child__badges">
+        <div id={`accordion__badges-${item.uri}`} className="child__badges">
           <Badge className='badge--orange' text={formatMatchString(item.hit_count)} />
           {item.online_hit_count ? <Badge className='badge--blue' text={formatMatchString(item.online_hit_count, true)} /> : null}
         </div>
@@ -270,31 +277,33 @@ export const RecordsChild = props => {
         'child__list-accordion',
         {'child__list-accordion--bottom-level': firstChildType === 'object'}
       )} >
-      <AccordionItemHeading
-        ariaLevel={ariaLevel}
-        className={classnames(
+      <div className={classnames(
           'child__list-item',
           `child__list-item--${item.type}`,
           {'child__list-item--bottom-level': firstChildType === 'object'},
         )} >
-        <AccordionItemButton
-            className={`child__title child__title--${item.type}`}
-            onClick={() => handleCollectionClick(item.uri)} >
-          <QueryHighlighter query={query} text={item.title} />
-          {item.title === item.dates ? (null) : (<p className='child__text'>{item.dates}</p>)}
-          <p className='child__text text--truncate'>
-            <QueryHighlighter query={query} text={truncateString(item.description, 200)} />
-          </p>
-          {item.hit_count ?
-            <div className="child__badges">
-              <Badge className='badge--orange' text={formatMatchString(item.hit_count)} />
-              {item.online_hit_count ? <Badge className='badge--blue' text={formatMatchString(item.online_hit_count, true)} /> : null}
-            </div>
-            : null}
-        </AccordionItemButton>
-      </AccordionItemHeading>
+        <AccordionItemHeading ariaLevel={ariaLevel}>
+          <AccordionItemButton
+              ariaCurrent={targetElementLoaded ? 'page' : undefined}
+              ariaDescribedBy={item.hit_count ? `accordion__badges-${item.uri}` : undefined}
+              className={`child__title child__title--${item.type}`}
+              onClick={() => handleCollectionClick(item.uri)} >
+            <QueryHighlighter query={query} text={item.title} />
+          </AccordionItemButton>
+        </AccordionItemHeading>
+        {item.title === item.dates ? (null) : (<p className='child__text'>{item.dates}</p>)}
+        <p className='child__text text--truncate'>
+          <QueryHighlighter query={query} text={truncateString(item.description, 200)} />
+        </p>
+        {item.hit_count ?
+          <div id={`accordion__badges-${item.uri}`} className="child__badges">
+            <Badge className='badge--orange' text={formatMatchString(item.hit_count)} />
+            {item.online_hit_count ? <Badge className='badge--blue' text={formatMatchString(item.online_hit_count, true)} /> : null}
+          </div>
+          : null}
+      </div>
       {(children.length) ?
-        (<AccordionItemPanel>
+        (<AccordionItemPanel isGroup>
           {targetIsDirectDescendant && offsetBefore > 0 ? <RecordsChildSkeleton ref={refBefore} /> : null}
           <RecordsContentList
             ariaLevel={ariaLevel+1}

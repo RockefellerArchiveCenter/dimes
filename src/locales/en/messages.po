@@ -31,6 +31,11 @@ msgstr "(required)"
 msgid "{0, plural, =0 {selected: 0 items} other {selected: {1}}}"
 msgstr "{0, plural, =0 {selected: 0 items} other {selected: {1}}}"
 
+#. placeholder {0}: res.data.count
+#: src/components/RecordsContent/index.jsx:63
+msgid "{0, plural, one {# item} other {# items}}"
+msgstr "{0, plural, one {# item} other {# items}}"
+
 #. Announced when a search returns results
 #. placeholder {0}: res.data.count
 #: src/components/PageSearch/index.jsx:140
@@ -82,7 +87,7 @@ msgid "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 msgstr "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 
 #. placeholder {0}: props.isMobile
-#: src/components/RecordsContent/index.jsx:238
+#: src/components/RecordsContent/index.jsx:245
 msgid "{0, select, true {View} other {View Online}}"
 msgstr "{0, select, true {View} other {View Online}}"
 
@@ -229,7 +234,7 @@ msgstr "<0>Limitations and fees</0>"
 #. Loading message
 #. Records content is loading
 #: src/components/LoadingSkeleton/index.jsx:7
-#: src/components/RecordsContent/index.jsx:377
+#: src/components/RecordsContent/index.jsx:386
 msgid "<0>Loading</0>"
 msgstr "<0>Loading</0>"
 
@@ -408,7 +413,7 @@ msgstr "Close"
 #. Collection Content title
 #. switcher label text content
 #: src/components/ContextSwitcher/__tests__/ContextSwitcher.test.jsx:15
-#: src/components/RecordsContent/index.jsx:381
+#: src/components/RecordsContent/index.jsx:390
 msgid "Collection Content"
 msgstr "Collection Content"
 

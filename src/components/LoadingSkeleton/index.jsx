@@ -145,7 +145,7 @@ export const RecordsChildSkeleton = React.forwardRef((props, ref) => (
         .map((item, index) => (
           <div key={index}>
             <div className='child__list-item child__list-item--object'>
-              <button className='child__title child__title--object' tabIndex={-1}></button>
+              <div className='child__title child__title--object'></div>
               <p className='child__text' style={{width: '100%'}}><Skeleton /></p>
               <p className='child__text child__description'><Skeleton /></p>
             </div>

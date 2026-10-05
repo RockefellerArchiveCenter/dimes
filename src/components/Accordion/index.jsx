@@ -1,11 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import {
-    focusFirstSiblingOf,
-    focusLastSiblingOf,
-    focusNextSiblingOf,
-    focusPreviousSiblingOf
-} from './helpers/focus'
-import keycodes from './helpers/keycodes'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import MaterialIcon from '../MaterialIcon'
 
 /** Adds props to an array of children */
@@ -24,6 +17,11 @@ export const Accordion = ({ className, children, preExpanded}) => (
   </div>
 )
 
+const AccordionItemContext = createContext({})
+
+/** Merges item state from context with any props passed directly */
+const useItem = props => ({ ...useContext(AccordionItemContext), ...props })
+
 /* Main accordion component
 * 1. Sets isExpanded when preExpanded array changes.
 */
@@ -35,89 +33,57 @@ export const AccordionItem = ({ className, children, onClick, preExpanded, uuid 
   }, [preExpanded])
 
   return (
-    <div data-accordion-component='AccordionItem' className={className}>
-      {addPropsToChildren(children, {uuid: uuid, isExpanded: isExpanded, setIsExpanded: setIsExpanded})}
-    </div>
+    <AccordionItemContext.Provider value={{ uuid, isExpanded, setIsExpanded }}>
+      <div data-accordion-component='AccordionItem' className={className}>
+        {children}
+      </div>
+    </AccordionItemContext.Provider>
   )
 }
 
-export const AccordionItemButton = ({ className, children, isExpanded, onClick, setIsExpanded, uuid }) => {
+export const AccordionItemButton = props => {
+  const { ariaCurrent, ariaDescribedBy, className, children, isExpanded,
+          onClick, setIsExpanded, uuid } = useItem(props)
   const handleClick = () => {
     setIsExpanded(!isExpanded)
     onClick && onClick()
   }
 
-  /** Handles keyboard events for WCAG compliance */
-  const handleKeyPress = evt => {
-    const keyCode = evt.which.toString()
-
-    if (keyCode === keycodes.ENTER || keyCode === keycodes.SPACE) {
-      evt.preventDefault()
-      handleClick()
-    }
-
-    if (evt.target instanceof HTMLElement) {
-      switch (keyCode) {
-        case keycodes.HOME: {
-          evt.preventDefault()
-          focusFirstSiblingOf(evt.target)
-          break
-        }
-        case keycodes.END: {
-          evt.preventDefault()
-          focusLastSiblingOf(evt.target)
-          break
-        }
-        case keycodes.LEFT:
-        case keycodes.UP: {
-          evt.preventDefault()
-          focusPreviousSiblingOf(evt.target)
-          break
-        }
-        case keycodes.RIGHT:
-        case keycodes.DOWN: {
-          evt.preventDefault()
-          focusNextSiblingOf(evt.target)
-          break
-        }
-        default: {
-            //
-        }
-      }
-    }
-  }
-
   return (
-    <div data-accordion-component='AccordionItemButton'
+    <button data-accordion-component='AccordionItemButton'
+      type='button'
       className={className}
       id={`accordion__heading-${uuid}`}
+      aria-controls={`accordion__panel-${uuid}`}
+      aria-current={ariaCurrent}
+      aria-describedby={ariaDescribedBy}
       aria-expanded={isExpanded}
-      role='button'
-      tabIndex='0'
-      onClick={handleClick}
-      onKeyDown={handleKeyPress} >
+      onClick={handleClick} >
       {children}
       <MaterialIcon icon={isExpanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} />
-    </div>
+    </button>
   )
 }
 
-export const AccordionItemHeading = ({ ariaLevel, className, children, isExpanded, setIsExpanded, uuid }) => (
+export const AccordionItemHeading = ({ ariaLevel, className, children }) => (
   <div data-accordion-component='AccordionItemHeading'
     aria-level={ariaLevel}
     className={className}
     role='heading' >
-    {addPropsToChildren(children, { uuid: uuid, isExpanded: isExpanded, setIsExpanded: setIsExpanded })}
-  </div>
-)
-
-export const AccordionItemPanel = ({ className, children, isExpanded, uuid }) => (
-  <div data-accordion-component='AccordionItemPanel'
-    className={className}
-    aria-hidden={!isExpanded}
-    aria-labelledby={`accordion__heading-${uuid}`}
-    id={`accordion__panel-${uuid}`}
-    hidden={!isExpanded} >
     {children}
   </div>
 )
+
+export const AccordionItemPanel = props => {
+  const { className, children, isExpanded, isGroup, uuid } = useItem(props)
+  return (
+    <div data-accordion-component='AccordionItemPanel'
+      className={className}
+      id={`accordion__panel-${uuid}`}
+      role={isGroup ? 'group' : undefined}
+      aria-labelledby={isGroup ? `accordion__heading-${uuid}` : undefined}
+      hidden={!isExpanded} >
+      {children}
+    </div>
+  )
+}
