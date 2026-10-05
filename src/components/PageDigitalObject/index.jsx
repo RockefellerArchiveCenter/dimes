@@ -147,8 +147,7 @@ const PageDigitalObject = ({isMobile}) => {
           iconBefore='download'
           className='mylist__actions'
           buttonClassName='btn btn--orange btn--sm mr-10'
-          listClassName='dropdown__list--orange dropdown__list--slide-down mylist__actions--dropdown'
-          role='menu'>
+          listClassName='dropdown__list--orange dropdown__list--slide-down mylist__actions--dropdown'>
             <DropdownItem
               order={1}
               className='btn--orange dropdown__btn dropdown__item--orange'
@@ -158,8 +157,7 @@ const PageDigitalObject = ({isMobile}) => {
               })}
               iconBefore='picture_as_pdf'
               href={downloadUrl}
-              newTab
-              role='menuitem' />
+              newTab />
             {canvases.map((canvas) => {
               const info = infoResponse(canvas.id)
               const pixelDimensions = info.json && `${info.json.width} x ${info.json.height} px`
@@ -173,8 +171,7 @@ const PageDigitalObject = ({isMobile}) => {
                     message: `Current Page - JPEG2000 ${pixelDimensions}`
                   })}
                   iconBefore='image'
-                  href={imageDownloadUrl(info)}
-                  role='menuitem' />
+                  href={imageDownloadUrl(info)} />
             )})}
         </Dropdown>
         <Trans comment='Go back to Item details for digital object'>
