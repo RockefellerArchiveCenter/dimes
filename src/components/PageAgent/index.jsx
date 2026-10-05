@@ -254,7 +254,7 @@ const PageAgent = () => {
     <React.Fragment>
       <div className='container--full-width'>
         <div className='agent__wrapper'>
-          <nav className="mt-30" aria-label="Back to search">
+          <nav className="mt-30" aria-label={t({ comment: 'Label for back to search navigation', message: 'Back to search' })}>
             <a href={searchUrl} className='btn btn--sm btn--gray'>
               <Trans comment='Back to search button'>
                 <MaterialIcon icon='keyboard_arrow_left' className='material-icon--space-after' />Back to Search

@@ -2,22 +2,30 @@ import { Badge } from '../Badge'
 import MaterialIcon from '../MaterialIcon'
 import { buildHref, formatMatchString } from '../Helpers'
 import classnames from 'classnames'
+import { t } from '@lingui/core/macro'
 import './styles.scss'
 
 const CategoryLabel = ({ category }) => {
   var icon = ''
+  var label = category
   switch (category) {
     case 'person':
       icon = 'person'
+      label = t({ comment: 'Search result category label', message: 'Person' })
       break
     case 'organization':
       icon = 'account_balance'
+      label = t({ comment: 'Search result category label', message: 'Organization' })
+      break
+    case 'collection':
+      icon = 'inventory2'
+      label = t({ comment: 'Search result category label', message: 'Collection' })
       break
     default:
       icon = 'inventory2'
   }
   return (
-    <div className={classnames('card__body-text', 'card__type-label m-0', category)}><MaterialIcon icon={icon} />{category}</div>
+    <div className={classnames('card__body-text', 'card__type-label m-0', category)}><MaterialIcon icon={icon} />{label}</div>
   )
 }
 

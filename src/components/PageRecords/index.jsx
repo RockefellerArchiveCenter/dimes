@@ -217,7 +217,7 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
   return (
     <React.Fragment>
       <main id='main' className='container--full-width'>
-        <nav aria-label="Collection page">
+        <nav aria-label={t({ comment: 'Label for collection page context switcher controls', message: 'Collection page' })}>
           <ContextSwitcher
             isContentShown={isContentShown}
             toggleIsContentShown={toggleIsContentShown} />

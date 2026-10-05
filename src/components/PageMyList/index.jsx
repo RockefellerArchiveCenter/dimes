@@ -119,10 +119,7 @@
         .post(uri, submitted)
         .then(res => {
           const form = document.createElement('form')
-          form.action = t({
-            comment: 'Aeon access point',
-            message: 'https://raccess.rockarch.org/aeon.dll'
-          })
+          form.action = 'https://raccess.rockarch.org/aeon.dll'
           form.method = 'post'
           Object.keys(res.data).forEach(key => {
             if (Array.isArray(res.data[key])) {
@@ -300,7 +297,7 @@
     return (
       <>
         <div className='mylist grid container--full-width'>
-          <nav>
+          <nav aria-label={t({ comment: 'Label for new search navigation', message: 'Back to search' })}>
             <a href='/' className='btn btn--sm btn--gray btn--new-search mt-20 ml-30'>
               <Trans comment='New Search button' >
                 <MaterialIcon icon='keyboard_arrow_left' className='material-icon--space-after' />Start a New Search

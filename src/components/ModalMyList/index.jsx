@@ -8,7 +8,7 @@ import { FocusError, FormButtons, FormGroup } from '../Form'
 import { DateInput, SelectInput } from '../Inputs'
 import MaterialIcon from '../MaterialIcon'
 import { ModalSavedItemList } from '../ModalSavedItem'
-import { getFormattedDate } from '../Helpers'
+import { ARCHIVE_EMAIL, getFormattedDate } from '../Helpers'
 import './styles.scss'
 import { select, t } from '@lingui/core/macro'
 import { Plural, Trans } from '@lingui/react/macro'
@@ -160,7 +160,7 @@ export const EmailModal = props => (
       <>
         <div className='mb-20'>
             <Trans comment='Note to user about including name and email address'>
-              <span className='text--bold'>Please note:</span> if are emailing your list to an archivist at <a href={t({message: 'mailto:archive@rockarch.org'})}>archive@rockarch.org</a>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up.
+              <span className='text--bold'>Please note:</span> if are emailing your list to an archivist at <a href={`mailto:${ARCHIVE_EMAIL}`}>{ARCHIVE_EMAIL}</a>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up.
             </Trans>
           </div>
         <Formik
@@ -499,16 +499,13 @@ export const DuplicationRequestModal = props => (
               <a target='_blank'
                   rel='noopener noreferrer'
                     aria-describedby='duplication-services-new-window'
-                    href={t({
-                      comment: 'Link for duplication request services',
-                      message: 'https://rockarch.org/collections/access-and-request-materials/#duplication-services'
-                    })}>
+                    href='https://rockarch.org/collections/access-and-request-materials/#duplication-services'>
                   duplication services
                 </a>.
             </div>
             <div>
               For help or to request a publication-quality scan, email an archivist at{' '}
-              <a href={t({message: 'mailto:archive@rockarch.org'})}>archive@rockarch.org</a>.
+              <a href={`mailto:${ARCHIVE_EMAIL}`}>{ARCHIVE_EMAIL}</a>.
             </div>
           </Trans>
           <span id='duplication-services-new-window' className="visually-hidden">

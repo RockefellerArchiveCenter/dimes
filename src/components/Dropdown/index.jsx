@@ -184,10 +184,7 @@ export const NavDropdown = () => (
         message: 'Sign in to RACcess'
       })}
       iconAfter='east'
-      href={t({
-        comment: 'Link used for sign-in within Dropdown list',
-        message: 'https://raccess.rockarch.org'
-      })} />
+      href='https://raccess.rockarch.org' />
     <DropdownItem
       className='btn--navy dropdown__btn dropdown__btn--mobile'
       label={t({

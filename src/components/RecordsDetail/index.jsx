@@ -163,7 +163,7 @@ const RecordsDetail = props => {
       label={t({ comment: 'About minimap message', message: 'about minimap' })}
     /> : null
     }
-    <nav className='records__nav' aria-label="Back to search">
+    <nav className='records__nav' aria-label={t({ comment: 'Label for back to search navigation', message: 'Back to search' })}>
       <a href={searchUrl} className='btn btn--sm btn--gray'>
         <Trans comment='Message to go back to previous search'>  
           <MaterialIcon icon='keyboard_arrow_left' className='material-icon--space-after'/>Back to Search
@@ -195,29 +195,31 @@ const RecordsDetail = props => {
         </Trans>
       </div>
       {props.item.online &&
+        <>
         <Trans comment='Buttons for online records'>
         <a className='btn btn--sm btn--orange btn--detail mr-10 mb-10 p-8'
           href={`${props.item.uri}/view`}>View Online<MaterialIcon icon='visibility' className='material-icon--space-before'/></a>
+        </Trans>
         {props.item.files[0].download &&
         <>
           <a className='btn btn--sm btn--orange btn--detail mr-10 mb-10 p-8'
           href={props.item.files[0].download}
           target='_blank'
           rel='noopener noreferrer'
-          >Download<span className='visually-hidden'> ({t({ comment: 'Screen reader text for opening an online item', message: 'opens in a new window' })})</span> <MaterialIcon icon='get_app' className='material-icon--space-before' /></a>
+          >{t({ comment: 'Button to download an online record', message: 'Download' })}<span className='visually-hidden'> ({t({ comment: 'Screen reader text for opening an online item', message: 'opens in a new window' })})</span> <MaterialIcon icon='get_app' className='material-icon--space-before' /></a>
           { props.downloadSize ?
             <p className='panel__text'>{`Acrobat PDF, ${props.downloadSize}`}</p> :
             <p className='panel__text'><Skeleton/></p> }
           </>
         }
-        </Trans>
+        </>
       }
       </>
     }
-    <Accordion className='accordion mt-20' preExpanded={['summary']} allowZeroExpanded={true}>
+    <Accordion className='accordion mt-20' preExpanded={['summary']}>
       <AccordionItem className='accordion__item' uuid='summary'>
         <AccordionItemHeading ariaLevel={2}>
-          <AccordionItemButton className='accordion__button py-12 px-0'>Summary</AccordionItemButton>
+          <AccordionItemButton className='accordion__button py-12 px-0'>{t({ comment: 'Record detail accordion heading', message: 'Summary' })}</AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel className='accordion__panel'>
           {props.isItemLoading ?
@@ -225,11 +227,11 @@ const RecordsDetail = props => {
             (<>
               <div className='panel__section--flex'>
                 <PanelLinkedListSection
-                  title='Creators'
+                  title={t({ comment: 'Record detail section title', message: 'Creators' })}
                   params={props.params}
                   listData={props.item.creators} />
                 <PanelTextSection
-                  title='Dates'
+                  title={t({ comment: 'Record detail section title', message: 'Dates' })}
                   text={dateString(props.item.dates)} />
                 { (props.item.extents && props.item.extents[0].value) ?
                   (<PanelExtentSection
@@ -246,11 +248,11 @@ const RecordsDetail = props => {
                 params={props.params} />
               <PanelTextSection
                 params={props.params}
-                title='Description'
+                title={t({ comment: 'Record detail section title', message: 'Description' })}
                 text={props.item.description} />
               <PanelTextSection
                 params={props.params}
-                title='Biographical/Historical Note'
+                title={t({ comment: 'Record detail section title', message: 'Biographical/Historical Note' })}
                 text={noteTextByType(props.item.notes, 'bioghist')} />
               { props.item.notes && props.item.notes.filter(n => ['relatedmaterial', 'odd'].includes(n.type)).map(n => (
                 <PanelTextSection
@@ -262,15 +264,15 @@ const RecordsDetail = props => {
               { noteTextByType(props.item.notes, 'processinfo') ?
                 (<PanelTextSection
                   params={props.params}
-                  title='Processing Information'
+                  title={t({ comment: 'Record detail section title', message: 'Processing Information' })}
                   text={noteTextByType(props.item.notes, 'processinfo')} />) :
                 (null)
               }
                 <PanelTextSection
-                  title='Immediate Source of Acquisition'
+                  title={t({ comment: 'Record detail section title', message: 'Immediate Source of Acquisition' })}
                   text={noteTextByType(props.item.notes, 'acqinfo')} />
                 <PanelTextSection
-                  title='Custodial History'
+                  title={t({ comment: 'Record detail section title', message: 'Custodial History' })}
                   text={noteTextByType(props.item.notes, 'custodhist')} />
               </>
               )
@@ -280,20 +282,20 @@ const RecordsDetail = props => {
       { hasAccessOrUse(props.item.notes) ?
         (<AccordionItem className='accordion__item' uuid='accessAndUse'>
           <AccordionItemHeading ariaLevel={2}>
-            <AccordionItemButton className='accordion__button py-12 px-0'>Access and Use</AccordionItemButton>
+            <AccordionItemButton className='accordion__button py-12 px-0'>{t({ comment: 'Record detail accordion heading', message: 'Access and Use' })}</AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel className='accordion__panel'>
             <PanelTextSection
-              title='Access'
+              title={t({ comment: 'Record detail section title', message: 'Access' })}
               text={noteTextByType(props.item.notes, 'accessrestrict')} />
             <PanelTextSection
-              title='Reproduction and Duplication'
+              title={t({ comment: 'Record detail section title', message: 'Reproduction and Duplication' })}
               text={noteTextByType(props.item.notes, 'userestrict')} />
             <PanelTextSection
-              title='Technical Access'
+              title={t({ comment: 'Record detail section title', message: 'Technical Access' })}
               text={noteTextByType(props.item.notes, 'phystech')} />
             <PanelTextSection
-              title='Existence and Location of Copies'
+              title={t({ comment: 'Record detail section title', message: 'Existence and Location of Copies' })}
               text={noteTextByType(props.item.notes, 'altformavail')} />
           </AccordionItemPanel>
         </AccordionItem>) :
@@ -301,11 +303,11 @@ const RecordsDetail = props => {
       { props.item.terms && props.item.terms.length ?
         (<AccordionItem className='accordion__item' uuid='relatedTerms'>
             <AccordionItemHeading ariaLevel={2}>
-              <AccordionItemButton className='accordion__button py-12 px-0'>Related Terms</AccordionItemButton>
+              <AccordionItemButton className='accordion__button py-12 px-0'>{t({ comment: 'Record detail accordion heading', message: 'Related Terms' })}</AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel className='accordion__panel'>
               <PanelListSection
-                title='Subjects'
+                title={t({ comment: 'Record detail section title', message: 'Subjects' })}
                 listData={props.item.terms} />
             </AccordionItemPanel>
           </AccordionItem>) :

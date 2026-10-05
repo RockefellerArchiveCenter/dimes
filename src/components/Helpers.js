@@ -100,3 +100,6 @@ export const truncateString = (text, maxLength) => {
 /** Composes a page title as [page] - [site] */
 export const SITE_TITLE = 'DIMES'
 export const withSiteTitle = page => page ? `${page} - ${SITE_TITLE}` : null
+
+/** Contact email address, not translated */
+export const ARCHIVE_EMAIL = 'archive@rockarch.org'

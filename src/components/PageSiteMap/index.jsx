@@ -28,12 +28,12 @@ const PageSiteMap = () => {
         })}</h2>
         <ul>
           <li>
-            <a href={t({ comment: 'Site map link to Rockefeller Archive Center website', message: 'https://rockarch.org/' })}>
+            <a href='https://rockarch.org/'>
               {t({ comment: 'Site map label for Rockefeller Archive Center website', message: 'Rockefeller Archive Center' })}
             </a>
           </li>
           <li>
-            <a href={t({ comment: 'Link used for sign-in within the Header', message: 'https://raccess.rockarch.org' })}>
+            <a href='https://raccess.rockarch.org'>
               {t({ message: 'Sign in to RACcess' })}
             </a>
           </li>
