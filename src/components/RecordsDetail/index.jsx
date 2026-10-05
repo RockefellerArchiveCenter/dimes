@@ -203,9 +203,8 @@ const RecordsDetail = props => {
           <a className='btn btn--sm btn--orange btn--detail mr-10 mb-10 p-8'
           href={props.item.files[0].download}
           target='_blank'
-          title={t({ comment: 'Title message for opening an online item', message: 'opens in a new window' })}
           rel='noopener noreferrer'
-          >Download <MaterialIcon icon='get_app' className='material-icon--space-before' /></a>
+          >Download<span className='visually-hidden'> ({t({ comment: 'Screen reader text for opening an online item', message: 'opens in a new window' })})</span> <MaterialIcon icon='get_app' className='material-icon--space-before' /></a>
           { props.downloadSize ?
             <p className='panel__text'>{`Acrobat PDF, ${props.downloadSize}`}</p> :
             <p className='panel__text'><Skeleton/></p> }

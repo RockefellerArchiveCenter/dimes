@@ -45,8 +45,9 @@ const useDropdown = () => {
 }
 
 // DropdownItem
-export const DropdownItem = ({ className, href, handleClick, iconBefore, iconAfter, label, title, close }) => {
+export const DropdownItem = ({ className, href, handleClick, iconBefore, iconAfter, label, newTab, title, close }) => {
   const Tag = href ? 'a' : 'button'
+  const opensNewTab = Tag === 'a' && newTab
 
   const handleItemClick = () => {
     handleClick?.()
@@ -59,10 +60,20 @@ export const DropdownItem = ({ className, href, handleClick, iconBefore, iconAft
         className={classnames('btn', className)}
         onClick={handleItemClick}
         href={Tag === 'a' ? href : undefined}
+        target={opensNewTab ? '_blank' : undefined}
+        rel={opensNewTab ? 'noopener noreferrer' : undefined}
         type={Tag === 'button' ? 'button' : undefined}
         title={title}>
         {iconBefore && <MaterialIcon icon={iconBefore} />}
         {label}
+        {opensNewTab && (
+          <span className='visually-hidden'>
+            {' '}({t({
+              comment: 'Screen reader text for links that open in a new window',
+              message: 'opens in a new window'
+            })})
+          </span>
+        )}
         {iconAfter && <MaterialIcon icon={iconAfter} />}
       </Tag>
     </li>

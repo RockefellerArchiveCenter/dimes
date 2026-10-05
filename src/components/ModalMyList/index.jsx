@@ -498,10 +498,7 @@ export const DuplicationRequestModal = props => (
               For more details, including exceptions for audiovisual and oversized materials, read about our{' '}
               <a target='_blank'
                   rel='noopener noreferrer'
-                    title={t({
-                      comment: 'Title for duplication services link',
-                      message: 'opens in a new window'
-                    })}
+                    aria-describedby='duplication-services-new-window'
                     href={t({
                       comment: 'Link for duplication request services',
                       message: 'https://rockarch.org/collections/access-and-request-materials/#duplication-services'
@@ -510,10 +507,16 @@ export const DuplicationRequestModal = props => (
                 </a>.
             </div>
             <div>
-              For help or to request a publication-quality scan, email an archivist at{' '} 
+              For help or to request a publication-quality scan, email an archivist at{' '}
               <a href={t({message: 'mailto:archive@rockarch.org'})}>archive@rockarch.org</a>.
             </div>
           </Trans>
+          <span id='duplication-services-new-window' className="visually-hidden">
+            {t({
+              comment: 'Screen reader text for duplication services link',
+              message: 'opens in a new window'
+            })}
+          </span>
         </div>
         <Trans comment='Submit Request title'>
           <h3 className='mt-0'>Submit request</h3>

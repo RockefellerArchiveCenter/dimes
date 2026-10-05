@@ -82,12 +82,12 @@ msgstr "{0, select, true {Minimap} other {Apresentando o Minimapa}}"
 #. placeholder {1}: props.submitList.length
 #. placeholder {2}: props.submitList.length
 #: src/components/ModalMyList/index.jsx:454
-#: src/components/ModalMyList/index.jsx:586
+#: src/components/ModalMyList/index.jsx:589
 msgid "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 msgstr "{0, select, true {Solicitar {1} Item} other {Solicitar Unid {2}}}"
 
 #. placeholder {0}: props.isMobile
-#: src/components/RecordsContent/index.jsx:245
+#: src/components/RecordsContent/index.jsx:247
 msgid "{0, select, true {View} other {View Online}}"
 msgstr "{0, select, true {Exibir} other {Exibir online}}"
 
@@ -150,7 +150,7 @@ msgid "<0/>Start a New Search"
 msgstr "<0/>Iniciar uma nova pesquisa"
 
 #. Go back to Item details for digital object
-#: src/components/PageDigitalObject/index.jsx:179
+#: src/components/PageDigitalObject/index.jsx:180
 msgid "<0><1/>Back to Item Details</0>"
 msgstr "<0><1/>Retornar ao conteúdo da coleção</0>"
 
@@ -234,7 +234,7 @@ msgstr "<0>Limitações e taxas</0>"
 #. Loading message
 #. Records content is loading
 #: src/components/LoadingSkeleton/index.jsx:7
-#: src/components/RecordsContent/index.jsx:386
+#: src/components/RecordsContent/index.jsx:388
 msgid "<0>Loading</0>"
 msgstr "<0>Carregamento</0>"
 
@@ -259,7 +259,7 @@ msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archi
 msgstr "<0>Observação:</0> se estiver enviando sua lista por e-mail para um arquivista em <1>archive@rockarch.org,</1> inclua seu nome e endereço de e-mail no campo Mensagem, caso contrário não teremos como contatá-lo para dar continuidade."
 
 #. Submit Request title
-#: src/components/ModalMyList/index.jsx:518
+#: src/components/ModalMyList/index.jsx:521
 msgid "<0>Submit request</0>"
 msgstr "<0>Enviar solicitação</0>"
 
@@ -293,7 +293,7 @@ msgid "<0>View Online<1/></0>"
 msgstr "<0>Exibir online<1/></0>"
 
 #. Buttons for online records
-#. placeholder {0}: props.item.files[0].download && <> <a className='btn btn--sm btn--orange btn--detail mr-10 mb-10 p-8' href={props.item.files[0].download} target='_blank' title={t({ comment: 'Title message for opening an online item', message: 'opens in a new window' })} rel='noopener noreferrer' >Download <MaterialIcon icon='get_app' className='material-icon--space-before' /></a> { props.downloadSize ? <p className='panel__text'>{`Acrobat PDF, ${props.downloadSize}`}</p> : <p className='panel__text'><Skeleton/></p> } </>
+#. placeholder {0}: props.item.files[0].download && <> <a className='btn btn--sm btn--orange btn--detail mr-10 mb-10 p-8' href={props.item.files[0].download} target='_blank' rel='noopener noreferrer' >Download<span className='visually-hidden'> ({t({ comment: 'Screen reader text for opening an online item', message: 'opens in a new window' })})</span> <MaterialIcon icon='get_app' className='material-icon--space-before' /></a> { props.downloadSize ? <p className='panel__text'>{`Acrobat PDF, ${props.downloadSize}`}</p> : <p className='panel__text'><Skeleton/></p> } </>
 #: src/components/RecordsDetail/index.jsx:198
 msgid "<0>View Online<1/></0>{0}"
 msgstr "<0>Exibir online<1/></0>"
@@ -324,7 +324,7 @@ msgid "Accessibility Statement"
 msgstr "Declaração de Acessibilidade"
 
 #. Message shown on Dropdown button
-#: src/components/Dropdown/index.jsx:99
+#: src/components/Dropdown/index.jsx:110
 msgid "Actions"
 msgstr "Ações"
 
@@ -413,7 +413,7 @@ msgstr "Fechar"
 #. Collection Content title
 #. switcher label text content
 #: src/components/ContextSwitcher/__tests__/ContextSwitcher.test.jsx:15
-#: src/components/RecordsContent/index.jsx:390
+#: src/components/RecordsContent/index.jsx:392
 msgid "Collection Content"
 msgstr "Conteúdo da coleção"
 
@@ -453,7 +453,7 @@ msgid "Creator"
 msgstr "Acervo"
 
 #. Message shown for downloading high-res images in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:170
+#: src/components/PageDigitalObject/index.jsx:171
 msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "Página atual - JPEG2000 {pixelDimensions}"
 
@@ -484,7 +484,7 @@ msgid "Download"
 msgstr "Baixar"
 
 #. Download as .csv button in Dropdown list
-#: src/components/Dropdown/index.jsx:141
+#: src/components/Dropdown/index.jsx:152
 msgid "Download as .csv"
 msgstr "Baixar como .csv"
 
@@ -513,7 +513,7 @@ msgstr "E-mail"
 #. Email List button in Dropdown list
 #. Email list label
 #. Title of the modal for emailing the list
-#: src/components/Dropdown/index.jsx:133
+#: src/components/Dropdown/index.jsx:144
 #: src/components/ModalMyList/index.jsx:149
 #: src/components/MyListExportActions/index.jsx:9
 msgid "Email List"
@@ -633,7 +633,7 @@ msgstr "https://github.com/RockefellerArchiveCenter/data/"
 #. Link used for sign-in within Dropdown list
 #. Link used for sign-in within the Header
 #. Link used for sign-in within the Header
-#: src/components/Dropdown/index.jsx:176
+#: src/components/Dropdown/index.jsx:187
 #: src/components/Header/index.jsx:23
 #: src/components/PageSiteMap/index.jsx:36
 msgid "https://raccess.rockarch.org"
@@ -665,7 +665,7 @@ msgid "https://rockarch.org/collections/access-and-request-materials/"
 msgstr "https://rockarch.org/collections/access-and-request-materials/"
 
 #. Link for duplication request services
-#: src/components/ModalMyList/index.jsx:505
+#: src/components/ModalMyList/index.jsx:502
 msgid "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 msgstr "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
 
@@ -695,7 +695,7 @@ msgid "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
 
 #. Label for duplication request form
-#: src/components/ModalMyList/index.jsx:561
+#: src/components/ModalMyList/index.jsx:564
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its volume or physical condition."
 msgstr "Entendo que talvez seja necessário trabalhar com um arquivista para identificar os recursos mais relevantes para minha pesquisa e que, em alguns casos, não é possível digitalizar o material devido à sua extensão ou condição física."
 
@@ -754,13 +754,13 @@ msgstr "Localização da sede"
 
 #. Company Email link
 #: src/components/ModalMyList/index.jsx:163
-#: src/components/ModalMyList/index.jsx:514
+#: src/components/ModalMyList/index.jsx:511
 #: src/components/PageBackendError/index.jsx:21
 #: src/components/PrimaryLink/index.jsx:25
 msgid "mailto:archive@rockarch.org"
 msgstr "mailto:archive@rockarch.org"
 
-#: src/components/Dropdown/index.jsx:161
+#: src/components/Dropdown/index.jsx:172
 msgid "Menu"
 msgstr ""
 
@@ -800,7 +800,7 @@ msgstr "Segunda-feira a sexta-feira<0/>9:30 a.m. a 5:00 p.m.<1/>"
 #. Message shown on button within the Header
 #. Page title for user's list
 #. Site map link to My List page
-#: src/components/Dropdown/index.jsx:182
+#: src/components/Dropdown/index.jsx:193
 #: src/components/Header/index.jsx:32
 #: src/components/PageMyList/index.jsx:37
 #: src/components/PageSiteMap/index.jsx:23
@@ -820,7 +820,7 @@ msgstr "Apelidos"
 #. No selected items error
 #: src/components/ModalMyList/index.jsx:187
 #: src/components/ModalMyList/index.jsx:403
-#: src/components/ModalMyList/index.jsx:535
+#: src/components/ModalMyList/index.jsx:538
 msgid "No items have been selected to submit."
 msgstr "Nenhum item foi selecionado para envio."
 
@@ -857,10 +857,12 @@ msgstr "Coleções e catálogo on-line do Rockefeller Archive Center"
 msgid "Open date and time picker"
 msgstr ""
 
-#. Title for duplication services link
-#. Title message for opening an online item
-#: src/components/ModalMyList/index.jsx:501
-#: src/components/RecordsDetail/index.jsx:206
+#. Screen reader text for duplication services link
+#. Screen reader text for links that open in a new window
+#. Screen reader text for opening an online item
+#: src/components/Dropdown/index.jsx:71
+#: src/components/ModalMyList/index.jsx:515
+#: src/components/RecordsDetail/index.jsx:207
 msgid "opens in a new window"
 msgstr "abre numa nova janela"
 
@@ -901,12 +903,12 @@ msgstr "Adicione uma palavra ou frase para pesquisar."
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:263
 #: src/components/ModalMyList/index.jsx:183
 #: src/components/ModalMyList/index.jsx:400
-#: src/components/ModalMyList/index.jsx:528
+#: src/components/ModalMyList/index.jsx:531
 msgid "Please complete this field."
 msgstr "Preencha este campo."
 
 #. placeholder {0}: import.meta.env.VITE_DUPLICATION_REQUEST_LIMIT
-#: src/components/ModalMyList/index.jsx:538
+#: src/components/ModalMyList/index.jsx:541
 msgid "Please limit your request to {0} items."
 msgstr "Por favor, limite sua solicitação a {0} itens."
 
@@ -967,7 +969,7 @@ msgstr "Horário da sala de leitura:"
 #. Name of recaptcha error message
 #: src/components/ModalMyList/index.jsx:250
 #: src/components/ModalMyList/index.jsx:257
-#: src/components/ModalMyList/index.jsx:575
+#: src/components/ModalMyList/index.jsx:578
 msgid "recaptcha"
 msgstr "recaptcha"
 
@@ -987,7 +989,7 @@ msgstr "Remover"
 
 #. Remove All Items button in Dropdown list
 #. Remove all items label
-#: src/components/Dropdown/index.jsx:149
+#: src/components/Dropdown/index.jsx:160
 #: src/components/MyListExportActions/index.jsx:28
 msgid "Remove All Items"
 msgstr "Remover Todos Itens"
@@ -1006,7 +1008,7 @@ msgstr "Solicitação de 4 itens"
 #. Request Copies button in Dropdown list
 #. Request copies button in Sidebar
 #. Title of the modal for requesting copies of items
-#: src/components/Dropdown/index.jsx:125
+#: src/components/Dropdown/index.jsx:136
 #: src/components/ModalMyList/index.jsx:475
 #: src/components/MyListSidebar/index.jsx:27
 msgid "Request Copies"
@@ -1015,7 +1017,7 @@ msgstr "Solicitar cópias"
 #. Request in Reading Room button in Dropdown list
 #. Request in Reading Room button in Sidebar
 #. Title of the modal for requesting items in the reading room
-#: src/components/Dropdown/index.jsx:117
+#: src/components/Dropdown/index.jsx:128
 #: src/components/ModalMyList/index.jsx:379
 #: src/components/MyListSidebar/index.jsx:19
 msgid "Request in Reading Room"
@@ -1038,7 +1040,7 @@ msgstr "Salvar & Fechar"
 
 #. Schedule a visit link in Dropdown list
 #. Schedule a visit link in Sidebar
-#: src/components/Dropdown/index.jsx:109
+#: src/components/Dropdown/index.jsx:120
 #: src/components/MyListSidebar/index.jsx:12
 msgid "Schedule a Visit"
 msgstr "Agendar uma visita"
@@ -1169,7 +1171,7 @@ msgid "Show only results with digital matches"
 msgstr "Mostrar apenas resultados com jogos digitais"
 
 #. Message shown on sign-in button
-#: src/components/Dropdown/index.jsx:171
+#: src/components/Dropdown/index.jsx:182
 #: src/components/Header/index.jsx:27
 #: src/components/PageSiteMap/index.jsx:37
 msgid "Sign in to RACcess"
@@ -1299,7 +1301,7 @@ msgstr "Arquivo virtual de autoridade internacional"
 #. Costs not agreed to error
 #. Payment Modal Form Test
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:266
-#: src/components/ModalMyList/index.jsx:531
+#: src/components/ModalMyList/index.jsx:534
 msgid "We cannot process your request unless you agree to pay the costs of reproduction."
 msgstr "Não poderemos processar sua solicitação a menos que você concorde em pagar os custos de reprodução."
 

@@ -158,6 +158,7 @@ const PageDigitalObject = ({isMobile}) => {
               })}
               iconBefore='picture_as_pdf'
               href={downloadUrl}
+              newTab
               role='menuitem' />
             {canvases.map((canvas) => {
               const info = infoResponse(canvas.id)
