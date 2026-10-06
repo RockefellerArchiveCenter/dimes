@@ -20,14 +20,14 @@ export const SearchPagination = props => (
     breakLabel={'...'}
     breakClassName={'pagination__break'}
     breakAriaLabels={{
-      forward: `... ${t({
+      forward: t({
         comment: 'Accessible label for the pagination button that skips ahead several pages',
-        message: 'Jump forward'
-      })}`,
-      backward: `... ${t({
+        message: 'Jump forward several pages'
+      }),
+      backward: t({
         comment: 'Accessible label for the pagination button that skips back several pages',
-        message: 'Jump backward'
-      })}`
+        message: 'Jump backward several pages'
+      })
     }}
     hrefBuilder={props.hrefBuilder}
     forcePage={Math.ceil((props.offset || 0) / props.pageSize)}

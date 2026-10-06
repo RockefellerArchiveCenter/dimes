@@ -28,9 +28,7 @@ const SubmitListInput = ({ submitList }) => {
   return (
     <Field
       type='hidden'
-      name={t({
-        message: 'items'
-      })} />
+      name='items' />
   )
 }
 
@@ -160,7 +158,7 @@ export const EmailModal = props => (
       <>
         <div className='mb-20'>
             <Trans comment='Note to user about including name and email address'>
-              <span className='text--bold'>Please note:</span> if are emailing your list to an archivist at <a href={`mailto:${ARCHIVE_EMAIL}`}>{ARCHIVE_EMAIL}</a>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up.
+              <span className='text--bold'>Please note:</span> if you are emailing your list to an archivist at <a href={`mailto:${ARCHIVE_EMAIL}`}>{ARCHIVE_EMAIL}</a>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up.
             </Trans>
           </div>
         <Formik
@@ -203,10 +201,7 @@ export const EmailModal = props => (
             <SubmitListInput submitList={props.submitList} />
             <ErrorMessage
               id='items-error'
-                name={t({
-                  comment: 'Name of items error message',
-                  message: 'items'
-                })}
+                name='items'
               component='div'
               className='input__error' />
             <FormGroup
@@ -214,10 +209,7 @@ export const EmailModal = props => (
                 comment: 'Label of Email Form',
                 message: 'Email'
               })}
-              name={t({
-                comment: 'Name of email form',
-                message: 'email'
-              })}
+              name='email'
               type='email'
               autoComplete='email'
               required={true}
@@ -226,38 +218,27 @@ export const EmailModal = props => (
             <FormGroup
               label={t({
                 comment: 'Label of Subject Form',
+                context: 'email subject line',
                 message: 'Subject'
               })}
-              name={t({
-                comment: 'Name of subject form',
-                message: 'subject'
-              })}
+              name='subject'
               type='text' />
             <FormGroup
               label={t({
                 comment: 'Label of Message Form',
                 message: 'Message'
               })}
-              name={t({
-                comment: 'Name of message form',
-                message: 'message'
-              })}
+              name='message'
               component='textarea'
               rows={5} />
             <div className='form-group mx-0'>
               <Field
                 component={Captcha}
-                name={t({
-                  comment: 'Name of recaptcha element',
-                  message: 'recaptcha'
-                })}
+                name='recaptcha'
                 handleCaptchaChange={(response) => setFieldValue('recaptcha', response)} />
               <ErrorMessage
                 id='recaptcha-error'
-                name={t({
-                  comment: 'Name of recaptcha error message',
-                  message: 'recaptcha'
-                })}
+                name='recaptcha'
                 component='div'
                 className='input__error' />
             </div>
@@ -572,9 +553,7 @@ export const DuplicationRequestModal = props => (
             <div className='form-group mx-0'>
               <Field
                 component={Captcha}
-                  name={t({
-                    message: 'recaptcha'
-                  })}
+                  name='recaptcha'
                 handleCaptchaChange={(response) => setFieldValue('recaptcha', response)} />
               <ErrorMessage
                 id='recaptcha-error'

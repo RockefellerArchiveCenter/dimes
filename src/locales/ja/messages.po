@@ -22,12 +22,12 @@ msgstr ""
 #: src/components/Inputs/index.jsx:15
 #: src/components/Inputs/index.jsx:111
 msgid "(required)"
-msgstr ""
+msgstr "(必須)"
 
 #. Message returned dependent on how many items selected
 #. placeholder {0}: extents.length
 #. placeholder {1}: extents.join(', ')
-#: src/components/ModalMyList/index.jsx:98
+#: src/components/ModalMyList/index.jsx:96
 msgid "{0, plural, =0 {selected: 0 items} other {selected: {1}}}"
 msgstr "{0, plural, =0 {選択された: 0 アイテム} other {選択された: {1}}}"
 
@@ -40,7 +40,7 @@ msgstr "{0, plural, one {#件} other {#件}}"
 #. placeholder {0}: res.data.count
 #: src/components/PageSearch/index.jsx:140
 msgid "{0, plural, one {# result found} other {# results found}}"
-msgstr ""
+msgstr "{0, plural, one {#件の結果が見つかりました} other {#件の結果が見つかりました}}"
 
 #. Filter results message
 #. placeholder {0}: props.resultsCount
@@ -64,25 +64,25 @@ msgstr "{0, select, rac {出典: Rockefeller Archive Center} other {出典: {sou
 #. placeholder {0}: startItem === endItem
 #: src/components/PageSearch/index.jsx:257
 msgid "{0, select, true {{startItem} result} other {{startItem}-{endItem} of {resultsCount} results}}"
-msgstr "{0, select, true {{startItem} result} other {{startItem}-{endItem} の {resultsCount} 結果}}"
+msgstr "{0, select, true {{startItem}件目} other {{resultsCount}件中 {startItem}～{endItem}件}}"
 
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:313
+#: src/components/PageSearch/index.jsx:310
 msgid "{0, select, true {{startItem}} other {{startItem}-{endItem} of {resultsCount} results}}"
-msgstr "{0, select, true {{startItem}} other {{startItem}-{endItem} の {resultsCount} 結果}}"
+msgstr "{0, select, true {{startItem}} other {{resultsCount}件中 {startItem}～{endItem}件}}"
 
 #. Minimap header
 #. placeholder {0}: props.hasSeenMinimapIntro
 #: src/components/ModalMinimap/index.jsx:30
 msgid "{0, select, true {Minimap} other {Introducing the Minimap}}"
-msgstr "{0, select, true {Minimap} other {ミニマップの紹介}}"
+msgstr "{0, select, true {ミニマップ} other {ミニマップの紹介}}"
 
 #. Text for submiting item(s) request
 #. placeholder {0}: props.submitList.length !== 1
 #. placeholder {1}: props.submitList.length
 #. placeholder {2}: props.submitList.length
-#: src/components/ModalMyList/index.jsx:454
-#: src/components/ModalMyList/index.jsx:586
+#: src/components/ModalMyList/index.jsx:435
+#: src/components/ModalMyList/index.jsx:565
 msgid "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 msgstr "{0, select, true {リクエスト {1} アイテム} other {リクエスト {2} アイテム}}"
 
@@ -92,18 +92,23 @@ msgid "{0, select, true {View} other {View Online}}"
 msgstr "{0, select, true {観る} other {オンラインで見る}}"
 
 #. Label for the end of the item
-#: src/components/PageAgent/index.jsx:149
+#: src/components/PageAgent/index.jsx:157
 msgid "{agentType, select, organization {Date Disbanded} other {Date of Death}}"
 msgstr "{agentType, select, organization {解散日} other {死亡日}}"
 
 #. Label for the start of the item
-#: src/components/PageAgent/index.jsx:145
+#: src/components/PageAgent/index.jsx:153
 msgid "{agentType, select, organization {Date Established} other {Date of Birth}}"
 msgstr "{agentType, select, organization {設立日} other {生年月日}}"
 
+#. Agent Sidebar Header
+#: src/components/PageAgent/index.jsx:69
+msgid "{agentType, select, person {More about this person} organization {More about this organization} family {More about this family} other {More about this agent}}"
+msgstr "{agentType, select, person {この人物について詳しく} organization {この組織について詳しく} family {この家族について詳しく} other {この人物・団体について詳しく}}"
+
 #. Label for item (de)selection
-#: src/components/ModalMyList/index.jsx:62
-#: src/components/ModalMyList/index.jsx:71
+#: src/components/ModalMyList/index.jsx:60
+#: src/components/ModalMyList/index.jsx:69
 msgid "{deselect, select, true {Deselect all items} other {Select all items}}"
 msgstr "{deselect, select, true {すべての項目を選択解除} other {すべての項目を選択}}"
 
@@ -130,7 +135,7 @@ msgstr "{isDownloading, select, true {ダウンロード中} other {.CSVとし�
 #. Label for Add List Toggle button
 #: src/components/ListToggleButton/index.jsx:32
 msgid "{isMobile, select, true {Add} other {Add to List}}"
-msgstr "{isMobile, select, true {追加} other {リストに追加}}。"
+msgstr "{isMobile, select, true {追加} other {リストに追加}}"
 
 #. Label for Remove List Toggle button
 #: src/components/ListToggleButton/index.jsx:16
@@ -139,7 +144,7 @@ msgstr "{isMobile, select, true {取り除く} other {リストから削除す�
 
 #. Back to search button
 #. Message to go back to previous search
-#: src/components/PageAgent/index.jsx:259
+#: src/components/PageAgent/index.jsx:267
 #: src/components/RecordsDetail/index.jsx:168
 msgid "<0/>Back to Search"
 msgstr "<0/>検索に戻る"
@@ -149,13 +154,8 @@ msgstr "<0/>検索に戻る"
 msgid "<0/>Start a New Search"
 msgstr "<0/>新しい検索を開始する"
 
-#. Schedule a visit button
-#: src/components/MyListSidebar/index.jsx:8
-#~ msgid "<0><1/> Schedule a Visit</0>"
-#~ msgstr "<0><1/> 来店予約</0>"
-
 #. Go back to Item details for digital object
-#: src/components/PageDigitalObject/index.jsx:180
+#: src/components/PageDigitalObject/index.jsx:177
 msgid "<0><1/>Back to Item Details</0>"
 msgstr "<0><1/>アイテム詳細に戻る</0>"
 
@@ -169,20 +169,10 @@ msgstr "<0><1><2/></1><3>リクエストされたページは見つかりませ�
 #. placeholder {1}: error.code
 #. placeholder {2}: error.message
 #. placeholder {3}: error.response.data ? <p className='backend-error__message'>{JSON.stringify(error.response.data)}</p> : null
-#. placeholder {4}: error.config.data ? <> <p className='backend-error__header mt-18'>Request data:</p> <p className='backend-error__message'>{error.config.data}</p> </> : null
-#: src/components/PageBackendError/index.jsx:16
+#. placeholder {4}: error.config.data ? <> <h2 className='backend-error__header mt-18'>Request data:</h2> <p className='backend-error__message'>{error.config.data}</p> </> : null
+#: src/components/PageBackendError/index.jsx:24
 msgid "<0><1><2/></1><3>There was an error fetching data.</3><4>The request to {0} failed.</4><5>To report this problem, send us an email at <6>{ARCHIVE_EMAIL}</6>.</5><7>Error message:</7><8>{1}: {2}</8>{3}{4}</0>"
 msgstr "<0><1><2/></1><3>データの取得にエラーが発生しました。</3><4>{0} へのリクエストは失敗しました。</4><5>この問題を報告するには、<6>{ARCHIVE_EMAIL}</6> までメールをお送りください。</5><7>エラーメッセージ</7><8>{1}:{2}</8>{3}{4}</0>"
-
-#. Page Backend Error
-#. placeholder {0}: error.config.url
-#. placeholder {1}: error.code
-#. placeholder {2}: error.message
-#. placeholder {3}: error.response.data ? <p className='backend-error__message'>{JSON.stringify(error.response.data)}</p> : null
-#. placeholder {4}: error.config.data ? <> <p className='backend-error__header mt-18'>Request data:</p> <p className='backend-error__message'>{error.config.data}</p> </> : null
-#: src/components/PageBackendError/index.jsx:16
-#~ msgid "<0><1><2/></1><3>There was an error fetching data.</3><4>The request to {0} failed.</4><5>To report this problem, send us an email at <6>archive@rockarch.org</6>.</5><7>Error message:</7><8>{1}: {2}</8>{3}{4}</0>"
-#~ msgstr "<0><1><2/></1><3>データの取得にエラーが発生しました。</3><4>{0} へのリクエストは失敗しました。</4><5>この問題を報告するには、<6>archive@rockarch.org</6> までメールをお送りください。</5><7>エラーメッセージ</7><8>{1}:{2}</8>{3}{4}</0>"
 
 #. Social Icons Titles
 #: src/components/SocialIcons/index.jsx:5
@@ -222,18 +212,8 @@ msgstr "<0>他の可能性のある検索キーワード：</0>"
 
 #. The about section for minimaps.
 #: src/components/ModalMinimap/index.jsx:8
-#~ msgid "<0>Jump to a part of the collection containing matches by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
-#~ msgstr "<0>アクティブなマスをクリックすることで、マッチを含むコレクションの一部にジャンプします。</0><1>ミニマップ図では、各マスがコレクションの一部を表しています。色のついた四角は、検索に1つ以上マッチする部分を表しています。</1>"
-
-#. The about section for minimaps.
-#: src/components/ModalMinimap/index.jsx:8
 msgid "<0>Jump to a part of the collection containing matches by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Interactive squares represent parts that contain one or more matches for your search.</1>"
-msgstr ""
-
-#. Back to search button
-#: src/components/PageAgent/index.jsx:258
-#~ msgid "<0>keyboard_arrow_left</0>Back to Search"
-#~ msgstr "<0>keyboard_arrow_left</0>検索に戻る"
+msgstr "<0>アクティブな四角形をクリックすると、検索に一致する箇所を含むコレクションの部分にジャンプできます。</0><1>ミニマップ図では、各四角形がこのコレクションの一部を表しています。操作可能な四角形は、検索に一致する箇所が1つ以上含まれる部分を表しています。</1>"
 
 #. Saved item last requested message
 #. placeholder {0}: props.lastRequested
@@ -242,7 +222,7 @@ msgid "<0>Last requested on: {0}</0>"
 msgstr "<0>最終リクエスト日{0}</0>"
 
 #. Limitations and fees title
-#: src/components/ModalMyList/index.jsx:487
+#: src/components/ModalMyList/index.jsx:468
 msgid "<0>Limitations and fees</0>"
 msgstr "<0>制限と手数料</0>"
 
@@ -252,11 +232,6 @@ msgstr "<0>制限と手数料</0>"
 #: src/components/RecordsContent/index.jsx:387
 msgid "<0>Loading</0>"
 msgstr "<0>ローディング</0>"
-
-#. Agent Sidebar Header
-#: src/components/PageAgent/index.jsx:68
-msgid "<0>More about this {agentType}</0>"
-msgstr "<0>詳細はこちら{agentType}</0>"
 
 #. Header for user's list
 #: src/components/PageMyList/index.jsx:308
@@ -269,34 +244,24 @@ msgid "<0>Please add a word or phrase to search for.</0>"
 msgstr "<0>検索する語句を追加してください。</0>"
 
 #. Note to user about including name and email address
-#: src/components/ModalMyList/index.jsx:162
-msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>{ARCHIVE_EMAIL}</1>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up."
-msgstr "<0>注意：</0> <1>{ARCHIVE_EMAIL}</1> のアーキビストにリストをEメールで送る場合は、メッセージ欄にお名前とEメールアドレスをご記入ください。"
-
-#. Note to user about including name and email address
-#: src/components/ModalMyList/index.jsx:163
-#~ msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archive@rockarch.org</1>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up."
-#~ msgstr "<0>注意：</0> <1>archive@rockarch.org</1> のアーキビストにリストをEメールで送る場合は、メッセージ欄にお名前とEメールアドレスをご記入ください。"
+#: src/components/ModalMyList/index.jsx:160
+msgid "<0>Please note:</0> if you are emailing your list to an archivist at <1>{ARCHIVE_EMAIL}</1>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up."
+msgstr "<0>注意：</0> <1>{ARCHIVE_EMAIL}</1> のアーキビストにリストをEメールで送る場合は、メッセージ欄にお名前とEメールアドレスをご記入ください。ご記入がない場合、こちらからご連絡することができません。"
 
 #. Submit Request title
-#: src/components/ModalMyList/index.jsx:518
+#: src/components/ModalMyList/index.jsx:499
 msgid "<0>Submit request</0>"
 msgstr "<0>リクエストを送信</0>"
 
 #. summary message
-#: src/components/PageAgent/index.jsx:273
+#: src/components/PageAgent/index.jsx:281
 msgid "<0>Summary</0>"
 msgstr "<0>概要</0>"
 
 #. The introduction for minimaps.
 #: src/components/ModalMinimap/index.jsx:14
-#~ msgid "<0>The minimap is a new feature that allows you to quickly jump to search matches in a collection by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
-#~ msgstr "<0>ミニマップは、アクティブな四角をクリックすることで、コレクション内の検索マッチにすばやくジャンプできる新機能です。</0><1>ミニマップ図では、各マスがコレクションの一部を表しています。色のついた四角は、検索に1つ以上マッチする部分を表しています。</1>"
-
-#. The introduction for minimaps.
-#: src/components/ModalMinimap/index.jsx:14
 msgid "<0>The minimap is a new feature that allows you to quickly jump to search matches in a collection by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Interactive squares represent parts that contain one or more matches for your search.</1>"
-msgstr ""
+msgstr "<0>ミニマップは、アクティブな四角形をクリックして、コレクション内の検索に一致する箇所にすばやくジャンプできる新機能です。</0><1>ミニマップ図では、各四角形がこのコレクションの一部を表しています。操作可能な四角形は、検索に一致する箇所が1つ以上含まれる部分を表しています。</1>"
 
 #. Message for showing an error for a request
 #. placeholder {0}: err.config.url
@@ -314,21 +279,10 @@ msgstr "<0>リクエストの送信にエラーが発生しました。</0><1>{0
 msgid "<0>View Online<1/></0>"
 msgstr "<0>オンラインで見る<1/></0>"
 
-#. Buttons for online records
-#. placeholder {0}: props.item.files[0].download && <> <a className='btn btn--sm btn--orange btn--detail mr-10 mb-10 p-8' href={props.item.files[0].download} target='_blank' rel='noopener noreferrer' >Download<span className='visually-hidden'> ({t({ comment: 'Screen reader text for opening an online item', message: 'opens in a new window' })})</span> <MaterialIcon icon='get_app' className='material-icon--space-before' /></a> { props.downloadSize ? <p className='panel__text'>{`Acrobat PDF, ${props.downloadSize}`}</p> : <p className='panel__text'><Skeleton/></p> } </>
-#: src/components/RecordsDetail/index.jsx:198
-#~ msgid "<0>View Online<1/></0>{0}"
-#~ msgstr "<0>オンラインで見る<1/></0>"
-
 #. Limitations and fees information
-#: src/components/ModalMyList/index.jsx:490
+#: src/components/ModalMyList/index.jsx:471
 msgid "<0>We limit users to <1>10 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>{ARCHIVE_EMAIL}</7>.</6>"
-msgstr "<0><1>年間10件までと</1>させていただきます。</0><2>参照用PDFには料金はかかりません。出版物品質のスキャンには、<3>1点につき一律25ドルの料金が</3>かかります。</2><4>視聴覚資料や特大資料の例外を含む詳細については、<5>複製サービスについてを</5>お読みください。</4><6>出版物品質のスキャンをご希望の方は、<7>{ARCHIVE_EMAIL}。</7></6>"
-
-#. Limitations and fees information
-#: src/components/ModalMyList/index.jsx:486
-#~ msgid "<0>We limit users to <1>10 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
-#~ msgstr "<0><1>年間10件までと</1>させていただきます。</0><2>参照用PDFには料金はかかりません。出版物品質のスキャンには、<3>1点につき一律25ドルの料金が</3>かかります。</2><4>視聴覚資料や特大資料の例外を含む詳細については、<5>複製サービスについてを</5>お読みください。</4><6>出版物品質のスキャンをご希望の方は、<7>archive@rockarch.org。</7></6>"
+msgstr "<0>ご依頼は、お一人様<1>年間10件まで</1>とさせていただきます。</0><2>参照用PDFには料金はかかりません。出版物品質のスキャンには、<3>1点につき一律25ドルの料金が</3>かかります。</2><4>視聴覚資料や特大資料の例外を含む詳細については、<5>複製サービスについてを</5>お読みください。</4><6>サポートが必要な場合や、出版物品質のスキャンをご希望の場合は、<7>{ARCHIVE_EMAIL}</7>までEメールでアーキビストにお問い合わせください。</6>"
 
 #. Full Company Address
 #: src/components/Footer/index.jsx:23
@@ -336,7 +290,7 @@ msgid "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 msgstr "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 
 #. helptext for RAC staff message
-#: src/components/ModalMyList/index.jsx:434
+#: src/components/ModalMyList/index.jsx:415
 msgid "255 characters maximum"
 msgstr "最大255文字"
 
@@ -348,12 +302,12 @@ msgstr "ミニマップについて"
 #. Record detail section title
 #: src/components/RecordsDetail/index.jsx:289
 msgid "Access"
-msgstr ""
+msgstr "アクセス"
 
 #. Record detail accordion heading
 #: src/components/RecordsDetail/index.jsx:285
 msgid "Access and Use"
-msgstr ""
+msgstr "アクセスと利用"
 
 #. Accessibility Statement message
 #: src/components/PrimaryLink/index.jsx:41
@@ -383,7 +337,7 @@ msgstr "メッセージに項目を追加する"
 #. Announced after removing all items from My List
 #: src/App.jsx:46
 msgid "All items removed from list"
-msgstr ""
+msgstr "リストからすべての項目を削除しました"
 
 #. Label for All Categories
 #: src/components/SearchForm/index.jsx:24
@@ -392,8 +346,8 @@ msgstr "すべてのタイプ"
 
 #. Missing email address error
 #. Modal Form Missing Email Address Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:150
-#: src/components/ModalMyList/index.jsx:171
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:151
+#: src/components/ModalMyList/index.jsx:169
 msgid "An email address is required."
 msgstr "有効なメールアドレスを入力してください."
 
@@ -401,11 +355,6 @@ msgstr "有効なメールアドレスを入力してください."
 #: src/components/ModalSearch/index.jsx:76
 msgid "apply dates"
 msgstr "適用期間"
-
-#. Company Email shown
-#: src/components/PrimaryLink/index.jsx:29
-#~ msgid "archive@rockarch.org"
-#~ msgstr "archive@rockarch.org"
 
 #. Confirmation to delete all items from list
 #: src/components/PageMyList/index.jsx:379
@@ -415,7 +364,7 @@ msgstr "リストからすべての項目を削除してもよろしいですか
 #. Label for back to search navigation
 #. Label for back to search navigation
 #. Label for new search navigation
-#: src/components/PageAgent/index.jsx:257
+#: src/components/PageAgent/index.jsx:265
 #: src/components/PageMyList/index.jsx:300
 #: src/components/RecordsDetail/index.jsx:166
 msgid "Back to search"
@@ -424,7 +373,7 @@ msgstr "検索に戻る"
 #. Record detail section title
 #: src/components/RecordsDetail/index.jsx:255
 msgid "Biographical/Historical Note"
-msgstr ""
+msgstr "伝記/沿革"
 
 #. Bulk Data Download message
 #: src/components/SecondaryLink/index.jsx:22
@@ -442,9 +391,9 @@ msgstr "リクエストを完了できない"
 #. Test Cancel Button Label
 #: src/components/Form/__tests__/Form.test.jsx:14
 #: src/components/Form/index.jsx:75
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:119
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:185
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:237
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:120
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:186
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:238
 #: src/components/PageMyList/index.jsx:390
 msgid "Cancel"
 msgstr "キャンセル"
@@ -457,7 +406,7 @@ msgstr "検索カテゴリーを選択する"
 #: src/components/ModalConfirm/index.jsx:15
 #: src/components/ModalMinimap/index.jsx:37
 #: src/components/ModalMinimap/index.jsx:66
-#: src/components/ModalMyList/index.jsx:113
+#: src/components/ModalMyList/index.jsx:111
 msgid "Close"
 msgstr "閉じる"
 
@@ -486,7 +435,7 @@ msgstr "コレクション詳細"
 #. Label for collection page context switcher controls
 #: src/components/PageRecords/index.jsx:220
 msgid "Collection page"
-msgstr ""
+msgstr "コレクションページ"
 
 #. Label for Collections category
 #: src/components/SearchForm/index.jsx:31
@@ -521,17 +470,17 @@ msgstr "作成者"
 #. Record detail section title
 #: src/components/RecordsDetail/index.jsx:230
 msgid "Creators"
-msgstr ""
+msgstr "作成者"
 
 #. Message shown for downloading high-res images in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:171
+#: src/components/PageDigitalObject/index.jsx:169
 msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "現在のページ - JPEG2000 {pixelDimensions}"
 
 #. Record detail section title
 #: src/components/RecordsDetail/index.jsx:275
 msgid "Custodial History"
-msgstr ""
+msgstr "保管履歴"
 
 #. title for Date Range
 #: src/components/ModalSearch/index.jsx:57
@@ -541,7 +490,7 @@ msgstr "期間"
 #. Record detail section title
 #: src/components/RecordsDetail/index.jsx:234
 msgid "Dates"
-msgstr ""
+msgstr "日付"
 
 #. Record detail section title
 #: src/components/RecordsDetail/index.jsx:251
@@ -579,22 +528,17 @@ msgstr ".csv 形式でダウンロード"
 #. Announced when the My List CSV download has finished
 #: src/components/PageMyList/index.jsx:76
 msgid "Download complete"
-msgstr ""
+msgstr "ダウンロードが完了しました"
 
 #. Company Email
 #: src/components/Footer/index.jsx:36
 msgid "E-mail: <0/>"
 msgstr "Eメール<0/>"
 
-#. Name of email form
-#: src/components/ModalMyList/index.jsx:217
-msgid "email"
-msgstr "メールアドレス"
-
 #. Email Modal Form Test
 #. Label of Email Form
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:103
-#: src/components/ModalMyList/index.jsx:213
+#: src/components/ModalMyList/index.jsx:208
 msgid "Email"
 msgstr "メールアドレス"
 
@@ -602,10 +546,10 @@ msgstr "メールアドレス"
 #. Email list label
 #. Title of the modal for emailing the list
 #: src/components/Dropdown/index.jsx:144
-#: src/components/ModalMyList/index.jsx:149
+#: src/components/ModalMyList/index.jsx:147
 #: src/components/MyListExportActions/index.jsx:9
 msgid "Email List"
-msgstr "メールリスト"
+msgstr "リストをメールで送信"
 
 #. Title displayed after emailing selected items
 #: src/components/PageMyList/index.jsx:158
@@ -615,7 +559,7 @@ msgstr "送信されたメール"
 #. Label for the end year input
 #: src/components/ModalSearch/index.jsx:70
 msgid "End Year"
-msgstr "年末"
+msgstr "終了年"
 
 #. Label for search textbox
 #: src/components/SearchForm/index.jsx:59
@@ -623,22 +567,17 @@ msgid "Enter a search term"
 msgstr "検索語を入力"
 
 #. Helptext for scheduling date.
-#: src/components/ModalMyList/index.jsx:331
-#~ msgid "Enter the date of your research visit (mm/dd/yyyy)"
-#~ msgstr "研究訪問の日付（mm/dd/yyyy）を入力してください。"
-
-#. Helptext for scheduling date.
-#: src/components/ModalMyList/index.jsx:331
+#: src/components/ModalMyList/index.jsx:312
 msgid "Enter the date of your research visit (yyyy-mm-dd)"
 msgstr "研究訪問の日付（yyyy-mm-dd）を入力してください。"
 
 #. Message shown for downloading PDF in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:155
+#: src/components/PageDigitalObject/index.jsx:154
 msgid "Entire Item - PDF"
 msgstr "アイテム全体 - PDF"
 
 #. Page Backend Error title
-#: src/components/PageBackendError/index.jsx:10
+#: src/components/PageBackendError/index.jsx:13
 msgid "Error"
 msgstr "エラー"
 
@@ -651,7 +590,7 @@ msgstr "リクエスト送信エラー"
 #. Record detail section title
 #: src/components/RecordsDetail/index.jsx:298
 msgid "Existence and Location of Copies"
-msgstr ""
+msgstr "複製の存在と所在"
 
 #. Company Fax
 #: src/components/Footer/index.jsx:33
@@ -684,147 +623,54 @@ msgid "Found in:"
 msgstr "右資料内："
 
 #. Founded by property
-#: src/components/PageAgent/index.jsx:206
+#: src/components/PageAgent/index.jsx:214
 msgid "Founded by"
 msgstr "設立者"
 
 #. Site map link to home page
 #: src/components/PageSiteMap/index.jsx:21
 msgid "Home"
-msgstr ""
+msgstr "ホーム"
 
 #. How to Access materials message
 #: src/components/PrimaryLink/index.jsx:14
 msgid "How to access and request materials."
 msgstr "資料の入手・請求方法."
 
-#. Footer.Primary.RAC.href
-#: src/components/PrimaryLink/index.jsx:72
-#~ msgid "https://docs.rockarch.org"
-#~ msgstr "https://docs.rockarch.org"
-
-#. Licensing link
-#: src/components/SecondaryLink/index.jsx:37
-#~ msgid "https://docs.rockarch.org/archival-description-license/"
-#~ msgstr "https://docs.rockarch.org/archival-description-license/"
-
-#. Collections data API link
-#: src/components/SecondaryLink/index.jsx:11
-#~ msgid "https://docs.rockarch.org/argo-docs/"
-#~ msgstr "https://docs.rockarch.org/argo-docs/"
-
-#. Take-down Policy link
-#: src/components/SecondaryLink/index.jsx:50
-#~ msgid "https://docs.rockarch.org/takedown-policy/"
-#~ msgstr "https://docs.rockarch.org/takedown-policy/"
-
-#. Bulk Data Download link
-#: src/components/SecondaryLink/index.jsx:24
-#~ msgid "https://github.com/RockefellerArchiveCenter/data/"
-#~ msgstr "https://github.com/RockefellerArchiveCenter/data/"
-
-#. Link used for sign-in within Dropdown list
-#. Link used for sign-in within the Header
-#: src/components/Dropdown/index.jsx:179
-#: src/components/Header/index.jsx:23
-#~ msgid "https://raccess.rockarch.org"
-#~ msgstr "https://raccess.rockarch.org"
-
-#. Aeon access point
-#: src/components/PageMyList/index.jsx:116
-#~ msgid "https://raccess.rockarch.org/aeon.dll"
-#~ msgstr "https://raccess.rockarch.org/aeon.dll"
-
-#. Scheduling an appointment email link
-#: src/components/MyListSidebar/index.jsx:11
-#~ msgid "https://raccess.rockarch.org/aeon.dll?Action=10&Form=94"
-#~ msgstr "https://raccess.rockarch.org/aeon.dll?Action=10&Form=94"
-
-#. Accessibility Statement Link
-#: src/components/PrimaryLink/index.jsx:46
-#~ msgid "https://rockarch.org/about-us/accessibility/"
-#~ msgstr "https://rockarch.org/about-us/accessibility/"
-
-#. Privacy Policy link
-#: src/components/PrimaryLink/index.jsx:59
-#~ msgid "https://rockarch.org/about-us/privacy-policy/"
-#~ msgstr "https://rockarch.org/about-us/privacy-policy/"
-
-#. Access Materials link
-#: src/components/PrimaryLink/index.jsx:13
-#~ msgid "https://rockarch.org/collections/access-and-request-materials/"
-#~ msgstr "https://rockarch.org/collections/access-and-request-materials/"
-
-#. Link for duplication request services
-#: src/components/ModalMyList/index.jsx:501
-#~ msgid "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
-#~ msgstr "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
-
-#. Holiday Schedule link
-#: src/components/PrimaryLink/index.jsx:33
-#~ msgid "https://rockarch.org/collections/access-and-request-materials/holiday-schedule"
-#~ msgstr "https://rockarch.org/collections/access-and-request-materials/holiday-schedule"
-
-#. Facebook account link
-#: src/components/SocialIcons/index.jsx:8
-#~ msgid "https://www.facebook.com/RockefellerArchiveCenter"
-#~ msgstr "https://www.facebook.com/RockefellerArchiveCenter"
-
-#. Instagram account link
-#: src/components/SocialIcons/index.jsx:19
-#~ msgid "https://www.instagram.com/rockefellerarchivecenter"
-#~ msgstr "https://www.instagram.com/rockefellerarchivecenter"
-
-#. LinkedIn account link
-#: src/components/SocialIcons/index.jsx:30
-#~ msgid "https://www.linkedin.com/company/rockefeller-archive-center"
-#~ msgstr "https://www.linkedin.com/company/rockefeller-archive-center"
-
-#. Youtube account link
-#: src/components/SocialIcons/index.jsx:42
-#~ msgid "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
-#~ msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
-
 #. Label for duplication request form
-#: src/components/ModalMyList/index.jsx:561
+#: src/components/ModalMyList/index.jsx:542
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its volume or physical condition."
 msgstr "私は、私の研究に最も関連する資料を特定するために、アーキビストと協力する必要がある場合があること、また、資料の範囲や物理的な状態により、デジタル化できない場合があることを理解しています。"
 
 #. Record detail section title
 #: src/components/RecordsDetail/index.jsx:272
 msgid "Immediate Source of Acquisition"
-msgstr ""
+msgstr "直接の入手元"
 
 #. Invalid email error
-#: src/components/ModalMyList/index.jsx:178
+#: src/components/ModalMyList/index.jsx:176
 msgid "Invalid email address provided."
 msgstr "無効な電子メール アドレスが指定されました。"
 
 #. Announced after adding an item to My List
 #: src/App.jsx:61
 msgid "Item added to list"
-msgstr ""
+msgstr "リストに項目を追加しました"
 
 #. Announced after removing an item from My List
 #: src/App.jsx:57
 msgid "Item removed from list"
-msgstr ""
-
-#. Name of items error message
-#: src/components/ModalMyList/index.jsx:31
-#: src/components/ModalMyList/index.jsx:206
-msgid "items"
-msgstr "アイテム"
+msgstr "リストから項目を削除しました"
 
 #. Accessible label for the pagination button that skips back several pages
 #: src/components/Pagination/index.jsx:27
-msgid "Jump backward"
-msgstr ""
+msgid "Jump backward several pages"
+msgstr "数ページ戻る"
 
 #. Accessible label for the pagination button that skips ahead several pages
 #: src/components/Pagination/index.jsx:23
-msgid "Jump forward"
-msgstr ""
+msgid "Jump forward several pages"
+msgstr "数ページ進む"
 
 #. Message displayed to jump to specific section within minimap
 #. placeholder {0}: areaHits.length
@@ -844,42 +690,29 @@ msgid "Licensing for descriptive metadata"
 msgstr "記述的メタデータのライセンス"
 
 #. Location property
-#: src/components/PageAgent/index.jsx:207
+#: src/components/PageAgent/index.jsx:215
 msgid "Location of Headquarters"
 msgstr "所在地"
-
-#. Company Email link
-#: src/components/ModalMyList/index.jsx:164
-#: src/components/ModalMyList/index.jsx:510
-#: src/components/PageBackendError/index.jsx:21
-#: src/components/PrimaryLink/index.jsx:25
-#~ msgid "mailto:archive@rockarch.org"
-#~ msgstr "mailto:archive@rockarch.org"
 
 #. Label for main site navigation
 #: src/components/Header/index.jsx:21
 msgid "Main"
-msgstr ""
+msgstr "メイン"
 
 #: src/components/Dropdown/index.jsx:172
 msgid "Menu"
-msgstr ""
-
-#. Name of message form
-#: src/components/ModalMyList/index.jsx:241
-msgid "message"
-msgstr "メッセージ"
+msgstr "メニュー"
 
 #. Label of Message Form
 #. Message Modal Form Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:111
-#: src/components/ModalMyList/index.jsx:237
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:112
+#: src/components/ModalMyList/index.jsx:227
 msgid "Message"
 msgstr "メッセージ"
 
 #. Label for RAC staff message Form
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:178
-#: src/components/ModalMyList/index.jsx:430
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:179
+#: src/components/ModalMyList/index.jsx:411
 msgid "Message for RAC staff"
 msgstr "RACスタッフへのメッセージ"
 
@@ -911,17 +744,17 @@ msgstr "マイリスト"
 #. Accessible label for the next page pagination button
 #: src/components/Pagination/index.jsx:16
 msgid "Next page"
-msgstr ""
+msgstr "次のページ"
 
 #. Nicknames property
-#: src/components/PageAgent/index.jsx:208
+#: src/components/PageAgent/index.jsx:216
 msgid "Nicknames"
 msgstr "ニックネーム"
 
 #. No selected items error
-#: src/components/ModalMyList/index.jsx:187
-#: src/components/ModalMyList/index.jsx:403
-#: src/components/ModalMyList/index.jsx:535
+#: src/components/ModalMyList/index.jsx:185
+#: src/components/ModalMyList/index.jsx:384
+#: src/components/ModalMyList/index.jsx:516
 msgid "No items have been selected to submit."
 msgstr "提出するアイテムが選択されていない。"
 
@@ -944,7 +777,7 @@ msgid "No search query entered"
 msgstr "検索クエリが入力されていません"
 
 #. Occupations property
-#: src/components/PageAgent/index.jsx:203
+#: src/components/PageAgent/index.jsx:211
 msgid "Occupations"
 msgstr "職業"
 
@@ -956,18 +789,13 @@ msgstr "ロックフェラー・アーカイブ・センターのオンライン
 #. Aria label for opening the date and time picker
 #: src/components/Inputs/index.jsx:49
 msgid "Open date and time picker"
-msgstr ""
-
-#. Tooltip for button
-#: src/components/Dropdown/index.jsx:115
-#~ msgid "opens email"
-#~ msgstr "メールを開く"
+msgstr "日付と時刻の選択画面を開く"
 
 #. Screen reader text for duplication services link
 #. Screen reader text for links that open in a new window
 #. Screen reader text for opening an online item
 #: src/components/Dropdown/index.jsx:71
-#: src/components/ModalMyList/index.jsx:512
+#: src/components/ModalMyList/index.jsx:493
 #: src/components/RecordsDetail/index.jsx:209
 msgid "opens in a new window"
 msgstr "新しいウィンドウで開きます"
@@ -990,7 +818,7 @@ msgstr "ページが見つかりません"
 #. Label for People category
 #: src/components/SearchForm/index.jsx:38
 msgid "People"
-msgstr "人数"
+msgstr "人物"
 
 #. Search result category label
 #: src/components/Card/index.jsx:14
@@ -1003,7 +831,7 @@ msgid "Phone: (914) 366-6300"
 msgstr "電話： (914) 366-6300"
 
 #. Place of birth property
-#: src/components/PageAgent/index.jsx:205
+#: src/components/PageAgent/index.jsx:213
 msgid "Place of Birth"
 msgstr "出生地"
 
@@ -1014,40 +842,40 @@ msgstr "検索する語句を追加してください。"
 
 #. Captcha not completed error
 #. Modal Form Missing Field Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:146
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:211
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:263
-#: src/components/ModalMyList/index.jsx:183
-#: src/components/ModalMyList/index.jsx:400
-#: src/components/ModalMyList/index.jsx:528
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:147
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:212
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:264
+#: src/components/ModalMyList/index.jsx:181
+#: src/components/ModalMyList/index.jsx:381
+#: src/components/ModalMyList/index.jsx:509
 msgid "Please complete this field."
 msgstr "この欄にご記入ください。"
 
 #. placeholder {0}: import.meta.env.VITE_DUPLICATION_REQUEST_LIMIT
-#: src/components/ModalMyList/index.jsx:538
+#: src/components/ModalMyList/index.jsx:519
 msgid "Please limit your request to {0} items."
 msgstr "リクエストは{0}アイテムに限定してください。"
 
 #. Missing Scheduled Date error
-#: src/components/ModalMyList/index.jsx:393
+#: src/components/ModalMyList/index.jsx:374
 msgid "Please provide the date of your research visit."
 msgstr "研究訪問の日付をご記入ください。"
 
-#: src/components/ModalMyList/index.jsx:397
+#: src/components/ModalMyList/index.jsx:378
 msgid "Please select a location of a reading room."
 msgstr "閲覧室の場所を選択してください。"
 
-#: src/components/ModalMyList/index.jsx:291
+#: src/components/ModalMyList/index.jsx:272
 msgid "Please select a reading room"
 msgstr "閲覧室を選択してください"
 
 #. Positions held property
-#: src/components/PageAgent/index.jsx:204
+#: src/components/PageAgent/index.jsx:212
 msgid "Positions Held"
 msgstr "役職"
 
 #. Message while MyList modal loads items
-#: src/components/ModalMyList/index.jsx:141
+#: src/components/ModalMyList/index.jsx:139
 msgid "Preparing items"
 msgstr "アイテムの準備"
 
@@ -1064,7 +892,7 @@ msgstr "リクエストデータの準備"
 #. Accessible label for the previous page pagination button
 #: src/components/Pagination/index.jsx:10
 msgid "Previous page"
-msgstr ""
+msgstr "前のページ"
 
 #. Privacy Policy message
 #: src/components/PrimaryLink/index.jsx:51
@@ -1074,7 +902,7 @@ msgstr "プライバシーポリシー"
 #. Record detail section title
 #: src/components/RecordsDetail/index.jsx:267
 msgid "Processing Information"
-msgstr ""
+msgstr "整理情報"
 
 #. Footer.Primary.RAC.message
 #: src/components/PrimaryLink/index.jsx:61
@@ -1086,23 +914,15 @@ msgstr "RACポリシー"
 msgid "Reading Room Hours:"
 msgstr "閲覧室の開室時間:"
 
-#. Name of recaptcha element
-#. Name of recaptcha error message
-#: src/components/ModalMyList/index.jsx:250
-#: src/components/ModalMyList/index.jsx:257
-#: src/components/ModalMyList/index.jsx:575
-msgid "recaptcha"
-msgstr "リキャプチャ"
-
 #. Site map heading for links to related websites
 #: src/components/PageSiteMap/index.jsx:25
 msgid "Related sites"
-msgstr ""
+msgstr "関連サイト"
 
 #. Record detail accordion heading
 #: src/components/RecordsDetail/index.jsx:306
 msgid "Related Terms"
-msgstr ""
+msgstr "関連用語"
 
 #. Button that confirms removing all items from the list
 #. Label to remove saved item
@@ -1128,11 +948,11 @@ msgstr "リストから除去"
 #. Record detail section title
 #: src/components/RecordsDetail/index.jsx:292
 msgid "Reproduction and Duplication"
-msgstr ""
+msgstr "複製および複写"
 
 #. Request items Modal Form Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:181
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:234
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:182
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:235
 msgid "Request 4 Items"
 msgstr "リクエスト 4 アイテム"
 
@@ -1140,7 +960,7 @@ msgstr "リクエスト 4 アイテム"
 #. Request copies button in Sidebar
 #. Title of the modal for requesting copies of items
 #: src/components/Dropdown/index.jsx:136
-#: src/components/ModalMyList/index.jsx:475
+#: src/components/ModalMyList/index.jsx:456
 #: src/components/MyListSidebar/index.jsx:27
 msgid "Request Copies"
 msgstr "コピーのリクエスト"
@@ -1149,7 +969,7 @@ msgstr "コピーのリクエスト"
 #. Request in Reading Room button in Sidebar
 #. Title of the modal for requesting items in the reading room
 #: src/components/Dropdown/index.jsx:128
-#: src/components/ModalMyList/index.jsx:379
+#: src/components/ModalMyList/index.jsx:360
 #: src/components/MyListSidebar/index.jsx:19
 msgid "Request in Reading Room"
 msgstr "閲覧室でのリクエスト"
@@ -1180,8 +1000,8 @@ msgstr "来館予約"
 
 #. Label for scheduling date
 #. Scheduled Date Modal Form Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:174
-#: src/components/ModalMyList/index.jsx:337
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:175
+#: src/components/ModalMyList/index.jsx:318
 msgid "Scheduled Date"
 msgstr "予定日"
 
@@ -1241,7 +1061,7 @@ msgstr "休日スケジュール"
 msgid "Select all items"
 msgstr "すべてのアイテムを選択"
 
-#: src/components/ModalMyList/index.jsx:305
+#: src/components/ModalMyList/index.jsx:286
 msgid "Select Reading Room Location"
 msgstr "読書室の場所を選択"
 
@@ -1263,35 +1083,20 @@ msgstr "選択済み: 0 件"
 
 #. Modal Form Submit Test
 #. Send List sumbit message
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:115
-#: src/components/ModalMyList/index.jsx:265
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:116
+#: src/components/ModalMyList/index.jsx:246
 msgid "Send List"
 msgstr "リストの送信"
 
 #. Page Title for sending an email
 #: src/components/PageMyList/index.jsx:148
 msgid "Sending Email"
-msgstr "このテキストは、送信メールの末尾に配置されます"
-
-#. Message shown when list is closed
-#: src/components/Facet/index.jsx:25
-#~ msgid "show all"
-#~ msgstr "すべて表示"
+msgstr "メールを送信中"
 
 #. Message shown when list is closed
 #: src/components/Facet/index.jsx:21
 msgid "Show all"
 msgstr "すべて表示"
-
-#. Aria label for Show|Hide More Button
-#: src/components/Facet/index.jsx:11
-#~ msgid "Show all values"
-#~ msgstr "すべての値を表示"
-
-#. Message shown when list is opened
-#: src/components/Facet/index.jsx:20
-#~ msgid "show less"
-#~ msgstr "閉じる"
 
 #. Message shown when list is opened
 #: src/components/Facet/index.jsx:17
@@ -1319,7 +1124,7 @@ msgstr "RACcessにサインイン"
 #: src/components/PageSiteMap/index.jsx:16
 #: src/components/SecondaryLink/index.jsx:52
 msgid "Site map"
-msgstr ""
+msgstr "サイトマップ"
 
 #. Panel Extent Size message
 #: src/components/RecordsDetail/index.jsx:42
@@ -1332,7 +1137,7 @@ msgid "Skip to main content"
 msgstr "コンテンツへスキップ"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:187
+#: src/components/PageAgent/index.jsx:195
 msgid "Social Networks and Archival Context"
 msgstr "社会的ネットワークとアーカイブの文脈"
 
@@ -1351,11 +1156,6 @@ msgstr "リクエストされたページは見つかりませんでした！"
 msgid "Sorry, there are no search results for “{query}”"
 msgstr "申し訳ありませんが、“{query}”の検索結果はありません"
 
-#. Name for sort results input
-#: src/components/PageSearch/index.jsx:280
-msgid "sort"
-msgstr "ソート"
-
 #. Sort by creator name label
 #: src/components/PageSearch/index.jsx:76
 msgid "Sort by creator name"
@@ -1372,7 +1172,7 @@ msgid "Sort by title"
 msgstr "タイトル順"
 
 #. Label for sort results input
-#: src/components/PageSearch/index.jsx:285
+#: src/components/PageSearch/index.jsx:282
 msgid "Sort search results"
 msgstr "検索結果の並べ替え"
 
@@ -1381,24 +1181,24 @@ msgstr "検索結果の並べ替え"
 msgid "Start Year"
 msgstr "開始年"
 
-#. Name of subject form
-#: src/components/ModalMyList/index.jsx:231
-msgid "subject"
-msgstr "件名"
-
 #. Label of Subject Form
 #. Subject Modal Form Test
-#. Title for Subject filter
 #: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:107
-#: src/components/ModalMyList/index.jsx:227
+#: src/components/ModalMyList/index.jsx:219
+msgctxt "email subject line"
+msgid "Subject"
+msgstr "件名"
+
+#. Title for Subject filter
 #: src/components/ModalSearch/index.jsx:95
+msgctxt "topic"
 msgid "Subject"
 msgstr "件名"
 
 #. Record detail section title
 #: src/components/RecordsDetail/index.jsx:310
 msgid "Subjects"
-msgstr ""
+msgstr "件名"
 
 #. Aria Label for search submission button
 #: src/components/SearchForm/index.jsx:83
@@ -1418,7 +1218,7 @@ msgstr "テイクダウン・ポリシー"
 #. Record detail section title
 #: src/components/RecordsDetail/index.jsx:295
 msgid "Technical Access"
-msgstr ""
+msgstr "技術的アクセス"
 
 #. Subtitle displayed within the Header
 #: src/components/Header/index.jsx:16
@@ -1442,18 +1242,18 @@ msgid "View Online"
 msgstr "オンラインで見る"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:185
+#: src/components/PageAgent/index.jsx:193
 msgid "Virtual International Authority File"
 msgstr "仮想国際機関ファイル"
 
 #. Costs not agreed to error
 #. Payment Modal Form Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:266
-#: src/components/ModalMyList/index.jsx:531
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:267
+#: src/components/ModalMyList/index.jsx:512
 msgid "We cannot process your request unless you agree to pay the costs of reproduction."
 msgstr "お客様が複製費用の支払いに同意されない限り、当社はお客様のご依頼を処理することはできません。"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:186
+#: src/components/PageAgent/index.jsx:194
 msgid "WorldCat Identities"
 msgstr "WorldCat Identities"

@@ -65,9 +65,17 @@ const AgentSidebar = ({ agentType, externalIdentifiers }) => {
   return (
   externalIdentifiers.length ?
   (<div className='agent__sidebar'>
-    <Trans comment='Agent Sidebar Header'>
-      <h2 className='agent__section-title heading--dotted-border pb-12'>More about this {agentType}</h2>
-    </Trans>
+    <h2 className='agent__section-title heading--dotted-border pb-12'>
+      {t({
+        comment: 'Agent Sidebar Header',
+        message: select(agentType, {
+          person: 'More about this person',
+          organization: 'More about this organization',
+          family: 'More about this family',
+          other: 'More about this agent'
+        })
+      })}
+    </h2>
     <ul className='list--unstyled'>{linkList}</ul>
   </div>) : (null)
 )}

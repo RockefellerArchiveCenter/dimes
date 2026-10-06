@@ -92,7 +92,7 @@ export const FacetModal = props => {
           items={props.data.subject}
           paramKey='subject'
           params={toArray(props.params.subject)}
-          title={t({ comment: 'Title for Subject filter', message: 'Subject' })} />
+          title={t({ comment: 'Title for Subject filter', context: 'topic', message: 'Subject' })} />
       </div>
     </Modal>
   )

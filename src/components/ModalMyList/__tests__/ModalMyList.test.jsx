@@ -106,6 +106,7 @@ it('renders email modal props correctly', async () => {
     }))
     expect(form.textContent).toContain(t({
       comment: 'Subject Modal Form Test',
+      context: 'email subject line',
       message: "Subject"
     }))
     expect(form.textContent).toContain(t({

@@ -277,10 +277,7 @@ const PageSearch = () => {
                     className='select__sort'
                     hideLabel
                     id='sort'
-                    name={t({
-                      comment: 'Name for sort results input',
-                      message: 'sort'
-                    })}
+                    name='sort'
                     onChange={({selectedItem}) => handleSortChange(selectedItem.value)}
                     label={t({
                       comment: 'Label for sort results input',
