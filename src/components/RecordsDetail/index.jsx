@@ -17,7 +17,7 @@ import QueryHighlighter from '../QueryHighlighter'
 import { t } from '@lingui/core/macro'
 import { Trans } from '@lingui/react/macro'
 import { DetailSkeleton, FoundInItemSkeleton } from '../LoadingSkeleton'
-import { buildHref, dateString, hasAccessOrUse, noteText, noteTextByType } from '../Helpers'
+import { buildHref, DESCR_LANG, dateString, hasAccessOrUse, noteText, noteTextByType } from '../Helpers'
 import { isItemSaved } from '../MyListHelpers'
 import './styles.scss'
 
@@ -25,7 +25,7 @@ const FoundInItem = ({ className, item, params, topLevel }) => (
   <>
     <li className={className}>
       <MaterialIcon icon={topLevel ? 'inventory2' : 'subdirectory_arrow_right'} />
-      <a className='found-in__link' href={buildHref(item.uri, params)}>{item.title}</a>
+      <a className='found-in__link' href={buildHref(item.uri, params)} lang={DESCR_LANG}>{item.title}</a>
     </li>
     {item.child ?
       (<FoundInItem
@@ -46,7 +46,7 @@ const PanelExtentSection = ({ extents }) => (
           arr.length - 1 === i ? pluralize(ext, e.value) : ext
         ))
         return (
-      <li key={index} className='panel__text'>{`${e.value} ${extentArray.join(' ')}`}</li>)})}
+      <li key={index} className='panel__text' lang={DESCR_LANG}>{`${e.value} ${extentArray.join(' ')}`}</li>)})}
     </ul>
   </div>) :
   (null)
@@ -63,9 +63,9 @@ const PanelFormatSection = ({ formats, notes }) => {
         <h3 className='panel__heading mt-10 mb-5'><Trans comment='Panel Format message'>Formats</Trans></h3>
         <ul className='panel__list--unstyled pl-0 mt-0'>
           {filteredFormatText.length ?
-            (<li className='panel__text'>{filteredFormatText.join('\n')}</li>) :
+            (<li className='panel__text' lang={DESCR_LANG}>{filteredFormatText.join('\n')}</li>) :
             (formats.map((format, index) => (
-              <li key={index} className='panel__text'>{format}</li>))
+              <li key={index} className='panel__text' lang={DESCR_LANG}>{format}</li>))
             )
           }
         </ul>
@@ -97,7 +97,7 @@ const PanelLinkedListSection = ({ listData, params, title }) =>  (
       <h3 className='panel__heading mt-10 mb-5'>{title}</h3>
       <ul className='panel__list--unstyled pl-0 mt-0'>
         {listData.map((item, index) => (
-        <li key={index} className='panel__text'><a href={buildHref(item.uri, params)}>{item.title}</a></li>))}
+        <li key={index} className='panel__text'><a href={buildHref(item.uri, params)} lang={DESCR_LANG}>{item.title}</a></li>))}
       </ul>
     </div>) :
     (null)
@@ -109,19 +109,20 @@ const PanelListSection = ({ listData, title }) =>  (
       <h3 className='panel__heading mt-10 mb-5'>{title}</h3>
       <ul className='panel__list--unstyled pl-0 mt-0'>
         {listData.map((item, index) => (
-        <li key={index} className='panel__text'>{item.title}</li>))}
+        <li key={index} className='panel__text' lang={DESCR_LANG}>{item.title}</li>))}
       </ul>
     </div>) :
     (null)
 )
 
-const PanelTextSection = ({ params, text, title }) => {
+/** Text is always API content. Pass titleLang when the heading comes from the API too. */
+const PanelTextSection = ({ params, text, title, titleLang }) => {
   const parsedQuery = params && params.query ? (params.query) : ('')
   return (
   text ?
     (<div className='mr-15'>
-      <h3 className='panel__heading mt-10 mb-5'>{title}</h3>
-      <p className='panel__text--narrative'>
+      <h3 className='panel__heading mt-10 mb-5' lang={titleLang}>{title}</h3>
+      <p className='panel__text--narrative' lang={DESCR_LANG}>
         <QueryHighlighter query={parsedQuery} text={text} />
       </p>
     </div>) :
@@ -170,7 +171,7 @@ const RecordsDetail = props => {
         </Trans>
       </a>
     </nav>
-    <h1 className='records__title'>{props.isItemLoading ? <Skeleton /> : props.item.title }</h1>
+    <h1 className='records__title' lang={DESCR_LANG}>{props.isItemLoading ? <Skeleton /> : props.item.title }</h1>
     {props.item.type === 'object' &&
       <>
       <ListToggleButton
@@ -258,6 +259,7 @@ const RecordsDetail = props => {
                 <PanelTextSection
                 params={props.params}
                 title={n.title}
+                titleLang={DESCR_LANG}
                 text={noteText(n)}
                 />
               ))}

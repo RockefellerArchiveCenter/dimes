@@ -3,6 +3,7 @@ import Button from '../Button'
 import { CheckBoxInput } from '../Inputs'
 import classnames from 'classnames'
 import { t } from '@lingui/core/macro'
+import { DESCR_LANG } from '../Helpers'
 import './styles.scss'
 
 const ShowHideMore = ({id, isOpen, title, toggleOpen}) => {
@@ -37,7 +38,7 @@ const FacetItem = ({ checked, count, handleChange, label, paramKey }) => {
         className='checkbox--blue'
         id={id}
         name={label}
-        label={`${label} (${count})`}
+        label={<><span lang={DESCR_LANG}>{label}</span> ({count})</>}
         checked={checked}
         handleChange={e => handleChange(e, paramKey)} />
     </div>

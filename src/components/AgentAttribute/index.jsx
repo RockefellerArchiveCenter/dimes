@@ -1,9 +1,11 @@
+import { DESCR_LANG } from '../Helpers'
 import './styles.scss'
 
+// Values come from the API or English Wikidata labels; labels are translated.
 const AgentAttribute = ({ label, value }) => (
   <div className='agent-attribute mb-40'>
     <dt className='agent-attribute__label m-0'>{label}</dt>
-    <dd className='agent-attribute__value ml-0'>{value}</dd>
+    <dd className='agent-attribute__value ml-0' lang={DESCR_LANG}>{value}</dd>
   </div>)
 
 const AgentAttributeList = ({ items }) => {

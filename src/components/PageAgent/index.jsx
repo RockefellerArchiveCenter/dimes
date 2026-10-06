@@ -11,7 +11,7 @@ import CardList from '../Card'
 import AgentAttributeList from '../AgentAttribute'
 import MaterialIcon from '../MaterialIcon'
 import '../Button/styles.scss'
-import { buildHref, withSiteTitle } from '../Helpers'
+import { buildHref, DESCR_LANG, withSiteTitle } from '../Helpers'
 import { usePageView } from '../Hooks'
 import './styles.scss'
 import { t, select } from '@lingui/core/macro'
@@ -23,7 +23,7 @@ const AgentNote = ({ source, text }) => (
     <Trans comment='Agent note Description'>
       <h3 className='agent-note__label m-0'>Description</h3>
     </Trans>
-    <p className='agent-note__value'>
+    <p className='agent-note__value' lang={DESCR_LANG}>
       {text}
     </p>
       <p className='agent-note__source'>
@@ -272,7 +272,7 @@ const PageAgent = () => {
           <main id='main' className="mt-60">
             <div className='agent__wrapper--description'>
               <div className='agent__main'>
-                <h1 className='agent__title mt-0 mb-30'>{ agent.title || <Skeleton />}</h1>
+                <h1 className='agent__title mt-0 mb-30' lang={DESCR_LANG}>{ agent.title || <Skeleton />}</h1>
                   <div>
                     {isAttributesLoading ?
                       (<AgentAttributeSkeleton />) :

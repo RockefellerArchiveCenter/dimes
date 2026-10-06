@@ -1,6 +1,9 @@
 import queryString from 'query-string'
 import { t, plural } from '@lingui/core/macro'
 
+/** Language of archival description returned by the API. */
+export const DESCR_LANG = 'en'
+
 /** Returns a string from a date object or string */
 export const dateString = dates => {
   return dates && typeof (dates) === 'string' ? dates : dates && dates.map(d => d.expression).join(', ')

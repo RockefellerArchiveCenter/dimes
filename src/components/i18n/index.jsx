@@ -25,6 +25,16 @@ i18n.load({
   zh: zhMessages,
 });
 
+// Keep <html lang> in sync with the active Lingui locale.
+export const syncDocumentLang = locale => {
+  if (typeof document === 'undefined' || !locale) return
+  document.documentElement.lang = locale
+}
+
+// Register before activating so the initial locale is applied and any
+// later i18n.activate() call updates it too.
+i18n.on('change', () => syncDocumentLang(i18n.locale))
+
 // Set language from browser.
 const DEFAULT_FALLBACK = () => "en";
 const MESSAGES_LOADED = Object.keys(i18n._messages)
@@ -33,6 +43,7 @@ if (!MESSAGES_LOADED.includes(result)) {
   result = DEFAULT_FALLBACK()
 }
 i18n.activate(result, '')
+syncDocumentLang(i18n.locale)
 
 export const I18nApp = ({ReactComponent}) => {
   return (

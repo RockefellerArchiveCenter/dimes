@@ -11,7 +11,7 @@ import { Badge } from '../Badge'
 import ListToggleButton from '../ListToggleButton'
 import MaterialIcon from '../MaterialIcon'
 import QueryHighlighter from '../QueryHighlighter'
-import { appendParams, buildHref, dateString, formatMatchString, truncateString} from '../Helpers'
+import { appendParams, buildHref, DESCR_LANG, dateString, formatMatchString, truncateString} from '../Helpers'
 import { useOnScreen } from '../Hooks'
 import { isItemSaved } from '../MyListHelpers'
 import { RecordsChildSkeleton } from '../LoadingSkeleton'
@@ -230,13 +230,14 @@ export const RecordsChild = props => {
            aria-current={targetElementLoaded ? 'page' : undefined}
            aria-describedby={item.hit_count ? `accordion__badges-${item.uri}` : undefined}
            href={buildHref(item.uri, params)}
+           lang={DESCR_LANG}
            onClick={e => {
              e.preventDefault()
              handleItemClick(item.uri)
            }}>
           <QueryHighlighter query={query} text={item.title} />
         </a>
-        {item.dates === item.title ? (null) : (<p className='child__text'>{item.dates}</p>)}
+        {item.dates === item.title ? (null) : (<p className='child__text' lang={DESCR_LANG}>{item.dates}</p>)}
       </div>
       <div className='child__buttons'>
         {item.online ? (
@@ -262,7 +263,7 @@ export const RecordsChild = props => {
           item={props.item}
           toggleSaved={toggleSaved} />
       </div>
-      <p className='child__text text--truncate'>
+      <p className='child__text text--truncate' lang={DESCR_LANG}>
         <QueryHighlighter query={query} text={truncateString(item.description, 200)} />
       </p>
       {item.hit_count ?
@@ -290,11 +291,11 @@ export const RecordsChild = props => {
               ariaDescribedBy={item.hit_count ? `accordion__badges-${item.uri}` : undefined}
               className={`child__title child__title--${item.type}`}
               onClick={() => handleCollectionClick(item.uri)} >
-            <QueryHighlighter query={query} text={item.title} />
+            <span lang={DESCR_LANG}><QueryHighlighter query={query} text={item.title} /></span>
           </AccordionItemButton>
         </AccordionItemHeading>
-        {item.title === item.dates ? (null) : (<p className='child__text'>{item.dates}</p>)}
-        <p className='child__text text--truncate'>
+        {item.title === item.dates ? (null) : (<p className='child__text' lang={DESCR_LANG}>{item.dates}</p>)}
+        <p className='child__text text--truncate' lang={DESCR_LANG}>
           <QueryHighlighter query={query} text={truncateString(item.description, 200)} />
         </p>
         {item.hit_count ?
@@ -389,9 +390,9 @@ const RecordsContent = props => {
             </Trans>
         </div>) : (null)}
       <h2 className='content__title mt-0 pb-0'><Trans comment='Collection Content title'>Collection Content</Trans></h2>
-      <h3 className='collection__title mb-0'>{collection.title}</h3>
-      <p className='collection__date'>{dateString(collection.dates)}</p>
-      <p className='collection__text text--truncate'>
+      <h3 className='collection__title mb-0' lang={DESCR_LANG}>{collection.title}</h3>
+      <p className='collection__date' lang={DESCR_LANG}>{dateString(collection.dates)}</p>
+      <p className='collection__text text--truncate' lang={DESCR_LANG}>
         {truncateString(collection.description, 180)}
       </p>
       <RecordsContentList
