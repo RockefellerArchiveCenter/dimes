@@ -12,12 +12,8 @@
 }
 
 .agent-attribute {
-  margin-bottom: 24px;
   min-width: 18%;
   flex-grow: 1;
-  @include abs.lg-up {
-    margin-bottom: 27px;
-  }
 }
 
 .agent-attribute__value, .agent-note__value {

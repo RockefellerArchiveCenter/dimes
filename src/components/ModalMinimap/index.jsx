@@ -8,25 +8,25 @@ import './styles.scss'
 const minimapAboutText = <Trans comment='The about section for minimaps.'>
   <p>Jump to a part of the collection containing matches by clicking on an active square.</p>
   <p>In the minimap diagram, each square represents part of this collection.
-  Colored squares represent parts that contain one or more matches for your search.</p>
+  Interactive squares represent parts that contain one or more matches for your search.</p>
 </Trans>
 
 const minimapIntroText = <Trans comment='The introduction for minimaps.'>
   <p>The minimap is a new feature that allows you to quickly jump to search matches in a
   collection by clicking on an active square.</p>
   <p>In the minimap diagram, each square represents part of this collection.
-  Colored squares represent parts that contain one or more matches for your search.</p>
+  Interactive squares represent parts that contain one or more matches for your search.</p>
 </Trans>
 
 export const ModalMinimapInfo = props => (
   <Modal
-    appElement={props.appElement ? props.appElement : Modal.setAppElement('#root')}
     isOpen={props.isOpen}
     onRequestClose={props.toggleModal}
+    aria={{ labelledby: 'modal-minimap-info-title' }}
     className='modal modal--minimap-info'
     overlayClassName='modal__overlay' >
     <div className='modal__header--minimap mt-14 mr-14'>
-      <h2 className='modal__header-title--minimap m-0 pt-5 pb-0 pl-24'>
+      <h2 id='modal-minimap-info-title' className='modal__header-title--minimap m-0 pt-5 pb-0 pl-24'>
         <Trans comment='Minimap header'>
           <Select
             value={props.hasSeenMinimapIntro}
@@ -48,9 +48,9 @@ export const ModalMinimapInfo = props => (
 
 export const ModalMinimap = props => (
   <Modal
-    appElement={props.appElement ? props.appElement : Modal.setAppElement('#root')}
     isOpen={props.isOpen}
     onRequestClose={props.toggleModal}
+    aria={{ labelledby: 'modal-minimap-title' }}
     className='modal modal--minimap-panel'
     overlayClassName={{
       base: 'modal__overlay slide--left',
@@ -58,7 +58,7 @@ export const ModalMinimap = props => (
       beforeClose: 'slide--left--before-close'
     }} >
     <div className='modal__header--minimap mt-14 mr-14'>
-      <h2 className='modal__header-title--minimap m-0 m-0 pt-5 pb-0 pl-24'>
+      <h2 id='modal-minimap-title' className='modal__header-title--minimap m-0 m-0 pt-5 pb-0 pl-24'>
         <Trans comment='Header for modal minimap'>
           Minimap
         </Trans>

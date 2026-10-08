@@ -8,10 +8,7 @@ const SecondaryLink = ({ href, text }) => (
 
 export const SecondaryLinkCollectionsAPI = () => (
 	<SecondaryLink
-		href={t({
-			comment: 'Collections data API link',
-			message: 'https://docs.rockarch.org/argo-docs/'
-		})}
+		href='https://docs.rockarch.org/argo-docs/'
 		text={t({
 			comment: 'Collections data API message',
 			message: 'Collections data API'
@@ -21,10 +18,7 @@ export const SecondaryLinkCollectionsAPI = () => (
 
 export const SecondaryLinkBulkData = () => (
 	<SecondaryLink
-		href={t({
-			comment: 'Bulk Data Download link',
-			message: 'https://github.com/RockefellerArchiveCenter/data/'
-		})}
+		href='https://github.com/RockefellerArchiveCenter/data/'
 		text={t({
 			comment: 'Bulk Data Download message',
 			message: 'Bulk data download'
@@ -34,10 +28,7 @@ export const SecondaryLinkBulkData = () => (
 
 export const SecondaryLinkLicensing = () => (
 	<SecondaryLink
-		href={t({
-			comment: 'Licensing link',
-			message: 'https://docs.rockarch.org/archival-description-license/'
-		})}
+		href='https://docs.rockarch.org/archival-description-license/'
 		text={t({
 			comment: 'Licensing message',
 			message: 'Licensing for descriptive metadata'
@@ -47,13 +38,20 @@ export const SecondaryLinkLicensing = () => (
 
 export const SecondaryLinkTakeDownPolicy = () => (
 	<SecondaryLink
-		href={t({
-			comment: 'Take-down Policy link',
-			message: 'https://docs.rockarch.org/takedown-policy/'
-		})}
+		href='https://docs.rockarch.org/takedown-policy/'
 		text={t({
 			comment: 'Take-down Policy message',
 			message: 'Take-down policy'
+		})}
+	/>
+)
+
+export const SecondaryLinkSiteMap = () => (
+	<SecondaryLink
+		href='/sitemap'
+		text={t({
+			comment: 'Site map message',
+			message: 'Site map'
 		})}
 	/>
 )

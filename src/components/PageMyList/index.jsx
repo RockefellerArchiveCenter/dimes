@@ -12,6 +12,7 @@
   import { fetchMyList } from '../MyListHelpers'
   import { withSiteTitle } from '../Helpers'
   import { usePageView } from '../Hooks'
+  import { announce } from '@react-aria/live-announcer'
   import { t } from '@lingui/core/macro'
   import { Trans } from '@lingui/react/macro'
   import './styles.scss'
@@ -72,6 +73,10 @@
           link.href = window.URL.createObjectURL(blob)
           link.download = `dimes-${new Date().toISOString()}.csv`
           link.click()
+          announce(t({
+            comment: 'Announced when the My List CSV download has finished',
+            message: 'Download complete'
+          }), 'polite')
         })
         .catch(err => setBackendError(err))
         .then(() => setIsDownloading(false));
@@ -87,9 +92,10 @@
     }
 
     /** Sets messages in confirm modal */
-    const handleConfirmData = (title, message) => {
+    const handleConfirmData = (title, message, shouldAnnounce = false) => {
       setConfirmModalTitle(title)
       setConfirmModalMessage(message)
+      shouldAnnounce && announce(title, 'polite')
     }
 
     /** Creates HTML input elements */
@@ -113,10 +119,7 @@
         .post(uri, submitted)
         .then(res => {
           const form = document.createElement('form')
-          form.action = t({
-            comment: 'Aeon access point',
-            message: 'https://raccess.rockarch.org/aeon.dll'
-          })
+          form.action = 'https://raccess.rockarch.org/aeon.dll'
           form.method = 'post'
           Object.keys(res.data).forEach(key => {
             if (Array.isArray(res.data[key])) {
@@ -136,7 +139,7 @@
               message: 'Error submitting request'
             })
           const message = <Trans comment='Message for showing an error for a request' ><p>There was an error submitting your request.</p><p>{`The request to ${err.config.url} failed with the message ${err.code}: ${err.message}.`}</p><p>{`${err.config.data}`}</p></Trans>
-          handleConfirmData(title, message);
+          handleConfirmData(title, message, true);
         })
     }
 
@@ -160,7 +163,7 @@
             comment: 'Message displayed after emailing selected items',
             message: `Selected items in your list have been emailed to ${submitted.email}`
           })}</p>
-          handleConfirmData(title, message);
+          handleConfirmData(title, message, true);
         })
         .catch(err => {
           const title = t({
@@ -171,7 +174,7 @@
             comment: 'Message displayed when error occurs while submitting request',
             message: `There was an error submitting your request. The error message was: ${err.toString()}`
           })
-          handleConfirmData(title, message);
+          handleConfirmData(title, message, true);
         })
     }
 
@@ -196,6 +199,7 @@
     /** Remove single item from list */
     const removeFromList = item => {
       toggleInList(item);
+      document.getElementById('mylist-title')?.focus()
       var filteredList = [];
       for (const group of savedList) {
         var newGroup = {...group}
@@ -293,7 +297,7 @@
     return (
       <>
         <div className='mylist grid container--full-width'>
-          <nav>
+          <nav aria-label={t({ comment: 'Label for new search navigation', message: 'Back to search' })}>
             <a href='/' className='btn btn--sm btn--gray btn--new-search mt-20 ml-30'>
               <Trans comment='New Search button' >
                 <MaterialIcon icon='keyboard_arrow_left' className='material-icon--space-after' />Start a New Search
@@ -302,7 +306,7 @@
           </nav>
           <main id='main' className='mt-60 ml-30'>
             <Trans comment="Header for user's list" >
-              <h1 className='mylist__title my-30 ml-15'>My List</h1>
+              <h1 id='mylist-title' tabIndex={-1} className='mylist__title my-30 ml-15'>My List</h1>
             </Trans>
             <MyListDropdown
               downloadCsv={downloadCsv}
@@ -310,6 +314,9 @@
               emailList={() => isRequestingAvailable ? setEmailModalOpen(true) : setRequestingUnavailableModalOpen(true)}
               readingRoomRequest={() => isRequestingAvailable ? setReadingRoomModalOpen(true) : setRequestingUnavailableModalOpen(true)}
               removeAllItems={() => setConfirmDeleteAllModalOpen(true)} />
+          <MyListSidebar
+              duplicationRequest={() => isRequestingAvailable ? setDuplicationModalOpen(true) : setRequestingUnavailableModalOpen(true)}
+              readingRoomRequest={() => isRequestingAvailable ? setReadingRoomModalOpen(true) : setRequestingUnavailableModalOpen(true)} />
           <MyListExportActions
               confirmDeleteAll={() => setConfirmDeleteAllModalOpen(true)}
               downloadCsv={downloadCsv}
@@ -320,9 +327,6 @@
             isLoading={isLoading}
             removeFromList={removeFromList} />
           </main>
-          <MyListSidebar
-              duplicationRequest={() => isRequestingAvailable ? setDuplicationModalOpen(true) : setRequestingUnavailableModalOpen(true)}
-              readingRoomRequest={() => isRequestingAvailable ? setReadingRoomModalOpen(true) : setRequestingUnavailableModalOpen(true)} />
         </div>
         <EmailModal
           isOpen={emailModalOpen}
@@ -376,11 +380,17 @@
             <div className='modal-buttons--confirm mt-20'>
               <Button
                 className='btn--sm btn--orange'
-                label='Remove'
+                label={t({
+                  comment: 'Button that confirms removing all items from the list',
+                  message: 'Remove'
+                })}
                 handleClick={() => {removeAllFromList(); setConfirmDeleteAllModalOpen(false)}} />
               <Button
                 className='btn--sm btn--gray'
-                label='Cancel'
+                label={t({
+                  comment: 'Button that cancels removing all items from the list',
+                  message: 'Cancel'
+                })}
                 handleClick={() => setConfirmDeleteAllModalOpen(false)}/>
             </div>
             </Trans>

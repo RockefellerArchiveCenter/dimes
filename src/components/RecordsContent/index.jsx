@@ -11,11 +11,12 @@ import { Badge } from '../Badge'
 import ListToggleButton from '../ListToggleButton'
 import MaterialIcon from '../MaterialIcon'
 import QueryHighlighter from '../QueryHighlighter'
-import { appendParams, dateString, formatMatchString, truncateString} from '../Helpers'
+import { appendParams, buildHref, DESCR_LANG, dateString, formatMatchString, truncateString} from '../Helpers'
 import { useOnScreen } from '../Hooks'
 import { isItemSaved } from '../MyListHelpers'
 import { RecordsChildSkeleton } from '../LoadingSkeleton'
-import { t, select } from '@lingui/core/macro'
+import { announce } from '@react-aria/live-announcer'
+import { plural, t, select } from '@lingui/core/macro'
 import { Trans } from '@lingui/react/macro'
 import classnames from 'classnames'
 import './styles.scss'
@@ -34,7 +35,6 @@ export const RecordsChild = props => {
           setIsLoading, setIsScrolled, toggleInList } = props
   const [children, setChildren] = useState([])
   const [childCount, setChildCount] = useState(0)
-  const [isExpanded, setIsExpanded] = useState(false)
   const [isLoadingBefore, setIsLoadingBefore] = useState(false)
   const [isSaved, setIsSaved] = useState(false)
   const [offsetAfter, setOffsetAfter] = useState(props.offsetAfter)
@@ -53,12 +53,15 @@ export const RecordsChild = props => {
   const isAfterVisible = useOnScreen(refAfter) /* 5 */
 
   /* Loads all pages of paginated content */
-  const getPages = uri => {
+  const getPages = (uri, shouldAnnounce) => {
     axios
         .get(uri)
         .then(res => {
           setChildCount(res.data.count)
           setChildren(children => children.concat(res.data.results))
+          shouldAnnounce && announce(
+            t({message: plural(res.data.count, {one: '# item', other: '# items'})}),
+            'polite')
           res.data.next && getPages(res.data.next)
         }
       )
@@ -78,7 +81,7 @@ export const RecordsChild = props => {
   *    that the html element's scrollTop is set instantaneously.
   */
   const getPageBefore = (uri, params) => {
-    if (!offsetBefore) { return }
+    if (!offsetBefore || !refBefore.current) { return }
     setIsLoadingBefore(true)
     const updatedParams = {
       ...params,
@@ -93,9 +96,11 @@ export const RecordsChild = props => {
         .then(res => {
           setChildren(children => res.data.results.concat(children))
           const currentScroll = wrapperElement.scrollHeight - pastScroll /* 4 */
-          document.documentElement.style.scrollBehavior = 'auto' /* 4 */
-          document.documentElement.scrollTop = document.documentElement.scrollTop + currentScroll /* 4 */
-          document.documentElement.style.scrollBehavior = '' /* 4 */
+          if (currentScroll > 0) {
+            document.documentElement.style.scrollBehavior = 'auto' /* 4 */
+            document.documentElement.scrollTop = document.documentElement.scrollTop + currentScroll /* 4 */
+            document.documentElement.style.scrollBehavior = '' /* 4 */
+          }
           setOffsetBefore(updatedParams.offset)
         }
       )
@@ -138,14 +143,14 @@ export const RecordsChild = props => {
 
   /** Loads all children of a collection */
   const handleCollectionClick = uri => {
-    setIsExpanded(!isExpanded)
     props.setActiveRecords(uri)
     if (!children.length) {
       getPages(
         appendParams(
           `${import.meta.env.VITE_ARGO_BASEURL}${uri}/children`,
           {...props.params, limit: pageSize}
-        )
+        ),
+        true
       )
     }
   }
@@ -220,12 +225,19 @@ export const RecordsChild = props => {
   return (item.type === 'object' ?
     (<div className={classnames('child__list-item', `child__list-item--${item.type}`)} >
       <div className='child__description'>
-        <button id={`accordion__heading-${item.uri}`}
-                className={classnames('child__title', `child__title--${item.type}`)}
-                onClick={() => handleItemClick(item.uri)}>
+        <a id={`accordion__heading-${item.uri}`}
+           className={classnames('child__title', `child__title--${item.type}`)}
+           aria-current={targetElementLoaded ? 'page' : undefined}
+           aria-describedby={item.hit_count ? `accordion__badges-${item.uri}` : undefined}
+           href={buildHref(item.uri, params)}
+           lang={DESCR_LANG}
+           onClick={e => {
+             e.preventDefault()
+             handleItemClick(item.uri)
+           }}>
           <QueryHighlighter query={query} text={item.title} />
-        </button>
-        {item.dates === item.title ? (null) : (<p className='child__text'>{item.dates}</p>)}
+        </a>
+        {item.dates === item.title ? (null) : (<p className='child__text' lang={DESCR_LANG}>{item.dates}</p>)}
       </div>
       <div className='child__buttons'>
         {item.online ? (
@@ -251,11 +263,11 @@ export const RecordsChild = props => {
           item={props.item}
           toggleSaved={toggleSaved} />
       </div>
-      <p className='child__text text--truncate'>
+      <p className='child__text text--truncate' lang={DESCR_LANG}>
         <QueryHighlighter query={query} text={truncateString(item.description, 200)} />
       </p>
       {item.hit_count ?
-        <div className="child__badges">
+        <div id={`accordion__badges-${item.uri}`} className="child__badges">
           <Badge className='badge--orange' text={formatMatchString(item.hit_count)} />
           {item.online_hit_count ? <Badge className='badge--blue' text={formatMatchString(item.online_hit_count, true)} /> : null}
         </div>
@@ -268,32 +280,33 @@ export const RecordsChild = props => {
         'child__list-accordion',
         {'child__list-accordion--bottom-level': firstChildType === 'object'}
       )} >
-      <AccordionItemHeading
-        ariaLevel={ariaLevel}
-        className={classnames(
+      <div className={classnames(
           'child__list-item',
           `child__list-item--${item.type}`,
           {'child__list-item--bottom-level': firstChildType === 'object'},
         )} >
-        <AccordionItemButton
-            className={`child__title child__title--${item.type}`}
-            onClick={() => handleCollectionClick(item.uri)} >
-          <QueryHighlighter query={query} text={item.title} />
-          {item.title === item.dates ? (null) : (<p className='child__text'>{item.dates}</p>)}
-          <p className='child__text text--truncate'>
-            <QueryHighlighter query={query} text={truncateString(item.description, 200)} />
-          </p>
-          {item.hit_count ?
-            <div className="child__badges">
-              <Badge className='badge--orange' text={formatMatchString(item.hit_count)} />
-              {item.online_hit_count ? <Badge className='badge--blue' text={formatMatchString(item.online_hit_count, true)} /> : null}
-            </div>
-            : null}
-          <MaterialIcon icon={isExpanded ? 'expand_less' : 'expand_more'} />
-        </AccordionItemButton>
-      </AccordionItemHeading>
+        <AccordionItemHeading ariaLevel={ariaLevel}>
+          <AccordionItemButton
+              ariaCurrent={targetElementLoaded ? 'page' : undefined}
+              ariaDescribedBy={item.hit_count ? `accordion__badges-${item.uri}` : undefined}
+              className={`child__title child__title--${item.type}`}
+              onClick={() => handleCollectionClick(item.uri)} >
+            <span lang={DESCR_LANG}><QueryHighlighter query={query} text={item.title} /></span>
+          </AccordionItemButton>
+        </AccordionItemHeading>
+        {item.title === item.dates ? (null) : (<p className='child__text' lang={DESCR_LANG}>{item.dates}</p>)}
+        <p className='child__text text--truncate' lang={DESCR_LANG}>
+          <QueryHighlighter query={query} text={truncateString(item.description, 200)} />
+        </p>
+        {item.hit_count ?
+          <div id={`accordion__badges-${item.uri}`} className="child__badges">
+            <Badge className='badge--orange' text={formatMatchString(item.hit_count)} />
+            {item.online_hit_count ? <Badge className='badge--blue' text={formatMatchString(item.online_hit_count, true)} /> : null}
+          </div>
+          : null}
+      </div>
       {(children.length) ?
-        (<AccordionItemPanel>
+        (<AccordionItemPanel isGroup>
           {targetIsDirectDescendant && offsetBefore > 0 ? <RecordsChildSkeleton ref={refBefore} /> : null}
           <RecordsContentList
             ariaLevel={ariaLevel+1}
@@ -360,11 +373,10 @@ const RecordsContent = props => {
   const [isLoading, setIsLoading] = useState(true)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  /** Focus on loading overlay when page is loading */
+  /** Announce loading to screen readers when page is loading */
   useEffect(() => {
     if (isLoading) {
-      const overlay = document.getElementById('content-loading')
-      overlay && overlay.focus()
+      announce(t({ comment: 'Screen reader announcement that records content is loading', message: 'Collection content loading' }), 'polite')
     }
   }, [isLoading, preExpanded])
 
@@ -372,15 +384,15 @@ const RecordsContent = props => {
   children ?
     (<div className={classnames('records__content', 'py-40', 'px-30', {'hidden': !isContentShown})}>
       {isLoading ? (
-        <div className='loading'>
+        <div className='loading' aria-hidden='true'>
             <Trans comment='Records content is loading'>
-              <p id='content-loading' className='records-loading__text loading-dots'>Loading</p>
+              <div className='records-loading__text loading-dots'>Loading</div>
             </Trans>
         </div>) : (null)}
       <h2 className='content__title mt-0 pb-0'><Trans comment='Collection Content title'>Collection Content</Trans></h2>
-      <h3 className='collection__title mb-0'>{collection.title}</h3>
-      <p className='collection__date'>{dateString(collection.dates)}</p>
-      <p className='collection__text text--truncate'>
+      <h3 className='collection__title mb-0' lang={DESCR_LANG}>{collection.title}</h3>
+      <p className='collection__date' lang={DESCR_LANG}>{dateString(collection.dates)}</p>
+      <p className='collection__text text--truncate' lang={DESCR_LANG}>
         {truncateString(collection.description, 180)}
       </p>
       <RecordsContentList

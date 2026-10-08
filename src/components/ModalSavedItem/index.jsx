@@ -1,5 +1,6 @@
 import { CheckBoxInput } from '../Inputs'
 import { Trans } from '@lingui/react/macro'
+import { DESCR_LANG } from '../Helpers'
 import './styles.scss'
 
 const ModalSavedItemsRestrictions = ({id, submit, submitReason}) => (
@@ -16,7 +17,7 @@ const ModalSavedItem = props => {
         className='checkbox--orange'
         id={uri}
         checked={isChecked || false}
-        label={title}
+        label={<span lang={DESCR_LANG}>{title}</span>}
         handleChange={handleChange}
         ariaDescribedBy={restrictionId}
         disabled={!ignoreRestrictions && !submit} />
@@ -41,7 +42,7 @@ const ModalSavedItemGroup = props => {
   )
   return (
     <div className='modal-saved-items__item-group ml-15'>
-      <h3 className='modal-item-group__title my-22 mx-0'>{props.title}</h3>
+      <h3 className='modal-item-group__title my-22 mx-0' lang={DESCR_LANG}>{props.title}</h3>
       <ul className='modal-item-group__items list--unstyled my-15 mx-0'>
         {listItems}
       </ul>

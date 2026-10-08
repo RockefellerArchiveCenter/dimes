@@ -1,6 +1,9 @@
 import queryString from 'query-string'
 import { t, plural } from '@lingui/core/macro'
 
+/** Language of archival description returned by the API. */
+export const DESCR_LANG = 'en'
+
 /** Returns a string from a date object or string */
 export const dateString = dates => {
   return dates && typeof (dates) === 'string' ? dates : dates && dates.map(d => d.expression).join(', ')
@@ -100,3 +103,6 @@ export const truncateString = (text, maxLength) => {
 /** Composes a page title as [page] - [site] */
 export const SITE_TITLE = 'DIMES'
 export const withSiteTitle = page => page ? `${page} - ${SITE_TITLE}` : null
+
+/** Contact email address, not translated */
+export const ARCHIVE_EMAIL = 'archive@rockarch.org'

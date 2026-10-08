@@ -9,8 +9,9 @@ import PageNotFound from '../PageNotFound'
 import { AgentAttributeSkeleton, AgentRelatedCollectionsSkeleton } from '../LoadingSkeleton'
 import CardList from '../Card'
 import AgentAttributeList from '../AgentAttribute'
+import MaterialIcon from '../MaterialIcon'
 import '../Button/styles.scss'
-import { buildHref, withSiteTitle } from '../Helpers'
+import { buildHref, DESCR_LANG, withSiteTitle } from '../Helpers'
 import { usePageView } from '../Hooks'
 import './styles.scss'
 import { t, select } from '@lingui/core/macro'
@@ -22,7 +23,7 @@ const AgentNote = ({ source, text }) => (
     <Trans comment='Agent note Description'>
       <h3 className='agent-note__label m-0'>Description</h3>
     </Trans>
-    <p className='agent-note__value'>
+    <p className='agent-note__value' lang={DESCR_LANG}>
       {text}
     </p>
       <p className='agent-note__source'>
@@ -64,9 +65,17 @@ const AgentSidebar = ({ agentType, externalIdentifiers }) => {
   return (
   externalIdentifiers.length ?
   (<div className='agent__sidebar'>
-    <Trans comment='Agent Sidebar Header'>
-      <h2 className='agent__section-title heading--dotted-border pb-12'>More about this {agentType}</h2>
-    </Trans>
+    <h2 className='agent__section-title heading--dotted-border pb-12'>
+      {t({
+        comment: 'Agent Sidebar Header',
+        message: select(agentType, {
+          person: 'More about this person',
+          organization: 'More about this organization',
+          family: 'More about this family',
+          other: 'More about this agent'
+        })
+      })}
+    </h2>
     <ul className='list--unstyled'>{linkList}</ul>
   </div>) : (null)
 )}
@@ -253,17 +262,17 @@ const PageAgent = () => {
     <React.Fragment>
       <div className='container--full-width'>
         <div className='agent__wrapper'>
-          <nav className="mt-30" aria-label="Back to search">
+          <nav className="mt-30" aria-label={t({ comment: 'Label for back to search navigation', message: 'Back to search' })}>
             <a href={searchUrl} className='btn btn--sm btn--gray'>
               <Trans comment='Back to search button'>
-                <span className='material-icon material-icon--space-after'>keyboard_arrow_left</span>Back to Search
+                <MaterialIcon icon='keyboard_arrow_left' className='material-icon--space-after' />Back to Search
               </Trans>
             </a>
           </nav>
           <main id='main' className="mt-60">
             <div className='agent__wrapper--description'>
               <div className='agent__main'>
-                <h1 className='agent__title mt-0 mb-30'>{ agent.title || <Skeleton />}</h1>
+                <h1 className='agent__title mt-0 mb-30' lang={DESCR_LANG}>{ agent.title || <Skeleton />}</h1>
                   <div>
                     {isAttributesLoading ?
                       (<AgentAttributeSkeleton />) :

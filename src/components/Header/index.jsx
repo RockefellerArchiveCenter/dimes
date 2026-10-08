@@ -18,12 +18,9 @@ const Header = ({ myListCount }) => (
             </Trans>
           </div>
         </div>
-        <Nav ariaLabel='Main'>
+        <Nav ariaLabel={t({ comment: 'Label for main site navigation', message: 'Main' })}>
           <NavItem id='raccess' icon='arrow_right_alt'
-            href={t({
-              comment: 'Link used for sign-in within the Header',
-              message: 'https://raccess.rockarch.org'
-            })}
+            href='https://raccess.rockarch.org'
             label={t({
               message: 'Sign in to RACcess'
             })} />

@@ -11,12 +11,13 @@ import { SelectInput } from '../Inputs'
 import { SearchSkeleton } from '../LoadingSkeleton'
 import { FacetModal } from '../ModalSearch'
 import { SearchPagination } from '../Pagination'
-import { t } from '@lingui/core/macro'
+import { announce } from '@react-aria/live-announcer'
+import { t, plural } from '@lingui/core/macro'
 import { Select, Trans } from '@lingui/react/macro'
 import SearchForm from '../SearchForm'
 import SearchNotFound from '../SearchNotFound'
 import CardList from '../Card'
-import { appendParams, withSiteTitle } from '../Helpers'
+import { appendParams, buildHref, withSiteTitle } from '../Helpers'
 import { usePageView } from '../Hooks'
 import './styles.scss'
 
@@ -131,6 +132,15 @@ const PageSearch = () => {
           setItems(res.data.results)
           setResultsCount(res.data.count)
           setPageCount(Math.ceil(res.data.count / pageSize))
+          announce(res.data.count === 0
+            ? t({
+              comment: 'Announced when a search returns no results',
+              message: 'No results found'
+            })
+            : t({
+              comment: 'Announced when a search returns results',
+              message: plural(res.data.count, {one: '# result found', other: '# results found'})
+            }), 'polite')
         })
         .catch(err => setBackendError(err))
         .then(res => setInProgress(false));
@@ -184,6 +194,9 @@ const PageSearch = () => {
     if (offset > 0) { newParams.offset = offset } else { delete newParams.offset }
     setParams(newParams)
   };
+
+  /** Builds the href for a pagination link (react-paginate passes page numbers) */
+  const pageHref = page => buildHref(pathname, { ...params, offset: (page - 1) * pageSize })
 
   /** Changes sort based on user input */
   const handleSortChange = value => {
@@ -264,10 +277,7 @@ const PageSearch = () => {
                     className='select__sort'
                     hideLabel
                     id='sort'
-                    name={t({
-                      comment: 'Name for sort results input',
-                      message: 'sort'
-                    })}
+                    name='sort'
                     onChange={({selectedItem}) => handleSortChange(selectedItem.value)}
                     label={t({
                       comment: 'Label for sort results input',
@@ -277,11 +287,12 @@ const PageSearch = () => {
                     options={sortOptions} />
                 </div>
                 <div className='results__pagination'>
-                  { inProgress ? (null) : (
+                  { pageCount > 0 && (
                     <SearchPagination
                       offset={params.offset}
                       pageSize={pageSize}
                       pageCount={pageCount}
+                      hrefBuilder={pageHref}
                       handlePageClick={handlePageClick} />
                   )}
                 </div>
@@ -305,11 +316,12 @@ const PageSearch = () => {
                   </p>
                 </div>
                 <div className='results__pagination'>
-                  { inProgress ? (null) : (
+                  { pageCount > 0 && (
                     <SearchPagination
                       offset={params.offset}
                       pageSize={pageSize}
                       pageCount={pageCount}
+                      hrefBuilder={pageHref}
                       handlePageClick={handlePageClick} />
                   )}
               </div>

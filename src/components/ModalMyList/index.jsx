@@ -8,7 +8,7 @@ import { FocusError, FormButtons, FormGroup } from '../Form'
 import { DateInput, SelectInput } from '../Inputs'
 import MaterialIcon from '../MaterialIcon'
 import { ModalSavedItemList } from '../ModalSavedItem'
-import { getFormattedDate } from '../Helpers'
+import { ARCHIVE_EMAIL, getFormattedDate } from '../Helpers'
 import './styles.scss'
 import { select, t } from '@lingui/core/macro'
 import { Plural, Trans } from '@lingui/react/macro'
@@ -28,9 +28,7 @@ const SubmitListInput = ({ submitList }) => {
   return (
     <Field
       type='hidden'
-      name={t({
-        message: 'items'
-      })} />
+      name='items' />
   )
 }
 
@@ -76,7 +74,6 @@ export const ModalToggleListButton = ({ ignoreRestrictions, items, toggleList })
           }
         )
       })}
-      ariaPressed={deselect}
       iconBefore={deselect ? 'check_box_outline_blank' : 'check_box'} />
   )
 }
@@ -85,7 +82,7 @@ export const ModalToggleListButton = ({ ignoreRestrictions, items, toggleList })
 * Only checked items are included in this calculation. A default of '1 item' is
 * provided for items with no extents (which usually means no instance).
 */
-export const SelectedTotals = ({ items }) => {
+export const SelectedTotals = ({ isLive = false, items }) => {
   const selectedExtents = items.map(
     g => g.items.filter(i => i.isChecked).map(
       i => i.extents ? i.extents: {'type': 'item', 'value': 1} )).flat(2)
@@ -95,19 +92,22 @@ export const SelectedTotals = ({ items }) => {
       {...total, [current.type]: parseFloat(current.value)}
   ), {})
   const extents = Object.entries(totals).map(e => pluralize(e[0], e[1], true))
-  return <p className='selected-totals mt-10'><Trans comment='Message returned dependent on how many items selected' ><Plural value={extents.length} _0="selected: 0 items" other={`selected: ${extents.join(', ')}`} /></Trans></p>
+  return <p className='selected-totals mt-10' role={isLive ? 'status' : undefined}>
+    <Trans comment='Message returned dependent on how many items selected' >
+      <Plural value={extents.length} _0="selected: 0 items" other={`selected: ${extents.join(', ')}`} />
+    </Trans></p>
 }
 
 
-export const ModalMyList = props => (
+export const ModalMyList = ({ ignoreRestrictions = false, ...props }) => (
   <Modal
-    appElement={props.appElement ? props.appElement : Modal.setAppElement('#root')}
     isOpen={props.isOpen}
     onRequestClose={props.toggleModal}
+    aria={{ labelledby: 'modal-mylist-title' }}
     className='modal'
     overlayClassName='modal__overlay'>
     <div className='modal__header'>
-      <h2 className='modal__header-title'>{props.title}</h2>
+      <h2 id='modal-mylist-title' className='modal__header-title'>{props.title}</h2>
       <button className='modal__header-button' aria-label={t({ message: 'Close' })} onClick={props.toggleModal}>
         <MaterialIcon icon='close'/>
       </button>
@@ -116,17 +116,17 @@ export const ModalMyList = props => (
     <div className='modal__body p-0'>
       <div className='modal-list py-30 px-20'>
         <ModalToggleListButton
-          ignoreRestrictions={props.ignoreRestrictions}
+          ignoreRestrictions={ignoreRestrictions}
           items={props.list}
           toggleList={props.toggleList} />
-        <SelectedTotals items={props.list} />
+        <SelectedTotals isLive items={props.list} />
         <ModalSavedItemList
-          ignoreRestrictions={props.ignoreRestrictions}
+          ignoreRestrictions={ignoreRestrictions}
           items={props.list}
           handleChange={props.handleChange} />
         <SelectedTotals items={props.list} />
         <ModalToggleListButton
-          ignoreRestrictions={props.ignoreRestrictions}
+          ignoreRestrictions={ignoreRestrictions}
           items={props.list}
           toggleList={props.toggleList} />
       </div>
@@ -142,15 +142,12 @@ export const ModalMyList = props => (
   </Modal>
 )
 
-ModalMyList.defaultProps = {
-  ignoreRestrictions: false,
-}
-
-
 export const EmailModal = props => (
   <ModalMyList
-    appElement={props.appElement}
-    title='Email List'
+    title={t({
+      comment: 'Title of the modal for emailing the list',
+      message: 'Email List'
+    })}
     handleChange={props.handleChange}
     ignoreRestrictions={true}
     isOpen={props.isOpen}
@@ -161,7 +158,7 @@ export const EmailModal = props => (
       <>
         <div className='mb-20'>
             <Trans comment='Note to user about including name and email address'>
-              <span className='text--bold'>Please note:</span> if are emailing your list to an archivist at <a href={t({message: 'mailto:archive@rockarch.org'})}>archive@rockarch.org</a>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up.
+              <span className='text--bold'>Please note:</span> if you are emailing your list to an archivist at <a href={`mailto:${ARCHIVE_EMAIL}`}>{ARCHIVE_EMAIL}</a>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up.
             </Trans>
           </div>
         <Formik
@@ -204,10 +201,7 @@ export const EmailModal = props => (
             <SubmitListInput submitList={props.submitList} />
             <ErrorMessage
               id='items-error'
-                name={t({
-                  comment: 'Name of items error message',
-                  message: 'items'
-                })}
+                name='items'
               component='div'
               className='input__error' />
             <FormGroup
@@ -215,49 +209,36 @@ export const EmailModal = props => (
                 comment: 'Label of Email Form',
                 message: 'Email'
               })}
-              name={t({
-                comment: 'Name of email form',
-                message: 'email'
-              })}
+              name='email'
               type='email'
+              autoComplete='email'
               required={true}
               errors={errors}
               touched={touched} />
             <FormGroup
               label={t({
                 comment: 'Label of Subject Form',
+                context: 'email subject line',
                 message: 'Subject'
               })}
-              name={t({
-                comment: 'Name of subject form',
-                message: 'subject'
-              })}
+              name='subject'
               type='text' />
             <FormGroup
               label={t({
                 comment: 'Label of Message Form',
                 message: 'Message'
               })}
-              name={t({
-                comment: 'Name of message form',
-                message: 'message'
-              })}
+              name='message'
               component='textarea'
               rows={5} />
             <div className='form-group mx-0'>
               <Field
                 component={Captcha}
-                name={t({
-                  comment: 'Name of recaptcha element',
-                  message: 'recaptcha'
-                })}
+                name='recaptcha'
                 handleCaptchaChange={(response) => setFieldValue('recaptcha', response)} />
               <ErrorMessage
                 id='recaptcha-error'
-                name={t({
-                  comment: 'Name of recaptcha error message',
-                  message: 'recaptcha'
-                })}
+                name='recaptcha'
                 component='div'
                 className='input__error' />
             </div>
@@ -330,7 +311,7 @@ const ReadingRoomDateInput = ({ readingRoom }) => {
         handleChange={date => setFieldValue('scheduledDate', date)}
         helpText={t({
           comment: 'Helptext for scheduling date.',
-          message: 'Enter the date of your research visit (mm/dd/yyyy)'
+          message: 'Enter the date of your research visit (yyyy-mm-dd)'
         })}
         id='scheduledDate'
         required={true}
@@ -376,8 +357,10 @@ export const ReadingRoomRequestModal = props => {
 
   return (
   <ModalMyList
-    appElement={props.appElement}
-    title='Request in Reading Room'
+    title={t({
+      comment: 'Title of the modal for requesting items in the reading room',
+      message: 'Request in Reading Room'
+    })}
     handleChange={props.handleChange}
     isOpen={props.isOpen}
     toggleList={props.toggleList}
@@ -470,8 +453,10 @@ export const ReadingRoomRequestModal = props => {
 
 export const DuplicationRequestModal = props => (
   <ModalMyList
-    appElement={props.appElement}
-    title='Request Copies'
+    title={t({
+      comment: 'Title of the modal for requesting copies of items',
+      message: 'Request Copies'
+    })}
     handleChange={props.handleChange}
     isOpen={props.isOpen}
     toggleList={props.toggleList}
@@ -494,22 +479,22 @@ export const DuplicationRequestModal = props => (
               For more details, including exceptions for audiovisual and oversized materials, read about our{' '}
               <a target='_blank'
                   rel='noopener noreferrer'
-                    title={t({
-                      comment: 'Title for duplication services link',
-                      message: 'opens in a new window'
-                    })}
-                    href={t({
-                      comment: 'Link for duplication request services',
-                      message: 'https://rockarch.org/collections/access-and-request-materials/#duplication-services'
-                    })}>
+                    aria-describedby='duplication-services-new-window'
+                    href='https://rockarch.org/collections/access-and-request-materials/#duplication-services'>
                   duplication services
                 </a>.
             </div>
             <div>
-              For help or to request a publication-quality scan, email an archivist at{' '} 
-              <a href={t({message: 'mailto:archive@rockarch.org'})}>archive@rockarch.org</a>.
+              For help or to request a publication-quality scan, email an archivist at{' '}
+              <a href={`mailto:${ARCHIVE_EMAIL}`}>{ARCHIVE_EMAIL}</a>.
             </div>
           </Trans>
+          <span id='duplication-services-new-window' className="visually-hidden">
+            {t({
+              comment: 'Screen reader text for duplication services link',
+              message: 'opens in a new window'
+            })}
+          </span>
         </div>
         <Trans comment='Submit Request title'>
           <h3 className='mt-0'>Submit request</h3>
@@ -568,9 +553,7 @@ export const DuplicationRequestModal = props => (
             <div className='form-group mx-0'>
               <Field
                 component={Captcha}
-                  name={t({
-                    message: 'recaptcha'
-                  })}
+                  name='recaptcha'
                 handleCaptchaChange={(response) => setFieldValue('recaptcha', response)} />
               <ErrorMessage
                 id='recaptcha-error'
