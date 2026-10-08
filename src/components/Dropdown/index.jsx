@@ -45,8 +45,9 @@ const useDropdown = () => {
 }
 
 // DropdownItem
-export const DropdownItem = ({ className, href, handleClick, iconBefore, iconAfter, label, title, close }) => {
+export const DropdownItem = ({ className, href, handleClick, iconBefore, iconAfter, label, newTab, title, close }) => {
   const Tag = href ? 'a' : 'button'
+  const opensNewTab = Tag === 'a' && newTab
 
   const handleItemClick = () => {
     handleClick?.()
@@ -59,10 +60,20 @@ export const DropdownItem = ({ className, href, handleClick, iconBefore, iconAft
         className={classnames('btn', className)}
         onClick={handleItemClick}
         href={Tag === 'a' ? href : undefined}
+        target={opensNewTab ? '_blank' : undefined}
+        rel={opensNewTab ? 'noopener noreferrer' : undefined}
         type={Tag === 'button' ? 'button' : undefined}
         title={title}>
         {iconBefore && <MaterialIcon icon={iconBefore} />}
         {label}
+        {opensNewTab && (
+          <span className='visually-hidden'>
+            {' '}({t({
+              comment: 'Screen reader text for links that open in a new window',
+              message: 'opens in a new window'
+            })})
+          </span>
+        )}
         {iconAfter && <MaterialIcon icon={iconAfter} />}
       </Tag>
     </li>
@@ -107,19 +118,15 @@ export const MyListDropdown = ({ downloadCsv, duplicationRequest, emailList, rea
     <DropdownItem
       className='btn--orange dropdown__btn dropdown__item--orange'
       label={t({
-        comment: 'Message shown on button within Dropdown list',
+        comment: 'Schedule a visit link in Dropdown list',
         message: 'Schedule a Visit'
       })}
       iconBefore='account_balance'
-      href='mailto:archive@rockarch.org?subject=Scheduling a research appointment'
-      title={t({
-        comment: 'Tooltip for button',
-        message: 'opens email'
-      })} />
+      href='https://raccess.rockarch.org/aeon.dll?Action=10&Form=94' />
     <DropdownItem
       className='btn--orange dropdown__btn dropdown__item--orange'
       label={t({
-        comment: 'Message shown on button within Dropdown list',
+        comment: 'Request in Reading Room button in Dropdown list',
         message: 'Request in Reading Room'
       })}
       iconBefore='local_library'
@@ -127,7 +134,7 @@ export const MyListDropdown = ({ downloadCsv, duplicationRequest, emailList, rea
     <DropdownItem
       className='btn--orange dropdown__btn dropdown__item--orange'
       label={t({
-        comment: 'Message shown on button within Dropdown list',
+        comment: 'Request Copies button in Dropdown list',
         message: 'Request Copies'
       })}
       iconBefore='content_copy'
@@ -135,6 +142,7 @@ export const MyListDropdown = ({ downloadCsv, duplicationRequest, emailList, rea
     <DropdownItem
       className='btn--orange dropdown__btn dropdown__item--orange'
       label={t({
+        comment: 'Email List button in Dropdown list',
         message: 'Email List'
       })}
       iconBefore='email'
@@ -142,7 +150,7 @@ export const MyListDropdown = ({ downloadCsv, duplicationRequest, emailList, rea
     <DropdownItem
       className='btn--orange dropdown__btn dropdown__item--orange'
       label={t({
-        comment: 'Message shown on button within Dropdown list',
+        comment: 'Download as .csv button in Dropdown list',
         message: 'Download as .csv'
       })}
       iconBefore='get_app'
@@ -150,7 +158,7 @@ export const MyListDropdown = ({ downloadCsv, duplicationRequest, emailList, rea
     <DropdownItem
       className='btn--orange dropdown__btn dropdown__item--orange'
       label={t({
-        comment: 'Message shown on button within Dropdown list',
+        comment: 'Remove All Items button in Dropdown list',
         message: 'Remove All Items'
       })}
       iconBefore='delete'
@@ -176,10 +184,7 @@ export const NavDropdown = () => (
         message: 'Sign in to RACcess'
       })}
       iconAfter='east'
-      href={t({
-        comment: 'Link used for sign-in within Dropdown list',
-        message: 'https://raccess.rockarch.org'
-      })} />
+      href='https://raccess.rockarch.org' />
     <DropdownItem
       className='btn--navy dropdown__btn dropdown__btn--mobile'
       label={t({

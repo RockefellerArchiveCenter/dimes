@@ -1,11 +1,12 @@
 import React from 'react'
 import './styles.scss'
 import { Trans } from '@lingui/react/macro'
+import { DESCR_LANG } from '../Helpers'
 
-
+// Suggestions are record titles from the API, so they are in DESCR_LANG.
 const SuggestionItem = ({text}) => (
   <li>
-    <a className="results__not-found--text" href={`/search?query=${text}`}>{text}</a>
+    <a className="results__not-found--text" href={`/search?query=${text}`} lang={DESCR_LANG}>{text}</a>
   </li>
 )
 

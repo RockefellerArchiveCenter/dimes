@@ -2,17 +2,9 @@ import { render, act } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import { ModalMinimapInfo } from '..'
 
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  container.setAttribute('id', 'root')
-  document.body.appendChild(container)
-})
-
 it('renders props correctly', () => {
   act(() => {
     render(<I18nApp ReactComponent={<ModalMinimapInfo
-      appElement={container}
       hasSeenMinimapIntro={false}
       isOpen
       toggleModal={vi.fn()} />} />);
@@ -24,7 +16,6 @@ it('handles clicks correctly', () => {
 
   act(() => {
     render(<I18nApp ReactComponent={<ModalMinimapInfo
-      appElement={container}
       hasSeenMinimapIntro={false}
       isOpen
       toggleModal={toggleModal} />} />);

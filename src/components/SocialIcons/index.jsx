@@ -1,14 +1,10 @@
 import React from 'react'
-import { t } from '@lingui/core/macro'
 import { Trans } from '@lingui/react/macro'
 
 const SocialIcons = () => (
   <Trans comment='Social Icons Titles'>
     <div className='social-icons'>
-      <a href={t({
-        comment: 'Facebook account link',
-        message: 'https://www.facebook.com/RockefellerArchiveCenter'
-      })} aria-label='Facebook'>
+      <a href='https://www.facebook.com/RockefellerArchiveCenter' aria-label='Facebook'>
         <span className='social-icons__icon'>
           <svg aria-hidden='true' focusable='false' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
             <title>Facebook Logo</title>
@@ -16,10 +12,7 @@ const SocialIcons = () => (
           </svg>
         </span>
       </a>
-      <a href={t({
-        comment: 'Instagram account link',
-        message: 'https://www.instagram.com/rockefellerarchivecenter'
-      })} aria-label='Instagram'>
+      <a href='https://www.instagram.com/rockefellerarchivecenter' aria-label='Instagram'>
         <span className='social-icons__icon'>
           <svg aria-hidden='true' focusable='false' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
             <title>Instagram Logo</title>
@@ -27,10 +20,7 @@ const SocialIcons = () => (
           </svg>
         </span>
       </a>
-      <a href={t({
-        comment: 'LinkedIn account link',
-        message: 'https://www.linkedin.com/company/rockefeller-archive-center'
-      })} aria-label='LinkedIn'>
+      <a href='https://www.linkedin.com/company/rockefeller-archive-center' aria-label='LinkedIn'>
         <span className='social-icons__icon'>
           <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <title>LinkedIn Logo</title>
@@ -39,10 +29,7 @@ const SocialIcons = () => (
           </svg>
         </span>
       </a>
-      <a href={t({
-        comment: 'Youtube account link',
-        message: 'https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg'
-      })} aria-label='YouTube'>
+      <a href='https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg' aria-label='YouTube'>
         <span className='social-icons__icon'>
           <svg aria-hidden='true' focusable='false' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
             <title>YouTube Logo</title>

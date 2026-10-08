@@ -5,13 +5,13 @@ import './styles.scss'
 
 const ModalConfirm = props => (
   <Modal
-    appElement={props.appElement ? props.appElement : Modal.setAppElement('#root')}
     isOpen={props.isOpen}
     onRequestClose={props.toggleModal}
+    aria={{ labelledby: 'modal-confirm-title' }}
     className='modal modal--confirm'
     overlayClassName='modal__overlay'>
     <div className='modal__header'>
-      <h2 className='modal__header-title'>{props.title}</h2>
+      <h2 id='modal-confirm-title' className='modal__header-title'>{props.title}</h2>
       <button className='modal__header-button' aria-label={t({
         message: 'Close'
       })} onClick={props.toggleModal}>

@@ -4,17 +4,9 @@ import { FacetModal } from '..'
 import { facet } from '../../../__fixtures__/facet'
 import { I18nApp } from '../../i18n'
 
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  container.setAttribute('id', 'root')
-  document.body.appendChild(container)
-})
-
 it('renders props correctly', () => {
   act(() => {
     render(<I18nApp ReactComponent={<FacetModal
-      appElement={container}
       handleChange={vi.fn()}
       handleDateChange={vi.fn()}
       isOpen
@@ -41,7 +33,6 @@ it('handles clicks', () => {
 
   act(() => {
     render(<I18nApp ReactComponent={<FacetModal
-      appElement={container}
       handleChange={vi.fn()}
       handleDateChange={handleDateChange}
       isOpen

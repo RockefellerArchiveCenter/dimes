@@ -4,17 +4,9 @@ import { ModalMinimap } from '..'
 
 import { minimap } from '../../../__fixtures__/minimap.js'
 
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  container.setAttribute('id', 'root')
-  document.body.appendChild(container)
-})
-
 it('renders props correctly', () => {
   act(() => {
     render(<I18nApp ReactComponent={<ModalMinimap
-      appElement={container}
       data={minimap}
       isLoading={false}
       params={{}}
@@ -28,7 +20,6 @@ it('handles clicks correctly', () => {
 
   act(() => {
     render(<I18nApp ReactComponent={<ModalMinimap
-      appElement={container}
       data={minimap}
       isLoading={false}
       params={{}}

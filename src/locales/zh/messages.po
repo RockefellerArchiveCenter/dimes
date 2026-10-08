@@ -18,18 +18,29 @@ msgstr ""
 #. Indicates a required form field
 #. Indicates a required form field
 #: src/components/Form/index.jsx:48
-#: src/components/Form/index.jsx:61
-#: src/components/Inputs/index.jsx:13
-#: src/components/Inputs/index.jsx:86
+#: src/components/Form/index.jsx:62
+#: src/components/Inputs/index.jsx:15
+#: src/components/Inputs/index.jsx:111
 msgid "(required)"
-msgstr ""
+msgstr "(必填)"
 
 #. Message returned dependent on how many items selected
 #. placeholder {0}: extents.length
 #. placeholder {1}: extents.join(', ')
-#: src/components/ModalMyList/index.jsx:98
+#: src/components/ModalMyList/index.jsx:96
 msgid "{0, plural, =0 {selected: 0 items} other {selected: {1}}}"
 msgstr "{0, plural, =0 {已选择：0 个项目} other {已选择：{1}}}"
+
+#. placeholder {0}: res.data.count
+#: src/components/RecordsContent/index.jsx:63
+msgid "{0, plural, one {# item} other {# items}}"
+msgstr "{0, plural, one {# 个项目} other {# 个项目}}"
+
+#. Announced when a search returns results
+#. placeholder {0}: res.data.count
+#: src/components/PageSearch/index.jsx:140
+msgid "{0, plural, one {# result found} other {# results found}}"
+msgstr "{0, plural, one {找到 # 个结果} other {找到 # 个结果}}"
 
 #. Filter results message
 #. placeholder {0}: props.resultsCount
@@ -39,77 +50,82 @@ msgstr "{0, plural, one {过滤后的#搜索结果} other {过滤后的#搜索�
 
 #. Pluralization of hit(s) for minimap boxes
 #. placeholder {0}: areaHits.length
-#: src/components/Minimap/index.jsx:49
+#: src/components/Minimap/index.jsx:50
 msgid "{0, plural, one {hit} other {hits}}"
 msgstr "{0, plural, one {击中} other {击中}}"
 
 #. Agent Note source
 #. placeholder {0}: source ?? 'rac'
-#: src/components/PageAgent/index.jsx:29
+#: src/components/PageAgent/index.jsx:30
 msgid "{0, select, rac {Source: Rockefeller Archive Center} other {Source: {source}}}"
 msgstr "{0, select, rac {资料来源：洛克菲勒档案中心} other {来源: {source}}}"
 
 #. Current Results shown of total results
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:244
+#: src/components/PageSearch/index.jsx:257
 msgid "{0, select, true {{startItem} result} other {{startItem}-{endItem} of {resultsCount} results}}"
-msgstr "{0, select, true {{startItem} result} other {{startItem}-{endItem} 的 {resultsCount} 搜索结果}}"
+msgstr "{0, select, true {第 {startItem} 个结果} other {第 {startItem}-{endItem} 个，共 {resultsCount} 个结果}}"
 
 #. placeholder {0}: startItem === endItem
-#: src/components/PageSearch/index.jsx:299
+#: src/components/PageSearch/index.jsx:310
 msgid "{0, select, true {{startItem}} other {{startItem}-{endItem} of {resultsCount} results}}"
-msgstr "{0, select, true {{startItem}} other {{startItem}-{endItem} 的 {resultsCount} 搜索结果}}"
+msgstr "{0, select, true {{startItem}} other {第 {startItem}-{endItem} 个，共 {resultsCount} 个结果}}"
 
 #. Minimap header
 #. placeholder {0}: props.hasSeenMinimapIntro
 #: src/components/ModalMinimap/index.jsx:30
 msgid "{0, select, true {Minimap} other {Introducing the Minimap}}"
-msgstr "{0, select, true {Minimap} other {引入最小图}}"
+msgstr "{0, select, true {迷你地图} other {引入最小图}}"
 
 #. Text for submiting item(s) request
 #. placeholder {0}: props.submitList.length !== 1
 #. placeholder {1}: props.submitList.length
 #. placeholder {2}: props.submitList.length
-#: src/components/ModalMyList/index.jsx:452
-#: src/components/ModalMyList/index.jsx:582
+#: src/components/ModalMyList/index.jsx:435
+#: src/components/ModalMyList/index.jsx:565
 msgid "{0, select, true {Request {1} Items} other {Request {2} Item}}"
 msgstr "{0, select, true {请求 {1} 项目} other {请求 {2} 项目}}"
 
 #. placeholder {0}: props.isMobile
-#: src/components/RecordsContent/index.jsx:236
+#: src/components/RecordsContent/index.jsx:248
 msgid "{0, select, true {View} other {View Online}}"
-msgstr "{0, select, true {看法} other {在线查看}}"
+msgstr "{0, select, true {查看} other {在线查看}}"
 
 #. Label for the end of the item
-#: src/components/PageAgent/index.jsx:148
+#: src/components/PageAgent/index.jsx:157
 msgid "{agentType, select, organization {Date Disbanded} other {Date of Death}}"
 msgstr "{agentType, select, organization {解散日期} other {死亡日期}}"
 
 #. Label for the start of the item
-#: src/components/PageAgent/index.jsx:144
+#: src/components/PageAgent/index.jsx:153
 msgid "{agentType, select, organization {Date Established} other {Date of Birth}}"
 msgstr "{agentType, select, organization {成立日期} other {出生日期}}"
 
+#. Agent Sidebar Header
+#: src/components/PageAgent/index.jsx:69
+msgid "{agentType, select, person {More about this person} organization {More about this organization} family {More about this family} other {More about this agent}}"
+msgstr "{agentType, select, person {关于此人物的更多信息} organization {关于此组织的更多信息} family {关于此家族的更多信息} other {关于此主体的更多信息}}"
+
 #. Label for item (de)selection
-#: src/components/ModalMyList/index.jsx:62
-#: src/components/ModalMyList/index.jsx:71
+#: src/components/ModalMyList/index.jsx:60
+#: src/components/ModalMyList/index.jsx:69
 msgid "{deselect, select, true {Deselect all items} other {Select all items}}"
 msgstr "{deselect, select, true {取消选择所有项目} other {选择所有项目}}"
 
 #. Pluralization of digital match(es)
-#: src/components/Helpers.js:76
+#: src/components/Helpers.js:79
 msgid "{hitCount, plural, one {digital match} other {digital matches}}"
 msgstr "{hitCount, plural, one {项匹配的数字化内容 } other {项匹配的数字化内容 }}"
 
 #. Pluralization of match(es)
-#: src/components/Helpers.js:72
+#: src/components/Helpers.js:75
 msgid "{hitCount, plural, one {match} other {matches}}"
 msgstr "{hitCount, plural, one {匹配} other {匹配}}"
 
 #. Label for Context Switcher
 #: src/components/ContextSwitcher/index.jsx:12
 msgid "{isContentShown, select, true {Collection Details} other {Collection Content}}"
-msgstr "{isContentShown, select, true {收藏细节} other {收藏内容目录}}."
+msgstr "{isContentShown, select, true {收藏细节} other {收藏内容目录}}"
 
 #. Downloading label
 #: src/components/MyListExportActions/index.jsx:17
@@ -117,32 +133,29 @@ msgid "{isDownloading, select, true {Downloading} other {Download as .CSV}}"
 msgstr "{isDownloading, select, true {下载} other {下载为 .CSV}}"
 
 #. Label for Add List Toggle button
-#: src/components/ListToggleButton/index.jsx:34
+#: src/components/ListToggleButton/index.jsx:32
 msgid "{isMobile, select, true {Add} other {Add to List}}"
 msgstr "{isMobile, select, true {添加} other {添加到列表}}"
 
 #. Label for Remove List Toggle button
-#: src/components/ListToggleButton/index.jsx:17
+#: src/components/ListToggleButton/index.jsx:16
 msgid "{isMobile, select, true {Remove} other {Remove from List}}"
 msgstr "{isMobile, select, true {消除} other {从列表中移除}}"
 
+#. Back to search button
 #. Message to go back to previous search
-#: src/components/RecordsDetail/index.jsx:168
+#: src/components/PageAgent/index.jsx:267
+#: src/components/RecordsDetail/index.jsx:169
 msgid "<0/>Back to Search"
 msgstr "<0/>返回搜索"
 
 #. New Search button
-#: src/components/PageMyList/index.jsx:298
+#: src/components/PageMyList/index.jsx:302
 msgid "<0/>Start a New Search"
 msgstr "<0/>开始新的搜索"
 
-#. Schedule a visit button
-#: src/components/MyListSidebar/index.jsx:8
-msgid "<0><1/> Schedule a Visit</0>"
-msgstr "<0><1/> 到访预约</0>"
-
 #. Go back to Item details for digital object
-#: src/components/PageDigitalObject/index.jsx:179
+#: src/components/PageDigitalObject/index.jsx:177
 msgid "<0><1/>Back to Item Details</0>"
 msgstr "<0><1/>返回项目详情</0>"
 
@@ -156,28 +169,28 @@ msgstr "<0><1><2/></1><3>抱歉，未找到所请求的页面！</3><4>请尝试
 #. placeholder {1}: error.code
 #. placeholder {2}: error.message
 #. placeholder {3}: error.response.data ? <p className='backend-error__message'>{JSON.stringify(error.response.data)}</p> : null
-#. placeholder {4}: error.config.data ? <> <p className='backend-error__header mt-18'>Request data:</p> <p className='backend-error__message'>{error.config.data}</p> </> : null
-#: src/components/PageBackendError/index.jsx:16
-msgid "<0><1><2/></1><3>There was an error fetching data.</3><4>The request to {0} failed.</4><5>To report this problem, send us an email at <6>archive@rockarch.org</6>.</5><7>Error message:</7><8>{1}: {2}</8>{3}{4}</0>"
-msgstr "<0><1><2/></1><3>获取数据时出现错误。</3><4>{0} 请求失败。</4><5>要报告此问题，请发送电子邮件至<6>archive@rockarch.org。</6></5><7>错误信息：</7><8>{1}:{2}</8>{3}{4}</0>"
+#. placeholder {4}: error.config.data ? <> <h2 className='backend-error__header mt-18'>Request data:</h2> <p className='backend-error__message'>{error.config.data}</p> </> : null
+#: src/components/PageBackendError/index.jsx:24
+msgid "<0><1><2/></1><3>There was an error fetching data.</3><4>The request to {0} failed.</4><5>To report this problem, send us an email at <6>{ARCHIVE_EMAIL}</6>.</5><7>Error message:</7><8>{1}: {2}</8>{3}{4}</0>"
+msgstr "<0><1><2/></1><3>获取数据时出现错误。</3><4>{0} 请求失败。</4><5>要报告此问题，请发送电子邮件至<6>{ARCHIVE_EMAIL}。</6></5><7>错误信息：</7><8>{1}:{2}</8>{3}{4}</0>"
 
 #. Social Icons Titles
-#: src/components/SocialIcons/index.jsx:6
+#: src/components/SocialIcons/index.jsx:5
 msgid "<0><1><2><3><4>Facebook Logo</4><5/></3></2></1><6><7><8><9>Instagram Logo</9><10/></8></7></6><11><12><13><14>LinkedIn Logo</14><15/></13></12></11><16><17><18><19>YouTube Logo</19><20/></18></17></16></0>"
 msgstr "<0><1><2><3><4>Facebook 徽标</4><5/></3></2></1><6><7><8><9>Instagram 徽标</9><10/></8></7></6><11><12><13><14>LinkedIn 徽标</14><15/></13></12></11><16><17><18><19>YouTube 徽标</19><20/></18></17></16></0>"
 
 #. Confirmation message when citation copied
-#: src/components/RecordsDetail/index.jsx:184
+#: src/components/RecordsDetail/index.jsx:185
 msgid "<0>Citation information copied to clipboard.</0>"
 msgstr "<0>引用信息复制到剪贴板。</0>"
 
 #. Button to copy citation text
-#: src/components/RecordsDetail/index.jsx:190
+#: src/components/RecordsDetail/index.jsx:191
 msgid "<0>Cite<1/></0>"
 msgstr "<0>引用<1/></0>"
 
 #. Agent note Description
-#: src/components/PageAgent/index.jsx:22
+#: src/components/PageAgent/index.jsx:23
 msgid "<0>Description</0>"
 msgstr "<0>背景说明</0>"
 
@@ -188,24 +201,19 @@ msgid "<0>Found in: <1>{0}</1></0>"
 msgstr "<0>源自: <1>{0}</1></0>"
 
 #. Search not found tips
-#: src/components/SearchNotFound/index.jsx:19
+#: src/components/SearchNotFound/index.jsx:20
 msgid "<0>Have you tried doing the following:</0><1><2>Check for spelling errors or typos</2><3>Use fewer keywords</3><4>Clear search filter options</4></1>"
 msgstr "<0>您是否尝试过以下操作：</0><1><2>检查拼写错误或错别字</2><3>使用更少的关键词</3><4>清除搜索过滤选项</4></1>"
 
 #. Suggested terms message
-#: src/components/SearchNotFound/index.jsx:29
+#: src/components/SearchNotFound/index.jsx:30
 msgid "<0>Here are some suggested search terms:</0>"
 msgstr "<0>以下是一些建议的搜索条件：</0>"
 
 #. The about section for minimaps.
 #: src/components/ModalMinimap/index.jsx:8
-msgid "<0>Jump to a part of the collection containing matches by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
-msgstr "<0>点击活动方格，跳转到包含匹配项的集合部分。</0><1>在小地图中，每个方格代表该集合的一部分。彩色方格代表包含一个或多个符合搜索条件的部分.</1>"
-
-#. Back to search button
-#: src/components/PageAgent/index.jsx:258
-msgid "<0>keyboard_arrow_left</0>Back to Search"
-msgstr "<0>键盘_arrow_left 返回</0>搜索"
+msgid "<0>Jump to a part of the collection containing matches by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Interactive squares represent parts that contain one or more matches for your search.</1>"
+msgstr "<0>点击活动方块，即可跳转到收藏中包含匹配结果的部分。</0><1>在迷你地图中，每个方块代表此收藏的一部分。可交互的方块表示包含一个或多个搜索匹配结果的部分。</1>"
 
 #. Saved item last requested message
 #. placeholder {0}: props.lastRequested
@@ -214,99 +222,100 @@ msgid "<0>Last requested on: {0}</0>"
 msgstr "<0>最后申请日期{0}</0>"
 
 #. Limitations and fees title
-#: src/components/ModalMyList/index.jsx:483
+#: src/components/ModalMyList/index.jsx:468
 msgid "<0>Limitations and fees</0>"
 msgstr "<0>限制和费用</0>"
 
 #. Loading message
 #. Records content is loading
 #: src/components/LoadingSkeleton/index.jsx:7
-#: src/components/RecordsContent/index.jsx:376
+#: src/components/RecordsContent/index.jsx:388
 msgid "<0>Loading</0>"
 msgstr "<0>加载中</0>"
 
-#. Agent Sidebar Header
-#: src/components/PageAgent/index.jsx:67
-msgid "<0>More about this {agentType}</0>"
-msgstr "<0>更多相关信息{agentType}</0>"
-
 #. Header for user's list
-#: src/components/PageMyList/index.jsx:304
+#: src/components/PageMyList/index.jsx:308
 msgid "<0>My List</0>"
 msgstr "<0>我的收藏目录</0>"
 
 #. No search terms supplied message
-#: src/components/SearchNotFound/index.jsx:42
+#: src/components/SearchNotFound/index.jsx:43
 msgid "<0>Please add a word or phrase to search for.</0>"
 msgstr "<0>请添加要搜索的单词或短语。</0>"
 
 #. Note to user about including name and email address
-#: src/components/ModalMyList/index.jsx:163
-msgid "<0>Please note:</0> if are emailing your list to an archivist at <1>archive@rockarch.org</1>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up."
-msgstr "<0>请注意：</0>如果要将您的名单通过电子邮件发送给<1>archive@rockarch.org</1> 的档案管理员<1>，</1>请在 \"信息 \"栏中注明您的姓名和电子邮件地址，否则我们将无法与您联系，无法跟进。"
+#: src/components/ModalMyList/index.jsx:160
+msgid "<0>Please note:</0> if you are emailing your list to an archivist at <1>{ARCHIVE_EMAIL}</1>, please include your name and email address in the Message field, otherwise we will have no means of contacting you to follow-up."
+msgstr "<0>请注意：</0>如果要将您的名单通过电子邮件发送给<1>{ARCHIVE_EMAIL}</1> 的档案管理员，请在 \"信息 \"栏中注明您的姓名和电子邮件地址，否则我们将无法与您联系，无法跟进。"
 
 #. Submit Request title
-#: src/components/ModalMyList/index.jsx:514
+#: src/components/ModalMyList/index.jsx:499
 msgid "<0>Submit request</0>"
 msgstr "<0>提交申请</0>"
 
 #. summary message
-#: src/components/PageAgent/index.jsx:272
+#: src/components/PageAgent/index.jsx:281
 msgid "<0>Summary</0>"
 msgstr "<0>摘要</0>"
 
 #. The introduction for minimaps.
 #: src/components/ModalMinimap/index.jsx:14
-msgid "<0>The minimap is a new feature that allows you to quickly jump to search matches in a collection by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Colored squares represent parts that contain one or more matches for your search.</1>"
-msgstr "<0>点击活动方格，跳转到所匹配的专辑的一项内容。</0><1>在微缩位置图中，每个方格代表该专辑的一个内容。彩色方格代表包含一个或多个符合搜索条件的内容。</1>"
+msgid "<0>The minimap is a new feature that allows you to quickly jump to search matches in a collection by clicking on an active square.</0><1>In the minimap diagram, each square represents part of this collection. Interactive squares represent parts that contain one or more matches for your search.</1>"
+msgstr "<0>迷你地图是一项新功能，点击活动方块即可快速跳转到收藏中的搜索匹配结果。</0><1>在迷你地图中，每个方块代表此收藏的一部分。可交互的方块表示包含一个或多个搜索匹配结果的部分。</1>"
 
 #. Message for showing an error for a request
 #. placeholder {0}: err.config.url
 #. placeholder {1}: err.code
 #. placeholder {2}: err.message
 #. placeholder {3}: err.config.data
-#: src/components/PageMyList/index.jsx:138
+#: src/components/PageMyList/index.jsx:141
 msgid "<0>There was an error submitting your request.</0><1>The request to {0} failed with the message {1}: {2}.</1><2>{3}</2>"
 msgstr "<0>提交请求时出现错误。</0><1>请求{0} 失败，显示信息{1}:{2}.</1><2>{3}</2>"
 
+#. Buttons for online records
 #. View Saved Item online
+#: src/components/RecordsDetail/index.jsx:200
 #: src/components/SavedItem/index.jsx:21
 msgid "<0>View Online<1/></0>"
 msgstr "<0>在线阅读<1/></0>"
 
-#. Buttons for online records
-#. placeholder {0}: props.item.files[0].download && <> <a className='btn btn--sm btn--orange btn--detail mr-10 mb-10 p-8' href={props.item.files[0].download} target='_blank' title={t({ comment: 'Title message for opening an online item', message: 'opens in a new window' })} rel='noopener noreferrer' >Download <MaterialIcon icon='get_app' className='material-icon--space-before' /></a> { props.downloadSize ? <p className='panel__text'>{`Acrobat PDF, ${props.downloadSize}`}</p> : <p className='panel__text'><Skeleton/></p> } </>
-#: src/components/RecordsDetail/index.jsx:198
-msgid "<0>View Online<1/></0>{0}"
-msgstr "<0>在线阅读<1/></0>"
-
 #. Limitations and fees information
-#: src/components/ModalMyList/index.jsx:486
-msgid "<0>We limit users to <1>10 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>archive@rockarch.org</7>.</6>"
-msgstr "<0>我们限制用户<1>每个日历年只能申请 10 次</1>。</0><2>我们对 PDF 参考资料不收费。出版物质量的扫描件<3>每件统一收费 25 美元</3>。</2><4>有关详细信息，包括视听资料和超大型资料的例外情况，请阅读我们的<5>复制服务</5>。</4><6>如需帮助或索取出版物质量的扫描件，请发送电子邮件至<7>archive@rockarch.org 联系</7>档案管理员。</6>"
+#: src/components/ModalMyList/index.jsx:471
+msgid "<0>We limit users to <1>10 requests per calendar year</1>.</0><2>We do not charge for reference PDFs. There is a <3>$25 flat fee per item</3> for publication-quality scans.</2><4>For more details, including exceptions for audiovisual and oversized materials, read about our <5>duplication services</5>.</4><6>For help or to request a publication-quality scan, email an archivist at <7>{ARCHIVE_EMAIL}</7>.</6>"
+msgstr "<0>我们限制用户<1>每个日历年只能申请 10 次</1>。</0><2>我们对 PDF 参考资料不收费。出版物质量的扫描件<3>每件统一收费 25 美元</3>。</2><4>有关详细信息，包括视听资料和超大型资料的例外情况，请阅读我们的<5>复制服务</5>。</4><6>如需帮助或索取出版物质量的扫描件，请发送电子邮件至<7>{ARCHIVE_EMAIL} 联系</7>档案管理员。</6>"
 
 #. Full Company Address
-#: src/components/Footer/index.jsx:22
+#: src/components/Footer/index.jsx:23
 msgid "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 msgstr "15 Dayton Avenue<0/>Sleepy Hollow, New York 10591"
 
 #. helptext for RAC staff message
-#: src/components/ModalMyList/index.jsx:432
+#: src/components/ModalMyList/index.jsx:415
 msgid "255 characters maximum"
 msgstr "最多 255 个字符"
 
 #. About minimap message
-#: src/components/RecordsDetail/index.jsx:163
+#: src/components/RecordsDetail/index.jsx:164
 msgid "about minimap"
 msgstr "关于微缩位置图"
 
+#. Record detail section title
+#: src/components/RecordsDetail/index.jsx:291
+msgid "Access"
+msgstr "查阅"
+
+#. Record detail accordion heading
+#: src/components/RecordsDetail/index.jsx:287
+msgid "Access and Use"
+msgstr "查阅与利用"
+
 #. Accessibility Statement message
-#: src/components/PrimaryLink/index.jsx:55
+#: src/components/PrimaryLink/index.jsx:41
 msgid "Accessibility Statement"
 msgstr "辅助功能声明"
 
 #. Message shown on Dropdown button
-#: src/components/Dropdown/index.jsx:99
+#: src/components/Dropdown/index.jsx:110
 msgid "Actions"
 msgstr "操作"
 
@@ -321,9 +330,14 @@ msgid "Add to List"
 msgstr "添加到列表"
 
 #. Message while page loads for email submissions
-#: src/components/PageMyList/index.jsx:149
+#: src/components/PageMyList/index.jsx:152
 msgid "Adding items to your message"
 msgstr "在信息中添加项目"
+
+#. Announced after removing all items from My List
+#: src/App.jsx:46
+msgid "All items removed from list"
+msgstr "已从列表中移除所有项目"
 
 #. Label for All Categories
 #: src/components/SearchForm/index.jsx:24
@@ -332,44 +346,55 @@ msgstr "所有类型"
 
 #. Missing email address error
 #. Modal Form Missing Email Address Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:158
-#: src/components/ModalMyList/index.jsx:172
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:151
+#: src/components/ModalMyList/index.jsx:169
 msgid "An email address is required."
 msgstr "电子邮件地址为必填项."
 
 #. Label to apply dates shown from date range
-#: src/components/ModalSearch/index.jsx:80
+#: src/components/ModalSearch/index.jsx:76
 msgid "apply dates"
-msgstr "申请日期"
-
-#. Company Email shown
-#: src/components/PrimaryLink/index.jsx:29
-msgid "archive@rockarch.org"
-msgstr "archive@rockarch.org"
+msgstr "应用日期"
 
 #. Confirmation to delete all items from list
-#: src/components/PageMyList/index.jsx:375
+#: src/components/PageMyList/index.jsx:379
 msgid "Are you sure you want to remove all the items from your list?<0><1/><2/></0>"
 msgstr "您确定要删除列表中的所有项目吗？<0><1/><2/></0>"
 
+#. Label for back to search navigation
+#. Label for back to search navigation
+#. Label for new search navigation
+#: src/components/PageAgent/index.jsx:265
+#: src/components/PageMyList/index.jsx:300
+#: src/components/RecordsDetail/index.jsx:167
+msgid "Back to search"
+msgstr "返回搜索"
+
+#. Record detail section title
+#: src/components/RecordsDetail/index.jsx:256
+msgid "Biographical/Historical Note"
+msgstr "传记/历史沿革"
+
 #. Bulk Data Download message
-#: src/components/SecondaryLink/index.jsx:28
+#: src/components/SecondaryLink/index.jsx:22
 msgid "Bulk data download"
 msgstr "批量数据下载"
 
 #. Title shown when request failed
-#: src/components/PageMyList/index.jsx:360
+#: src/components/PageMyList/index.jsx:364
 msgid "Can't Complete Request"
 msgstr "无法完成请求"
 
+#. Button that cancels removing all items from the list
 #. Modal Form Reset Test
 #. Reset/Cancel Button for Form
 #. Test Cancel Button Label
 #: src/components/Form/__tests__/Form.test.jsx:14
-#: src/components/Form/index.jsx:74
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:126
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:194
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:248
+#: src/components/Form/index.jsx:75
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:120
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:186
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:238
+#: src/components/PageMyList/index.jsx:390
 msgid "Cancel"
 msgstr "取消"
 
@@ -378,26 +403,39 @@ msgstr "取消"
 msgid "Choose a search category"
 msgstr "选择搜索类别"
 
-#. Aria label for close.
 #: src/components/ModalConfirm/index.jsx:15
 #: src/components/ModalMinimap/index.jsx:37
 #: src/components/ModalMinimap/index.jsx:66
 #: src/components/ModalMyList/index.jsx:111
-#: src/components/ModalSearch/index.jsx:50
 msgid "Close"
 msgstr "关闭"
+
+#. Search result category label
+#: src/components/Card/index.jsx:22
+msgid "Collection"
+msgstr "收藏"
 
 #. Collection Content title
 #. switcher label text content
 #: src/components/ContextSwitcher/__tests__/ContextSwitcher.test.jsx:15
-#: src/components/RecordsContent/index.jsx:380
+#: src/components/RecordsContent/index.jsx:392
 msgid "Collection Content"
 msgstr "收藏内容目录"
+
+#. Screen reader announcement that records content is loading
+#: src/components/RecordsContent/index.jsx:379
+msgid "Collection content loading"
+msgstr "收藏内容加载中"
 
 #. switcher label text content
 #: src/components/ContextSwitcher/__tests__/ContextSwitcher.test.jsx:30
 msgid "Collection Details"
 msgstr "系列详情"
+
+#. Label for collection page context switcher controls
+#: src/components/PageRecords/index.jsx:220
+msgid "Collection page"
+msgstr "收藏页面"
 
 #. Label for Collections category
 #: src/components/SearchForm/index.jsx:31
@@ -405,48 +443,68 @@ msgid "Collections"
 msgstr "集合"
 
 #. Collections data API message
-#: src/components/SecondaryLink/index.jsx:15
+#: src/components/SecondaryLink/index.jsx:12
 msgid "Collections data API"
 msgstr "收藏数据应用程序接口"
 
 #. Agent Related Collections
-#: src/components/PageAgent/index.jsx:44
+#: src/components/PageAgent/index.jsx:45
 msgid "Collections Related to {agentTitle}"
 msgstr "与 {agentTitle} 相关的收藏"
 
 #. Remove all confirmation title
-#: src/components/PageMyList/index.jsx:388
+#: src/components/PageMyList/index.jsx:398
 msgid "Confirm Remove All"
 msgstr "确认全部删除"
 
 #. Copyright message
-#: src/components/Footer/index.jsx:64
+#: src/components/Footer/index.jsx:65
 msgid "Copyright © Rockefeller Archive Center. All rights reserved."
 msgstr "洛克菲勒档案中心版权所有。保留所有权利。"
 
 #. Title for Creator filter
-#: src/components/ModalSearch/index.jsx:93
+#: src/components/ModalSearch/index.jsx:89
 msgid "Creator"
 msgstr "创建者"
 
+#. Record detail section title
+#: src/components/RecordsDetail/index.jsx:231
+msgid "Creators"
+msgstr "创建者"
+
 #. Message shown for downloading high-res images in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:170
+#: src/components/PageDigitalObject/index.jsx:169
 msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "当前页面 - JPEG2000 {pixelDimensions}"
 
+#. Record detail section title
+#: src/components/RecordsDetail/index.jsx:277
+msgid "Custodial History"
+msgstr "保管历史"
+
 #. title for Date Range
-#: src/components/ModalSearch/index.jsx:61
+#: src/components/ModalSearch/index.jsx:57
 msgid "Date Range"
 msgstr "日期范围"
 
+#. Record detail section title
+#: src/components/RecordsDetail/index.jsx:235
+msgid "Dates"
+msgstr "日期"
+
+#. Record detail section title
+#: src/components/RecordsDetail/index.jsx:252
+msgid "Description"
+msgstr "背景说明"
+
 #. Button Deselect all items Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:80
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:74
 msgid "Deselect all items"
 msgstr "取消选择所有项目"
 
 #. Update message for selected record
 #. placeholder {0}: res.data.title
-#: src/components/PageRecords/index.jsx:117
+#: src/components/PageRecords/index.jsx:120
 msgid "Details under heading 1 now describe {0}"
 msgstr "标题 1 下的详细内容现在描述的是 {0}。"
 
@@ -455,46 +513,51 @@ msgstr "标题 1 下的详细内容现在描述的是 {0}。"
 msgid "dimes.rockarch.org"
 msgstr "dimes.rockarch.org"
 
+#. Button to download an online record
 #. Message shown on download dropdown button
 #: src/components/PageDigitalObject/index.jsx:143
+#: src/components/RecordsDetail/index.jsx:210
 msgid "Download"
 msgstr "下载"
 
-#. Message shown on button within Dropdown list
-#: src/components/Dropdown/index.jsx:144
+#. Download as .csv button in Dropdown list
+#: src/components/Dropdown/index.jsx:152
 msgid "Download as .csv"
 msgstr "以 .csv 格式下载"
 
+#. Announced when the My List CSV download has finished
+#: src/components/PageMyList/index.jsx:76
+msgid "Download complete"
+msgstr "下载完成"
+
 #. Company Email
-#: src/components/Footer/index.jsx:35
+#: src/components/Footer/index.jsx:36
 msgid "E-mail: <0/>"
 msgstr "电子邮件：<0/>"
 
-#. Name of email form
-#: src/components/ModalMyList/index.jsx:218
-msgid "email"
-msgstr "电子邮件"
-
 #. Email Modal Form Test
 #. Label of Email Form
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:110
-#: src/components/ModalMyList/index.jsx:214
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:103
+#: src/components/ModalMyList/index.jsx:208
 msgid "Email"
 msgstr "邮箱"
 
+#. Email List button in Dropdown list
 #. Email list label
-#: src/components/Dropdown/index.jsx:137
+#. Title of the modal for emailing the list
+#: src/components/Dropdown/index.jsx:144
+#: src/components/ModalMyList/index.jsx:147
 #: src/components/MyListExportActions/index.jsx:9
 msgid "Email List"
-msgstr "邮件列表"
+msgstr "通过邮件发送列表"
 
 #. Title displayed after emailing selected items
-#: src/components/PageMyList/index.jsx:155
+#: src/components/PageMyList/index.jsx:158
 msgid "Email Sent"
 msgstr "邮件已发送"
 
 #. Label for the end year input
-#: src/components/ModalSearch/index.jsx:74
+#: src/components/ModalSearch/index.jsx:70
 msgid "End Year"
 msgstr "结束年份"
 
@@ -504,38 +567,43 @@ msgid "Enter a search term"
 msgstr "输入一个搜索词"
 
 #. Helptext for scheduling date.
-#: src/components/ModalMyList/index.jsx:331
-msgid "Enter the date of your research visit (mm/dd/yyyy)"
-msgstr "请输入研究访问日期（月/日/年）"
+#: src/components/ModalMyList/index.jsx:312
+msgid "Enter the date of your research visit (yyyy-mm-dd)"
+msgstr "请输入研究访问日期（年-月-日）"
 
 #. Message shown for downloading PDF in digital object viewer
-#: src/components/PageDigitalObject/index.jsx:155
+#: src/components/PageDigitalObject/index.jsx:154
 msgid "Entire Item - PDF"
 msgstr "整个项目 - PDF"
 
 #. Page Backend Error title
-#: src/components/PageBackendError/index.jsx:10
+#: src/components/PageBackendError/index.jsx:13
 msgid "Error"
 msgstr "错误"
 
 #. Title displayed when error occurs while submitting request
-#: src/components/PageMyList/index.jsx:135
-#: src/components/PageMyList/index.jsx:166
+#: src/components/PageMyList/index.jsx:138
+#: src/components/PageMyList/index.jsx:169
 msgid "Error submitting request"
 msgstr "提交申请出错"
 
+#. Record detail section title
+#: src/components/RecordsDetail/index.jsx:300
+msgid "Existence and Location of Copies"
+msgstr "副本的存在与存放位置"
+
 #. Company Fax
-#: src/components/Footer/index.jsx:32
+#: src/components/Footer/index.jsx:33
 msgid "Fax: (914) 631-6017"
 msgstr "传真：（914）631-6017"
 
 #. Label for Filters button
-#: src/components/PageSearch/index.jsx:257
+#: src/components/PageSearch/index.jsx:270
 msgid "Filters"
 msgstr "筛选"
 
 #. Title for Format filter
-#: src/components/ModalSearch/index.jsx:87
+#: src/components/ModalSearch/index.jsx:83
 msgid "Format"
 msgstr "规格"
 
@@ -555,214 +623,161 @@ msgid "Found in:"
 msgstr "源自:"
 
 #. Founded by property
-#: src/components/PageAgent/index.jsx:205
+#: src/components/PageAgent/index.jsx:214
 msgid "Founded by"
 msgstr "创立者"
 
+#. Site map link to home page
+#: src/components/PageSiteMap/index.jsx:21
+msgid "Home"
+msgstr "首页"
+
 #. How to Access materials message
-#: src/components/PrimaryLink/index.jsx:16
+#: src/components/PrimaryLink/index.jsx:14
 msgid "How to access and request materials."
 msgstr "如何获取和索取资料。"
 
-#. Footer.Primary.RAC.href
-#: src/components/PrimaryLink/index.jsx:77
-msgid "https://docs.rockarch.org"
-msgstr "https://docs.rockarch.org"
-
-#. Licensing link
-#: src/components/SecondaryLink/index.jsx:37
-msgid "https://docs.rockarch.org/archival-description-license/"
-msgstr "https://docs.rockarch.org/archival-description-license/"
-
-#. Collections data API link
-#: src/components/SecondaryLink/index.jsx:11
-msgid "https://docs.rockarch.org/argo-docs/"
-msgstr "https://docs.rockarch.org/argo-docs/"
-
-#. Take-down Policy link
-#: src/components/SecondaryLink/index.jsx:50
-msgid "https://docs.rockarch.org/takedown-policy/"
-msgstr "https://docs.rockarch.org/takedown-policy/"
-
-#. Bulk Data Download link
-#: src/components/SecondaryLink/index.jsx:24
-msgid "https://github.com/RockefellerArchiveCenter/data/"
-msgstr "https://github.com/RockefellerArchiveCenter/data/"
-
-#. Link used for sign-in within Dropdown list
-#. Link used for sign-in within the Header
-#: src/components/Dropdown/index.jsx:179
-#: src/components/Header/index.jsx:23
-msgid "https://raccess.rockarch.org"
-msgstr "https://raccess.rockarch.org"
-
-#. Aeon access point
-#: src/components/PageMyList/index.jsx:116
-msgid "https://raccess.rockarch.org/aeon.dll"
-msgstr "https://raccess.rockarch.org/aeon.dll"
-
-#. Scheduling an appointment email link
-#: src/components/MyListSidebar/index.jsx:11
-msgid "https://raccess.rockarch.org/aeon.dll?Action=10&Form=94"
-msgstr "https://raccess.rockarch.org/aeon.dll?Action=10&Form=94"
-
-#. Accessibility Statement Link
-#: src/components/PrimaryLink/index.jsx:51
-msgid "https://rockarch.org/about-us/accessibility/"
-msgstr "https://rockarch.org/about-us/accessibility/"
-
-#. Privacy Policy link
-#: src/components/PrimaryLink/index.jsx:64
-msgid "https://rockarch.org/about-us/privacy-policy/"
-msgstr "https://rockarch.org/about-us/privacy-policy/"
-
-#. Access Materials link
-#: src/components/PrimaryLink/index.jsx:12
-msgid "https://rockarch.org/collections/access-and-request-materials/"
-msgstr "https://rockarch.org/collections/access-and-request-materials/"
-
-#. Link for duplication request services
-#: src/components/ModalMyList/index.jsx:501
-msgid "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
-msgstr "https://rockarch.org/collections/access-and-request-materials/#duplication-services"
-
-#. Holiday Schedule link
-#: src/components/PrimaryLink/index.jsx:38
-msgid "https://rockarch.org/collections/access-and-request-materials/holiday-schedule"
-msgstr "https://rockarch.org/collections/access-and-request-materials/holiday-schedule"
-
-#. Facebook account link
-#: src/components/SocialIcons/index.jsx:8
-msgid "https://www.facebook.com/RockefellerArchiveCenter"
-msgstr "https://www.facebook.com/RockefellerArchiveCenter"
-
-#. Instagram account link
-#: src/components/SocialIcons/index.jsx:19
-msgid "https://www.instagram.com/rockefellerarchivecenter"
-msgstr "https://www.instagram.com/rockefellerarchivecenter"
-
-#. LinkedIn account link
-#: src/components/SocialIcons/index.jsx:30
-msgid "https://www.linkedin.com/company/rockefeller-archive-center"
-msgstr "https://www.linkedin.com/company/rockefeller-archive-center"
-
-#. Youtube account link
-#: src/components/SocialIcons/index.jsx:42
-msgid "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
-msgstr "https://www.youtube.com/channel/UCks9ctz4OF9tMNOTrRkWIZg"
-
 #. Label for duplication request form
-#: src/components/ModalMyList/index.jsx:557
+#: src/components/ModalMyList/index.jsx:542
 msgid "I understand that I may need to work with an archivist to identify the resources most relevant to my research, and that, in some cases, it is not possible to digitize material due to its volume or physical condition."
 msgstr "我知道，我可能需要与档案管理员合作，以确定与我的研究最相关的资源，在某些情况下，由于资料的范围或实际状况，不可能将其数字化。"
 
+#. Record detail section title
+#: src/components/RecordsDetail/index.jsx:274
+msgid "Immediate Source of Acquisition"
+msgstr "直接获取来源"
+
 #. Invalid email error
-#: src/components/ModalMyList/index.jsx:179
+#: src/components/ModalMyList/index.jsx:176
 msgid "Invalid email address provided."
 msgstr "提供的电子邮件地址无效。"
 
-#. Name of items error message
-#: src/components/ModalMyList/index.jsx:31
-#: src/components/ModalMyList/index.jsx:207
-msgid "items"
-msgstr "项目"
+#. Announced after adding an item to My List
+#: src/App.jsx:61
+msgid "Item added to list"
+msgstr "项目已添加到列表"
+
+#. Announced after removing an item from My List
+#: src/App.jsx:57
+msgid "Item removed from list"
+msgstr "项目已从列表中移除"
+
+#. Accessible label for the pagination button that skips back several pages
+#: src/components/Pagination/index.jsx:27
+msgid "Jump backward several pages"
+msgstr "跳回前几页"
+
+#. Accessible label for the pagination button that skips ahead several pages
+#: src/components/Pagination/index.jsx:23
+msgid "Jump forward several pages"
+msgstr "跳到后几页"
 
 #. Message displayed to jump to specific section within minimap
 #. placeholder {0}: areaHits.length
-#: src/components/Minimap/index.jsx:53
+#: src/components/Minimap/index.jsx:59
 msgid "Jump to {0} {hitPlural} in this area: {hitTitles}"
 msgstr "跳转到该区域的 {0} {hitPlural}：{hitTitles}"
 
+#. Message displayed to jump to specific section within minimap that contains digital matches
+#. placeholder {0}: areaHits.length
+#: src/components/Minimap/index.jsx:55
+msgid "Jump to {0} {hitPlural} with digital match in this area: {hitTitles}"
+msgstr "跳转到该区域中包含数字内容匹配的 {0} {hitPlural}：{hitTitles}"
+
 #. Licensing message
-#: src/components/SecondaryLink/index.jsx:41
+#: src/components/SecondaryLink/index.jsx:32
 msgid "Licensing for descriptive metadata"
 msgstr "描述性元数据许可"
 
 #. Location property
-#: src/components/PageAgent/index.jsx:206
+#: src/components/PageAgent/index.jsx:215
 msgid "Location of Headquarters"
 msgstr "总部所在地"
 
-#. Company Email link
-#: src/components/ModalMyList/index.jsx:164
-#: src/components/ModalMyList/index.jsx:510
-#: src/components/PageBackendError/index.jsx:21
-#: src/components/PrimaryLink/index.jsx:25
-msgid "mailto:archive@rockarch.org"
-msgstr "mailto:archive@rockarch.org"
+#. Label for main site navigation
+#: src/components/Header/index.jsx:21
+msgid "Main"
+msgstr "主导航"
 
-#: src/components/Dropdown/index.jsx:164
+#: src/components/Dropdown/index.jsx:172
 msgid "Menu"
-msgstr ""
-
-#. Name of message form
-#: src/components/ModalMyList/index.jsx:241
-msgid "message"
-msgstr "信息"
+msgstr "菜单"
 
 #. Label of Message Form
 #. Message Modal Form Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:118
-#: src/components/ModalMyList/index.jsx:237
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:112
+#: src/components/ModalMyList/index.jsx:227
 msgid "Message"
 msgstr "信息"
 
 #. Label for RAC staff message Form
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:187
-#: src/components/ModalMyList/index.jsx:428
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:179
+#: src/components/ModalMyList/index.jsx:411
 msgid "Message for RAC staff"
 msgstr "给洛克菲勒档案中心的档案管理员留言"
 
 #. Aria label for Minimap nav
 #. Header for minimap
 #. Header for modal minimap
-#: src/components/Minimap/index.jsx:79
-#: src/components/Minimap/index.jsx:83
+#: src/components/Minimap/index.jsx:85
+#: src/components/Minimap/index.jsx:89
 #: src/components/ModalMinimap/index.jsx:62
 msgid "Minimap"
 msgstr "迷你地图"
 
 #. Reading Room Actual Hours
-#: src/components/Footer/index.jsx:48
+#: src/components/Footer/index.jsx:49
 msgid "Monday-Friday<0/>9:30 a.m. to 5:00 p.m.<1/>"
 msgstr "星期一至星期五<0/>上午 9:30 至下午 5:00。<1/>"
 
 #. Message shown on button within Dropdown list
 #. Message shown on button within the Header
 #. Page title for user's list
-#: src/components/Dropdown/index.jsx:185
-#: src/components/Header/index.jsx:32
-#: src/components/PageMyList/index.jsx:36
+#. Site map link to My List page
+#: src/components/Dropdown/index.jsx:190
+#: src/components/Header/index.jsx:29
+#: src/components/PageMyList/index.jsx:37
+#: src/components/PageSiteMap/index.jsx:23
 msgid "My List"
 msgstr "我的列表"
 
+#. Accessible label for the next page pagination button
+#: src/components/Pagination/index.jsx:16
+msgid "Next page"
+msgstr "下一页"
+
 #. Nicknames property
-#: src/components/PageAgent/index.jsx:207
+#: src/components/PageAgent/index.jsx:216
 msgid "Nicknames"
 msgstr "昵称"
 
 #. No selected items error
-#: src/components/ModalMyList/index.jsx:188
-#: src/components/ModalMyList/index.jsx:401
-#: src/components/ModalMyList/index.jsx:531
+#: src/components/ModalMyList/index.jsx:185
+#: src/components/ModalMyList/index.jsx:384
+#: src/components/ModalMyList/index.jsx:516
 msgid "No items have been selected to submit."
 msgstr "没有选择要提交的项目。"
 
+#. Announced when a search returns no results
+#: src/components/PageSearch/index.jsx:136
+msgid "No results found"
+msgstr "没有找到相应的搜索结果"
+
 #. Empty Saved Items Test
 #. Message displayed when user has no saved items
-#: src/components/ModalSavedItem/index.jsx:61
+#: src/components/ModalSavedItem/index.jsx:62
 #: src/components/SavedItem/__tests__/SavedItem.test.jsx:41
 #: src/components/SavedItem/index.jsx:62
 msgid "No saved items."
 msgstr "无保存项目。"
 
 #. Search results header with no search term
-#: src/components/PageSearch/index.jsx:223
+#: src/components/PageSearch/index.jsx:236
 msgid "No search query entered"
 msgstr "没有输入搜索查询"
 
 #. Occupations property
-#: src/components/PageAgent/index.jsx:202
+#: src/components/PageAgent/index.jsx:211
 msgid "Occupations"
 msgstr "职业"
 
@@ -771,17 +786,24 @@ msgstr "职业"
 msgid "Online Collections and Catalog of Rockefeller Archive Center"
 msgstr "洛克菲勒档案中心的在线藏品和目录"
 
-#. Tooltip for button
-#: src/components/Dropdown/index.jsx:115
-msgid "opens email"
-msgstr "打开电子邮件"
+#. Aria label for opening the date and time picker
+#: src/components/Inputs/index.jsx:49
+msgid "Open date and time picker"
+msgstr "打开日期和时间选择器"
 
-#. Title for duplication services link
-#. Title message for opening an online item
-#: src/components/ModalMyList/index.jsx:497
-#: src/components/RecordsDetail/index.jsx:206
+#. Screen reader text for duplication services link
+#. Screen reader text for links that open in a new window
+#. Screen reader text for opening an online item
+#: src/components/Dropdown/index.jsx:71
+#: src/components/ModalMyList/index.jsx:493
+#: src/components/RecordsDetail/index.jsx:210
 msgid "opens in a new window"
 msgstr "在新窗口打开"
+
+#. Search result category label
+#: src/components/Card/index.jsx:18
+msgid "Organization"
+msgstr "组织"
 
 #. Label for Organizations category
 #: src/components/SearchForm/index.jsx:45
@@ -798,13 +820,18 @@ msgstr "未找到页面"
 msgid "People"
 msgstr "人"
 
+#. Search result category label
+#: src/components/Card/index.jsx:14
+msgid "Person"
+msgstr "人物"
+
 #. Company Phonenumber
-#: src/components/Footer/index.jsx:29
+#: src/components/Footer/index.jsx:30
 msgid "Phone: (914) 366-6300"
 msgstr "电话：（914）366-6300"
 
 #. Place of birth property
-#: src/components/PageAgent/index.jsx:204
+#: src/components/PageAgent/index.jsx:213
 msgid "Place of Birth"
 msgstr "出生地"
 
@@ -815,35 +842,35 @@ msgstr "请添加要搜索的单词或短语。"
 
 #. Captcha not completed error
 #. Modal Form Missing Field Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:154
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:221
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:275
-#: src/components/ModalMyList/index.jsx:184
-#: src/components/ModalMyList/index.jsx:398
-#: src/components/ModalMyList/index.jsx:524
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:147
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:212
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:264
+#: src/components/ModalMyList/index.jsx:181
+#: src/components/ModalMyList/index.jsx:381
+#: src/components/ModalMyList/index.jsx:509
 msgid "Please complete this field."
 msgstr "请填写此栏。"
 
 #. placeholder {0}: import.meta.env.VITE_DUPLICATION_REQUEST_LIMIT
-#: src/components/ModalMyList/index.jsx:534
+#: src/components/ModalMyList/index.jsx:519
 msgid "Please limit your request to {0} items."
 msgstr "请将请求限制在 {0} 个项目内。"
 
 #. Missing Scheduled Date error
-#: src/components/ModalMyList/index.jsx:391
+#: src/components/ModalMyList/index.jsx:374
 msgid "Please provide the date of your research visit."
 msgstr "请提供研究访问的日期。"
 
-#: src/components/ModalMyList/index.jsx:395
+#: src/components/ModalMyList/index.jsx:378
 msgid "Please select a location of a reading room."
 msgstr "请选择阅览室的位置。"
 
-#: src/components/ModalMyList/index.jsx:291
+#: src/components/ModalMyList/index.jsx:272
 msgid "Please select a reading room"
 msgstr "请选择阅览室"
 
 #. Positions held property
-#: src/components/PageAgent/index.jsx:203
+#: src/components/PageAgent/index.jsx:212
 msgid "Positions Held"
 msgstr "曾任职务"
 
@@ -853,48 +880,62 @@ msgid "Preparing items"
 msgstr "准备项目"
 
 #. Message while page loads for Aeon submissions
-#: src/components/PageMyList/index.jsx:109
+#: src/components/PageMyList/index.jsx:115
 msgid "Preparing items for your request"
 msgstr "为您的要求准备物品"
 
 #. Page Title for sending an Aeon request
-#: src/components/PageMyList/index.jsx:105
+#: src/components/PageMyList/index.jsx:111
 msgid "Preparing Request Data"
 msgstr "准备申请数据"
 
+#. Accessible label for the previous page pagination button
+#: src/components/Pagination/index.jsx:10
+msgid "Previous page"
+msgstr "上一页"
+
 #. Privacy Policy message
-#: src/components/PrimaryLink/index.jsx:68
+#: src/components/PrimaryLink/index.jsx:51
 msgid "Privacy Policy"
 msgstr "隐私政策"
 
+#. Record detail section title
+#: src/components/RecordsDetail/index.jsx:269
+msgid "Processing Information"
+msgstr "整理信息"
+
 #. Footer.Primary.RAC.message
-#: src/components/PrimaryLink/index.jsx:81
+#: src/components/PrimaryLink/index.jsx:61
 msgid "RAC Policies"
 msgstr "RAC 政策"
 
 #. Reading Room Hours message
-#: src/components/Footer/index.jsx:43
+#: src/components/Footer/index.jsx:44
 msgid "Reading Room Hours:"
 msgstr "阅览室开放时间:"
 
-#. Name of recaptcha element
-#. Name of recaptcha error message
-#: src/components/ModalMyList/index.jsx:250
-#: src/components/ModalMyList/index.jsx:257
-#: src/components/ModalMyList/index.jsx:571
-msgid "recaptcha"
-msgstr "重新验证"
+#. Site map heading for links to related websites
+#: src/components/PageSiteMap/index.jsx:25
+msgid "Related sites"
+msgstr "相关网站"
 
+#. Record detail accordion heading
+#: src/components/RecordsDetail/index.jsx:308
+msgid "Related Terms"
+msgstr "相关术语"
+
+#. Button that confirms removing all items from the list
 #. Label to remove saved item
 #. Test Remove button label
 #: src/components/ListToggleButton/__tests__/ListToggleButton.test.jsx:66
+#: src/components/PageMyList/index.jsx:383
 #: src/components/SavedItem/index.jsx:26
 msgid "Remove"
 msgstr "删除"
 
-#. Message shown on button within Dropdown list
+#. Remove All Items button in Dropdown list
 #. Remove all items label
-#: src/components/Dropdown/index.jsx:152
+#: src/components/Dropdown/index.jsx:160
 #: src/components/MyListExportActions/index.jsx:28
 msgid "Remove All Items"
 msgstr "删除所有项目"
@@ -904,55 +945,75 @@ msgstr "删除所有项目"
 msgid "Remove from List"
 msgstr "从清单中移除"
 
+#. Record detail section title
+#: src/components/RecordsDetail/index.jsx:294
+msgid "Reproduction and Duplication"
+msgstr "复制与复印"
+
 #. Request items Modal Form Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:190
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:245
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:182
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:235
 msgid "Request 4 Items"
 msgstr "申请 4 个项目"
 
-#. Message shown on button within Dropdown list
-#. Shown to request copies of an item
-#: src/components/Dropdown/index.jsx:129
-#: src/components/MyListSidebar/index.jsx:29
+#. Request Copies button in Dropdown list
+#. Request copies button in Sidebar
+#. Title of the modal for requesting copies of items
+#: src/components/Dropdown/index.jsx:136
+#: src/components/ModalMyList/index.jsx:456
+#: src/components/MyListSidebar/index.jsx:27
 msgid "Request Copies"
 msgstr "索取副本"
 
-#. Message shown on button within Dropdown list
-#. Shown to Request the item in a Reading Room
-#: src/components/Dropdown/index.jsx:121
-#: src/components/MyListSidebar/index.jsx:21
+#. Request in Reading Room button in Dropdown list
+#. Request in Reading Room button in Sidebar
+#. Title of the modal for requesting items in the reading room
+#: src/components/Dropdown/index.jsx:128
+#: src/components/ModalMyList/index.jsx:360
+#: src/components/MyListSidebar/index.jsx:19
 msgid "Request in Reading Room"
 msgstr "请求在阅览室阅读"
 
-#. Primary Title
-#: src/components/Footer/index.jsx:13
+#. Accessible name for footer title
+#. Site map label for Rockefeller Archive Center website
+#: src/components/Footer/index.jsx:12
+#: src/components/PageSiteMap/index.jsx:32
+msgid "Rockefeller Archive Center"
+msgstr "洛克菲勒档案中心"
+
+#. Primary footer title
+#: src/components/Footer/index.jsx:14
 msgid "Rockefeller<0/>Archive Center"
 msgstr "洛克菲勒<0/>档案中心"
 
 #. Shown for the user to save and close the filter
-#: src/components/ModalSearch/index.jsx:54
+#: src/components/ModalSearch/index.jsx:50
 msgid "Save & Close"
 msgstr "保存并关闭"
 
-#. Message shown on button within Dropdown list
-#: src/components/Dropdown/index.jsx:109
+#. Schedule a visit link in Dropdown list
+#. Schedule a visit link in Sidebar
+#: src/components/Dropdown/index.jsx:120
+#: src/components/MyListSidebar/index.jsx:12
 msgid "Schedule a Visit"
 msgstr "到访预约"
 
 #. Label for scheduling date
 #. Scheduled Date Modal Form Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:183
-#: src/components/ModalMyList/index.jsx:337
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:175
+#: src/components/ModalMyList/index.jsx:318
 msgid "Scheduled Date"
 msgstr "计划来访日期"
 
 #. Label for Search button
+#. Site map link to search page
+#: src/components/PageSiteMap/index.jsx:22
 #: src/components/SearchForm/index.jsx:78
 msgid "Search"
 msgstr "搜索"
 
 #. Message to search for more related collections
-#: src/components/PageAgent/index.jsx:53
+#: src/components/PageAgent/index.jsx:54
 msgid "Search More Related Collections"
 msgstr "搜索更多相关收藏"
 
@@ -967,7 +1028,7 @@ msgid "Search Our Collections.Discover People and Organizations.Access Digital C
 msgstr "搜索我们的藏品、发现人物和组织、访问数字内容。"
 
 #. Search Results title
-#: src/components/PageSearch/index.jsx:54
+#: src/components/PageSearch/index.jsx:55
 msgid "Search Results"
 msgstr "搜索结果"
 
@@ -975,8 +1036,8 @@ msgstr "搜索结果"
 #. Search results header with results
 #. Search results header with results
 #: src/components/PageSearch/__tests__/PageSearch.test.jsx:45
-#: src/components/PageSearch/index.jsx:50
-#: src/components/PageSearch/index.jsx:232
+#: src/components/PageSearch/index.jsx:51
+#: src/components/PageSearch/index.jsx:245
 msgid "Search Results for “{query}”"
 msgstr "“{query}”的搜索结果"
 
@@ -986,65 +1047,60 @@ msgid "Search..."
 msgstr "搜索..."
 
 #. Search results header while searching
-#: src/components/PageSearch/index.jsx:218
+#: src/components/PageSearch/index.jsx:231
 msgid "Searching"
 msgstr "搜寻中"
 
 #. Holiday Schedule message
-#: src/components/PrimaryLink/index.jsx:42
+#: src/components/PrimaryLink/index.jsx:31
 msgid "See holiday schedule"
 msgstr "查看假期安排"
 
 #. Button Select all items Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:51
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:46
 msgid "Select all items"
 msgstr "选择所有项目"
 
-#: src/components/ModalMyList/index.jsx:305
+#: src/components/ModalMyList/index.jsx:286
 msgid "Select Reading Room Location"
 msgstr "选择阅览室位置"
 
 #. Message displayed after emailing selected items
 #. placeholder {0}: submitted.email
-#: src/components/PageMyList/index.jsx:159
+#: src/components/PageMyList/index.jsx:162
 msgid "Selected items in your list have been emailed to {0}"
 msgstr "您清单中的选定项目已通过电子邮件发送至 {0}"
 
 #. Button Select all items Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:84
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:78
 msgid "selected:"
 msgstr "选择："
 
 #. totals empty Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:56
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:51
 msgid "selected: 0 items"
 msgstr "选定： 0 项"
 
 #. Modal Form Submit Test
 #. Send List sumbit message
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:122
-#: src/components/ModalMyList/index.jsx:265
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:116
+#: src/components/ModalMyList/index.jsx:246
 msgid "Send List"
 msgstr "发送列表"
 
 #. Page Title for sending an email
-#: src/components/PageMyList/index.jsx:145
+#: src/components/PageMyList/index.jsx:148
 msgid "Sending Email"
 msgstr "发送电子邮件"
 
 #. Message shown when list is closed
-#: src/components/Facet/index.jsx:25
-msgid "show all"
+#: src/components/Facet/index.jsx:22
+msgid "Show all"
 msgstr "显示所有"
 
-#. Aria label for Show|Hide More Button
-#: src/components/Facet/index.jsx:11
-msgid "Show all values"
-msgstr "显示所有值"
-
 #. Message shown when list is opened
-#: src/components/Facet/index.jsx:20
-msgid "show less"
+#: src/components/Facet/index.jsx:18
+msgid "Show less"
 msgstr "显示较少"
 
 #. Label for digital matches only checkbox
@@ -1053,10 +1109,22 @@ msgid "Show only results with digital matches"
 msgstr "只显示与所搜寻的内容相匹配的数字化结果"
 
 #. Message shown on sign-in button
-#: src/components/Dropdown/index.jsx:174
-#: src/components/Header/index.jsx:27
+#: src/components/Dropdown/index.jsx:182
+#: src/components/Header/index.jsx:24
+#: src/components/PageSiteMap/index.jsx:37
 msgid "Sign in to RACcess"
 msgstr "登录 RACcess"
+
+#. Site map message
+#. Site map page heading
+#. Site map page heading
+#. Site map page title
+#: src/components/PageSiteMap/__tests__/PageSiteMap.test.jsx:16
+#: src/components/PageSiteMap/index.jsx:8
+#: src/components/PageSiteMap/index.jsx:16
+#: src/components/SecondaryLink/index.jsx:52
+msgid "Site map"
+msgstr "网站地图"
 
 #. Panel Extent Size message
 #: src/components/RecordsDetail/index.jsx:42
@@ -1069,12 +1137,12 @@ msgid "Skip to main content"
 msgstr "跳转到主要内容"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:186
+#: src/components/PageAgent/index.jsx:195
 msgid "Social Networks and Archival Context"
 msgstr "社会网络和档案背景"
 
 #. Message shown when request failed
-#: src/components/PageMyList/index.jsx:356
+#: src/components/PageMyList/index.jsx:360
 msgid "Sorry, our system is unable to process requests right now. We're working to fix this! Please try again later."
 msgstr "很抱歉，我们的系统现在无法处理申请。我们正在努力修复！请稍后再试。"
 
@@ -1084,52 +1152,52 @@ msgid "Sorry, the requested page was not found!"
 msgstr "抱歉，未找到所请求的页面！"
 
 #. Search results header with no results
-#: src/components/PageSearch/index.jsx:228
+#: src/components/PageSearch/index.jsx:241
 msgid "Sorry, there are no search results for “{query}”"
-msgstr "很抱歉，没有找到相应的搜索结果 “{query}”"
-
-#. Name for sort results input
-#: src/components/PageSearch/index.jsx:267
-msgid "sort"
-msgstr "排序"
+msgstr "很抱歉，没有找到“{query}”的搜索结果"
 
 #. Sort by creator name label
-#: src/components/PageSearch/index.jsx:75
+#: src/components/PageSearch/index.jsx:76
 msgid "Sort by creator name"
 msgstr "按创作者姓名排序"
 
 #. Sort by relevance label
-#: src/components/PageSearch/index.jsx:63
+#: src/components/PageSearch/index.jsx:64
 msgid "Sort by relevance"
 msgstr "按相关性排序"
 
 #. Sort by title label
-#: src/components/PageSearch/index.jsx:69
+#: src/components/PageSearch/index.jsx:70
 msgid "Sort by title"
 msgstr "按标题排序"
 
 #. Label for sort results input
-#: src/components/PageSearch/index.jsx:272
+#: src/components/PageSearch/index.jsx:282
 msgid "Sort search results"
 msgstr "搜索结果排序"
 
 #. Label for the start year input
-#: src/components/ModalSearch/index.jsx:66
+#: src/components/ModalSearch/index.jsx:62
 msgid "Start Year"
 msgstr "开始年份"
 
-#. Name of subject form
-#: src/components/ModalMyList/index.jsx:231
-msgid "subject"
-msgstr "主题"
-
 #. Label of Subject Form
 #. Subject Modal Form Test
-#. Title for Subject filter
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:114
-#: src/components/ModalMyList/index.jsx:227
-#: src/components/ModalSearch/index.jsx:99
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:107
+#: src/components/ModalMyList/index.jsx:219
+msgctxt "email subject line"
 msgid "Subject"
+msgstr "主题"
+
+#. Title for Subject filter
+#: src/components/ModalSearch/index.jsx:95
+msgctxt "topic"
+msgid "Subject"
+msgstr "主题"
+
+#. Record detail section title
+#: src/components/RecordsDetail/index.jsx:312
+msgid "Subjects"
 msgstr "主题"
 
 #. Aria Label for search submission button
@@ -1137,10 +1205,20 @@ msgstr "主题"
 msgid "Submit search"
 msgstr "搜索"
 
+#. Record detail accordion heading
+#: src/components/RecordsDetail/index.jsx:223
+msgid "Summary"
+msgstr "摘要"
+
 #. Take-down Policy message
-#: src/components/SecondaryLink/index.jsx:54
+#: src/components/SecondaryLink/index.jsx:42
 msgid "Take-down policy"
-msgstr "拆除政策"
+msgstr "下架政策"
+
+#. Record detail section title
+#: src/components/RecordsDetail/index.jsx:297
+msgid "Technical Access"
+msgstr "技术查阅要求"
 
 #. Subtitle displayed within the Header
 #: src/components/Header/index.jsx:16
@@ -1149,7 +1227,7 @@ msgstr "洛克菲勒档案中心的在线收藏和目录"
 
 #. Message displayed when error occurs while submitting request
 #. placeholder {0}: err.toString()
-#: src/components/PageMyList/index.jsx:170
+#: src/components/PageMyList/index.jsx:173
 msgid "There was an error submitting your request. The error message was: {0}"
 msgstr "提交您的请求时出现错误。错误信息为{0}"
 
@@ -1164,18 +1242,18 @@ msgid "View Online"
 msgstr "在线查看"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:184
+#: src/components/PageAgent/index.jsx:193
 msgid "Virtual International Authority File"
 msgstr "虚拟国际权威档案"
 
 #. Costs not agreed to error
 #. Payment Modal Form Test
-#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:278
-#: src/components/ModalMyList/index.jsx:527
+#: src/components/ModalMyList/__tests__/ModalMyList.test.jsx:267
+#: src/components/ModalMyList/index.jsx:512
 msgid "We cannot process your request unless you agree to pay the costs of reproduction."
 msgstr "除非您同意支付复制费用，否则我们无法处理您的申请。"
 
 #. External Identifier Title
-#: src/components/PageAgent/index.jsx:185
+#: src/components/PageAgent/index.jsx:194
 msgid "WorldCat Identities"
 msgstr "WorldCat Identities"

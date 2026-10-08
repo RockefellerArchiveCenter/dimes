@@ -174,6 +174,10 @@
   }
 }
 
+.child__list-item--collection .child__badges {
+  font-size: 18px;
+}
+
 .child__list-item--bottom-level {
   border: 0;
   margin-bottom: 0;
@@ -217,6 +221,8 @@
 .child__buttons {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
   align-items: flex-start;
   flex-shrink: 0;
   order: 3;
@@ -248,8 +254,29 @@
   }
 }
 
+
+// Control button styles for child titles that are buttons.
+button.child__title--collection {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 0 20px 0 0;
+  line-height: inherit;
+}
+
 .child__title--object {
   font-size: 16px;
+  display: inline-block;
+  margin: 0;
+  padding: 1px 20px 1px 0;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: abs.$black;
+    text-decoration: none;
+  }
 
   &:focus-visible {
     box-shadow: none;
@@ -265,9 +292,13 @@
 .child__title--collection {
   font-size: 18px;
 
-  &:focus {
+  &:focus-visible {
     box-shadow: none;
     outline: none;
+
+    &::after {
+      @include abs.focus-inset;
+    }
   }
 }
 
@@ -279,4 +310,9 @@
   @include abs.md-up {
     order: unset
   }
+}
+
+.child__list-item--collection .child__text {
+  box-sizing: border-box;
+  padding: 0 20px 0 0;
 }

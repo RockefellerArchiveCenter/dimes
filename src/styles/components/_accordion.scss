@@ -5,32 +5,27 @@
 }
 
 .accordion__button {
+  appearance: none;
+  display: block;
+  width: 100%;
+  background: none;
+  border: 0;
   border-bottom: 1px dotted abs.$regal-blue;
+  text-align: left;
   font-family: inherit;
   font-size: 14px;
+  line-height: inherit;
   text-transform: uppercase;
   font-weight: abs.$font-weight-bold;
   letter-spacing: 2px;
   color: abs.$regal-blue;
   cursor: pointer;
-  &:focus {
-    outline: none;
-    border-bottom: 1px solid abs.$regal-blue;
-    font-weight: abs.$font-weight-heavy;
+  &:focus-visible {
+    @include abs.focus-default;
   }
-  &::after {
-    font-family: Material Icons;
-    content: "keyboard_arrow_down";
+  .material-icon {
     float: right;
-    font-size: 24px;
     line-height: 12px;
-    text-transform: none;
-    // }
-  }
-  &[aria-expanded=true] {
-    &::after {
-      content: "keyboard_arrow_up";
-    }
   }
 }
 

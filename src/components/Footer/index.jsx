@@ -1,16 +1,17 @@
 import SocialIcons from '../SocialIcons'
 import { PrimaryLinkAccessMaterials, PrimaryLinkAccessibilityPolicy, PrimaryLinkEmail, PrimaryLinkHoliday, PrimaryLinkPrivacyPolicy, PrimaryLinkRACPolicy } from '../PrimaryLink'
-import { SecondaryLinkCollectionsAPI, SecondaryLinkBulkData, SecondaryLinkLicensing, SecondaryLinkTakeDownPolicy } from '../SecondaryLink'
+import { SecondaryLinkCollectionsAPI, SecondaryLinkBulkData, SecondaryLinkLicensing, SecondaryLinkSiteMap, SecondaryLinkTakeDownPolicy } from '../SecondaryLink'
 import { Trans } from '@lingui/react/macro'
+import { t } from '@lingui/core/macro'
 
 const Footer = () => (
   <footer role='contentinfo'>
     <div className='footer-primary'>
       <div className="wrapper">
         <div className='container grid'>
-          <h2 aria-label='Rockefeller Archive Center' className='footer-primary__title heading--dotted-border'>
+          <h2 aria-label={t({ comment: 'Accessible name for footer title', message: 'Rockefeller Archive Center' })} className='footer-primary__title heading--dotted-border'>
             <span aria-hidden='true'>
-              <Trans comment='Primary Title'>
+              <Trans comment='Primary footer title'>
                 Rockefeller
                 <br />
                 Archive Center
@@ -83,6 +84,9 @@ const Footer = () => (
           </li>
           <li className='footer-secondary__list-item'>
             <SecondaryLinkTakeDownPolicy />
+          </li>
+          <li className='footer-secondary__list-item'>
+            <SecondaryLinkSiteMap />
           </li>
         </ul>
       </div>

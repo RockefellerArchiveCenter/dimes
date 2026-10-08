@@ -9,6 +9,10 @@
   padding-bottom: 100px;
 }
 
+.backend-error__title:focus {
+  @include abs.focus-default;
+}
+
 .backend-error__icon > .material-icon {
   font-size: 100px;
   color: abs.$night-grey;

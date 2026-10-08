@@ -41,7 +41,8 @@ const Minimap = ({ data, isLoading, params, rowCount=4 }) => {
     const areaHits = data.hits && data.hits.filter(h => (h.index <= b.end && b.start < h.index))
                                            .filter(h => h.uri.includes('objects'))
                                            .sort((a, b) => a.index - b.index)
-    const hitClass = areaHits.filter(h => h.online).length ? 'minimap__digital-hit' : 'minimap__record-hit'
+    const hasDigital = areaHits.some(h => h.online)
+    const hitClass = hasDigital ? 'minimap__digital-hit' : 'minimap__record-hit'
     const hitTitles = areaHits.map(h => h.title).join('\n')
     const currentUrl = window.location.pathname
     const areaUrl = areaHits.length && areaHits[0].uri
@@ -50,10 +51,15 @@ const Minimap = ({ data, isLoading, params, rowCount=4 }) => {
       comment: "Pluralization of hit(s) for minimap boxes",
       message: plural(areaHits.length, {one: "hit", other: "hits"})
     })
-    const message = t({
-      comment: "Message displayed to jump to specific section within minimap",
-      message: `Jump to ${areaHits.length} ${hitPlural} in this area: ${hitTitles}`
-    })
+    const message = hasDigital
+      ? t({
+        comment: "Message displayed to jump to specific section within minimap that contains digital matches",
+        message: `Jump to ${areaHits.length} ${hitPlural} with digital match in this area: ${hitTitles}`
+      })
+      : t({
+        comment: "Message displayed to jump to specific section within minimap",
+        message: `Jump to ${areaHits.length} ${hitPlural} in this area: ${hitTitles}`
+      })
     return (
       areaHits.length ?
       <a

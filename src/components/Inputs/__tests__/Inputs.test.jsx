@@ -1,4 +1,4 @@
-import { render, act } from '@testing-library/react'
+import { render, act, fireEvent } from '@testing-library/react'
 import { I18nApp } from '../../i18n'
 import {
   CheckBoxInput,
@@ -42,6 +42,9 @@ it('renders date props correctly', () => {
 
   const input = document.querySelector('.dp__wrapper')
   expect(input.id).toBe('1')
+
+  const button = document.querySelector('.dp__calendar-button')
+  expect(button.getAttribute('aria-label')).toBe('Open date and time picker')
 })
 
 it('renders select props correctly', () => {

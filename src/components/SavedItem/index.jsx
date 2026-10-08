@@ -3,17 +3,17 @@ import MaterialIcon from '../MaterialIcon'
 import { t } from '@lingui/core/macro'
 import { Trans } from '@lingui/react/macro'
 import { MyListSkeleton } from '../LoadingSkeleton'
-import { dateString, truncateString } from '../Helpers'
+import { DESCR_LANG, dateString, truncateString } from '../Helpers'
 import './styles.scss'
 
 const SavedItem = props => (
   <li className='saved-item mb-40 py-0 pr-22 pl-15'>
     <div className='saved-item__row'>
       <div className='saved-item__item-description pr-20'>
-        <h3 className='saved-item__title mt-0 mx-0 mb-5' id={`title-${props.uri}`}><a href={props.uri}>{props.title}</a></h3>
-        {dateString(props.dates) !== props.title && <p className='saved-item__date'>{dateString(props.dates)}</p>}
-        {props.description && <p className='saved-item__description text--truncate'>{truncateString(props.description, 150)}</p>}
-        {props.parent && <Trans comment='Saved item found in message'><p className='saved-item__found-in'>Found in: <a href={props.parentRef}>{props.parent}</a></p></Trans>}
+        <h3 className='saved-item__title mt-0 mx-0 mb-5' id={`title-${props.uri}`} lang={DESCR_LANG}><a href={props.uri}>{props.title}</a></h3>
+        {dateString(props.dates) !== props.title && <p className='saved-item__date' lang={DESCR_LANG}>{dateString(props.dates)}</p>}
+        {props.description && <p className='saved-item__description text--truncate' lang={DESCR_LANG}>{truncateString(props.description, 150)}</p>}
+        {props.parent && <Trans comment='Saved item found in message'><p className='saved-item__found-in'>Found in: <a href={props.parentRef} lang={DESCR_LANG}>{props.parent}</a></p></Trans>}
         {props.lastRequested && <Trans comment='Saved item last requested message'><p className='saved-item__last-requested'>Last requested on: {props.lastRequested}</p></Trans>}
       </div>
       <div className='saved-item__buttons'>
@@ -34,9 +34,9 @@ const SavedItem = props => (
   </li>)
 
 const SavedItemGroup = ({ items, removeFromList, title }) => {
-  const listItems = items.map((item, index) =>
+  const listItems = items.map(item =>
     <SavedItem
-      key={index}
+      key={item.uri}
       parentRef={item.parent_ref}
       {...item}
       handleClick={() => removeFromList(item)} />
@@ -44,7 +44,7 @@ const SavedItemGroup = ({ items, removeFromList, title }) => {
 
   return (
     <div className='saved-items__item-group'>
-      <h2 className='item-group__title mt-24 mb-30 p-0'>{title}</h2>
+      <h2 className='item-group__title mt-24 mb-30 p-0' lang={DESCR_LANG}>{title}</h2>
       <ul className='item-group__items list--unstyled'>
         {listItems}
       </ul>

@@ -11,7 +11,6 @@ const ListToggleButton = ({ className, isMobile, isSaved, item, titleId, toggleS
     <Button
       id={buttonId}
       ariaLabelledBy={ariaLabelledBy}
-      ariaPressed
       className={classnames('saved', className)}
       label={
         t({
@@ -28,7 +27,6 @@ const ListToggleButton = ({ className, isMobile, isSaved, item, titleId, toggleS
     <Button
       id={buttonId}
       ariaLabelledBy={ariaLabelledBy}
-      ariaPressed={false}
       className={className}
       label={
         t({
