@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.2](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.1.1...v2.1.2) (2026-10-08)
+
+
+### Bug Fixes
+
+* add new translations and fix existing errors, fix [#854](https://github.com/RockefellerArchiveCenter/dimes/issues/854) ([7148cad](https://github.com/RockefellerArchiveCenter/dimes/commit/7148cad866ebcca6dfc2a7f2a79b33cdd1f2ee51))
+* create translations for all labels and headings, remove email/url translations ([6260788](https://github.com/RockefellerArchiveCenter/dimes/commit/62607885f94a4d940df35bee1bfd9572c689530f))
+* instead of focus management, use live region to announce loading ([35a7379](https://github.com/RockefellerArchiveCenter/dimes/commit/35a7379f2f4f06dbdd1f1c6e2f363e438f3bfcc0))
+* match html page language to lingui locale and implement lang parts for english api content ([4e21dff](https://github.com/RockefellerArchiveCenter/dimes/commit/4e21dff0f9617f5d0d697efea5390da55a0382b4))
+* remove unnecessary props on Dropdown ([b074a87](https://github.com/RockefellerArchiveCenter/dimes/commit/b074a87335bd832bd5f88392633870ac7405dd7b))
+* set focus when PageBackendError appears and add headings ([1c21b52](https://github.com/RockefellerArchiveCenter/dimes/commit/1c21b523444c5ae8522f0356a49e367b2e8dcc20))
+* use description list instead of headings for agent attributes ([3d66ebe](https://github.com/RockefellerArchiveCenter/dimes/commit/3d66ebe67200da29feb0a326029a55a02ba6b7d3))
+
 ## [2.1.1](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.1.0...v2.1.1) (2026-10-05)
 
 
