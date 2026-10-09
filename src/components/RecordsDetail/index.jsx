@@ -195,26 +195,25 @@ const RecordsDetail = props => {
         </button>
         </Trans>
       </div>
-      {props.item.online &&
-        <>
-        <Trans comment='Buttons for online records'>
+      {props.item.online && props.item.files.some(f => f.manifest) ? (
+        <Trans comment='Button for digital object viewer'>
         <a className='btn btn--sm btn--orange btn--detail mr-10 mb-10 p-8'
           href={`${props.item.uri}/view`}>View Online<MaterialIcon icon='visibility' className='material-icon--space-before'/></a>
         </Trans>
-        {props.item.files[0].download &&
+      ) : null }
+      {props.item.files.some(f => f.download) ?
+        (
         <>
           <a className='btn btn--sm btn--orange btn--detail mr-10 mb-10 p-8'
-          href={props.item.files[0].download}
-          target='_blank'
-          rel='noopener noreferrer'
-          >{t({ comment: 'Button to download an online record', message: 'Download' })}<span className='visually-hidden'> ({t({ comment: 'Screen reader text for opening an online item', message: 'opens in a new window' })})</span> <MaterialIcon icon='get_app' className='material-icon--space-before' /></a>
-          { props.downloadSize ?
-            <p className='panel__text'>{`Acrobat PDF, ${props.downloadSize}`}</p> :
-            <p className='panel__text'><Skeleton/></p> }
-          </>
-        }
+            href={props.item.files[0].download}
+            target='_blank'
+            rel='noopener noreferrer'
+            >{t({ comment: 'Button to download an online record', message: 'Download' })}<span className='visually-hidden'> ({t({ comment: 'Screen reader text for opening an online item', message: 'opens in a new window' })})</span> <MaterialIcon icon='get_app' className='material-icon--space-before' /></a>
+            { props.downloadSize ?
+              <p className='panel__text'>{`Acrobat PDF, ${props.downloadSize}`}</p> :
+              <p className='panel__text'><Skeleton/></p> }
         </>
-      }
+      ) : null }
       </>
     }
     <Accordion className='accordion mt-20' preExpanded={['summary']}>
