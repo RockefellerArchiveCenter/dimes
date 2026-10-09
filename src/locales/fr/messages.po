@@ -272,9 +272,9 @@ msgstr "<0>La mini-carte est une nouvelle fonctionnalité qui vous permet d’ac
 msgid "<0>There was an error submitting your request.</0><1>The request to {0} failed with the message {1}: {2}.</1><2>{3}</2>"
 msgstr "<0>Une erreur s'est produite lors de l'envoi de votre demande.</0><1>La requête vers {0} a échoué avec le message {1}: {2}.</1><2>{3}</2>"
 
-#. Buttons for online records
+#. Button for digital object viewer
 #. View Saved Item online
-#: src/components/RecordsDetail/index.jsx:200
+#: src/components/RecordsDetail/index.jsx:199
 #: src/components/SavedItem/index.jsx:21
 msgid "<0>View Online<1/></0>"
 msgstr "<0>Consulter en ligne<1/></0>"
@@ -300,12 +300,12 @@ msgid "about minimap"
 msgstr "Qu’est-ce que le minimap ?"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:291
+#: src/components/RecordsDetail/index.jsx:290
 msgid "Access"
 msgstr "Accès"
 
 #. Record detail accordion heading
-#: src/components/RecordsDetail/index.jsx:287
+#: src/components/RecordsDetail/index.jsx:286
 msgid "Access and Use"
 msgstr "Accès et utilisation"
 
@@ -371,7 +371,7 @@ msgid "Back to search"
 msgstr "Retour à la recherche"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:256
+#: src/components/RecordsDetail/index.jsx:255
 msgid "Biographical/Historical Note"
 msgstr "Notice biographique/historique"
 
@@ -468,7 +468,7 @@ msgid "Creator"
 msgstr "Créateur"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:231
+#: src/components/RecordsDetail/index.jsx:230
 msgid "Creators"
 msgstr "Créateurs"
 
@@ -478,7 +478,7 @@ msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "Page actuelle - JPEG2000 {pixelDimensions}"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:277
+#: src/components/RecordsDetail/index.jsx:276
 msgid "Custodial History"
 msgstr "Historique de la conservation"
 
@@ -488,12 +488,12 @@ msgid "Date Range"
 msgstr "Plage de dates"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:235
+#: src/components/RecordsDetail/index.jsx:234
 msgid "Dates"
 msgstr "Dates"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:252
+#: src/components/RecordsDetail/index.jsx:251
 msgid "Description"
 msgstr "Description"
 
@@ -516,7 +516,7 @@ msgstr "dimes.rockarch.org"
 #. Button to download an online record
 #. Message shown on download dropdown button
 #: src/components/PageDigitalObject/index.jsx:143
-#: src/components/RecordsDetail/index.jsx:210
+#: src/components/RecordsDetail/index.jsx:211
 msgid "Download"
 msgstr "Télécharger"
 
@@ -588,7 +588,7 @@ msgid "Error submitting request"
 msgstr "Erreur dans l'envoi de la demande"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:300
+#: src/components/RecordsDetail/index.jsx:299
 msgid "Existence and Location of Copies"
 msgstr "Existence et lieu de conservation des copies"
 
@@ -643,7 +643,7 @@ msgid "I understand that I may need to work with an archivist to identify the re
 msgstr "Je comprends qu'il me faudra peut-être travailler avec un archiviste pour identifier les ressources les plus pertinentes pour ma recherche et que, dans certains cas, il n'est pas possible de numériser le matériel en raison de son étendue ou de son état physique."
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:274
+#: src/components/RecordsDetail/index.jsx:273
 msgid "Immediate Source of Acquisition"
 msgstr "Modalités d’entrée"
 
@@ -796,7 +796,7 @@ msgstr "Ouvrir le sélecteur de date et d’heure"
 #. Screen reader text for opening an online item
 #: src/components/Dropdown/index.jsx:71
 #: src/components/ModalMyList/index.jsx:493
-#: src/components/RecordsDetail/index.jsx:210
+#: src/components/RecordsDetail/index.jsx:211
 msgid "opens in a new window"
 msgstr "s’ouvre dans une nouvelle fenêtre"
 
@@ -900,7 +900,7 @@ msgid "Privacy Policy"
 msgstr "Politique de confidentialité"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:269
+#: src/components/RecordsDetail/index.jsx:268
 msgid "Processing Information"
 msgstr "Informations sur le traitement"
 
@@ -920,7 +920,7 @@ msgid "Related sites"
 msgstr "Sites associés"
 
 #. Record detail accordion heading
-#: src/components/RecordsDetail/index.jsx:308
+#: src/components/RecordsDetail/index.jsx:307
 msgid "Related Terms"
 msgstr "Termes associés"
 
@@ -946,7 +946,7 @@ msgid "Remove from List"
 msgstr "Retirer de ma liste"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:294
+#: src/components/RecordsDetail/index.jsx:293
 msgid "Reproduction and Duplication"
 msgstr "Reproduction et duplication"
 
@@ -1196,7 +1196,7 @@ msgid "Subject"
 msgstr "Sujet"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:312
+#: src/components/RecordsDetail/index.jsx:311
 msgid "Subjects"
 msgstr "Sujets"
 
@@ -1206,7 +1206,7 @@ msgid "Submit search"
 msgstr "Soumettre la recherche"
 
 #. Record detail accordion heading
-#: src/components/RecordsDetail/index.jsx:223
+#: src/components/RecordsDetail/index.jsx:222
 msgid "Summary"
 msgstr "Résumé"
 
@@ -1216,7 +1216,7 @@ msgid "Take-down policy"
 msgstr "Politique de retrait"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:297
+#: src/components/RecordsDetail/index.jsx:296
 msgid "Technical Access"
 msgstr "Accès technique"
 
