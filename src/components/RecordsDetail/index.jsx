@@ -201,7 +201,7 @@ const RecordsDetail = props => {
           href={`${props.item.uri}/view`}>View Online<MaterialIcon icon='visibility' className='material-icon--space-before'/></a>
         </Trans>
       ) : null }
-      {props.item.files.some(f => f.download) ?
+      {props.item.online && props.item.files.some(f => f.download) ?
         (
         <>
           <a className='btn btn--sm btn--orange btn--detail mr-10 mb-10 p-8'
