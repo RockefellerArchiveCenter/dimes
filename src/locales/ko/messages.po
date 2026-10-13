@@ -272,9 +272,9 @@ msgstr "<0>미니맵은 활성화된 사각형을 클릭하여 컬렉션 내 검
 msgid "<0>There was an error submitting your request.</0><1>The request to {0} failed with the message {1}: {2}.</1><2>{3}</2>"
 msgstr "<0>요청을 제출하는 동안 오류가 발생했습니다.</0><1>{1}: {2} 라는 메시지와 함께 {0} 에 대한 요청이 실패했습니다.</1><2>{3}</2>"
 
-#. Buttons for online records
+#. Button for digital object viewer
 #. View Saved Item online
-#: src/components/RecordsDetail/index.jsx:200
+#: src/components/RecordsDetail/index.jsx:199
 #: src/components/SavedItem/index.jsx:21
 msgid "<0>View Online<1/></0>"
 msgstr "<0>온라인 보기<1/></0>"
@@ -300,12 +300,12 @@ msgid "about minimap"
 msgstr "미니맵 정보"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:291
+#: src/components/RecordsDetail/index.jsx:290
 msgid "Access"
 msgstr "접근"
 
 #. Record detail accordion heading
-#: src/components/RecordsDetail/index.jsx:287
+#: src/components/RecordsDetail/index.jsx:286
 msgid "Access and Use"
 msgstr "접근 및 이용"
 
@@ -371,7 +371,7 @@ msgid "Back to search"
 msgstr "검색으로 돌아가기"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:256
+#: src/components/RecordsDetail/index.jsx:255
 msgid "Biographical/Historical Note"
 msgstr "약력/연혁"
 
@@ -468,7 +468,7 @@ msgid "Creator"
 msgstr "작성자"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:231
+#: src/components/RecordsDetail/index.jsx:230
 msgid "Creators"
 msgstr "작성자"
 
@@ -478,7 +478,7 @@ msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "현재 페이지 - JPEG2000 {pixelDimensions}"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:277
+#: src/components/RecordsDetail/index.jsx:276
 msgid "Custodial History"
 msgstr "관리 이력"
 
@@ -488,12 +488,12 @@ msgid "Date Range"
 msgstr "날짜 범위"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:235
+#: src/components/RecordsDetail/index.jsx:234
 msgid "Dates"
 msgstr "날짜"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:252
+#: src/components/RecordsDetail/index.jsx:251
 msgid "Description"
 msgstr "설명"
 
@@ -516,7 +516,7 @@ msgstr "dimes.rockarch.org"
 #. Button to download an online record
 #. Message shown on download dropdown button
 #: src/components/PageDigitalObject/index.jsx:143
-#: src/components/RecordsDetail/index.jsx:210
+#: src/components/RecordsDetail/index.jsx:211
 msgid "Download"
 msgstr "다운로드"
 
@@ -588,7 +588,7 @@ msgid "Error submitting request"
 msgstr "요청 제출 오류"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:300
+#: src/components/RecordsDetail/index.jsx:299
 msgid "Existence and Location of Copies"
 msgstr "사본의 존재 및 소재"
 
@@ -643,7 +643,7 @@ msgid "I understand that I may need to work with an archivist to identify the re
 msgstr "본인은 내 연구와 가장 관련성이 높은 자료를 찾기 위해 아키비스트와 협력해야 할 수도 있으며, 자료의 규모나 물리적 상태 때문에 디지털화가 불가능한 경우도 있다는 것을 이해합니다."
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:274
+#: src/components/RecordsDetail/index.jsx:273
 msgid "Immediate Source of Acquisition"
 msgstr "직접 입수처"
 
@@ -796,7 +796,7 @@ msgstr "날짜 및 시간 선택기 열기"
 #. Screen reader text for opening an online item
 #: src/components/Dropdown/index.jsx:71
 #: src/components/ModalMyList/index.jsx:493
-#: src/components/RecordsDetail/index.jsx:210
+#: src/components/RecordsDetail/index.jsx:211
 msgid "opens in a new window"
 msgstr "새 창에서 열기"
 
@@ -900,7 +900,7 @@ msgid "Privacy Policy"
 msgstr "개인정보 보호 정책"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:269
+#: src/components/RecordsDetail/index.jsx:268
 msgid "Processing Information"
 msgstr "정리 정보"
 
@@ -920,7 +920,7 @@ msgid "Related sites"
 msgstr "관련 사이트"
 
 #. Record detail accordion heading
-#: src/components/RecordsDetail/index.jsx:308
+#: src/components/RecordsDetail/index.jsx:307
 msgid "Related Terms"
 msgstr "관련 용어"
 
@@ -946,7 +946,7 @@ msgid "Remove from List"
 msgstr "목록에서 지우기"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:294
+#: src/components/RecordsDetail/index.jsx:293
 msgid "Reproduction and Duplication"
 msgstr "복제 및 복사"
 
@@ -1196,7 +1196,7 @@ msgid "Subject"
 msgstr "주제"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:312
+#: src/components/RecordsDetail/index.jsx:311
 msgid "Subjects"
 msgstr "주제"
 
@@ -1206,7 +1206,7 @@ msgid "Submit search"
 msgstr "검색 제출"
 
 #. Record detail accordion heading
-#: src/components/RecordsDetail/index.jsx:223
+#: src/components/RecordsDetail/index.jsx:222
 msgid "Summary"
 msgstr "요약"
 
@@ -1216,7 +1216,7 @@ msgid "Take-down policy"
 msgstr "게시 중단 정책"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:297
+#: src/components/RecordsDetail/index.jsx:296
 msgid "Technical Access"
 msgstr "기술적 접근"
 

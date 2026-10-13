@@ -272,9 +272,9 @@ msgstr "<0>Minimap, etkin bir kareye tıklayarak bir koleksiyondaki arama eşle�
 msgid "<0>There was an error submitting your request.</0><1>The request to {0} failed with the message {1}: {2}.</1><2>{3}</2>"
 msgstr "<0>İsteğinizi gönderirken bir hata oluştu.</0><1>{0} adresine yapılan istek {1}: {2} mesajı ile başarısız oldu.</1><2>{3}</2>"
 
-#. Buttons for online records
+#. Button for digital object viewer
 #. View Saved Item online
-#: src/components/RecordsDetail/index.jsx:200
+#: src/components/RecordsDetail/index.jsx:199
 #: src/components/SavedItem/index.jsx:21
 msgid "<0>View Online<1/></0>"
 msgstr "<0>Çevrimiçi Görüntüle<1/></0>"
@@ -300,12 +300,12 @@ msgid "about minimap"
 msgstr "minimap hakkında"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:291
+#: src/components/RecordsDetail/index.jsx:290
 msgid "Access"
 msgstr "Erişim"
 
 #. Record detail accordion heading
-#: src/components/RecordsDetail/index.jsx:287
+#: src/components/RecordsDetail/index.jsx:286
 msgid "Access and Use"
 msgstr "Erişim ve Kullanım"
 
@@ -371,7 +371,7 @@ msgid "Back to search"
 msgstr "Aramaya geri dön"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:256
+#: src/components/RecordsDetail/index.jsx:255
 msgid "Biographical/Historical Note"
 msgstr "Biyografik/Tarihsel Not"
 
@@ -468,7 +468,7 @@ msgid "Creator"
 msgstr "Oluşturan"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:231
+#: src/components/RecordsDetail/index.jsx:230
 msgid "Creators"
 msgstr "Oluşturanlar"
 
@@ -478,7 +478,7 @@ msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "Geçerli Sayfa - JPEG2000 {pixelDimensions}"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:277
+#: src/components/RecordsDetail/index.jsx:276
 msgid "Custodial History"
 msgstr "Muhafaza Geçmişi"
 
@@ -488,12 +488,12 @@ msgid "Date Range"
 msgstr "Tarih aralığı"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:235
+#: src/components/RecordsDetail/index.jsx:234
 msgid "Dates"
 msgstr "Tarihler"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:252
+#: src/components/RecordsDetail/index.jsx:251
 msgid "Description"
 msgstr "Açıklama"
 
@@ -516,7 +516,7 @@ msgstr "dimes.rockarch.org"
 #. Button to download an online record
 #. Message shown on download dropdown button
 #: src/components/PageDigitalObject/index.jsx:143
-#: src/components/RecordsDetail/index.jsx:210
+#: src/components/RecordsDetail/index.jsx:211
 msgid "Download"
 msgstr "İndir"
 
@@ -588,7 +588,7 @@ msgid "Error submitting request"
 msgstr "İstek gönderilirken hata oluştu"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:300
+#: src/components/RecordsDetail/index.jsx:299
 msgid "Existence and Location of Copies"
 msgstr "Kopyaların Varlığı ve Yeri"
 
@@ -643,7 +643,7 @@ msgid "I understand that I may need to work with an archivist to identify the re
 msgstr "Araştırmamla en ilgili kaynakları belirlemek için bir arşivciyle birlikte çalışmam gerekebileceğini ve bazı durumlarda malzemenin kapsamı veya fiziksel durumu nedeniyle dijitalleştirilmesinin mümkün olmadığını anlıyorum."
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:274
+#: src/components/RecordsDetail/index.jsx:273
 msgid "Immediate Source of Acquisition"
 msgstr "Doğrudan Edinme Kaynağı"
 
@@ -796,7 +796,7 @@ msgstr "Tarih ve saat seçiciyi aç"
 #. Screen reader text for opening an online item
 #: src/components/Dropdown/index.jsx:71
 #: src/components/ModalMyList/index.jsx:493
-#: src/components/RecordsDetail/index.jsx:210
+#: src/components/RecordsDetail/index.jsx:211
 msgid "opens in a new window"
 msgstr "yeni bir pencerede açılır"
 
@@ -900,7 +900,7 @@ msgid "Privacy Policy"
 msgstr "Kişisel Verilere Dair Politika"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:269
+#: src/components/RecordsDetail/index.jsx:268
 msgid "Processing Information"
 msgstr "İşleme Bilgileri"
 
@@ -920,7 +920,7 @@ msgid "Related sites"
 msgstr "İlgili siteler"
 
 #. Record detail accordion heading
-#: src/components/RecordsDetail/index.jsx:308
+#: src/components/RecordsDetail/index.jsx:307
 msgid "Related Terms"
 msgstr "İlgili Terimler"
 
@@ -946,7 +946,7 @@ msgid "Remove from List"
 msgstr "Listeden kaldır"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:294
+#: src/components/RecordsDetail/index.jsx:293
 msgid "Reproduction and Duplication"
 msgstr "Çoğaltma ve Kopyalama"
 
@@ -1196,7 +1196,7 @@ msgid "Subject"
 msgstr "Konu"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:312
+#: src/components/RecordsDetail/index.jsx:311
 msgid "Subjects"
 msgstr "Konular"
 
@@ -1206,7 +1206,7 @@ msgid "Submit search"
 msgstr "Aramayı gönder"
 
 #. Record detail accordion heading
-#: src/components/RecordsDetail/index.jsx:223
+#: src/components/RecordsDetail/index.jsx:222
 msgid "Summary"
 msgstr "Özet"
 
@@ -1216,7 +1216,7 @@ msgid "Take-down policy"
 msgstr "Yayından kaldırma politikası"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:297
+#: src/components/RecordsDetail/index.jsx:296
 msgid "Technical Access"
 msgstr "Teknik Erişim"
 

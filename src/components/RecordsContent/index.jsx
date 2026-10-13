@@ -240,7 +240,7 @@ export const RecordsChild = props => {
         {item.dates === item.title ? (null) : (<p className='child__text' lang={DESCR_LANG}>{item.dates}</p>)}
       </div>
       <div className='child__buttons'>
-        {item.online ? (
+        {item.online && item.files.some(f => f.manifest) ? (
           <a className='btn btn--sm btn--blue btn-launch--content mr-10 p-8'
             id={`view-${item.uri}`}
             aria-labelledby={`view-${item.uri} accordion__heading-${item.uri}`}

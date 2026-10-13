@@ -272,9 +272,9 @@ msgstr "<0>迷你地图是一项新功能，点击活动方块即可快速跳转
 msgid "<0>There was an error submitting your request.</0><1>The request to {0} failed with the message {1}: {2}.</1><2>{3}</2>"
 msgstr "<0>提交请求时出现错误。</0><1>请求{0} 失败，显示信息{1}:{2}.</1><2>{3}</2>"
 
-#. Buttons for online records
+#. Button for digital object viewer
 #. View Saved Item online
-#: src/components/RecordsDetail/index.jsx:200
+#: src/components/RecordsDetail/index.jsx:199
 #: src/components/SavedItem/index.jsx:21
 msgid "<0>View Online<1/></0>"
 msgstr "<0>在线阅读<1/></0>"
@@ -300,12 +300,12 @@ msgid "about minimap"
 msgstr "关于微缩位置图"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:291
+#: src/components/RecordsDetail/index.jsx:290
 msgid "Access"
 msgstr "查阅"
 
 #. Record detail accordion heading
-#: src/components/RecordsDetail/index.jsx:287
+#: src/components/RecordsDetail/index.jsx:286
 msgid "Access and Use"
 msgstr "查阅与利用"
 
@@ -371,7 +371,7 @@ msgid "Back to search"
 msgstr "返回搜索"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:256
+#: src/components/RecordsDetail/index.jsx:255
 msgid "Biographical/Historical Note"
 msgstr "传记/历史沿革"
 
@@ -468,7 +468,7 @@ msgid "Creator"
 msgstr "创建者"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:231
+#: src/components/RecordsDetail/index.jsx:230
 msgid "Creators"
 msgstr "创建者"
 
@@ -478,7 +478,7 @@ msgid "Current Page - JPEG2000 {pixelDimensions}"
 msgstr "当前页面 - JPEG2000 {pixelDimensions}"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:277
+#: src/components/RecordsDetail/index.jsx:276
 msgid "Custodial History"
 msgstr "保管历史"
 
@@ -488,12 +488,12 @@ msgid "Date Range"
 msgstr "日期范围"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:235
+#: src/components/RecordsDetail/index.jsx:234
 msgid "Dates"
 msgstr "日期"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:252
+#: src/components/RecordsDetail/index.jsx:251
 msgid "Description"
 msgstr "背景说明"
 
@@ -516,7 +516,7 @@ msgstr "dimes.rockarch.org"
 #. Button to download an online record
 #. Message shown on download dropdown button
 #: src/components/PageDigitalObject/index.jsx:143
-#: src/components/RecordsDetail/index.jsx:210
+#: src/components/RecordsDetail/index.jsx:211
 msgid "Download"
 msgstr "下载"
 
@@ -588,7 +588,7 @@ msgid "Error submitting request"
 msgstr "提交申请出错"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:300
+#: src/components/RecordsDetail/index.jsx:299
 msgid "Existence and Location of Copies"
 msgstr "副本的存在与存放位置"
 
@@ -643,7 +643,7 @@ msgid "I understand that I may need to work with an archivist to identify the re
 msgstr "我知道，我可能需要与档案管理员合作，以确定与我的研究最相关的资源，在某些情况下，由于资料的范围或实际状况，不可能将其数字化。"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:274
+#: src/components/RecordsDetail/index.jsx:273
 msgid "Immediate Source of Acquisition"
 msgstr "直接获取来源"
 
@@ -796,7 +796,7 @@ msgstr "打开日期和时间选择器"
 #. Screen reader text for opening an online item
 #: src/components/Dropdown/index.jsx:71
 #: src/components/ModalMyList/index.jsx:493
-#: src/components/RecordsDetail/index.jsx:210
+#: src/components/RecordsDetail/index.jsx:211
 msgid "opens in a new window"
 msgstr "在新窗口打开"
 
@@ -900,7 +900,7 @@ msgid "Privacy Policy"
 msgstr "隐私政策"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:269
+#: src/components/RecordsDetail/index.jsx:268
 msgid "Processing Information"
 msgstr "整理信息"
 
@@ -920,7 +920,7 @@ msgid "Related sites"
 msgstr "相关网站"
 
 #. Record detail accordion heading
-#: src/components/RecordsDetail/index.jsx:308
+#: src/components/RecordsDetail/index.jsx:307
 msgid "Related Terms"
 msgstr "相关术语"
 
@@ -946,7 +946,7 @@ msgid "Remove from List"
 msgstr "从清单中移除"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:294
+#: src/components/RecordsDetail/index.jsx:293
 msgid "Reproduction and Duplication"
 msgstr "复制与复印"
 
@@ -1196,7 +1196,7 @@ msgid "Subject"
 msgstr "主题"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:312
+#: src/components/RecordsDetail/index.jsx:311
 msgid "Subjects"
 msgstr "主题"
 
@@ -1206,7 +1206,7 @@ msgid "Submit search"
 msgstr "搜索"
 
 #. Record detail accordion heading
-#: src/components/RecordsDetail/index.jsx:223
+#: src/components/RecordsDetail/index.jsx:222
 msgid "Summary"
 msgstr "摘要"
 
@@ -1216,7 +1216,7 @@ msgid "Take-down policy"
 msgstr "下架政策"
 
 #. Record detail section title
-#: src/components/RecordsDetail/index.jsx:297
+#: src/components/RecordsDetail/index.jsx:296
 msgid "Technical Access"
 msgstr "技术查阅要求"
 
