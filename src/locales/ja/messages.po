@@ -627,6 +627,11 @@ msgstr "右資料内："
 msgid "Founded by"
 msgstr "設立者"
 
+#. Reading Room Actual Hours
+#: src/components/Footer/index.jsx:50
+msgid "From October 1 to March 31:<0/>Tuesday to Friday, 9:30 a.m. to 5:00 p.m.<1/>From April 1 to September 30:<2/>Monday to Friday, 9:30 a.m. to 5:00 p.m.<3/>"
+msgstr "10月1日から3月31日まで：<0/>火曜日から金曜日、午前9時30分から午後5時まで<1/>4月1日から9月30日まで：<2/>月曜日から金曜日、午前9時30分から午後5時まで<3/>"
+
 #. Site map link to home page
 #: src/components/PageSiteMap/index.jsx:21
 msgid "Home"
@@ -724,11 +729,6 @@ msgstr "RACスタッフへのメッセージ"
 #: src/components/ModalMinimap/index.jsx:62
 msgid "Minimap"
 msgstr "ミニマップ"
-
-#. Reading Room Actual Hours
-#: src/components/Footer/index.jsx:49
-msgid "Monday-Friday<0/>9:30 a.m. to 5:00 p.m.<1/>"
-msgstr "月～金<0/>午前9:30～午後5:00<1/>"
 
 #. Message shown on button within Dropdown list
 #. Message shown on button within the Header
@@ -910,7 +910,7 @@ msgid "RAC Policies"
 msgstr "RACポリシー"
 
 #. Reading Room Hours message
-#: src/components/Footer/index.jsx:44
+#: src/components/Footer/index.jsx:45
 msgid "Reading Room Hours:"
 msgstr "閲覧室の開室時間:"
 

@@ -627,6 +627,11 @@ msgstr "源自:"
 msgid "Founded by"
 msgstr "创立者"
 
+#. Reading Room Actual Hours
+#: src/components/Footer/index.jsx:50
+msgid "From October 1 to March 31:<0/>Tuesday to Friday, 9:30 a.m. to 5:00 p.m.<1/>From April 1 to September 30:<2/>Monday to Friday, 9:30 a.m. to 5:00 p.m.<3/>"
+msgstr "10月1日至3月31日：<0/>周二至周五，上午9:30至下午5:00<1/>4月1日至9月30日：<2/>周一至周五，上午9:30至下午5:00<3/>"
+
 #. Site map link to home page
 #: src/components/PageSiteMap/index.jsx:21
 msgid "Home"
@@ -724,11 +729,6 @@ msgstr "给洛克菲勒档案中心的档案管理员留言"
 #: src/components/ModalMinimap/index.jsx:62
 msgid "Minimap"
 msgstr "迷你地图"
-
-#. Reading Room Actual Hours
-#: src/components/Footer/index.jsx:49
-msgid "Monday-Friday<0/>9:30 a.m. to 5:00 p.m.<1/>"
-msgstr "星期一至星期五<0/>上午 9:30 至下午 5:00。<1/>"
 
 #. Message shown on button within Dropdown list
 #. Message shown on button within the Header
@@ -910,7 +910,7 @@ msgid "RAC Policies"
 msgstr "RAC 政策"
 
 #. Reading Room Hours message
-#: src/components/Footer/index.jsx:44
+#: src/components/Footer/index.jsx:45
 msgid "Reading Room Hours:"
 msgstr "阅览室开放时间:"
 

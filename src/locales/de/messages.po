@@ -627,6 +627,11 @@ msgstr "Gefunden in:"
 msgid "Founded by"
 msgstr "Gegründet von"
 
+#. Reading Room Actual Hours
+#: src/components/Footer/index.jsx:50
+msgid "From October 1 to March 31:<0/>Tuesday to Friday, 9:30 a.m. to 5:00 p.m.<1/>From April 1 to September 30:<2/>Monday to Friday, 9:30 a.m. to 5:00 p.m.<3/>"
+msgstr "Vom 1. Oktober bis zum 31. März:<0/>Dienstag bis Freitag, 9:30 bis 17:00 Uhr<1/>Vom 1. April bis zum 30. September:<2/>Montag bis Freitag, 9:30 bis 17:00 Uhr<3/>"
+
 #. Site map link to home page
 #: src/components/PageSiteMap/index.jsx:21
 msgid "Home"
@@ -724,11 +729,6 @@ msgstr "Nachricht an das RAC"
 #: src/components/ModalMinimap/index.jsx:62
 msgid "Minimap"
 msgstr "Minimap"
-
-#. Reading Room Actual Hours
-#: src/components/Footer/index.jsx:49
-msgid "Monday-Friday<0/>9:30 a.m. to 5:00 p.m.<1/>"
-msgstr "Montag-Freitag<0/>9:30 Uhr bis 17:00 Uhr.<1/>"
 
 #. Message shown on button within Dropdown list
 #. Message shown on button within the Header
@@ -910,7 +910,7 @@ msgid "RAC Policies"
 msgstr "RAC-Richtlinien"
 
 #. Reading Room Hours message
-#: src/components/Footer/index.jsx:44
+#: src/components/Footer/index.jsx:45
 msgid "Reading Room Hours:"
 msgstr "Öffnungszeiten des Lesesaals:"
 

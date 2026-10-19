@@ -38,6 +38,7 @@ const Footer = () => (
                 <PrimaryLinkEmail />
               </Trans>
             </p>
+            <PrimaryLinkHoliday />
           </div>
           <div className='footer-primary__reading-room'>
             <p className='footer-primary__text'>
@@ -47,12 +48,11 @@ const Footer = () => (
             </p>
             <p className='footer-primary__text'>
               <Trans comment='Reading Room Actual Hours'>
-                Monday-Friday<br />
-                9:30 a.m. to 5:00 p.m.<br />
+                From October 1 to March 31:<br/>Tuesday to Friday, 9:30 a.m. to 5:00 p.m.<br/>
+                From April 1 to September 30:<br/>Monday to Friday, 9:30 a.m. to 5:00 p.m.<br/>
               </Trans>
-              <PrimaryLinkAccessMaterials />
             </p>
-            <PrimaryLinkHoliday />
+            <PrimaryLinkAccessMaterials />
           </div>
           <div className='footer-primary__social'>
             <SocialIcons />

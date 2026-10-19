@@ -627,6 +627,11 @@ msgstr "İçerisinde Bulundu:"
 msgid "Founded by"
 msgstr "Kurucusu"
 
+#. Reading Room Actual Hours
+#: src/components/Footer/index.jsx:50
+msgid "From October 1 to March 31:<0/>Tuesday to Friday, 9:30 a.m. to 5:00 p.m.<1/>From April 1 to September 30:<2/>Monday to Friday, 9:30 a.m. to 5:00 p.m.<3/>"
+msgstr "1 Ekim'den 31 Mart'a kadar:<0/>Salı'dan Cuma'ya, 09:30 - 17:00 arası<1/>1 Nisan'dan 30 Eylül'e kadar:<2/>Pazartesi'den Cuma'ya, 09:30 - 17:00 arası<3/>"
+
 #. Site map link to home page
 #: src/components/PageSiteMap/index.jsx:21
 msgid "Home"
@@ -724,11 +729,6 @@ msgstr "RAC personeline mesaj"
 #: src/components/ModalMinimap/index.jsx:62
 msgid "Minimap"
 msgstr "Minimap"
-
-#. Reading Room Actual Hours
-#: src/components/Footer/index.jsx:49
-msgid "Monday-Friday<0/>9:30 a.m. to 5:00 p.m.<1/>"
-msgstr "Pazartesi-Cuma<0/>9:30 - 17:00 arası.<1/>"
 
 #. Message shown on button within Dropdown list
 #. Message shown on button within the Header
@@ -910,7 +910,7 @@ msgid "RAC Policies"
 msgstr "RAC Politikaları"
 
 #. Reading Room Hours message
-#: src/components/Footer/index.jsx:44
+#: src/components/Footer/index.jsx:45
 msgid "Reading Room Hours:"
 msgstr "Okuma Odası Saatleri:"
 
