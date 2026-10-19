@@ -627,6 +627,11 @@ msgstr "발견 위치:"
 msgid "Founded by"
 msgstr "설립자"
 
+#. Reading Room Actual Hours
+#: src/components/Footer/index.jsx:50
+msgid "From October 1 to March 31:<0/>Tuesday to Friday, 9:30 a.m. to 5:00 p.m.<1/>From April 1 to September 30:<2/>Monday to Friday, 9:30 a.m. to 5:00 p.m.<3/>"
+msgstr "10월 1일부터 3월 31일까지:<0/>화요일~금요일, 오전 9시 30분~오후 5시<1/>4월 1일부터 9월 30일까지:<2/>월요일~금요일, 오전 9시 30분~오후 5시<3/>"
+
 #. Site map link to home page
 #: src/components/PageSiteMap/index.jsx:21
 msgid "Home"
@@ -724,11 +729,6 @@ msgstr "RAC 직원을 위한 메시지"
 #: src/components/ModalMinimap/index.jsx:62
 msgid "Minimap"
 msgstr "미니맵"
-
-#. Reading Room Actual Hours
-#: src/components/Footer/index.jsx:49
-msgid "Monday-Friday<0/>9:30 a.m. to 5:00 p.m.<1/>"
-msgstr "월요일~금요일<0/>오전 9:30~오후 5:00<1/>"
 
 #. Message shown on button within Dropdown list
 #. Message shown on button within the Header
@@ -910,7 +910,7 @@ msgid "RAC Policies"
 msgstr "RAC 정책"
 
 #. Reading Room Hours message
-#: src/components/Footer/index.jsx:44
+#: src/components/Footer/index.jsx:45
 msgid "Reading Room Hours:"
 msgstr "열람실 이용 시간:"
 
