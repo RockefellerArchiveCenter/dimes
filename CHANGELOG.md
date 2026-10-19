@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.3](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.1.2...v2.1.3) (2026-10-19)
+
+
+### Bug Fixes
+
+* updates reading room hours in footer ([a6535da](https://github.com/RockefellerArchiveCenter/dimes/commit/a6535da890d4d87eb5ce93d8510bea7b4615c99f))
+* updates reading room hours in footer and translations ([296d75a](https://github.com/RockefellerArchiveCenter/dimes/commit/296d75a5715d2b9c1bb9debd5f4caf38e82c32d0))
+
 ## [2.1.2](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.1.1...v2.1.2) (2026-10-08)
 
 
