@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.1.4](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.1.3...v2.1.4) (2026-10-21)
+
+
+### Bug Fixes
+
+* update node ([3bffb06](https://github.com/RockefellerArchiveCenter/dimes/commit/3bffb06a5117a329e3c011434ba16edec274165c))
+* update node ([3bffb06](https://github.com/RockefellerArchiveCenter/dimes/commit/3bffb06a5117a329e3c011434ba16edec274165c))
+* update node ([de49e98](https://github.com/RockefellerArchiveCenter/dimes/commit/de49e98267a33ae23aa9f1d72cd7c16b92f59b1a))
+* update node ([de49e98](https://github.com/RockefellerArchiveCenter/dimes/commit/de49e98267a33ae23aa9f1d72cd7c16b92f59b1a))
+* update node ([48d4d4c](https://github.com/RockefellerArchiveCenter/dimes/commit/48d4d4c139240367b24b24e37bed5b3357202552))
+
 ## [2.1.3](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.1.2...v2.1.3) (2026-10-19)
 
 
