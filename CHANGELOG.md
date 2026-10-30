@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.5](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.1.4...v2.1.5) (2026-10-30)
+
+
+### Bug Fixes
+
+* match Matomo tag manager variable for pageURL and stop double count with record load ([39e0cbb](https://github.com/RockefellerArchiveCenter/dimes/commit/39e0cbb33559cdfb7f6849b317696ea074905929))
+
 ## [2.1.4](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.1.3...v2.1.4) (2026-10-21)
 
 
