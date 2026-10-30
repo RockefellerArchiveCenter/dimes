@@ -44,7 +44,7 @@ const PageRecords = ({ isDesktop, isMobile, myListCount, toggleInList }) => {
   const pageSize = 5
   const hasBackendError = !!Object.keys(backendError).length
 
-  usePageView(found && !hasBackendError ? withSiteTitle(item.title) : null)
+  usePageView(found && !hasBackendError && !isItemLoading ? withSiteTitle(item.title) : null)
 
   /** Constructs a preExpanded list based on an item's ancestors */
   const constructPreExpanded = (ancestors, list) => {

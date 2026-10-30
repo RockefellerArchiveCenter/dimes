@@ -47,6 +47,6 @@ it('renders props correctly', async () => {
   expect(window._mtm).toEqual([{
     event: 'reactPageViewEvent',
     pageTitle: pageTitle,
-    pageUrl: window.location.href,
+    pageURL: window.location.href,
   }])
 })
