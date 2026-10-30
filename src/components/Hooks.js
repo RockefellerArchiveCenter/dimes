@@ -69,7 +69,7 @@ export const usePageView = title => {
       window._mtm.push({
         event: 'reactPageViewEvent',
         pageTitle: document.title,
-        pageUrl: window.location.href,
+        pageURL: window.location.href,
       })
     }
   }, [pathname, title])
