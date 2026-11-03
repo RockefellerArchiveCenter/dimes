@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.1.6...v2.2.0) (2026-11-03)
+
+
+### Features
+
+* Adds additional logic for download and digital object viewer buttons ([cbd1d12](https://github.com/RockefellerArchiveCenter/dimes/commit/cbd1d120ffce4afe27f00194417403a7934388ba))
+
+
+### Bug Fixes
+
+* support digital objects without IIIF manifest ([3d3ee01](https://github.com/RockefellerArchiveCenter/dimes/commit/3d3ee01aef2690918df39577fdbcd7af609816b4))
+
 ## [2.1.6](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.1.5...v2.1.6) (2026-11-02)
 
 
