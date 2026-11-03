@@ -53,8 +53,8 @@ it('renders with collection data', () => {
   }
 })
 
-it('renders with object data', () => {
-  const child = childrenObjects[Math.floor(Math.random() * childrenObjects.length)]
+it('renders with object data containing all file versions', () => {
+  const child = childrenObjects[0]
   act(() => {
     render(<I18nApp ReactComponent={<RecordsChild
       isScrolled={true}
@@ -71,6 +71,36 @@ it('renders with object data', () => {
 
   const item = document.querySelector('.child__list-item')
   expect(document.querySelector('.btn-launch--content')).toBeInTheDocument()
+  expect(item.textContent).toContain(child.title)
+  expect(item.textContent).toContain(child.dates)
+  if (child.description) {
+    expect(item.textContent).toContain(child.description)
+  }
+  if (child.hit_count) {
+    expect(item.querySelector('.badge--orange').textContent).toContain(child.hit_count.toString())
+  } else {
+    expect(item.querySelector('.badge--orange')).not.toBeInTheDocument()
+  }
+})
+
+it('renders with object data containing only download file version', () => {
+  const child = childrenObjects[1]
+  act(() => {
+    render(<I18nApp ReactComponent={<RecordsChild
+      isScrolled={true}
+      item={child}
+      myListCount={0}
+      params={{ query: 'foo' }}
+      preExpanded={[]}
+      setActiveRecords={vi.fn()}
+      setIsLoading={vi.fn()}
+      setIsScrolled={vi.fn()}
+      toggleInList={vi.fn()}
+    />} />)
+  })
+
+  const item = document.querySelector('.child__list-item')
+  expect(document.querySelector('.btn-launch--content')).not.toBeInTheDocument()
   expect(item.textContent).toContain(child.title)
   expect(item.textContent).toContain(child.dates)
   if (child.description) {
@@ -110,7 +140,7 @@ it('handles expand clicks', () => {
 })
 
 it('handles list toggle clicks', () => {
-  const child = childrenObjects[Math.floor(Math.random() * childrenObjects.length)]
+  const child = childrenObjects[0]
   const toggleInList = vi.fn()
   const setActiveRecords = vi.fn()
   act(() => {
