@@ -78,7 +78,7 @@ const PanelFoundInSection = ({ ancestors, isItemLoading, params }) => (
   ancestors.title ?
     (<div className='mr-15'>
       <h3 className='panel__heading mt-10 mb-5'><Trans comment='Panel Found In message'>Found In</Trans></h3>
-      <ul className='found-in list--unstyled mt-0'>
+      <ol className='found-in list--unstyled mt-0'>
       {isItemLoading ?
         (<FoundInItemSkeleton/>) :
         (<FoundInItem
@@ -86,7 +86,7 @@ const PanelFoundInSection = ({ ancestors, isItemLoading, params }) => (
             className='found-in__collection'
             params={params}
             topLevel={true} />)}
-      </ul>
+      </ol>
     </div>) :
     (null)
 )
