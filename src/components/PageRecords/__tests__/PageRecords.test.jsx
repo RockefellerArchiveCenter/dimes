@@ -3,7 +3,7 @@ import { render, act } from '@testing-library/react'
 import { Route, Routes, MemoryRouter } from 'react-router';
 import PageRecords from '..'
 
-import { object } from '../../../__fixtures__/object'
+import { objectNoFiles } from '../../../__fixtures__/object'
 import { ancestors } from '../../../__fixtures__/ancestors'
 import { childrenCollections } from '../../../__fixtures__/children'
 import { minimap } from '../../../__fixtures__/minimap'
@@ -23,7 +23,7 @@ it('renders props correctly', async () => {
     } else if (url.includes('children')) {
       return Promise.resolve({data: {next: null, results: childrenCollections}})
     } else if (url.includes('objects')) {
-      return Promise.resolve({data: object})
+      return Promise.resolve({data: objectNoFiles})
     } else if (url.includes('minimap')) {
       return Promise.resolve({data: minimap})
     } else {

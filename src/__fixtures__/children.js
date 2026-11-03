@@ -49,7 +49,12 @@ export const childrenObjects = [
             "group": {
                 "identifier": "/collections/WY7fpswEV3oLhyjiArpHES",
                 "title": "Rockefeller Foundation records"
-            }
+            },
+            "files": [{
+                "title": "1929",
+                "manifest": "https://iiif.rockarch.org/manifests/AdnxgWuKKKheh2r3SvoAqZ",
+                "download": "https://iiif.rockarch.org/pdf/AdnxgWuKKKheh2r3SvoAqZ"
+            }]
         },
         {
             "title": "1930",
@@ -62,7 +67,12 @@ export const childrenObjects = [
             "group": {
                 "identifier": "/collections/WY7fpswEV3oLhyjiArpHES",
                 "title": "Rockefeller Foundation records"
-            }
+            },
+            "files": [{
+                "title": "1930",
+                "manifest": null,
+                "download": "https://iiif.rockarch.org/pdf/9SHaoe5t6nHBXAa3pmVy9P"
+            }]
         },
         {
             "title": "1931",
