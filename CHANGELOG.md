@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.1](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.2.0...v2.2.1) (2026-11-09)
+
+
+### Bug Fixes
+
+* accessibility issues [#919](https://github.com/RockefellerArchiveCenter/dimes/issues/919), [#920](https://github.com/RockefellerArchiveCenter/dimes/issues/920), [#921](https://github.com/RockefellerArchiveCenter/dimes/issues/921) ([039d436](https://github.com/RockefellerArchiveCenter/dimes/commit/039d4368ef91d462184de6b0e39d6cff1bb24864))
+* accessibility issues 919-921 ([4a999dd](https://github.com/RockefellerArchiveCenter/dimes/commit/4a999dde5d1016c72b92a667e2de690c2c043a05))
+* **issue:** add alt text to hero logo ([0137f12](https://github.com/RockefellerArchiveCenter/dimes/commit/0137f12ae217ccb7cae35f0e128040bfdf01eba3))
+* **issue:** change unordered list to ordered list ([ef6b659](https://github.com/RockefellerArchiveCenter/dimes/commit/ef6b659e940c41ca144e24e1ab2e3a7dace44987))
+* **issue:** color contrast on link hover and focus ([3c69e7a](https://github.com/RockefellerArchiveCenter/dimes/commit/3c69e7a289ed1090d7aac7d1ad6591f218f00af7))
+* serve vite dev server on 127.0.0.1 for backstopjs ([051e40d](https://github.com/RockefellerArchiveCenter/dimes/commit/051e40d195595e12e9339a312174f3ea7ebff07f))
+
 ## [2.2.0](https://github.com/RockefellerArchiveCenter/dimes/compare/v2.1.6...v2.2.0) (2026-11-03)
 
 
